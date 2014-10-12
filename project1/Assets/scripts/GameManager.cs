@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour {
 
 	//size of entire map
 	public int mapSize = 11;//set temporary as 11 for now.  modify if increase nxn
-	 
+
 
 	// Use this for initialization
 	void Start () {
