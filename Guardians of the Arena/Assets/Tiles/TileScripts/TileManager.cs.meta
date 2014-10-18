@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: cec4047427e03d94db077306b99142e8
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - tile: {fileID: 100000, guid: 43ddd95b06c3c93459686532e1082a83, type: 2}
+  - character: {fileID: 100000, guid: c19e8047391cfb946aac4bf65dfab6c5, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
