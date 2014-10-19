@@ -13,6 +13,11 @@ public class TileManager : MonoBehaviour {
 
 	public GameObject tile;
 
+
+
+
+
+
 	void Start () {
 
 		tiles = new GameObject[xTiles, yTiles];
