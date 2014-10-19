@@ -30,9 +30,11 @@ public class TileScript : MonoBehaviour {
 											            new Quaternion());
 			unit.transform.parent = this.transform;
 			if (random %2 == 0){
-				unit.GetComponent<Unit>().setUnitOneType();
+				//unit.GetComponent<Unit>().setUnitOneType();
+				unit.GetComponent<Unit>().setUnitType(10);
 			}else{
-				unit.GetComponent<Unit>().setUnitTwoType();
+				//unit.GetComponent<Unit>().setUnitTwoType();
+				unit.GetComponent<Unit>().setUnitType(11);
 			}
 			
 			objectOccupyingTile = unit;
