@@ -48,9 +48,11 @@ public class Unit    : MonoBehaviour {
 	 * unitID9 = 19
 	 * unitID10 = 20
 	 * 
-	 * DO NOT DELETE THIS COMMENT!!!!//Made them 600 in case we need to send as byte to server and back
+	 * DO NOT DELETE THIS COMMENT!!!!//Made them 10 to 20 in case we need to send as byte to server and back
 	 * 
 	 */
+
+	int ID;
 
 	GameManager gm;
 	
@@ -59,6 +61,7 @@ public class Unit    : MonoBehaviour {
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 
 
+		ID = 0;//Will be set to a propper ID, assuming that function setUnitType is called
 		invincible = false;
 		destroyed = false;
 
@@ -243,6 +246,9 @@ public class Unit    : MonoBehaviour {
 
 	public void setUnitType(int unitID)
 	{
+
+		ID = unitID;
+
 		if(unitID == 10)
 		{
 			setUnitOneType();

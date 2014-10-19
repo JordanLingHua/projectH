@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+//USING TileManager as the MAIN function of the game, since the tiles are instantiated HERE, 
+//and don't pre-exist elsewhere.  
+
 public class TileManager : MonoBehaviour {
 
 	private int xTiles = 16;
