@@ -74,7 +74,38 @@ public class Unit    : MonoBehaviour {
 
     void OnMouseDown() {
 		gm.uInfo.text = "HP: " + hp + "/" + maxHP + "\nArmor: " + armor + "\nDamage: " + atk;
+		
+		//if player is moving a piece
+		if (gm.gameState == 1){
+			showAccessibleTiles(this.transform.parent.gameObject,mvRange);
+
+		//if player is attacking with a piece	
+		}else if (gm.gameState == 2){
+			showAccessibleTiles(this.transform.parent.gameObject,atkRange);
+		}
     }
+	
+	void showAccessibleTiles(GameObject tile, int num){
+		if (tile.transform.GetComponent<TileScript>().occupied == 0){
+			tile.renderer.material.color = Color.green;
+		}
+		if (num == 0){
+			
+		}else{
+			if (tile.transform.GetComponent<TileScript>().up != null){
+				showAccessibleTiles(tile.transform.GetComponent<TileScript>().up,num-1);
+			}
+			if (tile.transform.GetComponent<TileScript>().down != null){
+				showAccessibleTiles(tile.transform.GetComponent<TileScript>().down,num-1);
+			}
+			if (tile.transform.GetComponent<TileScript>().left != null){
+				showAccessibleTiles(tile.transform.GetComponent<TileScript>().left,num-1);
+			}
+			if (tile.transform.GetComponent<TileScript>().right != null){
+				showAccessibleTiles(tile.transform.GetComponent<TileScript>().right,num-1);
+			}
+		}
+	}
 
 
 

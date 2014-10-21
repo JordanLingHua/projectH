@@ -13,11 +13,6 @@ public class TileManager : MonoBehaviour {
 
 	public GameObject tile;
 
-
-
-
-
-
 	void Start () {
 
 		tiles = new GameObject[xTiles, yTiles];
@@ -38,7 +33,7 @@ public class TileManager : MonoBehaviour {
 				                                             new Quaternion(0,0,0,0));
 
 				tiles[i,j] = newtile;
-				//newtile.transform.parent = this.transform;
+				newtile.transform.parent = this.transform;
 			}
 		}
 
@@ -48,7 +43,11 @@ public class TileManager : MonoBehaviour {
 			for (int j = 0; j < yTiles; j++)
 			{
 				TileScript script = tiles[i, j].GetComponent<TileScript>();
-
+				
+				//set tile id e.g. 5,2
+				script.x = i;
+				script.y = j;
+				
 				if (i != 0)
 				{
 					script.down = tiles[i - 1, j];
