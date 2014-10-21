@@ -1,0 +1,7 @@
+c:\users\tenor_000\documents\visual studio 2013\Projects\Guardians Of The Arena Server\Guardians Of The Arena Server\bin\Debug\Guardians Of The Arena Server.exe.config
+c:\users\tenor_000\documents\visual studio 2013\Projects\Guardians Of The Arena Server\Guardians Of The Arena Server\bin\Debug\Guardians Of The Arena Server.exe
+c:\users\tenor_000\documents\visual studio 2013\Projects\Guardians Of The Arena Server\Guardians Of The Arena Server\bin\Debug\Guardians Of The Arena Server.pdb
+c:\users\tenor_000\documents\visual studio 2013\Projects\Guardians Of The Arena Server\Guardians Of The Arena Server\bin\Debug\System.Data.SQLite.dll
+c:\users\tenor_000\documents\visual studio 2013\Projects\Guardians Of The Arena Server\Guardians Of The Arena Server\obj\Debug\Guardians Of The Arena Server.exe
+c:\users\tenor_000\documents\visual studio 2013\Projects\Guardians Of The Arena Server\Guardians Of The Arena Server\obj\Debug\Guardians Of The Arena Server.pdb
+c:\users\tenor_000\documents\visual studio 2013\Projects\Guardians Of The Arena Server\Guardians Of The Arena Server\obj\Debug\Guardians Of The Arena Server.csprojResolveAssemblyReference.cache
