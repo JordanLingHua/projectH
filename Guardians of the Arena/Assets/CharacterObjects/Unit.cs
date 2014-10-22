@@ -68,24 +68,55 @@ public class Unit    : MonoBehaviour {
 
 	}	
 	
-	// Update is called once per frame
 	void Update () {
 	}
 
     void OnMouseDown() {
+		gm.selectedUnit = this;
+		this.transform.parent.gameObject.transform.parent.GetComponent<TileManager>().clearAllTiles();
 		gm.uInfo.text = "HP: " + hp + "/" + maxHP + "\nArmor: " + armor + "\nDamage: " + atk;
 		
 		//if player is moving a piece
 		if (gm.gameState == 1){
-			showAccessibleTiles(this.transform.parent.gameObject,mvRange);
-
+			if (!mvd){
+				showMvAccessibleTiles(this.transform.parent.gameObject,mvRange);
+			}
 		//if player is attacking with a piece	
 		}else if (gm.gameState == 2){
-			showAccessibleTiles(this.transform.parent.gameObject,atkRange);
+			if (!atkd){
+				showAtkAccessibleTiles(this.transform.parent.gameObject,atkRange);
+			}
 		}
+
     }
 	
-	void showAccessibleTiles(GameObject tile, int num){
+	void showMvAccessibleTiles(GameObject tile, int num){
+		if (tile.transform.GetComponent<TileScript>().occupied == 0){
+			tile.renderer.material.color = Color.green;
+		}
+		if (num == 0){
+			
+		}else{
+			if (tile.transform.GetComponent<TileScript>().up != null && tile.transform.GetComponent<TileScript>().up.transform.GetComponent<TileScript>().occupied != 2){
+				showMvAccessibleTiles(tile.transform.GetComponent<TileScript>().up,num-1);
+				gm.accessibleTiles.Add(tile.transform.GetComponent<TileScript>().up);
+			}
+			if (tile.transform.GetComponent<TileScript>().down != null && tile.transform.GetComponent<TileScript>().down.transform.GetComponent<TileScript>().occupied != 2){
+				showMvAccessibleTiles(tile.transform.GetComponent<TileScript>().down,num-1);
+				gm.accessibleTiles.Add(tile.transform.GetComponent<TileScript>().down);
+			}
+			if (tile.transform.GetComponent<TileScript>().left != null && tile.transform.GetComponent<TileScript>().left.transform.GetComponent<TileScript>().occupied != 2) {
+				showMvAccessibleTiles(tile.transform.GetComponent<TileScript>().left,num-1);
+				gm.accessibleTiles.Add(tile.transform.GetComponent<TileScript>().left);
+			}
+			if (tile.transform.GetComponent<TileScript>().right != null && tile.transform.GetComponent<TileScript>().right.transform.GetComponent<TileScript>().occupied != 2){
+				showMvAccessibleTiles(tile.transform.GetComponent<TileScript>().right,num-1);
+				gm.accessibleTiles.Add(tile.transform.GetComponent<TileScript>().right);
+			}	
+		}
+	}
+	
+	void showAtkAccessibleTiles(GameObject tile, int num){
 		if (tile.transform.GetComponent<TileScript>().occupied == 0){
 			tile.renderer.material.color = Color.green;
 		}
@@ -93,21 +124,23 @@ public class Unit    : MonoBehaviour {
 			
 		}else{
 			if (tile.transform.GetComponent<TileScript>().up != null){
-				showAccessibleTiles(tile.transform.GetComponent<TileScript>().up,num-1);
+				showAtkAccessibleTiles(tile.transform.GetComponent<TileScript>().up,num-1);
+				gm.accessibleTiles.Add(tile.transform.GetComponent<TileScript>().up);
 			}
 			if (tile.transform.GetComponent<TileScript>().down != null){
-				showAccessibleTiles(tile.transform.GetComponent<TileScript>().down,num-1);
+				showAtkAccessibleTiles(tile.transform.GetComponent<TileScript>().down,num-1);
+				gm.accessibleTiles.Add(tile.transform.GetComponent<TileScript>().down);
 			}
 			if (tile.transform.GetComponent<TileScript>().left != null){
-				showAccessibleTiles(tile.transform.GetComponent<TileScript>().left,num-1);
+				showAtkAccessibleTiles(tile.transform.GetComponent<TileScript>().left,num-1);
+				gm.accessibleTiles.Add(tile.transform.GetComponent<TileScript>().left);
 			}
 			if (tile.transform.GetComponent<TileScript>().right != null){
-				showAccessibleTiles(tile.transform.GetComponent<TileScript>().right,num-1);
+				showAtkAccessibleTiles(tile.transform.GetComponent<TileScript>().right,num-1);
+				gm.accessibleTiles.Add(tile.transform.GetComponent<TileScript>().right);
 			}
 		}
 	}
-
-
 
 
 	///*
@@ -152,7 +185,6 @@ public class Unit    : MonoBehaviour {
 
 	}
 
-
 	public void setUnitFourType()
 	{
 		hp = 28;
@@ -168,7 +200,6 @@ public class Unit    : MonoBehaviour {
 
 	}
 
-
 	public void setUnitFiveType()
 	{
 		hp = 40;
@@ -181,7 +212,6 @@ public class Unit    : MonoBehaviour {
 		atkCost = 0;//not final
 		unitRole = 503;//Utility
 	}
-
 
 	public void setUnitSixType()
 	{
@@ -197,7 +227,6 @@ public class Unit    : MonoBehaviour {
 		unitRole = 504;//BuffDebuff
 	}
 
-
 	public void setUnitSevenType()
 	{
 		hp = 25;
@@ -211,7 +240,6 @@ public class Unit    : MonoBehaviour {
 
 		unitRole = 505;//MeleeTank
 	}
-
 
 	public void setUnitEightType()
 	{
@@ -227,7 +255,6 @@ public class Unit    : MonoBehaviour {
 		unitRole = 506;//Healer
 	}
 
-
 	public void setUnitNineType()
 	{
 		hp = 22;
@@ -241,7 +268,7 @@ public class Unit    : MonoBehaviour {
 
 		unitRole = 500;//Ranged
 	}
-
+	
 	//Guardian
 	public void setUnitTenType()
 	{
@@ -326,7 +353,6 @@ public class Unit    : MonoBehaviour {
 			setUnitElevenType();
 		}
 	}
-
 
 
 }

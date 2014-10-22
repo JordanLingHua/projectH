@@ -71,6 +71,18 @@ public class TileManager : MonoBehaviour {
 	
 	}
 	
+	//Resets color of tiles
+	public void clearAllTiles(){	
+		for (int i = 0; i < xTiles; i ++){
+			
+			for (int k = 0; k < yTiles; k++){
+				if (tiles[i,k].GetComponent<TileScript>().occupied == 0){
+					tiles[i, k].renderer.material.color = Color.white;
+				}
+			}
+		}
+	}
+	
 	void Update () {
 	
 	}
