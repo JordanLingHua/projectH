@@ -21,6 +21,8 @@ public class GameProcess : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+		playerName = "joey";
+
 		uniClock = new Stopwatch();
 
 		//play = false;
@@ -78,6 +80,16 @@ public class GameProcess : MonoBehaviour {
 			else if (tokens[0].Equals("hasLoggedOut"))
 			{
 				GameObject.Find("ListOfPlayers").GetComponent<ListOfPlayersScript>().removePlayer(tokens[1]);
+
+				if (playerName.Equals(tokens[1]))
+				{
+					Application.LoadLevel(0);
+
+					// KILL THREAD AND SERVER CONNECTION
+					returnSocket().t.Abort();
+					returnSocket().endThread();
+					returnSocket().Disconnect();
+				}
 			}
 
 			//alreadyLoggedIn\\username
@@ -85,6 +97,13 @@ public class GameProcess : MonoBehaviour {
 			{
 				GameObject.Find("Login_GUI").GetComponent<LoginScreenGUI>().guiText.text =
 					tokens[1] + " is already logged in!";
+			}
+
+			//alreadyLoggedIn\\username
+			else if (tokens[0].Equals("startGame"))
+			{
+				DontDestroyOnLoad(this);
+				Application.LoadLevel(3);
 			}
 
 			else

@@ -29,14 +29,14 @@ public class SetupScreenGUI : MonoBehaviour {
 			
 			if ( GUI.Button( new Rect( Screen.width - 160, Screen.height / 2 - 25, 80, 20), "Back"))
 			{
-				DontDestroyOnLoad(gp);
+				//DontDestroyOnLoad(gp);
 				Application.LoadLevel(1);
 			}
 			
 			if ( GUI.Button( new Rect( Screen.width - 160, Screen.height / 2 - 0, 80, 20), "Logout"))
 			{
 				//send a disconnect packet
-				//gp.returnSocket().SendTCPPacket("logout\\" + gp.playerName);
+				gp.returnSocket().SendTCPPacket("logout\\" + gp.playerName);
 				
 				//keep the gameprocess object intact and return to main menu (level 0)
 				Destroy(GameObject.Find ("ListOfPlayers"));
