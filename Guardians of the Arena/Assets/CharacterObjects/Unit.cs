@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Unit    : MonoBehaviour {
 
@@ -11,7 +12,6 @@ public class Unit    : MonoBehaviour {
 	public bool atkd, mvd;
 
 	public bool invincible;
-	public bool destroyed;
 
 	//unit cost will be utilized here or elsewhere
 	//public string unitRole;//name called in switch statement here or elsewhere
@@ -59,36 +59,158 @@ public class Unit    : MonoBehaviour {
 	void Start () {
 
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
-
-
-		ID = 0;//Will be set to a propper ID, assuming that function setUnitType is called
-		invincible = false;
-		destroyed = false;
-
-
 	}	
 	
 	void Update () {
 	}
-
-    void OnMouseDown() {
-		gm.selectedUnit = this;
-		this.transform.parent.gameObject.transform.parent.GetComponent<TileManager>().clearAllTiles();
-		gm.uInfo.text = "HP: " + hp + "/" + maxHP + "\nArmor: " + armor + "\nDamage: " + atk;
+	
+	void OnMouseEnter(){
+		//show unit info when hovering over it
+		string info = "HP: " + hp + "/" + maxHP + "\nArmor: " + armor + "\nDamage: " + atk;
+		if (invincible){
+			info+="\nINVINCIBLE";
+		}
+		if (gm.gameState == 1 && mvd){
+			info += "\nAlready moved";
+		}
+		if (gm.gameState == 2 && atkd){
+			info += "\nAlready attacked";
+		}
+		gm.uInfo.text = info;
 		
-		//if player is moving a piece
-		if (gm.gameState == 1){
-			if (!mvd){
-				showMvAccessibleTiles(this.transform.parent.gameObject,mvRange);
-			}
-		//if player is attacking with a piece	
-		}else if (gm.gameState == 2){
-			if (!atkd){
-				showAtkAccessibleTiles(this.transform.parent.gameObject,atkRange);
+	}
+	
+	void OnMouseExit(){
+		//clear unit info when not hovering over it
+		gm.uInfo.text  = "";
+	}
+	
+    void OnMouseDown() {
+		//Attack this piece if:
+		//this unit is not the currently selected unit (no attacking self)
+		//the game is in attack mode
+		//the unit selected is in range of the selected unit
+		if (gm.selectedUnit != this && gm.gameState == 2 && gm.accessibleTiles.Contains(this.transform.parent.gameObject)){
+			attackUnit();
+		}else{
+			selectUnit ();
+		}
+    }
+	
+	void playerSSKillable(){
+		foreach (Unit x in gm.playerUnits){
+			if (x.ID == 20){
+				x.invincible = false;
+				break;
 			}
 		}
-
-    }
+	}
+	
+	void enemySSKillable(){
+		foreach (Unit x in gm.enemyUnits){
+			if (x.ID == 20){
+				x.invincible = false;
+				break;
+			}
+		}
+	}
+	
+	void attackUnit(){
+		if (gm.pMana >= gm.selectedUnit.GetComponent<Unit>().atkCost){
+			gm.pMana -= gm.selectedUnit.GetComponent<Unit>().atkCost;
+			gm.selectedUnit.transform.GetComponent<Unit>().atkd = true;
+			
+			if (!invincible){
+				gm.combatLog.text = "Combat Log:\nDealt " + (int)(gm.selectedUnit.transform.GetComponent<Unit>().atk * ((100 - this.armor) * 0.01))+ " damage!";
+				this.hp -= (int)(gm.selectedUnit.transform.GetComponent<Unit>().atk * ((100 - this.armor) * 0.01));
+				
+				//if the unit attacked was killed, remove it from the board and unit list
+				if (this.hp <=0){
+					
+					
+					//make the soulstone vulnerable if the player guardian was killed
+					if (this.ID == 19){
+						if (gm.playerUnits.Contains(this)){
+							playerSSKillable();
+						}else{
+							enemySSKillable();
+						}
+					}
+					
+					
+					if (this.ID == 20){
+						if(gm.playerUnits.Contains(this)){
+						
+							gm.combatLog.text = "Player 2 has won!";
+						}else{
+							gm.combatLog.text = "Player 1 has won!";
+						}
+					} 
+						
+						
+					if (gm.playerUnits.Contains(this)){
+						gm.playerUnits.Remove(this);
+					}else{
+						gm.enemyUnits.Remove(this);
+					}
+					this.transform.parent.GetComponent<TileScript>().occupied = 0;
+					this.transform.parent.GetComponent<TileScript>().objectOccupyingTile = null;
+					Destroy(gameObject);
+					
+				}
+			}else{
+				gm.combatLog.text = "Combat Log:\nTarget is invincible!";
+			}
+			//clean up the board colors
+			gm.accessibleTiles.Clear();
+			this.transform.parent.gameObject.transform.parent.GetComponent<TileManager>().clearAllTiles();
+			
+			
+		}else{
+			gm.combatLog.text = "Combat Log:\nNot enough mana";
+		}
+	}
+	
+	void selectUnit(){
+		gm.selectedUnit = this;
+		gm.accessibleTiles.Clear();
+		
+		this.transform.parent.gameObject.transform.parent.GetComponent<TileManager>().clearAllTiles();
+		//if player is moving a piece
+		if (gm.gameState == 1){
+			showMvTiles();
+		//if player is attacking with a piece	
+		}else if (gm.gameState == 2){
+			showAtkTiles();
+		}
+		
+	}
+	
+	public void showMvTiles(){
+		if (!mvd){
+			showMvAccessibleTiles(this.transform.parent.gameObject,mvRange);
+			//can't move to the tile it's in
+			gm.accessibleTiles.Remove(this.transform.parent.gameObject);
+			
+			//can't move to tiles that it's ally occupies
+			List<GameObject> temp = new List<GameObject>();
+			foreach (GameObject tile in gm.accessibleTiles){
+				if (tile.transform.GetComponent<TileScript>().occupied !=0){
+					temp.Add(tile);
+				}
+			}
+			foreach (GameObject tile in temp){
+				gm.accessibleTiles.Remove(tile);
+			}
+		}
+	}
+	
+	public void showAtkTiles(){
+		if (!atkd){
+			showAtkAccessibleTiles(this.transform.parent.gameObject,atkRange);
+			gm.accessibleTiles.Remove(this.transform.parent.gameObject);
+		}
+	}
 	
 	void showMvAccessibleTiles(GameObject tile, int num){
 		if (tile.transform.GetComponent<TileScript>().occupied == 0){
@@ -141,8 +263,7 @@ public class Unit    : MonoBehaviour {
 			}
 		}
 	}
-
-
+	
 	///*
 	public void setUnitOneType(){
 		hp = 18;
