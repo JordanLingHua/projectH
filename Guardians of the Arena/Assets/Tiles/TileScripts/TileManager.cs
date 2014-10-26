@@ -140,6 +140,7 @@ public class TileManager : MonoBehaviour {
 										            new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
 										            new Quaternion());
 		tree.transform.parent = placeTile.transform;
+		tree.GetComponent<Unit> ().makeTree ();
 		placeTile.objectOccupyingTile = tree;
 		placeTile.gameObject.renderer.material.color = Color.gray;
 		
