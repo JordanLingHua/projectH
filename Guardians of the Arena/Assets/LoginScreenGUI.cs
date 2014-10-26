@@ -34,7 +34,7 @@ public class LoginScreenGUI : MonoBehaviour {
 		password = GUI.PasswordField(new Rect(Screen.width / 2 - 55, Screen.height / 2 - 50, 125, 20), password, '*', 30);
 		ip = GUI.TextField(new Rect(Screen.width / 2 - 55, Screen.height / 2 - 25, 125, 20), ip, 30);
 
-		if(GUI.Button(new Rect(Screen.width / 2 - 50, Screen.height / 2 + 30, 50, 20), "Login"))
+		if(GUI.Button(new Rect(Screen.width / 2 - 50, Screen.height / 2 + 30, 50, 20), "Login") || Event.current.keyCode == KeyCode.Return)
 		{
 			if (!ip.Equals(""))
 				process.returnSocket().setIP(ip);

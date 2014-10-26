@@ -26,7 +26,7 @@ public class MainMenuGUI : MonoBehaviour {
 			if (!chat.Equals(""))
 			{
 				//gp.returnSocket().sendTCPPacket(gp.clientName + "\\" + chat;
-				globalChat.addLineToChat("joey" , chat);
+				globalChat.addLineToChat(gp.playerName , chat);
 				chat = "";
 			}
 		}

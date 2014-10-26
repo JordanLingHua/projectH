@@ -46,6 +46,8 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\CameraScript1.cs" />
+     <Compile Include="Assets\CameraScript2.cs" />
      <Compile Include="Assets\CharacterObjects\Unit.cs" />
      <Compile Include="Assets\GameManaging\GameManager.cs" />
      <Compile Include="Assets\GameProcess.cs" />

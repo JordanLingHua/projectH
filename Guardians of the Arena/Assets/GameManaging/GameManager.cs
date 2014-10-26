@@ -47,11 +47,11 @@ public class GameManager : MonoBehaviour {
 		
 		
 		timerText.text = "Time Left: " + (int)timer;
-		timer -= Time.deltaTime;
-	    if ( timer < 0 ){
-			
-			nextTurn ();
-	    }
+//		timer -= Time.deltaTime;
+//	    if ( timer < 0 ){
+//			
+//			nextTurn ();
+//	    }
 	}
 	
 	void OnGUI(){

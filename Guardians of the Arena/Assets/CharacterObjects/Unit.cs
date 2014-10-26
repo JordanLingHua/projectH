@@ -7,7 +7,7 @@ public class Unit    : MonoBehaviour {
 	//These get set depending on the function call used on this class
 
 	//All these are public, so we can modify them all for now.  
-    public int unitNum, xpos, ypos, unitType;
+    public int unitID, xpos, ypos, unitType;
 	public int hp,maxHP,armor,atk,mvRange,atkRange,mvCost,atkCost;
 	public bool atkd, mvd;
 
