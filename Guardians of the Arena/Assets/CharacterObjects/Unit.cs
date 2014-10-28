@@ -3,16 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Unit    : MonoBehaviour {
-
+	
 	//These get set depending on the function call used on this class
-
+	
 	//All these are public, so we can modify them all for now.  
-    public int unitID, xpos, ypos, unitType;
+	public int unitID, xpos, ypos, unitType;
 	public int hp,maxHP,armor,atk,mvRange,atkRange,mvCost,atkCost;
 	public bool atkd, mvd;
 	public string name = "";
 	public bool invincible;
-
+	
 	//unit cost will be utilized here or elsewhere
 	//public string unitRole;//name called in switch statement here or elsewhere
 	//change unitRole to int if we can do defines for each unit role in this code or elsewhere
@@ -51,13 +51,13 @@ public class Unit    : MonoBehaviour {
 	 * DO NOT DELETE THIS COMMENT!!!!//Made them 10 to 20 in case we need to send as byte to server and back
 	 * 
 	 */
-
+	
 	int ID;
-
+	
 	GameManager gm;
 	
 	void Start () {
-
+		
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 	}	
 	
@@ -67,21 +67,21 @@ public class Unit    : MonoBehaviour {
 	void OnMouseEnter(){
 		//show unit info when hovering over it
 		string info = name + "\nHP: " + hp + "/" + maxHP + "\nArmor: " + armor;
-		if (gm.gameState == 1 || gm.gameState == 3) {
+		if (gm.gs == GameManager.gameState.playerMv|| gm.gs == GameManager.gameState.opponentMv) {
 			info += mvCost > 0? "\nMove Cost: " + mvCost : "";
 		} else {
 			info += atkCost > 0? "\nAttack Cost: " + atkCost : "";
 		}
-
-
+		
+		
 		info += atk > 0? "\nDamage: " + atk : "";
 		if (invincible){
 			info+="\nINVINCIBLE";
 		}
-		if (gm.gameState == 1 && mvd){
+		if (gm.gs == GameManager.gameState.playerMv && mvd){
 			info += "\nAlready moved";
 		}
-		if (gm.gameState == 2 && atkd){
+		if (gm.gs == GameManager.gameState.playerAtk && atkd){
 			info += "\nAlready attacked";
 		}
 		gm.uInfo.text = info;
@@ -93,17 +93,17 @@ public class Unit    : MonoBehaviour {
 		gm.uInfo.text  = "";
 	}
 	
-    void OnMouseDown() {
+	void OnMouseDown() {
 		//Attack this piece if:
 		//this unit is not the currently selected unit (no attacking self)
 		//the game is in attack mode
 		//the unit selected is in range of the selected unit
-		if (gm.selectedUnit != this && gm.gameState == 2 && gm.accessibleTiles.Contains(this.transform.parent.gameObject)){
+		if (gm.selectedUnit != this && gm.gs == GameManager.gameState.playerAtk && gm.accessibleTiles.Contains(this.transform.parent.GetComponent<TileScript>())){
 			attackUnit();
 		}else{
 			selectUnit ();
 		}
-    }
+	}
 	
 	void playerSSKillable(){
 		foreach (Unit x in gm.playerUnits){
@@ -129,8 +129,8 @@ public class Unit    : MonoBehaviour {
 			gm.selectedUnit.transform.GetComponent<Unit>().atkd = true;
 			
 			if (!invincible){
-				gm.combatLog.text = "Combat Log:\nDealt " + (int)(gm.selectedUnit.transform.GetComponent<Unit>().atk * ((100 - this.armor) * 0.01))+ " damage!";
-				this.hp -= (int)(gm.selectedUnit.transform.GetComponent<Unit>().atk * ((100 - this.armor) * 0.01));
+				gm.combatLog.text = "Combat Log:\nDealt " + (int)(gm.selectedUnit.GetComponent<Unit>().atk * ((100 - this.armor) * 0.01))+ " damage!";
+				this.hp -= (int)(gm.selectedUnit.GetComponent<Unit>().atk * ((100 - this.armor) * 0.01));
 				
 				//if the unit attacked was killed, remove it from the board and unit list
 				if (this.hp <=0){
@@ -148,20 +148,20 @@ public class Unit    : MonoBehaviour {
 					
 					if (this.ID == 20){
 						if(gm.playerUnits.Contains(this)){
-						
+							
 							gm.combatLog.text = "Player 2 has won!";
 						}else{
 							gm.combatLog.text = "Player 1 has won!";
 						}
 					} 
-						
-						
+					
+					
 					if (gm.playerUnits.Contains(this)){
 						gm.playerUnits.Remove(this);
 					}else{
 						gm.enemyUnits.Remove(this);
 					}
-					this.transform.parent.GetComponent<TileScript>().occupied = 0;
+					this.transform.parent.GetComponent<TileScript>().occupied =  TileScript.occupiedBy.nothing;
 					this.transform.parent.GetComponent<TileScript>().objectOccupyingTile = null;
 					Destroy(gameObject);
 					
@@ -185,10 +185,10 @@ public class Unit    : MonoBehaviour {
 		
 		this.transform.parent.gameObject.transform.parent.GetComponent<TileManager>().clearAllTiles();
 		//if player is moving a piece
-		if (gm.gameState == 1){
+		if (gm.gs == GameManager.gameState.playerMv){
 			showMvTiles();
-		//if player is attacking with a piece	
-		}else if (gm.gameState == 2){
+			//if player is attacking with a piece	
+		}else if (gm.gs == GameManager.gameState.playerAtk ){
 			showAtkTiles();
 		}
 		
@@ -196,18 +196,18 @@ public class Unit    : MonoBehaviour {
 	
 	public void showMvTiles(){
 		if (!mvd){
-			showMvAccessibleTiles(this.transform.parent.gameObject,mvRange);
+			showMvAccessibleTiles(this.transform.parent.GetComponent<TileScript>(),mvRange);
 			//can't move to the tile it's in
-			gm.accessibleTiles.Remove(this.transform.parent.gameObject);
+			gm.accessibleTiles.Remove(this.transform.parent.GetComponent<TileScript>());
 			
 			//can't move to tiles that it's ally occupies
-			List<GameObject> temp = new List<GameObject>();
-			foreach (GameObject tile in gm.accessibleTiles){
-				if (tile.transform.GetComponent<TileScript>().occupied !=0){
+			List<TileScript> temp = new List<TileScript>();
+			foreach (TileScript tile in gm.accessibleTiles){
+				if (tile.occupied != TileScript.occupiedBy.nothing){
 					temp.Add(tile);
 				}
 			}
-			foreach (GameObject tile in temp){
+			foreach (TileScript tile in temp){
 				gm.accessibleTiles.Remove(tile);
 			}
 		}
@@ -215,73 +215,70 @@ public class Unit    : MonoBehaviour {
 	
 	public void showAtkTiles(){
 		if (!atkd){
-			showAtkAccessibleTiles(this.transform.parent.gameObject,atkRange);
-			gm.accessibleTiles.Remove(this.transform.parent.gameObject);
-			this.transform.parent.renderer.material.color = this.transform.parent.GetComponent<TileScript>().occupied == 1? Color.blue : Color.red;
+			showAtkAccessibleTiles(this.transform.parent.GetComponent<TileScript>(),atkRange);
+			gm.accessibleTiles.Remove(this.transform.parent.GetComponent<TileScript>());
+			this.transform.parent.renderer.material.color = this.transform.parent.GetComponent<TileScript>().occupied == TileScript.occupiedBy.friendly? Color.blue : Color.red;
 		}
 	}
 	
-	void showMvAccessibleTiles(GameObject tile, int num){
-		if (tile.transform.GetComponent<TileScript>().occupied == 0){
+	void showMvAccessibleTiles(TileScript tile, int num){
+		TileScript tileS = tile.transform.GetComponent<TileScript>();
+		
+		if (tileS.occupied == TileScript.occupiedBy.nothing){
 			tile.renderer.material.color = Color.green;
 		}
-
-		if (num == 0){
-
-			
-		}else{
-			if (tile.transform.GetComponent<TileScript>().up != null && tile.transform.GetComponent<TileScript>().up.transform.GetComponent<TileScript>().occupied != 2){
-				showMvAccessibleTiles(tile.transform.GetComponent<TileScript>().up,num-1);
-				gm.accessibleTiles.Add(tile.transform.GetComponent<TileScript>().up);
+		
+		if (num!=0){
+			if (tileS.up != null && tileS.up.transform.GetComponent<TileScript>().occupied != TileScript.occupiedBy.neutral){
+				showMvAccessibleTiles(tileS.up.GetComponent<TileScript>(),num-1);
+				gm.accessibleTiles.Add(tileS.up.GetComponent<TileScript>());
 			}
-			if (tile.transform.GetComponent<TileScript>().down != null && tile.transform.GetComponent<TileScript>().down.transform.GetComponent<TileScript>().occupied != 2){
-				showMvAccessibleTiles(tile.transform.GetComponent<TileScript>().down,num-1);
-				gm.accessibleTiles.Add(tile.transform.GetComponent<TileScript>().down);
+			if (tileS.down != null && tileS.down.transform.GetComponent<TileScript>().occupied != TileScript.occupiedBy.neutral){
+				showMvAccessibleTiles(tileS.down.GetComponent<TileScript>(),num-1);
+				gm.accessibleTiles.Add(tileS.down.GetComponent<TileScript>());
 			}
-			if (tile.transform.GetComponent<TileScript>().left != null && tile.transform.GetComponent<TileScript>().left.transform.GetComponent<TileScript>().occupied != 2) {
-				showMvAccessibleTiles(tile.transform.GetComponent<TileScript>().left,num-1);
-				gm.accessibleTiles.Add(tile.transform.GetComponent<TileScript>().left);
+			if (tileS.left != null && tileS.left.transform.GetComponent<TileScript>().occupied != TileScript.occupiedBy.neutral) {
+				showMvAccessibleTiles(tileS.left.GetComponent<TileScript>(),num-1);
+				gm.accessibleTiles.Add(tileS.left.GetComponent<TileScript>());
 			}
-			if (tile.transform.GetComponent<TileScript>().right != null && tile.transform.GetComponent<TileScript>().right.transform.GetComponent<TileScript>().occupied != 2){
-				showMvAccessibleTiles(tile.transform.GetComponent<TileScript>().right,num-1);
-				gm.accessibleTiles.Add(tile.transform.GetComponent<TileScript>().right);
+			if (tileS.right != null && tileS.right.transform.GetComponent<TileScript>().occupied != TileScript.occupiedBy.neutral){
+				showMvAccessibleTiles(tileS.right.GetComponent<TileScript>(),num-1);
+				gm.accessibleTiles.Add(tileS.right.GetComponent<TileScript>());
 			}	
 		}
 	}
 	
-	void showAtkAccessibleTiles(GameObject tile, int num){
+	void showAtkAccessibleTiles(TileScript tile, int num){
 		tile.renderer.material.color = new Color(1f,0.4f,0f, 0f);
-
-		if (num == 0){
-			
-		}else{
-			if (tile.transform.GetComponent<TileScript>().up != null){
-				showAtkAccessibleTiles(tile.transform.GetComponent<TileScript>().up,num-1);
-				gm.accessibleTiles.Add(tile.transform.GetComponent<TileScript>().up);
+		TileScript tileS = tile.transform.GetComponent<TileScript>();
+		if (num != 0){
+			if (tileS.up != null){
+				showAtkAccessibleTiles(tileS.up.GetComponent<TileScript>(),num-1);
+				gm.accessibleTiles.Add(tileS.up.GetComponent<TileScript>());
 			}
-			if (tile.transform.GetComponent<TileScript>().down != null){
-				showAtkAccessibleTiles(tile.transform.GetComponent<TileScript>().down,num-1);
-				gm.accessibleTiles.Add(tile.transform.GetComponent<TileScript>().down);
+			if (tileS.down != null){
+				showAtkAccessibleTiles(tileS.down.GetComponent<TileScript>(),num-1);
+				gm.accessibleTiles.Add(tileS.down.GetComponent<TileScript>());
 			}
-			if (tile.transform.GetComponent<TileScript>().left != null){
-				showAtkAccessibleTiles(tile.transform.GetComponent<TileScript>().left,num-1);
-				gm.accessibleTiles.Add(tile.transform.GetComponent<TileScript>().left);
+			if (tileS.left != null){
+				showAtkAccessibleTiles(tileS.left.GetComponent<TileScript>(),num-1);
+				gm.accessibleTiles.Add(tileS.left.GetComponent<TileScript>());
 			}
-			if (tile.transform.GetComponent<TileScript>().right != null){
-				showAtkAccessibleTiles(tile.transform.GetComponent<TileScript>().right,num-1);
-				gm.accessibleTiles.Add(tile.transform.GetComponent<TileScript>().right);
+			if (tileS.right != null){
+				showAtkAccessibleTiles(tileS.right.GetComponent<TileScript>(),num-1);
+				gm.accessibleTiles.Add(tileS.right.GetComponent<TileScript>());
 			}
 		}
 	}
-
-
+	
+	
 	public void makeTree(){
 		name = "Shrub";
 		hp = 1;
 		maxHP = 1;
 		armor = 0;
 	}
-
+	
 	///*
 	public void setUnitOneType(){
 		name = "Ranged Unit";
@@ -310,7 +307,7 @@ public class Unit    : MonoBehaviour {
 		//unitRole = "BuffDebuff";
 		unitRole = 504;//BuffDebuff
 	}
-
+	
 	public void setUnitThreeType()
 	{
 		name = "AoE Unit";
@@ -324,9 +321,9 @@ public class Unit    : MonoBehaviour {
 		atkCost = 3;
 		//unitRole = "AOE";//O is NOT a zero.  it is capital O
 		unitRole = 502;//AOE
-
+		
 	}
-
+	
 	public void setUnitFourType()
 	{
 		name = "AoE Unit";
@@ -340,9 +337,9 @@ public class Unit    : MonoBehaviour {
 		atkCost = 2;
 		//unitRole = "AOE";
 		unitRole = 502;//AOE
-
+		
 	}
-
+	
 	public void setUnitFiveType()
 	{
 		name = "Utility Unit";
@@ -356,7 +353,7 @@ public class Unit    : MonoBehaviour {
 		atkCost = 0;//not final
 		unitRole = 503;//Utility
 	}
-
+	
 	public void setUnitSixType()
 	{
 		name = "Buffing Unit";
@@ -368,10 +365,10 @@ public class Unit    : MonoBehaviour {
 		mvCost = 3;
 		atkRange = 0;//not final
 		atkCost = 0;//not final
-
+		
 		unitRole = 504;//BuffDebuff
 	}
-
+	
 	public void setUnitSevenType()
 	{
 		name = "Melee Tank";
@@ -383,10 +380,10 @@ public class Unit    : MonoBehaviour {
 		mvCost = 1;
 		atkRange = 1;
 		atkCost = 1;
-
+		
 		unitRole = 505;//MeleeTank
 	}
-
+	
 	public void setUnitEightType()
 	{
 		hp = 20;
@@ -397,10 +394,10 @@ public class Unit    : MonoBehaviour {
 		mvCost = 3;
 		atkRange = 0;//not final
 		atkCost = 6;
-
+		
 		unitRole = 506;//Healer
 	}
-
+	
 	public void setUnitNineType()
 	{
 		name = "Ranged Unit";
@@ -412,7 +409,7 @@ public class Unit    : MonoBehaviour {
 		mvCost = 2;
 		atkRange = 4;
 		atkCost = 3;
-
+		
 		unitRole = 500;//Ranged
 	}
 	
@@ -428,10 +425,10 @@ public class Unit    : MonoBehaviour {
 		mvCost = 3;
 		atkRange = 1;
 		atkCost = 1;
-
+		
 		unitRole = 505;//MeleeTank
 	}
-
+	
 	//Soulstone
 	public void setUnitElevenType()
 	{
@@ -444,18 +441,18 @@ public class Unit    : MonoBehaviour {
 		mvCost = 0;
 		atkRange = 0;
 		atkCost = 500;
-
+		
 		invincible = true;//can be changed later
 		unitRole = 507;//Kingpin
 	}
-
+	
 	//*/
-
+	
 	public void setUnitType(int unitID)
 	{
-
+		
 		ID = unitID;
-
+		
 		if(unitID == 10)
 		{
 			setUnitOneType();
@@ -502,8 +499,8 @@ public class Unit    : MonoBehaviour {
 			setUnitElevenType();
 		}
 	}
-
-
+	
+	
 }
 
 

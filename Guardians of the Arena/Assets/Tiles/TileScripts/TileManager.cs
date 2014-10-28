@@ -6,14 +6,15 @@ using System.Collections;
 //and don't pre-exist elsewhere.  
 
 public class TileManager : MonoBehaviour {
-
+	
 	private int xTiles = 16;
 	private int yTiles = 16;
 	public GameObject[,] tiles;
-
+	
 	public GameObject tile;
 	public GameObject environmentObject, cp;
 	public GameManager gm;
+	
 	void Start () {
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 		tiles = new GameObject[xTiles, yTiles];
@@ -27,12 +28,12 @@ public class TileManager : MonoBehaviour {
 				GameObject newtile = (GameObject)Instantiate(tile,
 				                                             position, 
 				                                             new Quaternion(0,0,0,0));
-
+				
 				tiles[i,j] = newtile;
 				newtile.transform.parent = this.transform;
 			}
 		}
-
+		
 		//loop through the array of tiles and assign neighbors accordingly
 		for (int i = 0; i < xTiles; i++) 
 		{
@@ -66,7 +67,7 @@ public class TileManager : MonoBehaviour {
 		addPresetTrees();
 		addPresetAllyUnits();
 		addPresetEnemyUnits();
-	
+		
 	}
 	
 	void addPresetTrees(){
@@ -74,7 +75,7 @@ public class TileManager : MonoBehaviour {
 		addTree (2,7);
 		addTree (3,7);
 		addTree (4,7);
-
+		
 		addTree (15,7);
 		addTree (13,7);
 		addTree (12,7);
@@ -85,7 +86,7 @@ public class TileManager : MonoBehaviour {
 		addTree (2,8);
 		addTree (3,8);
 		addTree (4,8);
-
+		
 		addTree (15,8);
 		addTree (13,8);
 		addTree (12,8);
@@ -115,7 +116,7 @@ public class TileManager : MonoBehaviour {
 		addUnit (7,0,19,true, 8);
 		addUnit (8,0,20,true, 9);
 	}
-
+	
 	void addPresetEnemyUnits(){
 		//melee units
 		addUnit (5,12,16,false, 10);
@@ -137,29 +138,29 @@ public class TileManager : MonoBehaviour {
 	void addTree(int x, int y){
 		TileScript placeTile = tiles[x,y].GetComponent<TileScript>();
 		GameObject tree = (GameObject)Instantiate(environmentObject, 
-										            new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
-										            new Quaternion());
+		                                          new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
+		                                          new Quaternion());
 		tree.transform.parent = placeTile.transform;
 		tree.GetComponent<Unit> ().makeTree ();
 		placeTile.objectOccupyingTile = tree;
 		placeTile.gameObject.renderer.material.color = Color.gray;
 		
-		placeTile.occupied = 2;
+		placeTile.occupied = TileScript.occupiedBy.neutral;
 	}
 	
 	void addUnit(int x, int y,int type, bool ally, int unitID){
 		TileScript placeTile = tiles[x,y].GetComponent<TileScript>();
 		GameObject unit = (GameObject)Instantiate(cp, 
-										            new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
-										            new Quaternion());
+		                                          new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
+		                                          new Quaternion());
 		unit.transform.parent = placeTile.transform;
 		placeTile.objectOccupyingTile = unit;
-
+		
 		
 		unit.GetComponent<Unit>().setUnitType(type);
 		unit.GetComponent<Unit> ().unitID = unitID;
 		
-		placeTile.occupied = ally? 1 : 3;
+		placeTile.occupied = ally? TileScript.occupiedBy.friendly : TileScript.occupiedBy.enemy;
 		
 		placeTile.gameObject.renderer.material.color = ally? Color.blue : Color.red;
 		
@@ -177,27 +178,24 @@ public class TileManager : MonoBehaviour {
 			for (int k = 0; k < yTiles; k++){
 				switch(tiles[i,k].GetComponent<TileScript>().occupied){
 					//empty tile
-					case 0:
-						tiles[i, k].renderer.material.color = Color.white;
-						break;
+				case TileScript.occupiedBy.nothing:
+					tiles[i, k].renderer.material.color = Color.white;
+					break;
 					//ally unit tile
-					case 1:
-						tiles[i, k].renderer.material.color = Color.blue;
-						break;
+				case TileScript.occupiedBy.friendly:
+					tiles[i, k].renderer.material.color = Color.blue;
+					break;
 					//neutral unit tile (shrubbery)
-					case 2:
-						tiles[i, k].renderer.material.color = Color.gray;
-						break;
+				case TileScript.occupiedBy.neutral:
+					tiles[i, k].renderer.material.color = Color.gray;
+					break;
 					//enemy unit tile
-					case 3:
-						tiles[i, k].renderer.material.color = Color.red;
-						break;
+				case TileScript.occupiedBy.enemy:
+					tiles[i, k].renderer.material.color = Color.red;
+					break;
 				}
 			}
 		}
 	}
 	
-	void Update () {
-		
-	}
 }
