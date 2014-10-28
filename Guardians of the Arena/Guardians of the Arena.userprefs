@@ -1,11 +1,17 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\GameManaging\GameManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\LoginScreenGUI.cs">
     <Files>
-      <File FileName="Assets\CharacterObjects\Unit.cs" Line="12" Column="24" />
-      <File FileName="Assets\Tiles\TileScripts\TileScript.cs" Line="79" Column="5" />
-      <File FileName="Assets\GameManaging\GameManager.cs" Line="8" Column="2" />
-      <File FileName="Assets\Tiles\TileScripts\TileManager.cs" Line="4" Column="1" />
+      <File FileName="Assets\Sockets.cs" Line="127" Column="1" />
+      <File FileName="Assets\LoginScreenGUI.cs" Line="67" Column="3" />
+      <File FileName="Assets\CharacterObjects\Unit.cs" Line="1" Column="1" />
+      <File FileName="Assets\Tiles\TileScripts\TileScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\GameManaging\GameManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Tiles\TileScripts\TileManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\MainMenuGUI.cs" Line="1" Column="1" />
+      <File FileName="Assets\globalChatScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\GameProcess.cs" Line="120" Column="38" />
+      <File FileName="Assets\CameraScript1.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

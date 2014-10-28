@@ -23,9 +23,9 @@ public class LoginScreenGUI : MonoBehaviour {
 		connected = false;
 		process = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 		latency = -1;
-		userName = "";
-		password = "";
-		ip = "";
+		userName = string.Empty;
+		password = string.Empty;
+		ip = string.Empty;
 	}
 	
 	void OnGUI () 
@@ -34,7 +34,7 @@ public class LoginScreenGUI : MonoBehaviour {
 		password = GUI.PasswordField(new Rect(Screen.width / 2 - 55, Screen.height / 2 - 50, 125, 20), password, '*', 30);
 		ip = GUI.TextField(new Rect(Screen.width / 2 - 55, Screen.height / 2 - 25, 125, 20), ip, 30);
 
-		if(GUI.Button(new Rect(Screen.width / 2 - 50, Screen.height / 2 + 30, 50, 20), "Login") || Event.current.keyCode == KeyCode.Return)
+		if(GUI.Button(new Rect(Screen.width / 2 - 50, Screen.height / 2 + 30, 50, 20), "Login"))
 		{
 			if (!ip.Equals(""))
 				process.returnSocket().setIP(ip);
@@ -65,8 +65,7 @@ public class LoginScreenGUI : MonoBehaviour {
 
 	public void loginFail()
 	{
-		userName = "";
-		password = "";
+		password = string.Empty;
 		guiText.text = "Invalid Login Info. Try Again.";
 	}
 
@@ -100,7 +99,7 @@ public class LoginScreenGUI : MonoBehaviour {
 
 	public void resetGuiText()
 	{
-		guiText.text = "";
+		guiText.text = string.Empty;
 	}
 	
 	void Update () 
@@ -112,7 +111,7 @@ public class LoginScreenGUI : MonoBehaviour {
 		int wordCount = 0 ;
 		string[] words = printStr.Split(' ');
 		
-		printStr = "";
+		printStr = string.Empty;
 		
 		for ( int i = 0 ; i < words.Length ; ++ i )
 		{

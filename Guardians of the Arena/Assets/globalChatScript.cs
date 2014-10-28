@@ -10,7 +10,7 @@ public class globalChatScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		chatLines = new ArrayList();
-		gChat.text = "";
+		gChat.text = string.Empty;
 		maxLinesToShow = 10;
 
 	}
@@ -24,7 +24,7 @@ public class globalChatScript : MonoBehaviour {
 
 	public void addLineToChat(string userName, string lineToAdd)
 	{
-		gChat.text = "";
+		gChat.text = string.Empty;
 		chatLines.Add (lineToAdd);
 
 		for (int i = chatLines.Count - maxLinesToShow <= 0 ? 0 : chatLines.Count - maxLinesToShow; i < chatLines.Count; i++)
