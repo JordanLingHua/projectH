@@ -11,11 +11,15 @@ public class TileScript : MonoBehaviour {
 	public GameObject left, right, down, up;
 	public GameObject objectOccupyingTile;
 	public int x,y;
+
+	public GameProcess gp;
 	
 	GameManager gm;
 	void Start () {
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 		this.GetComponent<BaseObject>().type = BaseObject.ObjectType.Tile;
+
+		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 	}
 		
 	//pathfinder algorithm for moving pieces
@@ -48,13 +52,20 @@ public class TileScript : MonoBehaviour {
 			if (gm.pMana >= gm.selectedUnit.GetComponent<Unit>().mvCost){
 				gm.pMana -= gm.selectedUnit.mvCost;
 				//move unit to clicked tile
+				int x1 = gm.selectedUnit.transform.parent.GetComponent<TileScript>().x;
+				int y1 = gm.selectedUnit.transform.parent.GetComponent<TileScript>().y;
+
 				this.occupied = gm.selectedUnit.transform.parent.GetComponent<TileScript>().occupied;
 				Vector3 newPos = new Vector3(this.transform.position.x,0,this.transform.position.z);
 				gm.selectedUnit.transform.position = newPos;
+
 				gm.accessibleTiles.Clear();
 				this.objectOccupyingTile = gm.selectedUnit.gameObject;
 				gm.selectedUnit.GetComponent<Unit>().mvd = true;
-				
+
+				int x2 = this.x;
+				int y2 = this.y;
+				gp.returnSocket().SendTCPPacket("game\\move\\" +gp.playerNumber + "\\" + gm.selectedUnit.unitID + "\\" + x1 + "\\" + y1 + "\\" + x2 + "\\" + y2);
 				
 				//remove unit from previous tile
 				gm.selectedUnit.transform.parent.GetComponent<TileScript>().occupied = 0;

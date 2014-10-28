@@ -7,10 +7,10 @@ public class Unit    : MonoBehaviour {
 	//These get set depending on the function call used on this class
 
 	//All these are public, so we can modify them all for now.  
-    public int unitNum, xpos, ypos, unitType;
+    public int unitID, xpos, ypos, unitType;
 	public int hp,maxHP,armor,atk,mvRange,atkRange,mvCost,atkCost;
 	public bool atkd, mvd;
-
+	public string name = "";
 	public bool invincible;
 
 	//unit cost will be utilized here or elsewhere
@@ -66,7 +66,15 @@ public class Unit    : MonoBehaviour {
 	
 	void OnMouseEnter(){
 		//show unit info when hovering over it
-		string info = "HP: " + hp + "/" + maxHP + "\nArmor: " + armor + "\nDamage: " + atk;
+		string info = name + "\nHP: " + hp + "/" + maxHP + "\nArmor: " + armor;
+		if (gm.gameState == 1 || gm.gameState == 3) {
+			info += mvCost > 0? "\nMove Cost: " + mvCost : "";
+		} else {
+			info += atkCost > 0? "\nAttack Cost: " + atkCost : "";
+		}
+
+
+		info += atk > 0? "\nDamage: " + atk : "";
 		if (invincible){
 			info+="\nINVINCIBLE";
 		}
@@ -209,6 +217,7 @@ public class Unit    : MonoBehaviour {
 		if (!atkd){
 			showAtkAccessibleTiles(this.transform.parent.gameObject,atkRange);
 			gm.accessibleTiles.Remove(this.transform.parent.gameObject);
+			this.transform.parent.renderer.material.color = this.transform.parent.GetComponent<TileScript>().occupied == 1? Color.blue : Color.red;
 		}
 	}
 	
@@ -216,7 +225,9 @@ public class Unit    : MonoBehaviour {
 		if (tile.transform.GetComponent<TileScript>().occupied == 0){
 			tile.renderer.material.color = Color.green;
 		}
+
 		if (num == 0){
+
 			
 		}else{
 			if (tile.transform.GetComponent<TileScript>().up != null && tile.transform.GetComponent<TileScript>().up.transform.GetComponent<TileScript>().occupied != 2){
@@ -239,9 +250,8 @@ public class Unit    : MonoBehaviour {
 	}
 	
 	void showAtkAccessibleTiles(GameObject tile, int num){
-		if (tile.transform.GetComponent<TileScript>().occupied == 0){
-			tile.renderer.material.color = Color.green;
-		}
+		tile.renderer.material.color = new Color(1f,0.4f,0f, 0f);
+
 		if (num == 0){
 			
 		}else{
@@ -263,9 +273,18 @@ public class Unit    : MonoBehaviour {
 			}
 		}
 	}
-	
+
+
+	public void makeTree(){
+		name = "Shrub";
+		hp = 1;
+		maxHP = 1;
+		armor = 0;
+	}
+
 	///*
 	public void setUnitOneType(){
+		name = "Ranged Unit";
 		hp = 18;
 		maxHP = 18;
 		armor = 8;
@@ -279,6 +298,7 @@ public class Unit    : MonoBehaviour {
 	}
 	
 	public void setUnitTwoType(){
+		name = "Buffing Unit";
 		hp = 30;
 		maxHP = 30;
 		armor = 10;
@@ -293,6 +313,7 @@ public class Unit    : MonoBehaviour {
 
 	public void setUnitThreeType()
 	{
+		name = "AoE Unit";
 		hp = 38;//hp can --//all other stats cannot --//some other stats ++ for growth
 		maxHP = 38;//max hp is constant//use as reference to hp
 		armor = 20;
@@ -308,6 +329,7 @@ public class Unit    : MonoBehaviour {
 
 	public void setUnitFourType()
 	{
+		name = "AoE Unit";
 		hp = 28;
 		maxHP = 28;
 		armor = 10;
@@ -323,6 +345,7 @@ public class Unit    : MonoBehaviour {
 
 	public void setUnitFiveType()
 	{
+		name = "Utility Unit";
 		hp = 40;
 		maxHP = 40;
 		armor = 50;
@@ -336,6 +359,7 @@ public class Unit    : MonoBehaviour {
 
 	public void setUnitSixType()
 	{
+		name = "Buffing Unit";
 		hp = 40;
 		maxHP = 40;
 		armor = 25;
@@ -350,6 +374,7 @@ public class Unit    : MonoBehaviour {
 
 	public void setUnitSevenType()
 	{
+		name = "Melee Tank";
 		hp = 25;
 		maxHP = 25;
 		armor = 35;
@@ -378,6 +403,7 @@ public class Unit    : MonoBehaviour {
 
 	public void setUnitNineType()
 	{
+		name = "Ranged Unit";
 		hp = 22;
 		maxHP = 22;
 		armor = 10;
@@ -393,6 +419,7 @@ public class Unit    : MonoBehaviour {
 	//Guardian
 	public void setUnitTenType()
 	{
+		name = "Guardian";
 		hp = 40;
 		maxHP = 40;
 		armor = 60;
@@ -408,6 +435,7 @@ public class Unit    : MonoBehaviour {
 	//Soulstone
 	public void setUnitElevenType()
 	{
+		name = "Soulstone";
 		hp = 1;
 		maxHP = 1;
 		armor = 0;

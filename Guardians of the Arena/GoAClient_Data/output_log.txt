@@ -1,0 +1,64 @@
+Initialize engine version: 4.5.4f1 (e036f44c54c9)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 9.0c [nvd3dum.dll 9.18.13.4411]
+    Renderer: NVIDIA GeForce GTX 860M
+    Vendor:   NVIDIA
+    VRAM:     1972 MB (via DXGI)
+    Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=0 INTZ=1 RAWZ=0 NULL=1 RESZ=0 SlowINTZ=0
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Joey\Documents\GitHub\projectH\Guardians of the Arena\GoAClient_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Joey\Documents\GitHub\projectH\Guardians of the Arena\GoAClient_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Joey\Documents\GitHub\projectH\Guardians of the Arena\GoAClient_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\Joey\Documents\GitHub\projectH\Guardians of the Arena\GoAClient_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\Joey\Documents\GitHub\projectH\Guardians of the Arena\GoAClient_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Joey\Documents\GitHub\projectH\Guardians of the Arena\GoAClient_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Joey\Documents\GitHub\projectH\Guardians of the Arena\GoAClient_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
+Loading C:\Users\Joey\Documents\GitHub\projectH\Guardians of the Arena\GoAClient_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
+- Completed reload, in  0.041 seconds
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+Platform assembly: C:\Users\Joey\Documents\GitHub\projectH\Guardians of the Arena\GoAClient_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Joey\Documents\GitHub\projectH\Guardians of the Arena\GoAClient_Data\Managed\System.dll (this message is harmless)
+The MD5 hash of asdf is: 912ec803b2ce49e4a541068d495ab570.
+client\\1\\
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+loginSucceed\\asdf\\
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+UnloadTime: 0.711614 ms
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 135.
+Total: 1.544253 ms (FindLiveObjects: 0.023093 ms CreateObjectMapping: 0.021810 ms MarkObjects: 0.271131 ms  DeleteObjects: 0.008980 ms)
+
+hasLoggedIn\\asdf\\
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+hasLoggedIn\\\\
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+startGame\\2\\
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+UnloadTime: 0.630787 ms
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 184.
+Total: 1.570340 ms (FindLiveObjects: 0.024376 ms CreateObjectMapping: 0.023093 ms MarkObjects: 0.324588 ms  DeleteObjects: 0.020527 ms)
+
+1playernumber: 2
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+move\\2\\9\\3\\9\\5\\
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+

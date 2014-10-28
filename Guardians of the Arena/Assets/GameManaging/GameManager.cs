@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour {
 	
 	
 	public GUIText uInfo,mana,timerText,combatLog,suInfo;
-	//gamestate: player is moving a unit (1), attacking with a unit (2), enemy turn (3)
+	//gamestate: player is moving a unit (1), attacking with a unit (2), enemy turn and moving (3), enemy turn and attakcking (4);
 	public int gameState = 2, pMana = 1, maxMana = 1;
 	readonly int GAME_MAX_MANA = 8;
 	string buttonOption = "Attack";
@@ -47,18 +47,26 @@ public class GameManager : MonoBehaviour {
 		
 		
 		timerText.text = "Time Left: " + (int)timer;
-		timer -= Time.deltaTime;
-	    if ( timer < 0 ){
-			
-			nextTurn ();
-	    }
+//		timer -= Time.deltaTime;
+//	    if ( timer < 0 ){
+//			
+//			nextTurn ();
+//	    }
 	}
 	
 	void OnGUI(){
 		 
 		if (selectedUnit != null){
 			Unit script = selectedUnit.GetComponent<Unit>();
-			string info = "HP: " + script.hp + "/" + script.maxHP + "\nArmor: " + script.armor + "\nDamage: " + script.atk;
+			string info = script.name + "\nHP: " + script.hp + "/" + script.maxHP + "\nArmor: " + script.armor;
+			info +=  script.atk > 0? "\nDamage: " + script.atk : "";
+
+			if (gameState == 1 || gameState == 3) {
+				info += script.mvCost > 0? "\nMove Cost: " + script.mvCost : "";
+			} else {
+				info += script.atkCost > 0? "\nAttack Cost: " + script.atkCost : "";
+			}
+
 			if (script.invincible){
 				info+="\nINVINCIBLE";
 			}

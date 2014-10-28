@@ -9,7 +9,7 @@ public class TileManager : MonoBehaviour {
 
 	private int xTiles = 16;
 	private int yTiles = 16;
-	private GameObject[,] tiles;
+	public GameObject[,] tiles;
 
 	public GameObject tile;
 	public GameObject environmentObject, cp;
@@ -100,38 +100,38 @@ public class TileManager : MonoBehaviour {
 	
 	void addPresetAllyUnits(){
 		//melee units
-		addUnit (5,3,16,true);
-		addUnit (6,3,16,true);
-		addUnit (9,3,16,true);
-		addUnit (10,3,16,true);
+		addUnit (5,3,16,true, 0);
+		addUnit (6,3,16,true, 1);
+		addUnit (9,3,16,true, 2);
+		addUnit (10,3,16,true, 3);
 		
 		//ranged units
-		addUnit (5,2,10,true);
-		addUnit (6,2,10,true);
-		addUnit (9,2,10,true);
-		addUnit (10,2,10,true);
+		addUnit (5,2,10,true, 4);
+		addUnit (6,2,10,true, 5);
+		addUnit (9,2,10,true, 6);
+		addUnit (10,2,10,true, 7);
 		
 		//guardian and soulstone
-		addUnit (7,0,19,true);
-		addUnit (8,0,20,true);
+		addUnit (7,0,19,true, 8);
+		addUnit (8,0,20,true, 9);
 	}
 
 	void addPresetEnemyUnits(){
 		//melee units
-		addUnit (5,12,16,false);
-		addUnit (6,12,16,false);
-		addUnit (9,12,16,false);
-		addUnit (10,12,16,false);
+		addUnit (5,12,16,false, 10);
+		addUnit (6,12,16,false, 11);
+		addUnit (9,12,16,false, 12);
+		addUnit (10,12,16,false, 13);
 		
 		//ranged units
-		addUnit (5,13,10,false);
-		addUnit (6,13,10,false);
-		addUnit (9,13,10,false);
-		addUnit (10,13,10,false);
+		addUnit (5,13,10,false, 14);
+		addUnit (6,13,10,false, 15);
+		addUnit (9,13,10,false, 16);
+		addUnit (10,13,10,false, 17);
 		
 		//guardian and soulstone
-		addUnit (7,15,19,false);
-		addUnit (8,15,20,false);
+		addUnit (7,15,19,false, 18);
+		addUnit (8,15,20,false, 19);
 	}
 	
 	void addTree(int x, int y){
@@ -140,13 +140,14 @@ public class TileManager : MonoBehaviour {
 										            new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
 										            new Quaternion());
 		tree.transform.parent = placeTile.transform;
+		tree.GetComponent<Unit> ().makeTree ();
 		placeTile.objectOccupyingTile = tree;
 		placeTile.gameObject.renderer.material.color = Color.gray;
 		
 		placeTile.occupied = 2;
 	}
 	
-	void addUnit(int x, int y,int type, bool ally){
+	void addUnit(int x, int y,int type, bool ally, int unitID){
 		TileScript placeTile = tiles[x,y].GetComponent<TileScript>();
 		GameObject unit = (GameObject)Instantiate(cp, 
 										            new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
@@ -156,6 +157,7 @@ public class TileManager : MonoBehaviour {
 
 		
 		unit.GetComponent<Unit>().setUnitType(type);
+		unit.GetComponent<Unit> ().unitID = unitID;
 		
 		placeTile.occupied = ally? 1 : 3;
 		
