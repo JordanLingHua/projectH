@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour {
 	public gameState gs;
 	public int pMana = 1, maxMana = 1;
 	readonly int GAME_MAX_MANA = 8;
-	string buttonOption = "Attack";
+	public string buttonOption = "Attack";
 	TileManager tm;
 	
 	//Selected unit and available move squares
@@ -134,6 +134,9 @@ public class GameManager : MonoBehaviour {
 	}
 	
 	void nextTurn(){
+
+		gs = gameState.playerMv;
+
 		//reset game clock, mana, and increase max mana
 		timer = TIMER_LENGTH;
 		

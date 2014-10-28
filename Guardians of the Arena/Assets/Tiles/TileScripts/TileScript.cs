@@ -96,14 +96,21 @@ public class TileScript : MonoBehaviour {
 				
 				int x2 = this.x;
 				int y2 = this.y;
-				gp.returnSocket().SendTCPPacket("game\\move\\" +gp.playerNumber + "\\" + gm.selectedUnit.unitID + "\\" + x1 + "\\" + y1 + "\\" + x2 + "\\" + y2);
+				//gp.returnSocket().SendTCPPacket("game\\move\\" +gp.playerNumber + "\\" + gm.selectedUnit.unitID + "\\" + x1 + "\\" + y1 + "\\" + x2 + "\\" + y2);
 				
 				//remove unit from previous tile
-				gm.selectedUnit.transform.parent.GetComponent<TileScript>().occupied = 0;
+				gm.selectedUnit.transform.parent.GetComponent<TileScript>().occupied = occupiedBy.nothing;
 				gm.selectedUnit.transform.parent = gameObject.transform;
 				gm.selectedUnit.transform.parent.GetComponent<TileScript>().objectOccupyingTile = null;
-				
+
 				this.transform.parent.GetComponent<TileManager>().clearAllTiles();
+
+				//as if attack button was pushed
+				gm.gs =  GameManager.gameState.playerAtk;
+				gm.buttonOption = "Move";
+				if (gm.selectedUnit != null){
+					gm.selectedUnit.GetComponent<Unit>().showAtkTiles();
+				}
 				
 			}else{
 				gm.combatLog.text = "Combat Log:\nNot enough mana";

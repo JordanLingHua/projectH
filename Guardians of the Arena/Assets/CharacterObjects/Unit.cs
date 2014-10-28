@@ -10,7 +10,8 @@ public class Unit    : MonoBehaviour {
 	public int unitID, xpos, ypos, unitType;
 	public int hp,maxHP,armor,atk,mvRange,atkRange,mvCost,atkCost;
 	public bool atkd, mvd;
-	public string name = "";
+	public string name = string.Empty;
+	public string info = string.Empty;
 	public bool invincible;
 	
 	//unit cost will be utilized here or elsewhere
@@ -59,6 +60,7 @@ public class Unit    : MonoBehaviour {
 	void Start () {
 		
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+		info = string.Empty;
 	}	
 	
 	void Update () {
@@ -66,7 +68,13 @@ public class Unit    : MonoBehaviour {
 	
 	void OnMouseEnter(){
 		//show unit info when hovering over it
-		string info = name + "\nHP: " + hp + "/" + maxHP + "\nArmor: " + armor;
+		refreshUnitText ();
+		
+	}
+
+	void refreshUnitText()
+	{
+		info = name + "\nHP: " + hp + "/" + maxHP + "\nArmor: " + armor;
 		if (gm.gs == GameManager.gameState.playerMv|| gm.gs == GameManager.gameState.opponentMv) {
 			info += mvCost > 0? "\nMove Cost: " + mvCost : "";
 		} else {
@@ -85,7 +93,6 @@ public class Unit    : MonoBehaviour {
 			info += "\nAlready attacked";
 		}
 		gm.uInfo.text = info;
-		
 	}
 	
 	void OnMouseExit(){
@@ -98,12 +105,29 @@ public class Unit    : MonoBehaviour {
 		//this unit is not the currently selected unit (no attacking self)
 		//the game is in attack mode
 		//the unit selected is in range of the selected unit
-		if (gm.selectedUnit != this && gm.gs == GameManager.gameState.playerAtk && gm.accessibleTiles.Contains(this.transform.parent.GetComponent<TileScript>())){
+		if (gm.selectedUnit != this && gm.gs == GameManager.gameState.playerAtk 
+		    && gm.accessibleTiles.Contains(this.transform.parent.GetComponent<TileScript>()))
+		    {
 			attackUnit();
 		}else{
 			selectUnit ();
 		}
 	}
+
+//	bool checkProximity(){
+//		bool isInRange = false;
+//		foreach (TileScript t in gm.accessibleTiles)
+//		{
+//			if (t.gameObject == this.GetComponentInParent<TileScript>().gameObject)
+//			{
+//				isInRange = true;
+//				break;
+//			}
+//		}
+//		return isInRange;
+//
+//		//this.transform.GetComponentInParent<TileScript>().occupied == TileScript.occupiedBy.enemy;
+//	}
 	
 	void playerSSKillable(){
 		foreach (Unit x in gm.playerUnits){
@@ -172,6 +196,7 @@ public class Unit    : MonoBehaviour {
 			//clean up the board colors
 			gm.accessibleTiles.Clear();
 			this.transform.parent.gameObject.transform.parent.GetComponent<TileManager>().clearAllTiles();
+			refreshUnitText();
 			
 			
 		}else{
