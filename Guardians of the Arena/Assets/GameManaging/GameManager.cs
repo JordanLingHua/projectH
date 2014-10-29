@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour {
 	bool turn = true;
+	public bool movingPiece;
 	public enum gameState {playerMv,playerAtk,opponentMv,opponentAtk}
 	
 	public GUIText uInfo,mana,timerText,combatLog,suInfo;
@@ -97,7 +98,7 @@ public class GameManager : MonoBehaviour {
 				gs =  gameState.playerMv;
 				buttonOption = "Attack";
 				if (selectedUnit != null){
-					selectedUnit.GetComponent<Unit>().showMvTiles();
+					selectedUnit.GetComponent<Unit>().showMvTiles( (gs ==  GameManager.gameState.playerAtk  ||  gs ==  GameManager.gameState.playerMv ) ? Unit.allegiance.ally : Unit.allegiance.enemy);
 				}
 			}
 		}
@@ -134,14 +135,15 @@ public class GameManager : MonoBehaviour {
 	}
 	
 	void nextTurn(){
-
-		gs = gameState.playerMv;
+		if (!turn) {
+			gs = gameState.playerMv;
+		}else {
+			//gs = gameState.playerMv;
+			gs = gameState.opponentMv;
+		}
 
 		//reset game clock, mana, and increase max mana
 		timer = TIMER_LENGTH;
-		
-		//real code commented for single player testing
-		//pMana = ++maxMana;
 		
 		if (!turn){
 			if (maxMana < GAME_MAX_MANA)

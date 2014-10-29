@@ -144,7 +144,6 @@ public class GameProcess : MonoBehaviour {
 		TileScript to = tileManager.tiles[toX, toY].GetComponent<TileScript>();
 		
 		//add
-		to.occupied = from.transform.GetChild(0).transform.parent.GetComponent<TileScript>().occupied;
 		Vector3 newPos = new Vector3(to.transform.position.x,0,to.transform.position.z);
 		
 		from.transform.GetChild(0).transform.position = newPos;
@@ -154,7 +153,6 @@ public class GameProcess : MonoBehaviour {
 		from.transform.GetChild(0).GetComponent<Unit>().mvd = true;
 		
 		//remove
-		from.transform.GetChild(0).transform.parent.GetComponent<TileScript>().occupied = TileScript.occupiedBy.nothing;
 		from.transform.GetChild(0).transform.parent.GetComponent<TileScript>().objectOccupyingTile = null;
 		from.transform.GetChild(0).transform.parent = gameObject.transform;
 		

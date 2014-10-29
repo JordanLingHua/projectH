@@ -4,26 +4,20 @@ using System.Collections.Generic;
 
 public class TileScript : MonoBehaviour {
 	
-	private struct Node{
-		public TileScript parent;
+	private class Node{
+		public Node parent;
 		public TileScript myNode;
 		
-		public Node(TileScript newParent, TileScript newMyNode){
+		public Node(Node newParent, TileScript newMyNode){
 			parent = newParent;
 			myNode = newMyNode;
 		}
 	};
 	
-	//Describes what is occupying the tile, 0 for empty, 1 for a friendly unit, 2 for neutral, 3 for enemy
-	public enum occupiedBy {nothing,friendly,neutral,enemy};
-	
-	//public int occupied = 0;
-	public occupiedBy occupied = occupiedBy.nothing;
-	
 	public GameObject environmentObject, cp;
 	
 	public GameObject left, right, down, up;
-	public GameObject objectOccupyingTile;
+	public GameObject objectOccupyingTile = null;
 	public int x,y;
 	
 	public GameProcess gp;
@@ -36,40 +30,107 @@ public class TileScript : MonoBehaviour {
 		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 	}
 	
+	IEnumerator movePiece(Node current){
+		this.transform.parent.GetComponent<TileManager>().clearAllTiles();
+		Stack<GameObject> tiles = new Stack<GameObject>();
+		tiles.Push(this.gameObject);
+		
+		current.myNode.gameObject.renderer.material.color = Color.green;
+		while (current.parent != null){
+			tiles.Push(current.parent.myNode.gameObject);
+			current = current.parent;
+		}
+		
+		Vector3 newPos;
+		gm.movingPiece = true;
+		
+		while (tiles.Count !=0){
+			newPos = new Vector3(tiles.Peek().transform.position.x,0,tiles.Peek().transform.position.z);
+
+			tiles.Peek().renderer.material.color = gm.selectedUnit.alleg == Unit.allegiance.ally? Color.blue : Color.red;
+
+			gm.selectedUnit.transform.position = newPos;
+			yield return new WaitForSeconds(0.28f);
+			if (tiles.Count != 1){
+				if (tiles.Peek ().GetComponent<TileScript>().objectOccupyingTile == null){
+					tiles.Peek ().renderer.material.color = Color.white;
+					//ally unit tile
+				}else if (tiles.Peek ().GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.ally){
+					tiles.Peek ().renderer.material.color = Color.blue;
+					//neutral unit tile (shrubbery)
+				}else if (tiles.Peek ().GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.neutral){
+					tiles.Peek ().renderer.material.color = Color.gray;
+					//enemy unit tile
+				}else if (tiles.Peek ().GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.enemy) {
+					tiles.Peek ().renderer.material.color = Color.red;
+				}
+
+			} 
+			tiles.Pop();
+		}
+		gm.movingPiece = false;
+		objectOccupyingTile = gm.selectedUnit.gameObject;
+
+
+		
+		//as if attack button was pushed
+		gm.gs = gm.gs == GameManager.gameState.playerMv ? GameManager.gameState.playerAtk : GameManager.gameState.opponentAtk;
+		gm.buttonOption = "Move";
+		if (gm.selectedUnit != null){
+			gm.selectedUnit.GetComponent<Unit>().showAtkTiles();
+		}
+	}
+
 	//pathfinder algorithm for moving pieces
-	//	void pathFinder(){
-	//		//use tiles
-	//		Queue<TileScript> open = new Queue<TileScript>();
-	//		Queue<TileScript> closed = new Queue<TileScript>();
-	//		bool done = false;
-	//		
-	//		//start node
-	//		open.Enqueue(gm.selectedUnit.transform.parent.GetComponent<TileScript>());
-	//		
-	//		//endnode
-	//		TileScript end = this;
-	//		pathFind(new Node(null,gm.selectedUnit.transform.parent.GetComponent<TileScript>()),end);
-	//	}
-	
-	//	Node pathFind(Node attempt, TileScript end){
-	//		if (attempt.myNode == end){
-	//			return attempt;
-	//		}	
-	//		if (attempt.myNode.right != null && gm.accessibleTiles.Contains(attempt.myNode.right.GetComponent<TileScript>())){
-	//			return pathFind (new Node(attempt.myNode,attempt.myNode.right.GetComponent<TileScript>()),end);
-	//		}
-	//		if (attempt.myNode.left != null && gm.accessibleTiles.Contains(attempt.myNode.left.GetComponent<TileScript>())){
-	//			return pathFind (new Node(attempt.myNode,attempt.myNode.left.GetComponent<TileScript>()),end);
-	//		}
-	//		if (attempt.myNode.down != null && gm.accessibleTiles.Contains(attempt.myNode.down.GetComponent<TileScript>())){
-	//			return pathFind (new Node(attempt.myNode,attempt.myNode.down.GetComponent<TileScript>()),end);
-	//		}
-	//		if (attempt.myNode.up != null && gm.accessibleTiles.Contains(attempt.myNode.up.GetComponent<TileScript>())){
-	//			return pathFind (new Node(attempt.myNode,attempt.myNode.up.GetComponent<TileScript>()),end);
-	//		}
-	//		return attempt;
-	//	}
-	
+	void pathFinder(){
+		//use tiles
+		Queue<Node> open = new Queue<Node>();
+		Queue<Node> closed = new Queue<Node>();
+
+		//start node
+		open.Enqueue(new Node(null,gm.selectedUnit.transform.parent.GetComponent<TileScript>()));
+		
+		//endnode
+		TileScript end = this;
+		
+		
+		while (open.Count != 0){
+			Node current = open.Dequeue();
+			
+			//print path!
+			if (current.myNode.Equals (end)){
+				
+				
+				StartCoroutine(movePiece(current));
+				break;
+				
+			}
+			closed.Enqueue(current);
+			
+			if (current.myNode.right != null && gm.accessibleTiles.Contains(current.myNode.right.GetComponent<TileScript>()) && !closed.Contains(new Node (current,current.myNode.right.GetComponent<TileScript>()))){
+				if (!open.Contains(new Node(current,current.myNode.right.GetComponent<TileScript>()))){
+					open.Enqueue(new Node(current,current.myNode.right.GetComponent<TileScript>()));
+				}
+			}
+			if (current.myNode.left != null && gm.accessibleTiles.Contains(current.myNode.left.GetComponent<TileScript>()) && !closed.Contains(new Node (current,current.myNode.left.GetComponent<TileScript>()))){
+				if (!open.Contains(new Node(current,current.myNode.left.GetComponent<TileScript>()))){
+					open.Enqueue(new Node(current,current.myNode.left.GetComponent<TileScript>()));
+				}
+			}
+			if (current.myNode.up != null && gm.accessibleTiles.Contains(current.myNode.up.GetComponent<TileScript>()) && !closed.Contains(new Node (current,current.myNode.up.GetComponent<TileScript>()))){
+				if (!open.Contains(new Node(current,current.myNode.up.GetComponent<TileScript>()))){
+					open.Enqueue(new Node(current,current.myNode.up.GetComponent<TileScript>()));
+				}
+			}
+			if (current.myNode.down != null && gm.accessibleTiles.Contains(current.myNode.down.GetComponent<TileScript>()) && !closed.Contains(new Node (current,current.myNode.down.GetComponent<TileScript>()))){
+				if (!open.Contains(new Node(current,current.myNode.down.GetComponent<TileScript>()))){
+					open.Enqueue(new Node(current,current.myNode.down.GetComponent<TileScript>()));
+				}
+			}
+			
+		} 
+	}
+
 	
 	void OnMouseDown(){
 		//set tile selected coord in GM script
@@ -77,18 +138,22 @@ public class TileScript : MonoBehaviour {
 		gm.tsy = y;
 		
 		//move unit selected to this tile if it can go there
-		if (gm.accessibleTiles.Contains(this) && gm.gs ==  GameManager.gameState.playerMv){
+		if (gm.accessibleTiles.Contains(this) && this.objectOccupyingTile == null && (gm.gs ==  GameManager.gameState.playerMv ||gm.gs ==  GameManager.gameState.opponentMv  )){
 			
 			//enough mana to move piece
 			if (gm.pMana >= gm.selectedUnit.GetComponent<Unit>().mvCost){
 				gm.pMana -= gm.selectedUnit.mvCost;
+
+				pathFinder ();
+
+				//remove unit from previous tile
+				gm.selectedUnit.transform.parent.GetComponent<TileScript>().objectOccupyingTile = null;
+				gm.selectedUnit.transform.parent = gameObject.transform;
+
+
 				//move unit to clicked tile
 				int x1 = gm.selectedUnit.transform.parent.GetComponent<TileScript>().x;
 				int y1 = gm.selectedUnit.transform.parent.GetComponent<TileScript>().y;
-				
-				this.occupied = gm.selectedUnit.transform.parent.GetComponent<TileScript>().occupied;
-				Vector3 newPos = new Vector3(this.transform.position.x,0,this.transform.position.z);
-				gm.selectedUnit.transform.position = newPos;
 				
 				gm.accessibleTiles.Clear();
 				this.objectOccupyingTile = gm.selectedUnit.gameObject;
@@ -96,22 +161,7 @@ public class TileScript : MonoBehaviour {
 				
 				int x2 = this.x;
 				int y2 = this.y;
-				//gp.returnSocket().SendTCPPacket("game\\move\\" +gp.playerNumber + "\\" + gm.selectedUnit.unitID + "\\" + x1 + "\\" + y1 + "\\" + x2 + "\\" + y2);
-				
-				//remove unit from previous tile
-				gm.selectedUnit.transform.parent.GetComponent<TileScript>().occupied = occupiedBy.nothing;
-				gm.selectedUnit.transform.parent = gameObject.transform;
-				gm.selectedUnit.transform.parent.GetComponent<TileScript>().objectOccupyingTile = null;
-
-				this.transform.parent.GetComponent<TileManager>().clearAllTiles();
-
-				//as if attack button was pushed
-				gm.gs =  GameManager.gameState.playerAtk;
-				gm.buttonOption = "Move";
-				if (gm.selectedUnit != null){
-					gm.selectedUnit.GetComponent<Unit>().showAtkTiles();
-				}
-				
+				//gp.returnSocket().SendTCPPacket("game\\move\\" +gp.playerNumber + "\\" + gm.selectedUnit.unitID + "\\" + x1 + "\\" + y1 + "\\" + x2 + "\\" + y2);				
 			}else{
 				gm.combatLog.text = "Combat Log:\nNot enough mana";
 			}

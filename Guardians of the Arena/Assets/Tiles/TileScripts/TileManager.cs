@@ -144,8 +144,7 @@ public class TileManager : MonoBehaviour {
 		tree.GetComponent<Unit> ().makeTree ();
 		placeTile.objectOccupyingTile = tree;
 		placeTile.gameObject.renderer.material.color = Color.gray;
-		
-		placeTile.occupied = TileScript.occupiedBy.neutral;
+
 	}
 	
 	void addUnit(int x, int y,int type, bool ally, int unitID){
@@ -157,11 +156,9 @@ public class TileManager : MonoBehaviour {
 		placeTile.objectOccupyingTile = unit;
 		
 		
-		unit.GetComponent<Unit>().setUnitType(type);
+		unit.GetComponent<Unit>().setUnitType(type,ally);
 		unit.GetComponent<Unit> ().unitID = unitID;
-		
-		placeTile.occupied = ally? TileScript.occupiedBy.friendly : TileScript.occupiedBy.enemy;
-		
+
 		placeTile.gameObject.renderer.material.color = ally? Color.blue : Color.red;
 		
 		if (ally){
@@ -176,23 +173,18 @@ public class TileManager : MonoBehaviour {
 		for (int i = 0; i < xTiles; i ++){
 			
 			for (int k = 0; k < yTiles; k++){
-				switch(tiles[i,k].GetComponent<TileScript>().occupied){
-					//empty tile
-				case TileScript.occupiedBy.nothing:
+				//empty tile
+				if (tiles[i,k].GetComponent<TileScript>().objectOccupyingTile == null){
 					tiles[i, k].renderer.material.color = Color.white;
-					break;
-					//ally unit tile
-				case TileScript.occupiedBy.friendly:
+				//ally unit tile
+				}else if (tiles[i,k].GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.ally){
 					tiles[i, k].renderer.material.color = Color.blue;
-					break;
-					//neutral unit tile (shrubbery)
-				case TileScript.occupiedBy.neutral:
+				//neutral unit tile (shrubbery)
+				}else if (tiles[i,k].GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.neutral){
 					tiles[i, k].renderer.material.color = Color.gray;
-					break;
-					//enemy unit tile
-				case TileScript.occupiedBy.enemy:
+				//enemy unit tile
+				}else if (tiles[i,k].GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.enemy) {
 					tiles[i, k].renderer.material.color = Color.red;
-					break;
 				}
 			}
 		}

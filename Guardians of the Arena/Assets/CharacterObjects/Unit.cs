@@ -5,7 +5,8 @@ using System.Collections.Generic;
 public class Unit    : MonoBehaviour {
 	
 	//These get set depending on the function call used on this class
-	
+	public enum allegiance{ally,neutral,enemy};
+	public allegiance alleg;
 	//All these are public, so we can modify them all for now.  
 	public int unitID, xpos, ypos, unitType;
 	public int hp,maxHP,armor,atk,mvRange,atkRange,mvCost,atkCost;
@@ -185,7 +186,6 @@ public class Unit    : MonoBehaviour {
 					}else{
 						gm.enemyUnits.Remove(this);
 					}
-					this.transform.parent.GetComponent<TileScript>().occupied =  TileScript.occupiedBy.nothing;
 					this.transform.parent.GetComponent<TileScript>().objectOccupyingTile = null;
 					Destroy(gameObject);
 					
@@ -203,38 +203,29 @@ public class Unit    : MonoBehaviour {
 			gm.combatLog.text = "Combat Log:\nNot enough mana";
 		}
 	}
-	
+
 	void selectUnit(){
 		gm.selectedUnit = this;
 		gm.accessibleTiles.Clear();
 		
 		this.transform.parent.gameObject.transform.parent.GetComponent<TileManager>().clearAllTiles();
 		//if player is moving a piece
-		if (gm.gs == GameManager.gameState.playerMv){
-			showMvTiles();
+		if (gm.gs == GameManager.gameState.playerMv || gm.gs == GameManager.gameState.opponentMv ){
+			showMvTiles( (gm.gs ==  GameManager.gameState.playerAtk  ||  gm.gs ==  GameManager.gameState.playerMv ) ? allegiance.ally : allegiance.enemy);
+
+			          
 			//if player is attacking with a piece	
-		}else if (gm.gs == GameManager.gameState.playerAtk ){
+		}else if (gm.gs == GameManager.gameState.playerAtk || gm.gs == GameManager.gameState.opponentAtk ){
 			showAtkTiles();
 		}
 		
 	}
 	
-	public void showMvTiles(){
+	public void showMvTiles(allegiance ally){
 		if (!mvd){
-			showMvAccessibleTiles(this.transform.parent.GetComponent<TileScript>(),mvRange);
+			showMvAccessibleTiles(this.transform.parent.GetComponent<TileScript>(),mvRange,ally);
 			//can't move to the tile it's in
-			gm.accessibleTiles.Remove(this.transform.parent.GetComponent<TileScript>());
-			
-			//can't move to tiles that it's ally occupies
-			List<TileScript> temp = new List<TileScript>();
-			foreach (TileScript tile in gm.accessibleTiles){
-				if (tile.occupied != TileScript.occupiedBy.nothing){
-					temp.Add(tile);
-				}
-			}
-			foreach (TileScript tile in temp){
-				gm.accessibleTiles.Remove(tile);
-			}
+			gm.accessibleTiles.Remove(this.transform.parent.GetComponent<TileScript>());	
 		}
 	}
 	
@@ -242,32 +233,43 @@ public class Unit    : MonoBehaviour {
 		if (!atkd){
 			showAtkAccessibleTiles(this.transform.parent.GetComponent<TileScript>(),atkRange);
 			gm.accessibleTiles.Remove(this.transform.parent.GetComponent<TileScript>());
-			this.transform.parent.renderer.material.color = this.transform.parent.GetComponent<TileScript>().occupied == TileScript.occupiedBy.friendly? Color.blue : Color.red;
+
+			switch(alleg){
+				case allegiance.ally:
+					this.transform.parent.renderer.material.color = Color.blue;
+					break;
+				case allegiance.enemy:
+					this.transform.parent.renderer.material.color = Color.red;
+					break;
+				case allegiance.neutral:
+					this.transform.parent.renderer.material.color = Color.gray;
+					break;
+			}
 		}
 	}
 	
-	void showMvAccessibleTiles(TileScript tile, int num){
+	void showMvAccessibleTiles(TileScript tile, int num,allegiance ally){
 		TileScript tileS = tile.transform.GetComponent<TileScript>();
 		
-		if (tileS.occupied == TileScript.occupiedBy.nothing){
+		if (tileS.objectOccupyingTile == null){
 			tile.renderer.material.color = Color.green;
 		}
 		
 		if (num!=0){
-			if (tileS.up != null && tileS.up.transform.GetComponent<TileScript>().occupied != TileScript.occupiedBy.neutral){
-				showMvAccessibleTiles(tileS.up.GetComponent<TileScript>(),num-1);
+			if (tileS.up != null && (tileS.up.GetComponent<TileScript>().objectOccupyingTile ==null  || tileS.up.GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == ((ally == allegiance.ally) ? allegiance.ally: allegiance.enemy))){
+				showMvAccessibleTiles(tileS.up.GetComponent<TileScript>(),num-1,ally);
 				gm.accessibleTiles.Add(tileS.up.GetComponent<TileScript>());
 			}
-			if (tileS.down != null && tileS.down.transform.GetComponent<TileScript>().occupied != TileScript.occupiedBy.neutral){
-				showMvAccessibleTiles(tileS.down.GetComponent<TileScript>(),num-1);
+			if (tileS.down != null && (tileS.down.GetComponent<TileScript>().objectOccupyingTile ==null  || tileS.down.GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == ((ally == allegiance.ally) ? allegiance.ally: allegiance.enemy))){
+				showMvAccessibleTiles(tileS.down.GetComponent<TileScript>(),num-1,ally);
 				gm.accessibleTiles.Add(tileS.down.GetComponent<TileScript>());
 			}
-			if (tileS.left != null && tileS.left.transform.GetComponent<TileScript>().occupied != TileScript.occupiedBy.neutral) {
-				showMvAccessibleTiles(tileS.left.GetComponent<TileScript>(),num-1);
+			if (tileS.left != null && (tileS.left.GetComponent<TileScript>().objectOccupyingTile ==null || tileS.left.GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == ((ally == allegiance.ally) ? allegiance.ally: allegiance.enemy))){
+				showMvAccessibleTiles(tileS.left.GetComponent<TileScript>(),num-1,ally);
 				gm.accessibleTiles.Add(tileS.left.GetComponent<TileScript>());
 			}
-			if (tileS.right != null && tileS.right.transform.GetComponent<TileScript>().occupied != TileScript.occupiedBy.neutral){
-				showMvAccessibleTiles(tileS.right.GetComponent<TileScript>(),num-1);
+			if (tileS.right != null && (tileS.right.GetComponent<TileScript>().objectOccupyingTile ==null || tileS.right.GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == ((ally == allegiance.ally) ? allegiance.ally: allegiance.enemy))){
+				showMvAccessibleTiles(tileS.right.GetComponent<TileScript>(),num-1,ally);
 				gm.accessibleTiles.Add(tileS.right.GetComponent<TileScript>());
 			}	
 		}
@@ -298,6 +300,7 @@ public class Unit    : MonoBehaviour {
 	
 	
 	public void makeTree(){
+		alleg = allegiance.neutral;
 		name = "Shrub";
 		hp = 1;
 		maxHP = 1;
@@ -473,11 +476,12 @@ public class Unit    : MonoBehaviour {
 	
 	//*/
 	
-	public void setUnitType(int unitID)
+	public void setUnitType(int unitID,bool ally)
 	{
 		
 		ID = unitID;
-		
+		alleg = ally ? allegiance.ally : allegiance.enemy;
+
 		if(unitID == 10)
 		{
 			setUnitOneType();
