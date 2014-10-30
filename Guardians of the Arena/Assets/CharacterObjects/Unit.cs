@@ -50,6 +50,25 @@ public class Unit    : MonoBehaviour {
 	 * unitID9 = 19
 	 * unitID10 = 20
 	 * 
+	 * 
+	 * Temporary unit identification.  For now, it's just colors.  We have to assign them
+	 * different models later
+	 * 
+	 * 
+	 * unit1: pink //255,153,204
+	 * unit2: orange//255,128,0
+	 * unit3: yellow//255,255,0
+	 * unit4: green//0,255,0
+	 * unit5: cyan//0,255,255
+	 * unit6: magenta//255,0,255
+	 * unit7: brown//102,51,0
+	 * unit8: pear //204,255,153
+	 * unit9: grey//96,96,96
+	 * unit10: black//0,0,0
+	 * unit11: white//255,255,255
+	 * 
+	 * 
+	 * 
 	 * DO NOT DELETE THIS COMMENT!!!!//Made them 10 to 20 in case we need to send as byte to server and back
 	 * 
 	 */
@@ -319,6 +338,10 @@ public class Unit    : MonoBehaviour {
 		atkCost = 2;
 		//unitRole = "Ranged";
 		unitRole = 500;//ranged
+
+		renderer.material.color = new Color32(255,153,204,1);
+
+
 	}
 	
 	public void setUnitTwoType(){
@@ -333,6 +356,10 @@ public class Unit    : MonoBehaviour {
 		atkCost = 4;	
 		//unitRole = "BuffDebuff";
 		unitRole = 504;//BuffDebuff
+
+		renderer.material.color = new Color32(255,128,0,1);
+
+
 	}
 	
 	public void setUnitThreeType()
@@ -348,6 +375,8 @@ public class Unit    : MonoBehaviour {
 		atkCost = 3;
 		//unitRole = "AOE";//O is NOT a zero.  it is capital O
 		unitRole = 502;//AOE
+
+		renderer.material.color = new Color32(255,255,0,1);
 		
 	}
 	
@@ -364,6 +393,8 @@ public class Unit    : MonoBehaviour {
 		atkCost = 2;
 		//unitRole = "AOE";
 		unitRole = 502;//AOE
+
+		renderer.material.color = new Color32(0,255,0,1);
 		
 	}
 	
@@ -379,6 +410,9 @@ public class Unit    : MonoBehaviour {
 		atkRange = 0;//not final
 		atkCost = 0;//not final
 		unitRole = 503;//Utility
+
+		renderer.material.color = new Color32(255,0,255,1);
+
 	}
 	
 	public void setUnitSixType()
@@ -394,6 +428,9 @@ public class Unit    : MonoBehaviour {
 		atkCost = 0;//not final
 		
 		unitRole = 504;//BuffDebuff
+
+		renderer.material.color = new Color32(102,51,0,1);
+
 	}
 	
 	public void setUnitSevenType()
@@ -409,6 +446,10 @@ public class Unit    : MonoBehaviour {
 		atkCost = 1;
 		
 		unitRole = 505;//MeleeTank
+
+
+		renderer.material.color = new Color32(255,153,204,1);
+
 	}
 	
 	public void setUnitEightType()
@@ -423,6 +464,10 @@ public class Unit    : MonoBehaviour {
 		atkCost = 6;
 		
 		unitRole = 506;//Healer
+
+
+		renderer.material.color = new Color32(204,255,153,1);
+
 	}
 	
 	public void setUnitNineType()
@@ -438,6 +483,10 @@ public class Unit    : MonoBehaviour {
 		atkCost = 3;
 		
 		unitRole = 500;//Ranged
+
+
+		renderer.material.color = new Color32(96,96,96,1);
+
 	}
 	
 	//Guardian
@@ -454,6 +503,10 @@ public class Unit    : MonoBehaviour {
 		atkCost = 1;
 		
 		unitRole = 505;//MeleeTank
+
+
+		renderer.material.color = new Color32(0,0,0,1);
+
 	}
 	
 	//Soulstone
@@ -471,6 +524,10 @@ public class Unit    : MonoBehaviour {
 		
 		invincible = true;//can be changed later
 		unitRole = 507;//Kingpin
+
+		renderer.material.color = new Color32(255,255,255,1);
+
+
 	}
 	
 	//*/
