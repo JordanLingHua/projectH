@@ -48,13 +48,14 @@
   <ItemGroup>
      <Compile Include="Assets\CameraScript1.cs" />
      <Compile Include="Assets\CameraScript2.cs" />
+     <Compile Include="Assets\CharacterObjects\PlayerSetup.cs" />
      <Compile Include="Assets\CharacterObjects\Unit.cs" />
+     <Compile Include="Assets\CharacterObjects\move.cs" />
      <Compile Include="Assets\GameManaging\GameManager.cs" />
      <Compile Include="Assets\GameProcess.cs" />
      <Compile Include="Assets\ListOfPlayersScript.cs" />
      <Compile Include="Assets\LoginScreenGUI.cs" />
      <Compile Include="Assets\MainMenuGUI.cs" />
-     <Compile Include="Assets\PlayerSetup.cs" />
      <Compile Include="Assets\SetupScreenGUI.cs" />
      <Compile Include="Assets\Sockets.cs" />
      <Compile Include="Assets\ThreadSock.cs" />
@@ -62,7 +63,6 @@
      <Compile Include="Assets\Tiles\TileScripts\TileManager.cs" />
      <Compile Include="Assets\Tiles\TileScripts\TileScript.cs" />
      <Compile Include="Assets\globalChatScript.cs" />
-     <Compile Include="Assets\move.cs" />
      <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
      <None Include="Assets\Standard Assets\Projectors\Sources\Shaders\Projector Multiply.shader" />

@@ -7,7 +7,7 @@ public class PlayerSetup : MonoBehaviour {
 	//Essentially a class containing the Physical Player itself. 
 	//Should be called "player profile" actually.  
 
-	public int purchasingLimit = 10;
+	public int spawnLimit = 10;
 
 	public GameObject[,] providedPieces;
 
