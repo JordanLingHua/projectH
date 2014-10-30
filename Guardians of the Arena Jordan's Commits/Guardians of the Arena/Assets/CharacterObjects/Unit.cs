@@ -36,19 +36,38 @@ public class Unit    : MonoBehaviour {
 	 * 
 	 * Unit Abilities (AKA UNIT ID, and use ID to identify whose abilities are whose):  
 	 * Rubric- 
-	 * unitID0 = 10
-	 * unitID1 = 11
-	 * unitID2 = 12
-	 * unitID3 = 13
-	 * unitID4 = 14
-	 * unitID5 = 15
-	 * unitID6 = 16
-	 * unitID7 = 17
-	 * unitID8 = 18
-	 * unitID9 = 19
-	 * unitID10 = 20
+	 * unitID0 = 0 //10
+	 * unitID1 = 1 //11
+	 * unitID2 = 2 //12
+	 * unitID3 = 3 //13
+	 * unitID4 = 4 //14
+	 * unitID5 = 5 //15
+	 * unitID6 = 6 //16
+	 * unitID7 = 7 //17
+	 * unitID8 = 8 //18
+	 * unitID9 = 9 //19
+	 * unitID10 = 10 //20
 	 * 
 	 * DO NOT DELETE THIS COMMENT!!!!//Made them 10 to 20 in case we need to send as byte to server and back
+	 * 
+	 * Color should actually indicate which piece belongs to you and which piece belongs to the enemy.  
+	 * Blue for you, Red for enemy
+	 * 
+	 * 
+	 * Each unit should be a different 3D object.  
+	 * unit0: ; skin: 
+	 * unit1: red; skin: 
+	 * unit2: orange; skin: 
+	 * unit3: yellow; skin: 
+	 * unit4: green; skin: 
+	 * unit5: cyan; skin: 
+	 * unit6: blue; skin: 
+	 * unit7: red; skin: 
+	 * unit8: magenta; skin: 
+	 * unit9: black; skin: 
+	 * unit10: white; skin: 
+	 * 
+	 * 
 	 * 
 	 */
 	
@@ -306,6 +325,8 @@ public class Unit    : MonoBehaviour {
 		atkCost = 4;	
 		//unitRole = "BuffDebuff";
 		unitRole = 504;//BuffDebuff
+
+		renderer.material.color = Color.
 	}
 	
 	public void setUnitThreeType()
