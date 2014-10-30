@@ -28,7 +28,7 @@ public class TileManager : MonoBehaviour {
 				GameObject newtile = (GameObject)Instantiate(tile,
 				                                             position, 
 				                                             new Quaternion(0,0,0,0));
-				
+				newtile.AddComponent("TileScript");
 				tiles[i,j] = newtile;
 				newtile.transform.parent = this.transform;
 			}

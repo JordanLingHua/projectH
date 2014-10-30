@@ -25,7 +25,6 @@ public class TileScript : MonoBehaviour {
 	GameManager gm;
 	void Start () {
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
-		this.GetComponent<BaseObject>().type = BaseObject.ObjectType.Tile;
 		
 		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 	}
@@ -133,6 +132,8 @@ public class TileScript : MonoBehaviour {
 
 	
 	void OnMouseDown(){
+
+		if (gm != null){
 		//set tile selected coord in GM script
 		gm.tsx = x;
 		gm.tsy = y;
@@ -165,6 +166,7 @@ public class TileScript : MonoBehaviour {
 			}else{
 				gm.combatLog.text = "Combat Log:\nNot enough mana";
 			}
+		}
 		}
 	}
 	

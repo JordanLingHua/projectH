@@ -218,7 +218,6 @@ public class Unit    : MonoBehaviour {
 		}else if (gm.gs == GameManager.gameState.playerAtk || gm.gs == GameManager.gameState.opponentAtk ){
 			showAtkTiles();
 		}
-		
 	}
 	
 	public void showMvTiles(allegiance ally){
