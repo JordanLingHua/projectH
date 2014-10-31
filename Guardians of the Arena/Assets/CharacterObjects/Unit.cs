@@ -75,7 +75,7 @@ public class Unit    : MonoBehaviour {
 	
 	int ID;
 	
-	GameManager gm;
+	public GameManager gm;
 	
 	void Start () {
 		
@@ -88,6 +88,7 @@ public class Unit    : MonoBehaviour {
 	
 	void OnMouseEnter(){
 		//show unit info when hovering over it
+		this.transform.parent.renderer.material.shader = Shader.Find ("Toon/Lighted");
 		refreshUnitText ();
 		
 	}
@@ -118,6 +119,7 @@ public class Unit    : MonoBehaviour {
 	void OnMouseExit(){
 		//clear unit info when not hovering over it
 		gm.uInfo.text  = "";
+		this.transform.parent.renderer.material.shader = Shader.Find ("Toon/Basic");
 	}
 	
 	void OnMouseDown() {
@@ -133,21 +135,6 @@ public class Unit    : MonoBehaviour {
 			selectUnit ();
 		}
 	}
-
-//	bool checkProximity(){
-//		bool isInRange = false;
-//		foreach (TileScript t in gm.accessibleTiles)
-//		{
-//			if (t.gameObject == this.GetComponentInParent<TileScript>().gameObject)
-//			{
-//				isInRange = true;
-//				break;
-//			}
-//		}
-//		return isInRange;
-//
-//		//this.transform.GetComponentInParent<TileScript>().occupied == TileScript.occupiedBy.enemy;
-//	}
 	
 	void playerSSKillable(){
 		foreach (Unit x in gm.playerUnits){
@@ -247,7 +234,7 @@ public class Unit    : MonoBehaviour {
 		}
 	}
 	
-	public void showAtkTiles(){
+	public virtual void showAtkTiles(){
 		if (!atkd){
 			showAtkAccessibleTiles(this.transform.parent.GetComponent<TileScript>(),atkRange);
 			gm.accessibleTiles.Remove(this.transform.parent.GetComponent<TileScript>());
@@ -324,267 +311,6 @@ public class Unit    : MonoBehaviour {
 		maxHP = 1;
 		armor = 0;
 	}
-	
-	///*
-	public void setUnitOneType(){
-		name = "Ranged Unit";
-		hp = 18;
-		maxHP = 18;
-		armor = 8;
-		atk = 20;
-		mvRange = 4;
-		mvCost = 1;
-		atkRange = 3;
-		atkCost = 2;
-		//unitRole = "Ranged";
-		unitRole = 500;//ranged
-
-		renderer.material.color = new Color32(255,153,204,1);
-
-
-	}
-	
-	public void setUnitTwoType(){
-		name = "Buffing Unit";
-		hp = 30;
-		maxHP = 30;
-		armor = 10;
-		atk = 0;//change later
-		mvRange = 2;
-		mvCost = 2;
-		atkRange = 3;
-		atkCost = 4;	
-		//unitRole = "BuffDebuff";
-		unitRole = 504;//BuffDebuff
-
-		renderer.material.color = new Color32(255,128,0,1);
-
-
-	}
-	
-	public void setUnitThreeType()
-	{
-		name = "AoE Unit";
-		hp = 38;//hp can --//all other stats cannot --//some other stats ++ for growth
-		maxHP = 38;//max hp is constant//use as reference to hp
-		armor = 20;
-		atk = 10;
-		mvRange = 2;
-		mvCost = 2;
-		atkRange = 1;
-		atkCost = 3;
-		//unitRole = "AOE";//O is NOT a zero.  it is capital O
-		unitRole = 502;//AOE
-
-		renderer.material.color = new Color32(255,255,0,1);
-		
-	}
-	
-	public void setUnitFourType()
-	{
-		name = "AoE Unit";
-		hp = 28;
-		maxHP = 28;
-		armor = 10;
-		atk = 10;
-		mvRange = 4;
-		mvCost = 1;
-		atkRange = 1;
-		atkCost = 2;
-		//unitRole = "AOE";
-		unitRole = 502;//AOE
-
-		renderer.material.color = new Color32(0,255,0,1);
-		
-	}
-	
-	public void setUnitFiveType()
-	{
-		name = "Utility Unit";
-		hp = 40;
-		maxHP = 40;
-		armor = 50;
-		atk = 0;//not final
-		mvRange = 6;
-		mvCost = 2;
-		atkRange = 0;//not final
-		atkCost = 0;//not final
-		unitRole = 503;//Utility
-
-		renderer.material.color = new Color32(255,0,255,1);
-
-	}
-	
-	public void setUnitSixType()
-	{
-		name = "Buffing Unit";
-		hp = 40;
-		maxHP = 40;
-		armor = 25;
-		atk = 0;//not final
-		mvRange = 2;
-		mvCost = 3;
-		atkRange = 0;//not final
-		atkCost = 0;//not final
-		
-		unitRole = 504;//BuffDebuff
-
-		renderer.material.color = new Color32(102,51,0,1);
-
-	}
-	
-	public void setUnitSevenType()
-	{
-		name = "Melee Tank";
-		hp = 25;
-		maxHP = 25;
-		armor = 35;
-		atk = 8;
-		mvRange = 3;
-		mvCost = 1;
-		atkRange = 1;
-		atkCost = 1;
-		
-		unitRole = 505;//MeleeTank
-
-
-		renderer.material.color = new Color32(255,153,204,1);
-
-	}
-	
-	public void setUnitEightType()
-	{
-		hp = 20;
-		maxHP = 20;
-		armor = 0;//not final
-		atk = 0;//not final
-		mvRange = 3;
-		mvCost = 3;
-		atkRange = 0;//not final
-		atkCost = 6;
-		
-		unitRole = 506;//Healer
-
-
-		renderer.material.color = new Color32(204,255,153,1);
-
-	}
-	
-	public void setUnitNineType()
-	{
-		name = "Ranged Unit";
-		hp = 22;
-		maxHP = 22;
-		armor = 10;
-		atk = 12;
-		mvRange = 3;
-		mvCost = 2;
-		atkRange = 4;
-		atkCost = 3;
-		
-		unitRole = 500;//Ranged
-
-
-		renderer.material.color = new Color32(96,96,96,1);
-
-	}
-	
-	//Guardian
-	public void setUnitTenType()
-	{
-		name = "Guardian";
-		hp = 40;
-		maxHP = 40;
-		armor = 60;
-		atk = 8;
-		mvRange = 1;
-		mvCost = 3;
-		atkRange = 1;
-		atkCost = 1;
-		
-		unitRole = 505;//MeleeTank
-
-
-		renderer.material.color = new Color32(0,0,0,1);
-
-	}
-	
-	//Soulstone
-	public void setUnitElevenType()
-	{
-		name = "Soulstone";
-		hp = 1;
-		maxHP = 1;
-		armor = 0;
-		atk = 0;
-		mvRange = 0;
-		mvCost = 0;
-		atkRange = 0;
-		atkCost = 500;
-		
-		invincible = true;//can be changed later
-		unitRole = 507;//Kingpin
-
-		renderer.material.color = new Color32(255,255,255,1);
-
-
-	}
-	
-	//*/
-	
-	public void setUnitType(int unitID,bool ally)
-	{
-		
-		ID = unitID;
-		alleg = ally ? allegiance.ally : allegiance.enemy;
-
-		if(unitID == 10)
-		{
-			setUnitOneType();
-		}
-		else if(unitID == 11)
-		{
-			setUnitTwoType();
-		}
-		else if(unitID == 12)
-		{
-			setUnitThreeType();
-		}
-		else if(unitID == 13)
-		{
-			setUnitFourType();
-		}
-		else if(unitID == 14)
-		{
-			setUnitFiveType();
-		}
-		else if(unitID == 15)
-		{
-			setUnitSixType();
-		}
-		else if(unitID == 16)
-		{
-			setUnitSevenType();
-		}
-		else if(unitID == 17)
-		{
-			setUnitEightType();
-		}
-		else if(unitID == 18)
-		{
-			setUnitNineType();
-		}
-		else if(unitID == 19)
-		{
-			setUnitTenType();
-		}
-		else
-		{
-			//If unitID == 20
-			setUnitElevenType();
-		}
-	}
-	
 	
 }
 

@@ -24,11 +24,18 @@ public class TileScript : MonoBehaviour {
 	
 	GameManager gm;
 	void Start () {
-		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
-		
+		gm = GameObject.Find("GameManager").GetComponent<GameManager>();	
 		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 	}
-	
+
+	void OnMouseEnter(){
+		renderer.material.shader = Shader.Find ("Toon/Lighted");
+	}
+
+	void OnMouseExit(){
+		renderer.material.shader = Shader.Find ("Toon/Basic");
+	}
+
 	IEnumerator movePiece(Node current){
 		this.transform.parent.GetComponent<TileManager>().clearAllTiles();
 		Stack<GameObject> tiles = new Stack<GameObject>();

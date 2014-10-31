@@ -12,7 +12,7 @@ public class TileManager : MonoBehaviour {
 	public GameObject[,] tiles;
 	
 	public GameObject tile;
-	public GameObject environmentObject, cp;
+	public GameObject environmentObject, cp, UnitOne,UnitTwo,UnitThree,UnitFour,UnitFive,UnitSix,UnitSeven,UnitEight,UnitNine,UnitTen,UnitEleven;
 	public GameManager gm;
 	
 	void Start () {
@@ -149,14 +149,77 @@ public class TileManager : MonoBehaviour {
 	
 	void addUnit(int x, int y,int type, bool ally, int unitID){
 		TileScript placeTile = tiles[x,y].GetComponent<TileScript>();
-		GameObject unit = (GameObject)Instantiate(cp, 
-		                                          new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
-		                                          new Quaternion());
+		GameObject unit; 
+
+		switch(type){
+		case 10:
+			unit = (GameObject)Instantiate(UnitOne, 
+			                               new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
+			                               new Quaternion());
+			break;
+		case 11:
+			unit = (GameObject)Instantiate(UnitTwo, 
+			                               new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
+			                               new Quaternion());
+			break;
+		case 12:
+			unit = (GameObject)Instantiate(UnitThree, 
+			                               new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
+			                               new Quaternion());
+			break;
+		case 13:
+			unit = (GameObject)Instantiate(UnitFour, 
+			                               new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
+			                               new Quaternion());
+			break;
+		case 14:
+			unit = (GameObject)Instantiate(UnitFive, 
+			                               new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
+			                               new Quaternion());
+			break;
+		case 15:
+			unit = (GameObject)Instantiate(UnitSix, 
+			                               new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
+			                               new Quaternion());
+			break;
+		case 16:
+			unit = (GameObject)Instantiate(UnitSeven, 
+			                               new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
+			                               new Quaternion());
+			break;
+		case 17:
+			unit = (GameObject)Instantiate(UnitEight, 
+			                               new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
+			                               new Quaternion());
+			break;
+		case 18:
+			unit = (GameObject)Instantiate(UnitNine, 
+			                               new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
+			                               new Quaternion());
+			break;
+		case 19:
+			unit = (GameObject)Instantiate(UnitTen, 
+			                               new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
+			                               new Quaternion());
+			break;
+		case 20:
+			unit = (GameObject)Instantiate(UnitEleven, 
+			                               new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
+			                               new Quaternion());
+			break;
+
+		default:
+			unit = (GameObject)Instantiate(cp, 
+			                               new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
+			                               new Quaternion());
+			break;
+		}
+
+
 		unit.transform.parent = placeTile.transform;
 		placeTile.objectOccupyingTile = unit;
 		
-		
-		unit.GetComponent<Unit>().setUnitType(type,ally);
+		unit.GetComponent<Unit> ().alleg = ally? Unit.allegiance.ally : Unit.allegiance.enemy;
 		unit.GetComponent<Unit> ().unitID = unitID;
 
 		placeTile.gameObject.renderer.material.color = ally? Color.blue : Color.red;
