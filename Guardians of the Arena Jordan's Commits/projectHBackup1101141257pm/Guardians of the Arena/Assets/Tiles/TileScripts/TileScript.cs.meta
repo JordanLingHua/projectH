@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 9c25cd0a57202d34d83908160b4fc189
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - environmentObject: {fileID: 100000, guid: 4c85abd0a4d974473b97e81d10a3a6bc, type: 3}
+  - cp: {fileID: 100000, guid: c19e8047391cfb946aac4bf65dfab6c5, type: 2}
+  - left: {instanceID: 0}
+  - right: {instanceID: 0}
+  - down: {instanceID: 0}
+  - up: {instanceID: 0}
+  - objectOccupyingTile: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
