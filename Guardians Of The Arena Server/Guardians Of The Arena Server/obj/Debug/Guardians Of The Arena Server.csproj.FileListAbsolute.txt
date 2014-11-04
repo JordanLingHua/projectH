@@ -5,6 +5,3 @@ c:\users\tenor_000\documents\visual studio 2013\Projects\Guardians Of The Arena 
 c:\users\tenor_000\documents\visual studio 2013\Projects\Guardians Of The Arena Server\Guardians Of The Arena Server\obj\Debug\Guardians Of The Arena Server.exe
 c:\users\tenor_000\documents\visual studio 2013\Projects\Guardians Of The Arena Server\Guardians Of The Arena Server\obj\Debug\Guardians Of The Arena Server.pdb
 c:\users\tenor_000\documents\visual studio 2013\Projects\Guardians Of The Arena Server\Guardians Of The Arena Server\obj\Debug\Guardians Of The Arena Server.csprojResolveAssemblyReference.cache
-C:\Users\Steve\Documents\GitHub\projectH\Guardians Of The Arena Server\Guardians Of The Arena Server\bin\Debug\Guardians Of The Arena Server.exe.config
-C:\Users\Steve\Documents\GitHub\projectH\Guardians Of The Arena Server\Guardians Of The Arena Server\obj\Debug\Guardians Of The Arena Server.exe
-C:\Users\Steve\Documents\GitHub\projectH\Guardians Of The Arena Server\Guardians Of The Arena Server\obj\Debug\Guardians Of The Arena Server.pdb

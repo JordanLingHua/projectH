@@ -2,6 +2,7 @@
 //using System.Drawing;
 using System.Diagnostics;
 using System.Collections.Generic;
+using System.Collections;
 //using System.Linq;
 using System.Text;
 //using System.Threading.Tasks;
@@ -12,68 +13,53 @@ using System.Data.SQLite;
 
 namespace Guardians_Of_The_Arena_Server
 {
-    class Server
+    public class Server
     {
         public static DataManager dm;
 
         protected static int numberOfClients;
+        protected static int clientNumbers;
 
         protected static Random rng;
 
         protected static TcpListener listener;
-
-        protected static Socket[] socArray;
-        protected static Client[] clientArray;
+        protected static ArrayList socArray;
+        protected static LinkedList<Client> clientArray;
+        protected static ArrayList clientsToRemove;
         protected static List<String> loginNames;
 
+        public Thread listenerThread;
+        public Thread loopThread;
 
-        protected static Stopwatch uniClock;
-        protected static Stopwatch commandClock;
+        private Object listLock = new Object();
 
-        protected static float TopBorderPosition;
-        protected static float BottomBorderPosition;
-        protected static float RightBorderPosition;
-        protected static float LeftBorderPosition;
-
-        protected static bool playing = false;
-
-        protected ServerLoop loop;
-
-        public Thread listenerThead;
-
+        private MatchMakingQueue<Client> matchqueue;
 
         public Server()
         {
-
             dm = new DataManager();
             numberOfClients = 0;
 
             loginNames = new List<string>();
- 
-
-            TopBorderPosition = RightBorderPosition = 5.0f;
-            BottomBorderPosition = LeftBorderPosition = -5.0f;
 
             rng = new Random();
             listener = new TcpListener(4188);
-            socArray = new Socket[5];
-            clientArray = new Client[5];
+            socArray = new ArrayList();
+            clientArray = new LinkedList<Client>();
+            clientsToRemove = new ArrayList();
 
-            listenerThead = new Thread(new ThreadStart(this.Listen));
+            listenerThread = new Thread(new ThreadStart(this.Listen));
+            loopThread = new Thread(new ThreadStart(this.loop));
 
-            uniClock = new Stopwatch();
-            commandClock = new Stopwatch();
-
-            loop = new ServerLoop(this);
-            loop.loopThread.Start();
+            matchqueue = new MatchMakingQueue<Client>();
 
         }
-
-
 
         public void Listen()
         {
             listener.Start();
+            //loopThread.Start();
+            Console.WriteLine("Waiting for clients to connect");
 
             while (true)
             {
@@ -81,38 +67,54 @@ namespace Guardians_Of_The_Arena_Server
                 //accept an incoming request to make a connection then return 
                 //the socket(endpoint) associate with the connection 
                 Socket soc = listener.AcceptSocket();
-                socArray[numberOfClients] = soc;
+                socArray.Add(soc);
 
+                lock (listLock)
+                {    
 
-                Console.WriteLine("Connected: {0}", soc.RemoteEndPoint);//print connection details
-                try
-                {
-                    NetworkStream nws = new NetworkStream(soc);
-                    StreamReader sr = new StreamReader(nws);//return the stream to read from
-                    StreamWriter sw = new StreamWriter(nws); //establish a stream to read to
-                    sw.AutoFlush = true;//enable automatic flushing, flush thte wrtie stream after every write command, no need to send buffered data
+                    Console.WriteLine("Connected: {0}", soc.RemoteEndPoint);//print connection details
 
-                    int clientNumber = numberOfClients;
+                    try
+                    {
+                        NetworkStream nws = new NetworkStream(soc);
+                        StreamReader sr = new StreamReader(nws);//return the stream to read from
+                        StreamWriter sw = new StreamWriter(nws); //establish a stream to read to
+                        sw.AutoFlush = true;//enable automatic flushing, flush thte wrtie stream after every write command, no need to send buffered data
+                        
+                        numberOfClients++;
 
-                    Client client = new Client(this, nws, sr, sw, clientNumber);
-                    client.thread.Start();
+                        Client client = new Client(nws, sr, sw, ++clientNumbers, soc);
+                        client.thread.Start();
 
-                    clientArray[numberOfClients++] = client ;
+                        clientArray.AddLast(client);
 
-                    //loop.playerConnected();
+                        //loop.playerConnected();
 
-                    Console.WriteLine("Client " + client.clientNumber + " has connected");
-                    Console.WriteLine("There are now " + numberOfClients + " clients");
-                    client.sw.WriteLine("client\\" + client.clientNumber);
+                        Console.WriteLine("Client " + client.clientNumber + " has connected");
+                        Console.WriteLine("There are now " + numberOfClients + " clients");
+                        client.sw.WriteLine("client\\" + client.clientNumber);
 
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.Message);
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e.Message);
+                    }
+
                 }
                 
             }
 
+        }
+
+        //check if the socket is still connect;
+        bool SocketConnected(Socket s)
+        {
+            bool part1 = s.Poll(1000, SelectMode.SelectRead);
+            bool part2 = (s.Available == 0);
+            if (part1 && part2)
+                return false;
+            else
+                return true;
         }
 
 
@@ -121,104 +123,58 @@ namespace Guardians_Of_The_Arena_Server
         //and inform all other clients that this client has disconnected
         public void RemoveClient(Client client)
         {
+            clientsToRemove.Add(client);
             client.thread.Abort();
             numberOfClients--;
 
-
-            Console.WriteLine("Name about to be removed {0}", client.clientName);
             loginNames.Remove(client.clientName);
             //dm.deleteFromHighScores(client.clientName);
 
             foreach (Client c in clientArray)
             {
-                c.sw.WriteLine("disconnected\\" + client.clientNumber);
+                if (SocketConnected(c.socket))
+                    c.sw.WriteLine("hasLoggedOut\\" + client.clientName);
             }
 
+            Console.WriteLine("Client " + client.clientNumber + " has disconnected");
             Console.WriteLine("There are now " + numberOfClients + " clients");
         }
 
-        public class ServerLoop
+        //server loop that checks messages from clients
+        public void loop()
         {
-            private Server serverRef;
-            public Thread loopThread;
-
-            public ServerLoop(Server serverRef)
+            //always run this loop
+            while (true)
             {
-                this.serverRef = serverRef;
-                loopThread = new Thread(new ThreadStart(this.loop));
-                uniClock.Start();
-            }
-
-            //recursively check if all clients are ready
-            //public bool ClientsReady(LinkedList<Client> clients, LinkedListNode<Client> currentClient)
-            //{
-
-
-            //    if (currentClient.Next == null)
-            //        return currentClient.Value.clientReady;
-            //    else
-            //        return currentClient.Value.clientReady && ClientsReady(clientArray, currentClient.Next);
-            //}
-
-
-            //if the game has already started we do not need to check if the clients are ready
-            //simply tell the client that has just connected the game info
-            public void loadGameState(Client client)
-            {
-                
-            }
-
-            //server loop that checks messages from clients
-            public void loop()
-            {
-
-                //always run this loop
-                while (true)
+                try
                 {
-                    try
+                    lock (listLock)
                     {
-                        //if all connected clients are read, we can start the game
-                        //if (numberOfClients > 1 && ClientsReady(clientArray, clientArray.First))
-                        //{
-                        //    //create all the pellets on the server
 
-                        //    foreach (Client c in clientArray)
-                        //    {
-                        //        c.clientReady = false;
-
-                        //        //let all the clients know about each other
-                        //        foreach (Client c2 in clientArray)
-                        //        {
-                        //            c2.sw.WriteLine("connected\\" + c.clientNumber);
-
-                        //        }
-
-                        //        //now that all the clients have the initial game state
-                        //        //each client can start playing
-                        //        c.sw.WriteLine("start");
-                        //    }
-
-                        //    //now that the players have started playing
-                        //    //the server should now start checking if any collisions have occured 
-                        //    //collisionThread.Start();
-                        //    commandClock.Start();
-                        //    playing = true;
-                        //}
-
-                        //check each client in the array
-                        //if they have commands waiting in the queue, dequeue and execute that command
-
-
-
-                        for (int i = 0; i < numberOfClients; i++)
+                        //If players are available to start playing, we will send them a message to start playing
+                        if (matchqueue.Count >= 2)
                         {
-                            Client client = clientArray[i];
+                            Client client1 = matchqueue.dequeue();
+                            Client client2 = matchqueue.dequeue();
 
-                            if (client == null)
-                                Console.WriteLine("CLIENT " + i + " IS NULL BECAUSE OF THREADING");
+                            Game newGame = new Game(client1, client2);
+                            client1.gameRef = newGame;
+                            client2.gameRef = newGame;
+                            client1.inGame = true;
+                            client2.inGame = true;
+
+                            newGame.GameThread.Start();
+                        }
+
+                        //Console.WriteLine("Looping");
+
+                        foreach (Client client in clientArray)
+                        {
+                            if (!SocketConnected(client.socket))
+                                RemoveClient(client);
 
                             //the server must check if it has recieved any commands from the clients
-                            if (client.commandQueue.Count > 0)
+                            if (client.commandQueue.Count > 0 && !client.inGame)
                             {
                                 //each command is a string that will be delimited by \\
                                 string command = client.commandQueue.Dequeue();
@@ -227,31 +183,21 @@ namespace Guardians_Of_The_Arena_Server
                                 string[] tokens = command.Split(new string[] { "\\" }, StringSplitOptions.None);
 
                                 /*
-                                 *the commands are as follows
-                                 *play - tells the server that the client is ready to start playing the game
-                                 *userInfo - tells the server that the client is sending login information
-                                 *      -check sthe database and either logins the clients, creates new user info,
-                                 *       denies the login attemps
-                                 *velocity - broadcasts the sending client's updated velocity
-                                 *position - broadcasts the sending client's updated position
-                                 *score - broadcasts the correct scores to each client
-                                 *lag - adds a delay when sending messages between client and server (for testing purposes)
-                                 */
+                                    *the commands are as follows
+                                    *play - tells the server that the client is ready to start playing the game
+                                    *userInfo - tells the server that the client is sending login information
+                                    *      -check sthe database and either logins the clients, creates new user info,
+                                    *       denies the login attemps
+                                    */
 
-                                if (tokens[0].Equals("play"))
+                                if (tokens[0].Equals("search"))
                                 {
-                                    if (playing)
-                                    {
-                                        loadGameState(client);
-                                    }
-                                    else
-                                    {
-                                        client.clientReady = true;
-                                        Console.WriteLine("client " + client.clientNumber + " is ready");
-                                    }
+                                    matchqueue.enqueue(client);
                                 }
-
-
+                                else if (tokens[0].Equals("cancelSearch"))
+                                {
+                                    matchqueue.removeFromQueue(client);
+                                }
                                 //
                                 else if (tokens[0].Equals("userInfo"))
                                 {
@@ -267,12 +213,12 @@ namespace Guardians_Of_The_Arena_Server
                                                 client.sw.WriteLine("hasLoggedIn\\" + tokens[1]);
                                                 client.clientName = tokens[1];
                                                 Console.WriteLine(tokens[1] + " has logged in");
-                                                dm.printTable();
+                                                //dm.printTable();
 
 
-                                                for (int j = 0; j < numberOfClients; j++)
+                                                foreach (Client clientToSend in clientArray)
                                                 {
-                                                    Client clientToSend = clientArray[j];
+                                                    //Client clientToSend = clientArray[j];
 
                                                     if (client.clientNumber != clientToSend.clientNumber)
                                                     {
@@ -280,12 +226,13 @@ namespace Guardians_Of_The_Arena_Server
                                                         clientToSend.sw.WriteLine("hasLoggedIn\\" + client.clientName);
                                                     }
                                                 }
-                                               
+
                                             }
                                             else
                                             {
                                                 client.sw.WriteLine("loginFail");
                                                 Console.WriteLine(tokens[1] + " entered incorrect password");
+                                                //RemoveClient(client);
                                             }
                                         }
 
@@ -297,13 +244,13 @@ namespace Guardians_Of_The_Arena_Server
                                             client.sw.WriteLine("hasLoggedIn\\" + tokens[1]);
                                             client.clientName = tokens[1];
                                             // dm.insertIntoHighScores(client.clientName, client.score);
-                                            dm.printTable();
+                                            //dm.printTable();
 
-    //-------------------------REMOVE COPY AND PASTED CODE! CLEAN UP! ASAP! --------------------------------------------------//
+                                            //-------------------------REMOVE COPY AND PASTED CODE! CLEAN UP! ASAP! --------------------------------------------------//
 
-                                            for (int j = 0; j < numberOfClients; j++)
+                                            foreach (Client clientToSend in clientArray)
                                             {
-                                                Client clientToSend = clientArray[j];
+                                                //Client clientToSend = clientArray[j];
 
                                                 if (client.clientNumber != clientToSend.clientNumber)
                                                 {
@@ -324,16 +271,13 @@ namespace Guardians_Of_The_Arena_Server
 
                                 else if (tokens[0].Equals("logout"))
                                 {
-                                    serverRef.RemoveClient(client);
+                                    Console.WriteLine("Client " + client.clientNumber + " wants to log out.");
+                                    RemoveClient(client);
                                     //Console.WriteLine("Name about to be removed {0}", tokens[1]);
                                     //loginNames.Remove(tokens[1]);
                                     //dm.deleteFromHighScores(client.clientName);
                                     //dm.sendPacket("remove", client.clientName, client.score);
 
-                                }
-                                else if (tokens[0].Equals("disconnect"))
-                                {
-                                    //dm.sendPacket("remove", client.clientName, client.score);
                                 }
                                 else
                                 {
@@ -343,28 +287,34 @@ namespace Guardians_Of_The_Arena_Server
                             }
                         }
 
-                    }
-                    catch (Exception e)
-                    {
+                        foreach(Client c in clientsToRemove)
+                        {
+                            clientArray.Remove(c);
+                        }
 
-                        Console.WriteLine(e.StackTrace);
-                        Console.WriteLine(e.Message);
-
+                        clientsToRemove.Clear();
                     }
+
+                }
+                catch (Exception e)
+                {
+
+                    Console.WriteLine(e.StackTrace);
+                    Console.WriteLine(e.Message);
+
                 }
             }
-
-
-
         }
+
+    
 
         //client class that defines all the attributes 
         public class Client
         {
-            private Server serverRef;
             public NetworkStream nws;
             public StreamReader sr;
             public StreamWriter sw;
+            public Socket socket;
             public Queue<string> commandQueue;
             public Thread thread;
 
@@ -373,17 +323,20 @@ namespace Guardians_Of_The_Arena_Server
 
             public bool clientReady = false;
             public bool spawned = false;
+            public bool inGame = false;
+
+            public Game gameRef;
 
             //each client must keep track of the network stream between itself and the server
             //the stream reader used by the server to read in client messages
             //the stream writer used by the server to send the client messages
             //an assigned client number
-            public Client(Server serverRef, NetworkStream nws, StreamReader sr, StreamWriter sw, int clientNumber)
+            public Client(NetworkStream nws, StreamReader sr, StreamWriter sw, int clientNumber, Socket socket)
             {
-                this.serverRef = serverRef;
                 this.nws = nws;
                 this.sr = sr;
                 this.sw = sw;
+                this.socket = socket;
                 this.clientNumber = clientNumber;
 
                 //each client has a thread that the server uses to alternate reading in messages from
@@ -418,14 +371,7 @@ namespace Guardians_Of_The_Arena_Server
 
                 catch (Exception e)
                 {
-                    //Console.WriteLine(e.InnerException);
-                    //If the steam closes we will catch the exception and remove the client from the game
-                    //properly
-                    //Server.RemoveClient(this);
-                    //Console.WriteLine(e.StackTrace);
-                    serverRef.RemoveClient(this);
-                    Console.WriteLine(e.Message + " Client " + this.clientNumber + " has disconnected");
-
+                    Console.WriteLine(e.Message);
                 }
             }
         }

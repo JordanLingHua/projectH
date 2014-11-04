@@ -27,7 +27,7 @@ namespace Guardians_Of_The_Arena_Server
             //createTables();
             //clearTable();
             //fillPlayerTable();
-            printTable();
+            //printTable();
 
         }
 

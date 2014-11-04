@@ -11,8 +11,9 @@ namespace Guardians_Of_The_Arena_Server
         static void Main(string[] args)
         {
             Server server = new Server();
-            server.Listen();
-            server.listenerThead.Start();
+            //server.Listen();
+            server.listenerThread.Start();
+            server.loopThread.Start();
         }
     }
 }
