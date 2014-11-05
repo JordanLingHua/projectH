@@ -22,8 +22,9 @@ public class PlayerSetup : MonoBehaviour {
 
 
 	//Add to this array everytime a piece is dropped onto a board
-	public GameObject[] playerPieces;
+	//public GameObject[] playerPieces;
 	//public GameObject[,] playerPieces;
+	public PieceStruct[] playerPieces;
 
 
 
@@ -94,7 +95,9 @@ public class PlayerSetup : MonoBehaviour {
 		//GameObject u1_1 = (GameObject)Instantiate(Resources.Load("UnitOnePrefab"));
 		//GameObject u2_1 = (GameObject)Instantiate(Resources.Load("UnitTwoPrefab"));
 		//GameObject u3_1 = (GameObject)Instantiate(Resources.Load("UnitThreePrefab"));
-
+		providedPieces[0] = new PieceStruct((GameObject)Instantiate(Resources.Load("UnitOnePrefab")),new UnitOne());
+		providedPieces[1] = new PieceStruct((GameObject)Instantiate(Resources.Load("UnitTwoPrefab")),new UnitTwo());
+		providedPieces[2] = new PieceStruct((GameObject)Instantiate(Resources.Load("UnitThreePrefab")),new UnitThree());
 
 
 		//in progress....

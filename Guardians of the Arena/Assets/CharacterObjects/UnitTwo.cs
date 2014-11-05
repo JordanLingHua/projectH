@@ -3,6 +3,24 @@ using System.Collections;
 
 public class UnitTwo: Unit {
 	
+	//void Start () {
+	public UnitTwo(){
+		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+		name = "Buffing Unit";
+		hp = 30;
+		maxHP = 30;
+		armor = 10;
+		atk = 0;//change later
+		mvRange = 2;
+		mvCost = 2;
+		atkRange = 3;
+		atkCost = 4;	
+		//unitRole = "BuffDebuff";
+		unitRole = 504;//BuffDebuff
+		renderer.material.color = new Color32(255,128,0,1);
+	}
+
+
 	void Start () {
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 		name = "Buffing Unit";

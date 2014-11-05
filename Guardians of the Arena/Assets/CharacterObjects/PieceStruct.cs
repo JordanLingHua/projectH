@@ -15,6 +15,9 @@ public class PieceStruct : MonoBehaviour {
 		unitType = u;
 	}
 
+	//public GameObject get_piece_prefab
+	//Get the position of the piece simply by accessing the piece_prefab's position
+
 
 	public string unitTypeName()
 	{
