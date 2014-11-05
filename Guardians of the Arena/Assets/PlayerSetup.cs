@@ -11,7 +11,10 @@ public class PlayerSetup : MonoBehaviour {
 	public int used_money;//set to 0 in constructor.  Then increment/decrement later
 
 	//public GameObject[,] providedPieces;
-	public GameObject[] providedPieces;
+	//public GameObject[] providedPieces;
+	public PieceStruct[] providedPieces;
+
+
 
 	public int max_num_pieces = 15;
 	public int num_pieces_used;//set to 0 in constructor.  Then increment/decrement later
@@ -88,9 +91,12 @@ public class PlayerSetup : MonoBehaviour {
 		//Pieces creation (add pieces into the array above)
 
 		//There should be 15 pieces total.  Look at the unit design spreadsheet!  
-		GameObject u1_1 = (GameObject)Instantiate(Resources.Load("UnitOnePrefab"));
-		GameObject u2_1 = (GameObject)Instantiate(Resources.Load("UnitTwoPrefab"));
-		GameObject u3_1 = (GameObject)Instantiate(Resources.Load("UnitOnePrefab"));
+		//GameObject u1_1 = (GameObject)Instantiate(Resources.Load("UnitOnePrefab"));
+		//GameObject u2_1 = (GameObject)Instantiate(Resources.Load("UnitTwoPrefab"));
+		//GameObject u3_1 = (GameObject)Instantiate(Resources.Load("UnitThreePrefab"));
+
+
+
 		//in progress....
 
 
