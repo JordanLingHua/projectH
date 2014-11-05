@@ -98,6 +98,20 @@ public class PlayerSetup : MonoBehaviour {
 		providedPieces[0] = new PieceStruct((GameObject)Instantiate(Resources.Load("UnitOnePrefab")),new UnitOne());
 		providedPieces[1] = new PieceStruct((GameObject)Instantiate(Resources.Load("UnitTwoPrefab")),new UnitTwo());
 		providedPieces[2] = new PieceStruct((GameObject)Instantiate(Resources.Load("UnitThreePrefab")),new UnitThree());
+		providedPieces[3] = new PieceStruct((GameObject)Instantiate(Resources.Load("UnitThreePrefab")),new UnitThree());
+		providedPieces[4] = new PieceStruct((GameObject)Instantiate(Resources.Load("UnitFourPrefab")),new UnitFour());
+		providedPieces[5] = new PieceStruct((GameObject)Instantiate(Resources.Load("UnitFivePrefab")),new UnitFive());
+		providedPieces[6] = new PieceStruct((GameObject)Instantiate(Resources.Load("UnitSixPrefab")),new UnitSix());
+		providedPieces[7] = new PieceStruct((GameObject)Instantiate(Resources.Load("UnitSevenPrefab")),new UnitSeven());
+		providedPieces[8] = new PieceStruct((GameObject)Instantiate(Resources.Load("UnitSevenPrefab")),new UnitSeven());
+		providedPieces[9] = new PieceStruct((GameObject)Instantiate(Resources.Load("UnitSevenPrefab")),new UnitSeven());
+		providedPieces[10] = new PieceStruct((GameObject)Instantiate(Resources.Load("UnitEightPrefab")),new UnitEight());
+		providedPieces[11] = new PieceStruct((GameObject)Instantiate(Resources.Load("UnitNinePrefab")),new UnitNine());
+		providedPieces[12] = new PieceStruct((GameObject)Instantiate(Resources.Load("UnitNinePrefab")),new UnitNine());
+		providedPieces[13] = new PieceStruct((GameObject)Instantiate(Resources.Load("UnitTenPrefab")),new UnitTen());
+		providedPieces[14] = new PieceStruct((GameObject)Instantiate(Resources.Load("UnitElevenPrefab")),new UnitEleven());
+
+
 
 
 		//in progress....
