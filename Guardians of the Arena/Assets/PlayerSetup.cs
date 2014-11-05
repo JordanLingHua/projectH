@@ -111,7 +111,11 @@ public class PlayerSetup : MonoBehaviour {
 		providedPieces[13] = new PieceStruct((GameObject)Instantiate(Resources.Load("UnitTenPrefab")),new UnitTen());
 		providedPieces[14] = new PieceStruct((GameObject)Instantiate(Resources.Load("UnitElevenPrefab")),new UnitEleven());
 
+		//Position each of the pieces just made onto the board:  
 
+
+
+		//After this, in the update loop, allow the player to rearrange the pieces there.  
 
 
 		//in progress....

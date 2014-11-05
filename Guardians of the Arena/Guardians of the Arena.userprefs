@@ -2,10 +2,9 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/PlayerSetup.cs">
     <Files>
-      <File FileName="Assets/PlayerSetup.cs" Line="100" Column="19" />
       <File FileName="Assets/MainMenuGUI.cs" Line="19" Column="3" />
       <File FileName="Assets/CharacterObjects/UnitFive.cs" Line="22" Column="2" />
-      <File FileName="Assets/CharacterObjects/PieceStruct.cs" Line="19" Column="81" />
+      <File FileName="Assets/CharacterObjects/PieceStruct.cs" Line="13" Column="3" />
       <File FileName="Assets/CharacterObjects/UnitEight.cs" Line="22" Column="2" />
       <File FileName="Assets/CharacterObjects/UnitEleven.cs" Line="24" Column="2" />
       <File FileName="Assets/CharacterObjects/UnitFour.cs" Line="24" Column="2" />
@@ -16,6 +15,7 @@
       <File FileName="Assets/CharacterObjects/UnitTen.cs" Line="23" Column="14" />
       <File FileName="Assets/CharacterObjects/UnitThree.cs" Line="23" Column="12" />
       <File FileName="Assets/CharacterObjects/UnitTwo.cs" Line="24" Column="16" />
+      <File FileName="Assets/PlayerSetup.cs" Line="115" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
