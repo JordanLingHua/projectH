@@ -3,22 +3,7 @@ using System.Collections;
 
 public class UnitOne : Unit {
 
-	//void Start () {
-	public UnitOne(){
-		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
-		name = "Ranged Unit";
-		hp = 18;
-		maxHP = 18;
-		armor = 8;
-		atk = 20;
-		mvRange = 4;
-		mvCost = 1;
-		atkRange = 3;
-		atkCost = 2;
-		//unitRole = "Ranged";
-		unitRole = 500;//ranged
-		renderer.material.color = new Color32(255,153,204,1);
-	}
+
 
 
 	void Start () {

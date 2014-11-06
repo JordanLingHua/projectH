@@ -10,10 +10,19 @@ public class PlayerSetup : MonoBehaviour {
 	public int money_Limit = 10;
 	public int used_money;//set to 0 in constructor.  Then increment/decrement later
 
-	//public GameObject[,] providedPieces;
-	//public GameObject[] providedPieces;
-	public PieceStruct[] providedPieces;
 
+	public GameObject[] providedPieces;
+	public GameObject unit1;
+	public GameObject unit2;
+	public GameObject unit3;
+	public GameObject unit4;
+	public GameObject unit5;
+	public GameObject unit6;
+	public GameObject unit7;
+	public GameObject unit8;
+	public GameObject unit9;
+	public GameObject unit10;
+	public GameObject unit11;
 
 
 	public int max_num_pieces = 15;
@@ -22,9 +31,7 @@ public class PlayerSetup : MonoBehaviour {
 
 
 	//Add to this array everytime a piece is dropped onto a board
-	//public GameObject[] playerPieces;
-	//public GameObject[,] playerPieces;
-	public PieceStruct[] playerPieces;
+	public GameObject[] playerPieces;
 
 
 
@@ -33,6 +40,7 @@ public class PlayerSetup : MonoBehaviour {
 	private int yTiles = 5;
 	public GameObject[,] tiles;
 	public GameObject tile;
+	//public GameObject ball;//test for prefab instantiation 1
 	
 	void Start () {
 		//Tile Creation
@@ -95,24 +103,77 @@ public class PlayerSetup : MonoBehaviour {
 		//GameObject u1_1 = (GameObject)Instantiate(Resources.Load("UnitOnePrefab"));
 		//GameObject u2_1 = (GameObject)Instantiate(Resources.Load("UnitTwoPrefab"));
 		//GameObject u3_1 = (GameObject)Instantiate(Resources.Load("UnitThreePrefab"));
-		providedPieces[0] = new PieceStruct((GameObject)Instantiate(Resources.Load("UnitOnePrefab")),new UnitOne());
-		providedPieces[1] = new PieceStruct((GameObject)Instantiate(Resources.Load("UnitTwoPrefab")),new UnitTwo());
-		providedPieces[2] = new PieceStruct((GameObject)Instantiate(Resources.Load("UnitThreePrefab")),new UnitThree());
-		providedPieces[3] = new PieceStruct((GameObject)Instantiate(Resources.Load("UnitThreePrefab")),new UnitThree());
-		providedPieces[4] = new PieceStruct((GameObject)Instantiate(Resources.Load("UnitFourPrefab")),new UnitFour());
-		providedPieces[5] = new PieceStruct((GameObject)Instantiate(Resources.Load("UnitFivePrefab")),new UnitFive());
-		providedPieces[6] = new PieceStruct((GameObject)Instantiate(Resources.Load("UnitSixPrefab")),new UnitSix());
-		providedPieces[7] = new PieceStruct((GameObject)Instantiate(Resources.Load("UnitSevenPrefab")),new UnitSeven());
-		providedPieces[8] = new PieceStruct((GameObject)Instantiate(Resources.Load("UnitSevenPrefab")),new UnitSeven());
-		providedPieces[9] = new PieceStruct((GameObject)Instantiate(Resources.Load("UnitSevenPrefab")),new UnitSeven());
-		providedPieces[10] = new PieceStruct((GameObject)Instantiate(Resources.Load("UnitEightPrefab")),new UnitEight());
-		providedPieces[11] = new PieceStruct((GameObject)Instantiate(Resources.Load("UnitNinePrefab")),new UnitNine());
-		providedPieces[12] = new PieceStruct((GameObject)Instantiate(Resources.Load("UnitNinePrefab")),new UnitNine());
-		providedPieces[13] = new PieceStruct((GameObject)Instantiate(Resources.Load("UnitTenPrefab")),new UnitTen());
-		providedPieces[14] = new PieceStruct((GameObject)Instantiate(Resources.Load("UnitElevenPrefab")),new UnitEleven());
 
-		//Position each of the pieces just made onto the board:  
+		providedPieces = new GameObject[15];
 
+		//GameObject temp = (GameObject)Instantiate(ball, new Vector3(0, 0, 0), new Quaternion(0,0,0,1));//test for prefab instantiation 1
+		//providedPieces[0] = temp;//test for prefab instantiation 1
+
+
+		providedPieces[0] = (GameObject)Instantiate(unit1, new Vector3(0, 0, 0), new Quaternion(0,0,0,1));
+		providedPieces[1] = (GameObject)Instantiate(unit2, new Vector3(0, 0, 0), new Quaternion(0,0,0,1));
+		providedPieces[2] = (GameObject)Instantiate(unit3, new Vector3(0, 0, 0), new Quaternion(0,0,0,1));
+		providedPieces[3] = (GameObject)Instantiate(unit3, new Vector3(0, 0, 0), new Quaternion(0,0,0,1));
+		providedPieces[4] = (GameObject)Instantiate(unit4, new Vector3(0, 0, 0), new Quaternion(0,0,0,1));
+		providedPieces[5] = (GameObject)Instantiate(unit5, new Vector3(0, 0, 0), new Quaternion(0,0,0,1));
+		providedPieces[6] = (GameObject)Instantiate(unit6, new Vector3(0, 0, 0), new Quaternion(0,0,0,1));
+		providedPieces[7] = (GameObject)Instantiate(unit7, new Vector3(0, 0, 0), new Quaternion(0,0,0,1));
+		providedPieces[8] = (GameObject)Instantiate(unit7, new Vector3(0, 0, 0), new Quaternion(0,0,0,1));
+		providedPieces[9] = (GameObject)Instantiate(unit7, new Vector3(0, 0, 0), new Quaternion(0,0,0,1));
+		providedPieces[10] = (GameObject)Instantiate(unit8, new Vector3(0, 0, 0), new Quaternion(0,0,0,1));
+		providedPieces[11] = (GameObject)Instantiate(unit9, new Vector3(0, 0, 0), new Quaternion(0,0,0,1));
+		providedPieces[12] = (GameObject)Instantiate(unit9, new Vector3(0, 0, 0), new Quaternion(0,0,0,1));
+		providedPieces[13] = (GameObject)Instantiate(unit10, new Vector3(0, 0, 0), new Quaternion(0,0,0,1));
+		providedPieces[14] = (GameObject)Instantiate(unit11, new Vector3(0, 0, 0), new Quaternion(0,0,0,1));
+
+		/*
+		providedPieces[0] = (GameObject)Instantiate(Resources.Load("UnitOnePrefab"), new Vector3(0, 0, 0), new Quaternion(0,0,0,1));
+		providedPieces[1] = (GameObject)Instantiate(Resources.Load("UnitTwoPrefab"));
+		providedPieces[2] = (GameObject)Instantiate(Resources.Load("UnitThreePrefab"));
+		providedPieces[3] = (GameObject)Instantiate(Resources.Load("UnitThreePrefab"));
+		providedPieces[4] = (GameObject)Instantiate(Resources.Load("UnitFourPrefab"));
+		providedPieces[5] = (GameObject)Instantiate(Resources.Load("UnitFivePrefab"));
+		providedPieces[6] = (GameObject)Instantiate(Resources.Load("UnitSixPrefab"));
+		providedPieces[7] = (GameObject)Instantiate(Resources.Load("UnitSevenPrefab"));
+		providedPieces[8] = (GameObject)Instantiate(Resources.Load("UnitSevenPrefab"));
+		providedPieces[9] = (GameObject)Instantiate(Resources.Load("UnitSevenPrefab"));
+		providedPieces[10] = (GameObject)Instantiate(Resources.Load("UnitEightPrefab"));
+		providedPieces[11] = (GameObject)Instantiate(Resources.Load("UnitNinePrefab"));
+		providedPieces[12] = (GameObject)Instantiate(Resources.Load("UnitNinePrefab"));
+		providedPieces[13] = (GameObject)Instantiate(Resources.Load("UnitTenPrefab"));
+		providedPieces[14] = (GameObject)Instantiate(Resources.Load("UnitElevenPrefab"));
+		*/
+
+
+		/*
+		//Add a move script to each, just for this scene though (this scene should be the only scene that calls this script)
+		//Position each of the pieces just made onto the board: 
+		for(int i = 0; i < 15; i++)
+		{
+			providedPieces[i].AddComponent("move"); 
+
+
+
+		}
+
+
+		//NOTE:  position of each tile is ---->  Vector3 position = new Vector3((10 * i), 0, (10 * j));
+
+		//int myX, myY, myZ = 0;
+		for(int i = 0; i < 15; i++)
+		{
+			//providedPieces[i].transform.position.Set (myX, myY, myZ);
+
+
+			
+		}
+		*/
+
+
+		providedPieces[0].transform.position.Set (80,50,25);
+		//providedPieces[1].transform.position.Set (160,0,-10);
+
+		 
 
 
 		//After this, in the update loop, allow the player to rearrange the pieces there.  
