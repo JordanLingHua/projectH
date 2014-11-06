@@ -96,14 +96,10 @@ public class Unit    : MonoBehaviour {
 	void refreshUnitText()
 	{
 		info = name + "\nHP: " + hp + "/" + maxHP + "\nArmor: " + armor;
-		if (gm.gs == GameManager.gameState.playerMv|| gm.gs == GameManager.gameState.opponentMv) {
-			info += mvCost > 0? "\nMove Cost: " + mvCost : "";
-		} else {
-			info += atkCost > 0? "\nAttack Cost: " + atkCost : "";
-		}
-		
-		
+		info += mvCost > 0? "\nMove Cost: " + mvCost : "";
+		info += atkCost > 0? "\nAttack Cost: " + atkCost : "";
 		info += atk > 0? "\nDamage: " + atk : "";
+
 		if (invincible){
 			info+="\nINVINCIBLE";
 		}
@@ -127,12 +123,13 @@ public class Unit    : MonoBehaviour {
 		//this unit is not the currently selected unit (no attacking self)
 		//the game is in attack mode
 		//the unit selected is in range of the selected unit
-		if (gm.selectedUnit != this && gm.gs == GameManager.gameState.playerAtk 
-		    && gm.accessibleTiles.Contains(this.transform.parent.GetComponent<TileScript>()))
-		    {
-			attackUnit();
-		}else{
-			selectUnit ();
+		if (gm.turn) {
+			if (gm.selectedUnit != this && gm.gs == GameManager.gameState.playerAtk 
+					&& gm.accessibleTiles.Contains (this.transform.parent.GetComponent<TileScript> ())) {
+					attackUnit ();
+			} else {
+					selectUnit ();
+			}
 		}
 	}
 	
@@ -153,7 +150,8 @@ public class Unit    : MonoBehaviour {
 			}
 		}
 	}
-	
+
+	//TODO: move this logic to the server
 	void attackUnit(){
 		if (gm.pMana >= gm.selectedUnit.GetComponent<Unit>().atkCost){
 			gm.pMana -= gm.selectedUnit.GetComponent<Unit>().atkCost;
@@ -164,8 +162,7 @@ public class Unit    : MonoBehaviour {
 				this.hp -= (int)(gm.selectedUnit.GetComponent<Unit>().atk * ((100 - this.armor) * 0.01));
 				
 				//if the unit attacked was killed, remove it from the board and unit list
-				if (this.hp <=0){
-					
+				if (this.hp <=0){				
 					
 					//make the soulstone vulnerable if the player guardian was killed
 					if (this.ID == 19){
@@ -174,18 +171,17 @@ public class Unit    : MonoBehaviour {
 						}else{
 							enemySSKillable();
 						}
-					}
-					
+					}					
 					
 					if (this.ID == 20){
+						gm.showReturnButton = true;
 						if(gm.playerUnits.Contains(this)){
 							
 							gm.combatLog.text = "Player 2 has won!";
 						}else{
 							gm.combatLog.text = "Player 1 has won!";
 						}
-					} 
-					
+					} 					
 					
 					if (gm.playerUnits.Contains(this)){
 						gm.playerUnits.Remove(this);
@@ -216,12 +212,11 @@ public class Unit    : MonoBehaviour {
 		
 		this.transform.parent.gameObject.transform.parent.GetComponent<TileManager>().clearAllTiles();
 		//if player is moving a piece
-		if (gm.gs == GameManager.gameState.playerMv || gm.gs == GameManager.gameState.opponentMv ){
+		if (gm.gs == GameManager.gameState.playerMv){
 			showMvTiles( (gm.gs ==  GameManager.gameState.playerAtk  ||  gm.gs ==  GameManager.gameState.playerMv ) ? allegiance.ally : allegiance.enemy);
-
-			          
-			//if player is attacking with a piece	
-		}else if (gm.gs == GameManager.gameState.playerAtk || gm.gs == GameManager.gameState.opponentAtk ){
+				          
+		//if player is attacking with a piece	
+		}else if (gm.gs == GameManager.gameState.playerAtk){
 			showAtkTiles();
 		}
 	}
@@ -280,7 +275,7 @@ public class Unit    : MonoBehaviour {
 		}
 	}
 	
-	void showAtkAccessibleTiles(TileScript tile, int num){
+	public void showAtkAccessibleTiles(TileScript tile, int num){
 		tile.renderer.material.color = new Color(1f,0.4f,0f, 0f);
 		TileScript tileS = tile.transform.GetComponent<TileScript>();
 		if (num != 0){
@@ -324,4 +319,4 @@ public class Unit    : MonoBehaviour {
 
 
 
-
+ 

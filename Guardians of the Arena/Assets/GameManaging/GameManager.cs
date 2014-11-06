@@ -3,17 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour {
-	bool turn = true;
+	public bool turn;
 	public bool movingPiece;
-	public enum gameState {playerMv,playerAtk,opponentMv,opponentAtk}
+	public enum gameState {playerMv,playerAtk}
+	public bool showReturnButton;
 	
 	public GUIText uInfo,mana,timerText,combatLog,suInfo;
-	//gamestate: player is moving a unit (1), attacking with a unit (2), enemy turn and moving (3), enemy turn and attakcking (4);
+	//gamestate: player is moving a unit (1), attacking with a unit (2), enemy turn and moving (3), enemy turn and attacking (4);
 	public gameState gs;
 	public int pMana = 1, maxMana = 1;
 	readonly int GAME_MAX_MANA = 8;
 	public string buttonOption = "Attack";
 	TileManager tm;
+	GameProcess gp;
 	
 	//Selected unit and available move squares
 	public Unit selectedUnit = null;
@@ -33,13 +35,18 @@ public class GameManager : MonoBehaviour {
 	
 	void Start () {
 		timer = TIMER_LENGTH;
-		
+	
+		gp = GameObject.Find ("GameProcess").GetComponent<GameProcess>();
+		showReturnButton = false;
 		suInfo = GameObject.Find("SelectedUnitInfoGUIText").GetComponent<GUIText>();
 		tm = GameObject.Find("TileManager").GetComponent<TileManager>();
 		uInfo = GameObject.Find("UnitInfoGUIText").GetComponent<GUIText>();
 		mana = GameObject.Find("ManaGUIText").GetComponent<GUIText>();
 		timerText = GameObject.Find("TimerGUIText").GetComponent<GUIText>();
 		combatLog = GameObject.Find("CombatLogGUIText").GetComponent<GUIText>();
+
+		if (gp.playerNumber == 1)
+			turn = true;
 	}
 	
 	void Update () {
@@ -47,16 +54,25 @@ public class GameManager : MonoBehaviour {
 			clearSelection();
 		}
 		
-		
 		timerText.text = "Time Left: " + (int)timer;
-		//		timer -= Time.deltaTime;
-		//	    if ( timer < 0 ){
-		//			
-		//			nextTurn ();
-		//	    }
+
 	}
 	
 	void OnGUI(){
+
+		if (GUI.Button (new Rect (Screen.width - 450, 0, 100, 20), "Surrender"))
+		{
+			//TODO: server command
+			gp.returnSocket().SendTCPPacket("surrender\\" + gp.clientNumber);
+		}
+
+
+		if (showReturnButton && GUI.Button (new Rect (Screen.width / 2 - 75, Screen.height / 2, 130, 20), "Return to Menu"))
+		{
+			showReturnButton = false;
+			DontDestroyOnLoad(GameObject.Find ("GameProcess"));
+			Application.LoadLevel(1);
+		}
 		
 		if (selectedUnit != null){
 			Unit script = selectedUnit.GetComponent<Unit>();
@@ -85,29 +101,29 @@ public class GameManager : MonoBehaviour {
 		mana.text = "Mana: " + pMana + "/" + maxMana;
 		
 		//Button to toggle between attacking and moving a piece
-		if(GUI.Button (new Rect(Screen.width - 130,0,130,20),buttonOption)){
+		if (GUI.Button (new Rect (Screen.width - 260, 0, 130, 20), "Move")) 
+		{
+			tm.clearAllTiles ();
+			accessibleTiles.Clear ();
+			gs = gameState.playerMv;
+
+			if (selectedUnit != null) 
+				selectedUnit.GetComponent<Unit>().showMvTiles(turn ? Unit.allegiance.ally : Unit.allegiance.enemy);
+		}
+
+		if(GUI.Button (new Rect(Screen.width - 130,0,130,20),"Attack")){
 			tm.clearAllTiles();
-			accessibleTiles.Clear();
-			if (gs ==  gameState.playerMv){
-				gs =  gameState.playerAtk;
-				buttonOption = "Move";
-				if (selectedUnit != null){
-					selectedUnit.GetComponent<Unit>().showAtkTiles();
-				}
-			}else if (gs == gameState.playerAtk){
-				gs =  gameState.playerMv;
-				buttonOption = "Attack";
-				if (selectedUnit != null){
-					selectedUnit.GetComponent<Unit>().showMvTiles( (gs ==  GameManager.gameState.playerAtk  ||  gs ==  GameManager.gameState.playerMv ) ? Unit.allegiance.ally : Unit.allegiance.enemy);
-				}
-			}
+			accessibleTiles.Clear();		
+			gs =  gameState.playerAtk;	
+
+			if (selectedUnit != null)
+				selectedUnit.GetComponent<Unit>().showAtkTiles();				
 		}
 		
 		//End turn button
-		string buttontext = turn? "(P1 Turn)" : "(P2 Turn)";
-		buttontext += "End Turn";
+		string buttontext = turn ? "End Turn" : "Opponent Turn ";
 		if (GUI.Button (new Rect(Screen.width - 130,20,130,20),buttontext)){
-			nextTurn ();
+			gp.returnSocket().SendTCPPacket("endTurn");
 		}
 	}
 	
@@ -122,30 +138,23 @@ public class GameManager : MonoBehaviour {
 		foreach(Unit x in playerUnits){
 			x.atkd = false;
 			x.mvd = false;
-		}
-		
+		}		
 	}
 	
 	void resetEnemyUnits(){
 		foreach(Unit x in enemyUnits){
 			x.atkd = false;
 			x.mvd = false;
-		}
-		
+		}		
 	}
 	
-	void nextTurn(){
-		if (!turn) {
-			gs = gameState.playerMv;
-		}else {
-			//gs = gameState.playerMv;
-			gs = gameState.opponentMv;
-		}
-
+	public void nextTurn(){
 		//reset game clock, mana, and increase max mana
 		timer = TIMER_LENGTH;
 		
 		if (!turn){
+			gs = gameState.playerMv;
+
 			if (maxMana < GAME_MAX_MANA)
 				maxMana++;
 		}
@@ -156,6 +165,7 @@ public class GameManager : MonoBehaviour {
 		tm.clearAllTiles();
 		resetPlayerUnits();
 		resetEnemyUnits();
-		clearSelection();	}
+		clearSelection();	
+	}
 	
 }

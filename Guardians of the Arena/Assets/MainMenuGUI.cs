@@ -7,15 +7,20 @@ public class MainMenuGUI : MonoBehaviour {
 	public GUIText guiText;
 	GameProcess gp;
 	public string chat;
+	public string challengedPlayer;
+	string challengedPlayerCopy;
 	globalChatScript globalChat;
+	bool challengePending;
 	
 	// Use this for initialization
 	void Start () {
 		guiText.text = string.Empty;
+		challengedPlayerCopy = string.Empty;
 		showGUI = true;
 		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 		globalChat = GameObject.Find("globalChat").GetComponent<globalChatScript>();
 		chat = "Press Enter to Chat";
+		challengePending = false;
 	}
 	
 	void OnGUI () {
@@ -42,14 +47,37 @@ public class MainMenuGUI : MonoBehaviour {
 		
 		if(showGUI)
 		{
-			if(GUI.Button(new Rect(Screen.width / 2 - 40, Screen.height / 2 - 75, 100, 20), "Play Game"))
+			if(!challengePending)
 			{
-				//send search request
-				gp.returnSocket().SendTCPPacket("search");
-				
-				guiText.text = "Searching for Opponent...";
-				showGUI = false;
+				if(GUI.Button(new Rect(Screen.width / 2 - 40, Screen.height / 2 - 75, 100, 20), "Play Game"))
+				{
+					//send search request
+					gp.returnSocket().SendTCPPacket("search");
+					
+					guiText.text = "Searching for Opponent...";
+					showGUI = false;
+				}
+
+				challengedPlayer = GUI.TextField (new Rect (Screen.width - 650, Screen.height - 240, 150, 20), challengedPlayer, 50);
+				if(GUI.Button(new Rect(Screen.width - 660, Screen.height - 270, 180, 20), "Send Challenge!"))
+				{
+					//TODO: 
+					gp.returnSocket().SendTCPPacket("challengeRequest\\" + gp.playerName + "\\" + challengedPlayer);
+					challengePending = true;
+					challengedPlayerCopy = challengedPlayer;
+					challengedPlayer = string.Empty;
+				}
 			}
+
+			else
+				if(GUI.Button(new Rect(Screen.width / 2 - 40, Screen.height / 2 - 75, 120, 20), "Cancel Challenge"))
+				{
+					//send search request
+					gp.returnSocket().SendTCPPacket("cancelChallenge\\" + gp.playerName + "\\" + challengedPlayerCopy );
+					
+					guiText.text = "Searching for Opponent...";
+					showGUI = false;
+				}
 			
 			if ( GUI.Button( new Rect( Screen.width / 2 - 45, Screen.height / 2 - 50, 110, 20), "Setup Boards"))
 			{

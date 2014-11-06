@@ -80,15 +80,15 @@ public class TileScript : MonoBehaviour {
 
 		
 		//as if attack button was pushed
-		gm.gs = gm.gs == GameManager.gameState.playerMv ? GameManager.gameState.playerAtk : GameManager.gameState.opponentAtk;
-		gm.buttonOption = "Move";
-		if (gm.selectedUnit != null){
-			gm.selectedUnit.GetComponent<Unit>().showAtkTiles();
-		}
+//		gm.gs = gm.gs == GameManager.gameState.playerMv ? GameManager.gameState.playerAtk : GameManager.gameState.opponentAtk;
+//
+//		if (gm.selectedUnit != null){
+//			gm.selectedUnit.GetComponent<Unit>().showAtkTiles();
+//		}
 	}
 
 	//pathfinder algorithm for moving pieces
-	void pathFinder(){
+	public void pathFinder(){
 		//use tiles
 		Queue<Node> open = new Queue<Node>();
 		Queue<Node> closed = new Queue<Node>();
@@ -146,30 +146,28 @@ public class TileScript : MonoBehaviour {
 		gm.tsy = y;
 		
 		//move unit selected to this tile if it can go there
-		if (gm.accessibleTiles.Contains(this) && this.objectOccupyingTile == null && (gm.gs ==  GameManager.gameState.playerMv ||gm.gs ==  GameManager.gameState.opponentMv  )){
+		if (gm.accessibleTiles.Contains(this) && this.objectOccupyingTile == null && (gm.gs ==  GameManager.gameState.playerMv)){
 			
 			//enough mana to move piece
 			if (gm.pMana >= gm.selectedUnit.GetComponent<Unit>().mvCost){
-				gm.pMana -= gm.selectedUnit.mvCost;
+				//gm.pMana -= gm.selectedUnit.mvCost;
 
-				pathFinder ();
+				//pathFinder ();
 
 				//remove unit from previous tile
-				gm.selectedUnit.transform.parent.GetComponent<TileScript>().objectOccupyingTile = null;
-				gm.selectedUnit.transform.parent = gameObject.transform;
+//				gm.selectedUnit.transform.parent.GetComponent<TileScript>().objectOccupyingTile = null;
+//				gm.selectedUnit.transform.parent = gameObject.transform;
 
 
 				//move unit to clicked tile
 				int x1 = gm.selectedUnit.transform.parent.GetComponent<TileScript>().x;
 				int y1 = gm.selectedUnit.transform.parent.GetComponent<TileScript>().y;
 				
-				gm.accessibleTiles.Clear();
-				this.objectOccupyingTile = gm.selectedUnit.gameObject;
-				gm.selectedUnit.GetComponent<Unit>().mvd = true;
-				
-				int x2 = this.x;
-				int y2 = this.y;
-				//gp.returnSocket().SendTCPPacket("game\\move\\" +gp.playerNumber + "\\" + gm.selectedUnit.unitID + "\\" + x1 + "\\" + y1 + "\\" + x2 + "\\" + y2);				
+//				gm.accessibleTiles.Clear();
+//				this.objectOccupyingTile = gm.selectedUnit.gameObject;
+//				gm.selectedUnit.GetComponent<Unit>().mvd = true;
+
+				gp.returnSocket().SendTCPPacket("move\\" + gm.selectedUnit.unitID + "\\" + x1 + "\\" + y1 + "\\" + this.x + "\\" + this.y);				
 			}else{
 				gm.combatLog.text = "Combat Log:\nNot enough mana";
 			}

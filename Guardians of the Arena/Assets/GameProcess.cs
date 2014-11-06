@@ -103,11 +103,13 @@ public class GameProcess : MonoBehaviour {
 			// startGame\\playerNumber
 			else if (tokens[0].Equals("startGame"))
 			{
+				playerNumber = Int32.Parse(tokens[1]);
+
 				DontDestroyOnLoad(GameObject.Find ("GameProcess"));
 				DontDestroyOnLoad(this);
 				Application.LoadLevel(3);
 				
-				playerNumber = Int32.Parse(tokens[1]);
+
 			}
 			
 			// globalChat\\userName\\chatContent
@@ -115,11 +117,57 @@ public class GameProcess : MonoBehaviour {
 			{
 				GameObject.Find ("GlobalChat").GetComponent<globalChatScript>().addLineToChat(tokens[1], tokens[2]);
 			}
+
+			// 
+			else if (tokens[0].Equals("challengeRequest"))
+			{
+				GameObject.Find ("challengeManager").GetComponent<challengeScript>().addChallengeRequest(tokens[1]);
+			}
+
+			else if (tokens[0].Equals("challengeAccepted"))
+			{
+
+			}
+
+			else if (tokens[0].Equals("challengeDeclined"))
+			{
+
+			}
+
+			else if (tokens[0].Equals("challengeCancelled"))
+			{
+				GameObject.Find ("challengeManager").GetComponent<challengeScript>().removeChallengeRequest(tokens[1]);
+			}
 			
 			#region GAME PACKETS
 			else if (tokens[0].Equals("move"))
 			{
-				movePiece(Int32.Parse(tokens[2]), Int32.Parse(tokens[3]), Int32.Parse(tokens[4]), Int32.Parse(tokens[5]));
+				movePiece(Int32.Parse(tokens[2]), Int32.Parse(tokens[3]), Int32.Parse(tokens[4]), Int32.Parse(tokens[5]), Int32.Parse(tokens[6]));
+			}
+
+			else if (tokens[0].Equals("attack"))
+			{
+				//TODO
+			}
+
+			else if (tokens[0].Equals("switchTurns"))
+			{
+				gameManager.nextTurn();
+			}
+
+			//TODO
+			else if (tokens[0].Equals("victory"))
+			{
+				gameManager.showReturnButton = true;
+				gameManager.combatLog.text = "You won!";
+
+			}
+
+			//TODO
+			else if (tokens[0].Equals("defeat"))
+			{
+				gameManager.showReturnButton = true;
+				gameManager.combatLog.text = "You lost!";
 			}
 			#endregion
 			
@@ -138,15 +186,16 @@ public class GameProcess : MonoBehaviour {
 		}
 	}
 	
-	public void movePiece(int fromX, int fromY, int toX, int toY)
+	public void movePiece(int fromX, int fromY, int toX, int toY, int manaToMove)
 	{
+		gameManager.pMana -= manaToMove;
+
 		TileScript from = tileManager.tiles[fromX, fromY].GetComponent<TileScript>();
 		TileScript to = tileManager.tiles[toX, toY].GetComponent<TileScript>();
-		
-		//add
-		Vector3 newPos = new Vector3(to.transform.position.x,0,to.transform.position.z);
-		
-		from.transform.GetChild(0).transform.position = newPos;
+
+		gameManager.selectedUnit = from.objectOccupyingTile.GetComponent<Unit>();
+
+		to.pathFinder ();
 		
 		gameManager.accessibleTiles.Clear();
 		to.objectOccupyingTile = from.transform.GetChild(0).gameObject;
@@ -157,6 +206,9 @@ public class GameProcess : MonoBehaviour {
 		from.transform.GetChild(0).transform.parent = gameObject.transform;
 		
 		tileManager.clearAllTiles();
+
+		//show attack range
+		//to.transform.GetChild (0).GetComponent<Unit> ().showAtkAccessibleTiles (to, to.transform.GetChild (0).GetComponent<Unit> ().atkRange);
 	}
 	
 	void OnLevelWasLoaded(int sceneNumber)
