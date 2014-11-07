@@ -14,6 +14,7 @@ public class challengeScript : MonoBehaviour {
 		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 		challengeRequests = new ArrayList ();
 		challenger = string.Empty;
+		challengeText = (GUIText)GameObject.Find ("challengeGUIText").GetComponent<GUIText> ();
 	}
 
 	void OnGUI()	
