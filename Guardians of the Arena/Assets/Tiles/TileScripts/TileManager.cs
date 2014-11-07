@@ -71,31 +71,31 @@ public class TileManager : MonoBehaviour {
 	}
 	
 	void addPresetTrees(){
-		addTree (0,7,20);
-		addTree (2,7,21);
-		addTree (3,7,22);
-		addTree (4,7,23);
+		addTree (0,7);
+		addTree (2,7);
+		addTree (3,7);
+		addTree (4,7);
 		
-		addTree (15,7,24);
-		addTree (13,7,25);
-		addTree (12,7,26);
-		addTree (11,7,27);
+		addTree (15,7);
+		addTree (13,7);
+		addTree (12,7);
+		addTree (11,7);
 		
 		
-		addTree (0,8,28);
-		addTree (2,8,29);
-		addTree (3,8,30);
-		addTree (4,8,31);
+		addTree (0,8);
+		addTree (2,8);
+		addTree (3,8);
+		addTree (4,8);
 		
-		addTree (15,8,32);
-		addTree (13,8,33);
-		addTree (12,8,34);
-		addTree (11,8,35);
+		addTree (15,8);
+		addTree (13,8);
+		addTree (12,8);
+		addTree (11,8);
 		
-		addTree (7,7,36);
-		addTree (7,8,37);
-		addTree (8,7,38);
-		addTree (8,8,39);
+		addTree (7,7);
+		addTree (7,8);
+		addTree (8,7);
+		addTree (8,8);
 		
 	}
 	
@@ -135,7 +135,7 @@ public class TileManager : MonoBehaviour {
 		addUnit (8,15,20,false, 19);
 	}
 	
-	void addTree(int x, int y, int IDNum){
+	void addTree(int x, int y){
 		TileScript placeTile = tiles[x,y].GetComponent<TileScript>();
 		GameObject tree = (GameObject)Instantiate(environmentObject, 
 		                                          new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
@@ -144,8 +144,7 @@ public class TileManager : MonoBehaviour {
 		tree.GetComponent<Unit> ().makeTree ();
 		placeTile.objectOccupyingTile = tree;
 		placeTile.gameObject.renderer.material.color = Color.gray;
-		gm.units.Add (IDNum, tree.GetComponent<Unit>());
-		tree.GetComponent<Unit> ().displayHPBar = true;
+
 	}
 	
 	void addUnit(int x, int y,int type, bool ally, int unitID){
@@ -224,9 +223,12 @@ public class TileManager : MonoBehaviour {
 		unit.GetComponent<Unit> ().unitID = unitID;
 
 		placeTile.gameObject.renderer.material.color = ally? Color.blue : Color.red;
-
-		gm.units.Add (unitID, unit.GetComponent<Unit> ());
-		unit.GetComponent<Unit> ().displayHPBar = true;
+		
+		if (ally){
+			gm.playerUnits.Add(unit.GetComponent<Unit>());
+		}else{
+			gm.enemyUnits.Add(unit.GetComponent<Unit>());
+		}
 	}
 	
 	//Resets color of tiles

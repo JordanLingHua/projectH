@@ -13,7 +13,7 @@ public class Unit    : MonoBehaviour {
 	public bool atkd, mvd;
 	public string name = string.Empty;
 	public string info = string.Empty;
-	public bool invincible,displayHPBar;
+	public bool invincible;
 	
 	//unit cost will be utilized here or elsewhere
 	//public string unitRole;//name called in switch statement here or elsewhere
@@ -85,34 +85,6 @@ public class Unit    : MonoBehaviour {
 	
 	void Update () {
 	}
-
-	//taken from http://answers.unity3d.com/questions/37752/how-to-render-a-colored-2d-rectangle.html
-	void DrawQuad(Rect position, Color color) {
-		Texture2D texture = new Texture2D(1, 1);
-		texture.SetPixel(0,0,color);
-		texture.Apply();
-		GUI.skin.box.normal.background = texture;
-		GUI.Box(position, GUIContent.none);
-	}
-
-	void OnGUI(){
-		if (displayHPBar) {
-			Camera cam = Camera.main;
-			Vector3 HPBarPos = cam.WorldToScreenPoint (gameObject.transform.position);
-			//background bar
-			DrawQuad (new Rect (HPBarPos.x - (Screen.width/75), Screen.height - HPBarPos.y - 10 < 0 ? Screen.height : Screen.height - HPBarPos.y - 10, 25, 5), Color.black);
-			float barColorSwitch = (float)hp / maxHP;
-			//color determined by how much hp remaining (green for high hp, yellow for medium, red for low
-			if (barColorSwitch > .6) {
-				DrawQuad (new Rect (HPBarPos.x - (Screen.width/75), Screen.height - HPBarPos.y - 10, barColorSwitch * 25, 5), Color.green);
-			} else if (barColorSwitch > 0.3) {
-				DrawQuad (new Rect (HPBarPos.x -(Screen.width/75), Screen.height - HPBarPos.y - 10, barColorSwitch * 25, 5), Color.yellow);
-			} else {
-				DrawQuad (new Rect (HPBarPos.x -(Screen.width/75), Screen.height - HPBarPos.y - 10, barColorSwitch * 25, 5), Color.red);
-			}
-		}
-	}
-
 	
 	void OnMouseEnter(){
 		//show unit info when hovering over it
@@ -151,29 +123,29 @@ public class Unit    : MonoBehaviour {
 		//this unit is not the currently selected unit (no attacking self)
 		//the game is in attack mode
 		//the unit selected is in range of the selected unit
-		if (gm.selectedUnit != this && gm.gs == GameManager.gameState.playerAtk 
-				&& gm.accessibleTiles.Contains (this.transform.parent.GetComponent<TileScript> ())) {
-			if (gm.turn){
-				attackUnit ();
+		if (gm.turn) {
+			if (gm.selectedUnit != this && gm.gs == GameManager.gameState.playerAtk 
+					&& gm.accessibleTiles.Contains (this.transform.parent.GetComponent<TileScript> ())) {
+					attackUnit ();
+			} else {
+					selectUnit ();
 			}
-		} else {
-				selectUnit ();
 		}
 	}
 	
 	void playerSSKillable(){
-		foreach (int key in gm.units.Keys){
-			if (gm.units[key].ID == 20 && gm.units[key].alleg == allegiance.ally){
-				gm.units[key].invincible = false;
+		foreach (Unit x in gm.playerUnits){
+			if (x.ID == 20){
+				x.invincible = false;
 				break;
 			}
 		}
 	}
 	
 	void enemySSKillable(){
-		foreach (int key in gm.units.Keys){
-			if (gm.units[key].ID == 20 && gm.units[key].alleg == allegiance.enemy){
-				gm.units[key].invincible = false;
+		foreach (Unit x in gm.enemyUnits){
+			if (x.ID == 20){
+				x.invincible = false;
 				break;
 			}
 		}
@@ -192,27 +164,30 @@ public class Unit    : MonoBehaviour {
 				//if the unit attacked was killed, remove it from the board and unit list
 				if (this.hp <=0){				
 					
-//					//make the soulstone vulnerable if the player guardian was killed
-//					if (this.ID == 19){
-//						if (gm.playerUnits.Contains(this)){
-//							playerSSKillable();
-//						}else{
-//							enemySSKillable();
-//						}
-//					}					
-//					
-//					if (this.ID == 20){
-//						gm.showReturnButton = true;
-//						if(gm.playerUnits.Contains(this)){
-//							
-//							gm.combatLog.text = "Player 2 has won!";
-//						}else{
-//							gm.combatLog.text = "Player 1 has won!";
-//						}
-//					} 					
-
-					gm.units.Remove(unitID);
-
+					//make the soulstone vulnerable if the player guardian was killed
+					if (this.ID == 19){
+						if (gm.playerUnits.Contains(this)){
+							playerSSKillable();
+						}else{
+							enemySSKillable();
+						}
+					}					
+					
+					if (this.ID == 20){
+						gm.showReturnButton = true;
+						if(gm.playerUnits.Contains(this)){
+							
+							gm.combatLog.text = "Player 2 has won!";
+						}else{
+							gm.combatLog.text = "Player 1 has won!";
+						}
+					} 					
+					
+					if (gm.playerUnits.Contains(this)){
+						gm.playerUnits.Remove(this);
+					}else{
+						gm.enemyUnits.Remove(this);
+					}
 					this.transform.parent.GetComponent<TileScript>().objectOccupyingTile = null;
 					Destroy(gameObject);
 					
@@ -238,7 +213,7 @@ public class Unit    : MonoBehaviour {
 		this.transform.parent.gameObject.transform.parent.GetComponent<TileManager>().clearAllTiles();
 		//if player is moving a piece
 		if (gm.gs == GameManager.gameState.playerMv){
-			showMvTiles(alleg);
+			showMvTiles( (gm.gs ==  GameManager.gameState.playerAtk  ||  gm.gs ==  GameManager.gameState.playerMv ) ? allegiance.ally : allegiance.enemy);
 				          
 		//if player is attacking with a piece	
 		}else if (gm.gs == GameManager.gameState.playerAtk){
@@ -273,7 +248,7 @@ public class Unit    : MonoBehaviour {
 		}
 	}
 	
-	void showMvAccessibleTiles(TileScript tile, int num, allegiance ally){
+	void showMvAccessibleTiles(TileScript tile, int num,allegiance ally){
 		TileScript tileS = tile.transform.GetComponent<TileScript>();
 		
 		if (tileS.objectOccupyingTile == null){

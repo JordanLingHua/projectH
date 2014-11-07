@@ -76,6 +76,15 @@ public class TileScript : MonoBehaviour {
 		}
 		gm.movingPiece = false;
 		objectOccupyingTile = gm.selectedUnit.gameObject;
+
+
+		
+		//as if attack button was pushed
+//		gm.gs = gm.gs == GameManager.gameState.playerMv ? GameManager.gameState.playerAtk : GameManager.gameState.opponentAtk;
+//
+//		if (gm.selectedUnit != null){
+//			gm.selectedUnit.GetComponent<Unit>().showAtkTiles();
+//		}
 	}
 
 	//pathfinder algorithm for moving pieces
@@ -132,6 +141,10 @@ public class TileScript : MonoBehaviour {
 	void OnMouseDown(){
 
 		if (gm != null){
+		//set tile selected coord in GM script
+		gm.tsx = x;
+		gm.tsy = y;
+		
 		//move unit selected to this tile if it can go there
 		if (gm.accessibleTiles.Contains(this) && this.objectOccupyingTile == null && (gm.gs ==  GameManager.gameState.playerMv)){
 			

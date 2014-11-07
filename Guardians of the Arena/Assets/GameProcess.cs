@@ -158,6 +158,7 @@ public class GameProcess : MonoBehaviour {
 			//TODO
 			else if (tokens[0].Equals("victory"))
 			{
+				gameManager.showReturnButton = true;
 				gameManager.combatLog.text = "You won!";
 
 			}
@@ -165,6 +166,7 @@ public class GameProcess : MonoBehaviour {
 			//TODO
 			else if (tokens[0].Equals("defeat"))
 			{
+				gameManager.showReturnButton = true;
 				gameManager.combatLog.text = "You lost!";
 			}
 			#endregion
