@@ -9,7 +9,14 @@ public class SetupTileScript : MonoBehaviour {
 		ps = GameObject.Find("PlayerSetup").GetComponent<PlayerSetup>();
 	}
 
+
+
+
+
 	void Update () {
 	
 	}
+
+
+
 }

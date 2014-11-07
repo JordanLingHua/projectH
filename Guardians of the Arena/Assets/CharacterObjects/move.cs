@@ -1,49 +1,71 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 public class move : MonoBehaviour {
 
-	private Vector3 screenPoint;
 
 
-	// Use this for initialization
-	void Start () {
+	//drag and drop
+	private Ray ray = new Ray();
+	private RaycastHit hit = new RaycastHit();
 
+	//Needed to avoid getting the dragged object stuck when mouse is released up
+	private bool isTouched = false;
 
+	//nearest slot; will keep UPDATING!!!!
+	Transform slot;
+
+	//slot tag's name 
+	public string tagName = "Tile";
 	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-
-		//Remember this sort of logic?!?!?!?!?  
-		/*
-		if Input.GetMouseButtonDown(0)
-		{
-		}
-		 */
-
-
-	}
-
-
-	//Alternative loops to UPDATE method.  Remember Unity has BUILT-IN 
-	//c# methods that you can re-implement!!!!
-
 	void OnMouseDown()
 	{
-		screenPoint = Camera.main.WorldToScreenPoint(transform.position);
+		isTouched = true;
 	}
-
-	void OnMouseDrag()
+	
+	void OnMouseUp()
 	{
-		Vector3 currentScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
-		Vector3 currentPos = Camera.main.ScreenToWorldPoint(currentScreenPoint);
-
-		transform.position = currentPos;
+		isTouched = false;
+		slot = findNearest();
+		//if there is a slot
+		if (slot != null)
+		{
+			transform.position = new Vector3(slot.transform.position.x, 5.0f, slot.position.z);
+		}
 	}
-
-
-
+	
+	Transform findNearest()
+	{
+		float nearestDistanceTile = Mathf.Infinity;
+		GameObject[] taggedGameObjects = GameObject.FindGameObjectsWithTag(tagName);//<---KEY compares all objects near with that tag name!  Works perfectly for a set of tiles!!!
+		Transform nearestObj = null;
+		foreach (GameObject obj in taggedGameObjects)
+		{
+			Vector3 objectPos = obj.transform.position;
+			float distanceTile = (objectPos - transform.position).sqrMagnitude;
+			
+			if (distanceTile < nearestDistanceTile)
+			{
+				nearestObj = obj.transform;
+				nearestDistanceTile = distanceTile;
+			}
+		}
+		
+		return nearestObj;
+	}
+	
+	void Update()
+	{
+		//drag drop how:  
+		if (isTouched)
+		{
+			ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+			if (Physics.Raycast(ray, out hit))
+			{
+				transform.position = new Vector3(hit.point.x, 5.0f, hit.point.z);
+			}
+		}
+	}
 
 }
