@@ -3,15 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour {
-	public bool turn;
-	public bool movingPiece;
+	public bool turn,showMenu,movingPiece;
 	public enum gameState {playerMv,playerAtk}
-	public bool showReturnButton;
 	
 	public GUIText uInfo,mana,timerText,combatLog,suInfo;
 	//gamestate: player is moving a unit (1), attacking with a unit (2), enemy turn and moving (3), enemy turn and attacking (4);
 	public gameState gs;
-	public int pMana = 1, maxMana = 1;
+	public int pMana = 1, maxMana = 1,selGridInt;
 	readonly int GAME_MAX_MANA = 8;
 	public string buttonOption = "Attack";
 	TileManager tm;
@@ -20,24 +18,20 @@ public class GameManager : MonoBehaviour {
 	//Selected unit and available move squares
 	public Unit selectedUnit = null;
 	public HashSet<TileScript> accessibleTiles = new HashSet<TileScript>();
-	
-	//tile selected x and tile selected y
-	public int tsx, tsy;
+
+	public Texture2D menuTexture;
 	
 	//Timer variables
 	readonly float TIMER_LENGTH = 60f;
 	float timer;
 	
 	//set
-	public HashSet<Unit> playerUnits = new HashSet<Unit>();
-	public HashSet<Unit> enemyUnits = new HashSet<Unit>();
-	
+	public Dictionary<int,Unit> units = new Dictionary<int, Unit>();
 	
 	void Start () {
 		timer = TIMER_LENGTH;
 	
 		gp = GameObject.Find ("GameProcess").GetComponent<GameProcess>();
-		showReturnButton = false;
 		suInfo = GameObject.Find("SelectedUnitInfoGUIText").GetComponent<GUIText>();
 		tm = GameObject.Find("TileManager").GetComponent<TileManager>();
 		uInfo = GameObject.Find("UnitInfoGUIText").GetComponent<GUIText>();
@@ -52,27 +46,86 @@ public class GameManager : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.Escape)){
 			clearSelection();
+		}else if (Input.GetKeyDown(KeyCode.F10)){
+			showMenu = !showMenu;
 		}
 		
 		timerText.text = "Time Left: " + (int)timer;
 
 	}
-	
+
+	void displayHPBars(int choice){
+
+		switch (choice) {
+		case 0:
+			foreach (int key in units.Keys){
+				units[key].displayHPBar = true;
+			}
+			break;
+		case 1:
+			foreach (int key in units.Keys){
+				if (units[key].alleg == Unit.allegiance.ally){
+					units[key].displayHPBar = true;
+				}else{
+					units[key].displayHPBar = false;
+				}
+			}
+			break;
+		case 2:
+			foreach (int key in units.Keys){
+				if (units[key].alleg == Unit.allegiance.enemy){
+					units[key].displayHPBar = true;
+				}else{
+					units[key].displayHPBar = false;
+				}
+			}
+			break;
+		case 3:
+			foreach (int key in units.Keys){
+				units[key].displayHPBar = false;
+			}
+			break;
+		}
+	}
+
 	void OnGUI(){
 
-		if (GUI.Button (new Rect (Screen.width - 450, 0, 100, 20), "Surrender"))
-		{
-			//TODO: server command
-			gp.returnSocket().SendTCPPacket("surrender\\" + gp.clientNumber);
+		if (showMenu) {
+			GUI.skin.box.normal.background = menuTexture;
+			GUI.BeginGroup (new Rect (Screen.width / 2 - 100, Screen.height / 2 - 100, 200, 200));
+			//main box
+			GUI.Box (new Rect (0,0,200,200), "Main menu");
+			//health bar options
+			GUI.Label(new Rect (10,17,100,20),"Health Bars");
+			string[] selStrings = new string[] {"All", "Allied", "Enemy","Off"};
+			//only change options if changed
+			int prev = selGridInt;
+			selGridInt = GUI.SelectionGrid(new Rect(10, 40, 180, 40), selGridInt, selStrings, 2);
+			if (prev != selGridInt)
+				displayHPBars(selGridInt);
+
+
+			//sound options
+			GUI.Label(new Rect (10,80,100,20),"Sound");
+
+
+			//Surrender Button
+			if (GUI.Button (new Rect (50, 150, 100, 20), "Surrender"))
+			{
+				//TODO: server command
+				gp.returnSocket().SendTCPPacket("surrender\\" + gp.clientNumber);
+			}
+
+			//Quit Button
+			if (GUI.Button (new Rect (50, 175, 100, 20), "Quit"))
+			{
+				Application.Quit();
+			}
+			GUI.EndGroup();
 		}
 
 
-		if (showReturnButton && GUI.Button (new Rect (Screen.width / 2 - 75, Screen.height / 2, 130, 20), "Return to Menu"))
-		{
-			showReturnButton = false;
-			DontDestroyOnLoad(GameObject.Find ("GameProcess"));
-			Application.LoadLevel(1);
-		}
+
 		
 		if (selectedUnit != null){
 			Unit script = selectedUnit.GetComponent<Unit>();
@@ -108,7 +161,7 @@ public class GameManager : MonoBehaviour {
 			gs = gameState.playerMv;
 
 			if (selectedUnit != null) 
-				selectedUnit.GetComponent<Unit>().showMvTiles(turn ? Unit.allegiance.ally : Unit.allegiance.enemy);
+				selectedUnit.GetComponent<Unit>().showMvTiles(selectedUnit.alleg);
 		}
 
 		if(GUI.Button (new Rect(Screen.width - 130,0,130,20),"Attack")){
@@ -135,17 +188,21 @@ public class GameManager : MonoBehaviour {
 	}
 	
 	void resetPlayerUnits(){
-		foreach(Unit x in playerUnits){
-			x.atkd = false;
-			x.mvd = false;
-		}		
+		foreach (int key in units.Keys){
+			if (units[key].alleg == Unit.allegiance.ally){
+				units[key].atkd = false;
+				units[key].mvd = false;
+			}
+		}
 	}
 	
 	void resetEnemyUnits(){
-		foreach(Unit x in enemyUnits){
-			x.atkd = false;
-			x.mvd = false;
-		}		
+		foreach (int key in units.Keys){
+			if (units[key].alleg == Unit.allegiance.ally){
+				units[key].atkd = false;
+				units[key].mvd = false;
+			}
+		}
 	}
 	
 	public void nextTurn(){
