@@ -110,21 +110,21 @@ public class PlayerSetup : MonoBehaviour {
 		//providedPieces[0] = temp;//test for prefab instantiation 1
 
 
-		providedPieces[0] = (GameObject)Instantiate(unit1, new Vector3(0, 0, 0), new Quaternion(0,0,0,1));
-		providedPieces[1] = (GameObject)Instantiate(unit2, new Vector3(0, 0, 0), new Quaternion(0,0,0,1));
-		providedPieces[2] = (GameObject)Instantiate(unit3, new Vector3(0, 0, 0), new Quaternion(0,0,0,1));
-		providedPieces[3] = (GameObject)Instantiate(unit3, new Vector3(0, 0, 0), new Quaternion(0,0,0,1));
-		providedPieces[4] = (GameObject)Instantiate(unit4, new Vector3(0, 0, 0), new Quaternion(0,0,0,1));
-		providedPieces[5] = (GameObject)Instantiate(unit5, new Vector3(0, 0, 0), new Quaternion(0,0,0,1));
-		providedPieces[6] = (GameObject)Instantiate(unit6, new Vector3(0, 0, 0), new Quaternion(0,0,0,1));
-		providedPieces[7] = (GameObject)Instantiate(unit7, new Vector3(0, 0, 0), new Quaternion(0,0,0,1));
-		providedPieces[8] = (GameObject)Instantiate(unit7, new Vector3(0, 0, 0), new Quaternion(0,0,0,1));
-		providedPieces[9] = (GameObject)Instantiate(unit7, new Vector3(0, 0, 0), new Quaternion(0,0,0,1));
-		providedPieces[10] = (GameObject)Instantiate(unit8, new Vector3(0, 0, 0), new Quaternion(0,0,0,1));
-		providedPieces[11] = (GameObject)Instantiate(unit9, new Vector3(0, 0, 0), new Quaternion(0,0,0,1));
-		providedPieces[12] = (GameObject)Instantiate(unit9, new Vector3(0, 0, 0), new Quaternion(0,0,0,1));
-		providedPieces[13] = (GameObject)Instantiate(unit10, new Vector3(0, 0, 0), new Quaternion(0,0,0,1));
-		providedPieces[14] = (GameObject)Instantiate(unit11, new Vector3(0, 0, 0), new Quaternion(0,0,0,1));
+		providedPieces[0] = (GameObject)Instantiate(unit1, new Vector3(0, 0, -10), new Quaternion(0,0,0,1));
+		providedPieces[1] = (GameObject)Instantiate(unit2, new Vector3(10, 0, -10), new Quaternion(0,0,0,1));
+		providedPieces[2] = (GameObject)Instantiate(unit3, new Vector3(20, 0, -10), new Quaternion(0,0,0,1));
+		providedPieces[3] = (GameObject)Instantiate(unit3, new Vector3(30, 0, -10), new Quaternion(0,0,0,1));
+		providedPieces[4] = (GameObject)Instantiate(unit4, new Vector3(40, 0, -10), new Quaternion(0,0,0,1));
+		providedPieces[5] = (GameObject)Instantiate(unit5, new Vector3(50, 0, -10), new Quaternion(0,0,0,1));
+		providedPieces[6] = (GameObject)Instantiate(unit6, new Vector3(60, 0, -10), new Quaternion(0,0,0,1));
+		providedPieces[7] = (GameObject)Instantiate(unit7, new Vector3(70, 0, -10), new Quaternion(0,0,0,1));
+		providedPieces[8] = (GameObject)Instantiate(unit7, new Vector3(80, 0, -10), new Quaternion(0,0,0,1));
+		providedPieces[9] = (GameObject)Instantiate(unit7, new Vector3(90, 0, -10), new Quaternion(0,0,0,1));
+		providedPieces[10] = (GameObject)Instantiate(unit8, new Vector3(0, 0, -20), new Quaternion(0,0,0,1));
+		providedPieces[11] = (GameObject)Instantiate(unit9, new Vector3(10, 0, -20), new Quaternion(0,0,0,1));
+		providedPieces[12] = (GameObject)Instantiate(unit9, new Vector3(20, 0, -20), new Quaternion(0,0,0,1));
+		providedPieces[13] = (GameObject)Instantiate(unit10, new Vector3(30, 0, -20), new Quaternion(0,0,0,1));
+		providedPieces[14] = (GameObject)Instantiate(unit11, new Vector3(40, 0, -20), new Quaternion(0,0,0,1));
 
 		/*
 		providedPieces[0] = (GameObject)Instantiate(Resources.Load("UnitOnePrefab"), new Vector3(0, 0, 0), new Quaternion(0,0,0,1));
@@ -195,10 +195,36 @@ public class PlayerSetup : MonoBehaviour {
 
 
 	//Drag and drop
+	//highlight the square that the curser is in.  
 	// Update is called once per frame
 	void Update () {
 
 
+		//highlight the square that the curser is in. 
+
+
+
 	
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
