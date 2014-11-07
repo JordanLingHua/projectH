@@ -74,6 +74,7 @@
      <Compile Include="Assets\Tiles\TileScripts\BaseObject.cs" />
      <Compile Include="Assets\Tiles\TileScripts\TileManager.cs" />
      <Compile Include="Assets\Tiles\TileScripts\TileScript.cs" />
+     <Compile Include="Assets\challengeScript.cs" />
      <Compile Include="Assets\globalChatScript.cs" />
      <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
