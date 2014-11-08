@@ -145,7 +145,7 @@ public class PlayerSetup : MonoBehaviour {
 		*/
 
 
-		/*
+
 		//Add a move script to each, just for this scene though (this scene should be the only scene that calls this script)
 		//Position each of the pieces just made onto the board: 
 		for(int i = 0; i < 15; i++)
@@ -156,7 +156,7 @@ public class PlayerSetup : MonoBehaviour {
 
 		}
 
-
+		/*
 		//NOTE:  position of each tile is ---->  Vector3 position = new Vector3((10 * i), 0, (10 * j));
 
 		//int myX, myY, myZ = 0;
