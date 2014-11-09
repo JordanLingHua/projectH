@@ -86,9 +86,9 @@ namespace Guardians_Of_The_Arena_Server
                     //THEN we send a packet to both clients allow the object to move tiles.
                     if (currentPlayer.isMyTurn)
                     {
-                        GameBoard.Tile startTile = board.Tiles[Int32.Parse(message[2]), Int32.Parse(message[3])];
-                        GameBoard.Tile destinationTile = board.Tiles[Int32.Parse(message[4]), Int32.Parse(message[5])];
-                        Unit movingUnit = startTile.CurrentUnit;
+                        Unit movingUnit = board.getUnitByID(Int32.Parse(message[1]));
+                        GameBoard.Tile startTile = movingUnit.CurrentTile;
+                        GameBoard.Tile destinationTile = board.Tiles[Int32.Parse(message[2]), Int32.Parse(message[3])];
                         movingUnit.setAccessibleTiles(startTile, movingUnit.MovementRange);
 
                         if (currentPlayer.currentMana >= movingUnit.MovementCost
@@ -96,19 +96,13 @@ namespace Guardians_Of_The_Arena_Server
                         {
                             currentPlayer.currentMana -= movingUnit.MovementCost;
 
-                            Console.WriteLine("moving unit from tile(" + startTile.x + "," + startTile.y + ") to tile(" + destinationTile.x + "," + destinationTile.y + ")");
-                            board.moveUnit(board.Tiles[Int32.Parse(message[2]), Int32.Parse(message[3])], board.Tiles[Int32.Parse(message[4]), Int32.Parse(message[5])]);
+                            Console.WriteLine("LOG: moving unit from tile(" + startTile.x + "," + startTile.y + ") to tile(" + destinationTile.x + "," + destinationTile.y + ")");
+                            board.moveUnit(startTile, destinationTile);
 
                             //Tell the clients to move the unit
-                            player2.playerClient.sw.WriteLine("move\\" + message[1] + "\\"
-                                                                + message[2] + "\\" + message[3] + "\\"
-                                                                + message[4] + "\\" + message[5] + "\\"
-                                                                + movingUnit.MovementCost);
+                            player2.playerClient.sw.WriteLine("move\\" + message[1] + "\\" + destinationTile.x + "\\" + destinationTile.y);
 
-                            player1.playerClient.sw.WriteLine("move\\" + message[1] + "\\"
-                                                                + message[2] + "\\" + message[3] + "\\"
-                                                                + message[4] + "\\" + message[5] + "\\"
-                                                                + movingUnit.MovementCost);
+                            player1.playerClient.sw.WriteLine("move\\" + message[1] + "\\" + destinationTile.x + "\\" + destinationTile.y);
                         }
 
                         movingUnit.accessibleTiles.Clear();
@@ -119,14 +113,18 @@ namespace Guardians_Of_The_Arena_Server
                 {
                     if (currentPlayer.isMyTurn)
                     {
-                        GameBoard.Tile tileToAttack = board.Tiles[Int32.Parse(message[1]), Int32.Parse(message[2])];
-                        Unit attackingUnit = tileToAttack.CurrentUnit;
-                        attackingUnit.setAttackTiles(attackingUnit.CurrentTile, attackingUnit.AttackCost);
+                        Unit attackingUnit = board.getUnitByID(Int32.Parse(message[1]));
+                        GameBoard.Tile tileToAttack = board.Tiles[Int32.Parse(message[2]), Int32.Parse(message[3])];
+                        attackingUnit.setAttackTiles(attackingUnit.CurrentTile, attackingUnit.AttackRange);
 
                         if (currentPlayer.currentMana >= attackingUnit.AttackCost
                             && attackingUnit.accessibleTiles.Contains(tileToAttack))
                         {
+                            Console.WriteLine("LOG: Unit " + attackingUnit.UniqueID + " is attacking tile(" + tileToAttack.x + ", " + tileToAttack.y + ")");
                             currentPlayer.currentMana -= attackingUnit.AttackCost;
+
+                            if (tileToAttack.CurrentUnit != null)
+                                tileToAttack.CurrentUnit.ApplyDamage(attackingUnit.Damage);
 
                             player1.playerClient.sw.WriteLine("attack\\" + message[1] + "\\" + message[2]);
                             player2.playerClient.sw.WriteLine("attack\\" + message[1] + "\\" + message[2]);
@@ -156,12 +154,14 @@ namespace Guardians_Of_The_Arena_Server
                 player1.isMyTurn = false;
                 player2.isMyTurn = true;
                 currentTurn = TURN.PLAYER_2;
+                Console.WriteLine("LOG: Player_1 has ended their turn. It is now Player_2's turn.");
             }
             else
             {
                 player1.isMyTurn = true;
                 player2.isMyTurn = false;
                 currentTurn = TURN.PLAYER_1;
+                Console.WriteLine("LOG: Player_2 has ended their turn. It is now Player_1's turn.");
             }
 
         }

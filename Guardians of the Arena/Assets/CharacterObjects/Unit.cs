@@ -88,8 +88,10 @@ public class Unit    : MonoBehaviour {
 	
 	void OnMouseEnter(){
 		//show unit info when hovering over it
+
+		if (Application.loadedLevelName.Equals("BoardScene")){
 		this.transform.parent.renderer.material.shader = Shader.Find ("Toon/Lighted");
-		refreshUnitText ();
+			refreshUnitText ();}
 		
 	}
 
@@ -115,7 +117,11 @@ public class Unit    : MonoBehaviour {
 	void OnMouseExit(){
 		//clear unit info when not hovering over it
 		gm.uInfo.text  = "";
-		this.transform.parent.renderer.material.shader = Shader.Find ("Toon/Basic");
+
+		if (Application.loadedLevelName.Equals("BoardScene"))
+			this.transform.parent.renderer.material.shader = Shader.Find ("Toon/Basic");
+		  
+
 	}
 	
 	void OnMouseDown() {

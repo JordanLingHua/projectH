@@ -39,7 +39,9 @@ public class GameManager : MonoBehaviour {
 		gp = GameObject.Find ("GameProcess").GetComponent<GameProcess>();
 		showReturnButton = false;
 		suInfo = GameObject.Find("SelectedUnitInfoGUIText").GetComponent<GUIText>();
-		tm = GameObject.Find("TileManager").GetComponent<TileManager>();
+
+		if(Application.loadedLevelName.Equals("BoardScene"))
+			tm = GameObject.Find("TileManager").GetComponent<TileManager>();
 		uInfo = GameObject.Find("UnitInfoGUIText").GetComponent<GUIText>();
 		mana = GameObject.Find("ManaGUIText").GetComponent<GUIText>();
 		timerText = GameObject.Find("TimerGUIText").GetComponent<GUIText>();

@@ -6,6 +6,7 @@ public class UnitEleven : Unit {
 
 
 	void Start () {
+		if(Application.loadedLevelName == "BoardScene")
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 		name = "Soulstone";
 		hp = 1;

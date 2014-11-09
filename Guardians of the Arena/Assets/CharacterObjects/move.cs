@@ -5,7 +5,8 @@ using System.Collections;
 public class move : MonoBehaviour {
 
 
-
+	public PlayerSetup playerSetup;
+	SetupTileScript oldScript;
 	//drag and drop
 	private Ray ray = new Ray();
 	private RaycastHit hit = new RaycastHit();
@@ -18,21 +19,123 @@ public class move : MonoBehaviour {
 
 	//slot tag's name 
 	public string tagName = "Tile";
-	
+
+
+	void Start()
+	{
+		playerSetup = GameObject.Find ("PlayerSetup").GetComponent<PlayerSetup>(); 
+	}
+
+
 	void OnMouseDown()
 	{
+		//
+		//PlayerSetup.prevPosition = transform.position;//pass by value hopefully
+		playerSetup.prevPosition = transform.position;//pass by value hopefully
+		//
+
 		isTouched = true;
 	}
 	
 	void OnMouseUp()
 	{
+
 		isTouched = false;
 		slot = findNearest();
 		//if there is a slot
-		if (slot != null)
+		Debug.Log (slot);
+		if (slot != null && !slot.GetComponent<SetupTileScript>().occupied)
 		{
-			transform.position = new Vector3(slot.transform.position.x, 5.0f, slot.position.z);
+			Debug.Log ("7 or 8" + (gameObject.GetComponent<Unit>().unitRole));
+			if(gameObject.GetComponent<Unit>().unitRole == 505 || gameObject.GetComponent<Unit>().unitRole == 506){
+				if(slot.GetComponent<SetupTileScript>().tt == SetupTileScript.TileType.ONFIELD)
+					{
+						this.transform.parent.GetComponent<SetupTileScript>().occupied = false;
+						this.transform.parent = slot;
+						transform.position = new Vector3(slot.transform.position.x, 5.0f, slot.position.z);
+						slot.GetComponent<SetupTileScript>().occupied = true;
+					}
+				else
+					transform.position = playerSetup.prevPosition;
+			}
+
+			else if(playerSetup.playerPieces.Count < playerSetup.boardCapacity)
+			{
+				if(slot.GetComponent<SetupTileScript>().tt == SetupTileScript.TileType.ONFIELD)
+				{
+					if(!playerSetup.playerPieces.Contains(gameObject))
+						playerSetup.playerPieces.Add(gameObject);
+
+					this.transform.parent.GetComponent<SetupTileScript>().occupied = false;
+					this.transform.parent = slot;
+					transform.position = new Vector3(slot.transform.position.x, 5.0f, slot.position.z);
+					slot.GetComponent<SetupTileScript>().occupied = true;
+				}
+
+			
+				else 
+				{
+					if(playerSetup.playerPieces.Contains(gameObject))
+						playerSetup.playerPieces.Remove(gameObject);
+
+					this.transform.parent.GetComponent<SetupTileScript>().occupied = false;
+					this.transform.parent = slot;
+					transform.position = new Vector3(slot.transform.position.x, 5.0f, slot.position.z);
+					slot.GetComponent<SetupTileScript>().occupied = true;
+				}
+			}
+
+			else
+			{
+				if(slot.GetComponent<SetupTileScript>().tt == SetupTileScript.TileType.ONFIELD)
+				{
+					Debug.Log (playerSetup.playerPieces.Contains(gameObject));
+					if(playerSetup.playerPieces.Contains(gameObject))
+					{
+						this.transform.parent.GetComponent<SetupTileScript>().occupied = false;
+						this.transform.parent = slot;
+						transform.position = new Vector3(slot.transform.position.x, 5.0f, slot.position.z);
+						slot.GetComponent<SetupTileScript>().occupied = true;
+					}
+
+					else
+						transform.position = playerSetup.prevPosition;
+
+				}
+
+				else if(playerSetup.playerPieces.Contains(gameObject))
+				{
+					playerSetup.playerPieces.Remove(gameObject);
+
+					this.transform.parent.GetComponent<SetupTileScript>().occupied = false;
+					this.transform.parent = slot;
+					transform.position = new Vector3(slot.transform.position.x, 5.0f, slot.position.z);
+					slot.GetComponent<SetupTileScript>().occupied = true;
+				}
+			}
+
+
+			//Special if dragging object to field-type tile:
+
+			Debug.Log(playerSetup.playerPieces.Count);
+
+
+
+
 		}
+		else
+		
+		{
+
+			//transform.position = PlayerSetup.prevPosition;
+			transform.position = playerSetup.prevPosition;
+
+		}
+
+
+
+
+
 	}
 	
 	Transform findNearest()
@@ -54,6 +157,10 @@ public class move : MonoBehaviour {
 		
 		return nearestObj;
 	}
+
+
+
+
 	
 	void Update()
 	{

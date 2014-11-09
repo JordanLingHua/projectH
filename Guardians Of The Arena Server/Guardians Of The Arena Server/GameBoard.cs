@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
@@ -9,15 +10,22 @@ namespace Guardians_Of_The_Arena_Server
         private short width = 16;
         private short height = 16;
         private Tile[,] tiles;
+        private Dictionary<int, Unit> unitTable;
 
         public Tile[,] Tiles
         {
             get { return tiles; }
         }
 
+        public Dictionary<int, Unit> UnitTable
+        {
+            get { return unitTable; }
+        }
+
         public GameBoard()
         {
             tiles = new Tile[width, height];
+            unitTable = new Dictionary<int, Unit>();
 
             for (int i = 0; i < width; i++)
             {
@@ -93,35 +101,134 @@ namespace Guardians_Of_The_Arena_Server
 
                     //set player 1 units
                     //melee units
-                    tiles[5, 3].CurrentUnit = new Unit(3,1,1);
-                    tiles[6, 3].CurrentUnit = new Unit(3,1,1);
-                    tiles[9, 3].CurrentUnit = new Unit(3,1,1);
-                    tiles[10, 3].CurrentUnit = new Unit(3,1,1);
+                    Unit unit = new Units.Unit7(0);
+                    unit.CurrentTile = tiles[5, 3];
+                    tiles[5, 3].CurrentUnit = unit;
+                    unitTable.Add(unit.UniqueID, unit);
+                    
+
+                    unit = new Units.Unit7(1);
+                    unit.CurrentTile = tiles[6, 3];
+                    tiles[6, 3].CurrentUnit = unit;
+                    unitTable.Add(unit.UniqueID, unit);
+                    
+
+                    unit = new Units.Unit7(2);
+                    unit.CurrentTile = tiles[9, 3];
+                    tiles[9, 3].CurrentUnit = unit;
+                    unitTable.Add(unit.UniqueID, unit);
+                    
+
+                    unit = new Units.Unit7(3);
+                    unit.CurrentTile = tiles[10, 3];
+                    tiles[10, 3].CurrentUnit = unit;
+                    unitTable.Add(unit.UniqueID, unit);
+                    
+
                     //ranged units
-                    tiles[5, 2].CurrentUnit = new Unit(4,1,2);
-                    tiles[6, 2].CurrentUnit = new Unit(4,1,2);
-                    tiles[9, 2].CurrentUnit = new Unit(4,1,2);
-                    tiles[10, 2].CurrentUnit = new Unit(4,1,2);
+                    unit = new Units.Unit7(4);
+                    unit.CurrentTile = tiles[5, 2];
+                    tiles[5, 2].CurrentUnit = unit;
+                    unitTable.Add(unit.UniqueID, unit);
+                    
+
+                    unit = new Units.Unit7(5);
+                    unit.CurrentTile = tiles[6, 2];
+                    tiles[6, 2].CurrentUnit = unit;
+                    unitTable.Add(unit.UniqueID, unit);
+                    
+
+                    unit = new Units.Unit7(6);
+                    unit.CurrentTile = tiles[9, 2];
+                    tiles[9, 2].CurrentUnit = unit;
+                    unitTable.Add(unit.UniqueID, unit);
+                    
+
+                    unit = new Units.Unit7(7);
+                    unit.CurrentTile = tiles[10, 2];
+                    tiles[10, 2].CurrentUnit = unit;
+                    unitTable.Add(unit.UniqueID, unit);
+                    
+
                     //guardian
-                    tiles[7, 0].CurrentUnit = new Unit(1,3,1);
+                    unit = new Units.Unit7(8);
+                    unit.CurrentTile = tiles[7, 0];
+                    tiles[7, 0].CurrentUnit = unit;
+                    unitTable.Add(unit.UniqueID, unit);
+                    
                     //soulstone
-                    tiles[8, 0].CurrentUnit = new Unit(0,0,0);
+                    unit = new Units.Unit7(9);
+                    unit.CurrentTile = tiles[8, 0];
+                    tiles[8, 0].CurrentUnit = unit;
+                    unitTable.Add(unit.UniqueID, unit);
+                    
+
+
 
                     //set player 2 units
                     //melee units
-                    tiles[5, 12].CurrentUnit = new Unit(3,1,1);
-                    tiles[6, 12].CurrentUnit = new Unit(3,1,1);
-                    tiles[9, 12].CurrentUnit = new Unit(3,1,1);
-                    tiles[10, 12].CurrentUnit = new Unit(3,1,1);
+                    unit = new Units.Unit7(10);
+                    unit.CurrentTile = tiles[5, 12];
+                    tiles[5, 12].CurrentUnit = unit;
+                    unitTable.Add(unit.UniqueID, unit);
+                    
+
+                    unit = new Units.Unit7(11);
+                    unit.CurrentTile = tiles[6, 12];
+                    tiles[6, 12].CurrentUnit = unit;
+                    unitTable.Add(unit.UniqueID, unit);
+                    
+
+                    unit = new Units.Unit7(12);
+                    unit.CurrentTile = tiles[9, 12];
+                    tiles[9, 12].CurrentUnit = unit;
+                    unitTable.Add(unit.UniqueID, unit);
+                    
+
+                    unit = new Units.Unit7(13);
+                    unit.CurrentTile = tiles[10, 12];
+                    tiles[10, 12].CurrentUnit = unit;
+                    unitTable.Add(unit.UniqueID, unit);
+                    
+
                     //ranged 
-                    tiles[5, 13].CurrentUnit = new Unit(4,1,2);
-                    tiles[6, 13].CurrentUnit = new Unit(4,1,2);
-                    tiles[9, 13].CurrentUnit = new Unit(4,1,2);
-                    tiles[10, 13].CurrentUnit = new Unit(4,1,2);
+
+                    unit = new Units.Unit7(14);
+                    unit.CurrentTile = tiles[5, 13];
+                    tiles[5, 13].CurrentUnit = unit;
+                    unitTable.Add(unit.UniqueID, unit);
+                    
+
+                    unit = new Units.Unit7(15);
+                    unit.CurrentTile = tiles[6, 13];
+                    tiles[6, 13].CurrentUnit = unit;
+                    unitTable.Add(unit.UniqueID, unit);
+                    
+
+                    unit = new Units.Unit7(16);
+                    unit.CurrentTile = tiles[9, 13];
+                    tiles[9, 13].CurrentUnit = unit;
+                    unitTable.Add(unit.UniqueID, unit);
+                    
+
+                    unit = new Units.Unit7(17);
+                    unit.CurrentTile = tiles[10, 13];
+                    tiles[10, 13].CurrentUnit = unit;
+                    unitTable.Add(unit.UniqueID, unit);
+                    
+
                     //guardian
-                    tiles[7, 15].CurrentUnit = new Unit(1,3,1);
+                    unit = new Units.Unit7(18);
+                    unit.CurrentTile = tiles[7, 15];
+                    tiles[7, 15].CurrentUnit = unit;
+                    unitTable.Add(unit.UniqueID, unit);
+                    
                     //soulstone
-                    tiles[8, 15].CurrentUnit = new Unit(0,0,0);
+                    unit = new Units.Unit7(19);
+                    unit.CurrentTile = tiles[8, 15];
+                    tiles[8, 15].CurrentUnit = unit;
+                    unitTable.Add(unit.UniqueID, unit);
+                    
                     break;
             }
         }
@@ -132,6 +239,14 @@ namespace Guardians_Of_The_Arena_Server
             start.CurrentUnit = null;
             destination.CurrentUnit = unitToMove;
             unitToMove.CurrentTile = destination;
+        }
+
+        public Unit getUnitByID(int ID)
+        {
+            if (unitTable.ContainsKey(ID))
+                return unitTable[ID];
+
+            return null;
         }
 
         public class Tile

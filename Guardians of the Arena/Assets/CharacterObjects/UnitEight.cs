@@ -6,6 +6,7 @@ public class UnitEight : Unit {
 
 
 	void Start () {
+	
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 		hp = 20;
 		maxHP = 20;
