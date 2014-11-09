@@ -10,10 +10,15 @@ namespace Guardians_Of_The_Arena_Server
         public ArrayList accessibleTiles;
         public enum Allegiance { ALLY, ENEMY, NEUTRAL }
         private Allegiance allegiance;
-        private int movementRange;
-        private int movementCost;
-        private int attackCost;
-        private int health;
+        protected int movementRange;
+        protected int movementCost;
+        protected int attackRange;
+        protected int attackCost;
+        protected int health;
+        protected int maxHealth;
+        protected int uniqueID;
+        protected int damage;
+        protected int armor;
 
         #region Properties Region
         public Allegiance Allegiances
@@ -34,6 +39,12 @@ namespace Guardians_Of_The_Arena_Server
             set { movementCost = value; }
         }
 
+        public int AttackRange
+        {
+            get { return attackRange; }
+            set { attackRange = value;}
+        }
+
         public int AttackCost
         {
             get { return attackCost; }
@@ -46,13 +57,34 @@ namespace Guardians_Of_The_Arena_Server
             set { health = value; }
         }
 
+        public int MaxHealth
+        {
+            get { return maxHealth; }
+            set { maxHealth = value; }
+        }
+
+        public int UniqueID
+        {
+            get { return uniqueID; }
+        }
+
+        public int Damage
+        {
+            get { return damage; }
+            set { damage = value; }
+        }
+
+        public int Armor
+        {
+            get { return armor; }
+            set { armor = value; }
+        }
+
         #endregion
 
-        public Unit(int movementRange, int movementCost, int attackCost)
+        public Unit(int ID)
         {
-            this.movementRange = movementRange;
-            this.movementCost = movementCost;
-            this.attackCost = attackCost;
+            uniqueID = ID;
             accessibleTiles = new ArrayList();
         }
 
@@ -133,13 +165,18 @@ namespace Guardians_Of_The_Arena_Server
 
         public void ApplyDamage(int damage)
         {
-            health -= damage;
+            int damageApplied = (int)(damage * ((100 - this.armor) * 0.01));
+            this.health -= damageApplied;
+            Console.WriteLine("LOG: Unit " + uniqueID + " takes " + damageApplied + " damage.");
+
 
             if (health <= 0)
             {
                 currentTile.CurrentUnit = null;
                 currentTile.Occupation = GameBoard.Tile.Occupied.EMPTY;
                 currentTile = null;
+
+                Console.WriteLine("LOG: Unit " + uniqueID + " has died.");
             }
         }
     }

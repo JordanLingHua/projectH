@@ -61,7 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BoardObject.cs" />
+    <Compile Include="Units\BoardObject.cs" />
     <Compile Include="DataManager.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="GameBoard.cs" />
@@ -69,7 +69,11 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Server.cs" />
-    <Compile Include="Unit.cs" />
+    <Compile Include="Units\Guardian.cs" />
+    <Compile Include="Units\Soulstone.cs" />
+    <Compile Include="Units\Unit.cs" />
+    <Compile Include="Units\Unit1.cs" />
+    <Compile Include="Units\Unit7.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
