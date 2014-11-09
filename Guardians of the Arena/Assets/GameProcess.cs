@@ -15,14 +15,17 @@ public class GameProcess : MonoBehaviour {
 	public Stopwatch uniClock;
 	public TileManager tileManager;
 	public GameManager gameManager;
+	AudioManager am;
+	PopUpMenu pum;
 	
 	//PRIVATE MEMBERS
 	private Sockets socks;
 	private string stringBuffer;
 	private string tempBuffer;
 	
-	// Use this for initialization
 	void Start () {
+		pum = GameObject.Find ("PopUpMenu").GetComponent<PopUpMenu> ();
+		am = GameObject.Find ("AudioManager").GetComponent<AudioManager> ();
 		uniClock = new Stopwatch();
 		
 		socks = new Sockets();
@@ -31,8 +34,7 @@ public class GameProcess : MonoBehaviour {
 		
 		
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 		if (socks.recvBuffer.Count > 0)
 		{
@@ -84,8 +86,10 @@ public class GameProcess : MonoBehaviour {
 				
 				if (playerName.Equals(tokens[1]))
 				{
+					Destroy(pum);
+					Destroy(am);
 					Application.LoadLevel(0);
-					
+
 					// KILL THREAD AND SERVER CONNECTION
 					returnSocket().t.Abort();
 					returnSocket().endThread();
@@ -104,12 +108,14 @@ public class GameProcess : MonoBehaviour {
 			else if (tokens[0].Equals("startGame"))
 			{
 				playerNumber = Int32.Parse(tokens[1]);
-
+				
 				DontDestroyOnLoad(GameObject.Find ("GameProcess"));
 				DontDestroyOnLoad(this);
+				DontDestroyOnLoad (am);
+				DontDestroyOnLoad(pum);
 				Application.LoadLevel(3);
 				
-
+				
 			}
 			
 			// globalChat\\userName\\chatContent
@@ -117,56 +123,67 @@ public class GameProcess : MonoBehaviour {
 			{
 				GameObject.Find ("GlobalChat").GetComponent<globalChatScript>().addLineToChat(tokens[1], tokens[2]);
 			}
-
+			
 			// 
 			else if (tokens[0].Equals("challengeRequest"))
 			{
 				GameObject.Find ("challengeManager").GetComponent<challengeScript>().addChallengeRequest(tokens[1]);
 			}
-
+			
 			else if (tokens[0].Equals("challengeAccepted"))
 			{
-
+				
 			}
-
+			
 			else if (tokens[0].Equals("challengeDeclined"))
 			{
-
+				
 			}
-
+			
 			else if (tokens[0].Equals("challengeCancelled"))
 			{
 				GameObject.Find ("challengeManager").GetComponent<challengeScript>().removeChallengeRequest(tokens[1]);
 			}
 			
 			#region GAME PACKETS
+			//newpiece\\positionx\\positiony\\type\\playerNumber\\uniqueID
+			else if (tokens[0].Equals(""))
+			{
+				//tileManager.addUnit(Int32.Parse(tokens[1]),Int32.Parse(tokens[2]),Int32.Parse(tokens[]]);
+				
+			}
+			
+			// unitID\\toX\\toY
 			else if (tokens[0].Equals("move"))
 			{
-				movePiece(Int32.Parse(tokens[2]), Int32.Parse(tokens[3]), Int32.Parse(tokens[4]), Int32.Parse(tokens[5]), Int32.Parse(tokens[6]));
+				movePiece(Int32.Parse(tokens[1]), Int32.Parse(tokens[2]), Int32.Parse(tokens[3]));
 			}
-
+			
+			// unitID (that attacked) \\number of units affected\\ units
 			else if (tokens[0].Equals("attack"))
 			{
-				//TODO
+				for (int i = 0; i < Int32.Parse (tokens[2]); i ++ ){
+					gameManager.units[i].hp -= (int)(gameManager.units[Int32.Parse(tokens[1])].atk * ((100 - gameManager.units[i].armor * 0.01))); 
+					gameManager.units[Int32.Parse(tokens[1])].atkd = true;
+					gameManager.pMana -= gameManager.units[Int32.Parse(tokens[1])].atkCost;
+				}
 			}
-
+			
 			else if (tokens[0].Equals("switchTurns"))
 			{
 				gameManager.nextTurn();
 			}
-
+			
 			//TODO
 			else if (tokens[0].Equals("victory"))
 			{
-				gameManager.showReturnButton = true;
 				gameManager.combatLog.text = "You won!";
-
+				
 			}
-
+			
 			//TODO
 			else if (tokens[0].Equals("defeat"))
 			{
-				gameManager.showReturnButton = true;
 				gameManager.combatLog.text = "You lost!";
 			}
 			#endregion
@@ -186,35 +203,37 @@ public class GameProcess : MonoBehaviour {
 		}
 	}
 	
-	public void movePiece(int fromX, int fromY, int toX, int toY, int manaToMove)
+	public void movePiece(int unitID, int toX, int toY)
 	{
-		gameManager.pMana -= manaToMove;
+		gameManager.selectedUnit = gameManager.units[unitID];
+		gameManager.selectedUnit.showMvTiles (gameManager.selectedUnit.alleg);
 
-		TileScript from = tileManager.tiles[fromX, fromY].GetComponent<TileScript>();
+		gameManager.pMana -= gameManager.units[unitID].mvCost;
+		
+		TileScript from = gameManager.units[unitID].transform.parent.GetComponent<TileScript>();
 		TileScript to = tileManager.tiles[toX, toY].GetComponent<TileScript>();
-
-		gameManager.selectedUnit = from.objectOccupyingTile.GetComponent<Unit>();
-
+		
 		to.pathFinder ();
 		
 		gameManager.accessibleTiles.Clear();
-		to.objectOccupyingTile = from.transform.GetChild(0).gameObject;
-		from.transform.GetChild(0).GetComponent<Unit>().mvd = true;
+		to.objectOccupyingTile = from.objectOccupyingTile;
 		
-		//remove
-		from.transform.GetChild(0).transform.parent.GetComponent<TileScript>().objectOccupyingTile = null;
-		from.transform.GetChild(0).transform.parent = gameObject.transform;
-		
+		gameManager.selectedUnit.transform.parent = to.gameObject.transform;
+		from.transform.GetComponent<TileScript>().objectOccupyingTile = null;
+		gameManager.selectedUnit.transform.position = to.transform.position;
 		tileManager.clearAllTiles();
-
-		//show attack range
-		//to.transform.GetChild (0).GetComponent<Unit> ().showAtkAccessibleTiles (to, to.transform.GetChild (0).GetComponent<Unit> ().atkRange);
 	}
 	
 	void OnLevelWasLoaded(int sceneNumber)
 	{
 		if(sceneNumber == 3)
 			loadManagers();
+	}
+
+	void OnApplicationQuit(){
+
+		socks.Disconnect();
+		Console.WriteLine("Application disconnected through application quit");
 	}
 	
 	public void loadManagers()

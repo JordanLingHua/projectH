@@ -27,11 +27,7 @@ public class GameManager : MonoBehaviour {
 	//Timer variables
 	readonly float TIMER_LENGTH = 60f;
 	float timer;
-	
-	//set
-	public HashSet<Unit> playerUnits = new HashSet<Unit>();
-	public HashSet<Unit> enemyUnits = new HashSet<Unit>();
-	
+	public Dictionary<int,Unit>	units = new Dictionary<int, Unit>();	
 	
 	void Start () {
 		timer = TIMER_LENGTH;
@@ -41,7 +37,7 @@ public class GameManager : MonoBehaviour {
 		suInfo = GameObject.Find("SelectedUnitInfoGUIText").GetComponent<GUIText>();
 
 		if(Application.loadedLevelName.Equals("BoardScene"))
-			tm = GameObject.Find("TileManager").GetComponent<TileManager>();
+		tm = GameObject.Find("TileManager").GetComponent<TileManager>();
 		uInfo = GameObject.Find("UnitInfoGUIText").GetComponent<GUIText>();
 		mana = GameObject.Find("ManaGUIText").GetComponent<GUIText>();
 		timerText = GameObject.Find("TimerGUIText").GetComponent<GUIText>();
@@ -61,13 +57,6 @@ public class GameManager : MonoBehaviour {
 	}
 	
 	void OnGUI(){
-
-		if (GUI.Button (new Rect (Screen.width - 450, 0, 100, 20), "Surrender"))
-		{
-			//TODO: server command
-			gp.returnSocket().SendTCPPacket("surrender\\" + gp.clientNumber);
-		}
-
 
 		if (showReturnButton && GUI.Button (new Rect (Screen.width / 2 - 75, Screen.height / 2, 130, 20), "Return to Menu"))
 		{
@@ -135,21 +124,24 @@ public class GameManager : MonoBehaviour {
 		accessibleTiles.Clear();
 		tm.clearAllTiles();
 	}
-	
+
 	void resetPlayerUnits(){
-		foreach(Unit x in playerUnits){
-			x.atkd = false;
-			x.mvd = false;
-		}		
+		foreach (int key in units.Keys){
+			if (units[key].alleg == Unit.allegiance.ally){
+				units[key].atkd = false;
+				units[key].mvd = false;
+			}
+		}
 	}
 	
 	void resetEnemyUnits(){
-		foreach(Unit x in enemyUnits){
-			x.atkd = false;
-			x.mvd = false;
-		}		
+		foreach (int key in units.Keys){
+			if (units[key].alleg == Unit.allegiance.enemy){
+				units[key].atkd = false;
+				units[key].mvd = false;
+			}
+		}
 	}
-	
 	public void nextTurn(){
 		//reset game clock, mana, and increase max mana
 		timer = TIMER_LENGTH;

@@ -17,10 +17,15 @@ public class LoginScreenGUI : MonoBehaviour {
 	public GameProcess process;	
 	public bool connected;
 	public long latency;
+
+	AudioManager am;
+	PopUpMenu pum;
 	
 	void Start () 
 	{
 		connected = false;
+		pum = GameObject.Find ("PopUpMenu").GetComponent<PopUpMenu> ();
+		am = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 		process = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 		latency = -1;
 		userName = string.Empty;
@@ -72,6 +77,8 @@ public class LoginScreenGUI : MonoBehaviour {
 	public void loginSucceed()
 	{
 		DontDestroyOnLoad(process);
+		DontDestroyOnLoad (am);
+		DontDestroyOnLoad (pum);
 		Application.LoadLevel(1);
 	}
 

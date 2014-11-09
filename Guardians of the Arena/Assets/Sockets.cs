@@ -9,8 +9,8 @@ using System.Threading;
 
 public class Sockets {
 
-	private string SERVER_LOCATION = "169.234.14.150";
-    const int SERVER_PORT = 4188; //FILL THESE OUT FOR YOUR OWN SERVER
+	private string SERVER_LOCATION = "192.168.1.78";
+    const int SERVER_PORT = 4188;
 	
 	public TcpClient client;
 

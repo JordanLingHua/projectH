@@ -1,74 +1,42 @@
-Initialize engine version: 4.5.4f1 (e036f44c54c9)
+Initialize engine version: 4.5.5f1 (7684ad0c5a44)
 GfxDevice: creating device client; threaded=1
 Direct3D:
-    Version:  Direct3D 9.0c [nvd3dum.dll 9.18.13.4411]
-    Renderer: NVIDIA GeForce GTX 860M
+    Version:  Direct3D 9.0c [nvd3dum.dll 9.18.13.1106]
+    Renderer: NVIDIA GeForce GTS 450
     Vendor:   NVIDIA
-    VRAM:     1972 MB (via DXGI)
+    VRAM:     978 MB (via DXGI)
     Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=0 INTZ=1 RAWZ=0 NULL=1 RESZ=0 SlowINTZ=0
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\Joey\Documents\GitHub\projectH\Guardians of the Arena\GoAClient_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\Joey\Documents\GitHub\projectH\Guardians of the Arena\GoAClient_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\Joey\Documents\GitHub\projectH\Guardians of the Arena\GoAClient_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
-Loading C:\Users\Joey\Documents\GitHub\projectH\Guardians of the Arena\GoAClient_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
-Platform assembly: C:\Users\Joey\Documents\GitHub\projectH\Guardians of the Arena\GoAClient_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\Joey\Documents\GitHub\projectH\Guardians of the Arena\GoAClient_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\Joey\Documents\GitHub\projectH\Guardians of the Arena\GoAClient_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
-Loading C:\Users\Joey\Documents\GitHub\projectH\Guardians of the Arena\GoAClient_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
-- Completed reload, in  0.051 seconds
-desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+Platform assembly: C:\Users\sk\Documents\GitHub\projectH\Guardians of the Arena\GoAClient_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\sk\Documents\GitHub\projectH\Guardians of the Arena\GoAClient_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\sk\Documents\GitHub\projectH\Guardians of the Arena\GoAClient_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\sk\Documents\GitHub\projectH\Guardians of the Arena\GoAClient_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\sk\Documents\GitHub\projectH\Guardians of the Arena\GoAClient_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\sk\Documents\GitHub\projectH\Guardians of the Arena\GoAClient_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\sk\Documents\GitHub\projectH\Guardians of the Arena\GoAClient_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
+Loading C:\Users\sk\Documents\GitHub\projectH\Guardians of the Arena\GoAClient_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
+- Completed reload, in  0.138 seconds
+desktop: 1920x1080 60Hz; virtual: 3840x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
-Platform assembly: C:\Users\Joey\Documents\GitHub\projectH\Guardians of the Arena\GoAClient_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\Joey\Documents\GitHub\projectH\Guardians of the Arena\GoAClient_Data\Managed\System.dll (this message is harmless)
-The MD5 hash of sheaprd is: 83ac8748058473cddd26499cb6cc22b6.
-client\\2\\
+Platform assembly: C:\Users\sk\Documents\GitHub\projectH\Guardians of the Arena\GoAClient_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\sk\Documents\GitHub\projectH\Guardians of the Arena\GoAClient_Data\Managed\System.dll (this message is harmless)
+The MD5 hash of  is: d41d8cd98f00b204e9800998ecf8427e.
+client\\1\\
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-loginFail\\
+loginSucceed\\\\
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-The MD5 hash of sheaprd is: 83ac8748058473cddd26499cb6cc22b6.
-loginFail\\
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+UnloadTime: 0.402104 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-The MD5 hash of shepard is: e2ea187427a6e48151bc6214c5e9a0ef.
-loginSucceed\\joey\\
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 166.
+Total: 1.659498 ms (FindLiveObjects: 0.048390 ms CreateObjectMapping: 0.017282 ms MarkObjects: 0.228512 ms  DeleteObjects: 0.006144 ms)
 
-UnloadTime: 0.275408 ms
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 136.
-Total: 0.547822 ms (FindLiveObjects: 0.006842 ms CreateObjectMapping: 0.007270 ms MarkObjects: 0.121025 ms  DeleteObjects: 0.003421 ms)
-
-hasLoggedIn\\joey\\
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-hasLoggedIn\\asdf\\
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-startGame\\1\\
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-UnloadTime: 0.188167 ms
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 182.
-Total: 0.540980 ms (FindLiveObjects: 0.008980 ms CreateObjectMapping: 0.007697 ms MarkObjects: 0.119315 ms  DeleteObjects: 0.007270 ms)
-
-1playernumber: 1
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-move\\11\\6\\12\\6\\9\\
+hasLoggedIn\\\\
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 

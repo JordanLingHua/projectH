@@ -141,12 +141,6 @@ public class PlayerSetup : MonoBehaviour {
 		return unit;
 	}
 
-
-
-
-
-
-
 	void Start () {
 		//Tile Creation
 		tiles = new GameObject[xTiles, yTiles];

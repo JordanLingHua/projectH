@@ -14,8 +14,10 @@ public class TileManager : MonoBehaviour {
 	public GameObject tile;
 	public GameObject environmentObject, cp, UnitOne,UnitTwo,UnitThree,UnitFour,UnitFive,UnitSix,UnitSeven,UnitEight,UnitNine,UnitTen,UnitEleven;
 	public GameManager gm;
+	public PopUpMenu pum;
 	
 	void Start () {
+		pum =  GameObject.Find("PopUpMenu").GetComponent<PopUpMenu>();
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 		tiles = new GameObject[xTiles, yTiles];
 		
@@ -67,35 +69,69 @@ public class TileManager : MonoBehaviour {
 		addPresetTrees();
 		addPresetAllyUnits();
 		addPresetEnemyUnits();
+		displayHPBars (pum.selGridInt);
+	}
+
+	public void displayHPBars(int choice){
 		
+		switch (choice) {
+		case 0:
+			foreach (int key in gm.units.Keys) {
+				gm.units [key].displayHPBar = true;
+			}
+			break;
+		case 1:
+			foreach (int key in gm.units.Keys) {
+					if (gm.units [key].alleg == Unit.allegiance.ally) {
+							gm.units [key].displayHPBar = true;
+					} else {
+							gm.units [key].displayHPBar = false;
+					}
+			}
+			break;
+		case 2:
+			foreach (int key in gm.units.Keys) {
+					if (gm.units [key].alleg == Unit.allegiance.enemy) {
+							gm.units [key].displayHPBar = true;
+					} else {
+							gm.units [key].displayHPBar = false;
+					}
+			}
+			break;
+		case 3:
+			foreach (int key in gm.units.Keys) {
+					gm.units [key].displayHPBar = false;
+			}
+			break;
+		}
 	}
 	
 	void addPresetTrees(){
-		addTree (0,7);
-		addTree (2,7);
-		addTree (3,7);
-		addTree (4,7);
+		addTree (0,7,20);
+		addTree (2,7,21);
+		addTree (3,7,22);
+		addTree (4,7,23);
 		
-		addTree (15,7);
-		addTree (13,7);
-		addTree (12,7);
-		addTree (11,7);
+		addTree (15,7,24);
+		addTree (13,7,25);
+		addTree (12,7,26);
+		addTree (11,7,27);
 		
 		
-		addTree (0,8);
-		addTree (2,8);
-		addTree (3,8);
-		addTree (4,8);
+		addTree (0,8,28);
+		addTree (2,8,29);
+		addTree (3,8,30);
+		addTree (4,8,31);
 		
-		addTree (15,8);
-		addTree (13,8);
-		addTree (12,8);
-		addTree (11,8);
-		
-		addTree (7,7);
-		addTree (7,8);
-		addTree (8,7);
-		addTree (8,8);
+		addTree (15,8,32);
+		addTree (13,8,33);
+		addTree (12,8,34);
+		addTree (11,8,35);
+	
+		addTree (7,7,36);
+		addTree (7,8,37);
+		addTree (8,7,38);
+		addTree (8,8,39);
 		
 	}
 	
@@ -135,7 +171,7 @@ public class TileManager : MonoBehaviour {
 		addUnit (8,15,20,false, 19);
 	}
 	
-	void addTree(int x, int y){
+	void addTree(int x, int y,int unitID){
 		TileScript placeTile = tiles[x,y].GetComponent<TileScript>();
 		GameObject tree = (GameObject)Instantiate(environmentObject, 
 		                                          new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
@@ -144,6 +180,8 @@ public class TileManager : MonoBehaviour {
 		tree.GetComponent<Unit> ().makeTree ();
 		placeTile.objectOccupyingTile = tree;
 		placeTile.gameObject.renderer.material.color = Color.gray;
+
+		gm.units.Add (unitID, tree.GetComponent<Unit>());
 
 	}
 	
@@ -223,12 +261,9 @@ public class TileManager : MonoBehaviour {
 		unit.GetComponent<Unit> ().unitID = unitID;
 
 		placeTile.gameObject.renderer.material.color = ally? Color.blue : Color.red;
-		
-		if (ally){
-			gm.playerUnits.Add(unit.GetComponent<Unit>());
-		}else{
-			gm.enemyUnits.Add(unit.GetComponent<Unit>());
-		}
+
+		gm.units.Add(unitID,unit.GetComponent<Unit>());
+
 	}
 	
 	//Resets color of tiles

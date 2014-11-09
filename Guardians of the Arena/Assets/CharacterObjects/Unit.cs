@@ -13,7 +13,7 @@ public class Unit    : MonoBehaviour {
 	public bool atkd, mvd;
 	public string name = string.Empty;
 	public string info = string.Empty;
-	public bool invincible;
+	public bool invincible,displayHPBar;
 	
 	//unit cost will be utilized here or elsewhere
 	//public string unitRole;//name called in switch statement here or elsewhere
@@ -85,7 +85,32 @@ public class Unit    : MonoBehaviour {
 	
 	void Update () {
 	}
-	
+
+	//taken from http://answers.unity3d.com/questions/37752/how-to-render-a-colored-2d-rectangle.html
+	void DrawQuad(Rect position, Color color) {
+		Texture2D texture = new Texture2D(1, 1);
+		texture.SetPixel(0,0,color);
+		texture.Apply();
+		GUI.skin.box.normal.background = texture;
+		GUI.Box(position, GUIContent.none);
+	}
+
+	void OnGUI(){
+		if (displayHPBar){
+			Camera cam = Camera.main;
+			Vector3 HPBarPos = cam.WorldToScreenPoint(gameObject.transform.position);
+			DrawQuad (new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-10 < 0?Screen.height:Screen.height - HPBarPos.y-10,  25, 5),Color.black);
+			float barColorSwitch = (float)hp/maxHP;
+			if (barColorSwitch > .6){
+				DrawQuad(new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-10, barColorSwitch * 25, 5),Color.green);
+			}else if (barColorSwitch > 0.3){
+				DrawQuad(new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-10, barColorSwitch * 25, 5),Color.yellow);
+			}else{
+				DrawQuad(new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-10, barColorSwitch * 25, 5),Color.red);
+			}
+		}
+	}
+
 	void OnMouseEnter(){
 		//show unit info when hovering over it
 
@@ -138,24 +163,25 @@ public class Unit    : MonoBehaviour {
 			}
 		}
 	}
-	
+
 	void playerSSKillable(){
-		foreach (Unit x in gm.playerUnits){
-			if (x.ID == 20){
-				x.invincible = false;
+		foreach (int key in gm.units.Keys){
+			if (gm.units[key].ID == 20 && gm.units[key].alleg == allegiance.ally){
+				gm.units[key].invincible = false;
 				break;
 			}
 		}
 	}
 	
 	void enemySSKillable(){
-		foreach (Unit x in gm.enemyUnits){
-			if (x.ID == 20){
-				x.invincible = false;
+		foreach (int key in gm.units.Keys){
+			if (gm.units[key].ID == 20 && gm.units[key].alleg == allegiance.enemy){
+				gm.units[key].invincible = false;
 				break;
 			}
 		}
 	}
+
 
 	//TODO: move this logic to the server
 	void attackUnit(){
@@ -171,29 +197,26 @@ public class Unit    : MonoBehaviour {
 				if (this.hp <=0){				
 					
 					//make the soulstone vulnerable if the player guardian was killed
-					if (this.ID == 19){
-						if (gm.playerUnits.Contains(this)){
-							playerSSKillable();
-						}else{
-							enemySSKillable();
-						}
-					}					
-					
-					if (this.ID == 20){
-						gm.showReturnButton = true;
-						if(gm.playerUnits.Contains(this)){
-							
-							gm.combatLog.text = "Player 2 has won!";
-						}else{
-							gm.combatLog.text = "Player 1 has won!";
-						}
-					} 					
-					
-					if (gm.playerUnits.Contains(this)){
-						gm.playerUnits.Remove(this);
-					}else{
-						gm.enemyUnits.Remove(this);
-					}
+//					if (this.ID == 19){
+//						if (gm.playerUnits.Contains(this)){
+//							playerSSKillable();
+//						}else{
+//							enemySSKillable();
+//						}
+//					}					
+//					
+//					if (this.ID == 20){
+//						gm.showReturnButton = true;
+//						if(gm.playerUnits.Contains(this)){
+//							
+//							gm.combatLog.text = "Player 2 has won!";
+//						}else{
+//							gm.combatLog.text = "Player 1 has won!";
+//						}
+//					} 					
+
+					gm.units.Remove(unitID);
+
 					this.transform.parent.GetComponent<TileScript>().objectOccupyingTile = null;
 					Destroy(gameObject);
 					
@@ -219,7 +242,7 @@ public class Unit    : MonoBehaviour {
 		this.transform.parent.gameObject.transform.parent.GetComponent<TileManager>().clearAllTiles();
 		//if player is moving a piece
 		if (gm.gs == GameManager.gameState.playerMv){
-			showMvTiles( (gm.gs ==  GameManager.gameState.playerAtk  ||  gm.gs ==  GameManager.gameState.playerMv ) ? allegiance.ally : allegiance.enemy);
+			showMvTiles(alleg == allegiance.ally? allegiance.ally : allegiance.enemy);
 				          
 		//if player is attacking with a piece	
 		}else if (gm.gs == GameManager.gameState.playerAtk){
