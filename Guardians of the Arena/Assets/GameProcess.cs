@@ -149,7 +149,7 @@ public class GameProcess : MonoBehaviour {
 			//newpiece\\positionx\\positiony\\type\\playerNumber\\uniqueID
 			else if (tokens[0].Equals(""))
 			{
-				//tileManager.addUnit(Int32.Parse(tokens[1]),Int32.Parse(tokens[2]),Int32.Parse(tokens[]]);
+				//xtileManager.addUnit(Int32.Parse(tokens[1]),Int32.Parse(tokens[2]),Int32.Parse(tokens[]]);
 				
 			}
 			
@@ -162,10 +162,10 @@ public class GameProcess : MonoBehaviour {
 			// unitID (that attacked) \\number of units affected\\ units
 			else if (tokens[0].Equals("attack"))
 			{
+				gameManager.units[Int32.Parse (tokens[1])].atkd = true;
+				gameManager.pMana -= gameManager.units[Int32.Parse (tokens[1])].atkCost;
 				for (int i = 0; i < Int32.Parse (tokens[2]); i ++ ){
-					gameManager.units[i].hp -= (int)(gameManager.units[Int32.Parse(tokens[1])].atk * ((100 - gameManager.units[i].armor * 0.01))); 
-					gameManager.units[Int32.Parse(tokens[1])].atkd = true;
-					gameManager.pMana -= gameManager.units[Int32.Parse(tokens[1])].atkCost;
+					gameManager.units[Int32.Parse(tokens[3+i])].attackThisUnit(gameManager.units[Int32.Parse (tokens[1])]);
 				}
 			}
 			
@@ -209,7 +209,7 @@ public class GameProcess : MonoBehaviour {
 		gameManager.selectedUnit.showMvTiles (gameManager.selectedUnit.alleg);
 
 		gameManager.pMana -= gameManager.units[unitID].mvCost;
-		
+			
 		TileScript from = gameManager.units[unitID].transform.parent.GetComponent<TileScript>();
 		TileScript to = tileManager.tiles[toX, toY].GetComponent<TileScript>();
 		
@@ -220,7 +220,6 @@ public class GameProcess : MonoBehaviour {
 		
 		gameManager.selectedUnit.transform.parent = to.gameObject.transform;
 		from.transform.GetComponent<TileScript>().objectOccupyingTile = null;
-		gameManager.selectedUnit.transform.position = to.transform.position;
 		tileManager.clearAllTiles();
 	}
 	

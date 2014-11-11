@@ -21,3 +21,9 @@ C:\Users\sk\Documents\GitHub\projectH\Guardians Of The Arena Server\Guardians Of
 C:\Users\sk\Documents\GitHub\projectH\Guardians Of The Arena Server\Guardians Of The Arena Server\bin\Debug\Guardians Of The Arena Server.exe
 C:\Users\sk\Documents\GitHub\projectH\Guardians Of The Arena Server\Guardians Of The Arena Server\bin\Debug\Guardians Of The Arena Server.pdb
 C:\Users\sk\Documents\GitHub\projectH\Guardians Of The Arena Server\Guardians Of The Arena Server\obj\Debug\Guardians Of The Arena Server.csprojResolveAssemblyReference.cache
+C:\Users\Steve\Documents\GitHub\projectH\Guardians Of The Arena Server\Guardians Of The Arena Server\bin\Debug\Guardians Of The Arena Server.exe.config
+C:\Users\Steve\Documents\GitHub\projectH\Guardians Of The Arena Server\Guardians Of The Arena Server\obj\Debug\Guardians Of The Arena Server.exe
+C:\Users\Steve\Documents\GitHub\projectH\Guardians Of The Arena Server\Guardians Of The Arena Server\obj\Debug\Guardians Of The Arena Server.pdb
+C:\Users\Steve\Documents\GitHub\projectH\Guardians Of The Arena Server\Guardians Of The Arena Server\bin\Debug\Guardians Of The Arena Server.exe
+C:\Users\Steve\Documents\GitHub\projectH\Guardians Of The Arena Server\Guardians Of The Arena Server\bin\Debug\Guardians Of The Arena Server.pdb
+C:\Users\Steve\Documents\GitHub\projectH\Guardians Of The Arena Server\Guardians Of The Arena Server\obj\Debug\Guardians Of The Arena Server.csprojResolveAssemblyReference.cache

@@ -76,9 +76,9 @@ public class Unit    : MonoBehaviour {
 	int ID;
 	
 	public GameManager gm;
-	
+	GameProcess gp;
 	void Start () {
-		
+		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 		info = string.Empty;
 	}	
@@ -157,9 +157,9 @@ public class Unit    : MonoBehaviour {
 		if (gm.turn) {
 			if (gm.selectedUnit != this && gm.gs == GameManager.gameState.playerAtk 
 					&& gm.accessibleTiles.Contains (this.transform.parent.GetComponent<TileScript> ())) {
-					attackUnit ();
+				transform.parent.GetComponent<TileScript>().attackTile ();
 			} else {
-					selectUnit ();
+				selectUnit ();
 			}
 		}
 	}
@@ -184,55 +184,29 @@ public class Unit    : MonoBehaviour {
 
 
 	//TODO: move this logic to the server
-	void attackUnit(){
-		if (gm.pMana >= gm.selectedUnit.GetComponent<Unit>().atkCost){
-			gm.pMana -= gm.selectedUnit.GetComponent<Unit>().atkCost;
-			gm.selectedUnit.transform.GetComponent<Unit>().atkd = true;
+	public void attackThisUnit(Unit unitThatAttacked){
 			
-			if (!invincible){
-				gm.combatLog.text = "Combat Log:\nDealt " + (int)(gm.selectedUnit.GetComponent<Unit>().atk * ((100 - this.armor) * 0.01))+ " damage!";
-				this.hp -= (int)(gm.selectedUnit.GetComponent<Unit>().atk * ((100 - this.armor) * 0.01));
+		if (!invincible){
+			gm.combatLog.text = "Combat Log:\nDealt " + (int)(unitThatAttacked.atk * ((100 - this.armor) * 0.01))+ " damage!";
+			this.hp -= (int)(unitThatAttacked.atk * ((100 - this.armor) * 0.01));
+			
+			//if the unit attacked was killed, remove it from the board and unit list
+			if (this.hp <=0){				
+
+				gm.units.Remove(unitID);
+
+				this.transform.parent.GetComponent<TileScript>().objectOccupyingTile = null;
+				Destroy(gameObject);
 				
-				//if the unit attacked was killed, remove it from the board and unit list
-				if (this.hp <=0){				
-					
-					//make the soulstone vulnerable if the player guardian was killed
-//					if (this.ID == 19){
-//						if (gm.playerUnits.Contains(this)){
-//							playerSSKillable();
-//						}else{
-//							enemySSKillable();
-//						}
-//					}					
-//					
-//					if (this.ID == 20){
-//						gm.showReturnButton = true;
-//						if(gm.playerUnits.Contains(this)){
-//							
-//							gm.combatLog.text = "Player 2 has won!";
-//						}else{
-//							gm.combatLog.text = "Player 1 has won!";
-//						}
-//					} 					
-
-					gm.units.Remove(unitID);
-
-					this.transform.parent.GetComponent<TileScript>().objectOccupyingTile = null;
-					Destroy(gameObject);
-					
-				}
-			}else{
-				gm.combatLog.text = "Combat Log:\nTarget is invincible!";
 			}
-			//clean up the board colors
-			gm.accessibleTiles.Clear();
-			this.transform.parent.gameObject.transform.parent.GetComponent<TileManager>().clearAllTiles();
-			refreshUnitText();
-			
-			
 		}else{
-			gm.combatLog.text = "Combat Log:\nNot enough mana";
+			gm.combatLog.text = "Combat Log:\nTarget is invincible!";
 		}
+		//clean up the board colors
+		gm.accessibleTiles.Clear();
+		this.transform.parent.gameObject.transform.parent.GetComponent<TileManager>().clearAllTiles();
+		refreshUnitText();
+
 	}
 
 	void selectUnit(){
@@ -326,7 +300,6 @@ public class Unit    : MonoBehaviour {
 			}
 		}
 	}
-	
 	
 	public void makeTree(){
 		alleg = allegiance.neutral;

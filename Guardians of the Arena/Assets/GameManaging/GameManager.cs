@@ -20,10 +20,7 @@ public class GameManager : MonoBehaviour {
 	//Selected unit and available move squares
 	public Unit selectedUnit = null;
 	public HashSet<TileScript> accessibleTiles = new HashSet<TileScript>();
-	
-	//tile selected x and tile selected y
-	public int tsx, tsy;
-	
+
 	//Timer variables
 	readonly float TIMER_LENGTH = 60f;
 	float timer;
