@@ -7,6 +7,7 @@ public class UnitThree : Unit{
 
 	void Start(){
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+		unitType = 3;
 		name = "AoE Unit";
 		hp = 38;//hp can --//all other stats cannot --//some other stats ++ for growth
 		maxHP = 38;//max hp is constant//use as reference to hp

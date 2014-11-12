@@ -8,7 +8,7 @@ public class Unit    : MonoBehaviour {
 	public enum allegiance{ally,neutral,enemy};
 	public allegiance alleg;
 	//All these are public, so we can modify them all for now.  
-	public int unitID, xpos, ypos, unitType;
+	public int unitID, xpos, ypos;//, unitType;
 	public int hp,maxHP,armor,atk,mvRange,atkRange,mvCost,atkCost;
 	public bool atkd, mvd;
 	public string name = string.Empty;
@@ -18,6 +18,7 @@ public class Unit    : MonoBehaviour {
 	//unit cost will be utilized here or elsewhere
 	//public string unitRole;//name called in switch statement here or elsewhere
 	//change unitRole to int if we can do defines for each unit role in this code or elsewhere
+	public int unitType;
 	public int unitRole;//compare this int to the ints provided inside gameManager or wherever unitRole is compared
 	/*
 	 * DO NOT DELETE THIS COMMENT!!!!

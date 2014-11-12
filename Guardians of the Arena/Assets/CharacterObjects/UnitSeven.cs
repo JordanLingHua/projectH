@@ -8,6 +8,7 @@ public class UnitSeven : Unit {
 
 	void Start(){
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+		unitType = 7;
 		name = "Melee Tank";
 		hp = 25;
 		maxHP = 25;

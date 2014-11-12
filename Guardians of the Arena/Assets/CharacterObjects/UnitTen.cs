@@ -7,6 +7,7 @@ public class UnitTen :Unit {
 
 	void Start(){
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+		unitType = 10;
 		name = "Guardian";
 		hp = 40;
 		maxHP = 40;

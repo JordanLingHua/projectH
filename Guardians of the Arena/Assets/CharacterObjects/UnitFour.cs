@@ -8,6 +8,7 @@ public class UnitFour : Unit {
 
 	void Start () {
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+		unitType = 4;
 		name = "AoE Unit";
 		hp = 28;
 		maxHP = 28;

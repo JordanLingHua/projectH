@@ -30,7 +30,7 @@ public class PlayerSetup : MonoBehaviour {
 
 
 	public int boardCapacity = 5;
-
+	//10 //Leave out 10 for now since the player can drag all the pieces onto the board in that case
 
 	//Add to this array everytime a piece is dropped onto a board
 	public ArrayList playerPieces;
@@ -59,8 +59,8 @@ public class PlayerSetup : MonoBehaviour {
 
 
 
-
-	GameObject addUnit(placement placementType, int x, int y,int type, int unitID){
+	//Unit Type and Unit ID are the exact same thing
+	GameObject addUnit(placement placementType, int x, int y,int type){//, int unitID){
 
 		SetupTileScript placeTile;
 		if(placementType == placement.OFFFIELD)
@@ -275,7 +275,16 @@ public class PlayerSetup : MonoBehaviour {
 		//GameObject u2_1 = (GameObject)Instantiate(Resources.Load("UnitTwoPrefab"));
 		//GameObject u3_1 = (GameObject)Instantiate(Resources.Load("UnitThreePrefab"));
 
-		providedPieces = new GameObject[11];
+
+
+
+
+		//THIS IS SUBJECT TO CHANGE.  WHEN YOU CHANGE THIS, MAKE SURE YOU CHANGE THE ARRAY SIZE ABOVE!!!!
+		//providedPieces = new GameObject[11];
+		providedPieces = new GameObject[10];
+
+
+
 
 		//GameObject temp = (GameObject)Instantiate(ball, new Vector3(0, 0, 0), new Quaternion(0,0,0,1));//test for prefab instantiation 1
 		//providedPieces[0] = temp;//test for prefab instantiation 1
@@ -299,7 +308,7 @@ public class PlayerSetup : MonoBehaviour {
 
 
 		
-
+		/*
 		providedPieces[0] = addUnit (placement.OFFFIELD, 0,0,1,1);
 		providedPieces[1] = addUnit (placement.OFFFIELD, 1,0,2,2);
 		providedPieces[2] = addUnit (placement.OFFFIELD, 2,0,3,3);
@@ -309,13 +318,29 @@ public class PlayerSetup : MonoBehaviour {
 		providedPieces[6] = addUnit (placement.OFFFIELD, 6,0,5,7);
 		providedPieces[7] = addUnit (placement.OFFFIELD, 7,0,5,8);
 		providedPieces[8] = addUnit (placement.OFFFIELD, 8,0,6,9);
-		providedPieces[9] = addUnit (placement.ONFIELD, 10,3,7,10);
-		providedPieces[10] = addUnit (placement.ONFIELD, 9,3,8,11);
+		//providedPieces[9] = addUnit (placement.ONFIELD, 10,3,7,10);
+		//providedPieces[10] = addUnit (placement.ONFIELD, 9,3,8,11);
+		providedPieces[9] = addUnit (placement.ONFIELD, 10,3,10,10);
+		providedPieces[10] = addUnit (placement.ONFIELD, 9,3,11,11);
 		//providedPieces[11] = addUnit (1,1,16,12);
 		//providedPieces[12] = addUnit (2,1,16,13);
 		//providedPieces[13] = addUnit (3,1,16,14);
 		//providedPieces[14] = addUnit (4,1,16,15);
+		*/
 
+
+		//THIS IS SUBJECT TO CHANGE.  WHEN YOU CHANGE THIS, MAKE SURE YOU CHANGE THE ARRAY SIZE ABOVE!!!!
+		//The 4th arg in addUnit defines the unitType
+		providedPieces[0] = addUnit (placement.OFFFIELD, 0,0,1);
+		providedPieces[1] = addUnit (placement.OFFFIELD, 1,0,2);
+		providedPieces[2] = addUnit (placement.OFFFIELD, 2,0,3);
+		providedPieces[3] = addUnit (placement.OFFFIELD, 3,0,3);
+		providedPieces[4] = addUnit (placement.OFFFIELD, 4,0,7);
+		providedPieces[5] = addUnit (placement.OFFFIELD, 5,0,7);
+		providedPieces[6] = addUnit (placement.OFFFIELD, 6,0,7);
+		providedPieces[7] = addUnit (placement.OFFFIELD, 7,0,8);
+		providedPieces[8] = addUnit (placement.ONFIELD, 10,3,10);
+		providedPieces[9] = addUnit (placement.ONFIELD, 9,3,11);
 
 
 
@@ -327,14 +352,27 @@ public class PlayerSetup : MonoBehaviour {
 		
 		//Add a move script to each, just for this scene though (this scene should be the only scene that calls this script)
 		//Position each of the pieces just made onto the board: 
-		for(int i = 0; i < providedPieces.Length - 1; i++)
+		//for(int i = 0; i < providedPieces.Length - 1; i++)
+		for(int i = 0; i < providedPieces.Length; i++)
 		{
 			providedPieces[i].AddComponent("move"); 
 		}
 
 		playerPieces = new ArrayList(boardCapacity);
+
+
+		//BUG HERE:  Even when you add the guardian and the soulstone into the playerPieces array, 
+		//the squares in which they occupied have occupied set to FALSE, and other pieces can hide inside
+		//the guardian or the soulstone.  Further more, this messes up the occupied logic in the long run.  
+		//Or there could be another bug.  But this is what I found for now.  :  
+
+
+		//CHANGE the indices of the providedPieces in 
+		//THIS PART WHENEVER YOU CHANGE THE SIZE OF THE PROVIDEDPIECES ARRAY:  
+		//playerPieces.Add (providedPieces[9]);
+		//playerPieces.Add (providedPieces[10]);
+		playerPieces.Add (providedPieces[8]);
 		playerPieces.Add (providedPieces[9]);
-		playerPieces.Add (providedPieces[10]);
 
 	
 	}

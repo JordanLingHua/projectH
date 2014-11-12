@@ -8,6 +8,7 @@ public class UnitSix : Unit {
 
 	void Start(){
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+		unitType = 6;
 		name = "Buffing Unit";
 		hp = 40;
 		maxHP = 40;

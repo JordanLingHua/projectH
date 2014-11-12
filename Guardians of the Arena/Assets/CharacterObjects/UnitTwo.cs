@@ -7,6 +7,7 @@ public class UnitTwo: Unit {
 
 	void Start () {
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+		unitType = 2;
 		name = "Buffing Unit";
 		hp = 30;
 		maxHP = 30;

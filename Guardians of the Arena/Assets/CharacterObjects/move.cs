@@ -46,8 +46,10 @@ public class move : MonoBehaviour {
 		Debug.Log (slot);
 		if (slot != null && !slot.GetComponent<SetupTileScript>().occupied)
 		{
-			Debug.Log ("7 or 8" + (gameObject.GetComponent<Unit>().unitRole));
-			if(gameObject.GetComponent<Unit>().unitRole == 505 || gameObject.GetComponent<Unit>().unitRole == 506){
+			Debug.Log ("unitType 10 or 11" + (gameObject.GetComponent<Unit>().unitType));
+			//Debug.Log ("7 or 8" + (gameObject.GetComponent<Unit>().unitRole));
+			//if(gameObject.GetComponent<Unit>().unitRole == 505 || gameObject.GetComponent<Unit>().unitRole == 506){
+			if(gameObject.GetComponent<Unit>().unitType == 10 || gameObject.GetComponent<Unit>().unitType == 11){
 				if(slot.GetComponent<SetupTileScript>().tt == SetupTileScript.TileType.ONFIELD)
 					{
 						this.transform.parent.GetComponent<SetupTileScript>().occupied = false;

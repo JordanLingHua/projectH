@@ -8,6 +8,7 @@ public class UnitOne : Unit {
 
 	void Start () {
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+		unitType = 1;
 		name = "Ranged Unit";
 		hp = 18;
 		maxHP = 18;

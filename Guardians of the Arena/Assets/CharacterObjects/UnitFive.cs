@@ -7,6 +7,7 @@ public class UnitFive : Unit {
 
 	void Start () {
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+		unitType = 5;
 		name = "Utility Unit";
 		hp = 40;
 		maxHP = 40;

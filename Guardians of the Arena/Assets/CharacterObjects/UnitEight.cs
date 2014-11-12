@@ -8,6 +8,7 @@ public class UnitEight : Unit {
 	void Start () {
 	
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+		unitType = 8;
 		hp = 20;
 		maxHP = 20;
 		armor = 0;//not final
