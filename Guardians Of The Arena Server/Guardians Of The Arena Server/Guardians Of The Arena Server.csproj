@@ -69,11 +69,14 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Server.cs" />
+    <Compile Include="Units\Unit2.cs" />
     <Compile Include="Units\Guardian.cs" />
     <Compile Include="Units\Soulstone.cs" />
     <Compile Include="Units\Unit.cs" />
     <Compile Include="Units\Unit1.cs" />
+    <Compile Include="Units\Unit3.cs" />
     <Compile Include="Units\Unit7.cs" />
+    <Compile Include="Units\Unit8.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

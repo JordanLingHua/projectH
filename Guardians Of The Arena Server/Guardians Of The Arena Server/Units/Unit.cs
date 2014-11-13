@@ -18,7 +18,6 @@ namespace Guardians_Of_The_Arena_Server
         protected int maxHealth;
         protected int uniqueID;
         protected int damage;
-        protected int armor;
 
         #region Properties Region
         public Allegiance Allegiances
@@ -72,12 +71,6 @@ namespace Guardians_Of_The_Arena_Server
         {
             get { return damage; }
             set { damage = value; }
-        }
-
-        public int Armor
-        {
-            get { return armor; }
-            set { armor = value; }
         }
 
         #endregion
@@ -165,9 +158,8 @@ namespace Guardians_Of_The_Arena_Server
 
         public void ApplyDamage(int damage)
         {
-            int damageApplied = (int)(damage * ((100 - this.armor) * 0.01));
-            this.health -= damageApplied;
-            Console.WriteLine("LOG: Unit " + uniqueID + " takes " + damageApplied + " damage.");
+            this.health -= damage;
+            Console.WriteLine("LOG: Unit " + uniqueID + " takes " + damage + " damage.");
 
 
             if (health <= 0)
