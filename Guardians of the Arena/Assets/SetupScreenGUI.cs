@@ -24,7 +24,27 @@ public class SetupScreenGUI : MonoBehaviour {
 
 			if(GUI.Button(new Rect(Screen.width - 175, Screen.height / 2 - 75, 120, 20), "Clear Board"))
 			{
-				
+
+
+				//save the position where the soulstone and guardian are placed.  
+				//move the other units back to their offField positions
+
+				//You need to change the parameters here in providedPieces[] as you change the number of pieces in providedPieces later
+				Vector3 soulStonePosition = new Vector3(GameObject.Find("PlayerSetup").GetComponent<PlayerSetup>().providedPieces[9].transform.position.x
+				                                        ,GameObject.Find("PlayerSetup").GetComponent<PlayerSetup>().providedPieces[9].transform.position.y
+				                                        ,GameObject.Find("PlayerSetup").GetComponent<PlayerSetup>().providedPieces[9].transform.position.z);
+				Vector3 guardianPosition = new Vector3(GameObject.Find("PlayerSetup").GetComponent<PlayerSetup>().providedPieces[8].transform.position.x
+				                                       ,GameObject.Find("PlayerSetup").GetComponent<PlayerSetup>().providedPieces[8].transform.position.y
+				                                       ,GameObject.Find("PlayerSetup").GetComponent<PlayerSetup>().providedPieces[8].transform.position.z);
+
+				//Application.LoadLevel (Application.loadedLevel);
+				Application.LoadLevel (2);
+
+				GameObject.Find("PlayerSetup").GetComponent<PlayerSetup>().providedPieces[9].transform.position = soulStonePosition;
+				GameObject.Find("PlayerSetup").GetComponent<PlayerSetup>().providedPieces[8].transform.position = guardianPosition;
+
+
+
 			}
 			
 			if ( GUI.Button( new Rect( Screen.width - 160, Screen.height / 2 - 25, 80, 20), "Back"))
@@ -52,36 +72,30 @@ public class SetupScreenGUI : MonoBehaviour {
 
 			if ( GUI.Button( new Rect( Screen.width - 200, Screen.height / 2 + 75, 25, 20), "1"))
 			{
-				//gp.returnSocket().SendTCPPacket("getBoardData\\1\\" + gp.playerName);
+				gp.returnSocket().SendTCPPacket("getBoardData\\1\\" + gp.playerName);
 			}
 
 			if ( GUI.Button( new Rect( Screen.width - 165, Screen.height / 2 + 75, 25, 20), "2"))
 			{
-				//gp.returnSocket().SendTCPPacket("getBoardData\\2\\" + gp.playerName);
+				gp.returnSocket().SendTCPPacket("getBoardData\\2\\" + gp.playerName);
 			}
 
 			if ( GUI.Button( new Rect( Screen.width - 130, Screen.height / 2 + 75, 25, 20), "3"))
 			{
-				//gp.returnSocket().SendTCPPacket("getBoardData\\3\\" + gp.playerName);
+				gp.returnSocket().SendTCPPacket("getBoardData\\3\\" + gp.playerName);
 			}
 
 			if ( GUI.Button( new Rect( Screen.width - 95, Screen.height / 2 + 75, 25, 20), "4"))
 			{
-				//gp.returnSocket().SendTCPPacket("getBoardData\\4\\" + gp.playerName);
+				gp.returnSocket().SendTCPPacket("getBoardData\\4\\" + gp.playerName);
 			}
 
 			if ( GUI.Button( new Rect( Screen.width - 60, Screen.height / 2 + 75, 25, 20), "5"))
 			{
-				//gp.returnSocket().SendTCPPacket("getBoardData\\5\\" + gp.playerName);
+				gp.returnSocket().SendTCPPacket("getBoardData\\5\\" + gp.playerName);
 			}
 
-			if ( GUI.Button( new Rect( Screen.width - 160, Screen.height / 2 + 140, 25, 20), "A"))
-			{
-			}
-			
-			if ( GUI.Button( new Rect( Screen.width - 120, Screen.height / 2 + 140, 25, 20), "B"))
-			{
-			}			
+
 		}		
 	}
 	
