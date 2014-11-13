@@ -17,7 +17,15 @@ public class SetupTileScript : MonoBehaviour {
 	void Start () {
 		ps = GameObject.Find("PlayerSetup").GetComponent<PlayerSetup>();
 
-		occupied = false;
+		//This start is called after playersetup is called.  So we need to check if occupied is true
+		if(occupied == true)
+		{
+			Debug.Log ("occupied is true");
+		}
+		else
+		{
+			occupied = false;
+		}
 
 	}
 
