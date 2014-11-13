@@ -6,16 +6,16 @@ public class UnitTwo: Unit {
 
 
 	void Start () {
+		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 		unitType = 2;
-		name = "Buffing Unit";
+		name = "Focus Mage";
 		hp = 30;
 		maxHP = 30;
-		armor = 10;
 		atk = 0;//change later
 		mvRange = 2;
 		mvCost = 2;
-		atkRange = 3;
+		atkRange = 4;
 		atkCost = 4;	
 		//unitRole = "BuffDebuff";
 		unitRole = 504;//BuffDebuff

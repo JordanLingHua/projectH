@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour {
 		
 		if (selectedUnit != null){
 			Unit script = selectedUnit.GetComponent<Unit>();
-			string info = script.name + "\nHP: " + script.hp + "/" + script.maxHP + "\nArmor: " + script.armor;
+			string info = script.name + "\nHP: " + script.hp + "/" + script.maxHP;
 			info +=  script.atk > 0? "\nDamage: " + script.atk : "";
 			
 			if (gs ==  gameState.playerMv || gs == gameState.playerMv) {

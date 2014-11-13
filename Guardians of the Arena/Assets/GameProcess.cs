@@ -81,10 +81,11 @@ public class GameProcess : MonoBehaviour {
 			
 			// hasLoggedOut\\playerNameToRemove
 			else if (tokens[0].Equals("hasLoggedOut"))
-			{
-				GameObject.Find("ListOfPlayers").GetComponent<ListOfPlayersScript>().removePlayer(tokens[1]);
+			{	
+				if (GameObject.Find("ListOfPlayers") != null)
+					GameObject.Find("ListOfPlayers").GetComponent<ListOfPlayersScript>().removePlayer(tokens[1]);
 				
-				if (playerName.Equals(tokens[1]))
+				if (clientNumber == Int32.Parse(tokens[1]))
 				{
 					Destroy(pum);
 					Destroy(am);
@@ -121,7 +122,7 @@ public class GameProcess : MonoBehaviour {
 			// globalChat\\userName\\chatContent
 			else if (tokens[0].Equals("globalChat"))
 			{
-				GameObject.Find ("GlobalChat").GetComponent<globalChatScript>().addLineToChat(tokens[1], tokens[2]);
+				GameObject.Find ("globalChat").GetComponent<globalChatScript>().addLineToChat(tokens[1], tokens[2]);
 			}
 			
 			// 
@@ -177,6 +178,7 @@ public class GameProcess : MonoBehaviour {
 			//TODO
 			else if (tokens[0].Equals("victory"))
 			{
+				gameManager.showReturnButton = true;
 				gameManager.combatLog.text = "You won!";
 				
 			}
@@ -184,6 +186,7 @@ public class GameProcess : MonoBehaviour {
 			//TODO
 			else if (tokens[0].Equals("defeat"))
 			{
+				gameManager.showReturnButton = true;
 				gameManager.combatLog.text = "You lost!";
 			}
 			#endregion

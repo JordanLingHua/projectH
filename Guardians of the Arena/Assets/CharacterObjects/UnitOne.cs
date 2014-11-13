@@ -7,15 +7,15 @@ public class UnitOne : Unit {
 
 
 	void Start () {
+		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 		unitType = 1;
-		name = "Ranged Unit";
-		hp = 18;
-		maxHP = 18;
-		armor = 8;
-		atk = 20;
+		name = "Knife Juggler";
+		hp = 20;
+		maxHP = 20;
+		atk = 18;
 		mvRange = 4;
-		mvCost = 1;
+		mvCost = 2;
 		atkRange = 3;
 		atkCost = 2;
 		//unitRole = "Ranged";

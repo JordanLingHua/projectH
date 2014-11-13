@@ -2,17 +2,17 @@
 using System.Collections;
 
 public class UnitFour : Unit {
-
+	//NOT IN DEVELOPMENT
 
 
 
 	void Start () {
+		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 		unitType = 4;
 		name = "AoE Unit";
 		hp = 28;
 		maxHP = 28;
-		armor = 10;
 		atk = 10;
 		mvRange = 4;
 		mvCost = 1;

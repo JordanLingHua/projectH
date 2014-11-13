@@ -2,17 +2,17 @@
 using System.Collections;
 
 public class UnitSix : Unit {
-
+	//NOT IN DEVELOPMENT
 
 
 
 	void Start(){
+		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 		unitType = 6;
 		name = "Buffing Unit";
 		hp = 40;
 		maxHP = 40;
-		armor = 25;
 		atk = 0;//not final
 		mvRange = 2;
 		mvCost = 3;

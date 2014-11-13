@@ -13,15 +13,12 @@ public class CameraScript2 : MonoBehaviour {
 	
 	}
 
-	public void enable()
-	{
-		GetComponent<Camera>().enabled = false;
-	}
-
 	void OnLevelWasLoaded()
 	{
-		//UnityEngine.Debug.Log ("2playernumber: " + GameObject.Find ("GameProcess").GetComponent<GameProcess> ().playerNumber);
-		if (GameObject.Find ("GameProcess").GetComponent<GameProcess> ().playerNumber == 1)
-			enable ();
+		if (GameObject.Find ("GameProcess").GetComponent<GameProcess> ().playerNumber == 1){
+			GetComponent<Camera>().enabled = false;
+			GetComponent<AudioListener>().enabled = false;
+			
+		}
 	}
 }

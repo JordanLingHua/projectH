@@ -6,13 +6,13 @@ public class UnitEleven : Unit {
 
 
 	void Start () {
+		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 		if(Application.loadedLevelName == "BoardScene")
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 		unitType = 11;
 		name = "Soulstone";
 		hp = 1;
 		maxHP = 1;
-		armor = 0;
 		atk = 0;
 		mvRange = 0;
 		mvCost = 0;

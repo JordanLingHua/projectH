@@ -22,13 +22,13 @@ public class globalChatScript : MonoBehaviour {
 	
 	}
 
-	public void addLineToChat(string userName, string lineToAdd)
+	public void addLineToChat(string userName, string chatLine)
 	{
 		gChat.text = string.Empty;
-		chatLines.Add (lineToAdd);
+		chatLines.Add (userName +": " + chatLine);
 
 		for (int i = chatLines.Count - maxLinesToShow <= 0 ? 0 : chatLines.Count - maxLinesToShow; i < chatLines.Count; i++)
-			gChat.text += userName + ": " + chatLines[i] + "\n";
+			gChat.text += chatLines[i] + "\n";
 	}
 	
 }

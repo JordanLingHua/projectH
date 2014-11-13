@@ -7,13 +7,13 @@ public class UnitSeven : Unit {
 
 
 	void Start(){
+		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 		unitType = 7;
-		name = "Melee Tank";
-		hp = 25;
-		maxHP = 25;
-		armor = 35;
-		atk = 8;
+		name = "Shield Master";
+		hp = 38;
+		maxHP = 38;	
+		atk = 10;
 		mvRange = 3;
 		mvCost = 1;
 		atkRange = 1;

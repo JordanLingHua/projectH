@@ -9,7 +9,7 @@ public class Unit    : MonoBehaviour {
 	public allegiance alleg;
 	//All these are public, so we can modify them all for now.  
 	public int unitID, xpos, ypos;//, unitType;
-	public int hp,maxHP,armor,atk,mvRange,atkRange,mvCost,atkCost;
+	public int hp,maxHP,atk,mvRange,atkRange,mvCost,atkCost;
 	public bool atkd, mvd;
 	public string name = string.Empty;
 	public string info = string.Empty;
@@ -77,7 +77,7 @@ public class Unit    : MonoBehaviour {
 	int ID;
 	
 	public GameManager gm;
-	GameProcess gp;
+	public GameProcess gp;
 	void Start () {
 		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
@@ -123,7 +123,7 @@ public class Unit    : MonoBehaviour {
 
 	void refreshUnitText()
 	{
-		info = name + "\nHP: " + hp + "/" + maxHP + "\nArmor: " + armor;
+		info = name + "\nHP: " + hp + "/" + maxHP;
 		info += mvCost > 0? "\nMove Cost: " + mvCost : "";
 		info += atkCost > 0? "\nAttack Cost: " + atkCost : "";
 		info += atk > 0? "\nDamage: " + atk : "";
@@ -165,6 +165,7 @@ public class Unit    : MonoBehaviour {
 		}
 	}
 
+
 	void playerSSKillable(){
 		foreach (int key in gm.units.Keys){
 			if (gm.units[key].ID == 20 && gm.units[key].alleg == allegiance.ally){
@@ -188,8 +189,8 @@ public class Unit    : MonoBehaviour {
 	public void attackThisUnit(Unit unitThatAttacked){
 			
 		if (!invincible){
-			gm.combatLog.text = "Combat Log:\nDealt " + (int)(unitThatAttacked.atk * ((100 - this.armor) * 0.01))+ " damage!";
-			this.hp -= (int)(unitThatAttacked.atk * ((100 - this.armor) * 0.01));
+			gm.combatLog.text = "Combat Log:\nDealt " + unitThatAttacked.atk + " damage!";
+			this.hp -= unitThatAttacked.atk;
 			
 			//if the unit attacked was killed, remove it from the board and unit list
 			if (this.hp <=0){				
@@ -307,7 +308,6 @@ public class Unit    : MonoBehaviour {
 		name = "Shrub";
 		hp = 1;
 		maxHP = 1;
-		armor = 0;
 	}
 	
 }
