@@ -30,14 +30,18 @@ public class SetupScreenGUI : MonoBehaviour {
 				//move the other units back to their offField positions
 
 				//You need to change the parameters here in providedPieces[] as you change the number of pieces in providedPieces later
-				Vector3 soulStonePosition = transform.Find("PlayerSetup").GetComponent<PlayerSetup>().providedPieces[9].transform.position;
-				Vector3 guardianPosition = transform.Find("PlayerSetup").GetComponent<PlayerSetup>().providedPieces[8].transform.position;
+				Vector3 soulStonePosition = new Vector3(GameObject.Find("PlayerSetup").GetComponent<PlayerSetup>().providedPieces[9].transform.position.x
+				                                        ,GameObject.Find("PlayerSetup").GetComponent<PlayerSetup>().providedPieces[9].transform.position.y
+				                                        ,GameObject.Find("PlayerSetup").GetComponent<PlayerSetup>().providedPieces[9].transform.position.z);
+				Vector3 guardianPosition = new Vector3(GameObject.Find("PlayerSetup").GetComponent<PlayerSetup>().providedPieces[8].transform.position.x
+				                                       ,GameObject.Find("PlayerSetup").GetComponent<PlayerSetup>().providedPieces[8].transform.position.y
+				                                       ,GameObject.Find("PlayerSetup").GetComponent<PlayerSetup>().providedPieces[8].transform.position.z);
 
+				//Application.LoadLevel (Application.loadedLevel);
 				Application.LoadLevel (2);
 
-
-				transform.Find("PlayerSetup").GetComponent<PlayerSetup>().providedPieces[9].transform.position = soulStonePosition;
-				transform.Find("PlayerSetup").GetComponent<PlayerSetup>().providedPieces[8].transform.position = guardianPosition;
+				GameObject.Find("PlayerSetup").GetComponent<PlayerSetup>().providedPieces[9].transform.position = soulStonePosition;
+				GameObject.Find("PlayerSetup").GetComponent<PlayerSetup>().providedPieces[8].transform.position = guardianPosition;
 
 
 
