@@ -286,47 +286,6 @@ public class PlayerSetup : MonoBehaviour {
 
 
 
-		//GameObject temp = (GameObject)Instantiate(ball, new Vector3(0, 0, 0), new Quaternion(0,0,0,1));//test for prefab instantiation 1
-		//providedPieces[0] = temp;//test for prefab instantiation 1
-
-
-//		providedPieces[0] = (GameObject)Instantiate(unit1, new Vector3(0, 5, -10), new Quaternion(0,0,0,1));
-//		providedPieces[1] = (GameObject)Instantiate(unit2, new Vector3(10, 5, -10), new Quaternion(0,0,0,1));
-//		providedPieces[2] = (GameObject)Instantiate(unit3, new Vector3(20, 5, -10), new Quaternion(0,0,0,1));
-//		providedPieces[3] = (GameObject)Instantiate(unit3, new Vector3(30, 5, -10), new Quaternion(0,0,0,1));
-//		providedPieces[4] = (GameObject)Instantiate(unit4, new Vector3(40, 5, -10), new Quaternion(0,0,0,1));
-//		providedPieces[5] = (GameObject)Instantiate(unit5, new Vector3(50, 5, -10), new Quaternion(0,0,0,1));
-//		providedPieces[6] = (GameObject)Instantiate(unit6, new Vector3(60, 5, -10), new Quaternion(0,0,0,1));
-//		providedPieces[7] = (GameObject)Instantiate(unit7, new Vector3(70, 5, -10), new Quaternion(0,0,0,1));
-//		providedPieces[8] = (GameObject)Instantiate(unit7, new Vector3(80, 5, -10), new Quaternion(0,0,0,1));
-//		providedPieces[9] = (GameObject)Instantiate(unit7, new Vector3(90, 5, -10), new Quaternion(0,0,0,1));
-//		providedPieces[10] = (GameObject)Instantiate(unit8, new Vector3(0, 5, -20), new Quaternion(0,0,0,1));
-//		providedPieces[11] = (GameObject)Instantiate(unit9, new Vector3(10, 5, -20), new Quaternion(0,0,0,1));
-//		providedPieces[12] = (GameObject)Instantiate(unit9, new Vector3(20, 5, -20), new Quaternion(0,0,0,1));
-//		providedPieces[13] = (GameObject)Instantiate(unit10, new Vector3(30, 5, -20), new Quaternion(0,0,0,1));
-//		providedPieces[14] = (GameObject)Instantiate(unit11, new Vector3(40, 5, -20), new Quaternion(0,0,0,1));
-
-
-		
-		/*
-		providedPieces[0] = addUnit (placement.OFFFIELD, 0,0,1,1);
-		providedPieces[1] = addUnit (placement.OFFFIELD, 1,0,2,2);
-		providedPieces[2] = addUnit (placement.OFFFIELD, 2,0,3,3);
-		providedPieces[3] = addUnit (placement.OFFFIELD, 3,0,3,4);
-		providedPieces[4] = addUnit (placement.OFFFIELD, 4,0,4,5);
-		providedPieces[5] = addUnit (placement.OFFFIELD, 5,0,5,6);
-		providedPieces[6] = addUnit (placement.OFFFIELD, 6,0,5,7);
-		providedPieces[7] = addUnit (placement.OFFFIELD, 7,0,5,8);
-		providedPieces[8] = addUnit (placement.OFFFIELD, 8,0,6,9);
-		//providedPieces[9] = addUnit (placement.ONFIELD, 10,3,7,10);
-		//providedPieces[10] = addUnit (placement.ONFIELD, 9,3,8,11);
-		providedPieces[9] = addUnit (placement.ONFIELD, 10,3,10,10);
-		providedPieces[10] = addUnit (placement.ONFIELD, 9,3,11,11);
-		//providedPieces[11] = addUnit (1,1,16,12);
-		//providedPieces[12] = addUnit (2,1,16,13);
-		//providedPieces[13] = addUnit (3,1,16,14);
-		//providedPieces[14] = addUnit (4,1,16,15);
-		*/
 
 
 		//THIS IS SUBJECT TO CHANGE.  WHEN YOU CHANGE THIS, MAKE SURE YOU CHANGE THE ARRAY SIZE ABOVE!!!!
