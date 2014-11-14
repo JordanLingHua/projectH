@@ -88,6 +88,9 @@ public class SetupScreenGUI : MonoBehaviour {
 						
 						gp.returnSocket().SendTCPPacket("offBoardSetup" + "\\" + gp.playerName + "\\" + i + "\\"
 						                                + offBoardPieces.Length + "\\" + offBoardPieces);
+
+						//Reset modified to false
+						playerSetup.pages[i].modified = false;
 					}
 				}
 
