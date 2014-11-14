@@ -58,6 +58,11 @@ public class PlayerSetup : MonoBehaviour {
 	//public GameObject ball;//test for prefab instantiation 1
 
 
+	//
+	public int activePage;
+
+	public Page[] pages;
+
 
 	//Unit Type and Unit ID are the exact same thing
 	GameObject addUnit(placement placementType, int x, int y,int type){//, int unitID){
@@ -194,10 +199,6 @@ public class PlayerSetup : MonoBehaviour {
 		}
 
 
-
-
-
-
 		//_________Create the unit_storage_tiles's tiles:_________  
 
 		//Tile Creation
@@ -214,9 +215,6 @@ public class PlayerSetup : MonoBehaviour {
 				GameObject newtile = (GameObject)Instantiate(storage_tile,
 				                                             position, 
 				                                             new Quaternion(0,0,0,0));
-
-
-
 
 				
 				newtile.AddComponent("SetupTileScript");
@@ -266,14 +264,6 @@ public class PlayerSetup : MonoBehaviour {
 
 
 
-		//Initialize:  
-
-		//Pieces creation (add pieces into the array above)
-
-		//There should be 15 pieces total.  Look at the unit design spreadsheet!  
-		//GameObject u1_1 = (GameObject)Instantiate(Resources.Load("UnitOnePrefab"));
-		//GameObject u2_1 = (GameObject)Instantiate(Resources.Load("UnitTwoPrefab"));
-		//GameObject u3_1 = (GameObject)Instantiate(Resources.Load("UnitThreePrefab"));
 
 
 
@@ -305,10 +295,7 @@ public class PlayerSetup : MonoBehaviour {
 
 		
 		
-		//guardian and soulstone
-		//addUnit (7,15,19, 18);
-		//addUnit (8,15,20, 19);
-		
+
 		//Add a move script to each, just for this scene though (this scene should be the only scene that calls this script)
 		//Position each of the pieces just made onto the board: 
 		//for(int i = 0; i < providedPieces.Length - 1; i++)
@@ -319,25 +306,51 @@ public class PlayerSetup : MonoBehaviour {
 
 		playerPieces = new ArrayList(boardCapacity);
 
-
-		//BUG HERE:  Even when you add the guardian and the soulstone into the playerPieces array, 
-		//the squares in which they occupied have occupied set to FALSE, and other pieces can hide inside
-		//the guardian or the soulstone.  Further more, this messes up the occupied logic in the long run.  
-		//Or there could be another bug.  But this is what I found for now.  :  
-
-
 		//CHANGE the indices of the providedPieces in 
 		//THIS PART WHENEVER YOU CHANGE THE SIZE OF THE PROVIDEDPIECES ARRAY:  
-		//playerPieces.Add (providedPieces[9]);
-		//playerPieces.Add (providedPieces[10]);
+
+	
+
 		playerPieces.Add (providedPieces[8]);
 		playerPieces.Add (providedPieces[9]);
 
+
+		activePage = 0;
+
+		pages = new Page[5];
+		for(int i = 0; i < 5; i++)
+		{
+			pages[i] = new Page();
+		}
 	
+		pages[0].onBoardPieces.Add(providedPieces[8]);
+		pages[0].onBoardPieces.Add(providedPieces[9]);
 	}
 
 
+	void updatePageModifier()
+	{
+		switch(activePage)
+		{
+		case 1:
 
+			pages[0].modified = true;
+			break;
+		case 2:
+			pages[1].modified = true;
+			break;
+		case 3:
+			pages[2].modified = true;
+			break;
+		case 4:
+			pages[3].modified = true;
+			break;
+		case 5:
+			pages[4].modified = true;
+			break;
+			
+		}
+	}
 
 	//Drag and drop
 	// Update is called once per frame

@@ -39,19 +39,20 @@ public class move : MonoBehaviour {
 	
 	void OnMouseUp()
 	{
-
+		Debug.Log (playerSetup.activePage);
 		isTouched = false;
 		slot = findNearest();
 		//if there is a slot
 		Debug.Log (slot);
 		if (slot != null && !slot.GetComponent<SetupTileScript>().occupied)
 		{
-			Debug.Log ("unitType 10 or 11" + (gameObject.GetComponent<Unit>().unitType));
+			//Debug.Log ("unitType 10 or 11" + (gameObject.GetComponent<Unit>().unitType));
 			//Debug.Log ("7 or 8" + (gameObject.GetComponent<Unit>().unitRole));
 			//if(gameObject.GetComponent<Unit>().unitRole == 505 || gameObject.GetComponent<Unit>().unitRole == 506){
 			if(gameObject.GetComponent<Unit>().unitType == 10 || gameObject.GetComponent<Unit>().unitType == 11){
 				if(slot.GetComponent<SetupTileScript>().tt == SetupTileScript.TileType.ONFIELD)
 					{
+						playerSetup.pages[playerSetup.activePage].modified = true;
 						this.transform.parent.GetComponent<SetupTileScript>().occupied = false;
 						this.transform.parent = slot;
 						transform.position = new Vector3(slot.transform.position.x, 5.0f, slot.position.z);
@@ -61,13 +62,19 @@ public class move : MonoBehaviour {
 					transform.position = playerSetup.prevPosition;
 			}
 
-			else if(playerSetup.playerPieces.Count < playerSetup.boardCapacity)
+			else if(playerSetup.pages[playerSetup.activePage].onBoardPieces.Count < playerSetup.boardCapacity)
 			{
 				if(slot.GetComponent<SetupTileScript>().tt == SetupTileScript.TileType.ONFIELD)
 				{
-					if(!playerSetup.playerPieces.Contains(gameObject))
-						playerSetup.playerPieces.Add(gameObject);
+					if(!playerSetup.pages[playerSetup.activePage].onBoardPieces.Contains(this.gameObject))
+					{
 
+						Debug.Log ("piece added. page " + playerSetup.activePage);
+						playerSetup.pages[playerSetup.activePage].offBoardPieces.Remove(this.gameObject);
+						playerSetup.pages[playerSetup.activePage].onBoardPieces.Add(this.gameObject);
+					}
+
+					playerSetup.pages[playerSetup.activePage].modified = true;
 					this.transform.parent.GetComponent<SetupTileScript>().occupied = false;
 					this.transform.parent = slot;
 					transform.position = new Vector3(slot.transform.position.x, 5.0f, slot.position.z);
@@ -77,9 +84,13 @@ public class move : MonoBehaviour {
 			
 				else 
 				{
-					if(playerSetup.playerPieces.Contains(gameObject))
-						playerSetup.playerPieces.Remove(gameObject);
+					if(playerSetup.pages[playerSetup.activePage].onBoardPieces.Contains(gameObject))
+					{
+						playerSetup.pages[playerSetup.activePage].offBoardPieces.Add(this.gameObject);
+						playerSetup.pages[playerSetup.activePage].onBoardPieces.Remove(this.gameObject);
+					}
 
+					playerSetup.pages[playerSetup.activePage].modified = true;
 					this.transform.parent.GetComponent<SetupTileScript>().occupied = false;
 					this.transform.parent = slot;
 					transform.position = new Vector3(slot.transform.position.x, 5.0f, slot.position.z);
@@ -91,9 +102,10 @@ public class move : MonoBehaviour {
 			{
 				if(slot.GetComponent<SetupTileScript>().tt == SetupTileScript.TileType.ONFIELD)
 				{
-					Debug.Log (playerSetup.playerPieces.Contains(gameObject));
-					if(playerSetup.playerPieces.Contains(gameObject))
+					//	Debug.Log (playerSetup.pages[playerSetup.activePage].onBoardPieces.Contains(gameObject));
+					if(playerSetup.pages[playerSetup.activePage].onBoardPieces.Contains(gameObject))
 					{
+						playerSetup.pages[playerSetup.activePage].modified = true;
 						this.transform.parent.GetComponent<SetupTileScript>().occupied = false;
 						this.transform.parent = slot;
 						transform.position = new Vector3(slot.transform.position.x, 5.0f, slot.position.z);
@@ -105,10 +117,12 @@ public class move : MonoBehaviour {
 
 				}
 
-				else if(playerSetup.playerPieces.Contains(gameObject))
+				else if(playerSetup.pages[playerSetup.activePage].onBoardPieces.Contains(gameObject))
 				{
-					playerSetup.playerPieces.Remove(gameObject);
+					playerSetup.pages[playerSetup.activePage].offBoardPieces.Add(this.gameObject);
+					playerSetup.pages[playerSetup.activePage].onBoardPieces.Remove(this.gameObject);
 
+					playerSetup.pages[playerSetup.activePage].modified = true;
 					this.transform.parent.GetComponent<SetupTileScript>().occupied = false;
 					this.transform.parent = slot;
 					transform.position = new Vector3(slot.transform.position.x, 5.0f, slot.position.z);
@@ -118,8 +132,8 @@ public class move : MonoBehaviour {
 
 
 			//Special if dragging object to field-type tile:
-
-			Debug.Log(playerSetup.playerPieces.Count);
+			//Debug.Log(playerSetup.activePage);
+			Debug.Log(playerSetup.pages[playerSetup.activePage].onBoardPieces.Count);
 
 
 
