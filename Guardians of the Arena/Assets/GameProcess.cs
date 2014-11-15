@@ -85,7 +85,7 @@ public class GameProcess : MonoBehaviour {
 				if (GameObject.Find("ListOfPlayers") != null)
 					GameObject.Find("ListOfPlayers").GetComponent<ListOfPlayersScript>().removePlayer(tokens[1]);
 				
-				if (clientNumber == Int32.Parse(tokens[1]))
+				if (playerName == tokens[1])
 				{
 					Destroy(pum);
 					Destroy(am);
@@ -216,7 +216,7 @@ public class GameProcess : MonoBehaviour {
 		TileScript from = gameManager.units[unitID].transform.parent.GetComponent<TileScript>();
 		TileScript to = tileManager.tiles[toX, toY].GetComponent<TileScript>();
 		
-		to.pathFinder ();
+		//to.pathFinder ();
 		
 		gameManager.accessibleTiles.Clear();
 		to.objectOccupyingTile = from.objectOccupyingTile;
@@ -233,9 +233,12 @@ public class GameProcess : MonoBehaviour {
 	}
 
 	void OnApplicationQuit(){
-
-		socks.Disconnect();
-		Console.WriteLine("Application disconnected through application quit");
+		try{
+			socks.Disconnect();
+			Console.WriteLine("Application disconnected through application quit");
+		}catch(Exception e){
+			print ("Error on disconnect: " + e);
+		}		
 	}
 	
 	public void loadManagers()

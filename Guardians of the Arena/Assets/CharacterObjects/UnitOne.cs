@@ -10,7 +10,7 @@ public class UnitOne : Unit {
 		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 		unitType = 1;
-		name = "Knife Juggler";
+		unitName = "Knife Juggler";
 		hp = 20;
 		maxHP = 20;
 		atk = 18;
@@ -44,7 +44,7 @@ public class UnitOne : Unit {
 	}
 
 
-	 void showAtkAccessibleTiles(TileScript tile, int num){
+	new void showAtkAccessibleTiles(TileScript tile, int num){
 
 		TileScript tileS = tile.transform.GetComponent<TileScript>();
 

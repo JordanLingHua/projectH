@@ -4,7 +4,21 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - tile: {fileID: 100000, guid: 43ddd95b06c3c93459686532e1082a83, type: 2}
-  - character: {fileID: 100000, guid: c19e8047391cfb946aac4bf65dfab6c5, type: 2}
+  - environmentObject: {fileID: 100000, guid: 283746c560beb6145a5409c8e486d6d9, type: 2}
+  - cp: {fileID: 100000, guid: c19e8047391cfb946aac4bf65dfab6c5, type: 2}
+  - UnitOne: {fileID: 100000, guid: 1c1f43e298e0f7648af8f6e9c8571dc5, type: 2}
+  - UnitTwo: {instanceID: 0}
+  - UnitThree: {instanceID: 0}
+  - UnitFour: {instanceID: 0}
+  - UnitFive: {instanceID: 0}
+  - UnitSix: {instanceID: 0}
+  - UnitSeven: {instanceID: 0}
+  - UnitEight: {instanceID: 0}
+  - UnitNine: {instanceID: 0}
+  - UnitTen: {instanceID: 0}
+  - UnitEleven: {instanceID: 0}
+  - gm: {instanceID: 0}
+  - pum: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

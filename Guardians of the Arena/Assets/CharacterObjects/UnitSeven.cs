@@ -10,7 +10,7 @@ public class UnitSeven : Unit {
 		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 		unitType = 7;
-		name = "Shield Master";
+		unitName = "Shield Master";
 		hp = 38;
 		maxHP = 38;	
 		atk = 10;

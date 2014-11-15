@@ -10,7 +10,7 @@ public class UnitFour : Unit {
 		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 		unitType = 4;
-		name = "AoE Unit";
+		unitName = "AoE Unit";
 		hp = 28;
 		maxHP = 28;
 		atk = 10;

@@ -10,7 +10,7 @@ public class UnitNine : Unit {
 		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 		unitType = 9;
-		name = "Ranged Unit";
+		unitName = "Ranged Unit";
 		hp = 22;
 		maxHP = 22;
 		atk = 12;

@@ -11,7 +11,7 @@ public class Unit    : MonoBehaviour {
 	public int unitID, xpos, ypos;//, unitType;
 	public int hp,maxHP,atk,mvRange,atkRange,mvCost,atkCost;
 	public bool atkd, mvd;
-	public string name = string.Empty;
+	public string unitName = string.Empty;
 	public string info = string.Empty;
 	public bool invincible,displayHPBar;
 	
@@ -20,6 +20,8 @@ public class Unit    : MonoBehaviour {
 	//change unitRole to int if we can do defines for each unit role in this code or elsewhere
 	public int unitType;
 	public int unitRole;//compare this int to the ints provided inside gameManager or wherever unitRole is compared
+
+
 	/*
 	 * DO NOT DELETE THIS COMMENT!!!!
 	 * Jordan Hua
@@ -98,17 +100,17 @@ public class Unit    : MonoBehaviour {
 
 	void OnGUI(){
 		if (displayHPBar){
-			Camera cam = Camera.main;
-			Vector3 HPBarPos = cam.WorldToScreenPoint(gameObject.transform.position);
-			DrawQuad (new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-10 < 0?Screen.height:Screen.height - HPBarPos.y-10,  25, 5),Color.black);
-			float barColorSwitch = (float)hp/maxHP;
-			if (barColorSwitch > .6){
-				DrawQuad(new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-10, barColorSwitch * 25, 5),Color.green);
-			}else if (barColorSwitch > 0.3){
-				DrawQuad(new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-10, barColorSwitch * 25, 5),Color.yellow);
-			}else{
-				DrawQuad(new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-10, barColorSwitch * 25, 5),Color.red);
-			}
+//			Camera cam = Camera.main;
+//			Vector3 HPBarPos = cam.WorldToScreenPoint(gameObject.transform.position);
+//			DrawQuad (new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-10 < 0?Screen.height:Screen.height - HPBarPos.y-10,  25, 5),Color.black);
+//			float barColorSwitch = (float)hp/maxHP;
+//			if (barColorSwitch > .6){
+//				DrawQuad(new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-10, barColorSwitch * 25, 5),Color.green);
+//			}else if (barColorSwitch > 0.3){
+//				DrawQuad(new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-10, barColorSwitch * 25, 5),Color.yellow);
+//			}else{
+//				DrawQuad(new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-10, barColorSwitch * 25, 5),Color.red);
+//			}
 		}
 	}
 
@@ -116,14 +118,22 @@ public class Unit    : MonoBehaviour {
 		//show unit info when hovering over it
 
 		if (Application.loadedLevelName.Equals("BoardScene")){
-		this.transform.parent.renderer.material.shader = Shader.Find ("Toon/Lighted");
+		//this.transform.parent.renderer.material.shader = Shader.Find ("Toon/Lighted");
 			refreshUnitText ();}
-		
+
+		transform.parent.GetComponent<TileScript> ().OnMouseEnter ();
+	}
+
+
+	public virtual List<GameObject> showAoEAffectedTiles(TileScript tile){
+		List<GameObject> nothing = new List<GameObject> ();
+		return nothing;
+
 	}
 
 	void refreshUnitText()
 	{
-		info = name + "\nHP: " + hp + "/" + maxHP;
+		info = unitName + "\nHP: " + hp + "/" + maxHP;
 		info += mvCost > 0? "\nMove Cost: " + mvCost : "";
 		info += atkCost > 0? "\nAttack Cost: " + atkCost : "";
 		info += atk > 0? "\nDamage: " + atk : "";
@@ -152,11 +162,10 @@ public class Unit    : MonoBehaviour {
 	
 	void OnMouseDown() {
 		//Attack this piece if:
-		//this unit is not the currently selected unit (no attacking self)
 		//the game is in attack mode
 		//the unit selected is in range of the selected unit
 		if (gm.turn) {
-			if (gm.selectedUnit != this && gm.gs == GameManager.gameState.playerAtk 
+			if (gm.gs == GameManager.gameState.playerAtk 
 					&& gm.accessibleTiles.Contains (this.transform.parent.GetComponent<TileScript> ())) {
 				transform.parent.GetComponent<TileScript>().attackTile ();
 			} else {
@@ -164,26 +173,6 @@ public class Unit    : MonoBehaviour {
 			}
 		}
 	}
-
-
-	void playerSSKillable(){
-		foreach (int key in gm.units.Keys){
-			if (gm.units[key].ID == 20 && gm.units[key].alleg == allegiance.ally){
-				gm.units[key].invincible = false;
-				break;
-			}
-		}
-	}
-	
-	void enemySSKillable(){
-		foreach (int key in gm.units.Keys){
-			if (gm.units[key].ID == 20 && gm.units[key].alleg == allegiance.enemy){
-				gm.units[key].invincible = false;
-				break;
-			}
-		}
-	}
-
 
 	//TODO: move this logic to the server
 	public void attackThisUnit(Unit unitThatAttacked){
@@ -305,7 +294,7 @@ public class Unit    : MonoBehaviour {
 	
 	public void makeTree(){
 		alleg = allegiance.neutral;
-		name = "Shrub";
+		unitName = "Shrub";
 		hp = 1;
 		maxHP = 1;
 	}

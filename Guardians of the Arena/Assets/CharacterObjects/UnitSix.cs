@@ -10,7 +10,7 @@ public class UnitSix : Unit {
 		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 		unitType = 6;
-		name = "Buffing Unit";
+		unitName = "Buffing Unit";
 		hp = 40;
 		maxHP = 40;
 		atk = 0;//not final

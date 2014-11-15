@@ -145,8 +145,8 @@ public class TileManager : MonoBehaviour {
 		//ranged units
 		addUnit (5,2,10,true, 4);
 		addUnit (6,2,10,true, 5);
-		addUnit (9,2,10,true, 6);
-		addUnit (10,2,10,true, 7);
+		addUnit (9,2,17,true, 6);
+		addUnit (10,2,12,true, 7);
 		
 		//guardian and soulstone
 		addUnit (7,0,19,true, 8);
@@ -163,8 +163,8 @@ public class TileManager : MonoBehaviour {
 		//ranged units
 		addUnit (5,13,10,false, 14);
 		addUnit (6,13,10,false, 15);
-		addUnit (9,13,10,false, 16);
-		addUnit (10,13,10,false, 17);
+		addUnit (9,13,17,false, 16);
+		addUnit (10,13,12,false, 17);
 		
 		//guardian and soulstone
 		addUnit (7,15,19,false, 18);

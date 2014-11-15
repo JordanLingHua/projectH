@@ -21,19 +21,43 @@ public class TileScript : MonoBehaviour {
 	public int x,y;
 	
 	public GameProcess gp;
-	
+	public List<GameObject> AoETiles = new List<GameObject> ();
+
 	GameManager gm;
 	void Start () {
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();	
 		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 	}
 
-	void OnMouseEnter(){
+	public void OnMouseEnter(){
 		renderer.material.shader = Shader.Find ("Toon/Lighted");
+		if (gm.selectedUnit != null && gm.gs == GameManager.gameState.playerAtk && gm.accessibleTiles.Contains (this)) {
+			AoETiles = gm.selectedUnit.showAoEAffectedTiles(this);
+		}
 	}
 
-	void OnMouseExit(){
+	public void OnMouseExit(){
 		renderer.material.shader = Shader.Find ("Toon/Basic");
+		//transform.parent.GetComponent<TileManager> ().clearAllTiles ();
+		if (gm.selectedUnit != null && gm.gs == GameManager.gameState.playerAtk && gm.accessibleTiles.Contains (this)) {
+			clearAoEAffectedTiles();
+		}
+	}
+
+	
+	public void clearAoEAffectedTiles(){
+		foreach (GameObject tile in AoETiles) {
+			if (tile.GetComponent<TileScript>().objectOccupyingTile == null){
+				tile.renderer.material.color = Color.white;			
+			}else if (tile.GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.ally){
+				tile.renderer.material.color = Color.blue;
+			}else if (tile.GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.neutral){
+				tile.renderer.material.color = Color.gray;
+			}else if (tile.GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.enemy){
+				tile.renderer.material.color = Color.red;
+			}
+		}
+		AoETiles.Clear ();
 	}
 
 	IEnumerator movePiece(Node current){
@@ -121,7 +145,6 @@ public class TileScript : MonoBehaviour {
 					open.Enqueue(new Node(current,current.myNode.down.GetComponent<TileScript>()));
 				}
 			}
-			
 		} 
 	}
 

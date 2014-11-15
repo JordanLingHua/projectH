@@ -9,7 +9,7 @@ public class UnitTen :Unit {
 		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 		unitType = 10;
-		name = "Guardian";
+		unitName = "Guardian";
 		hp = 45;
 		maxHP = 45;
 		atk = 23;

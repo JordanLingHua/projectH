@@ -9,7 +9,7 @@ public class UnitTwo: Unit {
 		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 		unitType = 2;
-		name = "Focus Mage";
+		unitName = "Focus Mage";
 		hp = 30;
 		maxHP = 30;
 		atk = 0;//change later
@@ -42,7 +42,7 @@ public class UnitTwo: Unit {
 	}
 	
 	
-	void showAtkAccessibleTiles(TileScript tile, int num){
+	new void showAtkAccessibleTiles(TileScript tile, int num){
 		
 		TileScript tileS = tile.transform.GetComponent<TileScript>();
 		
