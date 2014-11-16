@@ -16,7 +16,9 @@ public class GameManager : MonoBehaviour {
 	public string buttonOption = "Attack";
 	TileManager tm;
 	GameProcess gp;
-	
+	AudioManager am;
+
+
 	//Selected unit and available move squares
 	public Unit selectedUnit = null;
 	public HashSet<TileScript> accessibleTiles = new HashSet<TileScript>();
@@ -28,7 +30,7 @@ public class GameManager : MonoBehaviour {
 	
 	void Start () {
 		timer = TIMER_LENGTH;
-	
+		am = GameObject.Find ("AudioManager").GetComponent<AudioManager> ();
 		gp = GameObject.Find ("GameProcess").GetComponent<GameProcess>();
 		showReturnButton = false;
 		suInfo = GameObject.Find("SelectedUnitInfoGUIText").GetComponent<GUIText>();
@@ -57,6 +59,7 @@ public class GameManager : MonoBehaviour {
 
 		if (showReturnButton && GUI.Button (new Rect (Screen.width / 2 - 75, Screen.height / 2, 130, 20), "Return to Menu"))
 		{
+			am.playButtonSFX();
 			showReturnButton = false;
 			DontDestroyOnLoad(GameObject.Find ("GameProcess"));
 			Application.LoadLevel(1);
@@ -64,7 +67,7 @@ public class GameManager : MonoBehaviour {
 		
 		if (selectedUnit != null){
 			Unit script = selectedUnit.GetComponent<Unit>();
-			string info = script.name + "\nHP: " + script.hp + "/" + script.maxHP;
+			string info = script.unitName + "\nHP: " + script.hp + "/" + script.maxHP;
 			info +=  script.atk > 0? "\nDamage: " + script.atk : "";
 			
 			if (gs ==  gameState.playerMv || gs == gameState.playerMv) {
@@ -91,6 +94,11 @@ public class GameManager : MonoBehaviour {
 		//Button to toggle between attacking and moving a piece
 		if (GUI.Button (new Rect (Screen.width - 260, 0, 130, 20), "Move")) 
 		{
+			if (turn){
+				am.playButtonSFX();
+			}else{
+				am.playErrorSFX();
+			}
 			tm.clearAllTiles ();
 			accessibleTiles.Clear ();
 			gs = gameState.playerMv;
@@ -100,6 +108,11 @@ public class GameManager : MonoBehaviour {
 		}
 
 		if(GUI.Button (new Rect(Screen.width - 130,0,130,20),"Attack")){
+			if (turn){
+				am.playButtonSFX();
+			}else{
+				am.playErrorSFX();
+			}
 			tm.clearAllTiles();
 			accessibleTiles.Clear();		
 			gs =  gameState.playerAtk;	
@@ -111,6 +124,11 @@ public class GameManager : MonoBehaviour {
 		//End turn button
 		string buttontext = turn ? "End Turn" : "Opponent Turn ";
 		if (GUI.Button (new Rect(Screen.width - 130,20,130,20),buttontext)){
+			if (turn){
+				am.playButtonSFX();
+			}else{
+				am.playErrorSFX();
+			}
 			gp.returnSocket().SendTCPPacket("endTurn");
 		}
 	}

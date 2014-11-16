@@ -7,12 +7,7 @@ public class UnitThree : Unit{
 
 
 	void Start(){
-		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
-		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
-		hpBarBG = Resources.Load("HPBarBG") as Texture2D;
-		hpBarHigh = Resources.Load("HPBarHigh") as Texture2D;
-		hpBarMedium = Resources.Load("HPBarMedium") as Texture2D;
-		hpBarLow = Resources.Load("HPBarLow") as Texture2D;
+		base.Start ();
 		unitType = 3;
 		unitName = "Templar";
 		hp = 38;//hp can --//all other stats cannot --//some other stats ++ for growth

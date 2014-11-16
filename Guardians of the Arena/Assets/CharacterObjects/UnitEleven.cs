@@ -6,13 +6,7 @@ public class UnitEleven : Unit {
 
 
 	void Start () {
-		hpBarBG = Resources.Load("HPBarBG") as Texture2D;
-		hpBarHigh = Resources.Load("HPBarHigh") as Texture2D;
-		hpBarMedium = Resources.Load("HPBarMedium") as Texture2D;
-		hpBarLow = Resources.Load("HPBarLow") as Texture2D;
-		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
-		if(Application.loadedLevelName == "BoardScene")
-		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+		base.Start ();
 		unitType = 11;
 		unitName = "Soulstone";
 		hp = 1;

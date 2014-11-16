@@ -80,11 +80,14 @@ public class Unit    : MonoBehaviour {
 	public Texture2D hpBarBG,hpBarHigh,hpBarMedium,hpBarLow;
 	public GameManager gm;
 	public GameProcess gp;
-	void Start () {
+	public AudioManager am;
+	public virtual void Start () {
+
 		hpBarBG = Resources.Load("HPBarBG") as Texture2D;
 		hpBarHigh = Resources.Load("HPBarHigh") as Texture2D;
 		hpBarMedium = Resources.Load("HPBarMedium") as Texture2D;
 		hpBarLow = Resources.Load("HPBarLow") as Texture2D;
+		am = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 		info = string.Empty;
@@ -177,6 +180,7 @@ public class Unit    : MonoBehaviour {
 				transform.parent.GetComponent<TileScript>().attackTile ();
 			} else {
 				selectUnit ();
+				am.playButtonSFX();
 			}
 		}
 	}

@@ -21,10 +21,12 @@ public class TileScript : MonoBehaviour {
 	public int x,y;
 	
 	public GameProcess gp;
+	AudioManager am;
 	public List<GameObject> AoETiles = new List<GameObject> ();
 
 	GameManager gm;
 	void Start () {
+		am = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();	
 		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 	}
@@ -176,17 +178,21 @@ public class TileScript : MonoBehaviour {
 
 			gp.returnSocket().SendTCPPacket("move\\" + gm.selectedUnit.unitID+ "\\" + this.x + "\\" + this.y);
 			print ("Sent move packet");
-
+			am.playButtonSFX();
 		}else{
+			am.playErrorSFX();
 			gm.combatLog.text = "Combat Log:\nNot enough mana to move";
 		}
 	}
 	
 
 	public void attackTile(){
-		if (gm.accessibleTiles.Contains(this) && gm.pMana >= gm.selectedUnit.GetComponent<Unit>().atkCost){
-			gp.returnSocket().SendTCPPacket("attack\\" + gm.selectedUnit.unitID + "\\" + this.x + "\\" + this.y);
+		if (gm.accessibleTiles.Contains (this) && gm.pMana >= gm.selectedUnit.GetComponent<Unit> ().atkCost) {
+			gp.returnSocket ().SendTCPPacket ("attack\\" + gm.selectedUnit.unitID + "\\" + this.x + "\\" + this.y);
 			print ("Sent attack packet");
+		} else {
+			am.playErrorSFX();
+			gm.combatLog.text = "Combat Log:\nNot enough mana to attack";
 		}
 
 

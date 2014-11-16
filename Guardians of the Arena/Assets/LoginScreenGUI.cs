@@ -41,6 +41,7 @@ public class LoginScreenGUI : MonoBehaviour {
 
 		if(GUI.Button(new Rect(Screen.width / 2 - 50, Screen.height / 2 + 30, 50, 20), "Login"))
 		{
+			am.playButtonSFX();
 			if (!ip.Equals(""))
 				process.returnSocket().setIP(ip);
 
@@ -54,6 +55,7 @@ public class LoginScreenGUI : MonoBehaviour {
 				}
 
 				else 
+					am.playErrorSFX ();
 					guiText.text = "Connect Failed";
 			}
 
@@ -71,6 +73,7 @@ public class LoginScreenGUI : MonoBehaviour {
 	public void loginFail()
 	{
 		password = string.Empty;
+		am.playErrorSFX ();
 		guiText.text = "Invalid Login Info. Try Again.";
 	}
 

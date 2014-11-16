@@ -6,12 +6,7 @@ public class UnitTwo: Unit {
 
 
 	void Start () {
-		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
-		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
-		hpBarBG = Resources.Load("HPBarBG") as Texture2D;
-		hpBarHigh = Resources.Load("HPBarHigh") as Texture2D;
-		hpBarMedium = Resources.Load("HPBarMedium") as Texture2D;
-		hpBarLow = Resources.Load("HPBarLow") as Texture2D;
+		base.Start ();
 		unitType = 2;
 		unitName = "Focus Mage";
 		hp = 30;

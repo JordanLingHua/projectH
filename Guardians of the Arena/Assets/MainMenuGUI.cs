@@ -11,12 +11,13 @@ public class MainMenuGUI : MonoBehaviour {
 	string challengedPlayerCopy;
 	globalChatScript globalChat;
 	bool challengePending;
-	
+	AudioManager am;
 	// Use this for initialization
 	void Start () {
 		guiText.text = string.Empty;
 		challengedPlayerCopy = string.Empty;
 		showGUI = true;
+		am = GameObject.Find ("AudioManager").GetComponent<AudioManager> ();
 		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 		globalChat = GameObject.Find("globalChat").GetComponent<globalChatScript>();
 		chat = "Press Enter to Chat";
@@ -51,6 +52,7 @@ public class MainMenuGUI : MonoBehaviour {
 			{
 				if(GUI.Button(new Rect(Screen.width / 2 - 40, Screen.height / 2 - 75, 100, 20), "Play Game"))
 				{
+					am.playButtonSFX();
 					//send search request
 					gp.returnSocket().SendTCPPacket("search");
 					
@@ -61,6 +63,7 @@ public class MainMenuGUI : MonoBehaviour {
 				challengedPlayer = GUI.TextField (new Rect (Screen.width - 650, Screen.height - 240, 150, 20), challengedPlayer, 50);
 				if(GUI.Button(new Rect(Screen.width - 660, Screen.height - 270, 180, 20), "Send Challenge!"))
 				{
+					am.playButtonSFX();
 					//TODO: 
 					gp.returnSocket().SendTCPPacket("challengeRequest\\" + gp.playerName + "\\" + challengedPlayer);
 					challengePending = true;
@@ -72,6 +75,7 @@ public class MainMenuGUI : MonoBehaviour {
 			else
 				if(GUI.Button(new Rect(Screen.width / 2 - 40, Screen.height / 2 - 75, 120, 20), "Cancel Challenge"))
 				{
+					am.playErrorSFX();
 					//send search request
 					gp.returnSocket().SendTCPPacket("cancelChallenge\\" + gp.playerName + "\\" + challengedPlayerCopy );
 					
@@ -81,6 +85,7 @@ public class MainMenuGUI : MonoBehaviour {
 			
 			if ( GUI.Button( new Rect( Screen.width / 2 - 45, Screen.height / 2 - 50, 110, 20), "Setup Boards"))
 			{
+				am.playButtonSFX();
 				DontDestroyOnLoad(gp);
 				DontDestroyOnLoad(globalChat);
 				DontDestroyOnLoad(GameObject.Find("ListOfPlayers"));
@@ -102,6 +107,7 @@ public class MainMenuGUI : MonoBehaviour {
 			
 			if ( GUI.Button( new Rect( Screen.width / 2 - 30, Screen.height / 2 - 25, 80, 20), "Logout"))
 			{
+				am.playErrorSFX();
 				//send a disconnect packet
 				gp.returnSocket().SendTCPPacket("logout\\" + gp.playerName);
 				
@@ -121,6 +127,7 @@ public class MainMenuGUI : MonoBehaviour {
 		{
 			if(GUI.Button(new Rect(Screen.width / 2 - 40, Screen.height / 2 - 75, 100, 20), "Cancel Search"))
 			{
+				am.playErrorSFX();
 				gp.returnSocket().SendTCPPacket("cancelSearch");
 				
 				guiText.text = string.Empty;
