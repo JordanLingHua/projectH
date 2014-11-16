@@ -17,6 +17,7 @@ public class GameProcess : MonoBehaviour {
 	public GameManager gameManager;
 	AudioManager am;
 	PopUpMenu pum;
+	public PlayerSetup playerSetup;
 	
 	//PRIVATE MEMBERS
 	private Sockets socks;
@@ -47,7 +48,12 @@ public class GameProcess : MonoBehaviour {
 			///////////////////// DEBUG - WRITE ALL COMMANDS RECEIVED /////////////////////////
 			String s = string.Empty;
 			for (int j = 0; j < tokens.Length; j++)
-				s+= tokens[j] + "\\" + "\\";
+			{
+				s+= tokens[j];
+				if (j != tokens.Length - 1)
+					s += "\\" + "\\";
+			}
+
 			UnityEngine.Debug.Log(s);
 			///////////////////////////////////////////////////////////////////////////////////
 			
@@ -145,6 +151,35 @@ public class GameProcess : MonoBehaviour {
 			{
 				GameObject.Find ("challengeManager").GetComponent<challengeScript>().removeChallengeRequest(tokens[1]);
 			}
+
+			#region SETTING UP BOARDS
+			else if (tokens[0].Equals("boardSetup"))
+			{
+				playerSetup.pages[playerSetup.activePage].offBoardPieces.Clear();
+				playerSetup.pages[playerSetup.activePage].onBoardPieces.Clear();
+				GameObject unitToAdd;
+
+				for (int i = 0; i < playerSetup.boardCapacity * 4; i += 4)
+				{
+					if (tokens[i + 4].Equals("True"))
+					{
+						unitToAdd = playerSetup.addUnit(PlayerSetup.placement.ONFIELD, Int32.Parse (tokens[i + 2]), 
+						                                Int32.Parse (tokens[i + 3]), Int32.Parse (tokens[i + 1]));
+						unitToAdd.AddComponent("move");
+						playerSetup.pages[playerSetup.activePage].onBoardPieces.Add(unitToAdd);
+					}
+		
+					else
+					{
+						unitToAdd = playerSetup.addUnit(PlayerSetup.placement.OFFFIELD, Int32.Parse (tokens[i + 2]), 
+					                                    Int32.Parse (tokens[i + 3]), Int32.Parse (tokens[i + 1]));
+						unitToAdd.AddComponent("move");
+						playerSetup.pages[playerSetup.activePage].offBoardPieces.Add(unitToAdd);
+					}
+					
+				}
+			}
+			#endregion
 			
 			#region GAME PACKETS
 			//newpiece\\positionx\\positiony\\type\\playerNumber\\uniqueID
@@ -228,8 +263,11 @@ public class GameProcess : MonoBehaviour {
 	
 	void OnLevelWasLoaded(int sceneNumber)
 	{
-		if(sceneNumber == 3)
-			loadManagers();
+		if (sceneNumber == 3)
+			loadManagers ();
+		else if (sceneNumber == 2)
+			playerSetup = GameObject.Find ("PlayerSetup").GetComponent<PlayerSetup>();
+		
 	}
 
 	void OnApplicationQuit(){
