@@ -10,7 +10,7 @@ public class PopUpMenu : MonoBehaviour {
 	GameProcess gp;
 	
 	void Start () {
-		menuTexture = (Texture2D)Resources.Load ("backgroundGoA");
+		menuTexture = (Texture2D)Resources.Load ("PopupMenuBG");
 		am = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 	}
@@ -42,7 +42,6 @@ public class PopUpMenu : MonoBehaviour {
 			//Surrender Button
 				if (GUI.Button (new Rect (50, 150, 100, 20), "Surrender"))
 				{
-					//TODO: server command
 					gp.returnSocket().SendTCPPacket("surrender\\" + gp.clientNumber);
 				}
 			}

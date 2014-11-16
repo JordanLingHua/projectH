@@ -77,10 +77,14 @@ public class Unit    : MonoBehaviour {
 	 */
 	
 	int ID;
-	
+	public Texture2D hpBarBG,hpBarHigh,hpBarMedium,hpBarLow;
 	public GameManager gm;
 	public GameProcess gp;
 	void Start () {
+		hpBarBG = Resources.Load("HPBarBG") as Texture2D;
+		hpBarHigh = Resources.Load("HPBarHigh") as Texture2D;
+		hpBarMedium = Resources.Load("HPBarMedium") as Texture2D;
+		hpBarLow = Resources.Load("HPBarLow") as Texture2D;
 		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 		info = string.Empty;
@@ -100,17 +104,20 @@ public class Unit    : MonoBehaviour {
 
 	void OnGUI(){
 		if (displayHPBar){
-//			Camera cam = Camera.main;
-//			Vector3 HPBarPos = cam.WorldToScreenPoint(gameObject.transform.position);
-//			DrawQuad (new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-10 < 0?Screen.height:Screen.height - HPBarPos.y-10,  25, 5),Color.black);
-//			float barColorSwitch = (float)hp/maxHP;
-//			if (barColorSwitch > .6){
-//				DrawQuad(new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-10, barColorSwitch * 25, 5),Color.green);
-//			}else if (barColorSwitch > 0.3){
-//				DrawQuad(new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-10, barColorSwitch * 25, 5),Color.yellow);
-//			}else{
-//				DrawQuad(new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-10, barColorSwitch * 25, 5),Color.red);
-//			}
+			Camera cam = Camera.main;
+			Vector3 HPBarPos = cam.WorldToScreenPoint(gameObject.transform.position);
+			//GUI.color = Color.red;
+			GUI.DrawTexture (new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-10 < 0?Screen.height:Screen.height - HPBarPos.y-10,  25, 5),hpBarBG);
+			//DrawQuad (new Rect(0,0,50,50),Color.red);
+			//DrawQuad (new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-10 < 0?Screen.height:Screen.height - HPBarPos.y-10,  25, 5),Color.black);
+			float barColorSwitch = (float)hp/maxHP;
+			if (barColorSwitch > .6){
+				GUI.DrawTexture(new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-10, barColorSwitch * 25, 5),hpBarHigh);
+			}else if (barColorSwitch > 0.3){
+				GUI.DrawTexture(new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-10, barColorSwitch * 25, 5),hpBarMedium);
+			}else{
+				GUI.DrawTexture(new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-10, barColorSwitch * 25, 5),hpBarLow);
+			}
 		}
 	}
 
@@ -118,7 +125,7 @@ public class Unit    : MonoBehaviour {
 		//show unit info when hovering over it
 
 		if (Application.loadedLevelName.Equals("BoardScene")){
-		//this.transform.parent.renderer.material.shader = Shader.Find ("Toon/Lighted");
+			this.transform.parent.renderer.material.shader = Shader.Find ("Toon/Lighted");
 			refreshUnitText ();}
 
 		transform.parent.GetComponent<TileScript> ().OnMouseEnter ();

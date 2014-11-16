@@ -216,7 +216,7 @@ public class GameProcess : MonoBehaviour {
 		TileScript from = gameManager.units[unitID].transform.parent.GetComponent<TileScript>();
 		TileScript to = tileManager.tiles[toX, toY].GetComponent<TileScript>();
 		
-		//to.pathFinder ();
+		to.pathFinder ();
 		
 		gameManager.accessibleTiles.Clear();
 		to.objectOccupyingTile = from.objectOccupyingTile;

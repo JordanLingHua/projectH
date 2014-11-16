@@ -38,7 +38,6 @@ public class TileScript : MonoBehaviour {
 
 	public void OnMouseExit(){
 		renderer.material.shader = Shader.Find ("Toon/Basic");
-		//transform.parent.GetComponent<TileManager> ().clearAllTiles ();
 		if (gm.selectedUnit != null && gm.gs == GameManager.gameState.playerAtk && gm.accessibleTiles.Contains (this)) {
 			clearAoEAffectedTiles();
 		}
@@ -60,7 +59,20 @@ public class TileScript : MonoBehaviour {
 		AoETiles.Clear ();
 	}
 
-	IEnumerator movePiece(Node current){
+	//taken from user dcarrier on unity forums
+	//http://answers.unity3d.com/questions/14279/make-an-object-move-from-point-a-to-point-b-then-b.html
+	IEnumerator movePiece (GameObject move, Vector3 start, Vector3 end, float time){
+		float i = 0.0f;
+		float rate = 1.0f / time;
+
+		while (i < 1.0f) {
+			i += Time.deltaTime * rate;
+			move.transform.position = Vector3.Lerp(start, end, i);
+			yield return null; 
+		}
+	}
+
+	IEnumerator getPath(Node current){
 		this.transform.parent.GetComponent<TileManager>().clearAllTiles();
 		Stack<GameObject> tiles = new Stack<GameObject>();
 		tiles.Push(this.gameObject);
@@ -78,9 +90,7 @@ public class TileScript : MonoBehaviour {
 			newPos = new Vector3(tiles.Peek().transform.position.x,0,tiles.Peek().transform.position.z);
 
 			tiles.Peek().renderer.material.color = gm.selectedUnit.alleg == Unit.allegiance.ally? Color.blue : Color.red;
-
-			gm.selectedUnit.transform.position = newPos;
-			yield return new WaitForSeconds(0.28f);
+			yield return StartCoroutine(movePiece(gm.selectedUnit.gameObject,gm.selectedUnit.transform.position,newPos,0.28f));
 			if (tiles.Count != 1){
 				if (tiles.Peek ().GetComponent<TileScript>().objectOccupyingTile == null){
 					tiles.Peek ().renderer.material.color = Color.white;
@@ -119,7 +129,7 @@ public class TileScript : MonoBehaviour {
 		while (open.Count != 0){
 			Node current = open.Dequeue();
 			if (current.myNode.Equals (end)){
-				StartCoroutine(movePiece(current));
+				StartCoroutine(getPath(current));
 				break;
 				
 			}

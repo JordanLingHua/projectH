@@ -2,7 +2,13 @@ fileFormatVersion: 2
 guid: 4a26b53029fd6bc4d82275fa6b579e19
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - hpBarBG: {fileID: 2800000, guid: 1df27458b3c300b4ba06c292d92b53b9, type: 3}
+  - hpBarHigh: {fileID: 2800000, guid: ce2c883e8b548ed41bbc7eebb9d033fd, type: 3}
+  - hpBarMedium: {fileID: 2800000, guid: f065d0bc52acc674dad6410b1c81ad1d, type: 3}
+  - hpBarLow: {fileID: 2800000, guid: ef2cceb8a65e2fc4ab688720204138f0, type: 3}
+  - gm: {instanceID: 0}
+  - gp: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
