@@ -4,17 +4,19 @@ using System.Collections.Generic;
 
 public class Unit    : MonoBehaviour {
 	
-	//These get set depending on the function call used on this class
-	public enum allegiance{ally,neutral,enemy};
+	//These get set depending on th	e function call used on this class
+	public enum allegiance{playerOne,neutral,playerTwo};
 	public allegiance alleg;
 	//All these are public, so we can modify them all for now.  
 	public int unitID, xpos, ypos;//, unitType;
-	public int hp,maxHP,atk,mvRange,atkRange,mvCost,atkCost;
+	public int hp,maxHP,atk,mvRange,atkRange,mvCost,atkCost, xp, unitLevel;
 	public bool atkd, mvd;
 	public string unitName = string.Empty;
 	public string info = string.Empty;
 	public bool invincible,displayHPBar;
-	
+
+	public readonly int[] XP_TO_LEVEL = {10,20,30,40,50,60,70,80,90,100};
+
 	//unit cost will be utilized here or elsewhere
 	//public string unitRole;//name called in switch statement here or elsewhere
 	//change unitRole to int if we can do defines for each unit role in this code or elsewhere
@@ -38,22 +40,6 @@ public class Unit    : MonoBehaviour {
 	 * MeleeTank = 505
 	 * Healer = 506
 	 * Kingpin = 507
-	 * 
-	 * Unit Abilities (AKA UNIT ID, and use ID to identify whose abilities are whose):  
-	 * Rubric- 
-	 * unitID0 = 10
-	 * unitID1 = 11
-	 * unitID2 = 12
-	 * unitID3 = 13
-	 * unitID4 = 14
-	 * unitID5 = 15
-	 * unitID6 = 16
-	 * unitID7 = 17
-	 * unitID8 = 18
-	 * unitID9 = 19
-	 * unitID10 = 20
-	 * 
-	 * 
 	 * Temporary unit identification.  For now, it's just colors.  We have to assign them
 	 * different models later
 	 * 
@@ -75,14 +61,13 @@ public class Unit    : MonoBehaviour {
 	 * DO NOT DELETE THIS COMMENT!!!!//Made them 10 to 20 in case we need to send as byte to server and back
 	 * 
 	 */
-	
-	int ID;
+
 	public Texture2D hpBarBG,hpBarHigh,hpBarMedium,hpBarLow;
 	public GameManager gm;
 	public GameProcess gp;
 	public AudioManager am;
 	public virtual void Start () {
-
+		unitLevel = 1;
 		hpBarBG = Resources.Load("HPBarBG") as Texture2D;
 		hpBarHigh = Resources.Load("HPBarHigh") as Texture2D;
 		hpBarMedium = Resources.Load("HPBarMedium") as Texture2D;
@@ -124,12 +109,33 @@ public class Unit    : MonoBehaviour {
 		}
 	}
 
+	void playerSSKillable(){
+		foreach (int key in gm.units.Keys){
+			if (gm.units[key].unitType == 11 && gm.units[key].alleg == allegiance.playerOne){
+				gm.units[key].invincible = false;
+				break;
+			}
+		}
+	}
+		
+
+
+	void enemySSKillable(){
+		foreach (int key in gm.units.Keys){
+			if (gm.units[key].unitType == 11 && gm.units[key].alleg == allegiance.playerTwo){
+				gm.units[key].invincible = false;
+				break;
+			}
+		}
+	}
+
 	void OnMouseEnter(){
 		//show unit info when hovering over it
 
 		if (Application.loadedLevelName.Equals("BoardScene")){
 			this.transform.parent.renderer.material.shader = Shader.Find ("Toon/Lighted");
-			refreshUnitText ();}
+			refreshUnitText ();
+		}
 
 		transform.parent.GetComponent<TileScript> ().OnMouseEnter ();
 	}
@@ -144,6 +150,7 @@ public class Unit    : MonoBehaviour {
 	void refreshUnitText()
 	{
 		info = unitName + "\nHP: " + hp + "/" + maxHP;
+		info += "\nLevel: " + unitLevel + " Experience: " + xp + "/" + XP_TO_LEVEL[unitLevel-1];
 		info += mvCost > 0? "\nMove Cost: " + mvCost : "";
 		info += atkCost > 0? "\nAttack Cost: " + atkCost : "";
 		info += atk > 0? "\nDamage: " + atk : "";
@@ -169,7 +176,21 @@ public class Unit    : MonoBehaviour {
 		  
 
 	}
-	
+
+	public void gainXP(){
+		xp += 5;
+		if (xp >= XP_TO_LEVEL[unitLevel-1]){
+			unitLevel ++;
+			hp +=5;
+			atk +=5;
+			mvRange += 1;
+			mvCost = mvCost <=0 ? 0: mvCost-1;
+			atkRange += 1;
+			atkCost = atkCost <= 0 ? 0: atkCost-1;
+			refreshUnitText();
+		}
+	}
+
 	void OnMouseDown() {
 		//Attack this piece if:
 		//the game is in attack mode
@@ -195,11 +216,25 @@ public class Unit    : MonoBehaviour {
 			//if the unit attacked was killed, remove it from the board and unit list
 			if (this.hp <=0){				
 
+				if (unitType == 10){
+					if (alleg == allegiance.playerOne){
+						playerSSKillable();
+					}else{
+						enemySSKillable();
+					}
+				}else if (unitType == 11){
+					gm.gameOver = true;
+				}
+
+
 				gm.units.Remove(unitID);
+
 
 				this.transform.parent.GetComponent<TileScript>().objectOccupyingTile = null;
 				Destroy(gameObject);
-				
+
+
+
 			}
 		}else{
 			gm.combatLog.text = "Combat Log:\nTarget is invincible!";
@@ -218,8 +253,7 @@ public class Unit    : MonoBehaviour {
 		this.transform.parent.gameObject.transform.parent.GetComponent<TileManager>().clearAllTiles();
 		//if player is moving a piece
 		if (gm.gs == GameManager.gameState.playerMv){
-			showMvTiles(alleg == allegiance.ally? allegiance.ally : allegiance.enemy);
-				          
+			showMvTiles(alleg == allegiance.playerOne? allegiance.playerOne : allegiance.playerTwo);
 		//if player is attacking with a piece	
 		}else if (gm.gs == GameManager.gameState.playerAtk){
 			showAtkTiles();
@@ -240,10 +274,10 @@ public class Unit    : MonoBehaviour {
 			gm.accessibleTiles.Remove(this.transform.parent.GetComponent<TileScript>());
 
 			switch(alleg){
-				case allegiance.ally:
+				case allegiance.playerOne:
 					this.transform.parent.renderer.material.color = Color.blue;
 					break;
-				case allegiance.enemy:
+				case allegiance.playerTwo:
 					this.transform.parent.renderer.material.color = Color.red;
 					break;
 				case allegiance.neutral:
@@ -261,19 +295,19 @@ public class Unit    : MonoBehaviour {
 		}
 		
 		if (num!=0){
-			if (tileS.up != null && (tileS.up.GetComponent<TileScript>().objectOccupyingTile ==null  || tileS.up.GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == ((ally == allegiance.ally) ? allegiance.ally: allegiance.enemy))){
+			if (tileS.up != null && (tileS.up.GetComponent<TileScript>().objectOccupyingTile ==null  || tileS.up.GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == ((ally == allegiance.playerOne) ? allegiance.playerOne: allegiance.playerTwo))){
 				showMvAccessibleTiles(tileS.up.GetComponent<TileScript>(),num-1,ally);
 				gm.accessibleTiles.Add(tileS.up.GetComponent<TileScript>());
 			}
-			if (tileS.down != null && (tileS.down.GetComponent<TileScript>().objectOccupyingTile ==null  || tileS.down.GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == ((ally == allegiance.ally) ? allegiance.ally: allegiance.enemy))){
+			if (tileS.down != null && (tileS.down.GetComponent<TileScript>().objectOccupyingTile ==null  || tileS.down.GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == ((ally == allegiance.playerOne) ? allegiance.playerOne: allegiance.playerTwo))){
 				showMvAccessibleTiles(tileS.down.GetComponent<TileScript>(),num-1,ally);
 				gm.accessibleTiles.Add(tileS.down.GetComponent<TileScript>());
 			}
-			if (tileS.left != null && (tileS.left.GetComponent<TileScript>().objectOccupyingTile ==null || tileS.left.GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == ((ally == allegiance.ally) ? allegiance.ally: allegiance.enemy))){
+			if (tileS.left != null && (tileS.left.GetComponent<TileScript>().objectOccupyingTile ==null || tileS.left.GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == ((ally == allegiance.playerOne) ? allegiance.playerOne: allegiance.playerTwo))){
 				showMvAccessibleTiles(tileS.left.GetComponent<TileScript>(),num-1,ally);
 				gm.accessibleTiles.Add(tileS.left.GetComponent<TileScript>());
 			}
-			if (tileS.right != null && (tileS.right.GetComponent<TileScript>().objectOccupyingTile ==null || tileS.right.GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == ((ally == allegiance.ally) ? allegiance.ally: allegiance.enemy))){
+			if (tileS.right != null && (tileS.right.GetComponent<TileScript>().objectOccupyingTile ==null || tileS.right.GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == ((ally == allegiance.playerOne) ? allegiance.playerOne: allegiance.playerTwo))){
 				showMvAccessibleTiles(tileS.right.GetComponent<TileScript>(),num-1,ally);
 				gm.accessibleTiles.Add(tileS.right.GetComponent<TileScript>());
 			}	

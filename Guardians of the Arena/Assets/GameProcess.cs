@@ -159,6 +159,7 @@ public class GameProcess : MonoBehaviour {
 				playerSetup.pages[playerSetup.activePage].onBoardPieces.Clear();
 				GameObject unitToAdd;
 
+				//setup#/unittype/xpos/ypos/onfield
 				for (int i = 0; i < playerSetup.boardCapacity * 4; i += 4)
 				{
 					if (tokens[i + 4].Equals("True"))
@@ -203,6 +204,8 @@ public class GameProcess : MonoBehaviour {
 				for (int i = 0; i < Int32.Parse (tokens[2]); i ++ ){
 					gameManager.units[Int32.Parse(tokens[3+i])].attackThisUnit(gameManager.units[Int32.Parse (tokens[1])]);
 				}
+
+				gameManager.units[Int32.Parse (tokens[1])].gainXP();
 			}
 			
 			else if (tokens[0].Equals("switchTurns"))
@@ -213,15 +216,15 @@ public class GameProcess : MonoBehaviour {
 			//TODO
 			else if (tokens[0].Equals("victory"))
 			{
-				gameManager.showReturnButton = true;
+				gameManager.gameOver = true;
 				gameManager.combatLog.text = "You won!";
-				
+				//mmr+=5;
 			}
 			
 			//TODO
 			else if (tokens[0].Equals("defeat"))
 			{
-				gameManager.showReturnButton = true;
+				gameManager.gameOver = true;
 				gameManager.combatLog.text = "You lost!";
 			}
 			#endregion

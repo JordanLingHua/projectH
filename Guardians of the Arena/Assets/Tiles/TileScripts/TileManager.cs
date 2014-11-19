@@ -82,7 +82,7 @@ public class TileManager : MonoBehaviour {
 			break;
 		case 1:
 			foreach (int key in gm.units.Keys) {
-					if (gm.units [key].alleg == Unit.allegiance.ally) {
+					if (gm.units [key].alleg == Unit.allegiance.playerOne) {
 							gm.units [key].displayHPBar = true;
 					} else {
 							gm.units [key].displayHPBar = false;
@@ -91,7 +91,7 @@ public class TileManager : MonoBehaviour {
 			break;
 		case 2:
 			foreach (int key in gm.units.Keys) {
-					if (gm.units [key].alleg == Unit.allegiance.enemy) {
+					if (gm.units [key].alleg == Unit.allegiance.playerTwo) {
 							gm.units [key].displayHPBar = true;
 					} else {
 							gm.units [key].displayHPBar = false;
@@ -137,38 +137,38 @@ public class TileManager : MonoBehaviour {
 	
 	void addPresetAllyUnits(){
 		//melee units
-		addUnit (5,3,16,true, 0);
-		addUnit (6,3,16,true, 1);
-		addUnit (9,3,16,true, 2);
-		addUnit (10,3,16,true, 3);
+		addUnit (5,3,7,true, 0);
+		addUnit (6,3,7,true, 1);
+		addUnit (9,3,7,true, 2);
+		addUnit (10,3,7,true, 3);
 		
 		//ranged units
-		addUnit (5,2,10,true, 4);
-		addUnit (6,2,10,true, 5);
-		addUnit (9,2,17,true, 6);
-		addUnit (10,2,12,true, 7);
+		addUnit (5,2,1,true, 4);
+		addUnit (6,2,1,true, 5);
+		addUnit (9,2,8,true, 6);
+		addUnit (10,2,3,true, 7);
 		
 		//guardian and soulstone
-		addUnit (7,0,19,true, 8);
-		addUnit (8,0,20,true, 9);
+		addUnit (7,0,10,true, 8);
+		addUnit (8,0,11,true, 9);
 	}
 	
 	void addPresetEnemyUnits(){
 		//melee units
-		addUnit (5,12,16,false, 10);
-		addUnit (6,12,16,false, 11);
-		addUnit (9,12,16,false, 12);
-		addUnit (10,12,16,false, 13);
+		addUnit (5,12,7,false, 10);
+		addUnit (6,12,7,false, 11);
+		addUnit (9,12,7,false, 12);
+		addUnit (10,12,7,false, 13);
 		
 		//ranged units
-		addUnit (5,13,10,false, 14);
-		addUnit (6,13,10,false, 15);
-		addUnit (9,13,17,false, 16);
-		addUnit (10,13,12,false, 17);
+		addUnit (5,13,1,false, 14);
+		addUnit (6,13,1,false, 15);
+		addUnit (9,13,8,false, 16);
+		addUnit (10,13,3,false, 17);
 		
 		//guardian and soulstone
-		addUnit (7,15,19,false, 18);
-		addUnit (8,15,20,false, 19);
+		addUnit (7,15,10,false, 18);
+		addUnit (8,15,11,false, 19);
 	}
 	
 	void addTree(int x, int y,int unitID){
@@ -190,57 +190,57 @@ public class TileManager : MonoBehaviour {
 		GameObject unit; 
 
 		switch(type){
-		case 10:
+		case 1:
 			unit = (GameObject)Instantiate(UnitOne, 
 			                               new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
 			                               new Quaternion());
 			break;
-		case 11:
+		case 2:
 			unit = (GameObject)Instantiate(UnitTwo, 
 			                               new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
 			                               new Quaternion());
 			break;
-		case 12:
+		case 3:
 			unit = (GameObject)Instantiate(UnitThree, 
 			                               new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
 			                               new Quaternion());
 			break;
-		case 13:
+		case 4:
 			unit = (GameObject)Instantiate(UnitFour, 
 			                               new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
 			                               new Quaternion());
 			break;
-		case 14:
+		case 5:
 			unit = (GameObject)Instantiate(UnitFive, 
 			                               new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
 			                               new Quaternion());
 			break;
-		case 15:
+		case 6:
 			unit = (GameObject)Instantiate(UnitSix, 
 			                               new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
 			                               new Quaternion());
 			break;
-		case 16:
+		case 7:
 			unit = (GameObject)Instantiate(UnitSeven, 
 			                               new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
 			                               new Quaternion());
 			break;
-		case 17:
+		case 8:
 			unit = (GameObject)Instantiate(UnitEight, 
 			                               new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
 			                               new Quaternion());
 			break;
-		case 18:
+		case 9:
 			unit = (GameObject)Instantiate(UnitNine, 
 			                               new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
 			                               new Quaternion());
 			break;
-		case 19:
+		case 10:
 			unit = (GameObject)Instantiate(UnitTen, 
 			                               new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
 			                               new Quaternion());
 			break;
-		case 20:
+		case 11:
 			unit = (GameObject)Instantiate(UnitEleven, 
 			                               new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
 			                               new Quaternion());
@@ -256,8 +256,7 @@ public class TileManager : MonoBehaviour {
 
 		unit.transform.parent = placeTile.transform;
 		placeTile.objectOccupyingTile = unit;
-		
-		unit.GetComponent<Unit> ().alleg = ally? Unit.allegiance.ally : Unit.allegiance.enemy;
+		unit.GetComponent<Unit> ().alleg = ally? Unit.allegiance.playerOne : Unit.allegiance.playerTwo;
 		unit.GetComponent<Unit> ().unitID = unitID;
 
 		placeTile.gameObject.renderer.material.color = ally? Color.blue : Color.red;
@@ -275,13 +274,13 @@ public class TileManager : MonoBehaviour {
 				if (tiles[i,k].GetComponent<TileScript>().objectOccupyingTile == null){
 					tiles[i, k].renderer.material.color = Color.white;
 				//ally unit tile
-				}else if (tiles[i,k].GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.ally){
+				}else if (tiles[i,k].GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerOne){
 					tiles[i, k].renderer.material.color = Color.blue;
 				//neutral unit tile (shrubbery)
 				}else if (tiles[i,k].GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.neutral){
 					tiles[i, k].renderer.material.color = Color.gray;
 				//enemy unit tile
-				}else if (tiles[i,k].GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.enemy) {
+				}else if (tiles[i,k].GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerTwo) {
 					tiles[i, k].renderer.material.color = Color.red;
 				}
 			}

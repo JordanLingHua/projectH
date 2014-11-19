@@ -50,11 +50,11 @@ public class TileScript : MonoBehaviour {
 		foreach (GameObject tile in AoETiles) {
 			if (tile.GetComponent<TileScript>().objectOccupyingTile == null){
 				tile.renderer.material.color = Color.white;			
-			}else if (tile.GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.ally){
+			}else if (tile.GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerOne){
 				tile.renderer.material.color = Color.blue;
 			}else if (tile.GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.neutral){
 				tile.renderer.material.color = Color.gray;
-			}else if (tile.GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.enemy){
+			}else if (tile.GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerTwo){
 				tile.renderer.material.color = Color.red;
 			}
 		}
@@ -91,19 +91,19 @@ public class TileScript : MonoBehaviour {
 		while (tiles.Count !=0){
 			newPos = new Vector3(tiles.Peek().transform.position.x,0,tiles.Peek().transform.position.z);
 
-			tiles.Peek().renderer.material.color = gm.selectedUnit.alleg == Unit.allegiance.ally? Color.blue : Color.red;
+			tiles.Peek().renderer.material.color = gm.selectedUnit.alleg == Unit.allegiance.playerOne? Color.blue : Color.red;
 			yield return StartCoroutine(movePiece(gm.selectedUnit.gameObject,gm.selectedUnit.transform.position,newPos,0.28f));
 			if (tiles.Count != 1){
 				if (tiles.Peek ().GetComponent<TileScript>().objectOccupyingTile == null){
 					tiles.Peek ().renderer.material.color = Color.white;
 					//ally unit tile
-				}else if (tiles.Peek ().GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.ally){
+				}else if (tiles.Peek ().GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerOne){
 					tiles.Peek ().renderer.material.color = Color.blue;
 					//neutral unit tile (shrubbery)
 				}else if (tiles.Peek ().GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.neutral){
 					tiles.Peek ().renderer.material.color = Color.gray;
 					//enemy unit tile
-				}else if (tiles.Peek ().GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.enemy) {
+				}else if (tiles.Peek ().GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerTwo) {
 					tiles.Peek ().renderer.material.color = Color.red;
 				}
 

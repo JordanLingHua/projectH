@@ -85,10 +85,10 @@ public class UnitThree : Unit{
 			gm.accessibleTiles.Remove(this.transform.parent.GetComponent<TileScript>());
 			
 			switch(alleg){
-			case allegiance.ally:
+			case allegiance.playerOne:
 				this.transform.parent.renderer.material.color = Color.blue;
 				break;
-			case allegiance.enemy:
+			case allegiance.playerTwo:
 				this.transform.parent.renderer.material.color = Color.red;
 				break;
 			case allegiance.neutral:

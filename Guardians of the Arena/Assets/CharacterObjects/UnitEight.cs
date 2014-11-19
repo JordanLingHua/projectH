@@ -35,11 +35,11 @@ public class UnitEight : Unit {
 		List <GameObject> ret = new List<GameObject> ();
 
 		foreach (int key in gm.units.Keys) {
-			if (alleg == allegiance.ally && gm.units[key].alleg == allegiance.ally && this != gm.units[key]){
+			if (alleg == allegiance.playerOne && gm.units[key].alleg == allegiance.playerOne && this != gm.units[key]){
 				gm.units[key].transform.parent.gameObject.renderer.material.color =  new Color(1f,0.4f,0f, 0f);
 				ret.Add (gm.units[key].transform.parent.gameObject);
 			}	
-			if (alleg == allegiance.enemy && gm.units[key].alleg == allegiance.enemy && this != gm.units[key]){
+			if (alleg == allegiance.playerTwo && gm.units[key].alleg == allegiance.playerTwo && this != gm.units[key]){
 				gm.units[key].transform.parent.gameObject.renderer.material.color =  new Color(1f,0.4f,0f, 0f);
 				ret.Add (gm.units[key].transform.parent.gameObject);
 			}	
