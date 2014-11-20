@@ -32,12 +32,13 @@ public class move : MonoBehaviour {
 	{
 		playerSetup.prevPosition = transform.position;
 		isTouched = true;
-		pieceMoved = false;
+
 	}
 	
 	void OnMouseUp()
 	{
-		Debug.Log (playerSetup.activePage);
+		pieceMoved = false;
+		//Debug.Log (playerSetup.activePage);
 		isTouched = false;
 		oldScript = this.gameObject.GetComponentInParent<SetupTileScript> ();
 		nearestTile = findNearestTile();
@@ -46,11 +47,13 @@ public class move : MonoBehaviour {
 		if (nearestTile != null && !nearestTile.GetComponent<SetupTileScript>().occupied)
 		{
 			//guardian and soulstone must be kept on the field
-			if((gameObject.GetComponent<Unit>().unitType == 10 || gameObject.GetComponent<Unit>().unitType == 11) &&
-				nearestTile.GetComponent<SetupTileScript>().tt == SetupTileScript.TileType.ONFIELD)
+			if(gameObject.GetComponent<Unit>().unitType == 10 || gameObject.GetComponent<Unit>().unitType == 11)
 			{
-				pieceMoved = true;
-				onField = true;
+				if (nearestTile.GetComponent<SetupTileScript>().tt == SetupTileScript.TileType.ONFIELD)
+				{
+					pieceMoved = true;
+					onField = true;
+				}
 			}
 
 			//if there is room on the board for units...
