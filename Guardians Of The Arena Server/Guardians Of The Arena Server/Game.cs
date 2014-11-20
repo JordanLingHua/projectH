@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
@@ -35,7 +36,9 @@ namespace Guardians_Of_The_Arena_Server
         {
 
             player1 = new Player(client1);
+            player1.playerAllegiance = Unit.Allegiance.PLAYER_1;
             player2 = new Player(client2);
+            player2.playerAllegiance = Unit.Allegiance.PLAYER_2;
 
             players = new Player[2];
             players[0] = player1;
@@ -77,6 +80,13 @@ namespace Guardians_Of_The_Arena_Server
             {
                 String command = packetQueue.Dequeue();
                 string[] message = command.Split(new string[] { "\\" }, StringSplitOptions.None);
+                string log = "NETWORK LOG:";
+                foreach (string s in message)
+                {
+                    log += s + "//";
+                }
+
+                Console.WriteLine(log);
 
                 //move message sends the command, the tile we are coming from and the tile we are going too
                 if (message[0].Equals("move"))
@@ -91,10 +101,10 @@ namespace Guardians_Of_The_Arena_Server
                         GameBoard.Tile destinationTile = board.Tiles[Int32.Parse(message[2]), Int32.Parse(message[3])];
                         movingUnit.setAccessibleTiles(startTile, movingUnit.MovementRange);
 
-                        if (currentPlayer.currentMana >= movingUnit.MovementCost
+                        if (currentPlayer.mana >= movingUnit.MovementCost
                             && movingUnit.accessibleTiles.Contains(destinationTile))
                         {
-                            currentPlayer.currentMana -= movingUnit.MovementCost;
+                            currentPlayer.mana -= movingUnit.MovementCost;
 
                             Console.WriteLine("LOG: moving unit from tile(" + startTile.x + "," + startTile.y + ") to tile(" + destinationTile.x + "," + destinationTile.y + ")");
                             board.moveUnit(startTile, destinationTile);
@@ -117,17 +127,48 @@ namespace Guardians_Of_The_Arena_Server
                         GameBoard.Tile tileToAttack = board.Tiles[Int32.Parse(message[2]), Int32.Parse(message[3])];
                         attackingUnit.setAttackTiles(attackingUnit.CurrentTile, attackingUnit.AttackRange);
 
-                        if (currentPlayer.currentMana >= attackingUnit.AttackCost
+                        if (currentPlayer.mana >= attackingUnit.AttackCost
                             && attackingUnit.accessibleTiles.Contains(tileToAttack))
                         {
                             Console.WriteLine("LOG: Unit " + attackingUnit.UniqueID + " is attacking tile(" + tileToAttack.x + ", " + tileToAttack.y + ")");
-                            currentPlayer.currentMana -= attackingUnit.AttackCost;
+                            currentPlayer.mana -= attackingUnit.AttackCost;
 
-                            if (tileToAttack.CurrentUnit != null)
-                                tileToAttack.CurrentUnit.ApplyDamage(attackingUnit.Damage);
+                            //get a list of all the unit IDs that were attacked
+                            //apply damage to all units
+                            ArrayList unitIDs = attackingUnit.AttackTile(tileToAttack);
+                            string sendMessage = "attack\\" + attackingUnit.UniqueID + "\\" + unitIDs.Count;
 
-                            player1.playerClient.sw.WriteLine("attack\\" + message[1] + "\\" + message[2]);
-                            player2.playerClient.sw.WriteLine("attack\\" + message[1] + "\\" + message[2]);
+                            foreach(int i in unitIDs)
+                            {
+                                Unit unitHit = board.getUnitByID(i);
+                                unitHit.ApplyDamage(attackingUnit.Damage);
+                                sendMessage += ("\\" + i);
+                            }
+
+
+                            player1.playerClient.sw.WriteLine(sendMessage);
+                            player2.playerClient.sw.WriteLine(sendMessage);
+                        }
+
+                        //fix this, should only need to perform this once
+                        if (board.player1_Guardian.Health <= 0)
+                        {
+                            board.player1_Soulstone.Invulnerable = false;
+                        }
+                        if (board.player2_Gaurdian.Health <= 0)
+                        {
+                            board.player2_Soulsone.Invulnerable = false;
+                        }
+
+                        if (board.player1_Soulstone.Health <= 0)
+                        {
+                            player1.playerClient.sw.WriteLine("defeat");
+                            player2.playerClient.sw.WriteLine("victory");
+                        }
+                        else if (board.player2_Soulsone.Health <= 0)
+                        {
+                            player1.playerClient.sw.WriteLine("victory");
+                            player2.playerClient.sw.WriteLine("defeat");
                         }
 
                         attackingUnit.accessibleTiles.Clear();
@@ -144,6 +185,19 @@ namespace Guardians_Of_The_Arena_Server
                         player2.playerClient.sw.WriteLine("switchTurns");
                     }
                 }
+                else if (message[0].Equals("surrender"))
+                {
+                    if (currentPlayer.playerAllegiance == Unit.Allegiance.PLAYER_1)
+                    {
+                        player1.playerClient.sw.WriteLine("defeat");
+                        player2.playerClient.sw.WriteLine("victory");
+                    }
+                    else
+                    {
+                        player1.playerClient.sw.WriteLine("victory");
+                        player2.playerClient.sw.WriteLine("defeat");
+                    }
+                }
             }
         }
         
@@ -153,12 +207,14 @@ namespace Guardians_Of_The_Arena_Server
             {
                 player1.isMyTurn = false;
                 player2.isMyTurn = true;
+                player2.IncreaseMana();
                 currentTurn = TURN.PLAYER_2;
                 Console.WriteLine("LOG: Player_1 has ended their turn. It is now Player_2's turn.");
             }
             else
             {
                 player1.isMyTurn = true;
+                player2.IncreaseMana();
                 player2.isMyTurn = false;
                 currentTurn = TURN.PLAYER_1;
                 Console.WriteLine("LOG: Player_2 has ended their turn. It is now Player_1's turn.");
@@ -169,25 +225,24 @@ namespace Guardians_Of_The_Arena_Server
         public class Player
         {
             public Server.Client playerClient;
+            public Unit.Allegiance playerAllegiance;
             public int mana;
-            public int currentMana;
-            public readonly int maxMana;
+            public int maxMana;
             public bool isMyTurn;
 
             public Player(Server.Client playerClient)
             {
-                mana = 1;
-                currentMana = mana;
-                maxMana = 8;
+                mana = 2;
+                maxMana = 2;
                 this.playerClient = playerClient;
             }
 
             public void IncreaseMana()
             {
-                if (maxMana < 8)
-                    mana += 1;
+                if (maxMana <= 12)
+                    maxMana += 2;
 
-                currentMana = mana;
+                mana = maxMana;
             }
         }
     }

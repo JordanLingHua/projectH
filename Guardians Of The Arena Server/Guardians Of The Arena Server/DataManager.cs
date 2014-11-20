@@ -28,6 +28,7 @@ namespace Guardians_Of_The_Arena_Server
             //clearTable();
             //fillPlayerTable();
             //printTable();
+            //dropTable();
 
         }
 
@@ -64,9 +65,15 @@ namespace Guardians_Of_The_Arena_Server
             string sql = "create table playerInfo (name varchar(20), password varchar(50))";
             SQLiteCommand command = new SQLiteCommand(sql, userDatabase);
             command.ExecuteNonQuery();
+
             sql = "create table highScores (name varchar(20), score int)";
             command = new SQLiteCommand(sql, userDatabase);
             command.ExecuteNonQuery();
+
+            sql = "CREATE TABLE unitSetups(name VARCHAR(20), setupID TINYINT, unitType TINYINT, x TINYINT, y TINYINT, onField BIT)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+     
         }
 
         // Clear the tables
@@ -76,7 +83,28 @@ namespace Guardians_Of_The_Arena_Server
             string sql = "DELETE FROM playerInfo";
             SQLiteCommand command = new SQLiteCommand(sql, userDatabase);
             SQLiteDataReader reader = command.ExecuteReader();
+
             sql = "DELETE FROM highScores";
+            command = new SQLiteCommand(sql, userDatabase);
+            reader = command.ExecuteReader();
+
+            sql = "DELETE FROM unitSetups";
+            command = new SQLiteCommand(sql, userDatabase);
+            reader = command.ExecuteReader();
+        }
+
+        public void dropTable()
+        {
+
+            string sql = "DROP TABLE unitSetups";
+            SQLiteCommand command = new SQLiteCommand(sql, userDatabase);
+            SQLiteDataReader reader = command.ExecuteReader();
+
+            sql = "DROP TABLE playerInfo";
+            command = new SQLiteCommand(sql, userDatabase);
+            reader = command.ExecuteReader();
+
+            sql = "DROP TABLE highScores";
             command = new SQLiteCommand(sql, userDatabase);
             reader = command.ExecuteReader();
         }
@@ -157,6 +185,8 @@ namespace Guardians_Of_The_Arena_Server
                 command.Parameters.Add(new SQLiteParameter("@param2", password));
                 command.ExecuteNonQuery();
 
+               createDefaultUnitSetup(name);
+
             }
 
         }
@@ -201,22 +231,8 @@ namespace Guardians_Of_The_Arena_Server
             {
                 Console.WriteLine(fail.Message);
             }
-
-
             // if the name is in the database
-
-
-
         }
-
-        public void sendPacket(String action, String name, int score)
-        {
-            Byte[] data = Encoding.ASCII.GetBytes(String.Format("{0}/{1}/{2}", action, name, score));
-            s.SendTo(data, data.Length, SocketFlags.None, RemoteEndPoint);
-        }
-
-
-
 
 
         // Inserts some values in the highscores table.
@@ -235,7 +251,128 @@ namespace Guardians_Of_The_Arena_Server
             command.ExecuteNonQuery();
         }
 
+        public void createDefaultUnitSetup(string name)
+        {
+            for (int i = 1; i <= 5; i++)
+            {
+                string sql = "";
+                SQLiteCommand command;
+                //unit type 1 at 0, 0
+                sql =           "   INSERT INTO unitSetups  ";
+                sql +=          "   (name, setupID, unitType, x , y, onField)    ";
+                sql +=          "   VALUES  ";
+                sql +=          "   ('" + name + "', " + i + ",1 , 0, 0, 0)";
+                command = new SQLiteCommand(sql, userDatabase);
+                command.ExecuteNonQuery();
+                //unit type 2 at 1, 0
+                sql = "   INSERT INTO unitSetups  ";
+                sql += "   (name, setupID, unitType, x , y, onField)    ";
+                sql += "   VALUES  ";
+                sql += "   ('" + name + "', " + i + ",2 , 1, 0, 0)";
+                command = new SQLiteCommand(sql, userDatabase);
+                command.ExecuteNonQuery();
+                //unit type 3 at 2, 0
+                sql = "   INSERT INTO unitSetups  ";
+                sql += "   (name, setupID, unitType, x , y, onField)    ";
+                sql += "   VALUES  ";
+                sql += "   ('" + name + "', " + i + ",3 , 2, 0, 0)";
+                command = new SQLiteCommand(sql, userDatabase);
+                command.ExecuteNonQuery();
+                //unit type 3 at 3, 0
+                sql = "   INSERT INTO unitSetups  ";
+                sql += "   (name, setupID, unitType, x , y, onField)    ";
+                sql += "   VALUES  ";
+                sql += "   ('" + name + "', " + i + ",3 , 3, 0, 0)";
+                command = new SQLiteCommand(sql, userDatabase);
+                command.ExecuteNonQuery();
+                //unit type 7, at 4, 0
+                sql = "   INSERT INTO unitSetups  ";
+                sql += "   (name, setupID, unitType, x , y, onField)    ";
+                sql += "   VALUES  ";
+                sql += "   ('" + name + "', " + i + ",7 , 4, 0, 0)";
+                command = new SQLiteCommand(sql, userDatabase);
+                command.ExecuteNonQuery();
+                //unit type 7 at 5, 0
+                sql = "   INSERT INTO unitSetups  ";
+                sql += "   (name, setupID, unitType, x , y, onField)    ";
+                sql += "   VALUES  ";
+                sql += "   ('" + name + "', " + i + ",7 , 5, 0, 0)";
+                command = new SQLiteCommand(sql, userDatabase);
+                command.ExecuteNonQuery();
+                //unit type 7 at 6, 0
+                sql = "   INSERT INTO unitSetups  ";
+                sql += "   (name, setupID, unitType, x , y, onField)    ";
+                sql += "   VALUES  ";
+                sql += "   ('" + name + "', " + i + ",7 , 6, 0, 0)";
+                command = new SQLiteCommand(sql, userDatabase);
+                command.ExecuteNonQuery();
+                //unit type 8 at 7, 0
+                sql = "   INSERT INTO unitSetups  ";
+                sql += "   (name, setupID, unitType, x , y, onField)    ";
+                sql += "   VALUES  ";
+                sql += "   ('" + name + "', " + i + ",8 , 7, 0, 0)";
+                command = new SQLiteCommand(sql, userDatabase);
+                command.ExecuteNonQuery();
+                //unit type 10 at 10,3
+                sql = "   INSERT INTO unitSetups  ";
+                sql += "   (name, setupID, unitType, x , y, onField)    ";
+                sql += "   VALUES  ";
+                sql += "   ('" + name + "', " + i + ",10 , 10, 3, 1)";
+                command = new SQLiteCommand(sql, userDatabase);
+                command.ExecuteNonQuery();
+                //unit type 11 at 9,3
+                sql = "   INSERT INTO unitSetups  ";
+                sql += "   (name, setupID, unitType, x , y, onField)    ";
+                sql += "   VALUES  ";
+                sql += "   ('" + name + "', " + i + ",11 , 9, 3, 1)";
+                command = new SQLiteCommand(sql, userDatabase);
+                command.ExecuteNonQuery();
 
+            }
+        }
+
+        public string getBoardSetup(string name, int setupID)
+        {
+            string sql =    "SELECT unitType, x, y, onField ";
+            sql +=          "FROM unitSetups ";
+            sql +=          "WHERE name = @name AND setupID = @setupID";
+            SQLiteCommand command = new SQLiteCommand(sql, userDatabase);
+            command.Parameters.AddWithValue("@name", name);
+            command.Parameters.AddWithValue("@setupID", setupID);
+            SQLiteDataReader reader = command.ExecuteReader();
+
+            string setupString = "boardSetup";
+
+            while (reader.Read())
+            {
+                setupString += ( "\\" + reader["unitType"] + "\\" + reader["x"] + "\\" + reader["y"] + "\\" + reader["onField"]);
+            }
+
+
+            return setupString;
+        }
+
+        public void updateSetup(string name, int setupID, int unitType, int oldX, int oldY, int newX, int newY, int onfield)
+        {
+            string sql   = "UPDATE unitSetups ";
+            sql         += "SET x = @newX, y = @newY, onField = @onField ";
+            sql         += "WHERE name = @name AND setupID = @setupID AND x = @oldX AND y = @oldY";
+            SQLiteCommand command = new SQLiteCommand(sql, userDatabase);
+            command.Parameters.AddWithValue("@name", name);
+            command.Parameters.AddWithValue("@newX", newX);
+            command.Parameters.AddWithValue("@newY", newY);
+            command.Parameters.AddWithValue("@oldX", oldX);
+            command.Parameters.AddWithValue("@oldY", oldY);
+            command.Parameters.AddWithValue("@onField", onfield);
+            command.Parameters.AddWithValue("@setupID", setupID);
+            command.ExecuteNonQuery();
+        }
+
+        public void sendPacket(String action, String name, int score)
+        {
+            Byte[] data = Encoding.ASCII.GetBytes(String.Format("{0}/{1}/{2}", action, name, score));
+            s.SendTo(data, data.Length, SocketFlags.None, RemoteEndPoint);
+        }
 
 
     }

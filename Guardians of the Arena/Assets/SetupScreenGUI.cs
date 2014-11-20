@@ -151,35 +151,35 @@ public class SetupScreenGUI : MonoBehaviour {
 			if (GUI.Button( new Rect( Screen.width - 200, Screen.height / 2 + 75, 25, 20), "1"))
 			{
 				playerSetup.deleteAllUnits();
-			//	gp.returnSocket().SendTCPPacket("getBoardData\\1\\" + gp.playerName);
+				gp.returnSocket().SendTCPPacket("getBoardData\\1\\" + gp.playerName);
 				playerSetup.activePage = 0;
 			}
 
 			if ( GUI.Button( new Rect( Screen.width - 165, Screen.height / 2 + 75, 25, 20), "2"))
 			{
 				playerSetup.deleteAllUnits();
-			//	gp.returnSocket().SendTCPPacket("getBoardData\\2\\" + gp.playerName);
+				gp.returnSocket().SendTCPPacket("getBoardData\\2\\" + gp.playerName);
 				playerSetup.activePage = 1;
 			}
 
 			if ( GUI.Button( new Rect( Screen.width - 130, Screen.height / 2 + 75, 25, 20), "3"))
 			{
 				playerSetup.deleteAllUnits();
-			//	gp.returnSocket().SendTCPPacket("getBoardData\\3\\" + gp.playerName);
+				gp.returnSocket().SendTCPPacket("getBoardData\\3\\" + gp.playerName);
 				playerSetup.activePage = 2;
 			}
 
 			if ( GUI.Button( new Rect( Screen.width - 95, Screen.height / 2 + 75, 25, 20), "4"))
 			{
 				playerSetup.deleteAllUnits();
-			//	gp.returnSocket().SendTCPPacket("getBoardData\\4\\" + gp.playerName);
+				gp.returnSocket().SendTCPPacket("getBoardData\\4\\" + gp.playerName);
 				playerSetup.activePage = 3;
 			}
 
 			if ( GUI.Button( new Rect( Screen.width - 60, Screen.height / 2 + 75, 25, 20),"5"))
 			{
 				playerSetup.deleteAllUnits();
-				//gp.returnSocket().SendTCPPacket("getBoardData\\5\\" + gp.playerName);
+				gp.returnSocket().SendTCPPacket("getBoardData\\5\\" + gp.playerName);
 				playerSetup.activePage = 4;
 			}
 

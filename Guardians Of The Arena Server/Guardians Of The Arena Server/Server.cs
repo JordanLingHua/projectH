@@ -133,7 +133,7 @@ namespace Guardians_Of_The_Arena_Server
             foreach (Client c in clientArray)
             {
                 if (SocketConnected(c.socket))
-                    c.sw.WriteLine("hasLoggedOut\\" + client.clientName);
+                    c.sw.WriteLine("hasLoggedOut\\" + client.clientNumber);
             }
 
             Console.WriteLine("Client " + client.clientNumber + " has disconnected");
@@ -198,6 +198,13 @@ namespace Guardians_Of_The_Arena_Server
                                 {
                                     matchqueue.removeFromQueue(client);
                                 }
+                                else if (tokens[0].Equals("globalChat"))
+                                {
+                                    foreach (Client c in clientArray)
+                                    {
+                                        c.sw.WriteLine("globalChat\\" + tokens[1] + "\\" + tokens[2]);
+                                    }
+                                }
                                 //
                                 else if (tokens[0].Equals("userInfo"))
                                 {
@@ -211,6 +218,7 @@ namespace Guardians_Of_The_Arena_Server
                                             {
                                                 client.sw.WriteLine("loginSucceed\\" + tokens[1]);
                                                 client.sw.WriteLine("hasLoggedIn\\" + tokens[1]);
+                                                loginNames.Add(tokens[1]);
                                                 client.clientName = tokens[1];
                                                 Console.WriteLine(tokens[1] + " has logged in");
                                                 //dm.printTable();
@@ -265,6 +273,7 @@ namespace Guardians_Of_The_Arena_Server
                                     else
                                     {
                                         client.sw.WriteLine("alreadyLoggedIn\\" + tokens[1]);
+                                        RemoveClient(client);
                                     }
 
                                 }
@@ -279,6 +288,30 @@ namespace Guardians_Of_The_Arena_Server
                                     //dm.sendPacket("remove", client.clientName, client.score);
 
                                 }
+                                else if (tokens[0].Equals("getBoardData"))
+                                {
+                                    client.sw.WriteLine(dm.getBoardSetup(tokens[2], Int32.Parse(tokens[1])));
+                                }
+                                else if (tokens[0].Equals("movePiece"))
+                                {
+                                    int onField = 0;
+
+                                    foreach (string s in tokens)
+                                        Console.WriteLine(s);
+
+                                    if (tokens[8].Equals("True"))
+                                        onField = 1;
+
+                                    dm.updateSetup(tokens[1]
+                                        , Int32.Parse(tokens[2])
+                                        , Int32.Parse(tokens[3])
+                                        , Int32.Parse(tokens[4])
+                                        , Int32.Parse(tokens[5])
+                                        , Int32.Parse(tokens[6])
+                                        , Int32.Parse(tokens[7])
+                                        , onField);
+                                }
+
                                 else
                                 {
                                     //do nothing
@@ -298,10 +331,8 @@ namespace Guardians_Of_The_Arena_Server
                 }
                 catch (Exception e)
                 {
-
                     Console.WriteLine(e.StackTrace);
                     Console.WriteLine(e.Message);
-
                 }
             }
         }

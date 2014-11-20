@@ -5,10 +5,10 @@ using System.Text;
 
 namespace Guardians_Of_The_Arena_Server
 {
-    public class Unit : BoardObject
+    public abstract class Unit : BoardObject
     {
         public ArrayList accessibleTiles;
-        public enum Allegiance { ALLY, ENEMY, NEUTRAL }
+        public enum Allegiance { PLAYER_1, PLAYER_2, NEUTRAL }
         private Allegiance allegiance;
         protected int movementRange;
         protected int movementCost;
@@ -18,12 +18,10 @@ namespace Guardians_Of_The_Arena_Server
         protected int maxHealth;
         protected int uniqueID;
         protected int damage;
-        protected int lvl;
-        protected int xp;
-        readonly int[] XP_TO_LEVEL = { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };
+        protected int armor;
 
         #region Properties Region
-        public Allegiance Allegiances
+        public Allegiance unitAllegiance
         {
             get { return allegiance; }
             set { allegiance = value; }
@@ -76,11 +74,16 @@ namespace Guardians_Of_The_Arena_Server
             set { damage = value; }
         }
 
+        public int Armor
+        {
+            get { return armor; }
+            set { armor = value; }
+        }
+
         #endregion
 
         public Unit(int ID)
         {
-            lvl = 1;
             uniqueID = ID;
             accessibleTiles = new ArrayList();
         }
@@ -160,7 +163,7 @@ namespace Guardians_Of_The_Arena_Server
             }
         }
 
-        public void ApplyDamage(int damage)
+        public virtual void ApplyDamage(int damage)
         {
             this.health -= damage;
             Console.WriteLine("LOG: Unit " + uniqueID + " takes " + damage + " damage.");
@@ -175,5 +178,7 @@ namespace Guardians_Of_The_Arena_Server
                 Console.WriteLine("LOG: Unit " + uniqueID + " has died.");
             }
         }
+
+        public abstract ArrayList AttackTile(GameBoard.Tile tile);
     }
 }
