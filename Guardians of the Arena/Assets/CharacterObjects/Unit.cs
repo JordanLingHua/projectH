@@ -135,9 +135,8 @@ public class Unit    : MonoBehaviour {
 		if (Application.loadedLevelName.Equals("BoardScene")){
 			this.transform.parent.renderer.material.shader = Shader.Find ("Toon/Lighted");
 			refreshUnitText ();
-		}
-
-		transform.parent.GetComponent<TileScript> ().OnMouseEnter ();
+			transform.parent.GetComponent<TileScript> ().OnMouseEnter ();
+		}			
 	}
 
 

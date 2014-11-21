@@ -127,7 +127,7 @@ public class move : MonoBehaviour {
 
 			int unitType = this.gameObject.GetComponent<Unit>().unitType;
 
-			gp.returnSocket().SendTCPPacket("movePiece\\"+ gp.playerName + "\\" + playerSetup.activePage + "\\"
+			gp.returnSocket().SendTCPPacket("movePiece\\"+ gp.playerName + "\\" + (playerSetup.activePage + 1) + "\\"
 			                                + unitType + "\\" + oldX + "\\" + oldY + "\\" + newX + "\\" + newY + "\\" + onField);
 
 			this.gameObject.GetComponentInParent<SetupTileScript>().occupied = false;

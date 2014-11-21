@@ -67,8 +67,8 @@ public class TileManager : MonoBehaviour {
 		}
 		
 		addPresetTrees();
-		addPresetAllyUnits();
-		addPresetEnemyUnits();
+		//addPresetAllyUnits();
+		//addPresetEnemyUnits();
 		displayHPBars (pum.selGridInt);
 	}
 
@@ -185,7 +185,7 @@ public class TileManager : MonoBehaviour {
 
 	}
 	
-	void addUnit(int x, int y,int type, bool ally, int unitID){
+	public void addUnit(int x, int y, int type, bool ally, int unitID){
 		TileScript placeTile = tiles[x,y].GetComponent<TileScript>();
 		GameObject unit; 
 

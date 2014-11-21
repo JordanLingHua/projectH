@@ -40,26 +40,18 @@ public class PlayerSetup : MonoBehaviour {
 	//These special tiles seperate from the half of the game board (tiles) stores 
 	//the units that are dragged off the game board.  
 	public GameObject[,] unit_storage_tiles;
-	private int xStorage_Tiles = 16;
+	private int xStorage_Tiles = 11;
 	private int yStorage_Tiles = 2;
 	public GameObject storage_tile;
-
-
-	//
+	
 	//We only need 1 prevPosition because we are only moving one piece at a time.  
-	//public static Vector3 prevPosition;//use this in move.cs
 	public Vector3 prevPosition;
-	//
 
-
-	private int xTiles = 16;
-	private int yTiles = 5;
+	private int xTiles = 11;
+	private int yTiles = 4;
 	public GameObject[,] tiles;
 	public GameObject tile;
-	//public GameObject ball;//test for prefab instantiation 1
 
-
-	//
 	public int activePage;
 
 	public Page[] pages;
@@ -71,8 +63,7 @@ public class PlayerSetup : MonoBehaviour {
 			GameObject.Destroy (piece);
 		}
 	}
-
-
+	
 	//Unit Type and Unit ID are the exact same thing
 	public GameObject addUnit(placement placementType, int x, int y,int type){//, int unitID){
 
@@ -150,8 +141,6 @@ public class PlayerSetup : MonoBehaviour {
 		}
 
 		unit.transform.parent = placeTile.transform;
-//		placeTile.objectOccupyingTile = unit;
-
 		return unit;
 	}
 
@@ -169,7 +158,6 @@ public class PlayerSetup : MonoBehaviour {
 				GameObject newtile = (GameObject)Instantiate(tile,
 				                                             position, 
 				                                             new Quaternion(0,0,0,0));
-
 
 
 				newtile.AddComponent("SetupTileScript");
@@ -274,19 +262,9 @@ public class PlayerSetup : MonoBehaviour {
 		//_________________________________________________________
 
 
-
-
-
-
-
-
 		//THIS IS SUBJECT TO CHANGE.  WHEN YOU CHANGE THIS, MAKE SURE YOU CHANGE THE ARRAY SIZE ABOVE!!!!
 		//providedPieces = new GameObject[11];
 		providedPieces = new GameObject[10];
-
-
-
-
 
 
 		//THIS IS SUBJECT TO CHANGE.  WHEN YOU CHANGE THIS, MAKE SURE YOU CHANGE THE ARRAY SIZE ABOVE!!!!
@@ -302,11 +280,6 @@ public class PlayerSetup : MonoBehaviour {
 //		providedPieces[8] = addUnit (placement.ONFIELD, 10,3,10);
 //		providedPieces[9] = addUnit (placement.ONFIELD, 9,3,11);
 
-
-
-		
-		
-
 		//Add a move script to each, just for this scene though (this scene should be the only scene that calls this script)
 		//Position each of the pieces just made onto the board: 
 		//for(int i = 0; i < providedPieces.Length - 1; i++)
@@ -318,9 +291,6 @@ public class PlayerSetup : MonoBehaviour {
 		playerPieces = new ArrayList(boardCapacity);
 
 		//CHANGE the indices of the providedPieces in 
-		//THIS PART WHENEVER YOU CHANGE THE SIZE OF THE PROVIDEDPIECES ARRAY:  
-
-	
 
 //		playerPieces.Add (providedPieces[8]);
 //		playerPieces.Add (providedPieces[9]);
@@ -338,7 +308,6 @@ public class PlayerSetup : MonoBehaviour {
 //		pages[0].onBoardPieces.Add(providedPieces[9]);
 
 		gp.returnSocket().SendTCPPacket("getBoardData\\1\\" + gp.playerName);
-		activePage = 0;
 	}
 
 

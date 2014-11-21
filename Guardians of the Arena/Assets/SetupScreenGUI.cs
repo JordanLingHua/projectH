@@ -6,6 +6,7 @@ public class SetupScreenGUI : MonoBehaviour {
 	public bool showGUI;
 	public GUIText guiText;
 	GameProcess gp;
+	PageNumberScript pageNumber;
 
 
 	public PlayerSetup playerSetup;
@@ -14,13 +15,9 @@ public class SetupScreenGUI : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		showGUI = true;
+		pageNumber = GameObject.Find ("PageNumber").GetComponent<PageNumberScript> ();
 		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
-
-
 		playerSetup = GameObject.Find("PlayerSetup").GetComponent<PlayerSetup>();
-
-
-
 	}
 	
 	void OnGUI () {
@@ -151,36 +148,41 @@ public class SetupScreenGUI : MonoBehaviour {
 			if (GUI.Button( new Rect( Screen.width - 200, Screen.height / 2 + 75, 25, 20), "1"))
 			{
 				playerSetup.deleteAllUnits();
-				gp.returnSocket().SendTCPPacket("getBoardData\\1\\" + gp.playerName);
+				gp.returnSocket().SendTCPPacket("getBoardData\\1");
 				playerSetup.activePage = 0;
+				pageNumber.selectedPage = 1;
 			}
 
 			if ( GUI.Button( new Rect( Screen.width - 165, Screen.height / 2 + 75, 25, 20), "2"))
 			{
 				playerSetup.deleteAllUnits();
-				gp.returnSocket().SendTCPPacket("getBoardData\\2\\" + gp.playerName);
+				gp.returnSocket().SendTCPPacket("getBoardData\\2");
 				playerSetup.activePage = 1;
+				pageNumber.selectedPage = 2;
 			}
 
 			if ( GUI.Button( new Rect( Screen.width - 130, Screen.height / 2 + 75, 25, 20), "3"))
 			{
 				playerSetup.deleteAllUnits();
-				gp.returnSocket().SendTCPPacket("getBoardData\\3\\" + gp.playerName);
+				gp.returnSocket().SendTCPPacket("getBoardData\\3");
 				playerSetup.activePage = 2;
+				pageNumber.selectedPage = 4;
 			}
 
 			if ( GUI.Button( new Rect( Screen.width - 95, Screen.height / 2 + 75, 25, 20), "4"))
 			{
 				playerSetup.deleteAllUnits();
-				gp.returnSocket().SendTCPPacket("getBoardData\\4\\" + gp.playerName);
+				gp.returnSocket().SendTCPPacket("getBoardData\\4");
 				playerSetup.activePage = 3;
+				pageNumber.selectedPage = 4;
 			}
 
 			if ( GUI.Button( new Rect( Screen.width - 60, Screen.height / 2 + 75, 25, 20),"5"))
 			{
 				playerSetup.deleteAllUnits();
-				gp.returnSocket().SendTCPPacket("getBoardData\\5\\" + gp.playerName);
+				gp.returnSocket().SendTCPPacket("getBoardData\\5");
 				playerSetup.activePage = 4;
+				pageNumber.selectedPage = 5;
 			}
 
 

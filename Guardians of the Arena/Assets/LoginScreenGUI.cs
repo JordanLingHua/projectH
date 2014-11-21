@@ -54,9 +54,9 @@ public class LoginScreenGUI : MonoBehaviour {
 					connected = true;
 				}
 
-				else 
+				else {
 					am.playErrorSFX ();
-					guiText.text = "Connect Failed";
+					guiText.text = "Connect Failed";}
 			}
 
 			string source = password;

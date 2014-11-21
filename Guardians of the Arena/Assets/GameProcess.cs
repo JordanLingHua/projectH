@@ -184,10 +184,36 @@ public class GameProcess : MonoBehaviour {
 			
 			#region GAME PACKETS
 			//newpiece\\positionx\\positiony\\type\\playerNumber\\uniqueID
-			else if (tokens[0].Equals(""))
+//			else if (tokens[0].Equals(""))
+//			{
+//				//xtileManager.addUnit(Int32.Parse(tokens[1]),Int32.Parse(tokens[2]),Int32.Parse(tokens[]]);
+//				
+//			}
+
+			else if (tokens[0].Equals("spawnPieces"))
 			{
-				//xtileManager.addUnit(Int32.Parse(tokens[1]),Int32.Parse(tokens[2]),Int32.Parse(tokens[]]);
-				
+				//unitype
+				//unitid
+				//x
+				//y
+				int i = 1;
+				while(!tokens[i].Equals("EndPlayer1"))
+				{
+					print ("Unit ID: " + tokens[i+1] + " || ");
+					print ("Unit Type: " + tokens[i] + " || ");
+					print ("@ (" + tokens[i+2] + ", " + tokens[i+3] + " || " + "\n" + "\n");
+
+
+					tileManager.addUnit(Int32.Parse(tokens[i+2]), Int32.Parse(tokens[i+3]), Int32.Parse(tokens[i]), playerNumber == 1, Int32.Parse(tokens[i+1]));
+					i += 4;
+				}
+				i++;
+				while(!tokens[i].Equals("EndPlayer2"))
+				{
+					tileManager.addUnit(Int32.Parse(tokens[i+2]), Int32.Parse(tokens[i+3]), Int32.Parse(tokens[i]), playerNumber == 2, Int32.Parse(tokens[i+1]));
+					i += 4;
+				}
+
 			}
 			
 			// unitID\\toX\\toY
