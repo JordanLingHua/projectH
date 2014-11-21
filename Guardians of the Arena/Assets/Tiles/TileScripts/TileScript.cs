@@ -74,7 +74,7 @@ public class TileScript : MonoBehaviour {
 		}
 	}
 
-	IEnumerator getPath(Node current){
+	IEnumerator getPath(Node current, Unit movingUnit){
 		this.transform.parent.GetComponent<TileManager>().clearAllTiles();
 		Stack<GameObject> tiles = new Stack<GameObject>();
 		tiles.Push(this.gameObject);
@@ -91,8 +91,8 @@ public class TileScript : MonoBehaviour {
 		while (tiles.Count !=0){
 			newPos = new Vector3(tiles.Peek().transform.position.x,0,tiles.Peek().transform.position.z);
 
-			tiles.Peek().renderer.material.color = gm.selectedUnit.alleg == Unit.allegiance.playerOne? Color.blue : Color.red;
-			yield return StartCoroutine(movePiece(gm.selectedUnit.gameObject,gm.selectedUnit.transform.position,newPos,0.28f));
+			tiles.Peek().renderer.material.color = movingUnit.alleg == Unit.allegiance.playerOne? Color.blue : Color.red;
+			yield return StartCoroutine(movePiece(movingUnit.gameObject,movingUnit.transform.position,newPos,0.28f));
 			if (tiles.Count != 1){
 				if (tiles.Peek ().GetComponent<TileScript>().objectOccupyingTile == null){
 					tiles.Peek ().renderer.material.color = Color.white;
@@ -111,18 +111,19 @@ public class TileScript : MonoBehaviour {
 			tiles.Pop();
 		}
 		gm.movingPiece = false;
-		objectOccupyingTile = gm.selectedUnit.gameObject;
+		objectOccupyingTile = movingUnit.gameObject;
 
 	}
 
 	//pathfinder algorithm for moving pieces
-	public void pathFinder(){
+	public void pathFinder(Unit movingUnit){
 		//use tiles
 		Queue<Node> open = new Queue<Node>();
 		Queue<Node> closed = new Queue<Node>();
 
 		//start node
-		open.Enqueue(new Node(null,gm.selectedUnit.transform.parent.GetComponent<TileScript>()));
+		open.Enqueue(new Node(null,movingUnit.transform.parent.GetComponent<TileScript>()));
+		HashSet<TileScript> tileList = movingUnit.getMvAccessibleTiles (movingUnit.alleg == Unit.allegiance.playerOne ? Unit.allegiance.playerOne : Unit.allegiance.playerTwo);
 		
 		//endnode
 		TileScript end = this;
@@ -131,28 +132,28 @@ public class TileScript : MonoBehaviour {
 		while (open.Count != 0){
 			Node current = open.Dequeue();
 			if (current.myNode.Equals (end)){
-				StartCoroutine(getPath(current));
+				StartCoroutine(getPath(current,movingUnit));
 				break;
 				
 			}
 			closed.Enqueue(current);
 			
-			if (current.myNode.right != null && gm.accessibleTiles.Contains(current.myNode.right.GetComponent<TileScript>()) && !closed.Contains(new Node (current,current.myNode.right.GetComponent<TileScript>()))){
+			if (current.myNode.right != null && tileList.Contains(current.myNode.right.GetComponent<TileScript>()) && !closed.Contains(new Node (current,current.myNode.right.GetComponent<TileScript>()))){
 				if (!open.Contains(new Node(current,current.myNode.right.GetComponent<TileScript>()))){
 					open.Enqueue(new Node(current,current.myNode.right.GetComponent<TileScript>()));
 				}
 			}
-			if (current.myNode.left != null && gm.accessibleTiles.Contains(current.myNode.left.GetComponent<TileScript>()) && !closed.Contains(new Node (current,current.myNode.left.GetComponent<TileScript>()))){
+			if (current.myNode.left != null && tileList.Contains(current.myNode.left.GetComponent<TileScript>()) && !closed.Contains(new Node (current,current.myNode.left.GetComponent<TileScript>()))){
 				if (!open.Contains(new Node(current,current.myNode.left.GetComponent<TileScript>()))){
 					open.Enqueue(new Node(current,current.myNode.left.GetComponent<TileScript>()));
 				}
 			}
-			if (current.myNode.up != null && gm.accessibleTiles.Contains(current.myNode.up.GetComponent<TileScript>()) && !closed.Contains(new Node (current,current.myNode.up.GetComponent<TileScript>()))){
+			if (current.myNode.up != null && tileList.Contains(current.myNode.up.GetComponent<TileScript>()) && !closed.Contains(new Node (current,current.myNode.up.GetComponent<TileScript>()))){
 				if (!open.Contains(new Node(current,current.myNode.up.GetComponent<TileScript>()))){
 					open.Enqueue(new Node(current,current.myNode.up.GetComponent<TileScript>()));
 				}
 			}
-			if (current.myNode.down != null && gm.accessibleTiles.Contains(current.myNode.down.GetComponent<TileScript>()) && !closed.Contains(new Node (current,current.myNode.down.GetComponent<TileScript>()))){
+			if (current.myNode.down != null && tileList.Contains(current.myNode.down.GetComponent<TileScript>()) && !closed.Contains(new Node (current,current.myNode.down.GetComponent<TileScript>()))){
 				if (!open.Contains(new Node(current,current.myNode.down.GetComponent<TileScript>()))){
 					open.Enqueue(new Node(current,current.myNode.down.GetComponent<TileScript>()));
 				}

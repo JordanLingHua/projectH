@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour {
 	public GUIText uInfo,mana,timerText,combatLog,suInfo;
 	//gamestate: player is moving a unit (1), attacking with a unit (2), enemy turn and moving (3), enemy turn and attacking (4);
 	public gameState gs;
-	public int pMana = 2, maxMana = 2;
+	public int pMana,maxMana;
 	readonly int GAME_MAX_MANA = 12;
 	public string buttonOption = "Attack";
 	TileManager tm;
@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour {
 	public Dictionary<int,Unit>	units = new Dictionary<int, Unit>();	
 	
 	void Start () {
+		pMana = 2;
+		maxMana = 2;
 		timer = TIMER_LENGTH;
 		am = GameObject.Find ("AudioManager").GetComponent<AudioManager> ();
 		gp = GameObject.Find ("GameProcess").GetComponent<GameProcess>();

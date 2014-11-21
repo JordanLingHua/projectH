@@ -30,10 +30,7 @@ public class GameProcess : MonoBehaviour {
 		uniClock = new Stopwatch();
 		
 		socks = new Sockets();
-		
 		play = false;
-		
-		
 	}
 
 	void Update () {
@@ -226,9 +223,11 @@ public class GameProcess : MonoBehaviour {
 			else if (tokens[0].Equals("attack"))
 			{
 				gameManager.units[Int32.Parse (tokens[1])].atkd = true;
+
 				gameManager.pMana -= gameManager.units[Int32.Parse (tokens[1])].atkCost;
 				for (int i = 0; i < Int32.Parse (tokens[2]); i ++ ){
 					gameManager.units[Int32.Parse(tokens[3+i])].attackThisUnit(gameManager.units[Int32.Parse (tokens[1])]);
+					StartCoroutine(gameManager.units[Int32.Parse(tokens[3+i])].showDmgDealt(gameManager.units[Int32.Parse (tokens[1])].atk));
 				}
 
 				gameManager.units[Int32.Parse (tokens[1])].gainXP();
@@ -272,20 +271,18 @@ public class GameProcess : MonoBehaviour {
 	
 	public void movePiece(int unitID, int toX, int toY)
 	{
-		gameManager.selectedUnit = gameManager.units[unitID];
-		gameManager.selectedUnit.showMvTiles (gameManager.selectedUnit.alleg);
-
 		gameManager.pMana -= gameManager.units[unitID].mvCost;
-			
+		
 		TileScript from = gameManager.units[unitID].transform.parent.GetComponent<TileScript>();
 		TileScript to = tileManager.tiles[toX, toY].GetComponent<TileScript>();
 		
-		to.pathFinder ();
-		
+		to.pathFinder (gameManager.units[unitID]);
+		gameManager.units[unitID].mvd = true;
+
 		gameManager.accessibleTiles.Clear();
 		to.objectOccupyingTile = from.objectOccupyingTile;
 		
-		gameManager.selectedUnit.transform.parent = to.gameObject.transform;
+		gameManager.units[unitID].transform.parent = to.gameObject.transform;
 		from.transform.GetComponent<TileScript>().objectOccupyingTile = null;
 		tileManager.clearAllTiles();
 	}

@@ -81,23 +81,24 @@ public class Unit    : MonoBehaviour {
 	void Update () {
 	}
 
-	//taken from http://answers.unity3d.com/questions/37752/how-to-render-a-colored-2d-rectangle.html
-	void DrawQuad(Rect position, Color color) {
-		Texture2D texture = new Texture2D(1, 1);
-		texture.SetPixel(0,0,color);
-		texture.Apply();
-		GUI.skin.box.normal.background = texture;
-		GUI.Box(position, GUIContent.none);
+	public IEnumerator showDmgDealt(int dmg){
+		gameObject.GetComponent<GUIText> ().enabled = true;
+		gameObject.GetComponent<GUIText>().text = dmg <= 0? "+" + dmg: "-" + dmg;
+		Color temp = gameObject.GetComponent<GUIText>().material.color;
+		yield return new WaitForSeconds(2.0f);
+		for (int i =0; i < 60; i ++){
+			temp.a -= 0.016f;
+			gameObject.GetComponent<GUIText>().material.color = temp;
+			yield return new WaitForSeconds(0.016666f);
+		}
+		gameObject.GetComponent<GUIText> ().enabled = false;
 	}
 
 	void OnGUI(){
 		if (displayHPBar){
 			Camera cam = Camera.main;
 			Vector3 HPBarPos = cam.WorldToScreenPoint(gameObject.transform.position);
-			//GUI.color = Color.red;
 			GUI.DrawTexture (new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-10 < 0?Screen.height:Screen.height - HPBarPos.y-10,  25, 5),hpBarBG);
-			//DrawQuad (new Rect(0,0,50,50),Color.red);
-			//DrawQuad (new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-10 < 0?Screen.height:Screen.height - HPBarPos.y-10,  25, 5),Color.black);
 			float barColorSwitch = (float)hp/maxHP;
 			if (barColorSwitch > .6){
 				GUI.DrawTexture(new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-10, barColorSwitch * 25, 5),hpBarHigh);
@@ -117,8 +118,6 @@ public class Unit    : MonoBehaviour {
 			}
 		}
 	}
-		
-
 
 	void enemySSKillable(){
 		foreach (int key in gm.units.Keys){
@@ -265,27 +264,8 @@ public class Unit    : MonoBehaviour {
 			//can't move to the tile it's in
 			gm.accessibleTiles.Remove(this.transform.parent.GetComponent<TileScript>());	
 		}
-	}
-	
-	public virtual void showAtkTiles(){
-		if (!atkd){
-			showAtkAccessibleTiles(this.transform.parent.GetComponent<TileScript>(),atkRange);
-			gm.accessibleTiles.Remove(this.transform.parent.GetComponent<TileScript>());
+	}	
 
-			switch(alleg){
-				case allegiance.playerOne:
-					this.transform.parent.renderer.material.color = Color.blue;
-					break;
-				case allegiance.playerTwo:
-					this.transform.parent.renderer.material.color = Color.red;
-					break;
-				case allegiance.neutral:
-					this.transform.parent.renderer.material.color = Color.gray;
-					break;
-			}
-		}
-	}
-	
 	void showMvAccessibleTiles(TileScript tile, int num,allegiance ally){
 		TileScript tileS = tile.transform.GetComponent<TileScript>();
 		
@@ -310,6 +290,58 @@ public class Unit    : MonoBehaviour {
 				showMvAccessibleTiles(tileS.right.GetComponent<TileScript>(),num-1,ally);
 				gm.accessibleTiles.Add(tileS.right.GetComponent<TileScript>());
 			}	
+		}
+	}
+
+	public HashSet<TileScript> getMvAccessibleTiles(allegiance ally){
+		HashSet<TileScript> tileSet = new HashSet<TileScript>();
+		if (!mvd){
+			getMvAccessibleTiles(tileSet,this.transform.parent.GetComponent<TileScript>(),mvRange,ally);
+			//can't move to the tile it's in
+			//gm.accessibleTiles.Remove(this.transform.parent.GetComponent<TileScript>());	
+		}
+		return tileSet;
+	}
+	
+	void getMvAccessibleTiles(HashSet<TileScript> list, TileScript tile, int num,allegiance ally){
+		TileScript tileS = tile.transform.GetComponent<TileScript> ();
+		print ("ran getMvTile");
+		if (num != 0) {
+			if (tileS.up != null && (tileS.up.GetComponent<TileScript> ().objectOccupyingTile == null || tileS.up.GetComponent<TileScript> ().objectOccupyingTile.GetComponent<Unit> ().alleg == ((ally == allegiance.playerOne) ? allegiance.playerOne : allegiance.playerTwo))) {
+				list.Add (tileS.up.GetComponent<TileScript> ());
+				getMvAccessibleTiles (list, tileS.up.GetComponent<TileScript> (), num - 1, ally);
+			}
+			if (tileS.down != null && (tileS.down.GetComponent<TileScript> ().objectOccupyingTile == null || tileS.down.GetComponent<TileScript> ().objectOccupyingTile.GetComponent<Unit> ().alleg == ((ally == allegiance.playerOne) ? allegiance.playerOne : allegiance.playerTwo))) {
+				list.Add (tileS.down.GetComponent<TileScript> ());
+				getMvAccessibleTiles (list, tileS.down.GetComponent<TileScript> (), num - 1, ally);
+			}
+			if (tileS.left != null && (tileS.left.GetComponent<TileScript> ().objectOccupyingTile == null || tileS.left.GetComponent<TileScript> ().objectOccupyingTile.GetComponent<Unit> ().alleg == ((ally == allegiance.playerOne) ? allegiance.playerOne : allegiance.playerTwo))) {
+				list.Add (tileS.left.GetComponent<TileScript> ());
+				getMvAccessibleTiles (list, tileS.left.GetComponent<TileScript> (), num - 1, ally);
+			}
+			if (tileS.right != null && (tileS.right.GetComponent<TileScript> ().objectOccupyingTile == null || tileS.right.GetComponent<TileScript> ().objectOccupyingTile.GetComponent<Unit> ().alleg == ((ally == allegiance.playerOne) ? allegiance.playerOne : allegiance.playerTwo))) {
+				list.Add (tileS.right.GetComponent<TileScript> ());
+				getMvAccessibleTiles (list, tileS.right.GetComponent<TileScript> (), num - 1, ally);
+			}	
+		}
+	}
+
+	public virtual void showAtkTiles(){
+		if (!atkd){
+			showAtkAccessibleTiles(this.transform.parent.GetComponent<TileScript>(),atkRange);
+			gm.accessibleTiles.Remove(this.transform.parent.GetComponent<TileScript>());
+
+			switch(alleg){
+				case allegiance.playerOne:
+					this.transform.parent.renderer.material.color = Color.blue;
+					break;
+				case allegiance.playerTwo:
+					this.transform.parent.renderer.material.color = Color.red;
+					break;
+				case allegiance.neutral:
+					this.transform.parent.renderer.material.color = Color.gray;
+					break;
+			}
 		}
 	}
 	
