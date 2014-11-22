@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class globalChatScript : MonoBehaviour {
@@ -11,17 +11,14 @@ public class globalChatScript : MonoBehaviour {
 	void Start () {
 		chatLines = new ArrayList();
 		gChat.text = string.Empty;
-		maxLinesToShow = 10;
-
+		maxLinesToShow = 10; //before chat begins to scroll up
 	}
 	
 	// Update is called once per frame
-	void Update () {
-
-
-	
+	void Update () {	
 	}
 
+	//saves the user and their chat content in an arraylist
 	public void addLineToChat(string userName, string chatLine)
 	{
 		gChat.text = string.Empty;

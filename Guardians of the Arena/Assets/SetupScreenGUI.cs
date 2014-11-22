@@ -40,9 +40,9 @@ public class SetupScreenGUI : MonoBehaviour {
 			Application.LoadLevel(0);
 			
 			// KILL THREAD AND SERVER CONNECTION
-			gp.returnSocket().t.Abort();
-			gp.returnSocket().endThread();
-			gp.returnSocket().Disconnect();
+//			gp.returnSocket().t.Abort();
+//			gp.returnSocket().endThread();
+//			gp.returnSocket().Disconnect();
 		}
 
 		if (GUI.Button( new Rect( Screen.width - 200, Screen.height / 2 + 75, 25, 20), "1"))
