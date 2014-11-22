@@ -30,6 +30,7 @@ public class move : MonoBehaviour {
 
 	void OnMouseDown()
 	{
+		//Save the last position of the piece in case in needs to get snapped back
 		playerSetup.prevPosition = transform.position;
 		isTouched = true;
 
@@ -38,12 +39,11 @@ public class move : MonoBehaviour {
 	void OnMouseUp()
 	{
 		pieceMoved = false;
-		//Debug.Log (playerSetup.activePage);
 		isTouched = false;
 		oldScript = this.gameObject.GetComponentInParent<SetupTileScript> ();
 		nearestTile = findNearestTile();
-		//if there is a slot
-		Debug.Log (nearestTile);
+
+		//if the tile closest to where the piece was dropped exists and is unoccupied
 		if (nearestTile != null && !nearestTile.GetComponent<SetupTileScript>().occupied)
 		{
 			//guardian and soulstone must be kept on the field
@@ -72,7 +72,6 @@ public class move : MonoBehaviour {
 					pieceMoved = true;
 					onField = true;
 				}
-
 			
 				else //unit is being placed off the field
 				{
@@ -113,10 +112,10 @@ public class move : MonoBehaviour {
 					onField = false;
 				}
 			}
-
-			Debug.Log(playerSetup.pages[playerSetup.activePage].onBoardPieces.Count);
+			//Debug.Log(playerSetup.pages[playerSetup.activePage].onBoardPieces.Count);
 		}
 
+		//if a piece was moved to a new valid tile (i.e. didn't snap back to old position)...
 		if (pieceMoved) 
 		{
 			int oldX = oldScript.x;
@@ -127,20 +126,29 @@ public class move : MonoBehaviour {
 
 			int unitType = this.gameObject.GetComponent<Unit>().unitType;
 
-			gp.returnSocket().SendTCPPacket("movePiece\\"+ gp.playerName + "\\" + (playerSetup.activePage + 1) + "\\"
+			//send the server movePiece\\playerName\\activePageNumber\\unitType\\oldX\\oldY\\newX\\newY\\onOrOffField
+			gp.returnSocket().SendTCPPacket("movePiece\\" + gp.playerName + "\\" + (playerSetup.activePage + 1) + "\\"
 			                                + unitType + "\\" + oldX + "\\" + oldY + "\\" + newX + "\\" + newY + "\\" + onField);
 
+			//set the current tile to unoccupied (the piece is moving away from this tile)
 			this.gameObject.GetComponentInParent<SetupTileScript>().occupied = false;
+
+			//attach the new tile's transform to be the parent of the unit
 			this.gameObject.transform.parent = nearestTile.transform;
+
+			//move the unit to it's new tile and set that tile to occupied
 			transform.position = new Vector3(nearestTile.transform.position.x, 5.0f, nearestTile.transform.position.z);
 			nearestTile.GetComponent<SetupTileScript>().occupied = true;
 		}
+
+		//this happens if the piece move attempt was illegal/not valid, the piece is returned to it's original position
 		else		
 		{
 			transform.position = playerSetup.prevPosition;
 		}
 	}
 
+	//returns the tile nearest to where the unit is dropped
 	GameObject findNearestTile()
 	{
 		float nearestDistanceTile = Mathf.Infinity;
@@ -163,7 +171,6 @@ public class move : MonoBehaviour {
 	
 	void Update()
 	{
-		//drag drop how:  
 		if (isTouched)
 		{
 			ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -173,5 +180,4 @@ public class move : MonoBehaviour {
 			}
 		}
 	}
-
 }

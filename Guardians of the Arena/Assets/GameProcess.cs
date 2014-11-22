@@ -128,37 +128,44 @@ public class GameProcess : MonoBehaviour {
 				GameObject.Find ("globalChat").GetComponent<globalChatScript>().addLineToChat(tokens[1], tokens[2]);
 			}
 			
-			// 
+			//challengeRequest\\challengerName
 			else if (tokens[0].Equals("challengeRequest"))
 			{
 				GameObject.Find ("challengeManager").GetComponent<challengeScript>().addChallengeRequest(tokens[1]);
 			}
-			
+
+			//TODO
 			else if (tokens[0].Equals("challengeAccepted"))
 			{
 				
 			}
-			
+
+			//TODO
 			else if (tokens[0].Equals("challengeDeclined"))
 			{
 				
 			}
-			
+
+			//challengeCancelled\\challengerName
 			else if (tokens[0].Equals("challengeCancelled"))
 			{
 				GameObject.Find ("challengeManager").GetComponent<challengeScript>().removeChallengeRequest(tokens[1]);
 			}
 
 			#region SETTING UP BOARDS
+			//boardSetup\\...
 			else if (tokens[0].Equals("boardSetup"))
 			{
 				playerSetup.pages[playerSetup.activePage].offBoardPieces.Clear();
 				playerSetup.pages[playerSetup.activePage].onBoardPieces.Clear();
 				GameObject unitToAdd;
-
-				//setup#/unittype/xpos/ypos/onfield
+				                                      
+				//    | Repeat boardCapacity number of times | 
+				//    v                                      v
+				//...{pageNumber\\unitType\\xPos\\yPos\\onField}
 				for (int i = 0; i < playerSetup.boardCapacity * 4; i += 4)
 				{
+					//if the unit is OnField
 					if (tokens[i + 4].Equals("True"))
 					{
 						unitToAdd = playerSetup.addUnit(PlayerSetup.placement.ONFIELD, Int32.Parse (tokens[i + 2]), 
@@ -167,6 +174,7 @@ public class GameProcess : MonoBehaviour {
 						playerSetup.pages[playerSetup.activePage].onBoardPieces.Add(unitToAdd);
 					}
 		
+					//the unit is offField
 					else
 					{
 						unitToAdd = playerSetup.addUnit(PlayerSetup.placement.OFFFIELD, Int32.Parse (tokens[i + 2]), 
@@ -180,31 +188,24 @@ public class GameProcess : MonoBehaviour {
 			#endregion
 			
 			#region GAME PACKETS
-			//newpiece\\positionx\\positiony\\type\\playerNumber\\uniqueID
-//			else if (tokens[0].Equals(""))
-//			{
-//				//xtileManager.addUnit(Int32.Parse(tokens[1]),Int32.Parse(tokens[2]),Int32.Parse(tokens[]]);
-//				
-//			}
 
+			//spawnPieces\\...
 			else if (tokens[0].Equals("spawnPieces"))
 			{
-				//unitype
-				//unitid
-				//x
-				//y
+				//    | Repeat for all player 1's units
+				//    v                                      
+				//unitType\\unitID\\xPos\\yPos
 				int i = 1;
 				while(!tokens[i].Equals("EndPlayer1"))
 				{
-					print ("Unit ID: " + tokens[i+1] + " || ");
-					print ("Unit Type: " + tokens[i] + " || ");
-					print ("@ (" + tokens[i+2] + ", " + tokens[i+3] + " || " + "\n" + "\n");
-
-
 					tileManager.addUnit(Int32.Parse(tokens[i+2]), Int32.Parse(tokens[i+3]), Int32.Parse(tokens[i]), playerNumber == 1, Int32.Parse(tokens[i+1]));
 					i += 4;
 				}
 				i++;
+
+				//    | Repeat for all player 2's units
+				//    v                                      
+				//unitType\\unitID\\xPos\\yPos
 				while(!tokens[i].Equals("EndPlayer2"))
 				{
 					tileManager.addUnit(Int32.Parse(tokens[i+2]), Int32.Parse(tokens[i+3]), Int32.Parse(tokens[i]), playerNumber == 2, Int32.Parse(tokens[i+1]));
@@ -232,21 +233,21 @@ public class GameProcess : MonoBehaviour {
 
 				gameManager.units[Int32.Parse (tokens[1])].gainXP();
 			}
-			
+
+			//switchTurns
 			else if (tokens[0].Equals("switchTurns"))
 			{
 				gameManager.nextTurn();
 			}
 			
-			//TODO
+			//TODO mmr
 			else if (tokens[0].Equals("victory"))
 			{
 				gameManager.gameOver = true;
 				gameManager.combatLog.text = "You won!";
-				//mmr+=5;
 			}
 			
-			//TODO
+			//TODO mmr
 			else if (tokens[0].Equals("defeat"))
 			{
 				gameManager.gameOver = true;

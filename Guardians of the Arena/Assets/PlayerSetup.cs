@@ -3,17 +3,8 @@ using System.Collections;
 
 public class PlayerSetup : MonoBehaviour {
 
-
-	//Essentially a class containing the Physical Player itself. 
-	//Should be called "player profile" actually.  
-
-	//Out for now:
-	//public int money_Limit = 10;
-	//public int used_money;//set to 0 in constructor.  Then increment/decrement later
-
 	public enum placement{ONFIELD, OFFFIELD};
 	public GameProcess gp;
-
 
 	public GameObject[] providedPieces;
 	public GameObject UnitOne;
@@ -29,13 +20,7 @@ public class PlayerSetup : MonoBehaviour {
 	public GameObject UnitEleven;
 	public GameObject cp;
 
-
 	public int boardCapacity = 10;
-	//10 //Leave out 10 for now since the player can drag all the pieces onto the board in that case
-
-	//Add to this array everytime a piece is dropped onto a board
-	public ArrayList playerPieces;
-
 
 	//These special tiles seperate from the half of the game board (tiles) stores 
 	//the units that are dragged off the game board.  
@@ -53,7 +38,6 @@ public class PlayerSetup : MonoBehaviour {
 	public GameObject tile;
 
 	public int activePage;
-
 	public Page[] pages;
 
 	public void deleteAllUnits(){
@@ -217,14 +201,8 @@ public class PlayerSetup : MonoBehaviour {
 
 				
 				newtile.AddComponent("SetupTileScript");
-
-
 				newtile.GetComponent<SetupTileScript>().tt = SetupTileScript.TileType.OFFFIELD;
-
-
 				unit_storage_tiles[i,j] = newtile;
-
-
 				newtile.transform.parent = this.transform;
 			}
 		}
@@ -258,88 +236,20 @@ public class PlayerSetup : MonoBehaviour {
 				}
 			}
 		}
-
-		//_________________________________________________________
-
-
-		//THIS IS SUBJECT TO CHANGE.  WHEN YOU CHANGE THIS, MAKE SURE YOU CHANGE THE ARRAY SIZE ABOVE!!!!
-		//providedPieces = new GameObject[11];
-		providedPieces = new GameObject[10];
-
-
-		//THIS IS SUBJECT TO CHANGE.  WHEN YOU CHANGE THIS, MAKE SURE YOU CHANGE THE ARRAY SIZE ABOVE!!!!
-		//The 4th arg in addUnit defines the unitType
-//		providedPieces[0] = addUnit (placement.OFFFIELD, 0,0,1);
-//		providedPieces[1] = addUnit (placement.OFFFIELD, 1,0,2);
-//		providedPieces[2] = addUnit (placement.OFFFIELD, 2,0,3);
-//		providedPieces[3] = addUnit (placement.OFFFIELD, 3,0,3);
-//		providedPieces[4] = addUnit (placement.OFFFIELD, 4,0,7);
-//		providedPieces[5] = addUnit (placement.OFFFIELD, 5,0,7);
-//		providedPieces[6] = addUnit (placement.OFFFIELD, 6,0,7);
-//		providedPieces[7] = addUnit (placement.OFFFIELD, 7,0,8);
-//		providedPieces[8] = addUnit (placement.ONFIELD, 10,3,10);
-//		providedPieces[9] = addUnit (placement.ONFIELD, 9,3,11);
-
-		//Add a move script to each, just for this scene though (this scene should be the only scene that calls this script)
-		//Position each of the pieces just made onto the board: 
-		//for(int i = 0; i < providedPieces.Length - 1; i++)
-//		for(int i = 0; i < providedPieces.Length; i++)
-//		{
-//			providedPieces[i].AddComponent("move"); 
-//		}
-
-		playerPieces = new ArrayList(boardCapacity);
-
-		//CHANGE the indices of the providedPieces in 
-
-//		playerPieces.Add (providedPieces[8]);
-//		playerPieces.Add (providedPieces[9]);
-
-
-		activePage = 0;
-
+	
+		//Create five page objects for storing unit positions
 		pages = new Page[5];
 		for(int i = 0; i < 5; i++)
 		{
 			pages[i] = new Page();
 		}
-	
-//		pages[0].onBoardPieces.Add(providedPieces[8]);
-//		pages[0].onBoardPieces.Add(providedPieces[9]);
 
+		//The stupd screen defaults to the first page (index "0" in the pages array, "1" on the server)
+		activePage = 0;
 		gp.returnSocket().SendTCPPacket("getBoardData\\1\\" + gp.playerName);
 	}
 
-
-//	void updatePageModifier()
-//	{
-//		switch(activePage)
-//		{
-//		case 1:
-//
-//			pages[0].modified = true;
-//			break;
-//		case 2:
-//			pages[1].modified = true;
-//			break;
-//		case 3:
-//			pages[2].modified = true;
-//			break;
-//		case 4:
-//			pages[3].modified = true;
-//			break;
-//		case 5:
-//			pages[4].modified = true;
-//			break;
-//			
-//		}
-//	}
-
-	//Drag and drop
 	// Update is called once per frame
-	void Update () {
-
-
-	
+	void Update () {	
 	}
 }

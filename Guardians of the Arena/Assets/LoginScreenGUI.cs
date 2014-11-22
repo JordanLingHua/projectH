@@ -5,8 +5,7 @@ using System;
 using System.Security.Cryptography;
 using System.Text;
 
-public class LoginScreenGUI : MonoBehaviour {	
-	
+public class LoginScreenGUI : MonoBehaviour {		
 
 	public double delTime;
 	public GUIText guiText;
@@ -42,7 +41,9 @@ public class LoginScreenGUI : MonoBehaviour {
 		if(GUI.Button(new Rect(Screen.width / 2 - 50, Screen.height / 2 + 30, 50, 20), "Login"))
 		{
 			am.playButtonSFX();
-			if (!ip.Equals(""))
+
+			//use the alternative ip provided by the user if the ip field is not blank
+			if (!ip.Equals(string.Empty))
 				process.returnSocket().setIP(ip);
 
 			if(!connected)
@@ -61,6 +62,8 @@ public class LoginScreenGUI : MonoBehaviour {
 
 			string source = password;
 			string hash;
+
+			//hash an encrypted password for the user
 			using (MD5 md5Hash = MD5.Create())
 			{
 				hash = GetMd5Hash(md5Hash, source);				
@@ -70,6 +73,7 @@ public class LoginScreenGUI : MonoBehaviour {
 		}		
 	}
 
+	//called from gameprocess when a user inputs invalid login info
 	public void loginFail()
 	{
 		password = string.Empty;
@@ -77,6 +81,7 @@ public class LoginScreenGUI : MonoBehaviour {
 		guiText.text = "Invalid Login Info. Try Again.";
 	}
 
+	//server verifies info and user is logged in
 	public void loginSucceed()
 	{
 		DontDestroyOnLoad(process);
@@ -86,8 +91,7 @@ public class LoginScreenGUI : MonoBehaviour {
 	}
 
 	string GetMd5Hash(MD5 md5Hash, string input)
-	{
-		
+	{		
 		// Convert the input string to a byte array and compute the hash. 
 		byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
 		
@@ -114,33 +118,5 @@ public class LoginScreenGUI : MonoBehaviour {
 	
 	void Update () 
 	{
-	}
-	
-	public void printGui ( string printStr )
-	{
-		int wordCount = 0 ;
-		string[] words = printStr.Split(' ');
-		
-		printStr = string.Empty;
-		
-		for ( int i = 0 ; i < words.Length ; ++ i )
-		{
-			if ( wordCount <= 4 )
-			{
-				printStr += words[i] + " " ;
-				wordCount ++ ;
-			}
-			else
-			{
-				printStr += words[i] + "\n" ;
-				wordCount = 0;
-				
-			}	
-		}
-		
-		guiText.text = printStr ;
-	}
-	
-	
-	
+	}	
 }

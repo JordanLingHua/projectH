@@ -7,7 +7,6 @@ public class ListOfPlayersScript : MonoBehaviour {
 	public ArrayList playerNames;
 
 
-	// Use this for initialization
 	void Start () {
 		guiText.text = "Players Online:";
 		playerNames = new ArrayList();
@@ -18,6 +17,7 @@ public class ListOfPlayersScript : MonoBehaviour {
 
 	}
 
+	//whenever the list of players changes, refreshplayerlist updates the guitext to reflect it
 	public void refreshPlayerList()
 	{
 		string s = "Players Online:";
@@ -26,6 +26,7 @@ public class ListOfPlayersScript : MonoBehaviour {
 		guiText.text = s;
 	}
 
+	//add the new player and re-sort the list (for easy visual searches by the user)
 	public void addPlayer(string playerName)
 	{
 		playerNames.Add (playerName);
@@ -33,6 +34,7 @@ public class ListOfPlayersScript : MonoBehaviour {
 		refreshPlayerList ();
 	}
 
+	//remove a player on disconnect
 	public void removePlayer(string playerName)
 	{
 		playerNames.Remove (playerName);
