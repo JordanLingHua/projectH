@@ -7,8 +7,8 @@ using System.Collections;
 
 public class TileManager : MonoBehaviour {
 	
-	private int xTiles = 16;
-	private int yTiles = 16;
+	private int xTiles = 11;
+	private int yTiles = 11;
 	public GameObject[,] tiles;
 	
 	public GameObject tile;
@@ -107,70 +107,23 @@ public class TileManager : MonoBehaviour {
 	}
 	
 	void addPresetTrees(){
-		addTree (0,7,20);
-		addTree (2,7,21);
-		addTree (3,7,22);
-		addTree (4,7,23);
+		addTree (10,6,20);
+		addTree (10,5,21);
+		addTree (10,4,22);
 		
-		addTree (15,7,24);
-		addTree (13,7,25);
-		addTree (12,7,26);
-		addTree (11,7,27);
+		addTree (0,4,23);
+		addTree (0,5,24);
+		addTree (0,6,25);
 		
+		addTree (5,4,26);
+		addTree (4,4,27);
+		addTree (3,4,28);
 		
-		addTree (0,8,28);
-		addTree (2,8,29);
-		addTree (3,8,30);
-		addTree (4,8,31);
-		
-		addTree (15,8,32);
-		addTree (13,8,33);
-		addTree (12,8,34);
-		addTree (11,8,35);
-	
-		addTree (7,7,36);
-		addTree (7,8,37);
-		addTree (8,7,38);
-		addTree (8,8,39);
-		
+		addTree (5,6,29);
+		addTree (4,6,30);
+		addTree (3,6,31);
 	}
-	
-	void addPresetAllyUnits(){
-		//melee units
-		addUnit (5,3,7,true, 0);
-		addUnit (6,3,7,true, 1);
-		addUnit (9,3,7,true, 2);
-		addUnit (10,3,7,true, 3);
-		
-		//ranged units
-		addUnit (5,2,1,true, 4);
-		addUnit (6,2,1,true, 5);
-		addUnit (9,2,8,true, 6);
-		addUnit (10,2,3,true, 7);
-		
-		//guardian and soulstone
-		addUnit (7,0,10,true, 8);
-		addUnit (8,0,11,true, 9);
-	}
-	
-	void addPresetEnemyUnits(){
-		//melee units
-		addUnit (5,12,7,false, 10);
-		addUnit (6,12,7,false, 11);
-		addUnit (9,12,7,false, 12);
-		addUnit (10,12,7,false, 13);
-		
-		//ranged units
-		addUnit (5,13,1,false, 14);
-		addUnit (6,13,1,false, 15);
-		addUnit (9,13,8,false, 16);
-		addUnit (10,13,3,false, 17);
-		
-		//guardian and soulstone
-		addUnit (7,15,10,false, 18);
-		addUnit (8,15,11,false, 19);
-	}
-	
+
 	void addTree(int x, int y,int unitID){
 		TileScript placeTile = tiles[x,y].GetComponent<TileScript>();
 		GameObject tree = (GameObject)Instantiate(environmentObject, 

@@ -237,7 +237,7 @@ public class GameProcess : MonoBehaviour {
 			//switchTurns
 			else if (tokens[0].Equals("switchTurns"))
 			{
-				gameManager.nextTurn();
+				gameManager.nextTurn(Int32.Parse (tokens[1]));
 			}
 			
 			//TODO mmr

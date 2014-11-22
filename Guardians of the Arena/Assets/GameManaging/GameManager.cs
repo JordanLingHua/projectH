@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour {
-	public bool turn;
+	public bool turn, incMana;
 	public bool movingPiece,gameOver;
 	public enum gameState {playerMv,playerAtk}
 	
@@ -166,18 +166,11 @@ public class GameManager : MonoBehaviour {
 			}
 		}
 	}
-	public void nextTurn(){
+	public void nextTurn(int mana){
 		//reset game clock, mana, and increase max mana
 		timer = TIMER_LENGTH;
-		
-		if (!turn){
-			gs = gameState.playerMv;
-
-			if (maxMana < GAME_MAX_MANA)
-				maxMana+=2;
-		}
 		turn = !turn;
-		pMana = maxMana;
+		pMana = maxMana = mana;
 		
 		//toggle between players turns and reset units
 		tm.clearAllTiles();
