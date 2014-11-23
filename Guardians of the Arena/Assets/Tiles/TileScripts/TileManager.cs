@@ -114,14 +114,19 @@ public class TileManager : MonoBehaviour {
 		addTree (0,4,23);
 		addTree (0,5,24);
 		addTree (0,6,25);
+
+		addTree (4,4,26);
+		addTree (3,4,27);
+
+		addTree (4,6,28);
+		addTree (3,6,29);
 		
-		addTree (5,4,26);
-		addTree (4,4,27);
-		addTree (3,4,28);
-		
-		addTree (5,6,29);
-		addTree (4,6,30);
-		addTree (3,6,31);
+		addTree (6,6,30);
+		addTree (7,6,31);
+
+		addTree (6,4,32);
+		addTree (7,4,33);
+
 	}
 
 	void addTree(int x, int y,int unitID){
