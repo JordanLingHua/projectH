@@ -55,9 +55,10 @@ public class GameManager : MonoBehaviour {
 		timerText.text = "Time Left: " + (int)timer;
 		if (!gameOver){
 			timer -= Time.deltaTime;
-		    if ( timer < 0  && turn){
+		    if ( timer <= 0  && turn){
 				print("timer ended");
 				gp.returnSocket().SendTCPPacket("endTurn");
+				timer = 0f;
 			}
 		}
 
@@ -132,11 +133,12 @@ public class GameManager : MonoBehaviour {
 			string buttontext = turn ? "End Turn" : "Opponent Turn ";
 			if (GUI.Button (new Rect(Screen.width - 130,20,130,20),buttontext)){
 				if (turn){
+					gp.returnSocket().SendTCPPacket("endTurn");
 					am.playButtonSFX();
 				}else{
 					am.playErrorSFX();
 				}
-				gp.returnSocket().SendTCPPacket("endTurn");
+
 			}
 		}
 

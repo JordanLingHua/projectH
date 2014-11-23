@@ -93,13 +93,12 @@ public class MainMenuGUI : MonoBehaviour {
 			{
 				am.playButtonSFX();
 				DontDestroyOnLoad(gp);
-				DontDestroyOnLoad(globalChat);
+				DontDestroyOnLoad(GameObject.Find("globalChat"));
+				DontDestroyOnLoad(GameObject.Find("gChat"));
 				DontDestroyOnLoad(GameObject.Find("PageNumber"));
 				DontDestroyOnLoad(GameObject.Find("ListOfPlayers"));
 				DontDestroyOnLoad(GameObject.Find("ListOfPlayersGUIText"));
 				Application.LoadLevel(2);
-				
-				//gp.returnSocket().SendTCPPacket("getBoardData\\1\\" + gp.playerName);
 			}
 			
 			if ( GUI.Button( new Rect(540, Screen.height - 30, 110, 20), "Send"))

@@ -50,11 +50,11 @@ public class PopUpMenu : MonoBehaviour {
 			am.setSFXVolume(am.sfxVolume);
 
 			if (Application.loadedLevelName.Equals("BoardScene")){
-			//Surrender Button
+				//Surrender Button
 				if (GUI.Button (new Rect (50, 245, 100, 20), "Surrender"))
 				{
 					am.playButtonSFX();
-					gp.returnSocket().SendTCPPacket("surrender\\" + gp.clientNumber);
+					gp.returnSocket().SendTCPPacket("surrender");
 				}
 			}
 			

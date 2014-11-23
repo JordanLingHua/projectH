@@ -180,6 +180,7 @@ public class Unit    : MonoBehaviour {
 		if (xp >= XP_TO_LEVEL[unitLevel-1]){
 			unitLevel ++;
 			hp +=5;
+			maxHP += 5;
 			atk +=5;
 			mvRange += 1;
 			mvCost = mvCost <=0 ? 0: mvCost-1;
@@ -305,7 +306,7 @@ public class Unit    : MonoBehaviour {
 	
 	void getMvAccessibleTiles(HashSet<TileScript> list, TileScript tile, int num,allegiance ally){
 		TileScript tileS = tile.transform.GetComponent<TileScript> ();
-		print ("ran getMvTile");
+		//print ("ran getMvTile");
 		if (num != 0) {
 			if (tileS.up != null && (tileS.up.GetComponent<TileScript> ().objectOccupyingTile == null || tileS.up.GetComponent<TileScript> ().objectOccupyingTile.GetComponent<Unit> ().alleg == ((ally == allegiance.playerOne) ? allegiance.playerOne : allegiance.playerTwo))) {
 				list.Add (tileS.up.GetComponent<TileScript> ());
