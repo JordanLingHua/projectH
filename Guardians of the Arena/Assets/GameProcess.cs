@@ -227,8 +227,8 @@ public class GameProcess : MonoBehaviour {
 
 				gameManager.pMana -= gameManager.units[Int32.Parse (tokens[1])].atkCost;
 				for (int i = 0; i < Int32.Parse (tokens[2]); i ++ ){
-					gameManager.units[Int32.Parse(tokens[3+i])].attackThisUnit(gameManager.units[Int32.Parse (tokens[1])]);
 					StartCoroutine(gameManager.units[Int32.Parse(tokens[3+i])].showDmgDealt(gameManager.units[Int32.Parse (tokens[1])].atk));
+					gameManager.units[Int32.Parse(tokens[3+i])].attackThisUnit(gameManager.units[Int32.Parse (tokens[1])]);
 				}
 
 				gameManager.units[Int32.Parse (tokens[1])].gainXP();
