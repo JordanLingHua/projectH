@@ -74,7 +74,9 @@ public class Unit    : MonoBehaviour {
 		hpBarLow = Resources.Load("HPBarLow") as Texture2D;
 		am = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
-		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+		if (Application.loadedLevelName.Equals("BoardScene")){
+			gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+		}
 		info = string.Empty;
 	}	
 	
@@ -132,10 +134,27 @@ public class Unit    : MonoBehaviour {
 		//show unit info when hovering over it
 
 		if (Application.loadedLevelName.Equals("BoardScene")){
-			this.transform.parent.renderer.material.shader = Shader.Find ("Toon/Lighted");
 			refreshUnitText ();
 			transform.parent.GetComponent<TileScript> ().OnMouseEnter ();
-		}			
+		}else{
+			string info = "Unit Information:\n" +unitName + "\nHP: " + hp + "/" + maxHP;
+			info += "\nMovement Range: " + mvRange;
+			info += mvCost > 0? "\nMove Cost: " + mvCost : "";
+			info += atkCost > 0? "\nAttack Cost: " + atkCost : "";
+			info += atk > 0? "\nDamage: " + atk : "";
+
+			GameObject.Find ("SetupScreenUnitInfo").GetComponent<GUIText>().text = info;
+		}		
+	}
+
+	void OnMouseExit(){
+		//clear unit info when not hovering over it
+		if (Application.loadedLevelName.Equals("BoardScene")){
+			transform.parent.GetComponent<TileScript> ().OnMouseExit ();
+			gm.uInfo.text  = "";
+		}else {
+			GameObject.Find ("SetupScreenUnitInfo").GetComponent<GUIText>().text = "Unit Information:";
+		}
 	}
 
 
@@ -164,16 +183,6 @@ public class Unit    : MonoBehaviour {
 		}
 		gm.uInfo.text = info;
 	}
-	
-	void OnMouseExit(){
-		//clear unit info when not hovering over it
-		gm.uInfo.text  = "";
-
-		if (Application.loadedLevelName.Equals("BoardScene"))
-			this.transform.parent.renderer.material.shader = Shader.Find ("Toon/Basic");
-		  
-
-	}
 
 	public void gainXP(){
 		xp += 5;
@@ -194,7 +203,8 @@ public class Unit    : MonoBehaviour {
 		//Attack this piece if:
 		//the game is in attack mode
 		//the unit selected is in range of the selected unit
-		if (gm.turn) {
+
+		if (Application.loadedLevelName.Equals("BoardScene") && gm.turn) {
 			if (gm.gs == GameManager.gameState.playerAtk 
 					&& gm.accessibleTiles.Contains (this.transform.parent.GetComponent<TileScript> ())) {
 				transform.parent.GetComponent<TileScript>().attackTile ();
