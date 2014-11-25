@@ -190,7 +190,7 @@ public class PlayerSetup : MonoBehaviour {
 		{
 			for (int j = 0; j < yStorage_Tiles; j++)
 			{
-				Vector3 position = new Vector3((10 * i), 0, (10 * j)-20);//each square is 10 points away from each other
+				Vector3 position = new Vector3((10 * i), 0, (10 * j)-25);//each square is 10 points away from each other
 				//-20 offsets all these tiles to appear below the game board along the z direction
 
 				//NOTICE how a global variable ("public GameObject tile" in this case) has to have prefab attached to it in editor
