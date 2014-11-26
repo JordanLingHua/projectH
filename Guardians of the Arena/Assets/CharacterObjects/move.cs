@@ -5,8 +5,11 @@ using System.Collections;
 public class move : MonoBehaviour {
 
 	GameProcess gp;
+	GameObject oldTile;
+	GameObject currentTile;
 	bool pieceMoved;
 	bool onField;
+	bool trackMouse;
 	public PlayerSetup playerSetup;
 	SetupTileScript oldScript;
 	//drag and drop
@@ -25,6 +28,7 @@ public class move : MonoBehaviour {
 	{
 		gp = GameObject.Find ("GameProcess").GetComponent<GameProcess>();
 		pieceMoved = false;
+		trackMouse = false;
 		playerSetup = GameObject.Find ("PlayerSetup").GetComponent<PlayerSetup>(); 
 	}
 
@@ -33,11 +37,14 @@ public class move : MonoBehaviour {
 		//Save the last position of the piece in case in needs to get snapped back
 		playerSetup.prevPosition = transform.position;
 		isTouched = true;
+		trackMouse = true;
 
 	}
 	
 	void OnMouseUp()
 	{
+		currentTile.renderer.material.shader = Shader.Find ("Toon/Basic");
+		trackMouse = false;
 		pieceMoved = false;
 		isTouched = false;
 		oldScript = this.gameObject.GetComponentInParent<SetupTileScript> ();
@@ -171,6 +178,7 @@ public class move : MonoBehaviour {
 	
 	void Update()
 	{
+		
 		if (isTouched)
 		{
 			ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -179,5 +187,24 @@ public class move : MonoBehaviour {
 				transform.position = new Vector3(hit.point.x, 5.0f, hit.point.z);
 			}
 		}
+
+		if (trackMouse) 
+		{
+			if (oldTile != null)
+				oldTile.renderer.material.shader = Shader.Find ("Toon/Basic");
+
+			currentTile = findNearestTile();
+			this.gameObject.transform.position = findNearestTile().transform.position;
+			currentTile.renderer.material.shader = Shader.Find ("Toon/Lighted");
+
+
+
+			oldTile = currentTile;
+
+
+
+		}
+
+
 	}
 }
