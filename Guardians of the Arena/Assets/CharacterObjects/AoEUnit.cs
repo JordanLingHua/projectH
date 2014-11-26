@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class UnitFour : Unit {
+public class AoEUnit : Unit {
 	//NOT IN DEVELOPMENT
 
 

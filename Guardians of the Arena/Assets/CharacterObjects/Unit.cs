@@ -216,11 +216,19 @@ public class Unit    : MonoBehaviour {
 	}
 
 	//TODO: move this logic to the server
-	public void attackThisUnit(Unit unitThatAttacked){
+	public virtual void attackThisUnit(Unit unitThatAttacked){
 			
 		if (!invincible){
-			gm.combatLog.text = "Combat Log:\nDealt " + unitThatAttacked.atk + " damage!";
-			this.hp -= unitThatAttacked.atk;
+			//gm.combatLog.text = "Combat Log:\nDealt " + unitThatAttacked.atk + " damage!";
+			if (unitThatAttacked.atk > 0){
+				this.hp -= unitThatAttacked.atk;
+			}else{
+				//heal unit if it's being attacked by healer
+				this.hp -= unitThatAttacked.atk;
+				if (hp > maxHP)
+					hp = maxHP;
+			}
+			//if (unitType == 8
 			
 			//if the unit attacked was killed, remove it from the board and unit list
 			if (this.hp <=0){				

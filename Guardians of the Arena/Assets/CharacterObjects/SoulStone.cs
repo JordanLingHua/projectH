@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class UnitEleven : Unit {
+public class SoulStone: Unit {
 	
 
 
