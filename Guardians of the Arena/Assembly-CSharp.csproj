@@ -49,24 +49,26 @@
      <Compile Include="Assets\AudioManager.cs" />
      <Compile Include="Assets\CameraScript1.cs" />
      <Compile Include="Assets\CameraScript2.cs" />
+     <Compile Include="Assets\CharacterObjects\AoEUnit.cs" />
+     <Compile Include="Assets\CharacterObjects\BuffingUnit.cs" />
+     <Compile Include="Assets\CharacterObjects\Guardian.cs" />
+     <Compile Include="Assets\CharacterObjects\KnifeThrower.cs" />
+     <Compile Include="Assets\CharacterObjects\Mystic.cs" />
+     <Compile Include="Assets\CharacterObjects\Priest.cs" />
+     <Compile Include="Assets\CharacterObjects\RangedUnit.cs" />
+     <Compile Include="Assets\CharacterObjects\SoulStone.cs" />
+     <Compile Include="Assets\CharacterObjects\Swordsman.cs" />
+     <Compile Include="Assets\CharacterObjects\Templar.cs" />
      <Compile Include="Assets\CharacterObjects\Unit.cs" />
-     <Compile Include="Assets\CharacterObjects\UnitEight.cs" />
-     <Compile Include="Assets\CharacterObjects\UnitEleven.cs" />
-     <Compile Include="Assets\CharacterObjects\UnitFive.cs" />
-     <Compile Include="Assets\CharacterObjects\UnitFour.cs" />
-     <Compile Include="Assets\CharacterObjects\UnitNine.cs" />
-     <Compile Include="Assets\CharacterObjects\UnitOne.cs" />
-     <Compile Include="Assets\CharacterObjects\UnitSeven.cs" />
-     <Compile Include="Assets\CharacterObjects\UnitSix.cs" />
-     <Compile Include="Assets\CharacterObjects\UnitTen.cs" />
-     <Compile Include="Assets\CharacterObjects\UnitThree.cs" />
-     <Compile Include="Assets\CharacterObjects\UnitTwo.cs" />
+     <Compile Include="Assets\CharacterObjects\UtilityUnit.cs" />
      <Compile Include="Assets\CharacterObjects\move.cs" />
      <Compile Include="Assets\GameManaging\GameManager.cs" />
      <Compile Include="Assets\GameProcess.cs" />
      <Compile Include="Assets\ListOfPlayersScript.cs" />
      <Compile Include="Assets\LoginScreenGUI.cs" />
      <Compile Include="Assets\MainMenuGUI.cs" />
+     <Compile Include="Assets\Page.cs" />
+     <Compile Include="Assets\PageNumberScript.cs" />
      <Compile Include="Assets\PlayerSetup.cs" />
      <Compile Include="Assets\PopUpMenu.cs" />
      <Compile Include="Assets\SetupScreenGUI.cs" />
@@ -86,7 +88,7 @@
      <None Include="Assets\Standard Assets\Projectors\Sources\Shaders\Projector Light.shader" />
      <None Include="Assets\Standard Assets\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-LightedOutline.shader" />
-     <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Lighted.shader" />
+     <None Include="Assets\Resources\Toony-Lighted.shader" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">

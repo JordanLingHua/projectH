@@ -7,6 +7,8 @@ Project("{92AFE79C-229A-32F7-BDA1-8EF56441D5B7}") = "Guardians of the Arena", "A
 EndProject
 Project("{92AFE79C-229A-32F7-BDA1-8EF56441D5B7}") = "Guardians of the Arena", "Assembly-UnityScript-firstpass.unityproj", "{858E2ECC-6393-9DB9-1F29-3DAA1D936563}"
 EndProject
+Project("{92AFE79C-229A-32F7-BDA1-8EF56441D5B7}") = "Guardians of the Arena", "Assembly-UnityScript.unityproj", "{0FE2B79F-43CB-EFA1-0ABB-D7F115CC3120}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,11 +27,15 @@ Global
 		{858E2ECC-6393-9DB9-1F29-3DAA1D936563}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{858E2ECC-6393-9DB9-1F29-3DAA1D936563}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{858E2ECC-6393-9DB9-1F29-3DAA1D936563}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FE2B79F-43CB-EFA1-0ABB-D7F115CC3120}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FE2B79F-43CB-EFA1-0ABB-D7F115CC3120}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FE2B79F-43CB-EFA1-0ABB-D7F115CC3120}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FE2B79F-43CB-EFA1-0ABB-D7F115CC3120}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																																																												GlobalSection(MonoDevelopProperties) = preSolution
+																																																																														GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
