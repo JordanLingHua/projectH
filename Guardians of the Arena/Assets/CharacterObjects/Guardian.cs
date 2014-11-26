@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class UnitTen :Unit {
+public class Guardian :Unit {
 
 
 

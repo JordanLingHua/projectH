@@ -126,7 +126,6 @@ public class TileManager : MonoBehaviour {
 
 		addTree (6,4,32);
 		addTree (7,4,33);
-
 	}
 
 	public void addTree(int x, int y,int unitID){

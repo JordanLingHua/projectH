@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class UnitFive : Unit {
+public class UtilityUnit : Unit {
 	//NOT IN DEVELOPMENT
 
 

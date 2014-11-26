@@ -1,15 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class UnitOne : Unit {
-
-
-
+public class KnifeThrower : Unit {
 
 	void Start () {
 		base.Start ();
 		unitType = 1;
-		unitName = "Knife Juggler";
+		unitName = "Knife Thrower";
 		hp = 20;
 		maxHP = 20;
 		atk = 18;

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class UnitSix : Unit {
+public class BuffingUnit : Unit {
 	//NOT IN DEVELOPMENT
 
 

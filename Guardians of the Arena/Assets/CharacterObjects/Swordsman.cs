@@ -1,15 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class UnitSeven : Unit {
-
-
-
+public class Swordsman : Unit {
 
 	void Start(){
 		base.Start ();
 		unitType = 7;
-		unitName = "Shield Master";
+		unitName = "Swordsman";
 		hp = 38;
 		maxHP = 38;	
 		atk = 10;

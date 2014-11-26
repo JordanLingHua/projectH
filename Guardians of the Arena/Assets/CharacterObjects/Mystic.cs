@@ -1,14 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class UnitTwo: Unit {
+public class Mystic: Unit {
 	
 
 
 	void Start () {
 		base.Start ();
 		unitType = 2;
-		unitName = "Focus Mage";
+		unitName = "Mystic";
 		hp = 30;
 		maxHP = 30;
 		atk = 0;//change later
