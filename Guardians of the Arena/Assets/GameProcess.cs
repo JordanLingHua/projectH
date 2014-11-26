@@ -200,7 +200,7 @@ public class GameProcess : MonoBehaviour {
 				int i = 1;
 				while(!tokens[i].Equals("EndPlayer1"))
 				{
-					tileManager.addUnit(Int32.Parse(tokens[i+2]), Int32.Parse(tokens[i+3]), Int32.Parse(tokens[i]), playerNumber == 1, Int32.Parse(tokens[i+1]));
+					tileManager.addUnit(Int32.Parse(tokens[i+2]), Int32.Parse(tokens[i+3]), Int32.Parse(tokens[i]),1, Int32.Parse(tokens[i+1]));
 					i += 4;
 				}
 				i++;
@@ -210,7 +210,7 @@ public class GameProcess : MonoBehaviour {
 				//unitType\\unitID\\xPos\\yPos
 				while(!tokens[i].Equals("EndPlayer2"))
 				{
-					tileManager.addUnit(Int32.Parse(tokens[i+2]), Int32.Parse(tokens[i+3]), Int32.Parse(tokens[i]), playerNumber == 2, Int32.Parse(tokens[i+1]));
+					tileManager.addUnit(Int32.Parse(tokens[i+2]), Int32.Parse(tokens[i+3]), Int32.Parse(tokens[i]),2, Int32.Parse(tokens[i+1]));
 					i += 4;
 				}
 
@@ -238,12 +238,10 @@ public class GameProcess : MonoBehaviour {
 			// unitID (that attacked) \\number of units affected\\ units
 			else if (tokens[0].Equals("attack"))
 			{
-				gameManager.units[Int32.Parse (tokens[1])].atkd = true;
-
 				gameManager.pMana -= gameManager.units[Int32.Parse (tokens[1])].atkCost;
 				for (int i = 0; i < Int32.Parse (tokens[2]); i ++ ){
 					StartCoroutine(gameManager.units[Int32.Parse(tokens[3+i])].showDmgDealt(gameManager.units[Int32.Parse (tokens[1])].atk));
-					gameManager.units[Int32.Parse(tokens[3+i])].attackThisUnit(gameManager.units[Int32.Parse (tokens[1])]);
+					gameManager.units[Int32.Parse (tokens[1])].attackUnit(gameManager.units[Int32.Parse(tokens[3+i])]);
 				}
 
 				gameManager.units[Int32.Parse (tokens[1])].gainXP();
@@ -287,6 +285,10 @@ public class GameProcess : MonoBehaviour {
 	
 	public void movePiece(int unitID, int toX, int toY)
 	{
+		if (gameManager.units [unitID].unitType == 2) {
+			Mystic x = gameManager.units[unitID] as Mystic;
+			x.revertStatsOfFocused();
+		}
 		gameManager.pMana -= gameManager.units[unitID].mvCost;
 		
 		TileScript from = gameManager.units[unitID].transform.parent.GetComponent<TileScript>();

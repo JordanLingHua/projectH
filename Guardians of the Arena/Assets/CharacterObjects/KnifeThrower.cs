@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class KnifeThrower : Unit {
 
@@ -9,10 +10,10 @@ public class KnifeThrower : Unit {
 		unitName = "Knife Thrower";
 		hp = 20;
 		maxHP = 20;
-		atk = 18;
+		atk = 18;  
 		mvRange = 4;
 		mvCost = 2;
-		atkRange = 3;
+		atkRange = 4;
 		atkCost = 2;
 		//unitRole = "Ranged";
 		unitRole = 500;//ranged
@@ -37,6 +38,42 @@ public class KnifeThrower : Unit {
 				break;
 			}
 		}
+	}	
+
+	//gain xp add attack range for lvl 2
+	public override void gainXP(){
+		xp += 5;
+		if (xp >= XP_TO_LEVEL[unitLevel-1]){
+			unitLevel ++;
+			if (unitLevel == 2){
+				atkRange++;
+			}
+		}
+	}
+
+	//show new AoE ability for level 3
+	public override List<GameObject> showAoEAffectedTiles(TileScript tile){
+		List <GameObject> ret = new List<GameObject> ();
+		if (unitLevel == 3) {
+			if (tile.up != null){
+				ret.Add (tile.up);
+				tile.up.renderer.material.color = new Color(1f,0.7f,0f, 0f);
+			}
+			if (tile.down != null){
+				ret.Add (tile.down);
+				tile.down.renderer.material.color = new Color(1f,0.7f,0f, 0f);
+			}
+			if (tile.left != null){
+				ret.Add (tile.left);
+				tile.left.renderer.material.color = new Color(1f,0.7f,0f, 0f);
+			}
+			if (tile.right != null){
+				ret.Add (tile.right);
+				tile.right.renderer.material.color = new Color(1f,0.7f,0f, 0f);
+			}
+
+		}
+		return ret;
 	}
 
 

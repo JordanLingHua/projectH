@@ -48,7 +48,9 @@ public class TileScript : MonoBehaviour {
 	
 	public void clearAoEAffectedTiles(){
 		foreach (GameObject tile in AoETiles) {
-			if (tile.GetComponent<TileScript>().objectOccupyingTile == null){
+			if(gm.accessibleTiles.Contains (tile.GetComponent<TileScript>())){
+				tile.renderer.material.color = new Color(1f,0.4f,0f, 0f);
+			}else if (tile.GetComponent<TileScript>().objectOccupyingTile == null){
 				tile.renderer.material.color = Color.white;			
 			}else if (tile.GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerOne){
 				tile.renderer.material.color = Color.blue;

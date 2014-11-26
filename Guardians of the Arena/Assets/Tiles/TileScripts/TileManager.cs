@@ -142,7 +142,7 @@ public class TileManager : MonoBehaviour {
 
 	}
 	
-	public void addUnit(int x, int y, int type, bool ally, int unitID){
+	public void addUnit(int x, int y, int type, int pNum, int unitID){
 		TileScript placeTile = tiles[x,y].GetComponent<TileScript>();
 		GameObject unit; 
 
@@ -213,10 +213,10 @@ public class TileManager : MonoBehaviour {
 
 		unit.transform.parent = placeTile.transform;
 		placeTile.objectOccupyingTile = unit;
-		unit.GetComponent<Unit> ().alleg = ally? Unit.allegiance.playerOne : Unit.allegiance.playerTwo;
+		unit.GetComponent<Unit> ().alleg = pNum == 1? Unit.allegiance.playerOne : Unit.allegiance.playerTwo;
 		unit.GetComponent<Unit> ().unitID = unitID;
 
-		placeTile.gameObject.renderer.material.color = ally? Color.blue : Color.red;
+		placeTile.gameObject.renderer.material.color = pNum == 1 ? Color.blue : Color.red;
 
 		gm.units.Add(unitID,unit.GetComponent<Unit>());
 

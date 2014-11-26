@@ -22,56 +22,110 @@ public class Templar : Unit{
 		renderer.material.color = new Color32(255,255,0,1);
 	}
 
+
+	public virtual void attackUnit(Unit unitAffected){
+		atkd = true;
+		
+		if (!invincible){
+
+			//level 3 Heal ally units
+			if (unitLevel == 3 && (gp.playerNumber == 1 && unitAffected.alleg == Unit.allegiance.playerOne) || (gp.playerNumber == 2 && unitAffected.alleg == Unit.allegiance.playerTwo)){
+				unitAffected.hp += this.atk;
+				if (unitAffected.hp > unitAffected.maxHP){
+					unitAffected.hp = unitAffected.maxHP;
+				}
+			//Deal extra dmg to full hp units at level 2+
+			}else if (unitLevel >= 2 && unitAffected.hp == unitAffected.maxHP) {
+				unitAffected.hp -= this.atk +5;
+			}else{
+				unitAffected.hp -= this.atk;
+			}
+
+
+			//if healed up dont let it have more than max hp
+			if (unitAffected.hp > unitAffected.maxHP){
+				unitAffected.hp = unitAffected.maxHP;
+			}
+			
+			//if the unit attacked was killed, remove it from the board and unit list
+			if (unitAffected.hp <=0){				
+				
+				//Kill Guardian then SS vulnerable
+				if (unitAffected.unitType == 10){
+					if (unitAffected.alleg == allegiance.playerOne){
+						playerSSKillable();
+					}else{
+						enemySSKillable();
+					}
+					
+				}else if (unitAffected.unitType == 11){
+					gm.gameOver = true;
+				}
+				
+				//Kill unit and remove from game
+				gm.units.Remove(unitAffected.unitID);
+				this.transform.parent.GetComponent<TileScript>().objectOccupyingTile = null;
+				Destroy(gameObject);
+			}
+		}else{
+			gm.combatLog.text = "Combat Log:\nTarget is invincible!";
+		}
+		//clean up the board colors
+		gm.accessibleTiles.Clear();
+		this.transform.parent.gameObject.transform.parent.GetComponent<TileManager>().clearAllTiles();
+	}
+
+
 	public override List<GameObject> showAoEAffectedTiles(TileScript tile){
 		List <GameObject> ret = new List<GameObject> ();
 		if (tile.gameObject == gm.selectedUnit.transform.parent.GetComponent<TileScript>().up && tile.up != null) {
-			tile.up.renderer.material.color = new Color(1f,0.4f,0f, 0f);
+			tile.up.renderer.material.color = new Color(1f,0.7f,0f, 0f);
 			ret.Add(tile.up);
 			if (tile.up.GetComponent<TileScript>().right != null){
-				tile.up.GetComponent<TileScript>().right.renderer.material.color = new Color(1f,0.4f,0f, 0f);
+				tile.up.GetComponent<TileScript>().right.renderer.material.color = new Color(1f,0.7f,0f, 0f);
 				ret.Add (tile.up.GetComponent<TileScript>().right);
 			}
 			if (tile.up.GetComponent<TileScript>().left != null){
-				tile.up.GetComponent<TileScript>().left.renderer.material.color = new Color(1f,0.4f,0f, 0f);
+				tile.up.GetComponent<TileScript>().left.renderer.material.color = new Color(1f,0.7f,0f, 0f);
 				ret.Add (tile.up.GetComponent<TileScript>().left);
 			}
 
 		}
 
 		if (tile.gameObject == gm.selectedUnit.transform.parent.GetComponent<TileScript>().down && tile.down != null) {
-			tile.down.renderer.material.color = new Color(1f,0.4f,0f, 0f);
+			tile.down.renderer.material.color = new Color(1f,0.7f,0f, 0f);
 			ret.Add (tile.down);
 			if (tile.down.GetComponent<TileScript>().right != null){
-				tile.down.GetComponent<TileScript>().right.renderer.material.color = new Color(1f,0.4f,0f, 0f);
+				tile.down.GetComponent<TileScript>().right.renderer.material.color = new Color(1f,0.7f,0f, 0f);
 				ret.Add (tile.down.GetComponent<TileScript>().right);
 			}
 			if (tile.down.GetComponent<TileScript>().left != null){
-				tile.down.GetComponent<TileScript>().left.renderer.material.color = new Color(1f,0.4f,0f, 0f);
+				tile.down.GetComponent<TileScript>().left.renderer.material.color = new Color(1f,0.7f,0f, 0f);
 				ret.Add (tile.down.GetComponent<TileScript>().left);
 			}
 		}
 		if (tile.gameObject == gm.selectedUnit.transform.parent.GetComponent<TileScript>().right && tile.right != null) {
-			tile.right.renderer.material.color = new Color(1f,0.4f,0f, 0f);
+			tile.right.renderer.material.color = new Color(1f,0.7f,0f, 0f);
 			ret.Add (tile.right);
 			if (tile.right.GetComponent<TileScript>().up != null){
-				tile.right.GetComponent<TileScript>().up.renderer.material.color = new Color(1f,0.4f,0f, 0f);
+				tile.right.GetComponent<TileScript>().up.renderer.material.color = new Color(1f,0.7f,0f, 0f);
 				ret.Add (tile.right.GetComponent<TileScript>().up);
 			}
 			if (tile.right.GetComponent<TileScript>().down != null){
-				tile.right.GetComponent<TileScript>().down.renderer.material.color = new Color(1f,0.4f,0f, 0f);
+				tile.right.GetComponent<TileScript>().down.renderer.material.color = new Color(1f,0.7f,0f, 0f);
 				ret.Add (tile.right.GetComponent<TileScript>().down);
 			}
 		}
 
 		if (tile.gameObject == gm.selectedUnit.transform.parent.GetComponent<TileScript>().left && tile.left != null) {
-			tile.left.renderer.material.color = new Color(1f,0.4f,0f, 0f);
+			tile.left.renderer.material.color = new Color(1f,0.7f,0f, 0f);
 			ret.Add (tile.left);
 			if (tile.left.GetComponent<TileScript>().up != null){
-				tile.left.GetComponent<TileScript>().up.renderer.material.color = new Color(1f,0.4f,0f, 0f);
+				tile.left.GetComponent<TileScript>().up.renderer.material.color = new Color(1f,0.7f,0f, 0f);
 				ret.Add (tile.left.GetComponent<TileScript>().up);
 			}
 			if (tile.left.GetComponent<TileScript>().down != null){
-				tile.left.GetComponent<TileScript>().down.renderer.material.color = new Color(1f,0.4f,0f, 0f);
+				tile.left.GetComponent<TileScript>().down.renderer.material.color = new Color(1f,0.7f,0f, 0f);
 				ret.Add (tile.left.GetComponent<TileScript>().down);
 			}
 		}

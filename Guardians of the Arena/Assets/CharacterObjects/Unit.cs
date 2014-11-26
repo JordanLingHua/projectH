@@ -112,7 +112,7 @@ public class Unit    : MonoBehaviour {
 		}
 	}
 
-	void playerSSKillable(){
+	public void playerSSKillable(){
 		foreach (int key in gm.units.Keys){
 			if (gm.units[key].unitType == 11 && gm.units[key].alleg == allegiance.playerOne){
 				gm.units[key].invincible = false;
@@ -121,7 +121,7 @@ public class Unit    : MonoBehaviour {
 		}
 	}
 
-	void enemySSKillable(){
+	public void enemySSKillable(){
 		foreach (int key in gm.units.Keys){
 			if (gm.units[key].unitType == 11 && gm.units[key].alleg == allegiance.playerTwo){
 				gm.units[key].invincible = false;
@@ -184,17 +184,12 @@ public class Unit    : MonoBehaviour {
 		gm.uInfo.text = info;
 	}
 
-	public void gainXP(){
+	public virtual void gainXP(){
 		xp += 5;
 		if (xp >= XP_TO_LEVEL[unitLevel-1]){
 			unitLevel ++;
 			hp +=5;
 			maxHP += 5;
-			atk +=5;
-			mvRange += 1;
-			mvCost = mvCost <=0 ? 0: mvCost-1;
-			atkRange += 1;
-			atkCost = atkCost <= 0 ? 0: atkCost-1;
 			refreshUnitText();
 		}
 	}
@@ -216,42 +211,36 @@ public class Unit    : MonoBehaviour {
 	}
 
 	//TODO: move this logic to the server
-	public virtual void attackThisUnit(Unit unitThatAttacked){
-			
+	public virtual void attackUnit(Unit unitAffected){
+		atkd = true;
+
 		if (!invincible){
 			//gm.combatLog.text = "Combat Log:\nDealt " + unitThatAttacked.atk + " damage!";
-			if (unitThatAttacked.atk > 0){
-				this.hp -= unitThatAttacked.atk;
-			}else{
-				//heal unit if it's being attacked by healer
-				this.hp -= unitThatAttacked.atk;
-				if (hp > maxHP)
-					hp = maxHP;
+			unitAffected.hp -= this.atk;
+			//if healed up dont let it have more than max hp
+			if (unitAffected.hp > unitAffected.maxHP){
+				unitAffected.hp = unitAffected.maxHP;
 			}
-			//if (unitType == 8
 			
 			//if the unit attacked was killed, remove it from the board and unit list
-			if (this.hp <=0){				
+			if (unitAffected.hp <=0){				
 
-				if (unitType == 10){
-					if (alleg == allegiance.playerOne){
+				//Kill Guardian then SS vulnerable
+				if (unitAffected.unitType == 10){
+					if (unitAffected.alleg == allegiance.playerOne){
 						playerSSKillable();
 					}else{
 						enemySSKillable();
 					}
-				}else if (unitType == 11){
+				
+				}else if (unitAffected.unitType == 11){
 					gm.gameOver = true;
 				}
 
-
-				gm.units.Remove(unitID);
-
-
+				//Kill unit and remove from game
+				gm.units.Remove(unitAffected.unitID);
 				this.transform.parent.GetComponent<TileScript>().objectOccupyingTile = null;
 				Destroy(gameObject);
-
-
-
 			}
 		}else{
 			gm.combatLog.text = "Combat Log:\nTarget is invincible!";
@@ -260,7 +249,6 @@ public class Unit    : MonoBehaviour {
 		gm.accessibleTiles.Clear();
 		this.transform.parent.gameObject.transform.parent.GetComponent<TileManager>().clearAllTiles();
 		refreshUnitText();
-
 	}
 
 	void selectUnit(){
