@@ -273,6 +273,11 @@ public class Unit    : MonoBehaviour {
 		}
 	}	
 
+	public virtual void resetUnitAbilities(){
+		atkd = false;
+		mvd = false;
+	}
+
 	void showMvAccessibleTiles(TileScript tile, int num,allegiance ally){
 		TileScript tileS = tile.transform.GetComponent<TileScript>();
 		

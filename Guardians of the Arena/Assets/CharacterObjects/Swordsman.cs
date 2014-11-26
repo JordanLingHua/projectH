@@ -20,8 +20,8 @@ public class Swordsman : Unit {
 		unitRole = 505;//MeleeTank
 		renderer.material.color = new Color32(102,51,0,1);
 	}
-	//TODO: move this logic to the server
-	public virtual void attackUnit(Unit unitAffected){
+
+	public override void attackUnit(Unit unitAffected){
 
 		//WIN-dfury
 		if (unitLevel == 3) {
@@ -76,6 +76,13 @@ public class Swordsman : Unit {
 		//clean up the board colors
 		gm.accessibleTiles.Clear();
 	}
+
+	public override void resetUnitAbilities ()
+	{
+		base.resetUnitAbilities ();
+		atkCharges = 2;
+	}
+
 
 	void Update () {
 	

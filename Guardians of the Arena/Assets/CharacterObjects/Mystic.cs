@@ -70,6 +70,42 @@ public class Mystic: Unit {
 		this.transform.parent.gameObject.transform.parent.GetComponent<TileManager>().clearAllTiles();
 	}
 
+	public override void resetUnitAbilities ()
+	{
+		base.resetUnitAbilities ();
+
+		//deal 8 dmg to unit every time if level 3 and focusing enemy unit
+		if (unitFocused != null && (gp.playerNumber == 1 && unitFocused.alleg == Unit.allegiance.playerTwo) || (gp.playerNumber == 2 && unitFocused.alleg == Unit.allegiance.playerOne) && unitLevel == 3) {
+			if (!invincible){
+				unitFocused.hp -= 8;
+				unitFocused.StartCoroutine(unitFocused.showDmgDealt(8));
+
+				//if the unit attacked was killed, remove it from the board and unit list
+				if (unitFocused.hp <=0){				
+					
+					//Kill Guardian then SS vulnerable
+					if (unitFocused.unitType == 10){
+						if (unitFocused.alleg == allegiance.playerOne){
+							playerSSKillable();
+						}else{
+							enemySSKillable();
+						}
+						
+					}else if (unitFocused.unitType == 11){
+						gm.gameOver = true;
+					}
+					
+					//Kill unit and remove from game
+					gm.units.Remove(unitFocused.unitID);
+					this.transform.parent.GetComponent<TileScript>().objectOccupyingTile = null;
+					Destroy(gameObject);
+				}
+			}else{
+				gm.combatLog.text = "Combat Log:\nTarget is invincible!";
+			}
+		}
+	}
+
 	void Update () {
 		
 	}

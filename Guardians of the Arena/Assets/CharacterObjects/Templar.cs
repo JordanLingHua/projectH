@@ -23,7 +23,7 @@ public class Templar : Unit{
 	}
 
 
-	public virtual void attackUnit(Unit unitAffected){
+	public override void attackUnit(Unit unitAffected){
 		atkd = true;
 		
 		if (!invincible){
@@ -154,7 +154,7 @@ public class Templar : Unit{
 	}
 
 
-	new void showAtkAccessibleTiles(TileScript tile, int num){
+	void showAtkAccessibleTiles(TileScript tile, int num){
 		tile.renderer.material.color = new Color (1f, 0.4f, 0f, 0f);
 		TileScript tileS = tile.transform.GetComponent<TileScript>();
 		if (num != 0){

@@ -22,7 +22,7 @@ public class Priest : Unit {
 		renderer.material.color = new Color32(204,255,153,1);
 	}
 
-	public virtual void gainXP(){
+	public override void gainXP(){
 		xp += 5;
 		if (xp >= XP_TO_LEVEL[unitLevel-1]){
 			unitLevel ++;

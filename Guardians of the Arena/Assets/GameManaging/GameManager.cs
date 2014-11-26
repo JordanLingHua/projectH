@@ -66,13 +66,6 @@ public class GameManager : MonoBehaviour {
 	
 	void OnGUI(){
 
-		if (gameOver && GUI.Button (new Rect (Screen.width / 2 - 75, Screen.height / 2, 130, 20), "Return to Menu"))
-		{
-			am.playButtonSFX();
-			DontDestroyOnLoad(GameObject.Find ("GameProcess"));
-			Application.LoadLevel(1);
-		}
-		
 		if (selectedUnit != null){
 			Unit script = selectedUnit.GetComponent<Unit>();
 			string info = script.unitName + "\nHP: " + script.hp + "/" + script.maxHP;
@@ -154,8 +147,7 @@ public class GameManager : MonoBehaviour {
 	void resetPlayerOneUnits(){
 		foreach (int key in units.Keys){
 			if (units[key].alleg == Unit.allegiance.playerOne){
-				units[key].atkd = false;
-				units[key].mvd = false;
+				units[key].resetUnitAbilities();
 			}
 		}
 	}
@@ -163,8 +155,7 @@ public class GameManager : MonoBehaviour {
 	void resetPlayerTwoUnits(){
 		foreach (int key in units.Keys){
 			if (units[key].alleg == Unit.allegiance.playerTwo){
-				units[key].atkd = false;
-				units[key].mvd = false;
+				units[key].resetUnitAbilities();
 			}
 		}
 	}
@@ -176,8 +167,13 @@ public class GameManager : MonoBehaviour {
 		
 		//toggle between players turns and reset units
 		tm.clearAllTiles();
-		resetPlayerOneUnits();
-		resetPlayerTwoUnits();
+
+		//possibly wrong
+		if (gp.playerNumber == 1 && turn || gp.playerNumber == 2 && !turn){
+			resetPlayerOneUnits();
+		}else{
+			resetPlayerTwoUnits();
+		}
 		clearSelection();	
 	}
 	

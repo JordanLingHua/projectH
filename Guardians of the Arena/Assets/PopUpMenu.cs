@@ -51,10 +51,18 @@ public class PopUpMenu : MonoBehaviour {
 
 			if (Application.loadedLevelName.Equals("BoardScene")){
 				//Surrender Button
-				if (GUI.Button (new Rect (50, 245, 100, 20), "Surrender"))
-				{
-					am.playButtonSFX();
-					gp.returnSocket().SendTCPPacket("surrender");
+				if (!GameObject.Find("GameManager").GetComponent<GameManager>().gameOver){
+					if (GUI.Button (new Rect (50, 245, 100, 20), "Surrender"))
+					{
+						am.playButtonSFX();
+						gp.returnSocket().SendTCPPacket("surrender");
+					}
+				}else{
+					if (GUI.Button (new Rect (50, 245, 100, 20), "Return to Menu")){
+						am.playButtonSFX();
+						DontDestroyOnLoad(GameObject.Find ("GameProcess"));
+						Application.LoadLevel(1);
+					}
 				}
 			}
 			
