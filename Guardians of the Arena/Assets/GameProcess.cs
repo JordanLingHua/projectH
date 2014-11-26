@@ -224,7 +224,7 @@ public class GameProcess : MonoBehaviour {
 				int i = 1;
 				while(!tokens[i].Equals("endSpawnObstacles"))
 				{
-					tileManager.addTree(Int32.Parse(tokens[i+1]), Int32.Parse(tokens[i+2]), Int32.Parse(tokens[i+3]));
+					tileManager.addTree(Int32.Parse(tokens[i+1]), Int32.Parse(tokens[i+2]), Int32.Parse(tokens[i]));
 					i += 3;
 				}
 			}
