@@ -13,16 +13,14 @@ public class Guardian :Unit {
 		maxHP = 45;
 		atk = 23;
 		mvRange = 2;
-		mvCost = 3;
+		mvCost = 2;
 		atkRange = 1;
 		atkCost = 1;
 		
 		unitRole = 505;//MeleeTank
 		renderer.material.color = new Color32(0,0,0,1);
 	}
-
-
-
+	
 	void Update () {
 	
 	}
