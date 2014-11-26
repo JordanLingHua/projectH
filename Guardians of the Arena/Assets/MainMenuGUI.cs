@@ -46,8 +46,7 @@ public class MainMenuGUI : MonoBehaviour {
 		
 		if (Event.current.keyCode == KeyCode.Return && !chat.Equals(string.Empty)) 
 		{
-			gp.returnSocket().SendTCPPacket("globalChat\\" + gp.playerName + "\\" + chat);
-		//	globalChat.addLineToChat(gp.playerName , chat);
+			gp.returnSocket().SendTCPPacket("globalChat\\" + chat);
 			chat = string.Empty;
 		}
 		
@@ -105,8 +104,8 @@ public class MainMenuGUI : MonoBehaviour {
 			{
 				if (!chat.Equals(string.Empty))
 				{
-					//gp.returnSocket().sendTCPPacket(gp.clientName + "\\" + chat;
-					globalChat.addLineToChat("joey" , chat);
+					gp.returnSocket().SendTCPPacket("globalChat\\" + chat);
+					//globalChat.addLineToChat("joey" , chat);
 					chat = string.Empty;
 				}
 			}

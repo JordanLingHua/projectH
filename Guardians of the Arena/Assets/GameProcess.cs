@@ -114,6 +114,7 @@ public class GameProcess : MonoBehaviour {
 				playerNumber = Int32.Parse(tokens[1]);
 				
 				DontDestroyOnLoad(GameObject.Find ("GameProcess"));
+				DontDestroyOnLoad(GameObject.Find ("PageNumber"));
 				DontDestroyOnLoad(this);
 				DontDestroyOnLoad (am);
 				DontDestroyOnLoad(pum);
@@ -125,6 +126,7 @@ public class GameProcess : MonoBehaviour {
 			// globalChat\\userName\\chatContent
 			else if (tokens[0].Equals("globalChat"))
 			{
+				print (tokens[1] +" " + tokens[2]);
 				GameObject.Find ("globalChat").GetComponent<globalChatScript>().addLineToChat(tokens[1], tokens[2]);
 			}
 			
@@ -212,6 +214,19 @@ public class GameProcess : MonoBehaviour {
 					i += 4;
 				}
 
+			}
+
+			else if (tokens[0].Equals("spawnObstacles"))
+			{
+				//    | Repeat for all trees
+				//    v                                      
+				//treeID\\xPos\\yPos
+				int i = 1;
+				while(!tokens[i].Equals("endSpawnObstacles"))
+				{
+					tileManager.addTree(Int32.Parse(tokens[i+1]), Int32.Parse(tokens[i+2]), Int32.Parse(tokens[i+3]));
+					i += 3;
+				}
 			}
 			
 			// unitID\\toX\\toY

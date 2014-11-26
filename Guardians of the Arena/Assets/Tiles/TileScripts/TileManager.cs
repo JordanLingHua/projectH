@@ -65,8 +65,8 @@ public class TileManager : MonoBehaviour {
 				}
 			}
 		}
-		
-		addPresetTrees();
+
+		//addPresetTrees();
 		//addPresetAllyUnits();
 		//addPresetEnemyUnits();
 		displayHPBars (pum.selGridInt);
@@ -129,7 +129,7 @@ public class TileManager : MonoBehaviour {
 
 	}
 
-	void addTree(int x, int y,int unitID){
+	public void addTree(int x, int y,int unitID){
 		TileScript placeTile = tiles[x,y].GetComponent<TileScript>();
 		GameObject tree = (GameObject)Instantiate(environmentObject, 
 		                                          new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
