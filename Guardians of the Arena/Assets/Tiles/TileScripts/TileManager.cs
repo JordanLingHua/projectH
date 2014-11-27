@@ -14,11 +14,13 @@ public class TileManager : MonoBehaviour {
 	public GameObject tile;
 	public GameObject environmentObject, cp, UnitOne,UnitTwo,UnitThree,UnitFour,UnitFive,UnitSix,UnitSeven,UnitEight,UnitNine,UnitTen,UnitEleven;
 	public GameManager gm;
+	public GameProcess gp;
 	public PopUpMenu pum;
 	
 	void Start () {
 		pum =  GameObject.Find("PopUpMenu").GetComponent<PopUpMenu>();
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 		tiles = new GameObject[xTiles, yTiles];
 		
 		//Tile Creation
@@ -75,29 +77,33 @@ public class TileManager : MonoBehaviour {
 	public void displayHPBars(int choice){
 		
 		switch (choice) {
+		//All units
 		case 0:
 			foreach (int key in gm.units.Keys) {
 				gm.units [key].displayHPBar = true;
 			}
 			break;
+		//Friendly units
 		case 1:
 			foreach (int key in gm.units.Keys) {
-					if (gm.units [key].alleg == Unit.allegiance.playerOne) {
+				if ((gp.playerNumber == 1 && gm.units [key].alleg == Unit.allegiance.playerOne) ||(gp.playerNumber == 2 && gm.units [key].alleg == Unit.allegiance.playerTwo )) {
 							gm.units [key].displayHPBar = true;
 					} else {
 							gm.units [key].displayHPBar = false;
 					}
 			}
 			break;
+		//enemy units
 		case 2:
 			foreach (int key in gm.units.Keys) {
-					if (gm.units [key].alleg == Unit.allegiance.playerTwo) {
+					if ((gp.playerNumber == 2 && gm.units [key].alleg == Unit.allegiance.playerOne) ||(gp.playerNumber == 1 && gm.units [key].alleg == Unit.allegiance.playerTwo )) {
 							gm.units [key].displayHPBar = true;
 					} else {
 							gm.units [key].displayHPBar = false;
 					}
 			}
 			break;
+			//off
 		case 3:
 			foreach (int key in gm.units.Keys) {
 					gm.units [key].displayHPBar = false;

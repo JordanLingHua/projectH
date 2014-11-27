@@ -213,7 +213,7 @@ public class GameProcess : MonoBehaviour {
 					tileManager.addUnit(Int32.Parse(tokens[i+2]), Int32.Parse(tokens[i+3]), Int32.Parse(tokens[i]),2, Int32.Parse(tokens[i+1]));
 					i += 4;
 				}
-
+				tileManager.displayHPBars(pum.selGridInt);
 			}
 
 			else if (tokens[0].Equals("spawnObstacles"))
