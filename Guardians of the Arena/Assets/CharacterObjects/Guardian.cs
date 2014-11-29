@@ -21,7 +21,44 @@ public class Guardian :Unit {
 		renderer.material.color = new Color32(0,0,0,1);
 	}
 	
-	void Update () {
-	
+	//TODO: move this logic to the server
+	public override void attackUnit(Unit unitAffected){
+		atkd = true;
+		
+		if (!invincible){
+			if (unitLevel == 3 && (((float)unitAffected.hp/unitAffected.maxHP) < 0.5)){
+				unitAffected.hp = 0;
+				unitAffected.showPopUpText("Executed!",Color.red);
+			}else{
+				unitAffected.hp -= this.atk;
+				unitAffected.showPopUpText("-" + this.atk,Color.red);
+			}
+
+			//if the unit attacked was killed, remove it from the board and unit list
+			if (unitAffected.hp <=0){				
+				
+				//Kill Guardian then SS vulnerable
+				if (unitAffected.unitType == 10){
+					if (unitAffected.alleg == allegiance.playerOne){
+						playerSSKillable();
+					}else{
+						enemySSKillable();
+					}
+					
+				}else if (unitAffected.unitType == 11){
+					gm.gameOver = true;
+				}
+				
+				//Kill unit and remove from game
+				gm.units.Remove(unitAffected.unitID);
+				unitAffected.transform.parent.GetComponent<TileScript>().objectOccupyingTile = null;
+				Destroy(unitAffected.gameObject);
+			}
+		}else{
+			gm.combatLog.text = "Combat Log:\nTarget is invincible!";
+		}
+		//clean up the board colors
+		gm.accessibleTiles.Clear();
+		this.transform.parent.gameObject.transform.parent.GetComponent<TileManager>().clearAllTiles();
 	}
 }

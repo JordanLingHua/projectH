@@ -16,8 +16,8 @@ public class GameManager : MonoBehaviour {
 	TileManager tm;
 	GameProcess gp;
 	AudioManager am;
-
-
+	int unitActionOption;
+	string[] unitOptionStrings = new string[] {"Move","Attack"};
 	//Selected unit and available move squares
 	public Unit selectedUnit = null;
 	public HashSet<TileScript> accessibleTiles = new HashSet<TileScript>();
@@ -93,46 +93,43 @@ public class GameManager : MonoBehaviour {
 
 
 		//Button to toggle between attacking and moving a piece
-		if (GUI.Button (new Rect (Screen.width - 260, 0, 130, 20), "Move")) 
-		{
-			if (turn){
-				am.playButtonSFX();
+		//only change options if changed
+		int prev = unitActionOption;
+		unitActionOption = GUI.SelectionGrid(new Rect(Screen.width - 260, 0, 260, 20), unitActionOption, unitOptionStrings, 2);
+		if (prev != unitActionOption){
+			am.playButtonSFX();
+			if (unitActionOption == 0){
+				tm.clearAllTiles ();
+				accessibleTiles.Clear ();
+				gs = gameState.playerMv;
+	
+				if (selectedUnit != null) 
+					selectedUnit.GetComponent<Unit>().showMvTiles(turn ? Unit.allegiance.playerOne : Unit.allegiance.playerTwo);
 			}else{
-				am.playErrorSFX();
+				tm.clearAllTiles();
+				accessibleTiles.Clear();		
+				gs =  gameState.playerAtk;	
+	
+				if (selectedUnit != null)
+					selectedUnit.GetComponent<Unit>().showAtkTiles();
 			}
-			tm.clearAllTiles ();
-			accessibleTiles.Clear ();
-			gs = gameState.playerMv;
-
-			if (selectedUnit != null) 
-				selectedUnit.GetComponent<Unit>().showMvTiles(turn ? Unit.allegiance.playerOne : Unit.allegiance.playerTwo);
 		}
 
-		if(GUI.Button (new Rect(Screen.width - 130,0,130,20),"Attack")){
-			if (turn){
-				am.playButtonSFX();
-			}else{
-				am.playErrorSFX();
-			}
-			tm.clearAllTiles();
-			accessibleTiles.Clear();		
-			gs =  gameState.playerAtk;	
-
-			if (selectedUnit != null)
-				selectedUnit.GetComponent<Unit>().showAtkTiles();				
-		}
 
 		if (!gameOver){
 			//End turn button
-			string buttontext = turn ? "End Turn" : "Opponent Turn ";
-			if (GUI.Button (new Rect(Screen.width - 130,20,130,20),buttontext)){
-				if (turn){
-					gp.returnSocket().SendTCPPacket("endTurn");
-					am.playButtonSFX();
-				}else{
-					am.playErrorSFX();
+			if (turn){
+				if (GUI.Button (new Rect(Screen.width - 130,20,130,20),"End Turn")){
+					if (turn){
+						gp.returnSocket().SendTCPPacket("endTurn");
+						am.playButtonSFX();
+					}else{
+						am.playErrorSFX();
+					}
+					
 				}
-
+			}else{
+				GUI.Label(new Rect(Screen.width - 110,20,110,20), "Opponent's Turn");
 			}
 		}
 

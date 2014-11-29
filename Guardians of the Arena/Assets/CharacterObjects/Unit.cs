@@ -69,7 +69,7 @@ public class Unit    : MonoBehaviour {
 	public GameProcess gp;
 	public AudioManager am;
 	public virtual void Start () {
-		unitLevel = 1;
+		unitLevel = 3;
 		popUpText = GameObject.Find ("popUpText");
 		hpBarBG = Resources.Load("HPBarBG") as Texture2D;
 		hpBarHigh = Resources.Load("HPBarHigh") as Texture2D;
@@ -205,7 +205,7 @@ public class Unit    : MonoBehaviour {
 		//the game is in attack mode
 		//the unit selected is in range of the selected unit
 
-		if (Application.loadedLevelName.Equals("BoardScene") && gm.turn) {
+		if (Application.loadedLevelName.Equals("BoardScene")) {
 			if (gm.gs == GameManager.gameState.playerAtk 
 					&& gm.accessibleTiles.Contains (this.transform.parent.GetComponent<TileScript> ())) {
 				transform.parent.GetComponent<TileScript>().attackTile ();
@@ -223,12 +223,20 @@ public class Unit    : MonoBehaviour {
 		if (!invincible){
 			//gm.combatLog.text = "Combat Log:\nDealt " + unitThatAttacked.atk + " damage!";
 			if (this.atk > 0){
-				unitAffected.showPopUpText("-" + this.atk,Color.red);
+				//block dmg if killing guardian lvl 2
+				if (unitAffected.unitType == 10 && unitAffected.unitLevel >=2 && this.atk > 10){
+					unitAffected.hp -= 10;
+					unitAffected.showPopUpText("-10 "+ (this.atk-10) + "blocked",Color.red);
+				}else{
+					unitAffected.hp -= this.atk;
+					unitAffected.showPopUpText("-" + this.atk,Color.red);
+				}
+
 			}else{
-				unitAffected.showPopUpText("+" + this.atk,Color.green);
+				unitAffected.hp -= this.atk;
+				unitAffected.showPopUpText("+" + (-1*this.atk),Color.green);
 			}
 
-			unitAffected.hp -= this.atk;
 			//if healed up dont let it have more than max hp
 			if (unitAffected.hp > unitAffected.maxHP){
 				unitAffected.hp = unitAffected.maxHP;

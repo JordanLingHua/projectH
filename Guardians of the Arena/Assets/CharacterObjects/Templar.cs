@@ -34,15 +34,25 @@ public class Templar : Unit{
 				unitAffected.showPopUpText("+" + this.atk,Color.green);
 				if (unitAffected.hp > unitAffected.maxHP){
 					unitAffected.hp = unitAffected.maxHP;
-
 				}
 			//Deal extra dmg to full hp units at level 2+
 			}else if (unitLevel >= 2 && unitAffected.hp == unitAffected.maxHP) {
-				unitAffected.hp -= this.atk +5;
-				unitAffected.showPopUpText("-" + (this.atk+5)+"!",Color.red);
+
+				if (unitAffected.unitType == 10 && unitAffected.unitLevel >=2){
+					unitAffected.hp -= 10;
+					unitAffected.showPopUpText("-10 "+ (this.atk-5) + "blocked",Color.red);
+				}else{
+					unitAffected.hp -= this.atk +5;
+					unitAffected.showPopUpText("-" + (this.atk+5)+"!",Color.red);
+				}
 			}else{
-				unitAffected.hp -= this.atk;
-				unitAffected.showPopUpText("-" + this.atk,Color.red);
+				if (unitAffected.unitType == 10 && unitAffected.unitLevel >=2){
+					unitAffected.hp -= 10;
+					unitAffected.showPopUpText("-10 "+ (this.atk-10) + "blocked",Color.red);
+				}else{
+					unitAffected.hp -= this.atk;
+					unitAffected.showPopUpText("-" + this.atk,Color.red);
+				}
 			}
 
 

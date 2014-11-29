@@ -165,10 +165,12 @@ public class TileScript : MonoBehaviour {
 
 	
 	void OnMouseDown(){
-		if (gm.gs ==  GameManager.gameState.playerMv && gm.turn){
-			moveToTile ();
-		}else if (gm.gs == GameManager.gameState.playerAtk){
-			attackTile ();
+		if (gm.selectedUnit != null) {
+			if (gm.gs == GameManager.gameState.playerMv && gm.turn) {
+				moveToTile ();
+			} else if (gm.gs == GameManager.gameState.playerAtk) {
+				attackTile ();
+			}
 		}
 	}
 
@@ -184,7 +186,11 @@ public class TileScript : MonoBehaviour {
 			am.playButtonSFX();
 		}else{
 			am.playErrorSFX();
-			gm.combatLog.text = "Combat Log:\nNot enough mana to move";
+			if (this.objectOccupyingTile != null){
+				gm.combatLog.text = "Combat Log:\nTheres a unit there already!";
+			}else{
+				gm.combatLog.text = "Combat Log:\nNot enough mana to move!";
+			}
 		}
 	}
 	
@@ -195,7 +201,7 @@ public class TileScript : MonoBehaviour {
 			print ("Sent attack packet");
 		} else {
 			am.playErrorSFX();
-			gm.combatLog.text = "Combat Log:\nNot enough mana to attack";
+			gm.combatLog.text = "Combat Log:\nCannot attack there";
 		}
 
 

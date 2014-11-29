@@ -8,7 +8,8 @@ public class PopUpMenu : MonoBehaviour {
 	GameManager gm;
 	AudioManager am;
 	GameProcess gp;
-	
+	string[] selStrings = new string[] {"All", "Allied", "Enemy","Off"};
+
 	void Start () {
 		menuTexture = (Texture2D)Resources.Load ("PopupMenuBG");
 		am = GameObject.Find("AudioManager").GetComponent<AudioManager>();
@@ -25,7 +26,6 @@ public class PopUpMenu : MonoBehaviour {
 			GUI.Box (new Rect (0,0,200,300), "Main menu");
 			//health bar options
 			GUI.Label(new Rect (10,17,100,20),"Health Bars");
-			string[] selStrings = new string[] {"All", "Allied", "Enemy","Off"};
 			//only change options if changed
 			int prev = selGridInt;
 			selGridInt = GUI.SelectionGrid(new Rect(10, 40, 180, 40), selGridInt, selStrings, 2);
@@ -58,7 +58,7 @@ public class PopUpMenu : MonoBehaviour {
 						gp.returnSocket().SendTCPPacket("surrender");
 					}
 				}else{
-					if (GUI.Button (new Rect (50, 245, 100, 20), "Return to Menu")){
+					if (GUI.Button (new Rect (40, 245, 120, 20), "Return to Menu")){
 						am.playButtonSFX();
 						DontDestroyOnLoad(GameObject.Find ("GameProcess"));
 						Application.LoadLevel(1);

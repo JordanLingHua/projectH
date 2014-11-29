@@ -75,8 +75,11 @@ public class Swordsman : Unit {
 		}else{
 			gm.combatLog.text = "Combat Log:\nTarget is invincible!";
 		}
-		//clean up the board colors
-		gm.accessibleTiles.Clear();
+
+		//clean up the board colors checks atkd here for windfury
+		if (atkd) {
+			gm.accessibleTiles.Clear ();
+		}
 	}
 
 	public override void resetUnitAbilities ()
