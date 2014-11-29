@@ -31,14 +31,18 @@ public class Templar : Unit{
 			//level 3 Heal ally units
 			if (unitLevel == 3 && (gp.playerNumber == 1 && unitAffected.alleg == Unit.allegiance.playerOne) || (gp.playerNumber == 2 && unitAffected.alleg == Unit.allegiance.playerTwo)){
 				unitAffected.hp += this.atk;
+				unitAffected.showPopUpText("+" + this.atk,Color.green);
 				if (unitAffected.hp > unitAffected.maxHP){
 					unitAffected.hp = unitAffected.maxHP;
+
 				}
 			//Deal extra dmg to full hp units at level 2+
 			}else if (unitLevel >= 2 && unitAffected.hp == unitAffected.maxHP) {
 				unitAffected.hp -= this.atk +5;
+				unitAffected.showPopUpText("-" + (this.atk+5)+"!",Color.red);
 			}else{
 				unitAffected.hp -= this.atk;
+				unitAffected.showPopUpText("-" + this.atk,Color.red);
 			}
 
 
@@ -64,8 +68,8 @@ public class Templar : Unit{
 				
 				//Kill unit and remove from game
 				gm.units.Remove(unitAffected.unitID);
-				this.transform.parent.GetComponent<TileScript>().objectOccupyingTile = null;
-				Destroy(gameObject);
+				unitAffected.transform.parent.GetComponent<TileScript>().objectOccupyingTile = null;
+				Destroy(unitAffected.gameObject);
 			}
 		}else{
 			gm.combatLog.text = "Combat Log:\nTarget is invincible!";

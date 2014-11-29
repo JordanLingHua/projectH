@@ -70,7 +70,8 @@ public class GameManager : MonoBehaviour {
 			Unit script = selectedUnit.GetComponent<Unit>();
 			string info = script.unitName + "\nHP: " + script.hp + "/" + script.maxHP;
 			info +=  script.atk > 0? "\nDamage: " + script.atk : "";
-			info += "\nLevel " + script.unitLevel + " Experience: " + script.xp + "/" + script.XP_TO_LEVEL[script.unitLevel-1];
+			info += "\nLevel " + script.unitLevel;
+			info += script.unitLevel == 3? "": " Experience: " + script.xp + "/" + script.XP_TO_LEVEL[script.unitLevel-1];
 			info += script.mvCost > 0? "\nMove Cost: " + script.mvCost : "";
 			info += script.atkCost > 0? "\nAttack Cost: " + script.atkCost : "";
 
@@ -159,6 +160,7 @@ public class GameManager : MonoBehaviour {
 			}
 		}
 	}
+
 	public void nextTurn(int mana){
 		//reset game clock, mana, and increase max mana
 		timer = TIMER_LENGTH;
@@ -169,9 +171,11 @@ public class GameManager : MonoBehaviour {
 		tm.clearAllTiles();
 
 		//possibly wrong
-		if (gp.playerNumber == 1 && turn || gp.playerNumber == 2 && !turn){
+		if ((gp.playerNumber == 1 && turn) || (gp.playerNumber == 2 && !turn)){
 			resetPlayerOneUnits();
+			print ("reset player ones units");
 		}else{
+			print ("reset player twos units");
 			resetPlayerTwoUnits();
 		}
 		clearSelection();	

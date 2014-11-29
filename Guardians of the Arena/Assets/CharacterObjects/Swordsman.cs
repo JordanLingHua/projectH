@@ -37,8 +37,10 @@ public class Swordsman : Unit {
 
 		if (!invincible){
 			unitAffected.hp -= this.atk;
+			unitAffected.showPopUpText("-" +this.atk,Color.red);
 			if (unitLevel >= 2){
 				this.hp += 5;
+				showPopUpText("+5",Color.green);
 				//dont overheal on lifesteal
 				if (hp > maxHP){
 					this.hp = maxHP;
@@ -67,8 +69,8 @@ public class Swordsman : Unit {
 				
 				//Kill unit and remove from game
 				gm.units.Remove(unitAffected.unitID);
-				this.transform.parent.GetComponent<TileScript>().objectOccupyingTile = null;
-				Destroy(gameObject);
+				unitAffected.transform.parent.GetComponent<TileScript>().objectOccupyingTile = null;
+				Destroy(unitAffected.gameObject);
 			}
 		}else{
 			gm.combatLog.text = "Combat Log:\nTarget is invincible!";

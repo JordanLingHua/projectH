@@ -7,6 +7,7 @@ public class Mystic: Unit {
 	public int oldMvRange, oldAtkRange,oldAtkDmg;
 
 	void Start () {
+		unitFocused = null;
 		base.Start ();
 		unitType = 2;
 		unitName = "Mystic";
@@ -51,6 +52,7 @@ public class Mystic: Unit {
 
 			if ((gp.playerNumber == 1 && unitFocused.alleg == Unit.allegiance.playerOne) || (gp.playerNumber == 2 && unitFocused.alleg == Unit.allegiance.playerTwo)){
 				unitAffected.mvRange += 3;
+				unitAffected.showPopUpText("Focused!",Color.yellow);
 				if (unitLevel == 2){
 					unitAffected.atk += 5;
 				}
@@ -59,6 +61,7 @@ public class Mystic: Unit {
 				unitAffected.atkRange = 0;
 				unitAffected.mvRange = 0;
 				unitAffected.atk = 0;
+				unitAffected.showPopUpText("Focused!",Color.yellow);
 			}
 
 
@@ -74,11 +77,11 @@ public class Mystic: Unit {
 	{
 		base.resetUnitAbilities ();
 
-		//deal 8 dmg to unit every time if level 3 and focusing enemy unit
-		if (unitFocused != null && (gp.playerNumber == 1 && unitFocused.alleg == Unit.allegiance.playerTwo) || (gp.playerNumber == 2 && unitFocused.alleg == Unit.allegiance.playerOne) && unitLevel == 3) {
+//		//deal 8 dmg to unit every time if level 3 and focusing enemy unit
+		if (unitFocused != null && ((gp.playerNumber == 1 && unitFocused.alleg == Unit.allegiance.playerTwo) || (gp.playerNumber == 2 && unitFocused.alleg == Unit.allegiance.playerOne) && unitLevel == 3)) {
 			if (!invincible){
 				unitFocused.hp -= 8;
-				unitFocused.StartCoroutine(unitFocused.showDmgDealt(8));
+				unitFocused.showPopUpText("-8",Color.red);
 
 				//if the unit attacked was killed, remove it from the board and unit list
 				if (unitFocused.hp <=0){				
@@ -97,8 +100,8 @@ public class Mystic: Unit {
 					
 					//Kill unit and remove from game
 					gm.units.Remove(unitFocused.unitID);
-					this.transform.parent.GetComponent<TileScript>().objectOccupyingTile = null;
-					Destroy(gameObject);
+					unitFocused.transform.parent.GetComponent<TileScript>().objectOccupyingTile = null;
+					Destroy(unitFocused.gameObject);
 				}
 			}else{
 				gm.combatLog.text = "Combat Log:\nTarget is invincible!";

@@ -31,6 +31,9 @@ public class Priest : Unit {
 			if (unitLevel == 2){
 				atk = -500;
 			}
+			showPopUpText("Leveled Up!",Color.yellow);
+		}else {
+			showPopUpText("XP+5!",Color.magenta);
 		}
 	}
 

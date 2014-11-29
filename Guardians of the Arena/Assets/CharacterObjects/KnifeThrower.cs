@@ -43,11 +43,14 @@ public class KnifeThrower : Unit {
 	//gain xp add attack range for lvl 2
 	public override void gainXP(){
 		xp += 5;
-		if (xp >= XP_TO_LEVEL[unitLevel-1]){
+		if (xp >= XP_TO_LEVEL [unitLevel - 1]) {
 			unitLevel ++;
-			if (unitLevel == 2){
+			if (unitLevel == 2) {
 				atkRange++;
 			}
+			showPopUpText("Leveled Up!",Color.yellow);
+		} else {
+			showPopUpText("XP+5!",Color.magenta);
 		}
 	}
 

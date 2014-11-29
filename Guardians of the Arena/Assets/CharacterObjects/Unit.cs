@@ -15,7 +15,9 @@ public class Unit    : MonoBehaviour {
 	public string info = string.Empty;
 	public bool invincible,displayHPBar;
 
-	public readonly int[] XP_TO_LEVEL = {10,20,30,40,50,60,70,80,90,100};
+	public GameObject popUpText;
+
+	public readonly int[] XP_TO_LEVEL = {10,25,100000};
 
 	//unit cost will be utilized here or elsewhere
 	//public string unitRole;//name called in switch statement here or elsewhere
@@ -68,6 +70,7 @@ public class Unit    : MonoBehaviour {
 	public AudioManager am;
 	public virtual void Start () {
 		unitLevel = 1;
+		popUpText = GameObject.Find ("popUpText");
 		hpBarBG = Resources.Load("HPBarBG") as Texture2D;
 		hpBarHigh = Resources.Load("HPBarHigh") as Texture2D;
 		hpBarMedium = Resources.Load("HPBarMedium") as Texture2D;
@@ -83,17 +86,15 @@ public class Unit    : MonoBehaviour {
 	void Update () {
 	}
 
-	public IEnumerator showDmgDealt(int dmg){
-		gameObject.GetComponent<GUIText> ().enabled = true;
-		gameObject.GetComponent<GUIText>().text = dmg <= 0? "+" + dmg: "-" + dmg;
-		Color temp = gameObject.GetComponent<GUIText>().material.color;
-		yield return new WaitForSeconds(2.0f);
-		for (int i =0; i < 60; i ++){
-			temp.a -= 0.016f;
-			gameObject.GetComponent<GUIText>().material.color = temp;
-			yield return new WaitForSeconds(0.016666f);
-		}
-		gameObject.GetComponent<GUIText> ().enabled = false;
+	public void showPopUpText(string affect,Color newColor){
+		Camera cam = Camera.main;
+		GUI.depth = -1;
+		Vector3 textPos = cam.WorldToScreenPoint(gameObject.transform.position);
+		textPos.x = (textPos.x - 10) / Screen.width;
+		textPos.y = (textPos.y + 5) / Screen.height;
+		textPos.z = 0;
+		GameObject text = (GameObject) Instantiate(popUpText,textPos,Quaternion.identity);
+		text.GetComponent<popUpTextScript> ().StartCoroutine (text.GetComponent<popUpTextScript> ().showText (affect, newColor));
 	}
 
 	void OnGUI(){
@@ -167,7 +168,8 @@ public class Unit    : MonoBehaviour {
 	void refreshUnitText()
 	{
 		info = unitName + "\nHP: " + hp + "/" + maxHP;
-		info += "\nLevel: " + unitLevel + " Experience: " + xp + "/" + XP_TO_LEVEL[unitLevel-1];
+		info += "\nLevel: " + unitLevel;
+		info += unitLevel == 3? "" :" Experience: " + xp + "/" + XP_TO_LEVEL[unitLevel-1];
 		info += mvCost > 0? "\nMove Cost: " + mvCost : "";
 		info += atkCost > 0? "\nAttack Cost: " + atkCost : "";
 		info += atk > 0? "\nDamage: " + atk : "";
@@ -186,11 +188,15 @@ public class Unit    : MonoBehaviour {
 
 	public virtual void gainXP(){
 		xp += 5;
-		if (xp >= XP_TO_LEVEL[unitLevel-1]){
+
+		if (xp >= XP_TO_LEVEL [unitLevel - 1]) {
 			unitLevel ++;
-			hp +=5;
+			hp += 5;
 			maxHP += 5;
-			refreshUnitText();
+			refreshUnitText ();
+			showPopUpText("Leveled Up!",Color.yellow);
+		} else {
+			showPopUpText("XP+5!",Color.magenta);
 		}
 	}
 
@@ -216,6 +222,12 @@ public class Unit    : MonoBehaviour {
 
 		if (!invincible){
 			//gm.combatLog.text = "Combat Log:\nDealt " + unitThatAttacked.atk + " damage!";
+			if (this.atk > 0){
+				unitAffected.showPopUpText("-" + this.atk,Color.red);
+			}else{
+				unitAffected.showPopUpText("+" + this.atk,Color.green);
+			}
+
 			unitAffected.hp -= this.atk;
 			//if healed up dont let it have more than max hp
 			if (unitAffected.hp > unitAffected.maxHP){
@@ -239,8 +251,8 @@ public class Unit    : MonoBehaviour {
 
 				//Kill unit and remove from game
 				gm.units.Remove(unitAffected.unitID);
-				this.transform.parent.GetComponent<TileScript>().objectOccupyingTile = null;
-				Destroy(gameObject);
+				unitAffected.transform.parent.GetComponent<TileScript>().objectOccupyingTile = null;
+				Destroy(unitAffected.gameObject);
 			}
 		}else{
 			gm.combatLog.text = "Combat Log:\nTarget is invincible!";
