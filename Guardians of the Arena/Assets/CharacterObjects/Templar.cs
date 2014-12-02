@@ -43,8 +43,7 @@ public class Templar : Unit{
 					unitAffected.showPopUpText("-10 "+ (this.atk-5) + "blocked",Color.red);
 				}else{
 					if(unitAffected.unitType == 2){
-						Mystic x = unitAffected as Mystic;
-						x.revertStatsOfFocused();
+						(unitAffected as Mystic).revertStatsOfFocused();
 					}
 					unitAffected.hp -= this.atk +5;
 					unitAffected.showPopUpText("-" + (this.atk+5)+"!",Color.red);
@@ -55,8 +54,7 @@ public class Templar : Unit{
 					unitAffected.showPopUpText("-10 "+ (this.atk-10) + "blocked",Color.red);
 				}else{
 					if(unitAffected.unitType == 2){
-						Mystic x = unitAffected as Mystic;
-						x.revertStatsOfFocused();
+						(unitAffected as Mystic).revertStatsOfFocused();
 					}
 					unitAffected.hp -= this.atk;
 					unitAffected.showPopUpText("-" + this.atk,Color.red);

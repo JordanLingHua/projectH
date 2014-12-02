@@ -42,6 +42,9 @@ public class Mystic: Unit {
 		if (!invincible){
 			//save variables for reverting later
 			unitFocused = unitAffected;
+			if (unitAffected.unitType == 2){
+				(unitAffected as Mystic).revertStatsOfFocused();
+			}
 			oldMvRange = unitAffected.mvRange;
 			oldAtkRange = unitAffected.atkRange;
 			oldAtkDmg = unitAffected.atk;

@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour {
 		timerText.text = "Time Left: " + (int)timer;
 		if (!gameOver){
 			timer -= Time.deltaTime;
-		    if ( timer <= 0  && turn){
+		    if (timer <= 0  && turn){
 				print("timer ended");
 				gp.returnSocket().SendTCPPacket("endTurn");
 				timer = 0f;

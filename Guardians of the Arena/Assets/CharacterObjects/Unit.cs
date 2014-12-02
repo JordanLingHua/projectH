@@ -289,7 +289,7 @@ public class Unit    : MonoBehaviour {
 		}
 	}
 	
-	public void showMvTiles(allegiance ally){
+	public virtual void showMvTiles(allegiance ally){
 		if (!mvd){
 			showMvAccessibleTiles(this.transform.parent.GetComponent<TileScript>(),mvRange,ally);
 			//can't move to the tile it's in

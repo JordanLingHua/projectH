@@ -22,7 +22,9 @@ public class SoulStone: Unit {
 		renderer.material.color = new Color32(255,255,255,1);
 	}
 
+	public override void showMvTiles(allegiance ally){
 
+	}
 
 	void Update () {
 	
