@@ -166,6 +166,12 @@ public class TileScript : MonoBehaviour {
 	
 	void OnMouseDown(){
 		if (gm.selectedUnit != null) {
+
+			if (!gm.turn){
+				am.playErrorSFX();
+				gm.combatLog.text = "Combat Log:\nIt's not your turn!";
+			}
+				
 			if (gm.gs == GameManager.gameState.playerMv && gm.turn) {
 				moveToTile ();
 			} else if (gm.gs == GameManager.gameState.playerAtk) {
@@ -186,7 +192,9 @@ public class TileScript : MonoBehaviour {
 			am.playButtonSFX();
 		}else{
 			am.playErrorSFX();
-			if (this.objectOccupyingTile != null){
+			if (this.objectOccupyingTile != null && this.objectOccupyingTile == gm.selectedUnit){
+				gm.combatLog.text = "Combat Log:\nThat unit is already there!";
+			}else if (this.objectOccupyingTile != null){
 				gm.combatLog.text = "Combat Log:\nTheres a unit there already!";
 			}else{
 				gm.combatLog.text = "Combat Log:\nNot enough mana to move!";

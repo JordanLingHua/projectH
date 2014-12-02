@@ -69,7 +69,7 @@ public class Unit    : MonoBehaviour {
 	public GameProcess gp;
 	public AudioManager am;
 	public virtual void Start () {
-		//unitLevel = 3;
+		unitLevel = 1;
 		popUpText = GameObject.Find ("popUpText");
 		hpBarBG = Resources.Load("HPBarBG") as Texture2D;
 		hpBarHigh = Resources.Load("HPBarHigh") as Texture2D;

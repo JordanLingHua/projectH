@@ -240,6 +240,10 @@ public class GameProcess : MonoBehaviour {
 				gameManager.pMana -= gameManager.units[Int32.Parse (tokens[1])].atkCost;
 				for (int i = 0; i < Int32.Parse (tokens[2]); i ++ ){
 					gameManager.units[Int32.Parse (tokens[1])].gainXP();
+					if (gameManager.units[Int32.Parse (tokens[1])].unitType == 2){
+						Mystic x =gameManager.units[Int32.Parse (tokens[1])] as Mystic;
+						x.resetUnitAbilities();
+					}
 					gameManager.units[Int32.Parse (tokens[1])].attackUnit(gameManager.units[Int32.Parse(tokens[3+i])]);
 				}
 

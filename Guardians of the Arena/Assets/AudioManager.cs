@@ -29,7 +29,7 @@ public class AudioManager : MonoBehaviour {
 		if (level == 3) {
 			GameProcess gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 			if (gp.playerNumber == 2){
-				this.transform.position = new Vector3(75f,144.8f,167.8f);
+				this.transform.position = new Vector3(40f,125f,90f);
 			}
 		}
 	}
