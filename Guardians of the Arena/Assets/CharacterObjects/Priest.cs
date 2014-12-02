@@ -14,7 +14,7 @@ public class Priest : Unit {
 		maxHP = 20;
 		atk = -20;
 		mvRange = 3;
-		mvCost = 3;
+		mvCost = 1;
 		atkRange = 0;
 		atkCost = 4;
 		

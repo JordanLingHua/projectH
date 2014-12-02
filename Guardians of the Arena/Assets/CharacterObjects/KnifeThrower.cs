@@ -8,8 +8,8 @@ public class KnifeThrower : Unit {
 		base.Start ();
 		unitType = 1;
 		unitName = "Knife Thrower";
-		hp = 20;
-		maxHP = 20;
+		hp = 25;
+		maxHP = 25;
 		atk = 18;  
 		mvRange = 4;
 		mvCost = 2;
