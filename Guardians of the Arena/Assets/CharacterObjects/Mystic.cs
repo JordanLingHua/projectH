@@ -26,22 +26,18 @@ public class Mystic: Unit {
 	public void revertStatsOfFocused(){
 		if (unitFocused != null) {
 			//allied units get only increased mv range and attack damage
-			if((gp.playerNumber == 1 && unitFocused.alleg == Unit.allegiance.playerOne) || (gp.playerNumber == 2 && unitFocused.alleg == Unit.allegiance.playerTwo)){
-				unitFocused.mvRange = oldMvRange;
-				unitFocused.atk = oldAtkDmg;
-			//enemy units get mv and attack range reduced and atk
-			}else if ((gp.playerNumber == 1 && unitFocused.alleg == Unit.allegiance.playerTwo) || (gp.playerNumber == 2 && unitFocused.alleg == Unit.allegiance.playerOne)){
-				unitFocused.mvRange = oldMvRange;
-				unitFocused.mvRange = oldAtkRange;
-				unitFocused.atk = oldAtkDmg;
-			}
+			unitFocused.showPopUpText("No Longer Focused!",Color.yellow);
+			unitFocused.mvRange = oldMvRange;
+			unitFocused.atkRange = oldAtkRange;
+			unitFocused.atk = oldAtkDmg;
+			showPopUpText("Lost Focus!",Color.red);
 			unitFocused = null;
 		}
 	
 	}
 	
 	//Unit Focused needs to take dmg after turn ends if level 3 and enemy unit
-	public virtual void attackUnit(Unit unitAffected){
+	public override void attackUnit(Unit unitAffected){
 		atkd = true;
 		if (!invincible){
 			//save variables for reverting later
@@ -50,18 +46,18 @@ public class Mystic: Unit {
 			oldAtkRange = unitAffected.atkRange;
 			oldAtkDmg = unitAffected.atk;
 
-			if ((gp.playerNumber == 1 && unitFocused.alleg == Unit.allegiance.playerOne) || (gp.playerNumber == 2 && unitFocused.alleg == Unit.allegiance.playerTwo)){
+			if ((alleg == Unit.allegiance.playerOne  && unitFocused.alleg == Unit.allegiance.playerOne) || (alleg == Unit.allegiance.playerTwo && unitFocused.alleg == Unit.allegiance.playerTwo)){
 				unitAffected.mvRange += 3;
-				unitAffected.showPopUpText("Focused!",Color.yellow);
+				unitAffected.showPopUpText("Focused!",Color.green);
 				if (unitLevel == 2){
 					unitAffected.atk += 5;
 				}
 			//Enemy units are frozen
-			}else if ((gp.playerNumber == 1 && unitFocused.alleg == Unit.allegiance.playerTwo) || (gp.playerNumber == 2 && unitFocused.alleg == Unit.allegiance.playerOne)){
+			}else if ((alleg == Unit.allegiance.playerOne && unitFocused.alleg == Unit.allegiance.playerTwo) || (alleg == Unit.allegiance.playerTwo && unitFocused.alleg == Unit.allegiance.playerOne)){
 				unitAffected.atkRange = 0;
 				unitAffected.mvRange = 0;
 				unitAffected.atk = 0;
-				unitAffected.showPopUpText("Focused!",Color.yellow);
+				unitAffected.showPopUpText("Focused!",Color.red);
 			}
 
 
@@ -78,7 +74,7 @@ public class Mystic: Unit {
 		base.resetUnitAbilities ();
 
 //		//deal 8 dmg to unit every time if level 3 and focusing enemy unit
-		if (unitFocused != null && ((gp.playerNumber == 1 && unitFocused.alleg == Unit.allegiance.playerTwo) || (gp.playerNumber == 2 && unitFocused.alleg == Unit.allegiance.playerOne) && unitLevel == 3)) {
+		if (unitFocused != null && ((alleg ==Unit.allegiance.playerOne && unitFocused.alleg == Unit.allegiance.playerTwo) || (alleg == Unit.allegiance.playerTwo && unitFocused.alleg == Unit.allegiance.playerOne)) && unitLevel == 3) {
 			if (!invincible){
 				unitFocused.hp -= 8;
 				unitFocused.showPopUpText("-8",Color.red);

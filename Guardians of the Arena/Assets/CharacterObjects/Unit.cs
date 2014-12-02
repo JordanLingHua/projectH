@@ -69,7 +69,7 @@ public class Unit    : MonoBehaviour {
 	public GameProcess gp;
 	public AudioManager am;
 	public virtual void Start () {
-		unitLevel = 3;
+		//unitLevel = 3;
 		popUpText = GameObject.Find ("popUpText");
 		hpBarBG = Resources.Load("HPBarBG") as Texture2D;
 		hpBarHigh = Resources.Load("HPBarHigh") as Texture2D;
@@ -228,6 +228,10 @@ public class Unit    : MonoBehaviour {
 					unitAffected.hp -= 10;
 					unitAffected.showPopUpText("-10 "+ (this.atk-10) + "blocked",Color.red);
 				}else{
+					if(unitAffected.unitType == 2){
+						Mystic x = unitAffected as Mystic;
+						x.revertStatsOfFocused();
+					}	
 					unitAffected.hp -= this.atk;
 					unitAffected.showPopUpText("-" + this.atk,Color.red);
 				}

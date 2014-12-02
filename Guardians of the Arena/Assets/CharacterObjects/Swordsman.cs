@@ -36,6 +36,10 @@ public class Swordsman : Unit {
 		}
 
 		if (!invincible){
+			if (unitAffected.unitType == 2){
+				Mystic x = unitAffected as Mystic;
+				x.revertStatsOfFocused();
+			}
 			unitAffected.hp -= this.atk;
 			unitAffected.showPopUpText("-" +this.atk,Color.red);
 			if (unitLevel >= 2){

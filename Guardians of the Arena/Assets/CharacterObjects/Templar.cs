@@ -29,7 +29,7 @@ public class Templar : Unit{
 		if (!invincible){
 
 			//level 3 Heal ally units
-			if (unitLevel == 3 && (gp.playerNumber == 1 && unitAffected.alleg == Unit.allegiance.playerOne) || (gp.playerNumber == 2 && unitAffected.alleg == Unit.allegiance.playerTwo)){
+			if (unitLevel == 3 && ((alleg == Unit.allegiance.playerOne && unitAffected.alleg == Unit.allegiance.playerOne) || (alleg == Unit.allegiance.playerTwo && unitAffected.alleg == Unit.allegiance.playerTwo))){
 				unitAffected.hp += this.atk;
 				unitAffected.showPopUpText("+" + this.atk,Color.green);
 				if (unitAffected.hp > unitAffected.maxHP){
@@ -42,6 +42,10 @@ public class Templar : Unit{
 					unitAffected.hp -= 10;
 					unitAffected.showPopUpText("-10 "+ (this.atk-5) + "blocked",Color.red);
 				}else{
+					if(unitAffected.unitType == 2){
+						Mystic x = unitAffected as Mystic;
+						x.revertStatsOfFocused();
+					}
 					unitAffected.hp -= this.atk +5;
 					unitAffected.showPopUpText("-" + (this.atk+5)+"!",Color.red);
 				}
@@ -50,6 +54,10 @@ public class Templar : Unit{
 					unitAffected.hp -= 10;
 					unitAffected.showPopUpText("-10 "+ (this.atk-10) + "blocked",Color.red);
 				}else{
+					if(unitAffected.unitType == 2){
+						Mystic x = unitAffected as Mystic;
+						x.revertStatsOfFocused();
+					}
 					unitAffected.hp -= this.atk;
 					unitAffected.showPopUpText("-" + this.atk,Color.red);
 				}
