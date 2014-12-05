@@ -59,6 +59,7 @@ public class PopUpMenu : MonoBehaviour {
 					}
 				}else{
 					if (GUI.Button (new Rect (40, 245, 120, 20), "Return to Menu")){
+						displayMenu = false;
 						am.playButtonSFX();
 						DontDestroyOnLoad(GameObject.Find ("GameProcess"));
 						Application.LoadLevel(1);
