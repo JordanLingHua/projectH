@@ -21,6 +21,9 @@ namespace Guardians_Of_The_Arena_Server
         protected int armor;
         protected bool alreadyMoved = false;
         protected bool alreadyAttacked = false;
+        protected bool paralyzed = false;
+        protected int currentXP = 0;
+        protected int level = 1;
 
         #region Properties Region
         public Allegiance unitAllegiance
@@ -94,6 +97,24 @@ namespace Guardians_Of_The_Arena_Server
             set { alreadyAttacked = value; }
         }
 
+        public bool Paralyzed
+        {
+            get { return paralyzed; }
+            set { paralyzed = value; }
+        }
+
+        public int XP
+        {
+            get { return currentXP; }
+            set { XP = value; }
+        }
+
+        public int Level
+        {
+            get { return level; }
+            set { level = value; }
+        }
+
         #endregion
 
         public Unit(int ID)
@@ -102,8 +123,16 @@ namespace Guardians_Of_The_Arena_Server
             accessibleTiles = new ArrayList();
         }
 
+
+        public virtual void moveUnit(GameBoard.Tile destination)
+        {
+            currentTile.CurrentUnit = null;
+            destination.CurrentUnit = this;
+            currentTile = destination;
+        }
+
         //Recursively Add all the tiles that this unit is able to atravel to
-        public void setAccessibleTiles(GameBoard.Tile currentTile, int distance)
+        public virtual void setAccessibleTiles(GameBoard.Tile currentTile, int distance)
         {
             if (distance > 0)
             {
@@ -135,7 +164,7 @@ namespace Guardians_Of_The_Arena_Server
         }
 
         //recursively add all the tiles that unit is able to attack
-        public void setAttackTiles(GameBoard.Tile currentTile, int distance)
+        public virtual void setAttackTiles(GameBoard.Tile currentTile, int distance)
         {
             if (distance > 0)
             {
@@ -186,6 +215,9 @@ namespace Guardians_Of_The_Arena_Server
             this.health -= damage;
             Console.WriteLine("LOG: Unit " + uniqueID + " takes " + damage + " damage.");
 
+            if (health > maxHealth)
+                health = maxHealth;
+
 
             if (health <= 0)
             {
@@ -197,6 +229,17 @@ namespace Guardians_Of_The_Arena_Server
             }
         }
 
+        public void addXP()
+        {
+            XP += 5;
+
+            if ((Level == 1 && XP >= 20) || (Level == 2 && XP >= 40))
+            {
+                LevelUp();
+            }
+        }
+
         public abstract ArrayList AttackTile(GameBoard.Tile tile);
+        public abstract void LevelUp();
     }
 }

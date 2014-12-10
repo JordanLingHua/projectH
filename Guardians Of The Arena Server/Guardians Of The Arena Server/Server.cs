@@ -109,12 +109,17 @@ namespace Guardians_Of_The_Arena_Server
         //check if the socket is still connect;
         bool SocketConnected(Socket s)
         {
-            bool part1 = s.Poll(1000, SelectMode.SelectRead);
+            bool part1 = s.Poll(1000000, SelectMode.SelectRead);
             bool part2 = (s.Available == 0);
             if (part1 && part2)
-                return false;
+            {
+                Console.WriteLine("NETWORK LOG: Lost connection from socket {0}", s.ToString());
+                return false;           
+            }
             else
+            {
                 return true;
+            }
         }
 
 
@@ -127,7 +132,8 @@ namespace Guardians_Of_The_Arena_Server
             client.thread.Abort();
             numberOfClients--;
 
-            loginNames.Remove(client.clientName);
+            if (loginNames.Contains(client.clientName))
+                loginNames.Remove(client.clientName);
             //dm.deleteFromHighScores(client.clientName);
 
             foreach (Client c in clientArray)
@@ -203,8 +209,10 @@ namespace Guardians_Of_The_Arena_Server
                                 {
                                     foreach (Client c in clientArray)
                                     {
-                                        c.sw.WriteLine("globalChat\\" + tokens[1] + "\\" + tokens[2]);
+                                        c.sw.WriteLine("globalChat\\" + client.clientName + "\\" + tokens[1]);                                       
                                     }
+
+                                    Console.WriteLine("CHAT: ( {0} ) {1}", client.clientName, tokens[1]);
                                 }
                                 //
                                 else if (tokens[0].Equals("userInfo"))
@@ -241,7 +249,7 @@ namespace Guardians_Of_The_Arena_Server
                                             {
                                                 client.sw.WriteLine("loginFail");
                                                 Console.WriteLine(tokens[1] + " entered incorrect password");
-                                                //RemoveClient(client);
+                                                RemoveClient(client);
                                             }
                                         }
 
@@ -357,7 +365,7 @@ namespace Guardians_Of_The_Arena_Server
             public Thread thread;
 
             public int clientNumber;
-            public string clientName;
+            public string clientName = "";
 
             public bool clientReady = false;
             public bool spawned = false;

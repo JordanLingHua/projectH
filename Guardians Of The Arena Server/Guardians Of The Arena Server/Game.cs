@@ -59,6 +59,10 @@ namespace Guardians_Of_The_Arena_Server
             client1.sw.WriteLine("startGame\\1");
             client2.sw.WriteLine("startGame\\2");
 
+            string treeString = board.spawnObstacles();
+
+            client1.sw.WriteLine("spawnObstacles{0}", treeString);
+            client2.sw.WriteLine("spawnObstacles{0}", treeString);
 
             client1.sw.WriteLine(setupString);
             client2.sw.WriteLine(setupString);
@@ -113,15 +117,16 @@ namespace Guardians_Of_The_Arena_Server
                             GameBoard.Tile destinationTile = board.Tiles[Int32.Parse(message[2]), Int32.Parse(message[3])];
                             movingUnit.setAccessibleTiles(startTile, movingUnit.MovementRange);
 
-                            if (currentPlayer.playerAllegiance == movingUnit.unitAllegiance                               
+                            if (currentPlayer.playerAllegiance == movingUnit.unitAllegiance 
                                 && currentPlayer.mana >= movingUnit.MovementCost
+                                && !movingUnit.Paralyzed
                                 && !movingUnit.Moved
                                 && movingUnit.accessibleTiles.Contains(destinationTile))
                             {
                                 currentPlayer.mana -= movingUnit.MovementCost;
 
                                 Console.WriteLine("LOG: moving unit from tile(" + startTile.x + "," + startTile.y + ") to tile(" + destinationTile.x + "," + destinationTile.y + ")");
-                                board.moveUnit(startTile, destinationTile);
+                                movingUnit.moveUnit(destinationTile);
 
                                 //Tell the clients to move the unit
                                 player2.playerClient.sw.WriteLine("move\\" + message[1] + "\\" + destinationTile.x + "\\" + destinationTile.y);
@@ -141,29 +146,62 @@ namespace Guardians_Of_The_Arena_Server
                             GameBoard.Tile tileToAttack = board.Tiles[Int32.Parse(message[2]), Int32.Parse(message[3])];
                             attackingUnit.setAttackTiles(attackingUnit.CurrentTile, attackingUnit.AttackRange);
 
-                            if (currentPlayer.playerAllegiance == attackingUnit.unitAllegiance
-                                && !attackingUnit.Attacked
-                                && currentPlayer.mana >= attackingUnit.AttackCost
-                                && attackingUnit.accessibleTiles.Contains(tileToAttack))
+                            if (currentPlayer.playerAllegiance == attackingUnit.unitAllegiance)
                             {
-                                Console.WriteLine("LOG: Unit " + attackingUnit.UniqueID + " is attacking tile(" + tileToAttack.x + ", " + tileToAttack.y + ")");
-                                currentPlayer.mana -= attackingUnit.AttackCost;
-
-                                //get a list of all the unit IDs that were attacked
-                                //apply damage to all units
-                                ArrayList unitIDs = attackingUnit.AttackTile(tileToAttack);
-                                string sendMessage = "attack\\" + attackingUnit.UniqueID + "\\" + unitIDs.Count;
-
-                                foreach (int id in unitIDs)
+                                if ( !attackingUnit.Paralyzed)
                                 {
-                                    Unit unitHit = board.getUnitByID(id);
-                                    unitHit.ApplyDamage(attackingUnit.Damage);
-                                    sendMessage += ("\\" + id);
+                                    if (!attackingUnit.Attacked)
+                                    {
+                                        if ( currentPlayer.mana >= attackingUnit.AttackCost)
+                                        {
+                                            if ( attackingUnit.accessibleTiles.Contains(tileToAttack))
+                                            {
+                                                Console.WriteLine("LOG: Unit " + attackingUnit.UniqueID + " is attacking tile(" + tileToAttack.x + ", " + tileToAttack.y + ")");
+                                                currentPlayer.mana -= attackingUnit.AttackCost;
+
+                                                //get a list of all the unit IDs that were attacked
+                                                //apply damage to all units
+                                                ArrayList unitIDs = attackingUnit.AttackTile(tileToAttack);
+                                                string sendMessage = "attack\\" + attackingUnit.UniqueID + "\\" + unitIDs.Count;
+
+                                                foreach (int id in unitIDs)
+                                                {
+                                                    Unit unitHit = board.getUnitByID(id);
+                                                    unitHit.ApplyDamage(attackingUnit.Damage);
+                                                    sendMessage += ("\\" + id);
+                                                    attackingUnit.addXP();
+                                                }
+
+
+                                                player1.playerClient.sw.WriteLine(sendMessage);
+                                                player2.playerClient.sw.WriteLine(sendMessage);
+                                                attackingUnit.Attacked = true;
+                                            }
+
+                                        
+                                            else
+                                            {
+                                                Console.WriteLine("LOG: Enemy is not in range.");
+                                            }
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine("LOG: Player does not have enough mana to attack.");
+                                        }
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("LOG: Unit has already attacked");
+                                    }
                                 }
-
-
-                                player1.playerClient.sw.WriteLine(sendMessage);
-                                player2.playerClient.sw.WriteLine(sendMessage);
+                                else 
+                                {
+                                    Console.WriteLine("LOG: Unit is paralyzed. Cannot Attack.");
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("LOG: Unit is not of same allegiance.");
                             }
 
                             //fix this, should only need to perform this once
@@ -275,7 +313,7 @@ namespace Guardians_Of_The_Arena_Server
 
             public void IncreaseMana()
             {
-                if (maxMana <= 12)
+                if (maxMana < 12)
                     maxMana += 2;
 
                 mana = maxMana;

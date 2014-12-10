@@ -10,10 +10,10 @@ namespace Guardians_Of_The_Arena_Server.Units
         public Unit1(int ID)
             : base(ID)
         {
-            health = 20;
-            maxHealth = 20;
+            health = 25;
+            maxHealth = 25;
             armor = 8;
-            damage = 20;
+            damage = 18;
             movementRange = 4;
             movementCost = 2;
             attackCost = 2;
@@ -93,6 +93,11 @@ namespace Guardians_Of_The_Arena_Server.Units
             }
 
             return unitsHit;
+        }
+
+        public override void LevelUp()
+        {
+            throw new NotImplementedException();
         }
     }
 }

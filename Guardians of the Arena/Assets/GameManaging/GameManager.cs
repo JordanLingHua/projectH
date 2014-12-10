@@ -82,7 +82,7 @@ public class GameManager : MonoBehaviour {
 
 		//extra unit on screen
 		if (selectedUnit != null){
-			Vector3 worldPoint = new Vector3(122,20,75);
+			Vector3 worldPoint = gp.playerNumber == 1? new Vector3(122,20,75) : new Vector3(-23,20,30);
 			if (selectedUnitDisplay == null  || selectedUnitDisplay.name != (selectedUnit.unitName + "(Clone)")){
 				Destroy(selectedUnitDisplay);
 				switch(selectedUnit.unitType){
@@ -132,6 +132,7 @@ public class GameManager : MonoBehaviour {
 					break;
 				}
 				selectedUnitDisplay.transform.localScale = new Vector3(20,20,20);
+
 			}
 
 			Unit script = selectedUnit.GetComponent<Unit>();

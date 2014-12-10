@@ -22,13 +22,18 @@ namespace Guardians_Of_The_Arena_Server
             RemoteEndPoint = new IPEndPoint(IPAddress.Any, 9000);
             s = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
 
-           // createDatabase();
+
+            if (!File.Exists("GOA_User_Database.sqlite"))
+            {
+                createDatabase();
+            }
+
             connectToDatabase();
-           // createTables();
+            //createTables();
             //clearTable();
             //fillPlayerTable();
             //printTable();
-           // dropTable();
+            //dropTable();
 
         }
 
@@ -62,6 +67,7 @@ namespace Guardians_Of_The_Arena_Server
 
         void createTables()
         {
+
             string sql = "create table playerInfo (name varchar(20), password varchar(50))";
             SQLiteCommand command = new SQLiteCommand(sql, userDatabase);
             command.ExecuteNonQuery();
@@ -258,10 +264,10 @@ namespace Guardians_Of_The_Arena_Server
                 string sql = "";
                 SQLiteCommand command;
                 //unit type 1 at 5, 1
-                sql =           "   INSERT INTO unitSetups  ";
-                sql +=          "   (name, setupID, unitType, x , y, onField)    ";
-                sql +=          "   VALUES  ";
-                sql +=          "   ('" + name + "', " + i + ",1 , 5, 1, 1)";
+                sql = "   INSERT INTO unitSetups  ";
+                sql += "   (name, setupID, unitType, x , y, onField)    ";
+                sql += "   VALUES  ";
+                sql += "   ('" + name + "', " + i + ",1 , 5, 1, 1)";
                 command = new SQLiteCommand(sql, userDatabase);
                 command.ExecuteNonQuery();
                 //unit type 2 at 6, 0
@@ -344,20 +350,41 @@ namespace Guardians_Of_The_Arena_Server
             
         }
 
+        public SQLiteDataReader getGameSetup(string name, int setupID)
+        {
+            string sql = "SELECT unitType, x, y ";
+            sql += "FROM unitSetups ";
+            sql += "WHERE name = @name AND setupID = @setupID AND onField = 1";
+            SQLiteCommand command = new SQLiteCommand(sql, userDatabase);
+            command.Parameters.AddWithValue("@name", name);
+            command.Parameters.AddWithValue("@setupID", setupID);
+            return command.ExecuteReader();
+
+
+        }
+
         public void updateSetup(string name, int setupID, int unitType, int oldX, int oldY, int newX, int newY, int onfield)
         {
             string sql   = "UPDATE unitSetups ";
             sql         += "SET x = @newX, y = @newY, onField = @onField ";
-            sql         += "WHERE name = @name AND setupID = @setupID AND x = @oldX AND y = @oldY";
+            sql         += "WHERE name = @name AND setupID = @setupID AND x = @oldX AND y = @oldY AND unitType = @unitType";
             SQLiteCommand command = new SQLiteCommand(sql, userDatabase);
             command.Parameters.AddWithValue("@name", name);
             command.Parameters.AddWithValue("@newX", newX);
             command.Parameters.AddWithValue("@newY", newY);
+            command.Parameters.AddWithValue("@unitType", unitType);
             command.Parameters.AddWithValue("@oldX", oldX);
             command.Parameters.AddWithValue("@oldY", oldY);
             command.Parameters.AddWithValue("@onField", onfield);
             command.Parameters.AddWithValue("@setupID", setupID);
             command.ExecuteNonQuery();
+
+            //sql = "SELECT * FROM unitSetups";
+            //command = new SQLiteCommand(sql, userDatabase);
+            //SQLiteDataReader reader = command.ExecuteReader();
+
+            //while (reader.Read())
+            //    Console.WriteLine(reader["setupID"] + " " + reader["unitType"] + " " + reader["x"] + " " + reader["y"]);
         }
 
         public void sendPacket(String action, String name, int score)

@@ -11,6 +11,7 @@ namespace Guardians_Of_The_Arena_Server
         private short height = 11;
         private Tile[,] tiles;
         private Dictionary<int, Unit> unitTable;
+        private int unitCount;
 
         //need to know what is happening with the guardian and soulstone at all times
         //so we will have to keep track of them
@@ -84,13 +85,15 @@ namespace Guardians_Of_The_Arena_Server
         }
         
         public string SetBoard(string player1Name, int player1Setup, string player2Name, int player2Setup, DataManager dm)
-        {
+        {   
+
+
             //we will create the GameBoard using the custom setups of each player
-            System.Data.SQLite.SQLiteDataReader reader = dm.getBoardSetup(player1Name, player1Setup);
+            System.Data.SQLite.SQLiteDataReader reader = dm.getGameSetup(player1Name, player1Setup);
 
             string returnString = "";
 
-            int unitCount = 0;
+            unitCount = 0;
             while (reader.Read())
             {
                 
@@ -160,7 +163,7 @@ namespace Guardians_Of_The_Arena_Server
             returnString += "\\EndPlayer1";
 
             //We will now set the board for player 2's units
-            reader = dm.getBoardSetup(player2Name, player2Setup);
+            reader = dm.getGameSetup(player2Name, player2Setup);
 
             while (reader.Read())
             {
@@ -231,6 +234,106 @@ namespace Guardians_Of_The_Arena_Server
             returnString += "\\EndPlayer2";
 
             return returnString;
+        }
+
+        //create all the trees and return a string with all of their locations
+        public string spawnObstacles()
+        {
+            string returnString = "";
+
+            #region Trees Region
+
+            Unit tree = new Units.Tree(100);
+            tree.CurrentTile = tiles[10, 6];
+            tiles[10, 6].CurrentUnit = tree;
+            unitTable.Add(tree.UniqueID, tree);
+            returnString += "\\" + tree.UniqueID + "\\" + tree.CurrentTile.x + "\\" + tree.CurrentTile.y;
+
+
+            tree = new Units.Tree(101);
+            tree.CurrentTile = tiles[10, 5];
+            tiles[10, 5].CurrentUnit = tree;
+            unitTable.Add(tree.UniqueID, tree);
+            returnString += "\\" + tree.UniqueID + "\\" + tree.CurrentTile.x + "\\" + tree.CurrentTile.y;
+
+            tree = new Units.Tree(102);
+            tree.CurrentTile = tiles[10, 4];
+            tiles[10, 4].CurrentUnit = tree;
+            unitTable.Add(tree.UniqueID, tree);
+            returnString += "\\" + tree.UniqueID + "\\" + tree.CurrentTile.x + "\\" + tree.CurrentTile.y;
+
+            tree = new Units.Tree(103);
+            tree.CurrentTile = tiles[0, 4];
+            tiles[0, 4].CurrentUnit = tree;
+            unitTable.Add(tree.UniqueID, tree);
+            returnString += "\\" + tree.UniqueID + "\\" + tree.CurrentTile.x + "\\" + tree.CurrentTile.y;
+
+            tree = new Units.Tree(104);
+            tree.CurrentTile = tiles[0, 5];
+            tiles[0, 5].CurrentUnit = tree;
+            unitTable.Add(tree.UniqueID, tree);
+            returnString += "\\" + tree.UniqueID + "\\" + tree.CurrentTile.x + "\\" + tree.CurrentTile.y;
+
+            tree = new Units.Tree(105);
+            tree.CurrentTile = tiles[0, 6];
+            tiles[0, 6].CurrentUnit = tree;
+            unitTable.Add(tree.UniqueID, tree);
+            returnString += "\\" + tree.UniqueID + "\\" + tree.CurrentTile.x + "\\" + tree.CurrentTile.y;
+
+            tree = new Units.Tree(106);
+            tree.CurrentTile = tiles[4, 4];
+            tiles[4, 4].CurrentUnit = tree;
+            unitTable.Add(tree.UniqueID, tree);
+            returnString += "\\" + tree.UniqueID + "\\" + tree.CurrentTile.x + "\\" + tree.CurrentTile.y;
+
+            tree = new Units.Tree(107);
+            tree.CurrentTile = tiles[3, 4];
+            tiles[3, 4].CurrentUnit = tree;
+            unitTable.Add(tree.UniqueID, tree);
+            returnString += "\\" + tree.UniqueID + "\\" + tree.CurrentTile.x + "\\" + tree.CurrentTile.y;
+
+            tree = new Units.Tree(108);
+            tree.CurrentTile = tiles[4, 6];
+            tiles[4, 6].CurrentUnit = tree;
+            unitTable.Add(tree.UniqueID, tree);
+            returnString += "\\" + tree.UniqueID + "\\" + tree.CurrentTile.x + "\\" + tree.CurrentTile.y;
+
+            tree = new Units.Tree(109);
+            tree.CurrentTile = tiles[3, 6];
+            tiles[3, 6].CurrentUnit = tree;
+            unitTable.Add(tree.UniqueID, tree);
+            returnString += "\\" + tree.UniqueID + "\\" + tree.CurrentTile.x + "\\" + tree.CurrentTile.y;
+
+            tree = new Units.Tree(110);
+            tree.CurrentTile = tiles[6, 6];
+            tiles[6, 6].CurrentUnit = tree;
+            unitTable.Add(tree.UniqueID, tree);
+            returnString += "\\" + tree.UniqueID + "\\" + tree.CurrentTile.x + "\\" + tree.CurrentTile.y;
+
+            tree = new Units.Tree(111);
+            tree.CurrentTile = tiles[7, 6];
+            tiles[7, 6].CurrentUnit = tree;
+            unitTable.Add(tree.UniqueID, tree);
+            returnString += "\\" + tree.UniqueID + "\\" + tree.CurrentTile.x + "\\" + tree.CurrentTile.y;
+
+            tree = new Units.Tree(112);
+            tree.CurrentTile = tiles[6, 4];
+            tiles[6, 4].CurrentUnit = tree;
+            unitTable.Add(tree.UniqueID, tree);
+            returnString += "\\" + tree.UniqueID + "\\" + tree.CurrentTile.x + "\\" + tree.CurrentTile.y;
+
+
+            tree = new Units.Tree(113);
+            tree.CurrentTile = tiles[7, 4];
+            tiles[7, 4].CurrentUnit = tree;
+            unitTable.Add(tree.UniqueID, tree);
+            returnString += "\\" + tree.UniqueID + "\\" + tree.CurrentTile.x + "\\" + tree.CurrentTile.y + "\\endSpawnObstacles";
+
+            #endregion
+
+            return returnString;
+
+
         }
 
         public void moveUnit(Tile start, Tile destination)

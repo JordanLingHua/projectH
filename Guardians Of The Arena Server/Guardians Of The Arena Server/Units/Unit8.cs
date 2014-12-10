@@ -13,18 +13,50 @@ namespace Guardians_Of_The_Arena_Server.Units
             health = 20;
             maxHealth = 20;
             armor = 35;
-            damage = -18;
+            damage = -20;
             movementRange = 3;
-            movementCost = 3;
-            attackCost = 6;
+            movementCost = 1;
+            attackCost = 4;
             attackRange = 4; //target based
         }
 
         public override ArrayList AttackTile(GameBoard.Tile tile)
         {
             ArrayList unitsHit = new ArrayList();
-            unitsHit.Add(tile.CurrentUnit.UniqueID);
+            if (tile.CurrentUnit != null)
+                unitsHit.Add(tile.CurrentUnit.UniqueID);
             return unitsHit;
+        }
+
+        public override void setAttackTiles(GameBoard.Tile currentTile, int distance)
+        {
+            if (distance > 0)
+            {
+                if (currentTile.UP != null) 
+                {
+                    setAccessibleTiles(currentTile.UP, distance - 1);
+                    accessibleTiles.Add(currentTile.UP);
+                }
+                if (currentTile.DOWN != null )
+                {
+                    setAccessibleTiles(currentTile.DOWN, distance - 1);
+                    accessibleTiles.Add(currentTile.DOWN);
+                }
+                if (currentTile.RIGHT != null )
+                {
+                    setAccessibleTiles(currentTile.RIGHT, distance - 1);
+                    accessibleTiles.Add(currentTile.RIGHT);
+                }
+                if (currentTile.LEFT != null )
+                {
+                    setAccessibleTiles(currentTile.LEFT, distance - 1);
+                    accessibleTiles.Add(currentTile.LEFT);
+                }
+            }
+        }
+        public override void LevelUp()
+        {
+            throw new NotImplementedException();
         }
     }
 }

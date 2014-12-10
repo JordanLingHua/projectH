@@ -27,9 +27,13 @@ namespace Guardians_Of_The_Arena_Server.Units
             attackRange = 0;
             attackCost = 0;
 
-            invulnerable = false;
+            invulnerable = true;
         }
 
+        public override void setAccessibleTiles(GameBoard.Tile currentTile, int distance)
+        {
+            //do nothing
+        }
 
 
         public override ArrayList AttackTile(GameBoard.Tile tile)
@@ -54,6 +58,10 @@ namespace Guardians_Of_The_Arena_Server.Units
 
                 Console.WriteLine("LOG: Unit " + uniqueID + " has died.");
             }
+        }
+        public override void LevelUp()
+        {
+            throw new NotImplementedException();
         }
     }
 }

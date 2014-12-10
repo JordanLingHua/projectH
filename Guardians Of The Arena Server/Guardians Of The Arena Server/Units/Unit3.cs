@@ -44,12 +44,12 @@ namespace Guardians_Of_The_Arena_Server.Units
 
                     tile = upTile.RIGHT;
 
-                    if (tile != null && tile.RIGHT.CurrentUnit != null)
+                    if (tile != null && tile.CurrentUnit != null)
                         unitsHit.Add(tile.CurrentUnit.UniqueID);
 
                     tile = upTile.LEFT;
 
-                    if (tile != null && tile.RIGHT.CurrentUnit != null)
+                    if (tile != null && tile.CurrentUnit != null)
                         unitsHit.Add(tile.CurrentUnit.UniqueID);
                 }
             }
@@ -66,12 +66,12 @@ namespace Guardians_Of_The_Arena_Server.Units
 
                     tile = downTile.RIGHT;
 
-                    if (tile != null && tile.RIGHT.CurrentUnit != null)
+                    if (tile != null && tile.CurrentUnit != null)
                         unitsHit.Add(tile.CurrentUnit.UniqueID);
 
                     tile = downTile.LEFT;
 
-                    if (tile != null && tile.RIGHT.CurrentUnit != null)
+                    if (tile != null && tile.CurrentUnit != null)
                         unitsHit.Add(tile.CurrentUnit.UniqueID);
                 }
             }
@@ -86,12 +86,12 @@ namespace Guardians_Of_The_Arena_Server.Units
 
                     tile = rightTile.UP;
 
-                    if (tile != null && tile.RIGHT.CurrentUnit != null)
+                    if (tile != null && tile.CurrentUnit != null)
                         unitsHit.Add(tile.CurrentUnit.UniqueID);
 
-                    tile = tile.DOWN;
+                    tile = rightTile.DOWN;
 
-                    if (tile != null && tile.RIGHT.CurrentUnit != null)
+                    if (tile != null && tile.CurrentUnit != null)
                         unitsHit.Add(tile.CurrentUnit.UniqueID);
                 }
             }
@@ -106,12 +106,12 @@ namespace Guardians_Of_The_Arena_Server.Units
 
                     tile = leftTile.UP;
 
-                    if (tile != null && tile.RIGHT.CurrentUnit != null)
+                    if (tile != null && tile.CurrentUnit != null)
                         unitsHit.Add(tile.CurrentUnit.UniqueID);
 
                     tile = leftTile.DOWN;
 
-                    if (tile != null && tile.RIGHT.CurrentUnit != null)
+                    if (tile != null && tile.CurrentUnit != null)
                         unitsHit.Add(tile.CurrentUnit.UniqueID);
 
 
@@ -119,63 +119,10 @@ namespace Guardians_Of_The_Arena_Server.Units
             }
 
             return unitsHit;
-
-
-            //if (xDif > 0)
-            //{
-            //    for (int i = -1; i > xDif; i--)
-            //    {
-            //        currentTile = currentTile.DOWN;
-
-            //        if (currentTile.CurrentUnit != null)
-            //        {
-            //            unitsHit[0] = currentTile.CurrentUnit.UniqueID;
-            //            return unitsHit;
-            //        }
-            //    }
-            //}
-            //else if (xDif > 0)
-            //{
-            //    for (int i = 1; i < xDif; i++)
-            //    {
-            //        currentTile = currentTile.DOWN;
-
-            //        if (currentTile.CurrentUnit != null)
-            //        {
-            //            unitsHit[0] = currentTile.CurrentUnit.UniqueID;
-            //            return unitsHit;
-            //        }
-            //    }
-            //}
-
-            //else if (yDif < 0)
-            //{
-            //    for (int i = 1; i < yDif; i++)
-            //    {
-            //        currentTile = currentTile.RIGHT;
-
-            //        if (currentTile.CurrentUnit != null)
-            //        {
-            //            unitsHit[0] = currentTile.CurrentUnit.UniqueID;
-            //            return unitsHit;
-            //        }
-            //    }
-            //}
-            //else if (yDif > 0)
-            //{
-            //    for (int i = -1; i > yDif; i--)
-            //    {
-            //        currentTile = currentTile.LEFT;
-
-            //        if (currentTile.CurrentUnit != null)
-            //        {
-            //            unitsHit[0] = currentTile.CurrentUnit.UniqueID;
-            //            return unitsHit;
-            //        }
-            //    }
-            //}
-
-            //return unitsHit;
+        }
+        public override void LevelUp()
+        {
+            throw new NotImplementedException();
         }
     }
 }

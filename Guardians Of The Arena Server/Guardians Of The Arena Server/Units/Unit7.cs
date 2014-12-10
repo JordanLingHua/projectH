@@ -29,5 +29,9 @@ namespace Guardians_Of_The_Arena_Server.Units
 
             return unitsHit;
         }
+        public override void LevelUp()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
