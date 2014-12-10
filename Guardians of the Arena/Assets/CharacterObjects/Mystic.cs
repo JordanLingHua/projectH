@@ -39,7 +39,7 @@ public class Mystic: Unit {
 	//Unit Focused needs to take dmg after turn ends if level 3 and enemy unit
 	public override void attackUnit(Unit unitAffected){
 		atkd = true;
-		if (!invincible){
+		if (!unitAffected.invincible){
 			//save variables for reverting later
 			unitFocused = unitAffected;
 			if (unitAffected.unitType == 2){
@@ -65,7 +65,7 @@ public class Mystic: Unit {
 
 
 		}else{
-			gm.combatLog.text = "Combat Log:\nTarget is invincible!";
+			unitAffected.showPopUpText("Invincible!",Color.red);
 		}
 		//clean up the board colors
 		gm.accessibleTiles.Clear();

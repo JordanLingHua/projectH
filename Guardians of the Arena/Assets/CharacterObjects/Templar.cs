@@ -26,7 +26,7 @@ public class Templar : Unit{
 	public override void attackUnit(Unit unitAffected){
 		atkd = true;
 		
-		if (!invincible){
+		if (!unitAffected.invincible){
 
 			//level 3 Heal ally units
 			if (unitLevel == 3 && ((alleg == Unit.allegiance.playerOne && unitAffected.alleg == Unit.allegiance.playerOne) || (alleg == Unit.allegiance.playerTwo && unitAffected.alleg == Unit.allegiance.playerTwo))){
@@ -88,7 +88,7 @@ public class Templar : Unit{
 				Destroy(unitAffected.gameObject);
 			}
 		}else{
-			gm.combatLog.text = "Combat Log:\nTarget is invincible!";
+			unitAffected.showPopUpText("Invincible!",Color.red);
 		}
 		//clean up the board colors
 		gm.accessibleTiles.Clear();

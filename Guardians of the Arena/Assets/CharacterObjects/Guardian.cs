@@ -25,7 +25,7 @@ public class Guardian :Unit {
 	public override void attackUnit(Unit unitAffected){
 		atkd = true;
 		
-		if (!invincible){
+		if (!unitAffected.invincible){
 			if (unitLevel == 3 && (((float)unitAffected.hp/unitAffected.maxHP) < 0.5)){
 				unitAffected.hp = 0;
 				unitAffected.showPopUpText("Executed!",Color.red);
@@ -55,7 +55,7 @@ public class Guardian :Unit {
 				Destroy(unitAffected.gameObject);
 			}
 		}else{
-			gm.combatLog.text = "Combat Log:\nTarget is invincible!";
+			unitAffected.showPopUpText("Invincible!",Color.red);
 		}
 		//clean up the board colors
 		gm.accessibleTiles.Clear();

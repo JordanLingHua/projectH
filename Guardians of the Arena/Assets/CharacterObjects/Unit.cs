@@ -13,7 +13,7 @@ public class Unit    : MonoBehaviour {
 	public bool atkd, mvd;
 	public string unitName = string.Empty;
 	public string info = string.Empty;
-	public bool invincible,displayHPBar;
+	public bool invincible,displayHPBar,displayXPBar;
 
 	public GameObject popUpText;
 
@@ -70,6 +70,7 @@ public class Unit    : MonoBehaviour {
 	public AudioManager am;
 	public virtual void Start () {
 		unitLevel = 1;
+		displayXPBar = true;
 		popUpText = GameObject.Find ("popUpText");
 		hpBarBG = Resources.Load("HPBarBG") as Texture2D;
 		hpBarHigh = Resources.Load("HPBarHigh") as Texture2D;
@@ -101,15 +102,22 @@ public class Unit    : MonoBehaviour {
 		if (displayHPBar){
 			Camera cam = Camera.main;
 			Vector3 HPBarPos = cam.WorldToScreenPoint(gameObject.transform.position);
-			GUI.DrawTexture (new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-10 < 0?Screen.height:Screen.height - HPBarPos.y-10,  25, 5),hpBarBG);
+			GUI.DrawTexture (new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-10 < 0?Screen.height:Screen.height - HPBarPos.y-10,  25, 3),hpBarBG);
 			float barColorSwitch = (float)hp/maxHP;
 			if (barColorSwitch > .6){
-				GUI.DrawTexture(new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-10, barColorSwitch * 25, 5),hpBarHigh);
+				GUI.DrawTexture(new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-10, barColorSwitch * 25, 3),hpBarHigh);
 			}else if (barColorSwitch > 0.3){
-				GUI.DrawTexture(new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-10, barColorSwitch * 25, 5),hpBarMedium);
+				GUI.DrawTexture(new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-10, barColorSwitch * 25, 3),hpBarMedium);
 			}else{
-				GUI.DrawTexture(new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-10, barColorSwitch * 25, 5),hpBarLow);
+				GUI.DrawTexture(new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-10, barColorSwitch * 25, 3),hpBarLow);
 			}
+		}
+		if (displayXPBar){
+			Camera cam = Camera.main;
+			Vector3 HPBarPos = cam.WorldToScreenPoint(gameObject.transform.position);
+			float xpBarColorSwitch = (float)xp/XP_TO_LEVEL[unitLevel-1];
+			GUI.DrawTexture (new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-13 < 0?Screen.height-3:Screen.height - HPBarPos.y-13,  25, 3),hpBarBG);
+			GUI.DrawTexture(new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-13, xpBarColorSwitch * 25, 3),hpBarHigh);
 		}
 	}
 
@@ -220,7 +228,7 @@ public class Unit    : MonoBehaviour {
 	public virtual void attackUnit(Unit unitAffected){
 		atkd = true;
 
-		if (!invincible){
+		if (!unitAffected.invincible){
 			//gm.combatLog.text = "Combat Log:\nDealt " + unitThatAttacked.atk + " damage!";
 			if (this.atk > 0){
 				//block dmg if killing guardian lvl 2
@@ -267,7 +275,7 @@ public class Unit    : MonoBehaviour {
 				Destroy(unitAffected.gameObject);
 			}
 		}else{
-			gm.combatLog.text = "Combat Log:\nTarget is invincible!";
+			unitAffected.showPopUpText("Invincible!",Color.red);
 		}
 		//clean up the board colors
 		gm.accessibleTiles.Clear();

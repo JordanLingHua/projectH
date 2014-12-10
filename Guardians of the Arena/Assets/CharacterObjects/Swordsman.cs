@@ -35,7 +35,7 @@ public class Swordsman : Unit {
 			atkd = true;		
 		}
 
-		if (!invincible){
+		if (!unitAffected.invincible){
 			if (unitAffected.unitType == 2){
 				(unitAffected as Mystic).revertStatsOfFocused();
 			}
@@ -76,7 +76,7 @@ public class Swordsman : Unit {
 				Destroy(unitAffected.gameObject);
 			}
 		}else{
-			gm.combatLog.text = "Combat Log:\nTarget is invincible!";
+			unitAffected.showPopUpText("Invincible!",Color.red);
 		}
 
 		//clean up the board colors checks atkd here for windfury

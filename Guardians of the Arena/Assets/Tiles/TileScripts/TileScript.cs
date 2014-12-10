@@ -169,10 +169,8 @@ public class TileScript : MonoBehaviour {
 
 			if (!gm.turn){
 				am.playErrorSFX();
-				gm.combatLog.text = "Combat Log:\nIt's not your turn!";
-			}
-				
-			if (gm.gs == GameManager.gameState.playerMv && gm.turn) {
+				gm.showErrorMessage("It's not your turn!");
+			}else if (gm.gs == GameManager.gameState.playerMv) {
 				moveToTile ();
 			} else if (gm.gs == GameManager.gameState.playerAtk) {
 				attackTile ();
@@ -192,12 +190,17 @@ public class TileScript : MonoBehaviour {
 			am.playButtonSFX();
 		}else{
 			am.playErrorSFX();
+			if (!gm.accessibleTiles.Contains(this)){
+				gm.showErrorMessage("Cannot move there!");
+			}
 			if (this.objectOccupyingTile != null && this.objectOccupyingTile == gm.selectedUnit){
-				gm.combatLog.text = "Combat Log:\nThat unit is already there!";
-			}else if (this.objectOccupyingTile != null){
-				gm.combatLog.text = "Combat Log:\nTheres a unit there already!";
-			}else{
-				gm.combatLog.text = "Combat Log:\nNot enough mana to move!";
+				gm.showErrorMessage("That unit is already there!");
+			}
+		    if (this.objectOccupyingTile != null){
+				gm.showErrorMessage("Theres a unit there already!");
+			}
+			if (gm.pMana < gm.selectedUnit.mvCost){
+				gm.showErrorMessage("Not enough mana to move!");
 			}
 		}
 	}
@@ -209,7 +212,7 @@ public class TileScript : MonoBehaviour {
 			print ("Sent attack packet");
 		} else {
 			am.playErrorSFX();
-			gm.combatLog.text = "Combat Log:\nCannot attack there";
+			gm.showErrorMessage("Cannot attack there!");
 		}
 
 
