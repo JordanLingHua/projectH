@@ -1,7 +1,103 @@
 fileFormatVersion: 2
 guid: a9fa106b1f61046708ba84c4173bfaa8
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: mageSpecialCast_0
+    21300002: mageSpecialCast_1
+    21300004: mageSpecialCast_2
+    21300006: mageSpecialCast_3
+    21300008: mageSpecialCast_4
+    21300010: mageSpecialCast_5
+    21300012: mageSpecialCast_6
+    21300014: mageSpecialCast_7
+    21300016: mageSpecialCast_8
+    21300018: mageSpecialCast_9
+    21300020: mageSpecialCast_10
+    21300022: mageSpecialCast_11
+    21300024: mageSpecialCast_12
+    21300026: mageSpecialCast_13
+    21300028: mageSpecialCast_14
+    21300030: mageSpecialCast_15
+    21300032: mageSpecialCast_16
+    21300034: mageSpecialCast_17
+    21300036: mageSpecialCast_18
+    21300038: mageSpecialCast_19
+    21300040: mageSpecialCast_20
+    21300042: mageSpecialCast_21
+    21300044: mageSpecialCast_22
+    21300046: mageSpecialCast_23
+    21300048: mageSpecialCast_24
+    21300050: mageSpecialCast_25
+    21300052: mageSpecialCast_26
+    21300054: mageSpecialCast_27
+    21300056: mageSpecialCast_28
+    21300058: mageSpecialCast_29
+    21300060: mageSpecialCast_30
+    21300062: mageSpecialCast_31
+    21300064: mageSpecialCast_32
+    21300066: mageSpecialCast_33
+    21300068: mageSpecialCast_34
+    21300070: mageSpecialCast_35
+    21300072: mageSpecialCast_36
+    21300074: mageSpecialCast_37
+    21300076: mageSpecialCast_38
+    21300078: mageSpecialCast_39
+    21300080: mageSpecialCast_40
+    21300082: mageSpecialCast_41
+    21300084: mageSpecialCast_42
+    21300086: mageSpecialCast_43
+    21300088: mageSpecialCast_44
+    21300090: mageSpecialCast_45
+    21300092: mageSpecialCast_46
+    21300094: mageSpecialCast_47
+    21300096: mageSpecialCast_48
+    21300098: mageSpecialCast_49
+    21300100: mageSpecialCast_50
+    21300102: mageSpecialCast_51
+    21300104: mageSpecialCast_52
+    21300106: mageSpecialCast_53
+    21300108: mageSpecialCast_54
+    21300110: mageSpecialCast_55
+    21300112: mageSpecialCast_56
+    21300114: mageSpecialCast_57
+    21300116: mageSpecialCast_58
+    21300118: mageSpecialCast_59
+    21300120: mageSpecialCast_60
+    21300122: mageSpecialCast_61
+    21300124: mageSpecialCast_62
+    21300126: mageSpecialCast_63
+    21300128: mageSpecialCast_64
+    21300130: mageSpecialCast_65
+    21300132: mageSpecialCast_66
+    21300134: mageSpecialCast_67
+    21300136: mageSpecialCast_68
+    21300138: mageSpecialCast_69
+    21300140: mageSpecialCast_70
+    21300142: mageSpecialCast_71
+    21300144: mageSpecialCast_72
+    21300146: mageSpecialCast_73
+    21300148: mageSpecialCast_74
+    21300150: mageSpecialCast_75
+    21300152: mageSpecialCast_76
+    21300154: mageSpecialCast_77
+    21300156: mageSpecialCast_78
+    21300158: mageSpecialCast_79
+    21300160: mageSpecialCast_80
+    21300162: mageSpecialCast_81
+    21300164: mageSpecialCast_82
+    21300166: mageSpecialCast_83
+    21300168: mageSpecialCast_84
+    21300170: mageSpecialCast_85
+    21300172: mageSpecialCast_86
+    21300174: mageSpecialCast_87
+    21300176: mageSpecialCast_88
+    21300178: mageSpecialCast_89
+    21300180: mageSpecialCast_90
+    21300182: mageSpecialCast_91
+    21300184: mageSpecialCast_92
+    21300186: mageSpecialCast_93
+    21300188: mageSpecialCast_94
+    21300190: mageSpecialCast_95
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -22,7 +118,7 @@ TextureImporter:
   generateCubemap: 0
   seamlessCubemap: 0
   textureFormat: -1
-  maxTextureSize: 1024
+  maxTextureSize: 4096
   textureSettings:
     filterMode: -1
     aniso: 1
@@ -42,6 +138,966 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: mageSpecialCast_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 898
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_1
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 898
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_2
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 898
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_3
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 898
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_4
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 898
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_5
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 898
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_6
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 898
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_7
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 898
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_8
+      rect:
+        serializedVersion: 2
+        x: 976
+        y: 898
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_9
+      rect:
+        serializedVersion: 2
+        x: 1098
+        y: 898
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_10
+      rect:
+        serializedVersion: 2
+        x: 1220
+        y: 898
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_11
+      rect:
+        serializedVersion: 2
+        x: 1342
+        y: 898
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 770
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_13
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 770
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_14
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 770
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_15
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 770
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_16
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 770
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_17
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 770
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_18
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 770
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_19
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 770
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_20
+      rect:
+        serializedVersion: 2
+        x: 976
+        y: 770
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_21
+      rect:
+        serializedVersion: 2
+        x: 1098
+        y: 770
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_22
+      rect:
+        serializedVersion: 2
+        x: 1220
+        y: 770
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_23
+      rect:
+        serializedVersion: 2
+        x: 1342
+        y: 770
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 642
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_25
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 642
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_26
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 642
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_27
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 642
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_28
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 642
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_29
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 642
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_30
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 642
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_31
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 642
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_32
+      rect:
+        serializedVersion: 2
+        x: 976
+        y: 642
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_33
+      rect:
+        serializedVersion: 2
+        x: 1098
+        y: 642
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_34
+      rect:
+        serializedVersion: 2
+        x: 1220
+        y: 642
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_35
+      rect:
+        serializedVersion: 2
+        x: 1342
+        y: 642
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 514
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_37
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 514
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_38
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 514
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_39
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 514
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_40
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 514
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_41
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 514
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_42
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 514
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_43
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 514
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_44
+      rect:
+        serializedVersion: 2
+        x: 976
+        y: 514
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_45
+      rect:
+        serializedVersion: 2
+        x: 1098
+        y: 514
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_46
+      rect:
+        serializedVersion: 2
+        x: 1220
+        y: 514
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_47
+      rect:
+        serializedVersion: 2
+        x: 1342
+        y: 514
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 386
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_49
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 386
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_50
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 386
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_51
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 386
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_52
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 386
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_53
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 386
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_54
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 386
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_55
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 386
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_56
+      rect:
+        serializedVersion: 2
+        x: 976
+        y: 386
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_57
+      rect:
+        serializedVersion: 2
+        x: 1098
+        y: 386
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_58
+      rect:
+        serializedVersion: 2
+        x: 1220
+        y: 386
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_59
+      rect:
+        serializedVersion: 2
+        x: 1342
+        y: 386
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 258
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_61
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 258
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_62
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 258
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_63
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 258
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_64
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 258
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_65
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 258
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_66
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 258
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_67
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 258
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_68
+      rect:
+        serializedVersion: 2
+        x: 976
+        y: 258
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_69
+      rect:
+        serializedVersion: 2
+        x: 1098
+        y: 258
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_70
+      rect:
+        serializedVersion: 2
+        x: 1220
+        y: 258
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_71
+      rect:
+        serializedVersion: 2
+        x: 1342
+        y: 258
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 130
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_73
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 130
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_74
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 130
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_75
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 130
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_76
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 130
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_77
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 130
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_78
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 130
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_79
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 130
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_80
+      rect:
+        serializedVersion: 2
+        x: 976
+        y: 130
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_81
+      rect:
+        serializedVersion: 2
+        x: 1098
+        y: 130
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_82
+      rect:
+        serializedVersion: 2
+        x: 1220
+        y: 130
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_83
+      rect:
+        serializedVersion: 2
+        x: 1342
+        y: 130
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_84
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_85
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 2
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_86
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 2
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_87
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 2
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_88
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 2
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_89
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 2
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_90
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 2
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_91
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 2
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_92
+      rect:
+        serializedVersion: 2
+        x: 976
+        y: 2
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_93
+      rect:
+        serializedVersion: 2
+        x: 1098
+        y: 2
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_94
+      rect:
+        serializedVersion: 2
+        x: 1220
+        y: 2
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mageSpecialCast_95
+      rect:
+        serializedVersion: 2
+        x: 1342
+        y: 2
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
