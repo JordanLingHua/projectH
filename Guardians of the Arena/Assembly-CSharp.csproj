@@ -46,9 +46,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\AudioManager.cs" />
-     <Compile Include="Assets\CameraScript1.cs" />
-     <Compile Include="Assets\CameraScript2.cs" />
      <Compile Include="Assets\CharacterObjects\AoEUnit.cs" />
      <Compile Include="Assets\CharacterObjects\BuffingUnit.cs" />
      <Compile Include="Assets\CharacterObjects\Guardian.cs" />
@@ -62,24 +59,27 @@
      <Compile Include="Assets\CharacterObjects\Unit.cs" />
      <Compile Include="Assets\CharacterObjects\UtilityUnit.cs" />
      <Compile Include="Assets\CharacterObjects\move.cs" />
+     <Compile Include="Assets\GameManaging\AudioManager.cs" />
+     <Compile Include="Assets\GameManaging\CameraScript1.cs" />
+     <Compile Include="Assets\GameManaging\CameraScript2.cs" />
      <Compile Include="Assets\GameManaging\GameManager.cs" />
-     <Compile Include="Assets\GameProcess.cs" />
-     <Compile Include="Assets\ListOfPlayersScript.cs" />
-     <Compile Include="Assets\LoginScreenGUI.cs" />
-     <Compile Include="Assets\MainMenuGUI.cs" />
-     <Compile Include="Assets\Page.cs" />
-     <Compile Include="Assets\PageNumberScript.cs" />
-     <Compile Include="Assets\PlayerSetup.cs" />
-     <Compile Include="Assets\PopUpMenu.cs" />
-     <Compile Include="Assets\SetupScreenGUI.cs" />
-     <Compile Include="Assets\SetupTileScript.cs" />
-     <Compile Include="Assets\Sockets.cs" />
-     <Compile Include="Assets\ThreadSock.cs" />
+     <Compile Include="Assets\GameManaging\PopUpMenu.cs" />
+     <Compile Include="Assets\GameManaging\popUpTextScript.cs" />
+     <Compile Include="Assets\Main Menu Scripts\ListOfPlayersScript.cs" />
+     <Compile Include="Assets\Main Menu Scripts\LoginScreenGUI.cs" />
+     <Compile Include="Assets\Main Menu Scripts\MainMenuGUI.cs" />
+     <Compile Include="Assets\Main Menu Scripts\Page.cs" />
+     <Compile Include="Assets\Main Menu Scripts\PageNumberScript.cs" />
+     <Compile Include="Assets\Main Menu Scripts\challengeScript.cs" />
+     <Compile Include="Assets\Main Menu Scripts\globalChatScript.cs" />
+     <Compile Include="Assets\Networking\GameProcess.cs" />
+     <Compile Include="Assets\Networking\Sockets.cs" />
+     <Compile Include="Assets\Networking\ThreadSock.cs" />
+     <Compile Include="Assets\SetupSceneScripts\PlayerSetup.cs" />
+     <Compile Include="Assets\SetupSceneScripts\SetupScreenGUI.cs" />
+     <Compile Include="Assets\SetupSceneScripts\SetupTileScript.cs" />
      <Compile Include="Assets\Tiles\TileScripts\TileManager.cs" />
      <Compile Include="Assets\Tiles\TileScripts\TileScript.cs" />
-     <Compile Include="Assets\challengeScript.cs" />
-     <Compile Include="Assets\globalChatScript.cs" />
-     <Compile Include="Assets\popUpTextScript.cs" />
      <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
      <None Include="Assets\Standard Assets\Projectors\Sources\Shaders\Projector Multiply.shader" />
