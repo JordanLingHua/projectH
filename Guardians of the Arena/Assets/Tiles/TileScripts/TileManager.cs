@@ -68,10 +68,6 @@ public class TileManager : MonoBehaviour {
 			}
 		}
 
-		//addPresetTrees();
-		//addPresetAllyUnits();
-		//addPresetEnemyUnits();
-		displayHPBars (pum.selGridInt);
 	}
 
 	public void displayHPBars(int choice){
@@ -111,28 +107,45 @@ public class TileManager : MonoBehaviour {
 			break;
 		}
 	}
-	
-	void addPresetTrees(){
-		addTree (10,6,20);
-		addTree (10,5,21);
-		addTree (10,4,22);
+
+	public void displayXPBars(int choice){
 		
-		addTree (0,4,23);
-		addTree (0,5,24);
-		addTree (0,6,25);
-
-		addTree (4,4,26);
-		addTree (3,4,27);
-
-		addTree (4,6,28);
-		addTree (3,6,29);
-		
-		addTree (6,6,30);
-		addTree (7,6,31);
-
-		addTree (6,4,32);
-		addTree (7,4,33);
+		switch (choice) {
+			//All units
+		case 0:
+			foreach (int key in gm.units.Keys) {
+				gm.units [key].displayXPBar = true;
+			}
+			break;
+			//Friendly units
+		case 1:
+			foreach (int key in gm.units.Keys) {
+				if ((gp.playerNumber == 1 && gm.units [key].alleg == Unit.allegiance.playerOne) ||(gp.playerNumber == 2 && gm.units [key].alleg == Unit.allegiance.playerTwo )) {
+					gm.units [key].displayXPBar = true;
+				} else {
+					gm.units [key].displayXPBar = false;
+				}
+			}
+			break;
+			//enemy units
+		case 2:
+			foreach (int key in gm.units.Keys) {
+				if ((gp.playerNumber == 2 && gm.units [key].alleg == Unit.allegiance.playerOne) ||(gp.playerNumber == 1 && gm.units [key].alleg == Unit.allegiance.playerTwo )) {
+					gm.units [key].displayXPBar = true;
+				} else {
+					gm.units [key].displayXPBar = false;
+				}
+			}
+			break;
+			//off
+		case 3:
+			foreach (int key in gm.units.Keys) {
+				gm.units [key].displayXPBar = false;
+			}
+			break;
+		}
 	}
+
 
 	public void addTree(int x, int y,int unitID){
 		TileScript placeTile = tiles[x,y].GetComponent<TileScript>();

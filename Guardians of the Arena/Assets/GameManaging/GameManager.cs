@@ -22,6 +22,9 @@ public class GameManager : MonoBehaviour {
 	public Unit selectedUnit = null;
 	public HashSet<TileScript> accessibleTiles = new HashSet<TileScript>();
 
+	public GameObject UnitOne,UnitTwo,UnitThree,UnitFour,UnitFive,UnitSix,UnitSeven,UnitEight,UnitNine,UnitTen,UnitEleven;
+	GameObject selectedUnitDisplay;
+
 	//Timer variables
 	readonly float TIMER_LENGTH = 60f;
 	float timer;
@@ -49,6 +52,7 @@ public class GameManager : MonoBehaviour {
 	public void showErrorMessage(string error){
 		GUI.depth = -1;
 		Vector3 textPos = new Vector3((Screen.width*0.03f)/Screen.width,(Screen.height-((float)Screen.height*0.02f))/Screen.height,0);
+		//TODO: Error with different error text overlapping
 		if (GameObject.Find ("ErrorPopUpText(Clone)")!=null){
 			Destroy (GameObject.Find ("ErrorPopUpText(Clone)"));
 		}
@@ -76,12 +80,65 @@ public class GameManager : MonoBehaviour {
 	
 	void OnGUI(){
 
+		//extra unit on screen
 		if (selectedUnit != null){
+			Vector3 worldPoint = new Vector3(122,20,75);
+			if (selectedUnitDisplay == null  || selectedUnitDisplay.name != (selectedUnit.unitName + "(Clone)")){
+				Destroy(selectedUnitDisplay);
+				switch(selectedUnit.unitType){
+				case 1:
+					selectedUnitDisplay = (GameObject)Instantiate(UnitOne, worldPoint, new Quaternion());
+					Destroy(selectedUnitDisplay.GetComponent<KnifeThrower>());
+					break;
+				case 2:
+					selectedUnitDisplay = (GameObject)Instantiate(UnitTwo, worldPoint, new Quaternion());
+					Destroy(selectedUnitDisplay.GetComponent<Mystic>());
+					break;
+				case 3:
+					selectedUnitDisplay = (GameObject)Instantiate(UnitThree, worldPoint, new Quaternion());
+					Destroy(selectedUnitDisplay.GetComponent<Templar>());
+					break;
+				case 4:
+					selectedUnitDisplay = (GameObject)Instantiate(UnitFour,worldPoint, new Quaternion());
+					Destroy(selectedUnitDisplay.GetComponent<AoEUnit>());
+					break;
+				case 5:
+					selectedUnitDisplay = (GameObject)Instantiate(UnitFive,worldPoint, new Quaternion());
+					Destroy(selectedUnitDisplay.GetComponent<UtilityUnit>());
+					break;
+				case 6:
+					selectedUnitDisplay = (GameObject)Instantiate(UnitSix, worldPoint, new Quaternion());
+					Destroy(selectedUnitDisplay.GetComponent<BuffingUnit>());
+					break;
+				case 7:
+					selectedUnitDisplay = (GameObject)Instantiate(UnitSeven, worldPoint,new Quaternion());
+					Destroy(selectedUnitDisplay.GetComponent<Swordsman>());
+					break;
+				case 8:
+					selectedUnitDisplay = (GameObject)Instantiate(UnitEight, worldPoint,new Quaternion());
+					Destroy(selectedUnitDisplay.GetComponent<Priest>());
+					break;
+				case 9:
+					selectedUnitDisplay = (GameObject)Instantiate(UnitNine, worldPoint, new Quaternion());
+					Destroy(selectedUnitDisplay.GetComponent<RangedUnit>());
+					break;
+				case 10:
+					selectedUnitDisplay = (GameObject)Instantiate(UnitTen, worldPoint, new Quaternion());
+					Destroy(selectedUnitDisplay.GetComponent<Guardian>());
+					break;
+				case 11:
+					selectedUnitDisplay = (GameObject)Instantiate(UnitEleven,worldPoint,new Quaternion());
+					Destroy(selectedUnitDisplay.GetComponent<SoulStone>());
+					break;
+				}
+				selectedUnitDisplay.transform.localScale = new Vector3(20,20,20);
+			}
+
 			Unit script = selectedUnit.GetComponent<Unit>();
 			string info = script.unitName + "\nHP: " + script.hp + "/" + script.maxHP;
 			info +=  script.atk > 0? "\nDamage: " + script.atk : "";
-			info += "\nLevel " + script.unitLevel;
-			info += script.unitLevel == 3? "": " Experience: " + script.xp + "/" + script.XP_TO_LEVEL[script.unitLevel-1];
+			info += "\nLvl" + script.unitLevel;
+			info += script.unitLevel == 3? "": " XP: " + script.xp + "/" + script.XP_TO_LEVEL[script.unitLevel-1];
 			info += script.mvCost > 0? "\nMove Cost: " + script.mvCost : "";
 			info += script.atkCost > 0? "\nAttack Cost: " + script.atkCost : "";
 
@@ -129,7 +186,7 @@ public class GameManager : MonoBehaviour {
 		if (!gameOver){
 			//End turn button
 			if (turn){
-				if (GUI.Button (new Rect(Screen.width*0.34f,Screen.height-((float)Screen.height*0.105f),Screen.width*0.15f,(Screen.height-((float)Screen.height*0.905f))),"End Turn")){
+				if (GUI.Button (new Rect(Screen.width*0.335f,Screen.height-((float)Screen.height*0.105f),Screen.width*0.15f,(Screen.height-((float)Screen.height*0.905f))),"End Turn")){
 					if (turn){
 						gp.returnSocket().SendTCPPacket("endTurn");
 						am.playButtonSFX();
@@ -139,7 +196,7 @@ public class GameManager : MonoBehaviour {
 					
 				}
 			}else{
-				GUI.Label(new Rect(Screen.width*0.34f,Screen.height-((float)Screen.height*0.105f),Screen.width*0.3f,(Screen.height-((float)Screen.height*0.905f))), "Opponent's Turn");
+				GUI.Label(new Rect(Screen.width*0.335f,Screen.height-((float)Screen.height*0.105f),Screen.width*0.3f,(Screen.height-((float)Screen.height*0.905f))), "Opponent's Turn");
 			}
 		}
 
@@ -147,6 +204,7 @@ public class GameManager : MonoBehaviour {
 	
 	void clearSelection(){
 		suInfo.text = "";
+		Destroy (selectedUnitDisplay);
 		selectedUnit = null;
 		accessibleTiles.Clear();
 		tm.clearAllTiles();

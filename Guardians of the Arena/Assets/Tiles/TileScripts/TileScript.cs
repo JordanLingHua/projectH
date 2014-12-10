@@ -182,24 +182,26 @@ public class TileScript : MonoBehaviour {
 		
 		
 		//move unit selected to this tile if it can go there
-		if (gm.accessibleTiles.Contains(this) && this.objectOccupyingTile == null && 
-		    gm.pMana >= gm.selectedUnit.GetComponent<Unit>().mvCost){
+		if (gm.accessibleTiles.Contains(this) && 
+		    this.objectOccupyingTile == null && 
+		    gm.pMana >= gm.selectedUnit.GetComponent<Unit>().mvCost && 
+		    ((gm.selectedUnit.alleg == Unit.allegiance.playerOne && gp.playerNumber == 1) || (gm.selectedUnit.alleg == Unit.allegiance.playerTwo && gp.playerNumber == 2))){
 
 			gp.returnSocket().SendTCPPacket("move\\" + gm.selectedUnit.unitID+ "\\" + this.x + "\\" + this.y);
 			print ("Sent move packet");
 			am.playButtonSFX();
 		}else{
 			am.playErrorSFX();
-			if (!gm.accessibleTiles.Contains(this)){
+
+			if ((gm.selectedUnit.alleg == Unit.allegiance.playerOne && gp.playerNumber == 2) || (gm.selectedUnit.alleg == Unit.allegiance.playerTwo && gp.playerNumber == 1)){
+				gm.showErrorMessage("Cannot move an opponent's piece!");
+			}else if (!gm.accessibleTiles.Contains(this)){
 				gm.showErrorMessage("Cannot move there!");
-			}
-			if (this.objectOccupyingTile != null && this.objectOccupyingTile == gm.selectedUnit){
+			}else if (this.objectOccupyingTile != null && this.objectOccupyingTile == gm.selectedUnit){
 				gm.showErrorMessage("That unit is already there!");
-			}
-		    if (this.objectOccupyingTile != null){
+			}else if (this.objectOccupyingTile != null){
 				gm.showErrorMessage("Theres a unit there already!");
-			}
-			if (gm.pMana < gm.selectedUnit.mvCost){
+			}else if (gm.pMana < gm.selectedUnit.mvCost){
 				gm.showErrorMessage("Not enough mana to move!");
 			}
 		}
@@ -207,12 +209,21 @@ public class TileScript : MonoBehaviour {
 	
 
 	public void attackTile(){
-		if (gm.accessibleTiles.Contains (this) && gm.pMana >= gm.selectedUnit.GetComponent<Unit> ().atkCost) {
+		if (gm.accessibleTiles.Contains (this) && 
+		    gm.pMana >= gm.selectedUnit.GetComponent<Unit> ().atkCost && 
+		    ((gm.selectedUnit.alleg == Unit.allegiance.playerOne && gp.playerNumber == 1) || (gm.selectedUnit.alleg == Unit.allegiance.playerTwo && gp.playerNumber == 2))) {
 			gp.returnSocket ().SendTCPPacket ("attack\\" + gm.selectedUnit.unitID + "\\" + this.x + "\\" + this.y);
 			print ("Sent attack packet");
+			am.playButtonSFX();
 		} else {
 			am.playErrorSFX();
-			gm.showErrorMessage("Cannot attack there!");
+			if (((gm.selectedUnit.alleg == Unit.allegiance.playerOne && gp.playerNumber == 1) || (gm.selectedUnit.alleg == Unit.allegiance.playerTwo && gp.playerNumber == 2))){
+				gm.showErrorMessage("Cannot attack with an opponent's piece!");
+			}else if (gm.accessibleTiles.Contains(this)){
+				gm.showErrorMessage("Cannot attack there!");
+			}else if (gm.pMana < gm.selectedUnit.mvCost){
+				gm.showErrorMessage("Not enough mana to attack!");
+			}
 		}
 
 

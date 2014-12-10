@@ -64,18 +64,20 @@ public class Unit    : MonoBehaviour {
 	 * 
 	 */
 
-	public Texture2D hpBarBG,hpBarHigh,hpBarMedium,hpBarLow;
+	public Texture2D hpBarBG,hpBarHigh,hpBarMedium,hpBarLow,xpBar;
 	public GameManager gm;
 	public GameProcess gp;
 	public AudioManager am;
 	public virtual void Start () {
 		unitLevel = 1;
+		xp = 5;
 		displayXPBar = true;
 		popUpText = GameObject.Find ("popUpText");
 		hpBarBG = Resources.Load("HPBarBG") as Texture2D;
 		hpBarHigh = Resources.Load("HPBarHigh") as Texture2D;
 		hpBarMedium = Resources.Load("HPBarMedium") as Texture2D;
 		hpBarLow = Resources.Load("HPBarLow") as Texture2D;
+		xpBar = Resources.Load("XPBar") as Texture2D;
 		am = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 		if (Application.loadedLevelName.Equals("BoardScene")){
@@ -102,7 +104,7 @@ public class Unit    : MonoBehaviour {
 		if (displayHPBar){
 			Camera cam = Camera.main;
 			Vector3 HPBarPos = cam.WorldToScreenPoint(gameObject.transform.position);
-			GUI.DrawTexture (new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-10 < 0?Screen.height:Screen.height - HPBarPos.y-10,  25, 3),hpBarBG);
+			GUI.DrawTexture (new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-10,  25, 3),hpBarBG);
 			float barColorSwitch = (float)hp/maxHP;
 			if (barColorSwitch > .6){
 				GUI.DrawTexture(new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-10, barColorSwitch * 25, 3),hpBarHigh);
@@ -115,9 +117,8 @@ public class Unit    : MonoBehaviour {
 		if (displayXPBar){
 			Camera cam = Camera.main;
 			Vector3 HPBarPos = cam.WorldToScreenPoint(gameObject.transform.position);
-			float xpBarColorSwitch = (float)xp/XP_TO_LEVEL[unitLevel-1];
-			GUI.DrawTexture (new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-13 < 0?Screen.height-3:Screen.height - HPBarPos.y-13,  25, 3),hpBarBG);
-			GUI.DrawTexture(new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-13, xpBarColorSwitch * 25, 3),hpBarHigh);
+			GUI.DrawTexture (new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-7,  25, 3),hpBarBG);
+			GUI.DrawTexture(new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-7, ((float)xp/XP_TO_LEVEL[unitLevel-1])* 25, 3),xpBar);
 		}
 	}
 
@@ -143,8 +144,8 @@ public class Unit    : MonoBehaviour {
 		//show unit info when hovering over it
 
 		if (Application.loadedLevelName.Equals("BoardScene")){
-			refreshUnitText ();
-			transform.parent.GetComponent<TileScript> ().OnMouseEnter ();
+		//	refreshUnitText ();
+		//	transform.parent.GetComponent<TileScript> ().OnMouseEnter ();
 		}else{
 			string info = "Unit Information:\n" +unitName + "\nHP: " + hp + "/" + maxHP;
 			info += "\nMovement Range: " + mvRange;
