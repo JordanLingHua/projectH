@@ -164,7 +164,7 @@ public class GameProcess : MonoBehaviour {
 				//    | Repeat boardCapacity number of times | 
 				//    v                                      v
 				//...{pageNumber\\unitType\\xPos\\yPos\\onField}
-				for (int i = 0; i < playerSetup.boardCapacity * 4; i += 4)
+				for (int i = 0; i < playerSetup.maxUnitCount * 4; i += 4)
 				{
 					//if the unit is OnField
 					if (tokens[i + 4].Equals("True"))

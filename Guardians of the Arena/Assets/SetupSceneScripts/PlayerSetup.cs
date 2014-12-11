@@ -21,6 +21,7 @@ public class PlayerSetup : MonoBehaviour {
 	public GameObject cp;
 
 	public int boardCapacity = 10;
+	public int maxUnitCount = 10;
 
 	//These special tiles seperate from the half of the game board (tiles) stores 
 	//the units that are dragged off the game board.  
