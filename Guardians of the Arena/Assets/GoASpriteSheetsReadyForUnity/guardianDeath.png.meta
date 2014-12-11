@@ -1,0 +1,1807 @@
+fileFormatVersion: 2
+guid: 309c7d975f06e4057a96c73dd772054a
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: guardianDeath_0
+    21300002: guardianDeath_1
+    21300004: guardianDeath_2
+    21300006: guardianDeath_3
+    21300008: guardianDeath_4
+    21300010: guardianDeath_5
+    21300012: guardianDeath_6
+    21300014: guardianDeath_7
+    21300016: guardianDeath_8
+    21300018: guardianDeath_9
+    21300020: guardianDeath_10
+    21300022: guardianDeath_11
+    21300024: guardianDeath_12
+    21300026: guardianDeath_13
+    21300028: guardianDeath_14
+    21300030: guardianDeath_15
+    21300032: guardianDeath_16
+    21300034: guardianDeath_17
+    21300036: guardianDeath_18
+    21300038: guardianDeath_19
+    21300040: guardianDeath_20
+    21300042: guardianDeath_21
+    21300044: guardianDeath_22
+    21300046: guardianDeath_23
+    21300048: guardianDeath_24
+    21300050: guardianDeath_25
+    21300052: guardianDeath_26
+    21300054: guardianDeath_27
+    21300056: guardianDeath_28
+    21300058: guardianDeath_29
+    21300060: guardianDeath_30
+    21300062: guardianDeath_31
+    21300064: guardianDeath_32
+    21300066: guardianDeath_33
+    21300068: guardianDeath_34
+    21300070: guardianDeath_35
+    21300072: guardianDeath_36
+    21300074: guardianDeath_37
+    21300076: guardianDeath_38
+    21300078: guardianDeath_39
+    21300080: guardianDeath_40
+    21300082: guardianDeath_41
+    21300084: guardianDeath_42
+    21300086: guardianDeath_43
+    21300088: guardianDeath_44
+    21300090: guardianDeath_45
+    21300092: guardianDeath_46
+    21300094: guardianDeath_47
+    21300096: guardianDeath_48
+    21300098: guardianDeath_49
+    21300100: guardianDeath_50
+    21300102: guardianDeath_51
+    21300104: guardianDeath_52
+    21300106: guardianDeath_53
+    21300108: guardianDeath_54
+    21300110: guardianDeath_55
+    21300112: guardianDeath_56
+    21300114: guardianDeath_57
+    21300116: guardianDeath_58
+    21300118: guardianDeath_59
+    21300120: guardianDeath_60
+    21300122: guardianDeath_61
+    21300124: guardianDeath_62
+    21300126: guardianDeath_63
+    21300128: guardianDeath_64
+    21300130: guardianDeath_65
+    21300132: guardianDeath_66
+    21300134: guardianDeath_67
+    21300136: guardianDeath_68
+    21300138: guardianDeath_69
+    21300140: guardianDeath_70
+    21300142: guardianDeath_71
+    21300144: guardianDeath_72
+    21300146: guardianDeath_73
+    21300148: guardianDeath_74
+    21300150: guardianDeath_75
+    21300152: guardianDeath_76
+    21300154: guardianDeath_77
+    21300156: guardianDeath_78
+    21300158: guardianDeath_79
+    21300160: guardianDeath_80
+    21300162: guardianDeath_81
+    21300164: guardianDeath_82
+    21300166: guardianDeath_83
+    21300168: guardianDeath_84
+    21300170: guardianDeath_85
+    21300172: guardianDeath_86
+    21300174: guardianDeath_87
+    21300176: guardianDeath_88
+    21300178: guardianDeath_89
+    21300180: guardianDeath_90
+    21300182: guardianDeath_91
+    21300184: guardianDeath_92
+    21300186: guardianDeath_93
+    21300188: guardianDeath_94
+    21300190: guardianDeath_95
+    21300192: guardianDeath_96
+    21300194: guardianDeath_97
+    21300196: guardianDeath_98
+    21300198: guardianDeath_99
+    21300200: guardianDeath_100
+    21300202: guardianDeath_101
+    21300204: guardianDeath_102
+    21300206: guardianDeath_103
+    21300208: guardianDeath_104
+    21300210: guardianDeath_105
+    21300212: guardianDeath_106
+    21300214: guardianDeath_107
+    21300216: guardianDeath_108
+    21300218: guardianDeath_109
+    21300220: guardianDeath_110
+    21300222: guardianDeath_111
+    21300224: guardianDeath_112
+    21300226: guardianDeath_113
+    21300228: guardianDeath_114
+    21300230: guardianDeath_115
+    21300232: guardianDeath_116
+    21300234: guardianDeath_117
+    21300236: guardianDeath_118
+    21300238: guardianDeath_119
+    21300240: guardianDeath_120
+    21300242: guardianDeath_121
+    21300244: guardianDeath_122
+    21300246: guardianDeath_123
+    21300248: guardianDeath_124
+    21300250: guardianDeath_125
+    21300252: guardianDeath_126
+    21300254: guardianDeath_127
+    21300256: guardianDeath_128
+    21300258: guardianDeath_129
+    21300260: guardianDeath_130
+    21300262: guardianDeath_131
+    21300264: guardianDeath_132
+    21300266: guardianDeath_133
+    21300268: guardianDeath_134
+    21300270: guardianDeath_135
+    21300272: guardianDeath_136
+    21300274: guardianDeath_137
+    21300276: guardianDeath_138
+    21300278: guardianDeath_139
+    21300280: guardianDeath_140
+    21300282: guardianDeath_141
+    21300284: guardianDeath_142
+    21300286: guardianDeath_143
+    21300288: guardianDeath_144
+    21300290: guardianDeath_145
+    21300292: guardianDeath_146
+    21300294: guardianDeath_147
+    21300296: guardianDeath_148
+    21300298: guardianDeath_149
+    21300300: guardianDeath_150
+    21300302: guardianDeath_151
+    21300304: guardianDeath_152
+    21300306: guardianDeath_153
+    21300308: guardianDeath_154
+    21300310: guardianDeath_155
+    21300312: guardianDeath_156
+    21300314: guardianDeath_157
+    21300316: guardianDeath_158
+    21300318: guardianDeath_159
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: guardianDeath_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1323
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_1
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 1323
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_2
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 1323
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_3
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 1323
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_4
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 1323
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_5
+      rect:
+        serializedVersion: 2
+        x: 1265
+        y: 1323
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_6
+      rect:
+        serializedVersion: 2
+        x: 1518
+        y: 1323
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_7
+      rect:
+        serializedVersion: 2
+        x: 1771
+        y: 1323
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_8
+      rect:
+        serializedVersion: 2
+        x: 2024
+        y: 1323
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_9
+      rect:
+        serializedVersion: 2
+        x: 2277
+        y: 1323
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_10
+      rect:
+        serializedVersion: 2
+        x: 2530
+        y: 1323
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_11
+      rect:
+        serializedVersion: 2
+        x: 2783
+        y: 1323
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_12
+      rect:
+        serializedVersion: 2
+        x: 3036
+        y: 1323
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_13
+      rect:
+        serializedVersion: 2
+        x: 3289
+        y: 1323
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_14
+      rect:
+        serializedVersion: 2
+        x: 3542
+        y: 1323
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_15
+      rect:
+        serializedVersion: 2
+        x: 3795
+        y: 1323
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_16
+      rect:
+        serializedVersion: 2
+        x: 4048
+        y: 1323
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_17
+      rect:
+        serializedVersion: 2
+        x: 4301
+        y: 1323
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_18
+      rect:
+        serializedVersion: 2
+        x: 4554
+        y: 1323
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_19
+      rect:
+        serializedVersion: 2
+        x: 4807
+        y: 1323
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1134
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_21
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 1134
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_22
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 1134
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_23
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 1134
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_24
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 1134
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_25
+      rect:
+        serializedVersion: 2
+        x: 1265
+        y: 1134
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_26
+      rect:
+        serializedVersion: 2
+        x: 1518
+        y: 1134
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_27
+      rect:
+        serializedVersion: 2
+        x: 1771
+        y: 1134
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_28
+      rect:
+        serializedVersion: 2
+        x: 2024
+        y: 1134
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_29
+      rect:
+        serializedVersion: 2
+        x: 2277
+        y: 1134
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_30
+      rect:
+        serializedVersion: 2
+        x: 2530
+        y: 1134
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_31
+      rect:
+        serializedVersion: 2
+        x: 2783
+        y: 1134
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_32
+      rect:
+        serializedVersion: 2
+        x: 3036
+        y: 1134
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_33
+      rect:
+        serializedVersion: 2
+        x: 3289
+        y: 1134
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_34
+      rect:
+        serializedVersion: 2
+        x: 3542
+        y: 1134
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_35
+      rect:
+        serializedVersion: 2
+        x: 3795
+        y: 1134
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_36
+      rect:
+        serializedVersion: 2
+        x: 4048
+        y: 1134
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_37
+      rect:
+        serializedVersion: 2
+        x: 4301
+        y: 1134
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_38
+      rect:
+        serializedVersion: 2
+        x: 4554
+        y: 1134
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_39
+      rect:
+        serializedVersion: 2
+        x: 4807
+        y: 1134
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 945
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_41
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 945
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_42
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 945
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_43
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 945
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_44
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 945
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_45
+      rect:
+        serializedVersion: 2
+        x: 1265
+        y: 945
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_46
+      rect:
+        serializedVersion: 2
+        x: 1518
+        y: 945
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_47
+      rect:
+        serializedVersion: 2
+        x: 1771
+        y: 945
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_48
+      rect:
+        serializedVersion: 2
+        x: 2024
+        y: 945
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_49
+      rect:
+        serializedVersion: 2
+        x: 2277
+        y: 945
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_50
+      rect:
+        serializedVersion: 2
+        x: 2530
+        y: 945
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_51
+      rect:
+        serializedVersion: 2
+        x: 2783
+        y: 945
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_52
+      rect:
+        serializedVersion: 2
+        x: 3036
+        y: 945
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_53
+      rect:
+        serializedVersion: 2
+        x: 3289
+        y: 945
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_54
+      rect:
+        serializedVersion: 2
+        x: 3542
+        y: 945
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_55
+      rect:
+        serializedVersion: 2
+        x: 3795
+        y: 945
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_56
+      rect:
+        serializedVersion: 2
+        x: 4048
+        y: 945
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_57
+      rect:
+        serializedVersion: 2
+        x: 4301
+        y: 945
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_58
+      rect:
+        serializedVersion: 2
+        x: 4554
+        y: 945
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_59
+      rect:
+        serializedVersion: 2
+        x: 4807
+        y: 945
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 756
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_61
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 756
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_62
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 756
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_63
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 756
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_64
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 756
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_65
+      rect:
+        serializedVersion: 2
+        x: 1265
+        y: 756
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_66
+      rect:
+        serializedVersion: 2
+        x: 1518
+        y: 756
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_67
+      rect:
+        serializedVersion: 2
+        x: 1771
+        y: 756
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_68
+      rect:
+        serializedVersion: 2
+        x: 2024
+        y: 756
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_69
+      rect:
+        serializedVersion: 2
+        x: 2277
+        y: 756
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_70
+      rect:
+        serializedVersion: 2
+        x: 2530
+        y: 756
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_71
+      rect:
+        serializedVersion: 2
+        x: 2783
+        y: 756
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_72
+      rect:
+        serializedVersion: 2
+        x: 3036
+        y: 756
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_73
+      rect:
+        serializedVersion: 2
+        x: 3289
+        y: 756
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_74
+      rect:
+        serializedVersion: 2
+        x: 3542
+        y: 756
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_75
+      rect:
+        serializedVersion: 2
+        x: 3795
+        y: 756
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_76
+      rect:
+        serializedVersion: 2
+        x: 4048
+        y: 756
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_77
+      rect:
+        serializedVersion: 2
+        x: 4301
+        y: 756
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_78
+      rect:
+        serializedVersion: 2
+        x: 4554
+        y: 756
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_79
+      rect:
+        serializedVersion: 2
+        x: 4807
+        y: 756
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_80
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 567
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_81
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 567
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_82
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 567
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_83
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 567
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_84
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 567
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_85
+      rect:
+        serializedVersion: 2
+        x: 1265
+        y: 567
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_86
+      rect:
+        serializedVersion: 2
+        x: 1518
+        y: 567
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_87
+      rect:
+        serializedVersion: 2
+        x: 1771
+        y: 567
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_88
+      rect:
+        serializedVersion: 2
+        x: 2024
+        y: 567
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_89
+      rect:
+        serializedVersion: 2
+        x: 2277
+        y: 567
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_90
+      rect:
+        serializedVersion: 2
+        x: 2530
+        y: 567
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_91
+      rect:
+        serializedVersion: 2
+        x: 2783
+        y: 567
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_92
+      rect:
+        serializedVersion: 2
+        x: 3036
+        y: 567
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_93
+      rect:
+        serializedVersion: 2
+        x: 3289
+        y: 567
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_94
+      rect:
+        serializedVersion: 2
+        x: 3542
+        y: 567
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_95
+      rect:
+        serializedVersion: 2
+        x: 3795
+        y: 567
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_96
+      rect:
+        serializedVersion: 2
+        x: 4048
+        y: 567
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_97
+      rect:
+        serializedVersion: 2
+        x: 4301
+        y: 567
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_98
+      rect:
+        serializedVersion: 2
+        x: 4554
+        y: 567
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_99
+      rect:
+        serializedVersion: 2
+        x: 4807
+        y: 567
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_100
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 378
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_101
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 378
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_102
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 378
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_103
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 378
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_104
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 378
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_105
+      rect:
+        serializedVersion: 2
+        x: 1265
+        y: 378
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_106
+      rect:
+        serializedVersion: 2
+        x: 1518
+        y: 378
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_107
+      rect:
+        serializedVersion: 2
+        x: 1771
+        y: 378
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_108
+      rect:
+        serializedVersion: 2
+        x: 2024
+        y: 378
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_109
+      rect:
+        serializedVersion: 2
+        x: 2277
+        y: 378
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_110
+      rect:
+        serializedVersion: 2
+        x: 2530
+        y: 378
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_111
+      rect:
+        serializedVersion: 2
+        x: 2783
+        y: 378
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_112
+      rect:
+        serializedVersion: 2
+        x: 3036
+        y: 378
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_113
+      rect:
+        serializedVersion: 2
+        x: 3289
+        y: 378
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_114
+      rect:
+        serializedVersion: 2
+        x: 3542
+        y: 378
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_115
+      rect:
+        serializedVersion: 2
+        x: 3795
+        y: 378
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_116
+      rect:
+        serializedVersion: 2
+        x: 4048
+        y: 378
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_117
+      rect:
+        serializedVersion: 2
+        x: 4301
+        y: 378
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_118
+      rect:
+        serializedVersion: 2
+        x: 4554
+        y: 378
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_119
+      rect:
+        serializedVersion: 2
+        x: 4807
+        y: 378
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_120
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 189
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_121
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 189
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_122
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 189
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_123
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 189
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_124
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 189
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_125
+      rect:
+        serializedVersion: 2
+        x: 1265
+        y: 189
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_126
+      rect:
+        serializedVersion: 2
+        x: 1518
+        y: 189
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_127
+      rect:
+        serializedVersion: 2
+        x: 1771
+        y: 189
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_128
+      rect:
+        serializedVersion: 2
+        x: 2024
+        y: 189
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_129
+      rect:
+        serializedVersion: 2
+        x: 2277
+        y: 189
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_130
+      rect:
+        serializedVersion: 2
+        x: 2530
+        y: 189
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_131
+      rect:
+        serializedVersion: 2
+        x: 2783
+        y: 189
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_132
+      rect:
+        serializedVersion: 2
+        x: 3036
+        y: 189
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_133
+      rect:
+        serializedVersion: 2
+        x: 3289
+        y: 189
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_134
+      rect:
+        serializedVersion: 2
+        x: 3542
+        y: 189
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_135
+      rect:
+        serializedVersion: 2
+        x: 3795
+        y: 189
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_136
+      rect:
+        serializedVersion: 2
+        x: 4048
+        y: 189
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_137
+      rect:
+        serializedVersion: 2
+        x: 4301
+        y: 189
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_138
+      rect:
+        serializedVersion: 2
+        x: 4554
+        y: 189
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_139
+      rect:
+        serializedVersion: 2
+        x: 4807
+        y: 189
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_140
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_141
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 0
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_142
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 0
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_143
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 0
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_144
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 0
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_145
+      rect:
+        serializedVersion: 2
+        x: 1265
+        y: 0
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_146
+      rect:
+        serializedVersion: 2
+        x: 1518
+        y: 0
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_147
+      rect:
+        serializedVersion: 2
+        x: 1771
+        y: 0
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_148
+      rect:
+        serializedVersion: 2
+        x: 2024
+        y: 0
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_149
+      rect:
+        serializedVersion: 2
+        x: 2277
+        y: 0
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_150
+      rect:
+        serializedVersion: 2
+        x: 2530
+        y: 0
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_151
+      rect:
+        serializedVersion: 2
+        x: 2783
+        y: 0
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_152
+      rect:
+        serializedVersion: 2
+        x: 3036
+        y: 0
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_153
+      rect:
+        serializedVersion: 2
+        x: 3289
+        y: 0
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_154
+      rect:
+        serializedVersion: 2
+        x: 3542
+        y: 0
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_155
+      rect:
+        serializedVersion: 2
+        x: 3795
+        y: 0
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_156
+      rect:
+        serializedVersion: 2
+        x: 4048
+        y: 0
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_157
+      rect:
+        serializedVersion: 2
+        x: 4301
+        y: 0
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_158
+      rect:
+        serializedVersion: 2
+        x: 4554
+        y: 0
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeath_159
+      rect:
+        serializedVersion: 2
+        x: 4807
+        y: 0
+        width: 253
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
