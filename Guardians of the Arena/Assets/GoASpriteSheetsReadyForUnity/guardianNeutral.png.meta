@@ -1,0 +1,751 @@
+fileFormatVersion: 2
+guid: 17ca3e27ead454378be9df7b736eccad
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: guardianNeutral_0
+    21300002: guardianNeutral_1
+    21300004: guardianNeutral_2
+    21300006: guardianNeutral_3
+    21300008: guardianNeutral_4
+    21300010: guardianNeutral_5
+    21300012: guardianNeutral_6
+    21300014: guardianNeutral_7
+    21300016: guardianNeutral_8
+    21300018: guardianNeutral_9
+    21300020: guardianNeutral_10
+    21300022: guardianNeutral_11
+    21300024: guardianNeutral_12
+    21300026: guardianNeutral_13
+    21300028: guardianNeutral_14
+    21300030: guardianNeutral_15
+    21300032: guardianNeutral_16
+    21300034: guardianNeutral_17
+    21300036: guardianNeutral_18
+    21300038: guardianNeutral_19
+    21300040: guardianNeutral_20
+    21300042: guardianNeutral_21
+    21300044: guardianNeutral_22
+    21300046: guardianNeutral_23
+    21300048: guardianNeutral_24
+    21300050: guardianNeutral_25
+    21300052: guardianNeutral_26
+    21300054: guardianNeutral_27
+    21300056: guardianNeutral_28
+    21300058: guardianNeutral_29
+    21300060: guardianNeutral_30
+    21300062: guardianNeutral_31
+    21300064: guardianNeutral_32
+    21300066: guardianNeutral_33
+    21300068: guardianNeutral_34
+    21300070: guardianNeutral_35
+    21300072: guardianNeutral_36
+    21300074: guardianNeutral_37
+    21300076: guardianNeutral_38
+    21300078: guardianNeutral_39
+    21300080: guardianNeutral_40
+    21300082: guardianNeutral_41
+    21300084: guardianNeutral_42
+    21300086: guardianNeutral_43
+    21300088: guardianNeutral_44
+    21300090: guardianNeutral_45
+    21300092: guardianNeutral_46
+    21300094: guardianNeutral_47
+    21300096: guardianNeutral_48
+    21300098: guardianNeutral_49
+    21300100: guardianNeutral_50
+    21300102: guardianNeutral_51
+    21300104: guardianNeutral_52
+    21300106: guardianNeutral_53
+    21300108: guardianNeutral_54
+    21300110: guardianNeutral_55
+    21300112: guardianNeutral_56
+    21300114: guardianNeutral_57
+    21300116: guardianNeutral_58
+    21300118: guardianNeutral_59
+    21300120: guardianNeutral_60
+    21300122: guardianNeutral_61
+    21300124: guardianNeutral_62
+    21300126: guardianNeutral_63
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: guardianNeutral_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 833
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_1
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 833
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_2
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 833
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_3
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 833
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_4
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 833
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_5
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 833
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_6
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 833
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_7
+      rect:
+        serializedVersion: 2
+        x: 1106
+        y: 833
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 714
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_9
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 714
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_10
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 714
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_11
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 714
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_12
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 714
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_13
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 714
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_14
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 714
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_15
+      rect:
+        serializedVersion: 2
+        x: 1106
+        y: 714
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 595
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_17
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 595
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_18
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 595
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_19
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 595
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_20
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 595
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_21
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 595
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_22
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 595
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_23
+      rect:
+        serializedVersion: 2
+        x: 1106
+        y: 595
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 476
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_25
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 476
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_26
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 476
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_27
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 476
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_28
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 476
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_29
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 476
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_30
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 476
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_31
+      rect:
+        serializedVersion: 2
+        x: 1106
+        y: 476
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 357
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_33
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 357
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_34
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 357
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_35
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 357
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_36
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 357
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_37
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 357
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_38
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 357
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_39
+      rect:
+        serializedVersion: 2
+        x: 1106
+        y: 357
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 238
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_41
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 238
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_42
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 238
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_43
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 238
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_44
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 238
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_45
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 238
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_46
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 238
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_47
+      rect:
+        serializedVersion: 2
+        x: 1106
+        y: 238
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 119
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_49
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 119
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_50
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 119
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_51
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 119
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_52
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 119
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_53
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 119
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_54
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 119
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_55
+      rect:
+        serializedVersion: 2
+        x: 1106
+        y: 119
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_57
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 0
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_58
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 0
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_59
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 0
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_60
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 0
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_61
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 0
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_62
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 0
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutral_63
+      rect:
+        serializedVersion: 2
+        x: 1106
+        y: 0
+        width: 158
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
