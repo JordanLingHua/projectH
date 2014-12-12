@@ -1,76 +1,268 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.IO;
 using System;
 using System.Security.Cryptography;
 using System.Text;
 
-public class LoginScreenGUI : MonoBehaviour {		
+public class LoginScreenGUI : MonoBehaviour {
 
-	public double delTime;
+/*
+AddSpikes (not perfect but works well enough if you’re careful with your window widths)
+FancyTop (just an example of using the elements to do a centered header graphic)
+WaxSeal (adds the waxseal and ribbon to the right of the window)
+DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
+*/
 	public GUIText guiText;
 	public string userName;
 	public string password;
+	public string reEnteredPassword;
 	public string ip;
-
+	public string buttonText;
+	
 	public GameProcess process;	
 	public bool connected;
-	public long latency;
+	public bool showReEnterPassword;
 
 	AudioManager am;
 	PopUpMenu pum;
+
+	bool doWindow0 = true;
 	
-	void Start () 
+	private float leafOffset;
+	private float frameOffset;
+	private float skullOffset;
+	
+	private float RibbonOffsetX;
+	private float FrameOffsetX;
+	private float SkullOffsetX;
+	private float RibbonOffsetY;
+	private float FrameOffsetY;
+	private float SkullOffsetY;
+	
+	private float WSwaxOffsetX;
+	private float WSwaxOffsetY;
+	private float WSribbonOffsetX;
+	private float WSribbonOffsetY;
+	
+	private int spikeCount;
+	
+	// This script will only work with the Necromancer skin
+	public GUISkin mySkin;
+	
+	//if you're using the spikes you'll need to find sizes that work well with them these are a few...
+
+	private Rect windowRect0 = new Rect (Screen.width / 2 - 350 / 2, 230, 350, 450);
+	
+	
+	private Vector2 scrollPosition;
+	private double HorizSliderValue = 0.5;
+	private double VertSliderValue = 0.5;
+	private bool ToggleBTN = false;
+	
+	//skin info
+	private string NecroText ="This started as a question... How flexible is the built in GUI in unity? The answer... pretty damn flexible! At first I wasn’t so sure; it seemed no one ever used it to make a non OS style GUI at least not a publicly available one. So I decided I couldn’t be sure until I tried to develop a full GUI, Long story short Necromancer was the result and is now available to the general public, free for comercial and non-comercial use. I only ask that if you add something Share it.   Credits to Kevin King for the fonts.";
+	
+	
+	void AddSpikes(float winX)
 	{
+		spikeCount = (int)Mathf.Floor(winX - 152)/22;
+		GUILayout.BeginHorizontal();
+		GUILayout.Label ("", "SpikeLeft");//-------------------------------- custom
+		for (int i = 0; i < spikeCount; i++)
+		{
+			GUILayout.Label ("", "SpikeMid");//-------------------------------- custom
+		}
+		GUILayout.Label ("", "SpikeRight");//-------------------------------- custom
+		GUILayout.EndHorizontal();
+	}
+	
+	void FancyTop(float topX)
+	{
+		leafOffset = (topX/2)-64;
+		frameOffset = (topX/2)-27;
+		skullOffset = (topX/2)-20;
+		GUI.Label(new Rect(leafOffset, 18, 0, 0), "", "GoldLeaf");//-------------------------------- custom	
+		GUI.Label(new Rect(frameOffset, 3, 0, 0), "", "IconFrame");//-------------------------------- custom	
+		GUI.Label(new Rect(skullOffset, 12, 0, 0), "", "Skull");//-------------------------------- custom	
+	}
+	
+	void WaxSeal(float x, float y)
+	{
+		WSwaxOffsetX = x - 120;
+		WSwaxOffsetY = y - 115;
+		WSribbonOffsetX = x - 114;
+		WSribbonOffsetY = y - 83;
+		
+		GUI.Label(new Rect(WSribbonOffsetX, WSribbonOffsetY, 0, 0), "", "RibbonBlue");//-------------------------------- custom	
+		GUI.Label(new Rect(WSwaxOffsetX, WSwaxOffsetY, 0, 0), "", "WaxSeal");//-------------------------------- custom	
+	}
+	
+	void DeathBadge(float x, float y)
+	{
+		RibbonOffsetX = x;
+		FrameOffsetX = x+3;
+		SkullOffsetX = x+10;
+		RibbonOffsetY = y+22;
+		FrameOffsetY = y;
+		SkullOffsetY = y+9;
+		
+		GUI.Label(new Rect(RibbonOffsetX, RibbonOffsetY, 0, 0), "", "RibbonRed");//-------------------------------- custom	
+		GUI.Label(new Rect(FrameOffsetX, FrameOffsetY, 0, 0), "", "IconFrame");//-------------------------------- custom	
+		GUI.Label(new Rect(SkullOffsetX, SkullOffsetY, 0, 0), "", "Skull");//-------------------------------- custom	
+	}
+	
+	
+	void DoMyWindow0 (int windowID) 
+	{
+		FancyTop(windowRect0.width);
+		
+		// use the spike function to add the spikes
+		// note: were passing the width of the window to the function
+		AddSpikes(windowRect0.width);
+		
+		GUILayout.BeginVertical();
+		GUILayout.Space(8);
+		GUILayout.Label("", "Divider");//-------------------------------- custom
+		GUILayout.Label("Welcome!");
+		
+		GUILayout.Label("", "Divider");//-------------------------------- custom
+		
+		GUILayout.BeginHorizontal();
+		GUILayout.Label ("Username :", "BoldOutlineText");//----------------- custom
+		userName = GUILayout.TextField(userName, 20);
+		GUILayout.EndHorizontal();
+		
+		GUILayout.BeginHorizontal();
+		GUILayout.Label ("Password :", "BoldOutlineText");//----------------- custom
+		password = GUILayout.PasswordField(password, '*', 20);
+		GUILayout.EndHorizontal();
+
+		if (showReEnterPassword) {
+			GUILayout.BeginHorizontal();
+			GUILayout.Label ("Re-Enter Password :", "BoldOutlineText");//----------------- custom
+			reEnteredPassword = GUILayout.PasswordField(reEnteredPassword, '*', 20);
+			GUILayout.EndHorizontal();
+		}
+
+		GUILayout.BeginHorizontal();
+		GUILayout.Label ("Set IP :", "BoldOutlineText");//----------------- custom
+		ip = GUILayout.TextField(ip, 20);
+		GUILayout.EndHorizontal();
+		
+		GUILayout.BeginHorizontal();
+		if (GUILayout.Button ("Login", "ShortButton")) { //-------------------------------- custom
+			if (buttonText.Equals("Cancel"))
+			{
+				if (password.Equals(reEnteredPassword)){
+					am.playButtonSFX();		
+					attemptLogin();
+				}
+
+				else
+				{
+					am.playErrorSFX ();
+					guiText.text = "Passwords do not match";
+				}
+			}
+
+			else
+				attemptLogin();
+		}
+
+		if (GUILayout.Button (buttonText, "ShortButton")) { //-------------------------------- custom
+			if (buttonText.Equals("Create Account"))
+			{
+				windowRect0.height += 30;
+				buttonText = "Cancel";
+				showReEnterPassword = true;
+				WaxSeal(windowRect0.width , windowRect0.height);
+			}
+			else
+			{
+				windowRect0.height -= 30;
+				buttonText = "Create Account";
+				showReEnterPassword = false;
+				WaxSeal(windowRect0.width , windowRect0.height);
+			}
+		}
+
+		GUILayout.EndHorizontal();	
+		GUILayout.Label("", "Divider");//-------------------------------- custom
+
+		GUILayout.Label(guiText.text);
+
+		//GUILayout.Label("", "Divider");//-------------------------------- custom
+
+		GUILayout.BeginHorizontal();
+		GUILayout.Label ("Produced by\nDaniel & Friends", "ItalicText");//---------------------------------- custom
+		GUILayout.EndHorizontal();
+
+		GUILayout.EndVertical();
+		
+		// add a wax seal at the bottom of the window
+		WaxSeal(windowRect0.width , windowRect0.height);
+		
+		// Make the windows be draggable.
+		//GUI.DragWindow (new Rect (0,0,10000,10000));
+	}
+
+	public void attemptLogin()
+	{
+		//use the alternative ip provided by the user if the ip field is not blank
+		if (!ip.Equals(string.Empty))
+			process.returnSocket().setIP(ip);
+		
+		if(!connected)
+		{
+			guiText.text = "Connecting...";
+			if ( process.returnSocket().Connect() )
+			{						
+				guiText.text = "Connect Succeeded";	
+				connected = true;
+			}
+			
+			else {
+				am.playErrorSFX ();
+				guiText.text = "Connect Failed";}
+		}
+		
+		string source = password;
+		string hash;
+		
+		//hash an encrypted password for the user
+		using (MD5 md5Hash = MD5.Create())
+		{
+			hash = GetMd5Hash(md5Hash, source);				
+			Console.WriteLine("The MD5 hash of " + source + " is: " + hash + ".");				
+			process.returnSocket().SendTCPPacket("userInfo\\" + userName + "\\" + hash);
+		}
+	}
+	
+	void OnGUI ()
+	{
+		GUI.skin = mySkin;
+		
+		if (doWindow0)
+			windowRect0 = GUI.Window (0, windowRect0, DoMyWindow0, "");
+		//now adjust to the group. (0,0) is the topleft corner of the group.
+		GUI.BeginGroup (new Rect (0,0,100,100));
+		// End the group we started above. This is very important to remember!
+		GUI.EndGroup ();
+	}
+
+	// Use this for initialization
+	void Start () {
 		connected = false;
 		pum = GameObject.Find ("PopUpMenu").GetComponent<PopUpMenu> ();
 		am = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 		process = GameObject.Find("GameProcess").GetComponent<GameProcess>();
-		latency = -1;
 		userName = string.Empty;
 		password = string.Empty;
-		ip = string.Empty;
-	}
-	
-	void OnGUI () 
-	{	
-		userName = GUI.TextField(new Rect(Screen.width / 2 - 55, Screen.height / 2 - 75, 125, 20), userName, 30);
-		password = GUI.PasswordField(new Rect(Screen.width / 2 - 55, Screen.height / 2 - 50, 125, 20), password, '*', 30);
-		ip = GUI.TextField(new Rect(Screen.width / 2 - 55, Screen.height / 2 - 25, 125, 20), ip, 30);
-
-		if(GUI.Button(new Rect(Screen.width / 2 - 50, Screen.height / 2 + 30, 50, 20), "Login"))
-		{
-			am.playButtonSFX();
-
-			//use the alternative ip provided by the user if the ip field is not blank
-			if (!ip.Equals(string.Empty))
-				process.returnSocket().setIP(ip);
-
-			if(!connected)
-			{
-				guiText.text = "Connecting...";
-				if ( process.returnSocket().Connect() )
-				{						
-					guiText.text = "Connect Succeeded";	
-					connected = true;
-				}
-
-				else {
-					am.playErrorSFX ();
-					guiText.text = "Connect Failed";}
-			}
-
-			string source = password;
-			string hash;
-
-			//hash an encrypted password for the user
-			using (MD5 md5Hash = MD5.Create())
-			{
-				hash = GetMd5Hash(md5Hash, source);				
-				Console.WriteLine("The MD5 hash of " + source + " is: " + hash + ".");				
-				process.returnSocket().SendTCPPacket("userInfo\\" + userName + "\\" + hash);
-			}
-		}		
+		reEnteredPassword = string.Empty;
+		ip = string.Empty;	
+		showReEnterPassword = false;
+		buttonText = "Create Account";
 	}
 
 	//called from gameprocess when a user inputs invalid login info
@@ -80,7 +272,7 @@ public class LoginScreenGUI : MonoBehaviour {
 		am.playErrorSFX ();
 		guiText.text = "Invalid Login Info. Try Again.";
 	}
-
+	
 	//server verifies info and user is logged in
 	public void loginSucceed()
 	{
@@ -89,7 +281,7 @@ public class LoginScreenGUI : MonoBehaviour {
 		DontDestroyOnLoad (pum);
 		Application.LoadLevel(1);
 	}
-
+	
 	string GetMd5Hash(MD5 md5Hash, string input)
 	{		
 		// Convert the input string to a byte array and compute the hash. 
@@ -109,14 +301,17 @@ public class LoginScreenGUI : MonoBehaviour {
 		// Return the hexadecimal string. 
 		return sBuilder.ToString();
 	}
-
-
+	
+	
 	public void resetGuiText()
 	{
 		guiText.text = string.Empty;
 	}
 	
-	void Update () 
-	{
-	}	
+	// Update is called once per frame
+	void Update () {
+	
+	}
 }
+
+

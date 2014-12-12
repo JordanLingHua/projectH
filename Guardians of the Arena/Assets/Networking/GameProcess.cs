@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System;
 using System.Diagnostics;
@@ -66,14 +66,14 @@ public class GameProcess : MonoBehaviour {
 			// loginSucceed\\correctUsername
 			else if (tokens[0].Equals("loginSucceed"))
 			{
-				GameObject.Find("Login_GUI").GetComponent<LoginScreenGUI>().loginSucceed();
+				GameObject.Find("LoginScreenGUI").GetComponent<LoginScreenGUI>().loginSucceed();
 				playerName = tokens[1];
 			}
 			
 			// loginFail
 			else if (tokens[0].Equals("loginFail"))
 			{
-				GameObject.Find("Login_GUI").GetComponent<LoginScreenGUI>().loginFail();
+				GameObject.Find("LoginScreenGUI").GetComponent<LoginScreenGUI>().loginFail();
 			}
 			
 			// hasLoggedIn\\playerNameToAdd
@@ -104,7 +104,7 @@ public class GameProcess : MonoBehaviour {
 			// alreadyLoggedIn\\username
 			else if (tokens[0].Equals("alreadyLoggedIn"))
 			{
-				GameObject.Find("Login_GUI").GetComponent<LoginScreenGUI>().guiText.text =
+				GameObject.Find("LoginScreenGUI").GetComponent<LoginScreenGUI>().guiText.text =
 					tokens[1] + " is already logged in!";
 			}
 			
