@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 67158f3dd97f544af991dcae5accb701
+guid: 2ef0c9416b03d404ca4d24f8b5eafab7
 TextureImporter:
   fileIDToRecycleName:
     21300000: priestSpecialCast_0
@@ -144,7 +144,7 @@ TextureImporter:
   textureFormat: -1
   maxTextureSize: 4096
   textureSettings:
-    filterMode: -1
+    filterMode: 1
     aniso: 1
     mipBias: -1
     wrapMode: 1
@@ -167,149 +167,149 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 875
-        width: 78
-        height: 125
+        y: 861
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_1
       rect:
         serializedVersion: 2
-        x: 78
-        y: 875
-        width: 78
-        height: 125
+        x: 77
+        y: 861
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_2
       rect:
         serializedVersion: 2
-        x: 156
-        y: 875
-        width: 78
-        height: 125
+        x: 154
+        y: 861
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_3
       rect:
         serializedVersion: 2
-        x: 234
-        y: 875
-        width: 78
-        height: 125
+        x: 231
+        y: 861
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_4
       rect:
         serializedVersion: 2
-        x: 312
-        y: 875
-        width: 78
-        height: 125
+        x: 308
+        y: 861
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_5
       rect:
         serializedVersion: 2
-        x: 390
-        y: 875
-        width: 78
-        height: 125
+        x: 385
+        y: 861
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_6
       rect:
         serializedVersion: 2
-        x: 468
-        y: 875
-        width: 78
-        height: 125
+        x: 462
+        y: 861
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_7
       rect:
         serializedVersion: 2
-        x: 546
-        y: 875
-        width: 78
-        height: 125
+        x: 539
+        y: 861
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_8
       rect:
         serializedVersion: 2
-        x: 624
-        y: 875
-        width: 78
-        height: 125
+        x: 616
+        y: 861
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_9
       rect:
         serializedVersion: 2
-        x: 702
-        y: 875
-        width: 78
-        height: 125
+        x: 693
+        y: 861
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_10
       rect:
         serializedVersion: 2
-        x: 780
-        y: 875
-        width: 78
-        height: 125
+        x: 770
+        y: 861
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_11
       rect:
         serializedVersion: 2
-        x: 858
-        y: 875
-        width: 78
-        height: 125
+        x: 847
+        y: 861
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_12
       rect:
         serializedVersion: 2
-        x: 936
-        y: 875
-        width: 78
-        height: 125
+        x: 924
+        y: 861
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_13
       rect:
         serializedVersion: 2
-        x: 1014
-        y: 875
-        width: 78
-        height: 125
+        x: 1001
+        y: 861
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_14
       rect:
         serializedVersion: 2
-        x: 1092
-        y: 875
-        width: 78
-        height: 125
+        x: 1078
+        y: 861
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -317,149 +317,149 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 750
-        width: 78
-        height: 125
+        y: 738
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_16
       rect:
         serializedVersion: 2
-        x: 78
-        y: 750
-        width: 78
-        height: 125
+        x: 77
+        y: 738
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_17
       rect:
         serializedVersion: 2
-        x: 156
-        y: 750
-        width: 78
-        height: 125
+        x: 154
+        y: 738
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_18
       rect:
         serializedVersion: 2
-        x: 234
-        y: 750
-        width: 78
-        height: 125
+        x: 231
+        y: 738
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_19
       rect:
         serializedVersion: 2
-        x: 312
-        y: 750
-        width: 78
-        height: 125
+        x: 308
+        y: 738
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_20
       rect:
         serializedVersion: 2
-        x: 390
-        y: 750
-        width: 78
-        height: 125
+        x: 385
+        y: 738
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_21
       rect:
         serializedVersion: 2
-        x: 468
-        y: 750
-        width: 78
-        height: 125
+        x: 462
+        y: 738
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_22
       rect:
         serializedVersion: 2
-        x: 546
-        y: 750
-        width: 78
-        height: 125
+        x: 539
+        y: 738
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_23
       rect:
         serializedVersion: 2
-        x: 624
-        y: 750
-        width: 78
-        height: 125
+        x: 616
+        y: 738
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_24
       rect:
         serializedVersion: 2
-        x: 702
-        y: 750
-        width: 78
-        height: 125
+        x: 693
+        y: 738
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_25
       rect:
         serializedVersion: 2
-        x: 780
-        y: 750
-        width: 78
-        height: 125
+        x: 770
+        y: 738
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_26
       rect:
         serializedVersion: 2
-        x: 858
-        y: 750
-        width: 78
-        height: 125
+        x: 847
+        y: 738
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_27
       rect:
         serializedVersion: 2
-        x: 936
-        y: 750
-        width: 78
-        height: 125
+        x: 924
+        y: 738
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_28
       rect:
         serializedVersion: 2
-        x: 1014
-        y: 750
-        width: 78
-        height: 125
+        x: 1001
+        y: 738
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_29
       rect:
         serializedVersion: 2
-        x: 1092
-        y: 750
-        width: 78
-        height: 125
+        x: 1078
+        y: 738
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -467,149 +467,149 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 625
-        width: 78
-        height: 125
+        y: 615
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_31
       rect:
         serializedVersion: 2
-        x: 78
-        y: 625
-        width: 78
-        height: 125
+        x: 77
+        y: 615
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_32
       rect:
         serializedVersion: 2
-        x: 156
-        y: 625
-        width: 78
-        height: 125
+        x: 154
+        y: 615
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_33
       rect:
         serializedVersion: 2
-        x: 234
-        y: 625
-        width: 78
-        height: 125
+        x: 231
+        y: 615
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_34
       rect:
         serializedVersion: 2
-        x: 312
-        y: 625
-        width: 78
-        height: 125
+        x: 308
+        y: 615
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_35
       rect:
         serializedVersion: 2
-        x: 390
-        y: 625
-        width: 78
-        height: 125
+        x: 385
+        y: 615
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_36
       rect:
         serializedVersion: 2
-        x: 468
-        y: 625
-        width: 78
-        height: 125
+        x: 462
+        y: 615
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_37
       rect:
         serializedVersion: 2
-        x: 546
-        y: 625
-        width: 78
-        height: 125
+        x: 539
+        y: 615
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_38
       rect:
         serializedVersion: 2
-        x: 624
-        y: 625
-        width: 78
-        height: 125
+        x: 616
+        y: 615
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_39
       rect:
         serializedVersion: 2
-        x: 702
-        y: 625
-        width: 78
-        height: 125
+        x: 693
+        y: 615
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_40
       rect:
         serializedVersion: 2
-        x: 780
-        y: 625
-        width: 78
-        height: 125
+        x: 770
+        y: 615
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_41
       rect:
         serializedVersion: 2
-        x: 858
-        y: 625
-        width: 78
-        height: 125
+        x: 847
+        y: 615
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_42
       rect:
         serializedVersion: 2
-        x: 936
-        y: 625
-        width: 78
-        height: 125
+        x: 924
+        y: 615
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_43
       rect:
         serializedVersion: 2
-        x: 1014
-        y: 625
-        width: 78
-        height: 125
+        x: 1001
+        y: 615
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_44
       rect:
         serializedVersion: 2
-        x: 1092
-        y: 625
-        width: 78
-        height: 125
+        x: 1078
+        y: 615
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -617,149 +617,149 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 500
-        width: 78
-        height: 125
+        y: 492
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_46
       rect:
         serializedVersion: 2
-        x: 78
-        y: 500
-        width: 78
-        height: 125
+        x: 77
+        y: 492
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_47
       rect:
         serializedVersion: 2
-        x: 156
-        y: 500
-        width: 78
-        height: 125
+        x: 154
+        y: 492
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_48
       rect:
         serializedVersion: 2
-        x: 234
-        y: 500
-        width: 78
-        height: 125
+        x: 231
+        y: 492
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_49
       rect:
         serializedVersion: 2
-        x: 312
-        y: 500
-        width: 78
-        height: 125
+        x: 308
+        y: 492
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_50
       rect:
         serializedVersion: 2
-        x: 390
-        y: 500
-        width: 78
-        height: 125
+        x: 385
+        y: 492
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_51
       rect:
         serializedVersion: 2
-        x: 468
-        y: 500
-        width: 78
-        height: 125
+        x: 462
+        y: 492
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_52
       rect:
         serializedVersion: 2
-        x: 546
-        y: 500
-        width: 78
-        height: 125
+        x: 539
+        y: 492
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_53
       rect:
         serializedVersion: 2
-        x: 624
-        y: 500
-        width: 78
-        height: 125
+        x: 616
+        y: 492
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_54
       rect:
         serializedVersion: 2
-        x: 702
-        y: 500
-        width: 78
-        height: 125
+        x: 693
+        y: 492
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_55
       rect:
         serializedVersion: 2
-        x: 780
-        y: 500
-        width: 78
-        height: 125
+        x: 770
+        y: 492
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_56
       rect:
         serializedVersion: 2
-        x: 858
-        y: 500
-        width: 78
-        height: 125
+        x: 847
+        y: 492
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_57
       rect:
         serializedVersion: 2
-        x: 936
-        y: 500
-        width: 78
-        height: 125
+        x: 924
+        y: 492
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_58
       rect:
         serializedVersion: 2
-        x: 1014
-        y: 500
-        width: 78
-        height: 125
+        x: 1001
+        y: 492
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_59
       rect:
         serializedVersion: 2
-        x: 1092
-        y: 500
-        width: 78
-        height: 125
+        x: 1078
+        y: 492
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -767,149 +767,149 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 375
-        width: 78
-        height: 125
+        y: 369
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_61
       rect:
         serializedVersion: 2
-        x: 78
-        y: 375
-        width: 78
-        height: 125
+        x: 77
+        y: 369
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_62
       rect:
         serializedVersion: 2
-        x: 156
-        y: 375
-        width: 78
-        height: 125
+        x: 154
+        y: 369
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_63
       rect:
         serializedVersion: 2
-        x: 234
-        y: 375
-        width: 78
-        height: 125
+        x: 231
+        y: 369
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_64
       rect:
         serializedVersion: 2
-        x: 312
-        y: 375
-        width: 78
-        height: 125
+        x: 308
+        y: 369
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_65
       rect:
         serializedVersion: 2
-        x: 390
-        y: 375
-        width: 78
-        height: 125
+        x: 385
+        y: 369
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_66
       rect:
         serializedVersion: 2
-        x: 468
-        y: 375
-        width: 78
-        height: 125
+        x: 462
+        y: 369
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_67
       rect:
         serializedVersion: 2
-        x: 546
-        y: 375
-        width: 78
-        height: 125
+        x: 539
+        y: 369
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_68
       rect:
         serializedVersion: 2
-        x: 624
-        y: 375
-        width: 78
-        height: 125
+        x: 616
+        y: 369
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_69
       rect:
         serializedVersion: 2
-        x: 702
-        y: 375
-        width: 78
-        height: 125
+        x: 693
+        y: 369
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_70
       rect:
         serializedVersion: 2
-        x: 780
-        y: 375
-        width: 78
-        height: 125
+        x: 770
+        y: 369
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_71
       rect:
         serializedVersion: 2
-        x: 858
-        y: 375
-        width: 78
-        height: 125
+        x: 847
+        y: 369
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_72
       rect:
         serializedVersion: 2
-        x: 936
-        y: 375
-        width: 78
-        height: 125
+        x: 924
+        y: 369
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_73
       rect:
         serializedVersion: 2
-        x: 1014
-        y: 375
-        width: 78
-        height: 125
+        x: 1001
+        y: 369
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_74
       rect:
         serializedVersion: 2
-        x: 1092
-        y: 375
-        width: 78
-        height: 125
+        x: 1078
+        y: 369
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -917,149 +917,149 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 250
-        width: 78
-        height: 125
+        y: 246
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_76
       rect:
         serializedVersion: 2
-        x: 78
-        y: 250
-        width: 78
-        height: 125
+        x: 77
+        y: 246
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_77
       rect:
         serializedVersion: 2
-        x: 156
-        y: 250
-        width: 78
-        height: 125
+        x: 154
+        y: 246
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_78
       rect:
         serializedVersion: 2
-        x: 234
-        y: 250
-        width: 78
-        height: 125
+        x: 231
+        y: 246
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_79
       rect:
         serializedVersion: 2
-        x: 312
-        y: 250
-        width: 78
-        height: 125
+        x: 308
+        y: 246
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_80
       rect:
         serializedVersion: 2
-        x: 390
-        y: 250
-        width: 78
-        height: 125
+        x: 385
+        y: 246
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_81
       rect:
         serializedVersion: 2
-        x: 468
-        y: 250
-        width: 78
-        height: 125
+        x: 462
+        y: 246
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_82
       rect:
         serializedVersion: 2
-        x: 546
-        y: 250
-        width: 78
-        height: 125
+        x: 539
+        y: 246
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_83
       rect:
         serializedVersion: 2
-        x: 624
-        y: 250
-        width: 78
-        height: 125
+        x: 616
+        y: 246
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_84
       rect:
         serializedVersion: 2
-        x: 702
-        y: 250
-        width: 78
-        height: 125
+        x: 693
+        y: 246
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_85
       rect:
         serializedVersion: 2
-        x: 780
-        y: 250
-        width: 78
-        height: 125
+        x: 770
+        y: 246
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_86
       rect:
         serializedVersion: 2
-        x: 858
-        y: 250
-        width: 78
-        height: 125
+        x: 847
+        y: 246
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_87
       rect:
         serializedVersion: 2
-        x: 936
-        y: 250
-        width: 78
-        height: 125
+        x: 924
+        y: 246
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_88
       rect:
         serializedVersion: 2
-        x: 1014
-        y: 250
-        width: 78
-        height: 125
+        x: 1001
+        y: 246
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_89
       rect:
         serializedVersion: 2
-        x: 1092
-        y: 250
-        width: 78
-        height: 125
+        x: 1078
+        y: 246
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1067,149 +1067,149 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 125
-        width: 78
-        height: 125
+        y: 123
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_91
       rect:
         serializedVersion: 2
-        x: 78
-        y: 125
-        width: 78
-        height: 125
+        x: 77
+        y: 123
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_92
       rect:
         serializedVersion: 2
-        x: 156
-        y: 125
-        width: 78
-        height: 125
+        x: 154
+        y: 123
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_93
       rect:
         serializedVersion: 2
-        x: 234
-        y: 125
-        width: 78
-        height: 125
+        x: 231
+        y: 123
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_94
       rect:
         serializedVersion: 2
-        x: 312
-        y: 125
-        width: 78
-        height: 125
+        x: 308
+        y: 123
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_95
       rect:
         serializedVersion: 2
-        x: 390
-        y: 125
-        width: 78
-        height: 125
+        x: 385
+        y: 123
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_96
       rect:
         serializedVersion: 2
-        x: 468
-        y: 125
-        width: 78
-        height: 125
+        x: 462
+        y: 123
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_97
       rect:
         serializedVersion: 2
-        x: 546
-        y: 125
-        width: 78
-        height: 125
+        x: 539
+        y: 123
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_98
       rect:
         serializedVersion: 2
-        x: 624
-        y: 125
-        width: 78
-        height: 125
+        x: 616
+        y: 123
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_99
       rect:
         serializedVersion: 2
-        x: 702
-        y: 125
-        width: 78
-        height: 125
+        x: 693
+        y: 123
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_100
       rect:
         serializedVersion: 2
-        x: 780
-        y: 125
-        width: 78
-        height: 125
+        x: 770
+        y: 123
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_101
       rect:
         serializedVersion: 2
-        x: 858
-        y: 125
-        width: 78
-        height: 125
+        x: 847
+        y: 123
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_102
       rect:
         serializedVersion: 2
-        x: 936
-        y: 125
-        width: 78
-        height: 125
+        x: 924
+        y: 123
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_103
       rect:
         serializedVersion: 2
-        x: 1014
-        y: 125
-        width: 78
-        height: 125
+        x: 1001
+        y: 123
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_104
       rect:
         serializedVersion: 2
-        x: 1092
-        y: 125
-        width: 78
-        height: 125
+        x: 1078
+        y: 123
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1218,148 +1218,148 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 78
-        height: 125
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_106
       rect:
         serializedVersion: 2
-        x: 78
+        x: 77
         y: 0
-        width: 78
-        height: 125
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_107
       rect:
         serializedVersion: 2
-        x: 156
+        x: 154
         y: 0
-        width: 78
-        height: 125
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_108
       rect:
         serializedVersion: 2
-        x: 234
+        x: 231
         y: 0
-        width: 78
-        height: 125
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_109
       rect:
         serializedVersion: 2
-        x: 312
+        x: 308
         y: 0
-        width: 78
-        height: 125
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_110
       rect:
         serializedVersion: 2
-        x: 390
+        x: 385
         y: 0
-        width: 78
-        height: 125
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_111
       rect:
         serializedVersion: 2
-        x: 468
+        x: 462
         y: 0
-        width: 78
-        height: 125
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_112
       rect:
         serializedVersion: 2
-        x: 546
+        x: 539
         y: 0
-        width: 78
-        height: 125
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_113
       rect:
         serializedVersion: 2
-        x: 624
+        x: 616
         y: 0
-        width: 78
-        height: 125
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_114
       rect:
         serializedVersion: 2
-        x: 702
+        x: 693
         y: 0
-        width: 78
-        height: 125
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_115
       rect:
         serializedVersion: 2
-        x: 780
+        x: 770
         y: 0
-        width: 78
-        height: 125
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_116
       rect:
         serializedVersion: 2
-        x: 858
+        x: 847
         y: 0
-        width: 78
-        height: 125
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_117
       rect:
         serializedVersion: 2
-        x: 936
+        x: 924
         y: 0
-        width: 78
-        height: 125
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_118
       rect:
         serializedVersion: 2
-        x: 1014
+        x: 1001
         y: 0
-        width: 78
-        height: 125
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: priestSpecialCast_119
       rect:
         serializedVersion: 2
-        x: 1092
+        x: 1078
         y: 0
-        width: 78
-        height: 125
+        width: 77
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

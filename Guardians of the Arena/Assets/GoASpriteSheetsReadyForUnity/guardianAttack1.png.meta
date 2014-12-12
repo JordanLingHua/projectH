@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 007102049c4dd475c8170b2080f96318
+guid: af08ce38468be4159b81c23fc88f596b
 TextureImporter:
   fileIDToRecycleName:
     21300000: guardianAttack1_0
@@ -130,7 +130,6 @@ TextureImporter:
     21300250: guardianAttack1_125
     21300252: guardianAttack1_126
     21300254: guardianAttack1_127
-    21300256: guardianAttack1_128
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -176,159 +175,159 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1230
-        width: 179
-        height: 175
+        y: 1220
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_1
       rect:
         serializedVersion: 2
-        x: 179
-        y: 1230
-        width: 179
-        height: 175
+        x: 178
+        y: 1220
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_2
       rect:
         serializedVersion: 2
-        x: 358
-        y: 1230
-        width: 179
-        height: 175
+        x: 356
+        y: 1220
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_3
       rect:
         serializedVersion: 2
-        x: 537
-        y: 1230
-        width: 179
-        height: 175
+        x: 534
+        y: 1220
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_4
       rect:
         serializedVersion: 2
-        x: 716
-        y: 1230
-        width: 179
-        height: 175
+        x: 712
+        y: 1220
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_5
       rect:
         serializedVersion: 2
-        x: 895
-        y: 1230
-        width: 179
-        height: 175
+        x: 890
+        y: 1220
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_6
       rect:
         serializedVersion: 2
-        x: 1074
-        y: 1230
-        width: 179
-        height: 175
+        x: 1068
+        y: 1220
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_7
       rect:
         serializedVersion: 2
-        x: 1253
-        y: 1230
-        width: 179
-        height: 175
+        x: 1246
+        y: 1220
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_8
       rect:
         serializedVersion: 2
-        x: 1432
-        y: 1230
-        width: 179
-        height: 175
+        x: 1424
+        y: 1220
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_9
       rect:
         serializedVersion: 2
-        x: 1611
-        y: 1230
-        width: 179
-        height: 175
+        x: 1602
+        y: 1220
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_10
       rect:
         serializedVersion: 2
-        x: 1790
-        y: 1230
-        width: 179
-        height: 175
+        x: 1780
+        y: 1220
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_11
       rect:
         serializedVersion: 2
-        x: 1969
-        y: 1230
-        width: 179
-        height: 175
+        x: 1958
+        y: 1220
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_12
       rect:
         serializedVersion: 2
-        x: 2148
-        y: 1230
-        width: 179
-        height: 175
+        x: 2136
+        y: 1220
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_13
       rect:
         serializedVersion: 2
-        x: 2327
-        y: 1230
-        width: 179
-        height: 175
+        x: 2314
+        y: 1220
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_14
       rect:
         serializedVersion: 2
-        x: 2506
-        y: 1230
-        width: 179
-        height: 175
+        x: 2492
+        y: 1220
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_15
       rect:
         serializedVersion: 2
-        x: 2685
-        y: 1230
-        width: 179
-        height: 175
+        x: 2670
+        y: 1220
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -336,159 +335,159 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1055
-        width: 179
-        height: 175
+        y: 1046
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_17
       rect:
         serializedVersion: 2
-        x: 179
-        y: 1055
-        width: 179
-        height: 175
+        x: 178
+        y: 1046
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_18
       rect:
         serializedVersion: 2
-        x: 358
-        y: 1055
-        width: 179
-        height: 175
+        x: 356
+        y: 1046
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_19
       rect:
         serializedVersion: 2
-        x: 537
-        y: 1055
-        width: 179
-        height: 175
+        x: 534
+        y: 1046
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_20
       rect:
         serializedVersion: 2
-        x: 716
-        y: 1055
-        width: 179
-        height: 175
+        x: 712
+        y: 1046
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_21
       rect:
         serializedVersion: 2
-        x: 895
-        y: 1055
-        width: 179
-        height: 175
+        x: 890
+        y: 1046
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_22
       rect:
         serializedVersion: 2
-        x: 1074
-        y: 1055
-        width: 179
-        height: 175
+        x: 1068
+        y: 1046
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_23
       rect:
         serializedVersion: 2
-        x: 1253
-        y: 1055
-        width: 179
-        height: 175
+        x: 1246
+        y: 1046
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_24
       rect:
         serializedVersion: 2
-        x: 1432
-        y: 1055
-        width: 179
-        height: 175
+        x: 1424
+        y: 1046
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_25
       rect:
         serializedVersion: 2
-        x: 1611
-        y: 1055
-        width: 179
-        height: 175
+        x: 1602
+        y: 1046
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_26
       rect:
         serializedVersion: 2
-        x: 1790
-        y: 1055
-        width: 179
-        height: 175
+        x: 1780
+        y: 1046
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_27
       rect:
         serializedVersion: 2
-        x: 1969
-        y: 1055
-        width: 179
-        height: 175
+        x: 1958
+        y: 1046
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_28
       rect:
         serializedVersion: 2
-        x: 2148
-        y: 1055
-        width: 179
-        height: 175
+        x: 2136
+        y: 1046
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_29
       rect:
         serializedVersion: 2
-        x: 2327
-        y: 1055
-        width: 179
-        height: 175
+        x: 2314
+        y: 1046
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_30
       rect:
         serializedVersion: 2
-        x: 2506
-        y: 1055
-        width: 179
-        height: 175
+        x: 2492
+        y: 1046
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_31
       rect:
         serializedVersion: 2
-        x: 2685
-        y: 1055
-        width: 179
-        height: 175
+        x: 2670
+        y: 1046
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -496,159 +495,159 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 880
-        width: 179
-        height: 175
+        y: 872
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_33
       rect:
         serializedVersion: 2
-        x: 179
-        y: 880
-        width: 179
-        height: 175
+        x: 178
+        y: 872
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_34
       rect:
         serializedVersion: 2
-        x: 358
-        y: 880
-        width: 179
-        height: 175
+        x: 356
+        y: 872
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_35
       rect:
         serializedVersion: 2
-        x: 537
-        y: 880
-        width: 179
-        height: 175
+        x: 534
+        y: 872
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_36
       rect:
         serializedVersion: 2
-        x: 716
-        y: 880
-        width: 179
-        height: 175
+        x: 712
+        y: 872
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_37
       rect:
         serializedVersion: 2
-        x: 895
-        y: 880
-        width: 179
-        height: 175
+        x: 890
+        y: 872
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_38
       rect:
         serializedVersion: 2
-        x: 1074
-        y: 880
-        width: 179
-        height: 175
+        x: 1068
+        y: 872
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_39
       rect:
         serializedVersion: 2
-        x: 1253
-        y: 880
-        width: 179
-        height: 175
+        x: 1246
+        y: 872
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_40
       rect:
         serializedVersion: 2
-        x: 1432
-        y: 880
-        width: 179
-        height: 175
+        x: 1424
+        y: 872
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_41
       rect:
         serializedVersion: 2
-        x: 1611
-        y: 880
-        width: 179
-        height: 175
+        x: 1602
+        y: 872
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_42
       rect:
         serializedVersion: 2
-        x: 1790
-        y: 880
-        width: 179
-        height: 175
+        x: 1780
+        y: 872
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_43
       rect:
         serializedVersion: 2
-        x: 1969
-        y: 880
-        width: 179
-        height: 175
+        x: 1958
+        y: 872
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_44
       rect:
         serializedVersion: 2
-        x: 2148
-        y: 880
-        width: 179
-        height: 175
+        x: 2136
+        y: 872
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_45
       rect:
         serializedVersion: 2
-        x: 2327
-        y: 880
-        width: 179
-        height: 175
+        x: 2314
+        y: 872
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_46
       rect:
         serializedVersion: 2
-        x: 2506
-        y: 880
-        width: 179
-        height: 175
+        x: 2492
+        y: 872
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_47
       rect:
         serializedVersion: 2
-        x: 2685
-        y: 880
-        width: 179
-        height: 175
+        x: 2670
+        y: 872
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -656,159 +655,159 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 705
-        width: 179
-        height: 175
+        y: 698
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_49
       rect:
         serializedVersion: 2
-        x: 179
-        y: 705
-        width: 179
-        height: 175
+        x: 178
+        y: 698
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_50
       rect:
         serializedVersion: 2
-        x: 358
-        y: 705
-        width: 179
-        height: 175
+        x: 356
+        y: 698
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_51
       rect:
         serializedVersion: 2
-        x: 537
-        y: 705
-        width: 179
-        height: 175
+        x: 534
+        y: 698
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_52
       rect:
         serializedVersion: 2
-        x: 716
-        y: 705
-        width: 179
-        height: 175
+        x: 712
+        y: 698
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_53
       rect:
         serializedVersion: 2
-        x: 895
-        y: 705
-        width: 179
-        height: 175
+        x: 890
+        y: 698
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_54
       rect:
         serializedVersion: 2
-        x: 1074
-        y: 705
-        width: 179
-        height: 175
+        x: 1068
+        y: 698
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_55
       rect:
         serializedVersion: 2
-        x: 1253
-        y: 705
-        width: 179
-        height: 175
+        x: 1246
+        y: 698
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_56
       rect:
         serializedVersion: 2
-        x: 1432
-        y: 705
-        width: 179
-        height: 175
+        x: 1424
+        y: 698
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_57
       rect:
         serializedVersion: 2
-        x: 1611
-        y: 705
-        width: 179
-        height: 175
+        x: 1602
+        y: 698
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_58
       rect:
         serializedVersion: 2
-        x: 1790
-        y: 705
-        width: 179
-        height: 175
+        x: 1780
+        y: 698
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_59
       rect:
         serializedVersion: 2
-        x: 1969
-        y: 705
-        width: 179
-        height: 175
+        x: 1958
+        y: 698
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_60
       rect:
         serializedVersion: 2
-        x: 2148
-        y: 705
-        width: 179
-        height: 175
+        x: 2136
+        y: 698
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_61
       rect:
         serializedVersion: 2
-        x: 2327
-        y: 705
-        width: 179
-        height: 175
+        x: 2314
+        y: 698
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_62
       rect:
         serializedVersion: 2
-        x: 2506
-        y: 705
-        width: 179
-        height: 175
+        x: 2492
+        y: 698
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_63
       rect:
         serializedVersion: 2
-        x: 2685
-        y: 705
-        width: 179
-        height: 175
+        x: 2670
+        y: 698
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -816,159 +815,159 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 530
-        width: 179
-        height: 175
+        y: 524
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_65
       rect:
         serializedVersion: 2
-        x: 179
-        y: 530
-        width: 179
-        height: 175
+        x: 178
+        y: 524
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_66
       rect:
         serializedVersion: 2
-        x: 358
-        y: 530
-        width: 179
-        height: 175
+        x: 356
+        y: 524
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_67
       rect:
         serializedVersion: 2
-        x: 537
-        y: 530
-        width: 179
-        height: 175
+        x: 534
+        y: 524
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_68
       rect:
         serializedVersion: 2
-        x: 716
-        y: 530
-        width: 179
-        height: 175
+        x: 712
+        y: 524
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_69
       rect:
         serializedVersion: 2
-        x: 895
-        y: 530
-        width: 179
-        height: 175
+        x: 890
+        y: 524
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_70
       rect:
         serializedVersion: 2
-        x: 1074
-        y: 530
-        width: 179
-        height: 175
+        x: 1068
+        y: 524
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_71
       rect:
         serializedVersion: 2
-        x: 1253
-        y: 530
-        width: 179
-        height: 175
+        x: 1246
+        y: 524
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_72
       rect:
         serializedVersion: 2
-        x: 1432
-        y: 530
-        width: 179
-        height: 175
+        x: 1424
+        y: 524
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_73
       rect:
         serializedVersion: 2
-        x: 1611
-        y: 530
-        width: 179
-        height: 175
+        x: 1602
+        y: 524
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_74
       rect:
         serializedVersion: 2
-        x: 1790
-        y: 530
-        width: 179
-        height: 175
+        x: 1780
+        y: 524
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_75
       rect:
         serializedVersion: 2
-        x: 1969
-        y: 530
-        width: 179
-        height: 175
+        x: 1958
+        y: 524
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_76
       rect:
         serializedVersion: 2
-        x: 2148
-        y: 530
-        width: 179
-        height: 175
+        x: 2136
+        y: 524
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_77
       rect:
         serializedVersion: 2
-        x: 2327
-        y: 530
-        width: 179
-        height: 175
+        x: 2314
+        y: 524
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_78
       rect:
         serializedVersion: 2
-        x: 2506
-        y: 530
-        width: 179
-        height: 175
+        x: 2492
+        y: 524
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_79
       rect:
         serializedVersion: 2
-        x: 2685
-        y: 530
-        width: 179
-        height: 175
+        x: 2670
+        y: 524
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -976,159 +975,159 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 355
-        width: 179
-        height: 175
+        y: 350
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_81
       rect:
         serializedVersion: 2
-        x: 179
-        y: 355
-        width: 179
-        height: 175
+        x: 178
+        y: 350
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_82
       rect:
         serializedVersion: 2
-        x: 358
-        y: 355
-        width: 179
-        height: 175
+        x: 356
+        y: 350
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_83
       rect:
         serializedVersion: 2
-        x: 537
-        y: 355
-        width: 179
-        height: 175
+        x: 534
+        y: 350
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_84
       rect:
         serializedVersion: 2
-        x: 716
-        y: 355
-        width: 179
-        height: 175
+        x: 712
+        y: 350
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_85
       rect:
         serializedVersion: 2
-        x: 895
-        y: 355
-        width: 179
-        height: 175
+        x: 890
+        y: 350
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_86
       rect:
         serializedVersion: 2
-        x: 1074
-        y: 355
-        width: 179
-        height: 175
+        x: 1068
+        y: 350
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_87
       rect:
         serializedVersion: 2
-        x: 1253
-        y: 355
-        width: 179
-        height: 175
+        x: 1246
+        y: 350
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_88
       rect:
         serializedVersion: 2
-        x: 1432
-        y: 355
-        width: 179
-        height: 175
+        x: 1424
+        y: 350
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_89
       rect:
         serializedVersion: 2
-        x: 1611
-        y: 355
-        width: 179
-        height: 175
+        x: 1602
+        y: 350
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_90
       rect:
         serializedVersion: 2
-        x: 1790
-        y: 355
-        width: 179
-        height: 175
+        x: 1780
+        y: 350
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_91
       rect:
         serializedVersion: 2
-        x: 1969
-        y: 355
-        width: 179
-        height: 175
+        x: 1958
+        y: 350
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_92
       rect:
         serializedVersion: 2
-        x: 2148
-        y: 355
-        width: 179
-        height: 175
+        x: 2136
+        y: 350
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_93
       rect:
         serializedVersion: 2
-        x: 2327
-        y: 355
-        width: 179
-        height: 175
+        x: 2314
+        y: 350
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_94
       rect:
         serializedVersion: 2
-        x: 2506
-        y: 355
-        width: 179
-        height: 175
+        x: 2492
+        y: 350
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_95
       rect:
         serializedVersion: 2
-        x: 2685
-        y: 355
-        width: 179
-        height: 175
+        x: 2670
+        y: 350
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1136,159 +1135,159 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 180
-        width: 179
-        height: 175
+        y: 176
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_97
       rect:
         serializedVersion: 2
-        x: 179
-        y: 180
-        width: 179
-        height: 175
+        x: 178
+        y: 176
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_98
       rect:
         serializedVersion: 2
-        x: 358
-        y: 180
-        width: 179
-        height: 175
+        x: 356
+        y: 176
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_99
       rect:
         serializedVersion: 2
-        x: 537
-        y: 180
-        width: 179
-        height: 175
+        x: 534
+        y: 176
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_100
       rect:
         serializedVersion: 2
-        x: 716
-        y: 180
-        width: 179
-        height: 175
+        x: 712
+        y: 176
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_101
       rect:
         serializedVersion: 2
-        x: 895
-        y: 180
-        width: 179
-        height: 175
+        x: 890
+        y: 176
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_102
       rect:
         serializedVersion: 2
-        x: 1074
-        y: 180
-        width: 179
-        height: 175
+        x: 1068
+        y: 176
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_103
       rect:
         serializedVersion: 2
-        x: 1253
-        y: 180
-        width: 179
-        height: 175
+        x: 1246
+        y: 176
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_104
       rect:
         serializedVersion: 2
-        x: 1432
-        y: 180
-        width: 179
-        height: 175
+        x: 1424
+        y: 176
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_105
       rect:
         serializedVersion: 2
-        x: 1611
-        y: 180
-        width: 179
-        height: 175
+        x: 1602
+        y: 176
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_106
       rect:
         serializedVersion: 2
-        x: 1790
-        y: 180
-        width: 179
-        height: 175
+        x: 1780
+        y: 176
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_107
       rect:
         serializedVersion: 2
-        x: 1969
-        y: 180
-        width: 179
-        height: 175
+        x: 1958
+        y: 176
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_108
       rect:
         serializedVersion: 2
-        x: 2148
-        y: 180
-        width: 179
-        height: 175
+        x: 2136
+        y: 176
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_109
       rect:
         serializedVersion: 2
-        x: 2327
-        y: 180
-        width: 179
-        height: 175
+        x: 2314
+        y: 176
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_110
       rect:
         serializedVersion: 2
-        x: 2506
-        y: 180
-        width: 179
-        height: 175
+        x: 2492
+        y: 176
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_111
       rect:
         serializedVersion: 2
-        x: 2685
-        y: 180
-        width: 179
-        height: 175
+        x: 2670
+        y: 176
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1296,171 +1295,161 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 5
-        width: 179
-        height: 175
+        y: 2
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_113
       rect:
         serializedVersion: 2
-        x: 179
-        y: 5
-        width: 179
-        height: 175
+        x: 178
+        y: 2
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_114
       rect:
         serializedVersion: 2
-        x: 358
-        y: 5
-        width: 179
-        height: 175
+        x: 356
+        y: 2
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_115
       rect:
         serializedVersion: 2
-        x: 537
-        y: 5
-        width: 179
-        height: 175
+        x: 534
+        y: 2
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_116
       rect:
         serializedVersion: 2
-        x: 716
-        y: 5
-        width: 179
-        height: 175
+        x: 712
+        y: 2
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_117
       rect:
         serializedVersion: 2
-        x: 895
-        y: 5
-        width: 179
-        height: 175
+        x: 890
+        y: 2
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_118
       rect:
         serializedVersion: 2
-        x: 1074
-        y: 5
-        width: 179
-        height: 175
+        x: 1068
+        y: 2
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_119
       rect:
         serializedVersion: 2
-        x: 1253
-        y: 5
-        width: 179
-        height: 175
+        x: 1246
+        y: 2
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_120
       rect:
         serializedVersion: 2
-        x: 1432
-        y: 5
-        width: 179
-        height: 175
+        x: 1424
+        y: 2
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_121
       rect:
         serializedVersion: 2
-        x: 1611
-        y: 5
-        width: 179
-        height: 175
+        x: 1602
+        y: 2
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_122
       rect:
         serializedVersion: 2
-        x: 1790
-        y: 5
-        width: 179
-        height: 175
+        x: 1780
+        y: 2
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_123
       rect:
         serializedVersion: 2
-        x: 1969
-        y: 5
-        width: 179
-        height: 175
+        x: 1958
+        y: 2
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_124
       rect:
         serializedVersion: 2
-        x: 2148
-        y: 5
-        width: 179
-        height: 175
+        x: 2136
+        y: 2
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_125
       rect:
         serializedVersion: 2
-        x: 2327
-        y: 5
-        width: 179
-        height: 175
+        x: 2314
+        y: 2
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_126
       rect:
         serializedVersion: 2
-        x: 2506
-        y: 5
-        width: 179
-        height: 175
+        x: 2492
+        y: 2
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAttack1_127
       rect:
         serializedVersion: 2
-        x: 2685
-        y: 5
-        width: 179
-        height: 175
+        x: 2670
+        y: 2
+        width: 178
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: guardianAttack1_128
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 2864
-        height: 1405
-      alignment: 0
-      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
