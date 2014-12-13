@@ -349,7 +349,6 @@ public class Unit    : MonoBehaviour {
 	
 	void getMvAccessibleTiles(HashSet<TileScript> list, TileScript tile, int num,allegiance ally){
 		TileScript tileS = tile.transform.GetComponent<TileScript> ();
-		//print ("ran getMvTile");
 		if (num != 0) {
 			if (tileS.up != null && (tileS.up.GetComponent<TileScript> ().objectOccupyingTile == null || tileS.up.GetComponent<TileScript> ().objectOccupyingTile.GetComponent<Unit> ().alleg == ((ally == allegiance.playerOne) ? allegiance.playerOne : allegiance.playerTwo))) {
 				list.Add (tileS.up.GetComponent<TileScript> ());

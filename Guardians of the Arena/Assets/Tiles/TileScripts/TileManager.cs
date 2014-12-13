@@ -236,6 +236,9 @@ public class TileManager : MonoBehaviour {
 		unit.GetComponent<Unit> ().unitID = unitID;
 
 		gm.units.Add(unitID,unit.GetComponent<Unit>());
+		if (gp.playerNumber == 2) {
+			unit.transform.eulerAngles = new Vector3(4.5f,180f,0f);
+		}
 
 	}
 	
