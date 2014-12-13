@@ -9,7 +9,7 @@ public class Unit    : MonoBehaviour {
 	public allegiance alleg;
 	//All these are public, so we can modify them all for now.  
 	public int unitID, xpos, ypos;//, unitType;
-	public int hp,maxHP,atk,mvRange,atkRange,mvCost,atkCost, xp, unitLevel;
+	public int hp,maxHP,atk,mvRange,atkRange,mvCost,atkCost, xp, unitLevel,popUpTextNum;
 	public bool atkd, mvd;
 	public string unitName = string.Empty;
 	public string info = string.Empty;
@@ -70,8 +70,6 @@ public class Unit    : MonoBehaviour {
 	public AudioManager am;
 	public virtual void Start () {
 		unitLevel = 1;
-		xp = 5;
-		displayXPBar = true;
 		popUpText = GameObject.Find ("popUpText");
 		hpBarBG = Resources.Load("HPBarBG") as Texture2D;
 		hpBarHigh = Resources.Load("HPBarHigh") as Texture2D;
@@ -94,10 +92,11 @@ public class Unit    : MonoBehaviour {
 		GUI.depth = -1;
 		Vector3 textPos = cam.WorldToScreenPoint(gameObject.transform.position);
 		textPos.x = (textPos.x - 10) / Screen.width;
-		textPos.y = (textPos.y + 5) / Screen.height;
+		textPos.y = (textPos.y + (10 * popUpTextNum)) / Screen.height;
 		textPos.z = 0;
 		GameObject text = (GameObject) Instantiate(popUpText,textPos,Quaternion.identity);
-		text.GetComponent<popUpTextScript> ().StartCoroutine (text.GetComponent<popUpTextScript> ().showText (affect, newColor));
+		popUpTextNum++;
+		text.GetComponent<popUpTextScript> ().StartCoroutine (text.GetComponent<popUpTextScript> ().showText (this, affect, newColor));
 	}
 
 	void OnGUI(){
@@ -350,7 +349,6 @@ public class Unit    : MonoBehaviour {
 	
 	void getMvAccessibleTiles(HashSet<TileScript> list, TileScript tile, int num,allegiance ally){
 		TileScript tileS = tile.transform.GetComponent<TileScript> ();
-		//print ("ran getMvTile");
 		if (num != 0) {
 			if (tileS.up != null && (tileS.up.GetComponent<TileScript> ().objectOccupyingTile == null || tileS.up.GetComponent<TileScript> ().objectOccupyingTile.GetComponent<Unit> ().alleg == ((ally == allegiance.playerOne) ? allegiance.playerOne : allegiance.playerTwo))) {
 				list.Add (tileS.up.GetComponent<TileScript> ());

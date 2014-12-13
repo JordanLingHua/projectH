@@ -1,14 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class popUpTextScript : MonoBehaviour {
+public class ErrorPopUpTextScript : MonoBehaviour {
 	
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	public IEnumerator showText(Unit unitAffected,string affect, Color newColor){
+	public IEnumerator showText(string affect, Color newColor){
 		GUI.depth = -1;
 		this.GetComponent<GUIText>().text = affect;
 		this.GetComponent<GUIText>().color = newColor;
@@ -20,8 +15,5 @@ public class popUpTextScript : MonoBehaviour {
 			yield return new WaitForSeconds(0.016666f);
 		}
 		Destroy (this.gameObject);
-		unitAffected.popUpTextNum--;
 	}
-	
-	
 }

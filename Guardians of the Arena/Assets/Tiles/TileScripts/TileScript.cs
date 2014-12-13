@@ -80,8 +80,7 @@ public class TileScript : MonoBehaviour {
 		this.transform.parent.GetComponent<TileManager>().clearAllTiles();
 		Stack<GameObject> tiles = new Stack<GameObject>();
 		tiles.Push(this.gameObject);
-		
-		current.myNode.gameObject.renderer.material.color = Color.green;
+
 		while (current.parent != null){
 			tiles.Push(current.parent.myNode.gameObject);
 			current = current.parent;
@@ -91,25 +90,8 @@ public class TileScript : MonoBehaviour {
 		gm.movingPiece = true;
 		
 		while (tiles.Count !=0){
-			newPos = new Vector3(tiles.Peek().transform.position.x,0,tiles.Peek().transform.position.z);
-
-			tiles.Peek().renderer.material.color = movingUnit.alleg == Unit.allegiance.playerOne? Color.blue : Color.red;
+			newPos = new Vector3(tiles.Peek().transform.position.x,5f,tiles.Peek().transform.position.z);
 			yield return StartCoroutine(movePiece(movingUnit.gameObject,movingUnit.transform.position,newPos,0.28f));
-			if (tiles.Count != 1){
-				if (tiles.Peek ().GetComponent<TileScript>().objectOccupyingTile == null){
-					tiles.Peek ().renderer.material.color = Color.white;
-					//ally unit tile
-				}else if (tiles.Peek ().GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerOne){
-					tiles.Peek ().renderer.material.color = Color.blue;
-					//neutral unit tile (shrubbery)
-				}else if (tiles.Peek ().GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.neutral){
-					tiles.Peek ().renderer.material.color = Color.gray;
-					//enemy unit tile
-				}else if (tiles.Peek ().GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerTwo) {
-					tiles.Peek ().renderer.material.color = Color.red;
-				}
-
-			} 
 			tiles.Pop();
 		}
 		gm.movingPiece = false;
@@ -217,7 +199,7 @@ public class TileScript : MonoBehaviour {
 			am.playButtonSFX();
 		} else {
 			am.playErrorSFX();
-			if (((gm.selectedUnit.alleg == Unit.allegiance.playerOne && gp.playerNumber == 1) || (gm.selectedUnit.alleg == Unit.allegiance.playerTwo && gp.playerNumber == 2))){
+			if (((gm.selectedUnit.alleg == Unit.allegiance.playerOne && gp.playerNumber == 2) || (gm.selectedUnit.alleg == Unit.allegiance.playerTwo && gp.playerNumber == 1))){
 				gm.showErrorMessage("Cannot attack with an opponent's piece!");
 			}else if (gm.accessibleTiles.Contains(this)){
 				gm.showErrorMessage("Cannot attack there!");

@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour {
 			Destroy (GameObject.Find ("ErrorPopUpText(Clone)"));
 		}
 		GameObject text = (GameObject) Instantiate(popUpText,textPos,Quaternion.identity);
-		text.GetComponent<popUpTextScript> ().StartCoroutine (text.GetComponent<popUpTextScript> ().showText (error, Color.red));
+		text.GetComponent<ErrorPopUpTextScript> ().StartCoroutine (text.GetComponent<ErrorPopUpTextScript> ().showText (error, Color.red));
 	}
 
 	void Update () {
@@ -79,61 +79,61 @@ public class GameManager : MonoBehaviour {
 	}
 	
 	void OnGUI(){
-
 		//extra unit on screen
+		//notworking so removed for now
 		if (selectedUnit != null){
-			Vector3 worldPoint = gp.playerNumber == 1? new Vector3(122,20,75) : new Vector3(-23,20,30);
-			if (selectedUnitDisplay == null  || selectedUnitDisplay.name != (selectedUnit.unitName + "(Clone)")){
-				Destroy(selectedUnitDisplay);
-				switch(selectedUnit.unitType){
-				case 1:
-					selectedUnitDisplay = (GameObject)Instantiate(UnitOne, worldPoint, new Quaternion());
-					Destroy(selectedUnitDisplay.GetComponent<KnifeThrower>());
-					break;
-				case 2:
-					selectedUnitDisplay = (GameObject)Instantiate(UnitTwo, worldPoint, new Quaternion());
-					Destroy(selectedUnitDisplay.GetComponent<Mystic>());
-					break;
-				case 3:
-					selectedUnitDisplay = (GameObject)Instantiate(UnitThree, worldPoint, new Quaternion());
-					Destroy(selectedUnitDisplay.GetComponent<Templar>());
-					break;
-				case 4:
-					selectedUnitDisplay = (GameObject)Instantiate(UnitFour,worldPoint, new Quaternion());
-					Destroy(selectedUnitDisplay.GetComponent<AoEUnit>());
-					break;
-				case 5:
-					selectedUnitDisplay = (GameObject)Instantiate(UnitFive,worldPoint, new Quaternion());
-					Destroy(selectedUnitDisplay.GetComponent<UtilityUnit>());
-					break;
-				case 6:
-					selectedUnitDisplay = (GameObject)Instantiate(UnitSix, worldPoint, new Quaternion());
-					Destroy(selectedUnitDisplay.GetComponent<BuffingUnit>());
-					break;
-				case 7:
-					selectedUnitDisplay = (GameObject)Instantiate(UnitSeven, worldPoint,new Quaternion());
-					Destroy(selectedUnitDisplay.GetComponent<Swordsman>());
-					break;
-				case 8:
-					selectedUnitDisplay = (GameObject)Instantiate(UnitEight, worldPoint,new Quaternion());
-					Destroy(selectedUnitDisplay.GetComponent<Priest>());
-					break;
-				case 9:
-					selectedUnitDisplay = (GameObject)Instantiate(UnitNine, worldPoint, new Quaternion());
-					Destroy(selectedUnitDisplay.GetComponent<RangedUnit>());
-					break;
-				case 10:
-					selectedUnitDisplay = (GameObject)Instantiate(UnitTen, worldPoint, new Quaternion());
-					Destroy(selectedUnitDisplay.GetComponent<Guardian>());
-					break;
-				case 11:
-					selectedUnitDisplay = (GameObject)Instantiate(UnitEleven,worldPoint,new Quaternion());
-					Destroy(selectedUnitDisplay.GetComponent<SoulStone>());
-					break;
-				}
-				selectedUnitDisplay.transform.localScale = new Vector3(20,20,20);
-
-			}
+//			Vector3 worldPoint = gp.playerNumber == 1? new Vector3(122,20,75) : new Vector3(-23,20,30);
+//			if (selectedUnitDisplay == null  || selectedUnitDisplay.name != (selectedUnit.unitName + "(Clone)")){
+//				Destroy(selectedUnitDisplay);
+//				switch(selectedUnit.unitType){
+//				case 1:
+//					selectedUnitDisplay = (GameObject)Instantiate(UnitOne, worldPoint, new Quaternion());
+//					Destroy(selectedUnitDisplay.GetComponent<KnifeThrower>());
+//					break;
+//				case 2:
+//					selectedUnitDisplay = (GameObject)Instantiate(UnitTwo, worldPoint, new Quaternion());
+//					Destroy(selectedUnitDisplay.GetComponent<Mystic>());
+//					break;
+//				case 3:
+//					selectedUnitDisplay = (GameObject)Instantiate(UnitThree, worldPoint, new Quaternion());
+//					Destroy(selectedUnitDisplay.GetComponent<Templar>());
+//					break;
+//				case 4:
+//					selectedUnitDisplay = (GameObject)Instantiate(UnitFour,worldPoint, new Quaternion());
+//					Destroy(selectedUnitDisplay.GetComponent<AoEUnit>());
+//					break;
+//				case 5:
+//					selectedUnitDisplay = (GameObject)Instantiate(UnitFive,worldPoint, new Quaternion());
+//					Destroy(selectedUnitDisplay.GetComponent<UtilityUnit>());
+//					break;
+//				case 6:
+//					selectedUnitDisplay = (GameObject)Instantiate(UnitSix, worldPoint, new Quaternion());
+//					Destroy(selectedUnitDisplay.GetComponent<BuffingUnit>());
+//					break;
+//				case 7:
+//					selectedUnitDisplay = (GameObject)Instantiate(UnitSeven, worldPoint,new Quaternion());
+//					Destroy(selectedUnitDisplay.GetComponent<Swordsman>());
+//					break;
+//				case 8:
+//					selectedUnitDisplay = (GameObject)Instantiate(UnitEight, worldPoint,new Quaternion());
+//					Destroy(selectedUnitDisplay.GetComponent<Priest>());
+//					break;
+//				case 9:
+//					selectedUnitDisplay = (GameObject)Instantiate(UnitNine, worldPoint, new Quaternion());
+//					Destroy(selectedUnitDisplay.GetComponent<RangedUnit>());
+//					break;
+//				case 10:
+//					selectedUnitDisplay = (GameObject)Instantiate(UnitTen, worldPoint, new Quaternion());
+//					Destroy(selectedUnitDisplay.GetComponent<Guardian>());
+//					break;
+//				case 11:
+//					selectedUnitDisplay = (GameObject)Instantiate(UnitEleven,worldPoint,new Quaternion());
+//					Destroy(selectedUnitDisplay.GetComponent<SoulStone>());
+//					break;
+//				}
+//				selectedUnitDisplay.transform.localScale = new Vector3(20,20,20);
+//
+//			}
 
 			Unit script = selectedUnit.GetComponent<Unit>();
 			string info = script.unitName + "\nHP: " + script.hp + "/" + script.maxHP;
