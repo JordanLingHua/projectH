@@ -9,7 +9,7 @@ public class Unit    : MonoBehaviour {
 	public allegiance alleg;
 	//All these are public, so we can modify them all for now.  
 	public int unitID, xpos, ypos;//, unitType;
-	public int hp,maxHP,atk,mvRange,atkRange,mvCost,atkCost, xp, unitLevel;
+	public int hp,maxHP,atk,mvRange,atkRange,mvCost,atkCost, xp, unitLevel,popUpTextNum;
 	public bool atkd, mvd;
 	public string unitName = string.Empty;
 	public string info = string.Empty;
@@ -92,10 +92,11 @@ public class Unit    : MonoBehaviour {
 		GUI.depth = -1;
 		Vector3 textPos = cam.WorldToScreenPoint(gameObject.transform.position);
 		textPos.x = (textPos.x - 10) / Screen.width;
-		textPos.y = (textPos.y + 5) / Screen.height;
+		textPos.y = (textPos.y + (10 * popUpTextNum)) / Screen.height;
 		textPos.z = 0;
 		GameObject text = (GameObject) Instantiate(popUpText,textPos,Quaternion.identity);
-		text.GetComponent<popUpTextScript> ().StartCoroutine (text.GetComponent<popUpTextScript> ().showText (affect, newColor));
+		popUpTextNum++;
+		text.GetComponent<popUpTextScript> ().StartCoroutine (text.GetComponent<popUpTextScript> ().showText (this, affect, newColor));
 	}
 
 	void OnGUI(){
@@ -313,7 +314,7 @@ public class Unit    : MonoBehaviour {
 		TileScript tileS = tile.transform.GetComponent<TileScript>();
 		
 		if (tileS.objectOccupyingTile == null){
-			tile.renderer.material.color = new Color32 (105,255,255,1);
+			tile.renderer.material.color = Color.green;
 		}
 		
 		if (num!=0){

@@ -235,8 +235,6 @@ public class TileManager : MonoBehaviour {
 		unit.GetComponent<Unit> ().alleg = pNum == 1? Unit.allegiance.playerOne : Unit.allegiance.playerTwo;
 		unit.GetComponent<Unit> ().unitID = unitID;
 
-		placeTile.gameObject.renderer.material.color = pNum == 1 ? Color.blue : Color.red;
-
 		gm.units.Add(unitID,unit.GetComponent<Unit>());
 
 	}
@@ -251,21 +249,28 @@ public class TileManager : MonoBehaviour {
 					tiles[i, k].renderer.material.color = Color.white;
 				//ally unit tile
 				}else if (tiles[i,k].GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerOne){
-					if (gm.turn && gp.playerNumber == 1 && (!tiles[i,k].GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().mvd || !tiles[i,k].GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().atkd)){
-						tiles[i, k].renderer.material.color = new Color32(105,255,105,1);
-					}else{
-						tiles[i, k].renderer.material.color = Color.blue;
+					Color newTileColor = Color.blue;
+					//newTileColor.
+					if (gm.turn && gp.playerNumber == 1 && !tiles[i,k].GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().mvd){
+						newTileColor.g += 0.3f;
 					}
+					if (gm.turn && gp.playerNumber == 1 && !tiles[i,k].GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().atkd){
+						newTileColor.r += 0.3f;
+					}
+					tiles[i, k].renderer.material.color = newTileColor;
 				//neutral unit tile (shrubbery)
 				}else if (tiles[i,k].GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.neutral){
 					tiles[i, k].renderer.material.color = Color.gray;
 				//enemy unit tile
 				}else if (tiles[i,k].GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerTwo) {
-					if (gm.turn && gp.playerNumber == 2 && (!tiles[i,k].GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().mvd || !tiles[i,k].GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().atkd)){
-						tiles[i, k].renderer.material.color = new Color32(105,255,105,1);
-					}else{
-						tiles[i, k].renderer.material.color = Color.red;
+					Color newTileColor = Color.red;
+					if (gm.turn && gp.playerNumber == 2 && !tiles[i,k].GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().mvd){
+						newTileColor.g += 0.3f;
 					}
+					if (gm.turn && gp.playerNumber == 2 && !tiles[i,k].GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().atkd){
+						newTileColor.b += 0.3f;
+					}
+					tiles[i, k].renderer.material.color = newTileColor;
 				}
 			}
 		}

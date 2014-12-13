@@ -90,7 +90,7 @@ public class TileScript : MonoBehaviour {
 		gm.movingPiece = true;
 		
 		while (tiles.Count !=0){
-			newPos = new Vector3(tiles.Peek().transform.position.x,0,tiles.Peek().transform.position.z);
+			newPos = new Vector3(tiles.Peek().transform.position.x,5f,tiles.Peek().transform.position.z);
 			yield return StartCoroutine(movePiece(movingUnit.gameObject,movingUnit.transform.position,newPos,0.28f));
 			tiles.Pop();
 		}
@@ -199,7 +199,7 @@ public class TileScript : MonoBehaviour {
 			am.playButtonSFX();
 		} else {
 			am.playErrorSFX();
-			if (((gm.selectedUnit.alleg == Unit.allegiance.playerOne && gp.playerNumber == 1) || (gm.selectedUnit.alleg == Unit.allegiance.playerTwo && gp.playerNumber == 2))){
+			if (((gm.selectedUnit.alleg == Unit.allegiance.playerOne && gp.playerNumber == 2) || (gm.selectedUnit.alleg == Unit.allegiance.playerTwo && gp.playerNumber == 1))){
 				gm.showErrorMessage("Cannot attack with an opponent's piece!");
 			}else if (gm.accessibleTiles.Contains(this)){
 				gm.showErrorMessage("Cannot attack there!");
