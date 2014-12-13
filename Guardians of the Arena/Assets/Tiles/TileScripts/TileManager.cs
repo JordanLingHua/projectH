@@ -168,63 +168,63 @@ public class TileManager : MonoBehaviour {
 		switch(type){
 		case 1:
 			unit = (GameObject)Instantiate(UnitOne, 
-			                               new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
+			                               new Vector3(placeTile.transform.position.x, 5f, placeTile.transform.position.z), 
 			                               new Quaternion());
 			break;
 		case 2:
 			unit = (GameObject)Instantiate(UnitTwo, 
-			                               new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
+			                               new Vector3(placeTile.transform.position.x, 5f, placeTile.transform.position.z), 
 			                               new Quaternion());
 			break;
 		case 3:
 			unit = (GameObject)Instantiate(UnitThree, 
-			                               new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
+			                               new Vector3(placeTile.transform.position.x, 5f, placeTile.transform.position.z), 
 			                               new Quaternion());
 			break;
 		case 4:
 			unit = (GameObject)Instantiate(UnitFour, 
-			                               new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
+			                               new Vector3(placeTile.transform.position.x, 5f, placeTile.transform.position.z), 
 			                               new Quaternion());
 			break;
 		case 5:
 			unit = (GameObject)Instantiate(UnitFive, 
-			                               new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
+			                               new Vector3(placeTile.transform.position.x, 5f, placeTile.transform.position.z), 
 			                               new Quaternion());
 			break;
 		case 6:
 			unit = (GameObject)Instantiate(UnitSix, 
-			                               new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
+			                               new Vector3(placeTile.transform.position.x, 5f, placeTile.transform.position.z), 
 			                               new Quaternion());
 			break;
 		case 7:
 			unit = (GameObject)Instantiate(UnitSeven, 
-			                               new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
+			                               new Vector3(placeTile.transform.position.x, 5f, placeTile.transform.position.z), 
 			                               new Quaternion());
 			break;
 		case 8:
 			unit = (GameObject)Instantiate(UnitEight, 
-			                               new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
+			                               new Vector3(placeTile.transform.position.x, 5f, placeTile.transform.position.z), 
 			                               new Quaternion());
 			break;
 		case 9:
 			unit = (GameObject)Instantiate(UnitNine, 
-			                               new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
+			                               new Vector3(placeTile.transform.position.x, 5f, placeTile.transform.position.z), 
 			                               new Quaternion());
 			break;
 		case 10:
 			unit = (GameObject)Instantiate(UnitTen, 
-			                               new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
+			                               new Vector3(placeTile.transform.position.x, 5f, placeTile.transform.position.z), 
 			                               new Quaternion());
 			break;
 		case 11:
 			unit = (GameObject)Instantiate(UnitEleven, 
-			                               new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
+			                               new Vector3(placeTile.transform.position.x, 5f, placeTile.transform.position.z), 
 			                               new Quaternion());
 			break;
 
 		default:
 			unit = (GameObject)Instantiate(cp, 
-			                               new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
+			                               new Vector3(placeTile.transform.position.x, 5f, placeTile.transform.position.z), 
 			                               new Quaternion());
 			break;
 		}
@@ -242,7 +242,7 @@ public class TileManager : MonoBehaviour {
 	}
 	
 	//Resets color of tiles
-	public void clearAllTiles(){	
+	public void clearAllTiles(){
 		for (int i = 0; i < xTiles; i ++){
 			
 			for (int k = 0; k < yTiles; k++){
@@ -251,13 +251,21 @@ public class TileManager : MonoBehaviour {
 					tiles[i, k].renderer.material.color = Color.white;
 				//ally unit tile
 				}else if (tiles[i,k].GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerOne){
-					tiles[i, k].renderer.material.color = Color.blue;
+					if (gm.turn && gp.playerNumber == 1 && (!tiles[i,k].GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().mvd || !tiles[i,k].GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().atkd)){
+						tiles[i, k].renderer.material.color = new Color32(105,255,105,1);
+					}else{
+						tiles[i, k].renderer.material.color = Color.blue;
+					}
 				//neutral unit tile (shrubbery)
 				}else if (tiles[i,k].GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.neutral){
 					tiles[i, k].renderer.material.color = Color.gray;
 				//enemy unit tile
 				}else if (tiles[i,k].GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerTwo) {
-					tiles[i, k].renderer.material.color = Color.red;
+					if (gm.turn && gp.playerNumber == 2 && (!tiles[i,k].GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().mvd || !tiles[i,k].GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().atkd)){
+						tiles[i, k].renderer.material.color = new Color32(105,255,105,1);
+					}else{
+						tiles[i, k].renderer.material.color = Color.red;
+					}
 				}
 			}
 		}

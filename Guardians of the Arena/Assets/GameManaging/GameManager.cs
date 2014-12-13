@@ -79,7 +79,6 @@ public class GameManager : MonoBehaviour {
 	}
 	
 	void OnGUI(){
-
 		//extra unit on screen
 		if (selectedUnit != null){
 			Vector3 worldPoint = gp.playerNumber == 1? new Vector3(122,20,75) : new Vector3(-23,20,30);

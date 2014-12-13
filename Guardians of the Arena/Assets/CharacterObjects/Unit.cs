@@ -70,8 +70,6 @@ public class Unit    : MonoBehaviour {
 	public AudioManager am;
 	public virtual void Start () {
 		unitLevel = 1;
-		xp = 5;
-		displayXPBar = true;
 		popUpText = GameObject.Find ("popUpText");
 		hpBarBG = Resources.Load("HPBarBG") as Texture2D;
 		hpBarHigh = Resources.Load("HPBarHigh") as Texture2D;
@@ -315,7 +313,7 @@ public class Unit    : MonoBehaviour {
 		TileScript tileS = tile.transform.GetComponent<TileScript>();
 		
 		if (tileS.objectOccupyingTile == null){
-			tile.renderer.material.color = Color.green;
+			tile.renderer.material.color = new Color32 (105,255,255,1);
 		}
 		
 		if (num!=0){

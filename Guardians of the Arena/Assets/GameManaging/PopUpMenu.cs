@@ -44,7 +44,7 @@ public class PopUpMenu : MonoBehaviour {
 			if (prev != xpSelGridInt){
 				am.playButtonSFX();
 				if( Application.loadedLevelName.Equals ("BoardScene")){
-					GameObject.Find ("TileManager").GetComponent<TileManager>().displayHPBars(xpSelGridInt);
+					GameObject.Find ("TileManager").GetComponent<TileManager>().displayXPBars(xpSelGridInt);
 				}
 			}
 			
