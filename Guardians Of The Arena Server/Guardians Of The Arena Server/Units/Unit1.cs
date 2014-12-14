@@ -14,8 +14,8 @@ namespace Guardians_Of_The_Arena_Server.Units
             maxHealth = 25;
             armor = 8;
             damage = 18;
-            movementRange = 4;
-            movementCost = 2;
+            movementRange = 3;
+            movementCost = 1;
             attackCost = 2;
             attackRange = 4;
              
@@ -41,7 +41,9 @@ namespace Guardians_Of_The_Arena_Server.Units
                     {
                         Console.WriteLine("Unit Hit: {0}", temp.CurrentUnit.UniqueID);
                         unitsHit.Add(temp.CurrentUnit.UniqueID);
-                        return unitsHit;
+
+                        if (level  < 2)
+                            return unitsHit;
                     }
                 }
             }
@@ -56,7 +58,9 @@ namespace Guardians_Of_The_Arena_Server.Units
                     {
                         Console.WriteLine("Unit Hit: {0}", temp.CurrentUnit.UniqueID);
                         unitsHit.Add(temp.CurrentUnit.UniqueID);
-                        return unitsHit;
+
+                        if (level < 2)
+                            return unitsHit;
                     }
                 }
             }
@@ -72,7 +76,9 @@ namespace Guardians_Of_The_Arena_Server.Units
                     {
                         Console.WriteLine("Unit Hit: {0}", temp.CurrentUnit.UniqueID);
                         unitsHit.Add(temp.CurrentUnit.UniqueID);
-                        return unitsHit;
+
+                        if (level < 2)
+                            return unitsHit;
                     }
                 }
             }
@@ -87,17 +93,33 @@ namespace Guardians_Of_The_Arena_Server.Units
                     {
                         Console.WriteLine("Unit Hit: {0}", temp.CurrentUnit.UniqueID);
                         unitsHit.Add(temp.CurrentUnit.UniqueID);
-                        return unitsHit;
+
+
+                        if (level < 2)
+                            return unitsHit;
                     }
                 }
             }
+
+
 
             return unitsHit;
         }
 
         public override void LevelUp()
         {
-            throw new NotImplementedException();
+            XP = currentXP % 20;
+
+            switch(Level)
+            {
+                case 1 :
+                    attackRange++;
+                    break;
+                default :
+                    break;
+
+                    
+            }
         }
     }
 }

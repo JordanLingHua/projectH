@@ -59,9 +59,13 @@ namespace Guardians_Of_The_Arena_Server.Units
                 Console.WriteLine("LOG: Unit " + uniqueID + " has died.");
             }
         }
+
         public override void LevelUp()
         {
-            throw new NotImplementedException();
+            XP = currentXP % 20;
+
+            switch (Level)
+            { }
         }
     }
 }

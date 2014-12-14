@@ -20,7 +20,7 @@ namespace Guardians_Of_The_Arena_Server.Units
             armor = 35;
             damage = 0;
             movementRange = baseMovementRange = 2;
-            movementCost = 2;
+            movementCost = 1;
             attackCost = 4;
             attackRange = 4;
 
@@ -137,9 +137,13 @@ namespace Guardians_Of_The_Arena_Server.Units
                 }
             }
         }
+
         public override void LevelUp()
         {
-            throw new NotImplementedException();
+            XP = currentXP % 20;
+
+            switch (Level)
+            { }
         }
     }
 }

@@ -24,7 +24,15 @@ namespace Guardians_Of_The_Arena_Server.Units
         {
             ArrayList unitsHit = new ArrayList();
             if (tile.CurrentUnit != null)
+            {
                 unitsHit.Add(tile.CurrentUnit.UniqueID);
+
+                if (level == 2)
+                {
+                    
+                }
+
+            }
             return unitsHit;
         }
 
@@ -54,9 +62,19 @@ namespace Guardians_Of_The_Arena_Server.Units
                 }
             }
         }
+
         public override void LevelUp()
         {
-            throw new NotImplementedException();
+            XP = currentXP % 20;
+
+            switch (Level)
+            {
+                case 1:
+                    damage = -50;
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

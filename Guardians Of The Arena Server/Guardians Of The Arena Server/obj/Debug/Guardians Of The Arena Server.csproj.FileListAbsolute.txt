@@ -31,6 +31,3 @@ C:\Users\tenor_000\Documents\GitHub\projectH\Guardians Of The Arena Server\Guard
 C:\Users\tenor_000\Documents\GitHub\projectH\Guardians Of The Arena Server\Guardians Of The Arena Server\bin\Debug\Guardians Of The Arena Server.pdb
 C:\Users\tenor_000\Documents\GitHub\projectH\Guardians Of The Arena Server\Guardians Of The Arena Server\bin\Debug\System.Data.SQLite.DLL
 C:\Users\tenor_000\Documents\GitHub\projectH\Guardians Of The Arena Server\Guardians Of The Arena Server\obj\Debug\Guardians Of The Arena Server.csprojResolveAssemblyReference.cache
-I:\Guardians Of The Arena Server\Guardians Of The Arena Server\bin\Debug\Guardians Of The Arena Server.exe.config
-I:\Guardians Of The Arena Server\Guardians Of The Arena Server\obj\Debug\Guardians Of The Arena Server.exe
-I:\Guardians Of The Arena Server\Guardians Of The Arena Server\obj\Debug\Guardians Of The Arena Server.pdb

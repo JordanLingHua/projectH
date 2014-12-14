@@ -106,7 +106,7 @@ namespace Guardians_Of_The_Arena_Server
         public int XP
         {
             get { return currentXP; }
-            set { XP = value; }
+            set { currentXP = value; }
         }
 
         public int Level

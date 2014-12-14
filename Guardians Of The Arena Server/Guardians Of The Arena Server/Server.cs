@@ -109,17 +109,19 @@ namespace Guardians_Of_The_Arena_Server
         //check if the socket is still connect;
         bool SocketConnected(Socket s)
         {
-            bool part1 = s.Poll(1000000, SelectMode.SelectRead);
-            bool part2 = (s.Available == 0);
-            if (part1 && part2)
-            {
-                Console.WriteLine("NETWORK LOG: Lost connection from socket {0}", s.ToString());
-                return false;           
-            }
-            else
-            {
-                return true;
-            }
+            //bool part1 = s.Poll(1000000, SelectMode.SelectRead);
+            //bool part2 = (s.Available == 0);
+            //if (part1 && part2)
+            //{
+            //    Console.WriteLine("NETWORK LOG: Lost connection from socket {0}", s.ToString());
+            //    return false;           
+            //}
+            //else
+            //{
+            //    return true;
+            //}
+
+            return true;
         }
 
 
@@ -129,21 +131,30 @@ namespace Guardians_Of_The_Arena_Server
         public void RemoveClient(Client client)
         {
             clientsToRemove.Add(client);
-            client.thread.Abort();
+            
             numberOfClients--;
 
             if (loginNames.Contains(client.clientName))
+            {
                 loginNames.Remove(client.clientName);
+            }
             //dm.deleteFromHighScores(client.clientName);
 
             foreach (Client c in clientArray)
             {
-                if (SocketConnected(c.socket))
-                    c.sw.WriteLine("hasLoggedOut\\" + client.clientNumber);
+                //if (SocketConnected(c.socket))
+                    c.sw.WriteLine("hasLoggedOut\\" + client.clientName);
             }
 
             Console.WriteLine("Client " + client.clientNumber + " has disconnected");
             Console.WriteLine("There are now " + numberOfClients + " clients");
+
+            socArray.Remove(client.socket);
+            client.nws.Close();
+            client.sw.Close();
+            client.sr.Close();
+            client.socket.Disconnect(true);
+            client.thread.Abort();
         }
 
         //server loop that checks messages from clients
