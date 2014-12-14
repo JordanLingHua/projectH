@@ -161,7 +161,7 @@ public class TileManager : MonoBehaviour {
 
 	}
 	
-	public void addUnit(int x, int y, int type, int pNum, int unitID){
+	public GameObject addUnit(int x, int y, int type, int pNum, int unitID){
 		TileScript placeTile = tiles[x,y].GetComponent<TileScript>();
 		GameObject unit; 
 
@@ -240,6 +240,7 @@ public class TileManager : MonoBehaviour {
 			unit.transform.eulerAngles = new Vector3(4.5f,180f,0f);
 		}
 
+		return unit;
 	}
 	
 	//Resets color of tiles

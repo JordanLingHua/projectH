@@ -194,7 +194,7 @@ public class move : MonoBehaviour {
 				oldTile.renderer.material.shader = Shader.Find ("Toon/Basic");
 
 			currentTile = findNearestTile();
-			this.gameObject.transform.position = findNearestTile().transform.position;
+			this.gameObject.transform.position = new Vector3(currentTile.transform.position.x, currentTile.transform.position.y + 5f, currentTile.transform.position.z);
 			currentTile.renderer.material.shader = Shader.Find ("Toon/Lighted");
 
 

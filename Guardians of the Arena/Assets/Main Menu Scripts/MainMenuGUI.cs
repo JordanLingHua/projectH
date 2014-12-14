@@ -26,7 +26,7 @@ public class MainMenuGUI : MonoBehaviour {
 		am = GameObject.Find ("AudioManager").GetComponent<AudioManager> ();
 		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 		globalChat = GameObject.Find("globalChat").GetComponent<globalChatScript>();
-		chat = "Press Enter to Chat";
+		chat = string.Empty;
 		challengePending = false;
 	}
 	
@@ -115,10 +115,11 @@ public class MainMenuGUI : MonoBehaviour {
 				am.playErrorSFX();
 				//send a disconnect packet
 				gp.returnSocket().SendTCPPacket("logout\\" + gp.playerName);
-				
-				//keep the gameprocess object intact and return to login screen (level 0)
-				//DontDestroyOnLoad(gp);
-				Application.LoadLevel(0);
+
+			//	Application.LoadLevel(0);
+				//StartCoroutine(wait(5));
+				// KILL THREAD AND SERVER CONNECTION
+
 				
 				// KILL THREAD AND SERVER CONNECTION
 				//gp.returnSocket().t.Abort();
@@ -145,5 +146,19 @@ public class MainMenuGUI : MonoBehaviour {
 	void Update () 
 	{
 		
+	}
+
+	IEnumerator wait(int sec)
+	{
+		UnityEngine.Debug.Log ("1");
+		yield return new WaitForSeconds(sec);
+		UnityEngine.Debug.Log ("2");
+		gp.returnSocket().t.Abort();
+		gp.returnSocket().endThread();
+		gp.returnSocket().Disconnect();
+		
+		//keep the gameprocess object intact and return to login screen (level 0)
+		//DontDestroyOnLoad(gp);
+		Application.LoadLevel(0);
 	}
 }

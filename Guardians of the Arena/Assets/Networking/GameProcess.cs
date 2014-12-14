@@ -90,14 +90,16 @@ public class GameProcess : MonoBehaviour {
 				
 				if (playerName == tokens[1])
 				{
+					UnityEngine.Debug.Log ("Logging out through playername");
 					Destroy(pum);
 					Destroy(am);
-					Application.LoadLevel(0);
 
 					// KILL THREAD AND SERVER CONNECTION
 					returnSocket().t.Abort();
 					returnSocket().endThread();
 					returnSocket().Disconnect();
+
+					Application.LoadLevel(0);
 				}
 			}
 			
@@ -183,7 +185,7 @@ public class GameProcess : MonoBehaviour {
 						unitToAdd.AddComponent("move");
 						playerSetup.pages[playerSetup.activePage].offBoardPieces.Add(unitToAdd);
 					}
-					
+					unitToAdd.GetComponent<unitSetupScript>().rotateForSetupScreen();
 				}
 			}
 			#endregion
@@ -193,13 +195,18 @@ public class GameProcess : MonoBehaviour {
 			//spawnPieces\\...
 			else if (tokens[0].Equals("spawnPieces"))
 			{
+				GameObject unitToAdd;
 				//    | Repeat for all player 1's units
 				//    v                                      
 				//unitType\\unitID\\xPos\\yPos
 				int i = 1;
 				while(!tokens[i].Equals("EndPlayer1"))
 				{
-					tileManager.addUnit(Int32.Parse(tokens[i+2]), Int32.Parse(tokens[i+3]), Int32.Parse(tokens[i]),1, Int32.Parse(tokens[i+1]));
+					unitToAdd = tileManager.addUnit(Int32.Parse(tokens[i+2]), Int32.Parse(tokens[i+3]), Int32.Parse(tokens[i]),1, Int32.Parse(tokens[i+1]));
+					if (playerNumber == 1)
+						unitToAdd.GetComponent<unitSetupScript>().rotateForPlayerOne();
+					else
+						unitToAdd.GetComponent<unitSetupScript>().rotateForPlayerTwo();
 					i += 4;
 				}
 				i++;
@@ -209,9 +216,14 @@ public class GameProcess : MonoBehaviour {
 				//unitType\\unitID\\xPos\\yPos
 				while(!tokens[i].Equals("EndPlayer2"))
 				{
-					tileManager.addUnit(Int32.Parse(tokens[i+2]), Int32.Parse(tokens[i+3]), Int32.Parse(tokens[i]),2, Int32.Parse(tokens[i+1]));
+					unitToAdd = tileManager.addUnit(Int32.Parse(tokens[i+2]), Int32.Parse(tokens[i+3]), Int32.Parse(tokens[i]),2, Int32.Parse(tokens[i+1]));
+					if (playerNumber == 1)
+						unitToAdd.GetComponent<unitSetupScript>().rotateForPlayerOne();
+					else
+						unitToAdd.GetComponent<unitSetupScript>().rotateForPlayerTwo();
 					i += 4;
 				}
+
 				tileManager.clearAllTiles();
 				tileManager.displayHPBars(pum.hpSelGridInt);
 				tileManager.displayXPBars(pum.xpSelGridInt);
@@ -313,7 +325,9 @@ public class GameProcess : MonoBehaviour {
 		if (sceneNumber == 3)
 			loadManagers ();
 		else if (sceneNumber == 2)
-			playerSetup = GameObject.Find ("PlayerSetup").GetComponent<PlayerSetup>();
+			playerSetup = GameObject.Find ("PlayerSetup").GetComponent<PlayerSetup> ();
+		else if (sceneNumber == 0)
+			socks = new Sockets ();
 		
 	}
 
