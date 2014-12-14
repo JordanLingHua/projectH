@@ -152,10 +152,11 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 		
 		GUILayout.BeginHorizontal();
 		if (GUILayout.Button ("Login", "ShortButton")) { //-------------------------------- custom
+			am.playButtonSFX();	
 			if (buttonText.Equals("Cancel"))
 			{
 				if (password.Equals(reEnteredPassword)){
-					am.playButtonSFX();		
+					//am.playButtonSFX();		
 					attemptLogin();
 				}
 

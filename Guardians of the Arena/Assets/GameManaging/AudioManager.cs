@@ -10,7 +10,7 @@ public class AudioManager : MonoBehaviour {
 		masterVolume = 1f;
 		sfxVolume = 1f;
 		this.transform.position = Camera.main.transform.position;
-		musicVolume = 0.0f;
+		musicVolume = 1.0f;
 		bgMusic = gameObject.AddComponent<AudioSource> ();
 		buttonSFX = gameObject.AddComponent<AudioSource> ();
 		errorSFX = gameObject.AddComponent<AudioSource> ();

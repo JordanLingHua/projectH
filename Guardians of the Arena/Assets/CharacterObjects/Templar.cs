@@ -14,7 +14,7 @@ public class Templar : Unit{
 		maxHP = 38;//max hp is constant//use as reference to hp
 		atk = 13;
 		mvRange = 3;
-		mvCost = 2;
+		mvCost = 1;
 		atkRange = 1;
 		atkCost = 3;
 		//unitRole = "AOE";//O is NOT a zero.  it is capital O

@@ -12,7 +12,7 @@ public class KnifeThrower : Unit {
 		maxHP = 25;
 		atk = 18;  
 		mvRange = 4;
-		mvCost = 2;
+		mvCost = 1;
 		atkRange = 4;
 		atkCost = 2;
 		//unitRole = "Ranged";

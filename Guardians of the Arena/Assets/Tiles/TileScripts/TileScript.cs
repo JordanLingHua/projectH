@@ -177,14 +177,14 @@ public class TileScript : MonoBehaviour {
 
 			if ((gm.selectedUnit.alleg == Unit.allegiance.playerOne && gp.playerNumber == 2) || (gm.selectedUnit.alleg == Unit.allegiance.playerTwo && gp.playerNumber == 1)){
 				gm.showErrorMessage("Cannot move an opponent's piece!");
+			}else if (gm.pMana < gm.selectedUnit.mvCost){
+				gm.showErrorMessage("Not enough mana to move!");
 			}else if (!gm.accessibleTiles.Contains(this)){
 				gm.showErrorMessage("Cannot move there!");
 			}else if (this.objectOccupyingTile != null && this.objectOccupyingTile == gm.selectedUnit){
 				gm.showErrorMessage("That unit is already there!");
 			}else if (this.objectOccupyingTile != null){
 				gm.showErrorMessage("Theres a unit there already!");
-			}else if (gm.pMana < gm.selectedUnit.mvCost){
-				gm.showErrorMessage("Not enough mana to move!");
 			}
 		}
 	}
@@ -201,10 +201,10 @@ public class TileScript : MonoBehaviour {
 			am.playErrorSFX();
 			if (((gm.selectedUnit.alleg == Unit.allegiance.playerOne && gp.playerNumber == 2) || (gm.selectedUnit.alleg == Unit.allegiance.playerTwo && gp.playerNumber == 1))){
 				gm.showErrorMessage("Cannot attack with an opponent's piece!");
-			}else if (gm.accessibleTiles.Contains(this)){
-				gm.showErrorMessage("Cannot attack there!");
 			}else if (gm.pMana < gm.selectedUnit.mvCost){
 				gm.showErrorMessage("Not enough mana to attack!");
+			}else if (gm.accessibleTiles.Contains(this)){
+				gm.showErrorMessage("Cannot attack there!");
 			}
 		}
 

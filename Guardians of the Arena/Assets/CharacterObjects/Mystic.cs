@@ -15,7 +15,7 @@ public class Mystic: Unit {
 		maxHP = 30;
 		atk = 0;//change later
 		mvRange = 2;
-		mvCost = 2;
+		mvCost = 1;
 		atkRange = 4;
 		atkCost = 4;	
 		//unitRole = "BuffDebuff";

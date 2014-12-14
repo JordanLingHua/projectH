@@ -136,10 +136,10 @@ public class GameManager : MonoBehaviour {
 //			}
 
 			Unit script = selectedUnit.GetComponent<Unit>();
-			string info = script.unitName + "\nHP: " + script.hp + "/" + script.maxHP;
+			string info ="Level " + script.unitLevel + " " + script.unitName;
+			info += "\nHP: " + script.hp + "/" + script.maxHP;
+			info += script.unitLevel == 3? "": "\nXP: " + script.xp + "/" + script.XP_TO_LEVEL[script.unitLevel-1];
 			info +=  script.atk > 0? "\nDamage: " + script.atk : "";
-			info += "\nLvl" + script.unitLevel;
-			info += script.unitLevel == 3? "": " XP: " + script.xp + "/" + script.XP_TO_LEVEL[script.unitLevel-1];
 			info += script.mvCost > 0? "\nMove Cost: " + script.mvCost : "";
 			info += script.atkCost > 0? "\nAttack Cost: " + script.atkCost : "";
 

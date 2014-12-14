@@ -260,6 +260,7 @@ public class GameProcess : MonoBehaviour {
 					}
 					gameManager.units[Int32.Parse (tokens[1])].attackUnit(gameManager.units[Int32.Parse(tokens[3+i])]);
 				}
+				tileManager.clearAllTiles();
 			}
 
 			//switchTurns

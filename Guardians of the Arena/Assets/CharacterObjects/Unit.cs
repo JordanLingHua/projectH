@@ -17,7 +17,7 @@ public class Unit    : MonoBehaviour {
 
 	public GameObject popUpText;
 
-	public readonly int[] XP_TO_LEVEL = {10,25,100000};
+	public readonly int[] XP_TO_LEVEL = {20,40,100000};
 
 	//unit cost will be utilized here or elsewhere
 	//public string unitRole;//name called in switch statement here or elsewhere
@@ -92,7 +92,7 @@ public class Unit    : MonoBehaviour {
 		GUI.depth = -1;
 		Vector3 textPos = cam.WorldToScreenPoint(gameObject.transform.position);
 		textPos.x = (textPos.x - 10) / Screen.width;
-		textPos.y = (textPos.y + (10 * popUpTextNum)) / Screen.height;
+		textPos.y = (textPos.y + 20 + (10 * popUpTextNum)) / Screen.height;
 		textPos.z = 0;
 		GameObject text = (GameObject) Instantiate(popUpText,textPos,Quaternion.identity);
 		popUpTextNum++;
@@ -103,21 +103,21 @@ public class Unit    : MonoBehaviour {
 		if (displayHPBar){
 			Camera cam = Camera.main;
 			Vector3 HPBarPos = cam.WorldToScreenPoint(gameObject.transform.position);
-			GUI.DrawTexture (new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-10,  25, 3),hpBarBG);
+			GUI.DrawTexture (new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-20,  25, 3),hpBarBG);
 			float barColorSwitch = (float)hp/maxHP;
 			if (barColorSwitch > .6){
-				GUI.DrawTexture(new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-10, barColorSwitch * 25, 3),hpBarHigh);
+				GUI.DrawTexture(new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-20, barColorSwitch * 25, 3),hpBarHigh);
 			}else if (barColorSwitch > 0.3){
-				GUI.DrawTexture(new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-10, barColorSwitch * 25, 3),hpBarMedium);
+				GUI.DrawTexture(new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-20, barColorSwitch * 25, 3),hpBarMedium);
 			}else{
-				GUI.DrawTexture(new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-10, barColorSwitch * 25, 3),hpBarLow);
+				GUI.DrawTexture(new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-20, barColorSwitch * 25, 3),hpBarLow);
 			}
 		}
 		if (displayXPBar){
 			Camera cam = Camera.main;
 			Vector3 HPBarPos = cam.WorldToScreenPoint(gameObject.transform.position);
-			GUI.DrawTexture (new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-7,  25, 3),hpBarBG);
-			GUI.DrawTexture(new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-7, ((float)xp/XP_TO_LEVEL[unitLevel-1])* 25, 3),xpBar);
+			GUI.DrawTexture (new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-17,  25, 3),hpBarBG);
+			GUI.DrawTexture(new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-17, ((float)xp/XP_TO_LEVEL[unitLevel-1])* 25, 3),xpBar);
 		}
 	}
 

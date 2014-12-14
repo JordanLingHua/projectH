@@ -13,7 +13,7 @@ public class Guardian :Unit {
 		maxHP = 45;
 		atk = 23;
 		mvRange = 2;
-		mvCost = 2;
+		mvCost = 1;
 		atkRange = 1;
 		atkCost = 1;
 		

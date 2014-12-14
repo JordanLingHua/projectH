@@ -255,11 +255,13 @@ public class TileManager : MonoBehaviour {
 				}else if (tiles[i,k].GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerOne){
 					Color newTileColor = Color.blue;
 					//newTileColor.
-					if (gm.turn && gp.playerNumber == 1 && !tiles[i,k].GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().mvd){
-						newTileColor.g += 0.3f;
-					}
-					if (gm.turn && gp.playerNumber == 1 && !tiles[i,k].GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().atkd){
-						newTileColor.r += 0.3f;
+					if (gm.pMana > 0){
+						if (gm.turn && gp.playerNumber == 1 && !tiles[i,k].GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().mvd){
+							newTileColor.g += 0.3f;
+						}
+						if (gm.turn && gp.playerNumber == 1 && !tiles[i,k].GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().atkd){
+							newTileColor.g += 0.3f;
+						}
 					}
 					tiles[i, k].renderer.material.color = newTileColor;
 				//neutral unit tile (shrubbery)
@@ -268,11 +270,13 @@ public class TileManager : MonoBehaviour {
 				//enemy unit tile
 				}else if (tiles[i,k].GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerTwo) {
 					Color newTileColor = Color.red;
-					if (gm.turn && gp.playerNumber == 2 && !tiles[i,k].GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().mvd){
-						newTileColor.g += 0.3f;
-					}
-					if (gm.turn && gp.playerNumber == 2 && !tiles[i,k].GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().atkd){
-						newTileColor.b += 0.3f;
+					if (gm.pMana > 0){
+						if (gm.turn && gp.playerNumber == 2 && !tiles[i,k].GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().mvd){
+							newTileColor.g += 0.3f;
+						}
+						if (gm.turn && gp.playerNumber == 2 && !tiles[i,k].GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().atkd){
+							newTileColor.g += 0.3f;
+						}
 					}
 					tiles[i, k].renderer.material.color = newTileColor;
 				}
