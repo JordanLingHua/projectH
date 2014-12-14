@@ -46,7 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\LoginGUINecro.js" />
+     <Compile Include="Assets\Main Menu Scripts\LoginGUINecro.js" />
      <Compile Include="Assets\Necromancer GUI\GUITestScript.js" />
      <Compile Include="Assets\SetupSceneScripts\setupSelectDropDown.js" />
      <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />

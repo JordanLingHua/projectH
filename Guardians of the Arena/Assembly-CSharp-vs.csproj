@@ -59,9 +59,11 @@
      <Compile Include="Assets\CharacterObjects\Unit.cs" />
      <Compile Include="Assets\CharacterObjects\UtilityUnit.cs" />
      <Compile Include="Assets\CharacterObjects\move.cs" />
+     <Compile Include="Assets\CharacterObjects\unitSetupScript.cs" />
      <Compile Include="Assets\GameManaging\AudioManager.cs" />
      <Compile Include="Assets\GameManaging\CameraScript1.cs" />
      <Compile Include="Assets\GameManaging\CameraScript2.cs" />
+     <Compile Include="Assets\GameManaging\ErrorPopUpTextScript.cs" />
      <Compile Include="Assets\GameManaging\GameManager.cs" />
      <Compile Include="Assets\GameManaging\PopUpMenu.cs" />
      <Compile Include="Assets\GameManaging\popUpTextScript.cs" />
@@ -80,7 +82,6 @@
      <Compile Include="Assets\SetupSceneScripts\SetupTileScript.cs" />
      <Compile Include="Assets\Tiles\TileScripts\TileManager.cs" />
      <Compile Include="Assets\Tiles\TileScripts\TileScript.cs" />
-     <Compile Include="Assets\setTransparencyScript.cs" />
      <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
      <None Include="Assets\Standard Assets\Projectors\Sources\Shaders\Projector Multiply.shader" />
