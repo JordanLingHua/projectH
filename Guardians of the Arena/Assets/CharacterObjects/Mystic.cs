@@ -26,6 +26,7 @@ public class Mystic: Unit {
 	public void revertStatsOfFocused(){
 		if (unitFocused != null) {
 			//allied units get only increased mv range and attack damage
+			unitFocused.mysticFocusingThis = null;
 			unitFocused.showPopUpText("No Longer Focused!",Color.yellow);
 			unitFocused.mvRange = oldMvRange;
 			unitFocused.atkRange = oldAtkRange;
@@ -42,6 +43,7 @@ public class Mystic: Unit {
 		if (!unitAffected.invincible){
 			//save variables for reverting later
 			unitFocused = unitAffected;
+			unitFocused.mysticFocusingThis = this;
 			if (unitAffected.unitType == 2){
 				(unitAffected as Mystic).revertStatsOfFocused();
 			}

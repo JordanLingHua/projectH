@@ -166,6 +166,7 @@ public class TileScript : MonoBehaviour {
 		//move unit selected to this tile if it can go there
 		if (gm.accessibleTiles.Contains(this) && 
 		    this.objectOccupyingTile == null && 
+		    !gm.selectedUnit.GetComponent<Unit>().mvd &&
 		    gm.pMana >= gm.selectedUnit.GetComponent<Unit>().mvCost && 
 		    ((gm.selectedUnit.alleg == Unit.allegiance.playerOne && gp.playerNumber == 1) || (gm.selectedUnit.alleg == Unit.allegiance.playerTwo && gp.playerNumber == 2))){
 
@@ -177,6 +178,8 @@ public class TileScript : MonoBehaviour {
 
 			if ((gm.selectedUnit.alleg == Unit.allegiance.playerOne && gp.playerNumber == 2) || (gm.selectedUnit.alleg == Unit.allegiance.playerTwo && gp.playerNumber == 1)){
 				gm.showErrorMessage("Cannot move an opponent's piece!");
+			}else if (gm.selectedUnit.GetComponent<Unit>().mvd){
+				gm.showErrorMessage("That unit has already moved this turn!");
 			}else if (gm.pMana < gm.selectedUnit.mvCost){
 				gm.showErrorMessage("Not enough mana to move!");
 			}else if (!gm.accessibleTiles.Contains(this)){
@@ -193,6 +196,7 @@ public class TileScript : MonoBehaviour {
 	public void attackTile(){
 		if (gm.accessibleTiles.Contains (this) && 
 		    gm.pMana >= gm.selectedUnit.GetComponent<Unit> ().atkCost && 
+		    !gm.selectedUnit.GetComponent<Unit>().atkd &&
 		    ((gm.selectedUnit.alleg == Unit.allegiance.playerOne && gp.playerNumber == 1) || (gm.selectedUnit.alleg == Unit.allegiance.playerTwo && gp.playerNumber == 2))) {
 			gp.returnSocket ().SendTCPPacket ("attack\\" + gm.selectedUnit.unitID + "\\" + this.x + "\\" + this.y);
 			print ("Sent attack packet");
@@ -201,6 +205,8 @@ public class TileScript : MonoBehaviour {
 			am.playErrorSFX();
 			if (((gm.selectedUnit.alleg == Unit.allegiance.playerOne && gp.playerNumber == 2) || (gm.selectedUnit.alleg == Unit.allegiance.playerTwo && gp.playerNumber == 1))){
 				gm.showErrorMessage("Cannot attack with an opponent's piece!");
+			}else if (gm.selectedUnit.GetComponent<Unit>().atkd){
+				gm.showErrorMessage("That unit has already attacked this turn!");
 			}else if (gm.pMana < gm.selectedUnit.mvCost){
 				gm.showErrorMessage("Not enough mana to attack!");
 			}else if (gm.accessibleTiles.Contains(this)){

@@ -98,7 +98,7 @@ public class Templar : Unit{
 
 	public override List<GameObject> showAoEAffectedTiles(TileScript tile){
 		List <GameObject> ret = new List<GameObject> ();
-		if (tile.gameObject == gm.selectedUnit.transform.parent.GetComponent<TileScript>().up && tile.up != null) {
+		if (tile.up != null && tile.gameObject == gm.selectedUnit.transform.parent.GetComponent<TileScript>().up) {
 			tile.up.renderer.material.color = new Color(1f,0.7f,0f, 0f);
 			ret.Add(tile.up);
 			if (tile.up.GetComponent<TileScript>().right != null){
@@ -112,7 +112,7 @@ public class Templar : Unit{
 
 		}
 
-		if (tile.gameObject == gm.selectedUnit.transform.parent.GetComponent<TileScript>().down && tile.down != null) {
+		if (tile.down != null && tile.gameObject == gm.selectedUnit.transform.parent.GetComponent<TileScript>().down) {
 			tile.down.renderer.material.color = new Color(1f,0.7f,0f, 0f);
 			ret.Add (tile.down);
 			if (tile.down.GetComponent<TileScript>().right != null){
@@ -124,7 +124,7 @@ public class Templar : Unit{
 				ret.Add (tile.down.GetComponent<TileScript>().left);
 			}
 		}
-		if (tile.gameObject == gm.selectedUnit.transform.parent.GetComponent<TileScript>().right && tile.right != null) {
+		if (tile.right != null && tile.gameObject == gm.selectedUnit.transform.parent.GetComponent<TileScript>().right) {
 			tile.right.renderer.material.color = new Color(1f,0.7f,0f, 0f);
 			ret.Add (tile.right);
 			if (tile.right.GetComponent<TileScript>().up != null){
@@ -137,7 +137,7 @@ public class Templar : Unit{
 			}
 		}
 
-		if (tile.gameObject == gm.selectedUnit.transform.parent.GetComponent<TileScript>().left && tile.left != null) {
+		if (tile.left != null && tile.gameObject == gm.selectedUnit.transform.parent.GetComponent<TileScript>().left) {
 			tile.left.renderer.material.color = new Color(1f,0.7f,0f, 0f);
 			ret.Add (tile.left);
 			if (tile.left.GetComponent<TileScript>().up != null){

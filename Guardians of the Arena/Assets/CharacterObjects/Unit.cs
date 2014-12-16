@@ -14,6 +14,8 @@ public class Unit    : MonoBehaviour {
 	public string unitName = string.Empty;
 	public string info = string.Empty;
 	public bool invincible,displayHPBar,displayXPBar;
+	public Mystic mysticFocusingThis;
+
 
 	public GameObject popUpText;
 
@@ -143,9 +145,11 @@ public class Unit    : MonoBehaviour {
 		//show unit info when hovering over it
 
 		if (Application.loadedLevelName.Equals("BoardScene")){
+			transform.parent.GetComponent<TileScript> ().OnMouseEnter ();
+		// this was for hovered over unit info - not used
 		//	refreshUnitText ();
-		//	transform.parent.GetComponent<TileScript> ().OnMouseEnter ();
 		}else{
+			//used for setup screen info
 			string info = "Unit Information:\n" +unitName + "\nHP: " + hp + "/" + maxHP;
 			info += "\nMovement Range: " + mvRange;
 			info += mvCost > 0? "\nMove Cost: " + mvCost : "";
@@ -170,7 +174,6 @@ public class Unit    : MonoBehaviour {
 	public virtual List<GameObject> showAoEAffectedTiles(TileScript tile){
 		List<GameObject> nothing = new List<GameObject> ();
 		return nothing;
-
 	}
 
 	void refreshUnitText()
@@ -298,11 +301,10 @@ public class Unit    : MonoBehaviour {
 	}
 	
 	public virtual void showMvTiles(allegiance ally){
-		if (!mvd){
-			showMvAccessibleTiles(this.transform.parent.GetComponent<TileScript>(),mvRange,ally);
-			//can't move to the tile it's in
-			gm.accessibleTiles.Remove(this.transform.parent.GetComponent<TileScript>());	
-		}
+		showMvAccessibleTiles(this.transform.parent.GetComponent<TileScript>(),mvRange,ally);
+		//can't move to the tile it's in
+		gm.accessibleTiles.Remove(this.transform.parent.GetComponent<TileScript>());	
+
 	}	
 
 	public virtual void resetUnitAbilities(){

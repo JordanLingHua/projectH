@@ -251,6 +251,7 @@ public class TileManager : MonoBehaviour {
 				//empty tile
 				if (tiles[i,k].GetComponent<TileScript>().objectOccupyingTile == null){
 					tiles[i, k].renderer.material.color = Color.white;
+				
 				//ally unit tile
 				}else if (tiles[i,k].GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerOne){
 					Color newTileColor = Color.blue;

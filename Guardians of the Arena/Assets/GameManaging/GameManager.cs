@@ -52,6 +52,7 @@ public class GameManager : MonoBehaviour {
 	public void showErrorMessage(string error){
 		GUI.depth = -1;
 		Vector3 textPos = new Vector3((Screen.width*0.03f)/Screen.width,(Screen.height-((float)Screen.height*0.02f))/Screen.height,0);
+
 		//TODO: Error with different error text overlapping
 		if (GameObject.Find ("ErrorPopUpText(Clone)")!=null){
 			Destroy (GameObject.Find ("ErrorPopUpText(Clone)"));
@@ -138,11 +139,16 @@ public class GameManager : MonoBehaviour {
 			Unit script = selectedUnit.GetComponent<Unit>();
 			string info ="Level " + script.unitLevel + " " + script.unitName;
 			info += "\nHP: " + script.hp + "/" + script.maxHP;
-			info += script.unitLevel == 3? "": "\nXP: " + script.xp + "/" + script.XP_TO_LEVEL[script.unitLevel-1];
-			info +=  script.atk > 0? "\nDamage: " + script.atk : "";
-			info += script.mvCost > 0? "\nMove Cost: " + script.mvCost : "";
-			info += script.atkCost > 0? "\nAttack Cost: " + script.atkCost : "";
+			info += (script.unitLevel == 3 || script.unitName.Equals("Shrub") )? "": "\nXP: " + script.xp + "/" + script.XP_TO_LEVEL[script.unitLevel-1];
 
+			if (script.mysticFocusingThis == null || script.mysticFocusingThis.alleg == script.alleg){
+				info +=  script.atk > 0? "\nDamage: " + script.atk : "";
+				info += script.mvCost > 0? "\nMove Cost: " + script.mvCost : "";
+				info += script.atkCost > 0? "\nAttack Cost: " + script.atkCost : "";
+			}else{
+				info += "\nFocused! Cannot move or attack!";
+				info += "\nAttack enemy Mystic to break his channel";
+			}
 			
 			if (script.invincible){
 				info+="\nINVINCIBLE";
