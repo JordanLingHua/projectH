@@ -116,6 +116,10 @@ public class GameProcess : MonoBehaviour {
 				playerNumber = Int32.Parse(tokens[1]);
 				DontDestroyOnLoad(GameObject.Find ("GameProcess"));
 				DontDestroyOnLoad(GameObject.Find ("PageNumber"));
+				Destroy(GameObject.Find("globalChat"));
+				Destroy(GameObject.Find("gChat"));
+				Destroy(GameObject.Find("ListOfPlayers"));
+				Destroy(GameObject.Find("ListOfPlayersGUIText"));
 				DontDestroyOnLoad(this);
 				DontDestroyOnLoad (am);
 				DontDestroyOnLoad(pum);
@@ -254,7 +258,7 @@ public class GameProcess : MonoBehaviour {
 				gameManager.pMana -= gameManager.units[Int32.Parse (tokens[1])].atkCost;
 				if (Int32.Parse (tokens[2]) != 0){
 					for (int i = 0; i < Int32.Parse (tokens[2]); i ++ ){
-						gameManager.units[Int32.Parse (tokens[1])].gainXP();
+						//gameManager.units[Int32.Parse (tokens[1])].gainXP();
 						if (gameManager.units[Int32.Parse (tokens[1])].unitType == 2){
 							(gameManager.units[Int32.Parse (tokens[1])] as Mystic).revertStatsOfFocused();
 						}
