@@ -4,6 +4,7 @@ using System.Collections;
 public class AudioManager : MonoBehaviour {
 
 	public AudioSource bgMusic,unitSFX,buttonSFX,errorSFX;
+	float prevMasterVolume;
 	//public AudioClip buttonSFX;
 	public float masterVolume,musicVolume,sfxVolume;
 	void Start () {
@@ -24,6 +25,24 @@ public class AudioManager : MonoBehaviour {
 		errorSFX.clip = Resources.Load ("errorSFX") as AudioClip;
 	}
 
+	void OnApplicationFocus(bool focusStatus){
+		if (!focusStatus) {
+			prevMasterVolume = masterVolume;
+			masterVolume = 0;
+			bgMusic.volume = musicVolume * masterVolume;
+			setSFXVolume(masterVolume);
+		} else {
+			try{
+				masterVolume = prevMasterVolume;
+				bgMusic.volume = musicVolume * masterVolume;
+				setSFXVolume(masterVolume);
+			}catch(UnassignedReferenceException e){
+				print ("Music still loading;;");
+			}
+		}
+	}
+
+
 	void OnLevelWasLoaded(int level){
 		this.transform.position = Camera.main.transform.position;
 		if (level == 3) {
@@ -37,7 +56,6 @@ public class AudioManager : MonoBehaviour {
 	public void setSFXVolume(float volume){
 		buttonSFX.volume = volume * masterVolume;
 		errorSFX.volume = volume * masterVolume;
-	
 	}
 
 	public void playButtonSFX(){

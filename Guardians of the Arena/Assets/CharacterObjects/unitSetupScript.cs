@@ -22,7 +22,7 @@ public class unitSetupScript : MonoBehaviour {
 
 	public void rotateForPlayerTwo()
 	{
-		Debug.Log(transform.localRotation.x);
+		//Debug.Log(transform.localRotation.x);
 		//transform.Rotate(new Vector3 (4.5f, 180f, 0f));
 		//Debug.Log(transform.localRotation.x);
 		//transform.localRotation = new Quaternion (-4.5f, 180f, 0f, 1f);

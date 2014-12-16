@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour {
 	GameProcess gp;
 	AudioManager am;
 	int unitActionOption;
-	string[] unitOptionStrings = new string[] {"Move","Attack"};
+	string[] unitOptionStrings = new string[] {"Mo(v)e","(A)ttack"};
 	//Selected unit and available move squares
 	public Unit selectedUnit = null;
 	public HashSet<TileScript> accessibleTiles = new HashSet<TileScript>();
@@ -66,13 +66,23 @@ public class GameManager : MonoBehaviour {
 			clearSelection();
 		}
 
-	
+		if (Input.GetKeyDown (KeyCode.V)) {
+			changeToMoving();
+		}
+		if (Input.GetKeyDown (KeyCode.A)){
+			changeToAttacking();
+		}
+		if (Input.GetKeyDown (KeyCode.E)) {
+			endTurn();	
+		}
+
+
 		timerText.text = "Time Left: " + (int)timer;
+
 		if (!gameOver){
 			timer -= Time.deltaTime;
 		    if (timer <= 0  && turn){
-				print("timer ended");
-				gp.returnSocket().SendTCPPacket("endTurn");
+				endTurn ();
 				timer = 0f;
 			}
 		}
@@ -171,21 +181,11 @@ public class GameManager : MonoBehaviour {
 		int prev = unitActionOption;
 		unitActionOption = GUI.SelectionGrid(new Rect(Screen.width*0.03f, Screen.height-((float)Screen.height*0.105f),Screen.width*0.3f, (Screen.height-((float)Screen.height*0.905f))), unitActionOption, unitOptionStrings, 2);
 		if (prev != unitActionOption){
-			am.playButtonSFX();
 			if (unitActionOption == 0){
-				tm.clearAllTiles ();
-				accessibleTiles.Clear ();
-				gs = gameState.playerMv;
-	
-				if (selectedUnit != null) 
-					selectedUnit.GetComponent<Unit>().showMvTiles(turn ? Unit.allegiance.playerOne : Unit.allegiance.playerTwo);
+				changeToMoving();
 			}else{
-				tm.clearAllTiles();
-				accessibleTiles.Clear();		
-				gs =  gameState.playerAtk;	
-	
-				if (selectedUnit != null)
-					selectedUnit.GetComponent<Unit>().showAtkTiles();
+				print ("Unit action option is " + unitActionOption);
+				changeToAttacking();
 			}
 		}
 
@@ -193,20 +193,46 @@ public class GameManager : MonoBehaviour {
 		if (!gameOver){
 			//End turn button
 			if (turn){
-				if (GUI.Button (new Rect(Screen.width*0.335f,Screen.height-((float)Screen.height*0.105f),Screen.width*0.15f,(Screen.height-((float)Screen.height*0.905f))),"End Turn")){
-					if (turn){
-						gp.returnSocket().SendTCPPacket("endTurn");
-						am.playButtonSFX();
-					}else{
-						am.playErrorSFX();
-					}
-					
+				if (GUI.Button (new Rect(Screen.width*0.335f,Screen.height-((float)Screen.height*0.105f),Screen.width*0.15f,(Screen.height-((float)Screen.height*0.905f))),"(E)nd Turn")){
+					endTurn ();
 				}
 			}else{
 				GUI.Label(new Rect(Screen.width*0.335f,Screen.height-((float)Screen.height*0.105f),Screen.width*0.3f,(Screen.height-((float)Screen.height*0.905f))), "Opponent's Turn");
 			}
 		}
 
+	}
+
+	void endTurn(){
+		if (turn) {
+			gp.returnSocket ().SendTCPPacket ("endTurn");
+			am.playButtonSFX ();
+		} else {
+			am.playButtonSFX ();
+			showErrorMessage("It's not your turn!");
+		}
+	}
+
+	void changeToAttacking(){
+		unitActionOption = 1;
+		am.playButtonSFX();
+		tm.clearAllTiles();
+		accessibleTiles.Clear();		
+		gs =  gameState.playerAtk;	
+		
+		if (selectedUnit != null)
+			selectedUnit.GetComponent<Unit>().showAtkTiles();
+	}
+
+	void changeToMoving(){
+		unitActionOption = 0;
+		am.playButtonSFX();
+		tm.clearAllTiles ();
+		accessibleTiles.Clear ();
+		gs = gameState.playerMv;
+		
+		if (selectedUnit != null) 
+			selectedUnit.GetComponent<Unit>().showMvTiles(turn ? Unit.allegiance.playerOne : Unit.allegiance.playerTwo);
 	}
 	
 	void clearSelection(){
