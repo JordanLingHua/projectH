@@ -83,7 +83,7 @@ public class PopUpMenu : MonoBehaviour {
 			}
 			
 			//Quit Button
-			if (GUI.Button (new Rect ((displayWidth - 100)/ 2, displayHeight- 30, 100, 20), "Quit"))
+			if (GUI.Button (new Rect ((displayWidth - 100)/ 2, displayHeight- 30, 100, 20), "Quit Game"))
 			{
 				am.playErrorSFX();
 				Application.Quit();
