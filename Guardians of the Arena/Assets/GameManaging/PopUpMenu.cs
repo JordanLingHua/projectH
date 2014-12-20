@@ -4,6 +4,7 @@ using System.Collections;
 public class PopUpMenu : MonoBehaviour {
 	Texture2D menuTexture;
 	public int hpSelGridInt,xpSelGridInt;
+	public bool allowEnemyUnitSelection, allowAutoMoveAttackToggle;
 	bool displayMenu;
 	GameManager gm;
 	AudioManager am;
@@ -13,6 +14,7 @@ public class PopUpMenu : MonoBehaviour {
 
 
 	void Start () {
+		allowAutoMoveAttackToggle = true;
 		menuTexture = (Texture2D)Resources.Load ("PopupMenuBG");
 		am = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
@@ -63,6 +65,11 @@ public class PopUpMenu : MonoBehaviour {
 			am.sfxVolume = GUI.HorizontalSlider(new Rect(20,220,displayWidth-80,20),am.sfxVolume,0.0f,1.0f);
 			GUI.Label(new Rect(displayWidth - 45,215,displayWidth-80,20),am.sfxVolume> 0?(am.sfxVolume * 100).ToString("##") + "%": "OFF");
 			am.setSFXVolume(am.sfxVolume);
+
+			allowAutoMoveAttackToggle = GUI.Toggle (new Rect(20,235,displayWidth-20,20),allowAutoMoveAttackToggle,"Automatically Switch to Attack Phase After Moving");
+
+			allowEnemyUnitSelection = GUI.Toggle (new Rect(20,250,displayWidth - 20,20),allowEnemyUnitSelection,"Allow Enemy Unit Selection");
+
 
 			if (Application.loadedLevelName.Equals("BoardScene")){
 				//Surrender Button

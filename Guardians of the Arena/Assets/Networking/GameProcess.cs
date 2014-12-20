@@ -250,6 +250,9 @@ public class GameProcess : MonoBehaviour {
 			else if (tokens[0].Equals("move"))
 			{
 				movePiece(Int32.Parse(tokens[1]), Int32.Parse(tokens[2]), Int32.Parse(tokens[3]));
+				if (pum.allowAutoMoveAttackToggle){
+					gameManager.changeToAttacking();
+				}
 			}
 			
 			// unitID (that attacked) \\number of units affected\\ units
@@ -267,7 +270,9 @@ public class GameProcess : MonoBehaviour {
 				}else{
 					gameManager.units[Int32.Parse (tokens[1])].showPopUpText("Attacked Nothing!", Color.red);
 				}
-
+				if (pum.allowAutoMoveAttackToggle){
+					gameManager.changeToMoving();
+				}
 				tileManager.clearAllTiles();
 			}
 

@@ -69,6 +69,7 @@ public class Unit    : MonoBehaviour {
 	public Texture2D hpBarBG,hpBarHigh,hpBarMedium,hpBarLow,xpBar;
 	public GameManager gm;
 	public GameProcess gp;
+	public PopUpMenu pum;
 	public AudioManager am;
 	public virtual void Start () {
 		unitLevel = 1;
@@ -80,6 +81,7 @@ public class Unit    : MonoBehaviour {
 		xpBar = Resources.Load("XPBar") as Texture2D;
 		am = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
+		pum = GameObject.Find ("PopUpMenu").GetComponent<PopUpMenu> ();
 		if (Application.loadedLevelName.Equals("BoardScene")){
 			gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 		}
@@ -164,7 +166,7 @@ public class Unit    : MonoBehaviour {
 		//clear unit info when not hovering over it
 		if (Application.loadedLevelName.Equals("BoardScene")){
 			transform.parent.GetComponent<TileScript> ().OnMouseExit ();
-			gm.uInfo.text  = "";
+			//gm.uInfo.text  = "";
 		}else {
 			GameObject.Find ("SetupScreenUnitInfo").GetComponent<GUIText>().text = "Unit Information:";
 		}
@@ -217,12 +219,13 @@ public class Unit    : MonoBehaviour {
 		//the unit selected is in range of the selected unit
 
 		if (Application.loadedLevelName.Equals("BoardScene")) {
-			if (gm.gs == GameManager.gameState.playerAtk 
-					&& gm.accessibleTiles.Contains (this.transform.parent.GetComponent<TileScript> ())) {
+			if (gm.gs == GameManager.gameState.playerAtk && gm.accessibleTiles.Contains (this.transform.parent.GetComponent<TileScript> ())) {
 				transform.parent.GetComponent<TileScript>().attackTile ();
 			} else {
-				selectUnit ();
-				am.playButtonSFX();
+				if ((this.alleg == allegiance.playerOne && gp.playerNumber == 1 || this.alleg == allegiance.playerTwo && gp.playerNumber == 2 ) || pum.allowEnemyUnitSelection){
+					selectUnit ();
+					am.playButtonSFX();
+				}
 			}
 		}
 	}

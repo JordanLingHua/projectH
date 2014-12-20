@@ -213,7 +213,7 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-	void changeToAttacking(){
+	public void changeToAttacking(){
 		unitActionOption = 1;
 		am.playButtonSFX();
 		tm.clearAllTiles();
@@ -224,7 +224,7 @@ public class GameManager : MonoBehaviour {
 			selectedUnit.GetComponent<Unit>().showAtkTiles();
 	}
 
-	void changeToMoving(){
+	public void changeToMoving(){
 		unitActionOption = 0;
 		am.playButtonSFX();
 		tm.clearAllTiles ();
