@@ -1,7 +1,15 @@
 fileFormatVersion: 2
 guid: f8f68a41d33ca4d03a5ac4eb741d5c0c
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: guardianWalkFwd_0
+    21300002: guardianWalkFwd_1
+    21300004: guardianWalkFwd_2
+    21300006: guardianWalkFwd_3
+    21300008: guardianWalkFwd_4
+    21300010: guardianWalkFwd_5
+    21300012: guardianWalkFwd_6
+    21300014: guardianWalkFwd_7
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +50,86 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: guardianWalkFwd_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 152
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalkFwd_1
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 0
+        width: 152
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalkFwd_2
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 0
+        width: 152
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalkFwd_3
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 0
+        width: 152
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalkFwd_4
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 0
+        width: 152
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalkFwd_5
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 0
+        width: 152
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalkFwd_6
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 0
+        width: 152
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalkFwd_7
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 0
+        width: 152
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

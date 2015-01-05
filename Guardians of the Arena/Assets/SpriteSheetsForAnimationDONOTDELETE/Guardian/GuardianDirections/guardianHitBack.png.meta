@@ -1,7 +1,13 @@
 fileFormatVersion: 2
 guid: 362adb86dcf184072b65734f53f542a1
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: guardianHitBack_0
+    21300002: guardianHitBack_1
+    21300004: guardianHitBack_2
+    21300006: guardianHitBack_3
+    21300008: guardianHitBack_4
+    21300010: guardianHitBack_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +48,66 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: guardianHitBack_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 155
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianHitBack_1
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 0
+        width: 155
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianHitBack_2
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 0
+        width: 155
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianHitBack_3
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 0
+        width: 155
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianHitBack_4
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 0
+        width: 155
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianHitBack_5
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 0
+        width: 155
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

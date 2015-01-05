@@ -1,7 +1,13 @@
 fileFormatVersion: 2
 guid: 06953059d9271410db51937cacd7fa4d
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: guardianHitRight_0
+    21300002: guardianHitRight_1
+    21300004: guardianHitRight_2
+    21300006: guardianHitRight_3
+    21300008: guardianHitRight_4
+    21300010: guardianHitRight_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +48,66 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: guardianHitRight_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 155
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianHitRight_1
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 0
+        width: 155
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianHitRight_2
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 0
+        width: 155
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianHitRight_3
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 0
+        width: 155
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianHitRight_4
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 0
+        width: 155
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianHitRight_5
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 0
+        width: 155
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

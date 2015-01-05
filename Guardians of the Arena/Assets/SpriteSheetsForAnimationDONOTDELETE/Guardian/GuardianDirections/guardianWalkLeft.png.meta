@@ -1,7 +1,15 @@
 fileFormatVersion: 2
 guid: 17b5bcf8d40d445d7a34f86838077133
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: guardianWalkLeft_0
+    21300002: guardianWalkLeft_1
+    21300004: guardianWalkLeft_2
+    21300006: guardianWalkLeft_3
+    21300008: guardianWalkLeft_4
+    21300010: guardianWalkLeft_5
+    21300012: guardianWalkLeft_6
+    21300014: guardianWalkLeft_7
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +50,86 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: guardianWalkLeft_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 152
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalkLeft_1
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 0
+        width: 152
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalkLeft_2
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 0
+        width: 152
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalkLeft_3
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 0
+        width: 152
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalkLeft_4
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 0
+        width: 152
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalkLeft_5
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 0
+        width: 152
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalkLeft_6
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 0
+        width: 152
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalkLeft_7
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 0
+        width: 152
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

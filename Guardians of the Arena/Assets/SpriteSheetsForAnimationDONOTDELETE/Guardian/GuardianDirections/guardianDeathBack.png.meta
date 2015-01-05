@@ -1,7 +1,27 @@
 fileFormatVersion: 2
 guid: c533bbc83af31461e9975f94608ea12b
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: guardianDeathBack_0
+    21300002: guardianDeathBack_1
+    21300004: guardianDeathBack_2
+    21300006: guardianDeathBack_3
+    21300008: guardianDeathBack_4
+    21300010: guardianDeathBack_5
+    21300012: guardianDeathBack_6
+    21300014: guardianDeathBack_7
+    21300016: guardianDeathBack_8
+    21300018: guardianDeathBack_9
+    21300020: guardianDeathBack_10
+    21300022: guardianDeathBack_11
+    21300024: guardianDeathBack_12
+    21300026: guardianDeathBack_13
+    21300028: guardianDeathBack_14
+    21300030: guardianDeathBack_15
+    21300032: guardianDeathBack_16
+    21300034: guardianDeathBack_17
+    21300036: guardianDeathBack_18
+    21300038: guardianDeathBack_19
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +62,206 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: guardianDeathBack_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 250
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeathBack_1
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 0
+        width: 250
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeathBack_2
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 0
+        width: 250
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeathBack_3
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 0
+        width: 250
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeathBack_4
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 0
+        width: 250
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeathBack_5
+      rect:
+        serializedVersion: 2
+        x: 1250
+        y: 0
+        width: 250
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeathBack_6
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 0
+        width: 250
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeathBack_7
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 0
+        width: 250
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeathBack_8
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 0
+        width: 250
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeathBack_9
+      rect:
+        serializedVersion: 2
+        x: 2250
+        y: 0
+        width: 250
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeathBack_10
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 0
+        width: 250
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeathBack_11
+      rect:
+        serializedVersion: 2
+        x: 2750
+        y: 0
+        width: 250
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeathBack_12
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 0
+        width: 250
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeathBack_13
+      rect:
+        serializedVersion: 2
+        x: 3250
+        y: 0
+        width: 250
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeathBack_14
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 0
+        width: 250
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeathBack_15
+      rect:
+        serializedVersion: 2
+        x: 3750
+        y: 0
+        width: 250
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeathBack_16
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 0
+        width: 250
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeathBack_17
+      rect:
+        serializedVersion: 2
+        x: 4250
+        y: 0
+        width: 250
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeathBack_18
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 0
+        width: 250
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeathBack_19
+      rect:
+        serializedVersion: 2
+        x: 4750
+        y: 0
+        width: 250
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

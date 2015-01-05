@@ -1,7 +1,21 @@
 fileFormatVersion: 2
 guid: 8e73579bd43c54e6fb14f5fc3d6d37a3
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: knifeThrowerAtkBack_0
+    21300002: knifeThrowerAtkBack_1
+    21300004: knifeThrowerAtkBack_2
+    21300006: knifeThrowerAtkBack_3
+    21300008: knifeThrowerAtkBack_4
+    21300010: knifeThrowerAtkBack_5
+    21300012: knifeThrowerAtkBack_6
+    21300014: knifeThrowerAtkBack_7
+    21300016: knifeThrowerAtkBack_8
+    21300018: knifeThrowerAtkBack_9
+    21300020: knifeThrowerAtkBack_10
+    21300022: knifeThrowerAtkBack_11
+    21300024: knifeThrowerAtkBack_12
+    21300026: knifeThrowerAtkBack_13
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +56,146 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: knifeThrowerAtkBack_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 0
+        width: 83
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAtkBack_1
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 0
+        width: 83
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAtkBack_2
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 0
+        width: 83
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAtkBack_3
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 83
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAtkBack_4
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 0
+        width: 83
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAtkBack_5
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 0
+        width: 83
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAtkBack_6
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 0
+        width: 83
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAtkBack_7
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 0
+        width: 83
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAtkBack_8
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 0
+        width: 83
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAtkBack_9
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 0
+        width: 83
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAtkBack_10
+      rect:
+        serializedVersion: 2
+        x: 844
+        y: 0
+        width: 83
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAtkBack_11
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 0
+        width: 83
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAtkBack_12
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 0
+        width: 83
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAtkBack_13
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 0
+        width: 83
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

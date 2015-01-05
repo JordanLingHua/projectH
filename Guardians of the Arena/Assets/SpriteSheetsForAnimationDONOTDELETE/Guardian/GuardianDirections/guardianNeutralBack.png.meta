@@ -1,7 +1,16 @@
 fileFormatVersion: 2
 guid: e84fbac804bdb4e498436bb2d83d5276
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: guardianNeutralBack_0
+    21300002: guardianNeutralBack_1
+    21300004: guardianNeutralBack_2
+    21300006: guardianNeutralBack_3
+    21300008: guardianNeutralBack_4
+    21300010: guardianNeutralBack_5
+    21300012: guardianNeutralBack_6
+    21300014: guardianNeutralBack_7
+    21300016: guardianNeutralBack_8
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +51,96 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: guardianNeutralBack_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 157
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutralBack_1
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 0
+        width: 157
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutralBack_2
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 0
+        width: 157
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutralBack_3
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 0
+        width: 157
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutralBack_4
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 0
+        width: 157
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutralBack_5
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 0
+        width: 157
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutralBack_6
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 0
+        width: 157
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutralBack_7
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 0
+        width: 157
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianNeutralBack_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1259
+        height: 116
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

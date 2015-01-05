@@ -1,7 +1,23 @@
 fileFormatVersion: 2
 guid: e33135451181c4b1d9eb3604ad19e127
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: guardianAtk1Back_0
+    21300002: guardianAtk1Back_1
+    21300004: guardianAtk1Back_2
+    21300006: guardianAtk1Back_3
+    21300008: guardianAtk1Back_4
+    21300010: guardianAtk1Back_5
+    21300012: guardianAtk1Back_6
+    21300014: guardianAtk1Back_7
+    21300016: guardianAtk1Back_8
+    21300018: guardianAtk1Back_9
+    21300020: guardianAtk1Back_10
+    21300022: guardianAtk1Back_11
+    21300024: guardianAtk1Back_12
+    21300026: guardianAtk1Back_13
+    21300028: guardianAtk1Back_14
+    21300030: guardianAtk1Back_15
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +58,166 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: guardianAtk1Back_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 178
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianAtk1Back_1
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 0
+        width: 178
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianAtk1Back_2
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 0
+        width: 178
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianAtk1Back_3
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 0
+        width: 178
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianAtk1Back_4
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 0
+        width: 178
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianAtk1Back_5
+      rect:
+        serializedVersion: 2
+        x: 890
+        y: 0
+        width: 178
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianAtk1Back_6
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 0
+        width: 178
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianAtk1Back_7
+      rect:
+        serializedVersion: 2
+        x: 1246
+        y: 0
+        width: 178
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianAtk1Back_8
+      rect:
+        serializedVersion: 2
+        x: 1424
+        y: 0
+        width: 178
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianAtk1Back_9
+      rect:
+        serializedVersion: 2
+        x: 1602
+        y: 0
+        width: 178
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianAtk1Back_10
+      rect:
+        serializedVersion: 2
+        x: 1780
+        y: 0
+        width: 178
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianAtk1Back_11
+      rect:
+        serializedVersion: 2
+        x: 1958
+        y: 0
+        width: 178
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianAtk1Back_12
+      rect:
+        serializedVersion: 2
+        x: 2136
+        y: 0
+        width: 178
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianAtk1Back_13
+      rect:
+        serializedVersion: 2
+        x: 2314
+        y: 0
+        width: 178
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianAtk1Back_14
+      rect:
+        serializedVersion: 2
+        x: 2492
+        y: 0
+        width: 178
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianAtk1Back_15
+      rect:
+        serializedVersion: 2
+        x: 2670
+        y: 0
+        width: 178
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

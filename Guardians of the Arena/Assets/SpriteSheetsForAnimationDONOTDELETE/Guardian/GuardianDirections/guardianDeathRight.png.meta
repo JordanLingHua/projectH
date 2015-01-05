@@ -1,7 +1,27 @@
 fileFormatVersion: 2
 guid: 77edc524cf20e432d905bed1919dfff1
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: guardianDeathRight_0
+    21300002: guardianDeathRight_1
+    21300004: guardianDeathRight_2
+    21300006: guardianDeathRight_3
+    21300008: guardianDeathRight_4
+    21300010: guardianDeathRight_5
+    21300012: guardianDeathRight_6
+    21300014: guardianDeathRight_7
+    21300016: guardianDeathRight_8
+    21300018: guardianDeathRight_9
+    21300020: guardianDeathRight_10
+    21300022: guardianDeathRight_11
+    21300024: guardianDeathRight_12
+    21300026: guardianDeathRight_13
+    21300028: guardianDeathRight_14
+    21300030: guardianDeathRight_15
+    21300032: guardianDeathRight_16
+    21300034: guardianDeathRight_17
+    21300036: guardianDeathRight_18
+    21300038: guardianDeathRight_19
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +62,206 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: guardianDeathRight_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 253
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeathRight_1
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 0
+        width: 253
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeathRight_2
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 0
+        width: 253
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeathRight_3
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 0
+        width: 253
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeathRight_4
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 0
+        width: 253
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeathRight_5
+      rect:
+        serializedVersion: 2
+        x: 1265
+        y: 0
+        width: 253
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeathRight_6
+      rect:
+        serializedVersion: 2
+        x: 1518
+        y: 0
+        width: 253
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeathRight_7
+      rect:
+        serializedVersion: 2
+        x: 1771
+        y: 0
+        width: 253
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeathRight_8
+      rect:
+        serializedVersion: 2
+        x: 2024
+        y: 0
+        width: 253
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeathRight_9
+      rect:
+        serializedVersion: 2
+        x: 2277
+        y: 0
+        width: 253
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeathRight_10
+      rect:
+        serializedVersion: 2
+        x: 2530
+        y: 0
+        width: 253
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeathRight_11
+      rect:
+        serializedVersion: 2
+        x: 2783
+        y: 0
+        width: 253
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeathRight_12
+      rect:
+        serializedVersion: 2
+        x: 3036
+        y: 0
+        width: 253
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeathRight_13
+      rect:
+        serializedVersion: 2
+        x: 3289
+        y: 0
+        width: 253
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeathRight_14
+      rect:
+        serializedVersion: 2
+        x: 3542
+        y: 0
+        width: 253
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeathRight_15
+      rect:
+        serializedVersion: 2
+        x: 3795
+        y: 0
+        width: 253
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeathRight_16
+      rect:
+        serializedVersion: 2
+        x: 4048
+        y: 0
+        width: 253
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeathRight_17
+      rect:
+        serializedVersion: 2
+        x: 4301
+        y: 0
+        width: 253
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeathRight_18
+      rect:
+        serializedVersion: 2
+        x: 4554
+        y: 0
+        width: 253
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianDeathRight_19
+      rect:
+        serializedVersion: 2
+        x: 4807
+        y: 0
+        width: 253
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
