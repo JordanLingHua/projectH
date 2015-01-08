@@ -1,7 +1,55 @@
 fileFormatVersion: 2
 guid: 2e098ba48d43b4fadad4220a99da0288
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: guardianGetHit_0
+    21300002: guardianGetHit_1
+    21300004: guardianGetHit_2
+    21300006: guardianGetHit_3
+    21300008: guardianGetHit_4
+    21300010: guardianGetHit_5
+    21300012: guardianGetHit_6
+    21300014: guardianGetHit_7
+    21300016: guardianGetHit_8
+    21300018: guardianGetHit_9
+    21300020: guardianGetHit_10
+    21300022: guardianGetHit_11
+    21300024: guardianGetHit_12
+    21300026: guardianGetHit_13
+    21300028: guardianGetHit_14
+    21300030: guardianGetHit_15
+    21300032: guardianGetHit_16
+    21300034: guardianGetHit_17
+    21300036: guardianGetHit_18
+    21300038: guardianGetHit_19
+    21300040: guardianGetHit_20
+    21300042: guardianGetHit_21
+    21300044: guardianGetHit_22
+    21300046: guardianGetHit_23
+    21300048: guardianGetHit_24
+    21300050: guardianGetHit_25
+    21300052: guardianGetHit_26
+    21300054: guardianGetHit_27
+    21300056: guardianGetHit_28
+    21300058: guardianGetHit_29
+    21300060: guardianGetHit_30
+    21300062: guardianGetHit_31
+    21300064: guardianGetHit_32
+    21300066: guardianGetHit_33
+    21300068: guardianGetHit_34
+    21300070: guardianGetHit_35
+    21300072: guardianGetHit_36
+    21300074: guardianGetHit_37
+    21300076: guardianGetHit_38
+    21300078: guardianGetHit_39
+    21300080: guardianGetHit_40
+    21300082: guardianGetHit_41
+    21300084: guardianGetHit_42
+    21300086: guardianGetHit_43
+    21300088: guardianGetHit_44
+    21300090: guardianGetHit_45
+    21300092: guardianGetHit_46
+    21300094: guardianGetHit_47
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +90,486 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: guardianGetHit_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 860
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_1
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 860
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_2
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 860
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_3
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 860
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_4
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 860
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_5
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 860
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 738
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_7
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 738
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_8
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 738
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_9
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 738
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_10
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 738
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_11
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 738
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 616
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_13
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 616
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_14
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 616
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_15
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 616
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_16
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 616
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_17
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 616
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 494
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_19
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 494
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_20
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 494
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_21
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 494
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_22
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 494
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_23
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 494
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 372
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_25
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 372
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_26
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 372
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_27
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 372
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_28
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 372
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_29
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 372
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 250
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_31
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 250
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_32
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 250
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_33
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 250
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_34
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 250
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_35
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 250
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_37
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 128
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_38
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 128
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_39
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 128
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_40
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 128
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_41
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 128
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_43
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 6
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_44
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 6
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_45
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 6
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_46
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 6
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianGetHit_47
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 6
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

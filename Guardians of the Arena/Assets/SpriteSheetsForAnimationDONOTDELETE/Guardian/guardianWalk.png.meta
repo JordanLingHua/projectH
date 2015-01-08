@@ -1,7 +1,71 @@
 fileFormatVersion: 2
 guid: 93634dbb9a22c48e99bf3c0857abb1cb
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: guardianWalk_0
+    21300002: guardianWalk_1
+    21300004: guardianWalk_2
+    21300006: guardianWalk_3
+    21300008: guardianWalk_4
+    21300010: guardianWalk_5
+    21300012: guardianWalk_6
+    21300014: guardianWalk_7
+    21300016: guardianWalk_8
+    21300018: guardianWalk_9
+    21300020: guardianWalk_10
+    21300022: guardianWalk_11
+    21300024: guardianWalk_12
+    21300026: guardianWalk_13
+    21300028: guardianWalk_14
+    21300030: guardianWalk_15
+    21300032: guardianWalk_16
+    21300034: guardianWalk_17
+    21300036: guardianWalk_18
+    21300038: guardianWalk_19
+    21300040: guardianWalk_20
+    21300042: guardianWalk_21
+    21300044: guardianWalk_22
+    21300046: guardianWalk_23
+    21300048: guardianWalk_24
+    21300050: guardianWalk_25
+    21300052: guardianWalk_26
+    21300054: guardianWalk_27
+    21300056: guardianWalk_28
+    21300058: guardianWalk_29
+    21300060: guardianWalk_30
+    21300062: guardianWalk_31
+    21300064: guardianWalk_32
+    21300066: guardianWalk_33
+    21300068: guardianWalk_34
+    21300070: guardianWalk_35
+    21300072: guardianWalk_36
+    21300074: guardianWalk_37
+    21300076: guardianWalk_38
+    21300078: guardianWalk_39
+    21300080: guardianWalk_40
+    21300082: guardianWalk_41
+    21300084: guardianWalk_42
+    21300086: guardianWalk_43
+    21300088: guardianWalk_44
+    21300090: guardianWalk_45
+    21300092: guardianWalk_46
+    21300094: guardianWalk_47
+    21300096: guardianWalk_48
+    21300098: guardianWalk_49
+    21300100: guardianWalk_50
+    21300102: guardianWalk_51
+    21300104: guardianWalk_52
+    21300106: guardianWalk_53
+    21300108: guardianWalk_54
+    21300110: guardianWalk_55
+    21300112: guardianWalk_56
+    21300114: guardianWalk_57
+    21300116: guardianWalk_58
+    21300118: guardianWalk_59
+    21300120: guardianWalk_60
+    21300122: guardianWalk_61
+    21300124: guardianWalk_62
+    21300126: guardianWalk_63
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +106,646 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: guardianWalk_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 833
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_1
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 833
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_2
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 833
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_3
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 833
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_4
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 833
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_5
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 833
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_6
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 833
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_7
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 833
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 715
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_9
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 715
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_10
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 715
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_11
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 715
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_12
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 715
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_13
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 715
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_14
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 715
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_15
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 715
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 597
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_17
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 597
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_18
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 597
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_19
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 597
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_20
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 597
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_21
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 597
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_22
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 597
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_23
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 597
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 479
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_25
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 479
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_26
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 479
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_27
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 479
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_28
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 479
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_29
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 479
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_30
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 479
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_31
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 479
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 361
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_33
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 361
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_34
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 361
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_35
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 361
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_36
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 361
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_37
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 361
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_38
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 361
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_39
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 361
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 243
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_41
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 243
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_42
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 243
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_43
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 243
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_44
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 243
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_45
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 243
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_46
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 243
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_47
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 243
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 125
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_49
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 125
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_50
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 125
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_51
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 125
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_52
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 125
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_53
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 125
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_54
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 125
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_55
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 125
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_57
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 7
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_58
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 7
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_59
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 7
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_60
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 7
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_61
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 7
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_62
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 7
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guardianWalk_63
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 7
+        width: 153
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
