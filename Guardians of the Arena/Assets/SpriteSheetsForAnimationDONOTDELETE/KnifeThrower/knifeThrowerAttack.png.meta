@@ -1,7 +1,231 @@
 fileFormatVersion: 2
 guid: 4a15f303677c24ad092b51a7201a5352
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: knifeThrowerAttack_0
+    21300002: knifeThrowerAttack_1
+    21300004: knifeThrowerAttack_2
+    21300006: knifeThrowerAttack_3
+    21300008: knifeThrowerAttack_4
+    21300010: knifeThrowerAttack_5
+    21300012: knifeThrowerAttack_6
+    21300014: knifeThrowerAttack_7
+    21300016: knifeThrowerAttack_8
+    21300018: knifeThrowerAttack_9
+    21300020: knifeThrowerAttack_10
+    21300022: knifeThrowerAttack_11
+    21300024: knifeThrowerAttack_12
+    21300026: knifeThrowerAttack_13
+    21300028: knifeThrowerAttack_14
+    21300030: knifeThrowerAttack_15
+    21300032: knifeThrowerAttack_16
+    21300034: knifeThrowerAttack_17
+    21300036: knifeThrowerAttack_18
+    21300038: knifeThrowerAttack_19
+    21300040: knifeThrowerAttack_20
+    21300042: knifeThrowerAttack_21
+    21300044: knifeThrowerAttack_22
+    21300046: knifeThrowerAttack_23
+    21300048: knifeThrowerAttack_24
+    21300050: knifeThrowerAttack_25
+    21300052: knifeThrowerAttack_26
+    21300054: knifeThrowerAttack_27
+    21300056: knifeThrowerAttack_28
+    21300058: knifeThrowerAttack_29
+    21300060: knifeThrowerAttack_30
+    21300062: knifeThrowerAttack_31
+    21300064: knifeThrowerAttack_32
+    21300066: knifeThrowerAttack_33
+    21300068: knifeThrowerAttack_34
+    21300070: knifeThrowerAttack_35
+    21300072: knifeThrowerAttack_36
+    21300074: knifeThrowerAttack_37
+    21300076: knifeThrowerAttack_38
+    21300078: knifeThrowerAttack_39
+    21300080: knifeThrowerAttack_40
+    21300082: knifeThrowerAttack_41
+    21300084: knifeThrowerAttack_42
+    21300086: knifeThrowerAttack_43
+    21300088: knifeThrowerAttack_44
+    21300090: knifeThrowerAttack_45
+    21300092: knifeThrowerAttack_46
+    21300094: knifeThrowerAttack_47
+    21300096: knifeThrowerAttack_48
+    21300098: knifeThrowerAttack_49
+    21300100: knifeThrowerAttack_50
+    21300102: knifeThrowerAttack_51
+    21300104: knifeThrowerAttack_52
+    21300106: knifeThrowerAttack_53
+    21300108: knifeThrowerAttack_54
+    21300110: knifeThrowerAttack_55
+    21300112: knifeThrowerAttack_56
+    21300114: knifeThrowerAttack_57
+    21300116: knifeThrowerAttack_58
+    21300118: knifeThrowerAttack_59
+    21300120: knifeThrowerAttack_60
+    21300122: knifeThrowerAttack_61
+    21300124: knifeThrowerAttack_62
+    21300126: knifeThrowerAttack_63
+    21300128: knifeThrowerAttack_64
+    21300130: knifeThrowerAttack_65
+    21300132: knifeThrowerAttack_66
+    21300134: knifeThrowerAttack_67
+    21300136: knifeThrowerAttack_68
+    21300138: knifeThrowerAttack_69
+    21300140: knifeThrowerAttack_70
+    21300142: knifeThrowerAttack_71
+    21300144: knifeThrowerAttack_72
+    21300146: knifeThrowerAttack_73
+    21300148: knifeThrowerAttack_74
+    21300150: knifeThrowerAttack_75
+    21300152: knifeThrowerAttack_76
+    21300154: knifeThrowerAttack_77
+    21300156: knifeThrowerAttack_78
+    21300158: knifeThrowerAttack_79
+    21300160: knifeThrowerAttack_80
+    21300162: knifeThrowerAttack_81
+    21300164: knifeThrowerAttack_82
+    21300166: knifeThrowerAttack_83
+    21300168: knifeThrowerAttack_84
+    21300170: knifeThrowerAttack_85
+    21300172: knifeThrowerAttack_86
+    21300174: knifeThrowerAttack_87
+    21300176: knifeThrowerAttack_88
+    21300178: knifeThrowerAttack_89
+    21300180: knifeThrowerAttack_90
+    21300182: knifeThrowerAttack_91
+    21300184: knifeThrowerAttack_92
+    21300186: knifeThrowerAttack_93
+    21300188: knifeThrowerAttack_94
+    21300190: knifeThrowerAttack_95
+    21300192: knifeThrowerAttack_96
+    21300194: knifeThrowerAttack_97
+    21300196: knifeThrowerAttack_98
+    21300198: knifeThrowerAttack_99
+    21300200: knifeThrowerAttack_100
+    21300202: knifeThrowerAttack_101
+    21300204: knifeThrowerAttack_102
+    21300206: knifeThrowerAttack_103
+    21300208: knifeThrowerAttack_104
+    21300210: knifeThrowerAttack_105
+    21300212: knifeThrowerAttack_106
+    21300214: knifeThrowerAttack_107
+    21300216: knifeThrowerAttack_108
+    21300218: knifeThrowerAttack_109
+    21300220: knifeThrowerAttack_110
+    21300222: knifeThrowerAttack_111
+    21300224: knifeThrowerAttack_112
+    21300226: knifeThrowerAttack_113
+    21300228: knifeThrowerAttack_114
+    21300230: knifeThrowerAttack_115
+    21300232: knifeThrowerAttack_116
+    21300234: knifeThrowerAttack_117
+    21300236: knifeThrowerAttack_118
+    21300238: knifeThrowerAttack_119
+    21300240: knifeThrowerAttack_120
+    21300242: knifeThrowerAttack_121
+    21300244: knifeThrowerAttack_122
+    21300246: knifeThrowerAttack_123
+    21300248: knifeThrowerAttack_124
+    21300250: knifeThrowerAttack_125
+    21300252: knifeThrowerAttack_126
+    21300254: knifeThrowerAttack_127
+    21300256: knifeThrowerAttack_128
+    21300258: knifeThrowerAttack_129
+    21300260: knifeThrowerAttack_130
+    21300262: knifeThrowerAttack_131
+    21300264: knifeThrowerAttack_132
+    21300266: knifeThrowerAttack_133
+    21300268: knifeThrowerAttack_134
+    21300270: knifeThrowerAttack_135
+    21300272: knifeThrowerAttack_136
+    21300274: knifeThrowerAttack_137
+    21300276: knifeThrowerAttack_138
+    21300278: knifeThrowerAttack_139
+    21300280: knifeThrowerAttack_140
+    21300282: knifeThrowerAttack_141
+    21300284: knifeThrowerAttack_142
+    21300286: knifeThrowerAttack_143
+    21300288: knifeThrowerAttack_144
+    21300290: knifeThrowerAttack_145
+    21300292: knifeThrowerAttack_146
+    21300294: knifeThrowerAttack_147
+    21300296: knifeThrowerAttack_148
+    21300298: knifeThrowerAttack_149
+    21300300: knifeThrowerAttack_150
+    21300302: knifeThrowerAttack_151
+    21300304: knifeThrowerAttack_152
+    21300306: knifeThrowerAttack_153
+    21300308: knifeThrowerAttack_154
+    21300310: knifeThrowerAttack_155
+    21300312: knifeThrowerAttack_156
+    21300314: knifeThrowerAttack_157
+    21300316: knifeThrowerAttack_158
+    21300318: knifeThrowerAttack_159
+    21300320: knifeThrowerAttack_160
+    21300322: knifeThrowerAttack_161
+    21300324: knifeThrowerAttack_162
+    21300326: knifeThrowerAttack_163
+    21300328: knifeThrowerAttack_164
+    21300330: knifeThrowerAttack_165
+    21300332: knifeThrowerAttack_166
+    21300334: knifeThrowerAttack_167
+    21300336: knifeThrowerAttack_168
+    21300338: knifeThrowerAttack_169
+    21300340: knifeThrowerAttack_170
+    21300342: knifeThrowerAttack_171
+    21300344: knifeThrowerAttack_172
+    21300346: knifeThrowerAttack_173
+    21300348: knifeThrowerAttack_174
+    21300350: knifeThrowerAttack_175
+    21300352: knifeThrowerAttack_176
+    21300354: knifeThrowerAttack_177
+    21300356: knifeThrowerAttack_178
+    21300358: knifeThrowerAttack_179
+    21300360: knifeThrowerAttack_180
+    21300362: knifeThrowerAttack_181
+    21300364: knifeThrowerAttack_182
+    21300366: knifeThrowerAttack_183
+    21300368: knifeThrowerAttack_184
+    21300370: knifeThrowerAttack_185
+    21300372: knifeThrowerAttack_186
+    21300374: knifeThrowerAttack_187
+    21300376: knifeThrowerAttack_188
+    21300378: knifeThrowerAttack_189
+    21300380: knifeThrowerAttack_190
+    21300382: knifeThrowerAttack_191
+    21300384: knifeThrowerAttack_192
+    21300386: knifeThrowerAttack_193
+    21300388: knifeThrowerAttack_194
+    21300390: knifeThrowerAttack_195
+    21300392: knifeThrowerAttack_196
+    21300394: knifeThrowerAttack_197
+    21300396: knifeThrowerAttack_198
+    21300398: knifeThrowerAttack_199
+    21300400: knifeThrowerAttack_200
+    21300402: knifeThrowerAttack_201
+    21300404: knifeThrowerAttack_202
+    21300406: knifeThrowerAttack_203
+    21300408: knifeThrowerAttack_204
+    21300410: knifeThrowerAttack_205
+    21300412: knifeThrowerAttack_206
+    21300414: knifeThrowerAttack_207
+    21300416: knifeThrowerAttack_208
+    21300418: knifeThrowerAttack_209
+    21300420: knifeThrowerAttack_210
+    21300422: knifeThrowerAttack_211
+    21300424: knifeThrowerAttack_212
+    21300426: knifeThrowerAttack_213
+    21300428: knifeThrowerAttack_214
+    21300430: knifeThrowerAttack_215
+    21300432: knifeThrowerAttack_216
+    21300434: knifeThrowerAttack_217
+    21300436: knifeThrowerAttack_218
+    21300438: knifeThrowerAttack_219
+    21300440: knifeThrowerAttack_220
+    21300442: knifeThrowerAttack_221
+    21300444: knifeThrowerAttack_222
+    21300446: knifeThrowerAttack_223
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +266,2246 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: knifeThrowerAttack_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 1561
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_1
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 1561
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_2
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 1561
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_3
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 1561
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_4
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 1561
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_5
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 1561
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_6
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 1561
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_7
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 1561
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_8
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 1561
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_9
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 1561
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_10
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 1561
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_11
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 1561
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_12
+      rect:
+        serializedVersion: 2
+        x: 1013
+        y: 1561
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_13
+      rect:
+        serializedVersion: 2
+        x: 1097
+        y: 1561
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_14
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 1457
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_15
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 1457
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_16
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 1457
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_17
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 1457
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_18
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 1457
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_19
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 1457
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_20
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 1457
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_21
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 1457
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_22
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 1457
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_23
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 1457
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_24
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 1457
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_25
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 1457
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_26
+      rect:
+        serializedVersion: 2
+        x: 1013
+        y: 1457
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_27
+      rect:
+        serializedVersion: 2
+        x: 1097
+        y: 1457
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_28
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 1353
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_29
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 1353
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_30
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 1353
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_31
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 1353
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_32
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 1353
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_33
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 1353
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_34
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 1353
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_35
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 1353
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_36
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 1353
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_37
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 1353
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_38
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 1353
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_39
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 1353
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_40
+      rect:
+        serializedVersion: 2
+        x: 1013
+        y: 1353
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_41
+      rect:
+        serializedVersion: 2
+        x: 1097
+        y: 1353
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_42
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 1249
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_43
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 1249
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_44
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 1249
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_45
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 1249
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_46
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 1249
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_47
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 1249
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_48
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 1249
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_49
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 1249
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_50
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 1249
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_51
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 1249
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_52
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 1249
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_53
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 1249
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_54
+      rect:
+        serializedVersion: 2
+        x: 1013
+        y: 1249
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_55
+      rect:
+        serializedVersion: 2
+        x: 1097
+        y: 1249
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_56
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 1145
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_57
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 1145
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_58
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 1145
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_59
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 1145
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_60
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 1145
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_61
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 1145
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_62
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 1145
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_63
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 1145
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_64
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 1145
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_65
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 1145
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_66
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 1145
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_67
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 1145
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_68
+      rect:
+        serializedVersion: 2
+        x: 1013
+        y: 1145
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_69
+      rect:
+        serializedVersion: 2
+        x: 1097
+        y: 1145
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_70
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 1041
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_71
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 1041
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_72
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 1041
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_73
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 1041
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_74
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 1041
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_75
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 1041
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_76
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 1041
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_77
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 1041
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_78
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 1041
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_79
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 1041
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_80
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 1041
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_81
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 1041
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_82
+      rect:
+        serializedVersion: 2
+        x: 1013
+        y: 1041
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_83
+      rect:
+        serializedVersion: 2
+        x: 1097
+        y: 1041
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_84
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 937
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_85
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 937
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_86
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 937
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_87
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 937
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_88
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 937
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_89
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 937
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_90
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 937
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_91
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 937
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_92
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 937
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_93
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 937
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_94
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 937
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_95
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 937
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_96
+      rect:
+        serializedVersion: 2
+        x: 1013
+        y: 937
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_97
+      rect:
+        serializedVersion: 2
+        x: 1097
+        y: 937
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_98
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 833
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_99
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 833
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_100
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 833
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_101
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 833
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_102
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 833
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_103
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 833
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_104
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 833
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_105
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 833
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_106
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 833
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_107
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 833
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_108
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 833
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_109
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 833
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_110
+      rect:
+        serializedVersion: 2
+        x: 1013
+        y: 833
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_111
+      rect:
+        serializedVersion: 2
+        x: 1097
+        y: 833
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_112
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 729
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_113
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 729
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_114
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 729
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_115
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 729
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_116
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 729
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_117
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 729
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_118
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 729
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_119
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 729
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_120
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 729
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_121
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 729
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_122
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 729
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_123
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 729
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_124
+      rect:
+        serializedVersion: 2
+        x: 1013
+        y: 729
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_125
+      rect:
+        serializedVersion: 2
+        x: 1097
+        y: 729
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_126
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 625
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_127
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 625
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_128
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 625
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_129
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 625
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_130
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 625
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_131
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 625
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_132
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 625
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_133
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 625
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_134
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 625
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_135
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 625
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_136
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 625
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_137
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 625
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_138
+      rect:
+        serializedVersion: 2
+        x: 1013
+        y: 625
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_139
+      rect:
+        serializedVersion: 2
+        x: 1097
+        y: 625
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_140
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 521
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_141
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 521
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_142
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 521
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_143
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 521
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_144
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 521
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_145
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 521
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_146
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 521
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_147
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 521
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_148
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 521
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_149
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 521
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_150
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 521
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_151
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 521
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_152
+      rect:
+        serializedVersion: 2
+        x: 1013
+        y: 521
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_153
+      rect:
+        serializedVersion: 2
+        x: 1097
+        y: 521
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_154
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 417
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_155
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 417
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_156
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 417
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_157
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 417
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_158
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 417
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_159
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 417
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_160
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 417
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_161
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 417
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_162
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 417
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_163
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 417
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_164
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 417
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_165
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 417
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_166
+      rect:
+        serializedVersion: 2
+        x: 1013
+        y: 417
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_167
+      rect:
+        serializedVersion: 2
+        x: 1097
+        y: 417
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_168
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 313
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_169
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 313
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_170
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 313
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_171
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 313
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_172
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 313
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_173
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 313
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_174
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 313
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_175
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 313
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_176
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 313
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_177
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 313
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_178
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 313
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_179
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 313
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_180
+      rect:
+        serializedVersion: 2
+        x: 1013
+        y: 313
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_181
+      rect:
+        serializedVersion: 2
+        x: 1097
+        y: 313
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_182
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 209
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_183
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 209
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_184
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 209
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_185
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 209
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_186
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 209
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_187
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 209
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_188
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 209
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_189
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 209
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_190
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 209
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_191
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 209
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_192
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 209
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_193
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 209
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_194
+      rect:
+        serializedVersion: 2
+        x: 1013
+        y: 209
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_195
+      rect:
+        serializedVersion: 2
+        x: 1097
+        y: 209
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_196
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 105
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_197
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 105
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_198
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 105
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_199
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 105
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_200
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 105
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_201
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 105
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_202
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 105
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_203
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 105
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_204
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 105
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_205
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 105
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_206
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 105
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_207
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 105
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_208
+      rect:
+        serializedVersion: 2
+        x: 1013
+        y: 105
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_209
+      rect:
+        serializedVersion: 2
+        x: 1097
+        y: 105
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_210
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 1
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_211
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 1
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_212
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 1
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_213
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 1
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_214
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 1
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_215
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 1
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_216
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 1
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_217
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 1
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_218
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 1
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_219
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 1
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_220
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 1
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_221
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 1
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_222
+      rect:
+        serializedVersion: 2
+        x: 1013
+        y: 1
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerAttack_223
+      rect:
+        serializedVersion: 2
+        x: 1097
+        y: 1
+        width: 84
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

@@ -1,7 +1,159 @@
 fileFormatVersion: 2
 guid: 553207bcf1c084cefb880a5191b58f55
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: priestDeath_0
+    21300002: priestDeath_1
+    21300004: priestDeath_2
+    21300006: priestDeath_3
+    21300008: priestDeath_4
+    21300010: priestDeath_5
+    21300012: priestDeath_6
+    21300014: priestDeath_7
+    21300016: priestDeath_8
+    21300018: priestDeath_9
+    21300020: priestDeath_10
+    21300022: priestDeath_11
+    21300024: priestDeath_12
+    21300026: priestDeath_13
+    21300028: priestDeath_14
+    21300030: priestDeath_15
+    21300032: priestDeath_16
+    21300034: priestDeath_17
+    21300036: priestDeath_18
+    21300038: priestDeath_19
+    21300040: priestDeath_20
+    21300042: priestDeath_21
+    21300044: priestDeath_22
+    21300046: priestDeath_23
+    21300048: priestDeath_24
+    21300050: priestDeath_25
+    21300052: priestDeath_26
+    21300054: priestDeath_27
+    21300056: priestDeath_28
+    21300058: priestDeath_29
+    21300060: priestDeath_30
+    21300062: priestDeath_31
+    21300064: priestDeath_32
+    21300066: priestDeath_33
+    21300068: priestDeath_34
+    21300070: priestDeath_35
+    21300072: priestDeath_36
+    21300074: priestDeath_37
+    21300076: priestDeath_38
+    21300078: priestDeath_39
+    21300080: priestDeath_40
+    21300082: priestDeath_41
+    21300084: priestDeath_42
+    21300086: priestDeath_43
+    21300088: priestDeath_44
+    21300090: priestDeath_45
+    21300092: priestDeath_46
+    21300094: priestDeath_47
+    21300096: priestDeath_48
+    21300098: priestDeath_49
+    21300100: priestDeath_50
+    21300102: priestDeath_51
+    21300104: priestDeath_52
+    21300106: priestDeath_53
+    21300108: priestDeath_54
+    21300110: priestDeath_55
+    21300112: priestDeath_56
+    21300114: priestDeath_57
+    21300116: priestDeath_58
+    21300118: priestDeath_59
+    21300120: priestDeath_60
+    21300122: priestDeath_61
+    21300124: priestDeath_62
+    21300126: priestDeath_63
+    21300128: priestDeath_64
+    21300130: priestDeath_65
+    21300132: priestDeath_66
+    21300134: priestDeath_67
+    21300136: priestDeath_68
+    21300138: priestDeath_69
+    21300140: priestDeath_70
+    21300142: priestDeath_71
+    21300144: priestDeath_72
+    21300146: priestDeath_73
+    21300148: priestDeath_74
+    21300150: priestDeath_75
+    21300152: priestDeath_76
+    21300154: priestDeath_77
+    21300156: priestDeath_78
+    21300158: priestDeath_79
+    21300160: priestDeath_80
+    21300162: priestDeath_81
+    21300164: priestDeath_82
+    21300166: priestDeath_83
+    21300168: priestDeath_84
+    21300170: priestDeath_85
+    21300172: priestDeath_86
+    21300174: priestDeath_87
+    21300176: priestDeath_88
+    21300178: priestDeath_89
+    21300180: priestDeath_90
+    21300182: priestDeath_91
+    21300184: priestDeath_92
+    21300186: priestDeath_93
+    21300188: priestDeath_94
+    21300190: priestDeath_95
+    21300192: priestDeath_96
+    21300194: priestDeath_97
+    21300196: priestDeath_98
+    21300198: priestDeath_99
+    21300200: priestDeath_100
+    21300202: priestDeath_101
+    21300204: priestDeath_102
+    21300206: priestDeath_103
+    21300208: priestDeath_104
+    21300210: priestDeath_105
+    21300212: priestDeath_106
+    21300214: priestDeath_107
+    21300216: priestDeath_108
+    21300218: priestDeath_109
+    21300220: priestDeath_110
+    21300222: priestDeath_111
+    21300224: priestDeath_112
+    21300226: priestDeath_113
+    21300228: priestDeath_114
+    21300230: priestDeath_115
+    21300232: priestDeath_116
+    21300234: priestDeath_117
+    21300236: priestDeath_118
+    21300238: priestDeath_119
+    21300240: priestDeath_120
+    21300242: priestDeath_121
+    21300244: priestDeath_122
+    21300246: priestDeath_123
+    21300248: priestDeath_124
+    21300250: priestDeath_125
+    21300252: priestDeath_126
+    21300254: priestDeath_127
+    21300256: priestDeath_128
+    21300258: priestDeath_129
+    21300260: priestDeath_130
+    21300262: priestDeath_131
+    21300264: priestDeath_132
+    21300266: priestDeath_133
+    21300268: priestDeath_134
+    21300270: priestDeath_135
+    21300272: priestDeath_136
+    21300274: priestDeath_137
+    21300276: priestDeath_138
+    21300278: priestDeath_139
+    21300280: priestDeath_140
+    21300282: priestDeath_141
+    21300284: priestDeath_142
+    21300286: priestDeath_143
+    21300288: priestDeath_144
+    21300290: priestDeath_145
+    21300292: priestDeath_146
+    21300294: priestDeath_147
+    21300296: priestDeath_148
+    21300298: priestDeath_149
+    21300300: priestDeath_150
+    21300302: priestDeath_151
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +194,1526 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: priestDeath_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1043
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_1
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 1043
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_2
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 1043
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_3
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 1043
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_4
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1043
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_5
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 1043
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_6
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 1043
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_7
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 1043
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_8
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1043
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_9
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 1043
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_10
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 1043
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_11
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 1043
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_12
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1043
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_13
+      rect:
+        serializedVersion: 2
+        x: 1950
+        y: 1043
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_14
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 1043
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_15
+      rect:
+        serializedVersion: 2
+        x: 2250
+        y: 1043
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_16
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 1043
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_17
+      rect:
+        serializedVersion: 2
+        x: 2550
+        y: 1043
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_18
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 1043
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 894
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_20
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 894
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_21
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 894
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_22
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 894
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_23
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 894
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_24
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 894
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_25
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 894
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_26
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 894
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_27
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 894
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_28
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 894
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_29
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 894
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_30
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 894
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_31
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 894
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_32
+      rect:
+        serializedVersion: 2
+        x: 1950
+        y: 894
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_33
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 894
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_34
+      rect:
+        serializedVersion: 2
+        x: 2250
+        y: 894
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_35
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 894
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_36
+      rect:
+        serializedVersion: 2
+        x: 2550
+        y: 894
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_37
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 894
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_38
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 745
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_39
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 745
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_40
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 745
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_41
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 745
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_42
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 745
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_43
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 745
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_44
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 745
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_45
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 745
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_46
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 745
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_47
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 745
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_48
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 745
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_49
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 745
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_50
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 745
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_51
+      rect:
+        serializedVersion: 2
+        x: 1950
+        y: 745
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_52
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 745
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_53
+      rect:
+        serializedVersion: 2
+        x: 2250
+        y: 745
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_54
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 745
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_55
+      rect:
+        serializedVersion: 2
+        x: 2550
+        y: 745
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_56
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 745
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_57
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 596
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_58
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 596
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_59
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 596
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_60
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 596
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_61
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 596
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_62
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 596
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_63
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 596
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_64
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 596
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_65
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 596
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_66
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 596
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_67
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 596
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_68
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 596
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_69
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 596
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_70
+      rect:
+        serializedVersion: 2
+        x: 1950
+        y: 596
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_71
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 596
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_72
+      rect:
+        serializedVersion: 2
+        x: 2250
+        y: 596
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_73
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 596
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_74
+      rect:
+        serializedVersion: 2
+        x: 2550
+        y: 596
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_75
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 596
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_76
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 447
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_77
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 447
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_78
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 447
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_79
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 447
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_80
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 447
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_81
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 447
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_82
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 447
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_83
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 447
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_84
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 447
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_85
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 447
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_86
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 447
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_87
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 447
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_88
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 447
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_89
+      rect:
+        serializedVersion: 2
+        x: 1950
+        y: 447
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_90
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 447
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_91
+      rect:
+        serializedVersion: 2
+        x: 2250
+        y: 447
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_92
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 447
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_93
+      rect:
+        serializedVersion: 2
+        x: 2550
+        y: 447
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_94
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 447
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_95
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 298
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_96
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 298
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_97
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 298
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_98
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 298
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_99
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 298
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_100
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 298
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_101
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 298
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_102
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 298
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_103
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 298
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_104
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 298
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_105
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 298
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_106
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 298
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_107
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 298
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_108
+      rect:
+        serializedVersion: 2
+        x: 1950
+        y: 298
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_109
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 298
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_110
+      rect:
+        serializedVersion: 2
+        x: 2250
+        y: 298
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_111
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 298
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_112
+      rect:
+        serializedVersion: 2
+        x: 2550
+        y: 298
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_113
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 298
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_114
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 149
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_115
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 149
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_116
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 149
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_117
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 149
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_118
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 149
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_119
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 149
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_120
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 149
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_121
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 149
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_122
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 149
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_123
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 149
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_124
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 149
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_125
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 149
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_126
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 149
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_127
+      rect:
+        serializedVersion: 2
+        x: 1950
+        y: 149
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_128
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 149
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_129
+      rect:
+        serializedVersion: 2
+        x: 2250
+        y: 149
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_130
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 149
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_131
+      rect:
+        serializedVersion: 2
+        x: 2550
+        y: 149
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_132
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 149
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_133
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_134
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 0
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_135
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_136
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 0
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_137
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_138
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 0
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_139
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 0
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_140
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 0
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_141
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_142
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 0
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_143
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 0
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_144
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 0
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_145
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 0
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_146
+      rect:
+        serializedVersion: 2
+        x: 1950
+        y: 0
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_147
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 0
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_148
+      rect:
+        serializedVersion: 2
+        x: 2250
+        y: 0
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_149
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 0
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_150
+      rect:
+        serializedVersion: 2
+        x: 2550
+        y: 0
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestDeath_151
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 0
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

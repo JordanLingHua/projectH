@@ -1,7 +1,71 @@
 fileFormatVersion: 2
 guid: 4e2742836107642a2b3b47fa1c037786
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: mysticWalk_0
+    21300002: mysticWalk_1
+    21300004: mysticWalk_2
+    21300006: mysticWalk_3
+    21300008: mysticWalk_4
+    21300010: mysticWalk_5
+    21300012: mysticWalk_6
+    21300014: mysticWalk_7
+    21300016: mysticWalk_8
+    21300018: mysticWalk_9
+    21300020: mysticWalk_10
+    21300022: mysticWalk_11
+    21300024: mysticWalk_12
+    21300026: mysticWalk_13
+    21300028: mysticWalk_14
+    21300030: mysticWalk_15
+    21300032: mysticWalk_16
+    21300034: mysticWalk_17
+    21300036: mysticWalk_18
+    21300038: mysticWalk_19
+    21300040: mysticWalk_20
+    21300042: mysticWalk_21
+    21300044: mysticWalk_22
+    21300046: mysticWalk_23
+    21300048: mysticWalk_24
+    21300050: mysticWalk_25
+    21300052: mysticWalk_26
+    21300054: mysticWalk_27
+    21300056: mysticWalk_28
+    21300058: mysticWalk_29
+    21300060: mysticWalk_30
+    21300062: mysticWalk_31
+    21300064: mysticWalk_32
+    21300066: mysticWalk_33
+    21300068: mysticWalk_34
+    21300070: mysticWalk_35
+    21300072: mysticWalk_36
+    21300074: mysticWalk_37
+    21300076: mysticWalk_38
+    21300078: mysticWalk_39
+    21300080: mysticWalk_40
+    21300082: mysticWalk_41
+    21300084: mysticWalk_42
+    21300086: mysticWalk_43
+    21300088: mysticWalk_44
+    21300090: mysticWalk_45
+    21300092: mysticWalk_46
+    21300094: mysticWalk_47
+    21300096: mysticWalk_48
+    21300098: mysticWalk_49
+    21300100: mysticWalk_50
+    21300102: mysticWalk_51
+    21300104: mysticWalk_52
+    21300106: mysticWalk_53
+    21300108: mysticWalk_54
+    21300110: mysticWalk_55
+    21300112: mysticWalk_56
+    21300114: mysticWalk_57
+    21300116: mysticWalk_58
+    21300118: mysticWalk_59
+    21300120: mysticWalk_60
+    21300122: mysticWalk_61
+    21300124: mysticWalk_62
+    21300126: mysticWalk_63
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +106,646 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: mysticWalk_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 826
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_1
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 826
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_2
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 826
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_3
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 826
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_4
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 826
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_5
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 826
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_6
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 826
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_7
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 826
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 708
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_9
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 708
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_10
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 708
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_11
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 708
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_12
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 708
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_13
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 708
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_14
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 708
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_15
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 708
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 590
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_17
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 590
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_18
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 590
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_19
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 590
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_20
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 590
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_21
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 590
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_22
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 590
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_23
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 590
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 472
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_25
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 472
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_26
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 472
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_27
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 472
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_28
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 472
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_29
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 472
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_30
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 472
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_31
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 472
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 354
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_33
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 354
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_34
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 354
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_35
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 354
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_36
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 354
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_37
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 354
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_38
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 354
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_39
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 354
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 236
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_41
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 236
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_42
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 236
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_43
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 236
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_44
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 236
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_45
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 236
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_46
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 236
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_47
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 236
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 118
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_49
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 118
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_50
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 118
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_51
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 118
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_52
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 118
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_53
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 118
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_54
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 118
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_55
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 118
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_57
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 0
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_58
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 0
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_59
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 0
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_60
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 0
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_61
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 0
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_62
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 0
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalk_63
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 0
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

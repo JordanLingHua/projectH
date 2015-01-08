@@ -1,7 +1,135 @@
 fileFormatVersion: 2
 guid: 44663ce83d1804b24ad117ec4a85bc68
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: knifeThrowerWalk_0
+    21300002: knifeThrowerWalk_1
+    21300004: knifeThrowerWalk_2
+    21300006: knifeThrowerWalk_3
+    21300008: knifeThrowerWalk_4
+    21300010: knifeThrowerWalk_5
+    21300012: knifeThrowerWalk_6
+    21300014: knifeThrowerWalk_7
+    21300016: knifeThrowerWalk_8
+    21300018: knifeThrowerWalk_9
+    21300020: knifeThrowerWalk_10
+    21300022: knifeThrowerWalk_11
+    21300024: knifeThrowerWalk_12
+    21300026: knifeThrowerWalk_13
+    21300028: knifeThrowerWalk_14
+    21300030: knifeThrowerWalk_15
+    21300032: knifeThrowerWalk_16
+    21300034: knifeThrowerWalk_17
+    21300036: knifeThrowerWalk_18
+    21300038: knifeThrowerWalk_19
+    21300040: knifeThrowerWalk_20
+    21300042: knifeThrowerWalk_21
+    21300044: knifeThrowerWalk_22
+    21300046: knifeThrowerWalk_23
+    21300048: knifeThrowerWalk_24
+    21300050: knifeThrowerWalk_25
+    21300052: knifeThrowerWalk_26
+    21300054: knifeThrowerWalk_27
+    21300056: knifeThrowerWalk_28
+    21300058: knifeThrowerWalk_29
+    21300060: knifeThrowerWalk_30
+    21300062: knifeThrowerWalk_31
+    21300064: knifeThrowerWalk_32
+    21300066: knifeThrowerWalk_33
+    21300068: knifeThrowerWalk_34
+    21300070: knifeThrowerWalk_35
+    21300072: knifeThrowerWalk_36
+    21300074: knifeThrowerWalk_37
+    21300076: knifeThrowerWalk_38
+    21300078: knifeThrowerWalk_39
+    21300080: knifeThrowerWalk_40
+    21300082: knifeThrowerWalk_41
+    21300084: knifeThrowerWalk_42
+    21300086: knifeThrowerWalk_43
+    21300088: knifeThrowerWalk_44
+    21300090: knifeThrowerWalk_45
+    21300092: knifeThrowerWalk_46
+    21300094: knifeThrowerWalk_47
+    21300096: knifeThrowerWalk_48
+    21300098: knifeThrowerWalk_49
+    21300100: knifeThrowerWalk_50
+    21300102: knifeThrowerWalk_51
+    21300104: knifeThrowerWalk_52
+    21300106: knifeThrowerWalk_53
+    21300108: knifeThrowerWalk_54
+    21300110: knifeThrowerWalk_55
+    21300112: knifeThrowerWalk_56
+    21300114: knifeThrowerWalk_57
+    21300116: knifeThrowerWalk_58
+    21300118: knifeThrowerWalk_59
+    21300120: knifeThrowerWalk_60
+    21300122: knifeThrowerWalk_61
+    21300124: knifeThrowerWalk_62
+    21300126: knifeThrowerWalk_63
+    21300128: knifeThrowerWalk_64
+    21300130: knifeThrowerWalk_65
+    21300132: knifeThrowerWalk_66
+    21300134: knifeThrowerWalk_67
+    21300136: knifeThrowerWalk_68
+    21300138: knifeThrowerWalk_69
+    21300140: knifeThrowerWalk_70
+    21300142: knifeThrowerWalk_71
+    21300144: knifeThrowerWalk_72
+    21300146: knifeThrowerWalk_73
+    21300148: knifeThrowerWalk_74
+    21300150: knifeThrowerWalk_75
+    21300152: knifeThrowerWalk_76
+    21300154: knifeThrowerWalk_77
+    21300156: knifeThrowerWalk_78
+    21300158: knifeThrowerWalk_79
+    21300160: knifeThrowerWalk_80
+    21300162: knifeThrowerWalk_81
+    21300164: knifeThrowerWalk_82
+    21300166: knifeThrowerWalk_83
+    21300168: knifeThrowerWalk_84
+    21300170: knifeThrowerWalk_85
+    21300172: knifeThrowerWalk_86
+    21300174: knifeThrowerWalk_87
+    21300176: knifeThrowerWalk_88
+    21300178: knifeThrowerWalk_89
+    21300180: knifeThrowerWalk_90
+    21300182: knifeThrowerWalk_91
+    21300184: knifeThrowerWalk_92
+    21300186: knifeThrowerWalk_93
+    21300188: knifeThrowerWalk_94
+    21300190: knifeThrowerWalk_95
+    21300192: knifeThrowerWalk_96
+    21300194: knifeThrowerWalk_97
+    21300196: knifeThrowerWalk_98
+    21300198: knifeThrowerWalk_99
+    21300200: knifeThrowerWalk_100
+    21300202: knifeThrowerWalk_101
+    21300204: knifeThrowerWalk_102
+    21300206: knifeThrowerWalk_103
+    21300208: knifeThrowerWalk_104
+    21300210: knifeThrowerWalk_105
+    21300212: knifeThrowerWalk_106
+    21300214: knifeThrowerWalk_107
+    21300216: knifeThrowerWalk_108
+    21300218: knifeThrowerWalk_109
+    21300220: knifeThrowerWalk_110
+    21300222: knifeThrowerWalk_111
+    21300224: knifeThrowerWalk_112
+    21300226: knifeThrowerWalk_113
+    21300228: knifeThrowerWalk_114
+    21300230: knifeThrowerWalk_115
+    21300232: knifeThrowerWalk_116
+    21300234: knifeThrowerWalk_117
+    21300236: knifeThrowerWalk_118
+    21300238: knifeThrowerWalk_119
+    21300240: knifeThrowerWalk_120
+    21300242: knifeThrowerWalk_121
+    21300244: knifeThrowerWalk_122
+    21300246: knifeThrowerWalk_123
+    21300248: knifeThrowerWalk_124
+    21300250: knifeThrowerWalk_125
+    21300252: knifeThrowerWalk_126
+    21300254: knifeThrowerWalk_127
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +170,1286 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: knifeThrowerWalk_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1230
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_1
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 1230
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_2
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 1230
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_3
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 1230
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_4
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 1230
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_5
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 1230
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_6
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 1230
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_7
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 1230
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1149
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_9
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 1149
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_10
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 1149
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_11
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 1149
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_12
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 1149
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_13
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 1149
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_14
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 1149
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_15
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 1149
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1068
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_17
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 1068
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_18
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 1068
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_19
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 1068
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_20
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 1068
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_21
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 1068
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_22
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 1068
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_23
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 1068
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 987
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_25
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 987
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_26
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 987
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_27
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 987
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_28
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 987
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_29
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 987
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_30
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 987
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_31
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 987
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 906
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_33
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 906
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_34
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 906
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_35
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 906
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_36
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 906
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_37
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 906
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_38
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 906
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_39
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 906
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 825
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_41
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 825
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_42
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 825
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_43
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 825
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_44
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 825
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_45
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 825
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_46
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 825
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_47
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 825
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 744
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_49
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 744
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_50
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 744
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_51
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 744
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_52
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 744
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_53
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 744
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_54
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 744
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_55
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 744
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 663
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_57
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 663
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_58
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 663
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_59
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 663
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_60
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 663
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_61
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 663
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_62
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 663
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_63
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 663
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_64
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 582
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_65
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 582
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_66
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 582
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_67
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 582
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_68
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 582
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_69
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 582
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_70
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 582
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_71
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 582
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 501
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_73
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 501
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_74
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 501
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_75
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 501
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_76
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 501
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_77
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 501
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_78
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 501
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_79
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 501
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_80
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 420
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_81
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 420
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_82
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 420
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_83
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 420
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_84
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 420
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_85
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 420
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_86
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 420
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_87
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 420
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_88
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 339
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_89
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 339
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_90
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 339
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_91
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 339
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_92
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 339
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_93
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 339
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_94
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 339
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_95
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 339
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_96
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 258
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_97
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 258
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_98
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 258
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_99
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 258
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_100
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 258
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_101
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 258
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_102
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 258
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_103
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 258
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_104
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 177
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_105
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 177
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_106
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 177
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_107
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 177
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_108
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 177
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_109
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 177
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_110
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 177
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_111
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 177
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_112
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_113
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 96
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_114
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 96
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_115
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 96
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_116
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 96
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_117
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 96
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_118
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 96
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_119
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 96
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_120
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 15
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_121
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 15
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_122
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 15
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_123
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 15
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_124
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 15
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_125
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 15
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_126
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 15
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalk_127
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 15
+        width: 78
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

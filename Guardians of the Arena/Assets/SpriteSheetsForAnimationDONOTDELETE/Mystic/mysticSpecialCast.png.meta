@@ -1,7 +1,103 @@
 fileFormatVersion: 2
 guid: 290334196a2df430ca7d95c25d9af153
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: mysticSpecialCast_0
+    21300002: mysticSpecialCast_1
+    21300004: mysticSpecialCast_2
+    21300006: mysticSpecialCast_3
+    21300008: mysticSpecialCast_4
+    21300010: mysticSpecialCast_5
+    21300012: mysticSpecialCast_6
+    21300014: mysticSpecialCast_7
+    21300016: mysticSpecialCast_8
+    21300018: mysticSpecialCast_9
+    21300020: mysticSpecialCast_10
+    21300022: mysticSpecialCast_11
+    21300024: mysticSpecialCast_12
+    21300026: mysticSpecialCast_13
+    21300028: mysticSpecialCast_14
+    21300030: mysticSpecialCast_15
+    21300032: mysticSpecialCast_16
+    21300034: mysticSpecialCast_17
+    21300036: mysticSpecialCast_18
+    21300038: mysticSpecialCast_19
+    21300040: mysticSpecialCast_20
+    21300042: mysticSpecialCast_21
+    21300044: mysticSpecialCast_22
+    21300046: mysticSpecialCast_23
+    21300048: mysticSpecialCast_24
+    21300050: mysticSpecialCast_25
+    21300052: mysticSpecialCast_26
+    21300054: mysticSpecialCast_27
+    21300056: mysticSpecialCast_28
+    21300058: mysticSpecialCast_29
+    21300060: mysticSpecialCast_30
+    21300062: mysticSpecialCast_31
+    21300064: mysticSpecialCast_32
+    21300066: mysticSpecialCast_33
+    21300068: mysticSpecialCast_34
+    21300070: mysticSpecialCast_35
+    21300072: mysticSpecialCast_36
+    21300074: mysticSpecialCast_37
+    21300076: mysticSpecialCast_38
+    21300078: mysticSpecialCast_39
+    21300080: mysticSpecialCast_40
+    21300082: mysticSpecialCast_41
+    21300084: mysticSpecialCast_42
+    21300086: mysticSpecialCast_43
+    21300088: mysticSpecialCast_44
+    21300090: mysticSpecialCast_45
+    21300092: mysticSpecialCast_46
+    21300094: mysticSpecialCast_47
+    21300096: mysticSpecialCast_48
+    21300098: mysticSpecialCast_49
+    21300100: mysticSpecialCast_50
+    21300102: mysticSpecialCast_51
+    21300104: mysticSpecialCast_52
+    21300106: mysticSpecialCast_53
+    21300108: mysticSpecialCast_54
+    21300110: mysticSpecialCast_55
+    21300112: mysticSpecialCast_56
+    21300114: mysticSpecialCast_57
+    21300116: mysticSpecialCast_58
+    21300118: mysticSpecialCast_59
+    21300120: mysticSpecialCast_60
+    21300122: mysticSpecialCast_61
+    21300124: mysticSpecialCast_62
+    21300126: mysticSpecialCast_63
+    21300128: mysticSpecialCast_64
+    21300130: mysticSpecialCast_65
+    21300132: mysticSpecialCast_66
+    21300134: mysticSpecialCast_67
+    21300136: mysticSpecialCast_68
+    21300138: mysticSpecialCast_69
+    21300140: mysticSpecialCast_70
+    21300142: mysticSpecialCast_71
+    21300144: mysticSpecialCast_72
+    21300146: mysticSpecialCast_73
+    21300148: mysticSpecialCast_74
+    21300150: mysticSpecialCast_75
+    21300152: mysticSpecialCast_76
+    21300154: mysticSpecialCast_77
+    21300156: mysticSpecialCast_78
+    21300158: mysticSpecialCast_79
+    21300160: mysticSpecialCast_80
+    21300162: mysticSpecialCast_81
+    21300164: mysticSpecialCast_82
+    21300166: mysticSpecialCast_83
+    21300168: mysticSpecialCast_84
+    21300170: mysticSpecialCast_85
+    21300172: mysticSpecialCast_86
+    21300174: mysticSpecialCast_87
+    21300176: mysticSpecialCast_88
+    21300178: mysticSpecialCast_89
+    21300180: mysticSpecialCast_90
+    21300182: mysticSpecialCast_91
+    21300184: mysticSpecialCast_92
+    21300186: mysticSpecialCast_93
+    21300188: mysticSpecialCast_94
+    21300190: mysticSpecialCast_95
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +138,966 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: mysticSpecialCast_0
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 899
+        width: 44
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_1
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 904
+        width: 49
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_2
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 905
+        width: 44
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_3
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 905
+        width: 38
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_4
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 905
+        width: 44
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_5
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 905
+        width: 48
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_6
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 906
+        width: 53
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_7
+      rect:
+        serializedVersion: 2
+        x: 890
+        y: 906
+        width: 50
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_8
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 904
+        width: 38
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_9
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 901
+        width: 38
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_10
+      rect:
+        serializedVersion: 2
+        x: 1271
+        y: 904
+        width: 32
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_11
+      rect:
+        serializedVersion: 2
+        x: 1388
+        y: 902
+        width: 35
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_12
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 777
+        width: 50
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_13
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 776
+        width: 33
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_14
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 776
+        width: 36
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_15
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 776
+        width: 54
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_16
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 776
+        width: 63
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_17
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 776
+        width: 66
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_18
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 777
+        width: 57
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_19
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 777
+        width: 47
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_20
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 775
+        width: 59
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_21
+      rect:
+        serializedVersion: 2
+        x: 1122
+        y: 772
+        width: 60
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_22
+      rect:
+        serializedVersion: 2
+        x: 1243
+        y: 775
+        width: 60
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_23
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 776
+        width: 54
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_24
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 649
+        width: 36
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_25
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 649
+        width: 37
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_26
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 649
+        width: 67
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_27
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 649
+        width: 83
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_28
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 649
+        width: 88
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_29
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 649
+        width: 88
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_30
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 650
+        width: 75
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_31
+      rect:
+        serializedVersion: 2
+        x: 889
+        y: 651
+        width: 39
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_32
+      rect:
+        serializedVersion: 2
+        x: 978
+        y: 649
+        width: 73
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_33
+      rect:
+        serializedVersion: 2
+        x: 1098
+        y: 648
+        width: 75
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_34
+      rect:
+        serializedVersion: 2
+        x: 1227
+        y: 649
+        width: 67
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_35
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 649
+        width: 50
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_36
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 522
+        width: 27
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_37
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 522
+        width: 51
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_38
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 522
+        width: 66
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_39
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 522
+        width: 71
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_40
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 522
+        width: 68
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_41
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 522
+        width: 65
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_42
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 523
+        width: 57
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_43
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 525
+        width: 43
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_44
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 525
+        width: 67
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_45
+      rect:
+        serializedVersion: 2
+        x: 1107
+        y: 524
+        width: 67
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_46
+      rect:
+        serializedVersion: 2
+        x: 1238
+        y: 524
+        width: 57
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_47
+      rect:
+        serializedVersion: 2
+        x: 1378
+        y: 523
+        width: 39
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_48
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 395
+        width: 41
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_49
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 394
+        width: 49
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_50
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 394
+        width: 47
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_51
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 393
+        width: 38
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_52
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 393
+        width: 44
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_53
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 393
+        width: 48
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_54
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 393
+        width: 54
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_55
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 394
+        width: 48
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_56
+      rect:
+        serializedVersion: 2
+        x: 1015
+        y: 394
+        width: 36
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_57
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 395
+        width: 35
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_58
+      rect:
+        serializedVersion: 2
+        x: 1262
+        y: 395
+        width: 33
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_59
+      rect:
+        serializedVersion: 2
+        x: 1387
+        y: 395
+        width: 34
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_60
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 265
+        width: 48
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_61
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 265
+        width: 34
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_62
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 264
+        width: 35
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_63
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 264
+        width: 57
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_64
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 264
+        width: 68
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_65
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 264
+        width: 70
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_66
+      rect:
+        serializedVersion: 2
+        x: 757
+        y: 263
+        width: 61
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_67
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 264
+        width: 45
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_68
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 265
+        width: 52
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_69
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 265
+        width: 54
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_70
+      rect:
+        serializedVersion: 2
+        x: 1263
+        y: 265
+        width: 55
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_71
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 265
+        width: 50
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_72
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 131
+        width: 39
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_73
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 136
+        width: 36
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_74
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 137
+        width: 69
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_75
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 137
+        width: 85
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_76
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 136
+        width: 88
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_77
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 135
+        width: 88
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_78
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 132
+        width: 75
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_79
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 138
+        width: 40
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_80
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 138
+        width: 69
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_81
+      rect:
+        serializedVersion: 2
+        x: 1149
+        y: 138
+        width: 71
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_82
+      rect:
+        serializedVersion: 2
+        x: 1273
+        y: 137
+        width: 64
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_83
+      rect:
+        serializedVersion: 2
+        x: 1397
+        y: 136
+        width: 51
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_84
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 0
+        width: 27
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_85
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 6
+        width: 53
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_86
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 10
+        width: 66
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_87
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 10
+        width: 68
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_88
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 10
+        width: 63
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_89
+      rect:
+        serializedVersion: 2
+        x: 633
+        y: 10
+        width: 61
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_90
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 10
+        width: 55
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_91
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 8
+        width: 43
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_92
+      rect:
+        serializedVersion: 2
+        x: 1025
+        y: 11
+        width: 72
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_93
+      rect:
+        serializedVersion: 2
+        x: 1148
+        y: 10
+        width: 72
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_94
+      rect:
+        serializedVersion: 2
+        x: 1270
+        y: 9
+        width: 63
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCast_95
+      rect:
+        serializedVersion: 2
+        x: 1393
+        y: 4
+        width: 42
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

@@ -1,7 +1,71 @@
 fileFormatVersion: 2
 guid: e87649b0f4bda41a7ad5456378aadf3c
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: mysticNeutral_0
+    21300002: mysticNeutral_1
+    21300004: mysticNeutral_2
+    21300006: mysticNeutral_3
+    21300008: mysticNeutral_4
+    21300010: mysticNeutral_5
+    21300012: mysticNeutral_6
+    21300014: mysticNeutral_7
+    21300016: mysticNeutral_8
+    21300018: mysticNeutral_9
+    21300020: mysticNeutral_10
+    21300022: mysticNeutral_11
+    21300024: mysticNeutral_12
+    21300026: mysticNeutral_13
+    21300028: mysticNeutral_14
+    21300030: mysticNeutral_15
+    21300032: mysticNeutral_16
+    21300034: mysticNeutral_17
+    21300036: mysticNeutral_18
+    21300038: mysticNeutral_19
+    21300040: mysticNeutral_20
+    21300042: mysticNeutral_21
+    21300044: mysticNeutral_22
+    21300046: mysticNeutral_23
+    21300048: mysticNeutral_24
+    21300050: mysticNeutral_25
+    21300052: mysticNeutral_26
+    21300054: mysticNeutral_27
+    21300056: mysticNeutral_28
+    21300058: mysticNeutral_29
+    21300060: mysticNeutral_30
+    21300062: mysticNeutral_31
+    21300064: mysticNeutral_32
+    21300066: mysticNeutral_33
+    21300068: mysticNeutral_34
+    21300070: mysticNeutral_35
+    21300072: mysticNeutral_36
+    21300074: mysticNeutral_37
+    21300076: mysticNeutral_38
+    21300078: mysticNeutral_39
+    21300080: mysticNeutral_40
+    21300082: mysticNeutral_41
+    21300084: mysticNeutral_42
+    21300086: mysticNeutral_43
+    21300088: mysticNeutral_44
+    21300090: mysticNeutral_45
+    21300092: mysticNeutral_46
+    21300094: mysticNeutral_47
+    21300096: mysticNeutral_48
+    21300098: mysticNeutral_49
+    21300100: mysticNeutral_50
+    21300102: mysticNeutral_51
+    21300104: mysticNeutral_52
+    21300106: mysticNeutral_53
+    21300108: mysticNeutral_54
+    21300110: mysticNeutral_55
+    21300112: mysticNeutral_56
+    21300114: mysticNeutral_57
+    21300116: mysticNeutral_58
+    21300118: mysticNeutral_59
+    21300120: mysticNeutral_60
+    21300122: mysticNeutral_61
+    21300124: mysticNeutral_62
+    21300126: mysticNeutral_63
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +106,646 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: mysticNeutral_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 833
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_1
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 833
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_2
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 833
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_3
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 833
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_4
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 833
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_5
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 833
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_6
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 833
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_7
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 833
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 714
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_9
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 714
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_10
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 714
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_11
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 714
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_12
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 714
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_13
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 714
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_14
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 714
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_15
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 714
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 595
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_17
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 595
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_18
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 595
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_19
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 595
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_20
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 595
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_21
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 595
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_22
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 595
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_23
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 595
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 476
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_25
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 476
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_26
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 476
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_27
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 476
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_28
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 476
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_29
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 476
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_30
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 476
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_31
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 476
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 357
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_33
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 357
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_34
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 357
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_35
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 357
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_36
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 357
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_37
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 357
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_38
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 357
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_39
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 357
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 238
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_41
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 238
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_42
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 238
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_43
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 238
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_44
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 238
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_45
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 238
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_46
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 238
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_47
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 238
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 119
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_49
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 119
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_50
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 119
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_51
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 119
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_52
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 119
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_53
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 119
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_54
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 119
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_55
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 119
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_57
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 0
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_58
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 0
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_59
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 0
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_60
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 0
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_61
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 0
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_62
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 0
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutral_63
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 0
+        width: 79
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

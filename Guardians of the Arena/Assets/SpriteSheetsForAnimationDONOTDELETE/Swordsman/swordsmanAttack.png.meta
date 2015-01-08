@@ -1,7 +1,247 @@
 fileFormatVersion: 2
 guid: 9710f8bcf9f98419cb038306d1d7e413
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: swordsmanAttack_0
+    21300002: swordsmanAttack_1
+    21300004: swordsmanAttack_2
+    21300006: swordsmanAttack_3
+    21300008: swordsmanAttack_4
+    21300010: swordsmanAttack_5
+    21300012: swordsmanAttack_6
+    21300014: swordsmanAttack_7
+    21300016: swordsmanAttack_8
+    21300018: swordsmanAttack_9
+    21300020: swordsmanAttack_10
+    21300022: swordsmanAttack_11
+    21300024: swordsmanAttack_12
+    21300026: swordsmanAttack_13
+    21300028: swordsmanAttack_14
+    21300030: swordsmanAttack_15
+    21300032: swordsmanAttack_16
+    21300034: swordsmanAttack_17
+    21300036: swordsmanAttack_18
+    21300038: swordsmanAttack_19
+    21300040: swordsmanAttack_20
+    21300042: swordsmanAttack_21
+    21300044: swordsmanAttack_22
+    21300046: swordsmanAttack_23
+    21300048: swordsmanAttack_24
+    21300050: swordsmanAttack_25
+    21300052: swordsmanAttack_26
+    21300054: swordsmanAttack_27
+    21300056: swordsmanAttack_28
+    21300058: swordsmanAttack_29
+    21300060: swordsmanAttack_30
+    21300062: swordsmanAttack_31
+    21300064: swordsmanAttack_32
+    21300066: swordsmanAttack_33
+    21300068: swordsmanAttack_34
+    21300070: swordsmanAttack_35
+    21300072: swordsmanAttack_36
+    21300074: swordsmanAttack_37
+    21300076: swordsmanAttack_38
+    21300078: swordsmanAttack_39
+    21300080: swordsmanAttack_40
+    21300082: swordsmanAttack_41
+    21300084: swordsmanAttack_42
+    21300086: swordsmanAttack_43
+    21300088: swordsmanAttack_44
+    21300090: swordsmanAttack_45
+    21300092: swordsmanAttack_46
+    21300094: swordsmanAttack_47
+    21300096: swordsmanAttack_48
+    21300098: swordsmanAttack_49
+    21300100: swordsmanAttack_50
+    21300102: swordsmanAttack_51
+    21300104: swordsmanAttack_52
+    21300106: swordsmanAttack_53
+    21300108: swordsmanAttack_54
+    21300110: swordsmanAttack_55
+    21300112: swordsmanAttack_56
+    21300114: swordsmanAttack_57
+    21300116: swordsmanAttack_58
+    21300118: swordsmanAttack_59
+    21300120: swordsmanAttack_60
+    21300122: swordsmanAttack_61
+    21300124: swordsmanAttack_62
+    21300126: swordsmanAttack_63
+    21300128: swordsmanAttack_64
+    21300130: swordsmanAttack_65
+    21300132: swordsmanAttack_66
+    21300134: swordsmanAttack_67
+    21300136: swordsmanAttack_68
+    21300138: swordsmanAttack_69
+    21300140: swordsmanAttack_70
+    21300142: swordsmanAttack_71
+    21300144: swordsmanAttack_72
+    21300146: swordsmanAttack_73
+    21300148: swordsmanAttack_74
+    21300150: swordsmanAttack_75
+    21300152: swordsmanAttack_76
+    21300154: swordsmanAttack_77
+    21300156: swordsmanAttack_78
+    21300158: swordsmanAttack_79
+    21300160: swordsmanAttack_80
+    21300162: swordsmanAttack_81
+    21300164: swordsmanAttack_82
+    21300166: swordsmanAttack_83
+    21300168: swordsmanAttack_84
+    21300170: swordsmanAttack_85
+    21300172: swordsmanAttack_86
+    21300174: swordsmanAttack_87
+    21300176: swordsmanAttack_88
+    21300178: swordsmanAttack_89
+    21300180: swordsmanAttack_90
+    21300182: swordsmanAttack_91
+    21300184: swordsmanAttack_92
+    21300186: swordsmanAttack_93
+    21300188: swordsmanAttack_94
+    21300190: swordsmanAttack_95
+    21300192: swordsmanAttack_96
+    21300194: swordsmanAttack_97
+    21300196: swordsmanAttack_98
+    21300198: swordsmanAttack_99
+    21300200: swordsmanAttack_100
+    21300202: swordsmanAttack_101
+    21300204: swordsmanAttack_102
+    21300206: swordsmanAttack_103
+    21300208: swordsmanAttack_104
+    21300210: swordsmanAttack_105
+    21300212: swordsmanAttack_106
+    21300214: swordsmanAttack_107
+    21300216: swordsmanAttack_108
+    21300218: swordsmanAttack_109
+    21300220: swordsmanAttack_110
+    21300222: swordsmanAttack_111
+    21300224: swordsmanAttack_112
+    21300226: swordsmanAttack_113
+    21300228: swordsmanAttack_114
+    21300230: swordsmanAttack_115
+    21300232: swordsmanAttack_116
+    21300234: swordsmanAttack_117
+    21300236: swordsmanAttack_118
+    21300238: swordsmanAttack_119
+    21300240: swordsmanAttack_120
+    21300242: swordsmanAttack_121
+    21300244: swordsmanAttack_122
+    21300246: swordsmanAttack_123
+    21300248: swordsmanAttack_124
+    21300250: swordsmanAttack_125
+    21300252: swordsmanAttack_126
+    21300254: swordsmanAttack_127
+    21300256: swordsmanAttack_128
+    21300258: swordsmanAttack_129
+    21300260: swordsmanAttack_130
+    21300262: swordsmanAttack_131
+    21300264: swordsmanAttack_132
+    21300266: swordsmanAttack_133
+    21300268: swordsmanAttack_134
+    21300270: swordsmanAttack_135
+    21300272: swordsmanAttack_136
+    21300274: swordsmanAttack_137
+    21300276: swordsmanAttack_138
+    21300278: swordsmanAttack_139
+    21300280: swordsmanAttack_140
+    21300282: swordsmanAttack_141
+    21300284: swordsmanAttack_142
+    21300286: swordsmanAttack_143
+    21300288: swordsmanAttack_144
+    21300290: swordsmanAttack_145
+    21300292: swordsmanAttack_146
+    21300294: swordsmanAttack_147
+    21300296: swordsmanAttack_148
+    21300298: swordsmanAttack_149
+    21300300: swordsmanAttack_150
+    21300302: swordsmanAttack_151
+    21300304: swordsmanAttack_152
+    21300306: swordsmanAttack_153
+    21300308: swordsmanAttack_154
+    21300310: swordsmanAttack_155
+    21300312: swordsmanAttack_156
+    21300314: swordsmanAttack_157
+    21300316: swordsmanAttack_158
+    21300318: swordsmanAttack_159
+    21300320: swordsmanAttack_160
+    21300322: swordsmanAttack_161
+    21300324: swordsmanAttack_162
+    21300326: swordsmanAttack_163
+    21300328: swordsmanAttack_164
+    21300330: swordsmanAttack_165
+    21300332: swordsmanAttack_166
+    21300334: swordsmanAttack_167
+    21300336: swordsmanAttack_168
+    21300338: swordsmanAttack_169
+    21300340: swordsmanAttack_170
+    21300342: swordsmanAttack_171
+    21300344: swordsmanAttack_172
+    21300346: swordsmanAttack_173
+    21300348: swordsmanAttack_174
+    21300350: swordsmanAttack_175
+    21300352: swordsmanAttack_176
+    21300354: swordsmanAttack_177
+    21300356: swordsmanAttack_178
+    21300358: swordsmanAttack_179
+    21300360: swordsmanAttack_180
+    21300362: swordsmanAttack_181
+    21300364: swordsmanAttack_182
+    21300366: swordsmanAttack_183
+    21300368: swordsmanAttack_184
+    21300370: swordsmanAttack_185
+    21300372: swordsmanAttack_186
+    21300374: swordsmanAttack_187
+    21300376: swordsmanAttack_188
+    21300378: swordsmanAttack_189
+    21300380: swordsmanAttack_190
+    21300382: swordsmanAttack_191
+    21300384: swordsmanAttack_192
+    21300386: swordsmanAttack_193
+    21300388: swordsmanAttack_194
+    21300390: swordsmanAttack_195
+    21300392: swordsmanAttack_196
+    21300394: swordsmanAttack_197
+    21300396: swordsmanAttack_198
+    21300398: swordsmanAttack_199
+    21300400: swordsmanAttack_200
+    21300402: swordsmanAttack_201
+    21300404: swordsmanAttack_202
+    21300406: swordsmanAttack_203
+    21300408: swordsmanAttack_204
+    21300410: swordsmanAttack_205
+    21300412: swordsmanAttack_206
+    21300414: swordsmanAttack_207
+    21300416: swordsmanAttack_208
+    21300418: swordsmanAttack_209
+    21300420: swordsmanAttack_210
+    21300422: swordsmanAttack_211
+    21300424: swordsmanAttack_212
+    21300426: swordsmanAttack_213
+    21300428: swordsmanAttack_214
+    21300430: swordsmanAttack_215
+    21300432: swordsmanAttack_216
+    21300434: swordsmanAttack_217
+    21300436: swordsmanAttack_218
+    21300438: swordsmanAttack_219
+    21300440: swordsmanAttack_220
+    21300442: swordsmanAttack_221
+    21300444: swordsmanAttack_222
+    21300446: swordsmanAttack_223
+    21300448: swordsmanAttack_224
+    21300450: swordsmanAttack_225
+    21300452: swordsmanAttack_226
+    21300454: swordsmanAttack_227
+    21300456: swordsmanAttack_228
+    21300458: swordsmanAttack_229
+    21300460: swordsmanAttack_230
+    21300462: swordsmanAttack_231
+    21300464: swordsmanAttack_232
+    21300466: swordsmanAttack_233
+    21300468: swordsmanAttack_234
+    21300470: swordsmanAttack_235
+    21300472: swordsmanAttack_236
+    21300474: swordsmanAttack_237
+    21300476: swordsmanAttack_238
+    21300478: swordsmanAttack_239
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +282,2406 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: swordsmanAttack_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2025
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_1
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 2025
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_2
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 2025
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_3
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 2025
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_4
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 2025
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_5
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 2025
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_6
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 2025
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_7
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 2025
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_8
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 2025
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_9
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 2025
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_10
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 2025
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_11
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 2025
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_12
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 2025
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_13
+      rect:
+        serializedVersion: 2
+        x: 2340
+        y: 2025
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_14
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 2025
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1890
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_16
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 1890
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_17
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 1890
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_18
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 1890
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_19
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 1890
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_20
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 1890
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_21
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 1890
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_22
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 1890
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_23
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 1890
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_24
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 1890
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_25
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1890
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_26
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 1890
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_27
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 1890
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_28
+      rect:
+        serializedVersion: 2
+        x: 2340
+        y: 1890
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_29
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 1890
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1755
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_31
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 1755
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_32
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 1755
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_33
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 1755
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_34
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 1755
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_35
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 1755
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_36
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 1755
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_37
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 1755
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_38
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 1755
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_39
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 1755
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_40
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1755
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_41
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 1755
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_42
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 1755
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_43
+      rect:
+        serializedVersion: 2
+        x: 2340
+        y: 1755
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_44
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 1755
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1620
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_46
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 1620
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_47
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 1620
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_48
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 1620
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_49
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 1620
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_50
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 1620
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_51
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 1620
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_52
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 1620
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_53
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 1620
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_54
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 1620
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_55
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1620
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_56
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 1620
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_57
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 1620
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_58
+      rect:
+        serializedVersion: 2
+        x: 2340
+        y: 1620
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_59
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 1620
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1485
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_61
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 1485
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_62
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 1485
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_63
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 1485
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_64
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 1485
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_65
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 1485
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_66
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 1485
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_67
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 1485
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_68
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 1485
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_69
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 1485
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_70
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1485
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_71
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 1485
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_72
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 1485
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_73
+      rect:
+        serializedVersion: 2
+        x: 2340
+        y: 1485
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_74
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 1485
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_75
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1350
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_76
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 1350
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_77
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 1350
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_78
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 1350
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_79
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 1350
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_80
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 1350
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_81
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 1350
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_82
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 1350
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_83
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 1350
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_84
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 1350
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_85
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1350
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_86
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 1350
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_87
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 1350
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_88
+      rect:
+        serializedVersion: 2
+        x: 2340
+        y: 1350
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_89
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 1350
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_90
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1215
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_91
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 1215
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_92
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 1215
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_93
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 1215
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_94
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 1215
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_95
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 1215
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_96
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 1215
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_97
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 1215
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_98
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 1215
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_99
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 1215
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_100
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1215
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_101
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 1215
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_102
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 1215
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_103
+      rect:
+        serializedVersion: 2
+        x: 2340
+        y: 1215
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_104
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 1215
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_105
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1080
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_106
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 1080
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_107
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 1080
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_108
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 1080
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_109
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 1080
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_110
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 1080
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_111
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 1080
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_112
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 1080
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_113
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 1080
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_114
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 1080
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_115
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1080
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_116
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 1080
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_117
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 1080
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_118
+      rect:
+        serializedVersion: 2
+        x: 2340
+        y: 1080
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_119
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 1080
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_120
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 945
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_121
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 945
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_122
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 945
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_123
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 945
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_124
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 945
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_125
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 945
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_126
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 945
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_127
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 945
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_128
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 945
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_129
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 945
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_130
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 945
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_131
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 945
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_132
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 945
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_133
+      rect:
+        serializedVersion: 2
+        x: 2340
+        y: 945
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_134
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 945
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_135
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 810
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_136
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 810
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_137
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 810
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_138
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 810
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_139
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 810
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_140
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 810
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_141
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 810
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_142
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 810
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_143
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 810
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_144
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 810
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_145
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 810
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_146
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 810
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_147
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 810
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_148
+      rect:
+        serializedVersion: 2
+        x: 2340
+        y: 810
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_149
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 810
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_150
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 675
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_151
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 675
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_152
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 675
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_153
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 675
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_154
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 675
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_155
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 675
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_156
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 675
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_157
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 675
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_158
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 675
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_159
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 675
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_160
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 675
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_161
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 675
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_162
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 675
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_163
+      rect:
+        serializedVersion: 2
+        x: 2340
+        y: 675
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_164
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 675
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_165
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 540
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_166
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 540
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_167
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 540
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_168
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 540
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_169
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 540
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_170
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 540
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_171
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 540
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_172
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 540
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_173
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 540
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_174
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 540
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_175
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 540
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_176
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 540
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_177
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 540
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_178
+      rect:
+        serializedVersion: 2
+        x: 2340
+        y: 540
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_179
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 540
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_180
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 405
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_181
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 405
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_182
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 405
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_183
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 405
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_184
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 405
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_185
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 405
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_186
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 405
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_187
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 405
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_188
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 405
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_189
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 405
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_190
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 405
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_191
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 405
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_192
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 405
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_193
+      rect:
+        serializedVersion: 2
+        x: 2340
+        y: 405
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_194
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 405
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_195
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 270
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_196
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 270
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_197
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 270
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_198
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 270
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_199
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 270
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_200
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 270
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_201
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 270
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_202
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 270
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_203
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 270
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_204
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 270
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_205
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 270
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_206
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 270
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_207
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 270
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_208
+      rect:
+        serializedVersion: 2
+        x: 2340
+        y: 270
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_209
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 270
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_210
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 135
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_211
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 135
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_212
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 135
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_213
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 135
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_214
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 135
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_215
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 135
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_216
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 135
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_217
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 135
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_218
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 135
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_219
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 135
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_220
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 135
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_221
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 135
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_222
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 135
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_223
+      rect:
+        serializedVersion: 2
+        x: 2340
+        y: 135
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_224
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 135
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_225
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_226
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 0
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_227
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 0
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_228
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 0
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_229
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_230
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 0
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_231
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 0
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_232
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 0
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_233
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 0
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_234
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 0
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_235
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 0
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_236
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 0
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_237
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 0
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_238
+      rect:
+        serializedVersion: 2
+        x: 2340
+        y: 0
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttack_239
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 0
+        width: 180
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

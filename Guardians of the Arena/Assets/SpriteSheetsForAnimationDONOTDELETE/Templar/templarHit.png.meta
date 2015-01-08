@@ -1,7 +1,87 @@
 fileFormatVersion: 2
 guid: e52a7b0ed3a16478293ff0b28ef3c5e5
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: templarHit_0
+    21300002: templarHit_1
+    21300004: templarHit_2
+    21300006: templarHit_3
+    21300008: templarHit_4
+    21300010: templarHit_5
+    21300012: templarHit_6
+    21300014: templarHit_7
+    21300016: templarHit_8
+    21300018: templarHit_9
+    21300020: templarHit_10
+    21300022: templarHit_11
+    21300024: templarHit_12
+    21300026: templarHit_13
+    21300028: templarHit_14
+    21300030: templarHit_15
+    21300032: templarHit_16
+    21300034: templarHit_17
+    21300036: templarHit_18
+    21300038: templarHit_19
+    21300040: templarHit_20
+    21300042: templarHit_21
+    21300044: templarHit_22
+    21300046: templarHit_23
+    21300048: templarHit_24
+    21300050: templarHit_25
+    21300052: templarHit_26
+    21300054: templarHit_27
+    21300056: templarHit_28
+    21300058: templarHit_29
+    21300060: templarHit_30
+    21300062: templarHit_31
+    21300064: templarHit_32
+    21300066: templarHit_33
+    21300068: templarHit_34
+    21300070: templarHit_35
+    21300072: templarHit_36
+    21300074: templarHit_37
+    21300076: templarHit_38
+    21300078: templarHit_39
+    21300080: templarHit_40
+    21300082: templarHit_41
+    21300084: templarHit_42
+    21300086: templarHit_43
+    21300088: templarHit_44
+    21300090: templarHit_45
+    21300092: templarHit_46
+    21300094: templarHit_47
+    21300096: templarHit_48
+    21300098: templarHit_49
+    21300100: templarHit_50
+    21300102: templarHit_51
+    21300104: templarHit_52
+    21300106: templarHit_53
+    21300108: templarHit_54
+    21300110: templarHit_55
+    21300112: templarHit_56
+    21300114: templarHit_57
+    21300116: templarHit_58
+    21300118: templarHit_59
+    21300120: templarHit_60
+    21300122: templarHit_61
+    21300124: templarHit_62
+    21300126: templarHit_63
+    21300128: templarHit_64
+    21300130: templarHit_65
+    21300132: templarHit_66
+    21300134: templarHit_67
+    21300136: templarHit_68
+    21300138: templarHit_69
+    21300140: templarHit_70
+    21300142: templarHit_71
+    21300144: templarHit_72
+    21300146: templarHit_73
+    21300148: templarHit_74
+    21300150: templarHit_75
+    21300152: templarHit_76
+    21300154: templarHit_77
+    21300156: templarHit_78
+    21300158: templarHit_79
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +122,806 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: templarHit_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1575
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_1
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 1575
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_2
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 1575
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_3
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 1575
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_4
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 1575
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1470
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_6
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 1470
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_7
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 1470
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_8
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 1470
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_9
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 1470
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1365
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_11
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 1365
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_12
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 1365
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_13
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 1365
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_14
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 1365
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1260
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_16
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 1260
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_17
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 1260
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_18
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 1260
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_19
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 1260
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1155
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_21
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 1155
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_22
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 1155
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_23
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 1155
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_24
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 1155
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1050
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_26
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 1050
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_27
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 1050
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_28
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 1050
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_29
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 1050
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 945
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_31
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 945
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_32
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 945
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_33
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 945
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_34
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 945
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 840
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_36
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 840
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_37
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 840
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_38
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 840
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_39
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 840
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 735
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_41
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 735
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_42
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 735
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_43
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 735
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_44
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 735
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 630
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_46
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 630
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_47
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 630
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_48
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 630
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_49
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 630
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 525
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_51
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 525
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_52
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 525
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_53
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 525
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_54
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 525
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_55
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 420
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_56
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 420
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_57
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 420
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_58
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 420
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_59
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 420
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 315
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_61
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 315
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_62
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 315
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_63
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 315
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_64
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 315
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_65
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 210
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_66
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 210
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_67
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 210
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_68
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 210
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_69
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 210
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_70
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 105
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_71
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 105
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_72
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 105
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_73
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 105
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_74
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 105
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_75
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_76
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 0
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_77
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 0
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_78
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 0
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHit_79
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 0
+        width: 131
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

@@ -1,7 +1,167 @@
 fileFormatVersion: 2
 guid: 5e7c44bd4c0b3438eac40dfa38974ec3
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: swordsmanWalk_0
+    21300002: swordsmanWalk_1
+    21300004: swordsmanWalk_2
+    21300006: swordsmanWalk_3
+    21300008: swordsmanWalk_4
+    21300010: swordsmanWalk_5
+    21300012: swordsmanWalk_6
+    21300014: swordsmanWalk_7
+    21300016: swordsmanWalk_8
+    21300018: swordsmanWalk_9
+    21300020: swordsmanWalk_10
+    21300022: swordsmanWalk_11
+    21300024: swordsmanWalk_12
+    21300026: swordsmanWalk_13
+    21300028: swordsmanWalk_14
+    21300030: swordsmanWalk_15
+    21300032: swordsmanWalk_16
+    21300034: swordsmanWalk_17
+    21300036: swordsmanWalk_18
+    21300038: swordsmanWalk_19
+    21300040: swordsmanWalk_20
+    21300042: swordsmanWalk_21
+    21300044: swordsmanWalk_22
+    21300046: swordsmanWalk_23
+    21300048: swordsmanWalk_24
+    21300050: swordsmanWalk_25
+    21300052: swordsmanWalk_26
+    21300054: swordsmanWalk_27
+    21300056: swordsmanWalk_28
+    21300058: swordsmanWalk_29
+    21300060: swordsmanWalk_30
+    21300062: swordsmanWalk_31
+    21300064: swordsmanWalk_32
+    21300066: swordsmanWalk_33
+    21300068: swordsmanWalk_34
+    21300070: swordsmanWalk_35
+    21300072: swordsmanWalk_36
+    21300074: swordsmanWalk_37
+    21300076: swordsmanWalk_38
+    21300078: swordsmanWalk_39
+    21300080: swordsmanWalk_40
+    21300082: swordsmanWalk_41
+    21300084: swordsmanWalk_42
+    21300086: swordsmanWalk_43
+    21300088: swordsmanWalk_44
+    21300090: swordsmanWalk_45
+    21300092: swordsmanWalk_46
+    21300094: swordsmanWalk_47
+    21300096: swordsmanWalk_48
+    21300098: swordsmanWalk_49
+    21300100: swordsmanWalk_50
+    21300102: swordsmanWalk_51
+    21300104: swordsmanWalk_52
+    21300106: swordsmanWalk_53
+    21300108: swordsmanWalk_54
+    21300110: swordsmanWalk_55
+    21300112: swordsmanWalk_56
+    21300114: swordsmanWalk_57
+    21300116: swordsmanWalk_58
+    21300118: swordsmanWalk_59
+    21300120: swordsmanWalk_60
+    21300122: swordsmanWalk_61
+    21300124: swordsmanWalk_62
+    21300126: swordsmanWalk_63
+    21300128: swordsmanWalk_64
+    21300130: swordsmanWalk_65
+    21300132: swordsmanWalk_66
+    21300134: swordsmanWalk_67
+    21300136: swordsmanWalk_68
+    21300138: swordsmanWalk_69
+    21300140: swordsmanWalk_70
+    21300142: swordsmanWalk_71
+    21300144: swordsmanWalk_72
+    21300146: swordsmanWalk_73
+    21300148: swordsmanWalk_74
+    21300150: swordsmanWalk_75
+    21300152: swordsmanWalk_76
+    21300154: swordsmanWalk_77
+    21300156: swordsmanWalk_78
+    21300158: swordsmanWalk_79
+    21300160: swordsmanWalk_80
+    21300162: swordsmanWalk_81
+    21300164: swordsmanWalk_82
+    21300166: swordsmanWalk_83
+    21300168: swordsmanWalk_84
+    21300170: swordsmanWalk_85
+    21300172: swordsmanWalk_86
+    21300174: swordsmanWalk_87
+    21300176: swordsmanWalk_88
+    21300178: swordsmanWalk_89
+    21300180: swordsmanWalk_90
+    21300182: swordsmanWalk_91
+    21300184: swordsmanWalk_92
+    21300186: swordsmanWalk_93
+    21300188: swordsmanWalk_94
+    21300190: swordsmanWalk_95
+    21300192: swordsmanWalk_96
+    21300194: swordsmanWalk_97
+    21300196: swordsmanWalk_98
+    21300198: swordsmanWalk_99
+    21300200: swordsmanWalk_100
+    21300202: swordsmanWalk_101
+    21300204: swordsmanWalk_102
+    21300206: swordsmanWalk_103
+    21300208: swordsmanWalk_104
+    21300210: swordsmanWalk_105
+    21300212: swordsmanWalk_106
+    21300214: swordsmanWalk_107
+    21300216: swordsmanWalk_108
+    21300218: swordsmanWalk_109
+    21300220: swordsmanWalk_110
+    21300222: swordsmanWalk_111
+    21300224: swordsmanWalk_112
+    21300226: swordsmanWalk_113
+    21300228: swordsmanWalk_114
+    21300230: swordsmanWalk_115
+    21300232: swordsmanWalk_116
+    21300234: swordsmanWalk_117
+    21300236: swordsmanWalk_118
+    21300238: swordsmanWalk_119
+    21300240: swordsmanWalk_120
+    21300242: swordsmanWalk_121
+    21300244: swordsmanWalk_122
+    21300246: swordsmanWalk_123
+    21300248: swordsmanWalk_124
+    21300250: swordsmanWalk_125
+    21300252: swordsmanWalk_126
+    21300254: swordsmanWalk_127
+    21300256: swordsmanWalk_128
+    21300258: swordsmanWalk_129
+    21300260: swordsmanWalk_130
+    21300262: swordsmanWalk_131
+    21300264: swordsmanWalk_132
+    21300266: swordsmanWalk_133
+    21300268: swordsmanWalk_134
+    21300270: swordsmanWalk_135
+    21300272: swordsmanWalk_136
+    21300274: swordsmanWalk_137
+    21300276: swordsmanWalk_138
+    21300278: swordsmanWalk_139
+    21300280: swordsmanWalk_140
+    21300282: swordsmanWalk_141
+    21300284: swordsmanWalk_142
+    21300286: swordsmanWalk_143
+    21300288: swordsmanWalk_144
+    21300290: swordsmanWalk_145
+    21300292: swordsmanWalk_146
+    21300294: swordsmanWalk_147
+    21300296: swordsmanWalk_148
+    21300298: swordsmanWalk_149
+    21300300: swordsmanWalk_150
+    21300302: swordsmanWalk_151
+    21300304: swordsmanWalk_152
+    21300306: swordsmanWalk_153
+    21300308: swordsmanWalk_154
+    21300310: swordsmanWalk_155
+    21300312: swordsmanWalk_156
+    21300314: swordsmanWalk_157
+    21300316: swordsmanWalk_158
+    21300318: swordsmanWalk_159
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +202,1606 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: swordsmanWalk_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1500
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_1
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 1500
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_2
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 1500
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_3
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 1500
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_4
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 1500
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_5
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 1500
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_6
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 1500
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_7
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 1500
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_8
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 1500
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_9
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 1500
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1400
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_11
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 1400
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_12
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 1400
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_13
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 1400
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_14
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 1400
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_15
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 1400
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_16
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 1400
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_17
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 1400
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_18
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 1400
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_19
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 1400
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1300
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_21
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 1300
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_22
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 1300
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_23
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 1300
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_24
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 1300
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_25
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 1300
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_26
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 1300
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_27
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 1300
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_28
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 1300
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_29
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 1300
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1200
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_31
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 1200
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_32
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 1200
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_33
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 1200
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_34
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 1200
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_35
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 1200
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_36
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 1200
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_37
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 1200
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_38
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 1200
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_39
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 1200
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1100
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_41
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 1100
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_42
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 1100
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_43
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 1100
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_44
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 1100
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_45
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 1100
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_46
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 1100
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_47
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 1100
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_48
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 1100
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_49
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 1100
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1000
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_51
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 1000
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_52
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 1000
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_53
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 1000
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_54
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 1000
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_55
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 1000
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_56
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 1000
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_57
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 1000
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_58
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 1000
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_59
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 1000
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 900
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_61
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 900
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_62
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 900
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_63
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 900
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_64
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 900
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_65
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 900
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_66
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 900
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_67
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 900
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_68
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 900
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_69
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 900
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_70
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 800
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_71
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 800
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_72
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 800
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_73
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 800
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_74
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 800
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_75
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 800
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_76
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 800
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_77
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 800
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_78
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 800
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_79
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 800
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_80
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 700
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_81
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 700
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_82
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 700
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_83
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 700
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_84
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 700
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_85
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 700
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_86
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 700
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_87
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 700
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_88
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 700
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_89
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 700
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_90
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 600
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_91
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 600
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_92
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 600
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_93
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 600
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_94
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 600
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_95
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 600
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_96
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 600
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_97
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 600
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_98
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 600
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_99
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 600
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_100
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 500
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_101
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 500
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_102
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 500
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_103
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 500
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_104
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 500
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_105
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 500
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_106
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 500
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_107
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 500
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_108
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 500
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_109
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 500
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_110
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 400
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_111
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 400
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_112
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 400
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_113
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 400
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_114
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 400
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_115
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 400
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_116
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 400
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_117
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 400
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_118
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 400
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_119
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 400
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_120
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 300
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_121
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 300
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_122
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 300
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_123
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 300
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_124
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 300
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_125
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 300
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_126
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 300
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_127
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 300
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_128
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 300
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_129
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 300
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_130
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 200
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_131
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 200
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_132
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 200
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_133
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 200
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_134
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 200
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_135
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 200
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_136
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 200
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_137
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 200
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_138
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 200
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_139
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 200
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_140
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 100
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_141
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 100
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_142
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 100
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_143
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 100
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_144
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 100
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_145
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 100
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_146
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 100
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_147
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 100
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_148
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 100
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_149
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 100
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_150
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_151
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 0
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_152
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 0
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_153
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 0
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_154
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 0
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_155
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 0
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_156
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 0
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_157
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 0
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_158
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 0
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalk_159
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 0
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
