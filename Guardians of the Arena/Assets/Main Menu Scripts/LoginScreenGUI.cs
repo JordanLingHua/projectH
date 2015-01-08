@@ -116,11 +116,12 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 	
 	void DoMyWindow0 (int windowID) 
 	{
+		AddSpikes(windowRect0.width);
 		FancyTop(windowRect0.width);
 		
 		// use the spike function to add the spikes
 		// note: were passing the width of the window to the function
-		AddSpikes(windowRect0.width);
+
 		
 		GUILayout.BeginVertical();
 		GUILayout.Space(8);
