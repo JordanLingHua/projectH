@@ -1,7 +1,19 @@
 fileFormatVersion: 2
 guid: 6fc01c4c75cc94613a5464168f9bee4a
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: mysticSpecialCastRight_0
+    21300002: mysticSpecialCastRight_1
+    21300004: mysticSpecialCastRight_2
+    21300006: mysticSpecialCastRight_3
+    21300008: mysticSpecialCastRight_4
+    21300010: mysticSpecialCastRight_5
+    21300012: mysticSpecialCastRight_6
+    21300014: mysticSpecialCastRight_7
+    21300016: mysticSpecialCastRight_8
+    21300018: mysticSpecialCastRight_9
+    21300020: mysticSpecialCastRight_10
+    21300022: mysticSpecialCastRight_11
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +54,126 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: mysticSpecialCastRight_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3
+        width: 122
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCastRight_1
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 3
+        width: 122
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCastRight_2
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 3
+        width: 122
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCastRight_3
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 3
+        width: 122
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCastRight_4
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 3
+        width: 122
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCastRight_5
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 3
+        width: 122
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCastRight_6
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 3
+        width: 122
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCastRight_7
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 3
+        width: 122
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCastRight_8
+      rect:
+        serializedVersion: 2
+        x: 976
+        y: 3
+        width: 122
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCastRight_9
+      rect:
+        serializedVersion: 2
+        x: 1098
+        y: 3
+        width: 122
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCastRight_10
+      rect:
+        serializedVersion: 2
+        x: 1220
+        y: 3
+        width: 122
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCastRight_11
+      rect:
+        serializedVersion: 2
+        x: 1342
+        y: 3
+        width: 122
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

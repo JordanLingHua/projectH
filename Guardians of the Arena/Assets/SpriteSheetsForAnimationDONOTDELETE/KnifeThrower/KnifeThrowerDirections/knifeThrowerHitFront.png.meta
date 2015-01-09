@@ -1,7 +1,13 @@
 fileFormatVersion: 2
 guid: 1542c3f7e3a61443688bf57f5aba86d0
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: knifeThrowerHitFront_0
+    21300002: knifeThrowerHitFront_1
+    21300004: knifeThrowerHitFront_2
+    21300006: knifeThrowerHitFront_3
+    21300008: knifeThrowerHitFront_4
+    21300010: knifeThrowerHitFront_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +48,66 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: knifeThrowerHitFront_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 0
+        width: 76
+        height: 103
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerHitFront_1
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 0
+        width: 76
+        height: 103
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerHitFront_2
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 0
+        width: 76
+        height: 103
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerHitFront_3
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 0
+        width: 76
+        height: 103
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerHitFront_4
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 0
+        width: 76
+        height: 103
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerHitFront_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 456
+        height: 103
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

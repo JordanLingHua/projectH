@@ -1,7 +1,22 @@
 fileFormatVersion: 2
 guid: 4d64cdd4a9c9446058efaf45d4557ee2
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: swordsmanAttackFront_0
+    21300002: swordsmanAttackFront_1
+    21300004: swordsmanAttackFront_2
+    21300006: swordsmanAttackFront_3
+    21300008: swordsmanAttackFront_4
+    21300010: swordsmanAttackFront_5
+    21300012: swordsmanAttackFront_6
+    21300014: swordsmanAttackFront_7
+    21300016: swordsmanAttackFront_8
+    21300018: swordsmanAttackFront_9
+    21300020: swordsmanAttackFront_10
+    21300022: swordsmanAttackFront_11
+    21300024: swordsmanAttackFront_12
+    21300026: swordsmanAttackFront_13
+    21300028: swordsmanAttackFront_14
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +57,156 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: swordsmanAttackFront_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2
+        width: 180
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttackFront_1
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 2
+        width: 180
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttackFront_2
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 2
+        width: 180
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttackFront_3
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 2
+        width: 180
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttackFront_4
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 2
+        width: 180
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttackFront_5
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 2
+        width: 180
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttackFront_6
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 2
+        width: 180
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttackFront_7
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 2
+        width: 180
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttackFront_8
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 2
+        width: 180
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttackFront_9
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 2
+        width: 180
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttackFront_10
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 2
+        width: 180
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttackFront_11
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 2
+        width: 180
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttackFront_12
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 2
+        width: 180
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttackFront_13
+      rect:
+        serializedVersion: 2
+        x: 2340
+        y: 2
+        width: 180
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttackFront_14
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 2
+        width: 180
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

@@ -1,7 +1,25 @@
 fileFormatVersion: 2
 guid: 1def30a288bae4c9ba6c7b0a406c8e4d
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: priestWalkRight_0
+    21300002: priestWalkRight_1
+    21300004: priestWalkRight_2
+    21300006: priestWalkRight_3
+    21300008: priestWalkRight_4
+    21300010: priestWalkRight_5
+    21300012: priestWalkRight_6
+    21300014: priestWalkRight_7
+    21300016: priestWalkRight_8
+    21300018: priestWalkRight_9
+    21300020: priestWalkRight_10
+    21300022: priestWalkRight_11
+    21300024: priestWalkRight_12
+    21300026: priestWalkRight_13
+    21300028: priestWalkRight_14
+    21300030: priestWalkRight_15
+    21300032: priestWalkRight_16
+    21300034: priestWalkRight_17
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +60,186 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: priestWalkRight_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalkRight_1
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 0
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalkRight_2
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 0
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalkRight_3
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 0
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalkRight_4
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 0
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalkRight_5
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 0
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalkRight_6
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 0
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalkRight_7
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 0
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalkRight_8
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 0
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalkRight_9
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 0
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalkRight_10
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 0
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalkRight_11
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 0
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalkRight_12
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 0
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalkRight_13
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 0
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalkRight_14
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 0
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalkRight_15
+      rect:
+        serializedVersion: 2
+        x: 1470
+        y: 0
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalkRight_16
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 0
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalkRight_17
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 0
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

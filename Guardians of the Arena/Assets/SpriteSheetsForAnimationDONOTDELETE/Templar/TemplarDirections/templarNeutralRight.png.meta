@@ -1,7 +1,15 @@
 fileFormatVersion: 2
 guid: aea5f50d79e0549f2ab3353105b1aeb3
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: templarNeutralRight_0
+    21300002: templarNeutralRight_1
+    21300004: templarNeutralRight_2
+    21300006: templarNeutralRight_3
+    21300008: templarNeutralRight_4
+    21300010: templarNeutralRight_5
+    21300012: templarNeutralRight_6
+    21300014: templarNeutralRight_7
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +50,86 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: templarNeutralRight_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutralRight_1
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 1
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutralRight_2
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 1
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutralRight_3
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 1
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutralRight_4
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 1
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutralRight_5
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 1
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutralRight_6
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 1
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutralRight_7
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 1
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

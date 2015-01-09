@@ -1,7 +1,10 @@
 fileFormatVersion: 2
 guid: 13a29f9274f494afb85fafb2c96370c8
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: mysticHitFront_0
+    21300002: mysticHitFront_1
+    21300004: mysticHitFront_2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +45,36 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: mysticHitFront_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 13
+        width: 93
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticHitFront_1
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 13
+        width: 93
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticHitFront_2
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 13
+        width: 93
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

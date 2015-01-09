@@ -1,7 +1,15 @@
 fileFormatVersion: 2
 guid: 93aab35b959264793947350a84e62639
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: swordsmanNeutralBack_0
+    21300002: swordsmanNeutralBack_1
+    21300004: swordsmanNeutralBack_2
+    21300006: swordsmanNeutralBack_3
+    21300008: swordsmanNeutralBack_4
+    21300010: swordsmanNeutralBack_5
+    21300012: swordsmanNeutralBack_6
+    21300014: swordsmanNeutralBack_7
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +50,86 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: swordsmanNeutralBack_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 12
+        width: 80
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutralBack_1
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 12
+        width: 80
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutralBack_2
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 12
+        width: 80
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutralBack_3
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 12
+        width: 80
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutralBack_4
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 12
+        width: 80
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutralBack_5
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 12
+        width: 80
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutralBack_6
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 12
+        width: 80
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutralBack_7
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 12
+        width: 80
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

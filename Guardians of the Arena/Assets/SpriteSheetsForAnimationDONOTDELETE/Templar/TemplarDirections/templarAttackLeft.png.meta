@@ -1,7 +1,23 @@
 fileFormatVersion: 2
 guid: d472b6d4220444894998ae11ef9c4742
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: templarAttackLeft_0
+    21300002: templarAttackLeft_1
+    21300004: templarAttackLeft_2
+    21300006: templarAttackLeft_3
+    21300008: templarAttackLeft_4
+    21300010: templarAttackLeft_5
+    21300012: templarAttackLeft_6
+    21300014: templarAttackLeft_7
+    21300016: templarAttackLeft_8
+    21300018: templarAttackLeft_9
+    21300020: templarAttackLeft_10
+    21300022: templarAttackLeft_11
+    21300024: templarAttackLeft_12
+    21300026: templarAttackLeft_13
+    21300028: templarAttackLeft_14
+    21300030: templarAttackLeft_15
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +58,166 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: templarAttackLeft_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttackLeft_1
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 3
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttackLeft_2
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 3
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttackLeft_3
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 3
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttackLeft_4
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 3
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttackLeft_5
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 3
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttackLeft_6
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 3
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttackLeft_7
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 3
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttackLeft_8
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 3
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttackLeft_9
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 3
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttackLeft_10
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 3
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttackLeft_11
+      rect:
+        serializedVersion: 2
+        x: 2002
+        y: 3
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttackLeft_12
+      rect:
+        serializedVersion: 2
+        x: 2184
+        y: 3
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttackLeft_13
+      rect:
+        serializedVersion: 2
+        x: 2366
+        y: 3
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttackLeft_14
+      rect:
+        serializedVersion: 2
+        x: 2548
+        y: 3
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttackLeft_15
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 3
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

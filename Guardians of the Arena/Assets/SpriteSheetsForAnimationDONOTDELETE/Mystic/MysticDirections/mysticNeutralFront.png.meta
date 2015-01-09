@@ -1,7 +1,15 @@
 fileFormatVersion: 2
 guid: e421339f7fb114574bb49ea62212d5d8
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: mysticNeutralFront_0
+    21300002: mysticNeutralFront_1
+    21300004: mysticNeutralFront_2
+    21300006: mysticNeutralFront_3
+    21300008: mysticNeutralFront_4
+    21300010: mysticNeutralFront_5
+    21300012: mysticNeutralFront_6
+    21300014: mysticNeutralFront_7
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +50,86 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: mysticNeutralFront_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 14
+        width: 79
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutralFront_1
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 14
+        width: 79
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutralFront_2
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 14
+        width: 79
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutralFront_3
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 14
+        width: 79
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutralFront_4
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 14
+        width: 79
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutralFront_5
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 14
+        width: 79
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutralFront_6
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 14
+        width: 79
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticNeutralFront_7
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 14
+        width: 79
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
