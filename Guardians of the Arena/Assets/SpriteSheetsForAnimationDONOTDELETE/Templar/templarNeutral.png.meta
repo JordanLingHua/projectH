@@ -1,7 +1,135 @@
 fileFormatVersion: 2
 guid: fd8990c7f6f3c4d6bb2246f6b8330450
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: templarNeutral_0
+    21300002: templarNeutral_1
+    21300004: templarNeutral_2
+    21300006: templarNeutral_3
+    21300008: templarNeutral_4
+    21300010: templarNeutral_5
+    21300012: templarNeutral_6
+    21300014: templarNeutral_7
+    21300016: templarNeutral_8
+    21300018: templarNeutral_9
+    21300020: templarNeutral_10
+    21300022: templarNeutral_11
+    21300024: templarNeutral_12
+    21300026: templarNeutral_13
+    21300028: templarNeutral_14
+    21300030: templarNeutral_15
+    21300032: templarNeutral_16
+    21300034: templarNeutral_17
+    21300036: templarNeutral_18
+    21300038: templarNeutral_19
+    21300040: templarNeutral_20
+    21300042: templarNeutral_21
+    21300044: templarNeutral_22
+    21300046: templarNeutral_23
+    21300048: templarNeutral_24
+    21300050: templarNeutral_25
+    21300052: templarNeutral_26
+    21300054: templarNeutral_27
+    21300056: templarNeutral_28
+    21300058: templarNeutral_29
+    21300060: templarNeutral_30
+    21300062: templarNeutral_31
+    21300064: templarNeutral_32
+    21300066: templarNeutral_33
+    21300068: templarNeutral_34
+    21300070: templarNeutral_35
+    21300072: templarNeutral_36
+    21300074: templarNeutral_37
+    21300076: templarNeutral_38
+    21300078: templarNeutral_39
+    21300080: templarNeutral_40
+    21300082: templarNeutral_41
+    21300084: templarNeutral_42
+    21300086: templarNeutral_43
+    21300088: templarNeutral_44
+    21300090: templarNeutral_45
+    21300092: templarNeutral_46
+    21300094: templarNeutral_47
+    21300096: templarNeutral_48
+    21300098: templarNeutral_49
+    21300100: templarNeutral_50
+    21300102: templarNeutral_51
+    21300104: templarNeutral_52
+    21300106: templarNeutral_53
+    21300108: templarNeutral_54
+    21300110: templarNeutral_55
+    21300112: templarNeutral_56
+    21300114: templarNeutral_57
+    21300116: templarNeutral_58
+    21300118: templarNeutral_59
+    21300120: templarNeutral_60
+    21300122: templarNeutral_61
+    21300124: templarNeutral_62
+    21300126: templarNeutral_63
+    21300128: templarNeutral_64
+    21300130: templarNeutral_65
+    21300132: templarNeutral_66
+    21300134: templarNeutral_67
+    21300136: templarNeutral_68
+    21300138: templarNeutral_69
+    21300140: templarNeutral_70
+    21300142: templarNeutral_71
+    21300144: templarNeutral_72
+    21300146: templarNeutral_73
+    21300148: templarNeutral_74
+    21300150: templarNeutral_75
+    21300152: templarNeutral_76
+    21300154: templarNeutral_77
+    21300156: templarNeutral_78
+    21300158: templarNeutral_79
+    21300160: templarNeutral_80
+    21300162: templarNeutral_81
+    21300164: templarNeutral_82
+    21300166: templarNeutral_83
+    21300168: templarNeutral_84
+    21300170: templarNeutral_85
+    21300172: templarNeutral_86
+    21300174: templarNeutral_87
+    21300176: templarNeutral_88
+    21300178: templarNeutral_89
+    21300180: templarNeutral_90
+    21300182: templarNeutral_91
+    21300184: templarNeutral_92
+    21300186: templarNeutral_93
+    21300188: templarNeutral_94
+    21300190: templarNeutral_95
+    21300192: templarNeutral_96
+    21300194: templarNeutral_97
+    21300196: templarNeutral_98
+    21300198: templarNeutral_99
+    21300200: templarNeutral_100
+    21300202: templarNeutral_101
+    21300204: templarNeutral_102
+    21300206: templarNeutral_103
+    21300208: templarNeutral_104
+    21300210: templarNeutral_105
+    21300212: templarNeutral_106
+    21300214: templarNeutral_107
+    21300216: templarNeutral_108
+    21300218: templarNeutral_109
+    21300220: templarNeutral_110
+    21300222: templarNeutral_111
+    21300224: templarNeutral_112
+    21300226: templarNeutral_113
+    21300228: templarNeutral_114
+    21300230: templarNeutral_115
+    21300232: templarNeutral_116
+    21300234: templarNeutral_117
+    21300236: templarNeutral_118
+    21300238: templarNeutral_119
+    21300240: templarNeutral_120
+    21300242: templarNeutral_121
+    21300244: templarNeutral_122
+    21300246: templarNeutral_123
+    21300248: templarNeutral_124
+    21300250: templarNeutral_125
+    21300252: templarNeutral_126
+    21300254: templarNeutral_127
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +170,1286 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: templarNeutral_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1545
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_1
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 1545
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_2
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 1545
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_3
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 1545
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_4
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 1545
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_5
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 1545
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_6
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 1545
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_7
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 1545
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1442
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_9
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 1442
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_10
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 1442
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_11
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 1442
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_12
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 1442
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_13
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 1442
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_14
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 1442
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_15
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 1442
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1339
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_17
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 1339
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_18
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 1339
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_19
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 1339
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_20
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 1339
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_21
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 1339
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_22
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 1339
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_23
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 1339
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1236
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_25
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 1236
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_26
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 1236
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_27
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 1236
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_28
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 1236
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_29
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 1236
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_30
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 1236
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_31
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 1236
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1133
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_33
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 1133
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_34
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 1133
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_35
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 1133
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_36
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 1133
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_37
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 1133
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_38
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 1133
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_39
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 1133
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1030
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_41
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 1030
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_42
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 1030
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_43
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 1030
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_44
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 1030
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_45
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 1030
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_46
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 1030
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_47
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 1030
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 927
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_49
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 927
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_50
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 927
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_51
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 927
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_52
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 927
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_53
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 927
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_54
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 927
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_55
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 927
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 824
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_57
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 824
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_58
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 824
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_59
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 824
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_60
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 824
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_61
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 824
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_62
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 824
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_63
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 824
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_64
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 721
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_65
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 721
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_66
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 721
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_67
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 721
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_68
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 721
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_69
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 721
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_70
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 721
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_71
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 721
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 618
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_73
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 618
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_74
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 618
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_75
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 618
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_76
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 618
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_77
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 618
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_78
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 618
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_79
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 618
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_80
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 515
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_81
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 515
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_82
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 515
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_83
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 515
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_84
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 515
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_85
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 515
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_86
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 515
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_87
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 515
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_88
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 412
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_89
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 412
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_90
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 412
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_91
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 412
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_92
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 412
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_93
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 412
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_94
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 412
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_95
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 412
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_96
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 309
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_97
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 309
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_98
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 309
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_99
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 309
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_100
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 309
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_101
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 309
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_102
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 309
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_103
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 309
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_104
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 206
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_105
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 206
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_106
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 206
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_107
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 206
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_108
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 206
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_109
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 206
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_110
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 206
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_111
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 206
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_112
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 103
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_113
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 103
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_114
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 103
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_115
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 103
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_116
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 103
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_117
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 103
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_118
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 103
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_119
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 103
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_120
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_121
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_122
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_123
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 0
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_124
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_125
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 0
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_126
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 0
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarNeutral_127
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 0
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

@@ -1,7 +1,15 @@
 fileFormatVersion: 2
 guid: 9be15371b7ac242c6a3db55a0163b9e3
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: knifeThrowerWalkLeft_0
+    21300002: knifeThrowerWalkLeft_1
+    21300004: knifeThrowerWalkLeft_2
+    21300006: knifeThrowerWalkLeft_3
+    21300008: knifeThrowerWalkLeft_4
+    21300010: knifeThrowerWalkLeft_5
+    21300012: knifeThrowerWalkLeft_6
+    21300014: knifeThrowerWalkLeft_7
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +50,86 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: knifeThrowerWalkLeft_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 78
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalkLeft_1
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 1
+        width: 78
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalkLeft_2
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 1
+        width: 78
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalkLeft_3
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 1
+        width: 78
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalkLeft_4
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 1
+        width: 78
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalkLeft_5
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 1
+        width: 78
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalkLeft_6
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 1
+        width: 78
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerWalkLeft_7
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 1
+        width: 78
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

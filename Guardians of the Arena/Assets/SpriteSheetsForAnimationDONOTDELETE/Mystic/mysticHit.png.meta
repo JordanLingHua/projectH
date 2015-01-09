@@ -1,7 +1,31 @@
 fileFormatVersion: 2
 guid: f2bde23d8f6574b2cb936f9e84fe0f9f
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: mysticHit_0
+    21300002: mysticHit_1
+    21300004: mysticHit_2
+    21300006: mysticHit_3
+    21300008: mysticHit_4
+    21300010: mysticHit_5
+    21300012: mysticHit_6
+    21300014: mysticHit_7
+    21300016: mysticHit_8
+    21300018: mysticHit_9
+    21300020: mysticHit_10
+    21300022: mysticHit_11
+    21300024: mysticHit_12
+    21300026: mysticHit_13
+    21300028: mysticHit_14
+    21300030: mysticHit_15
+    21300032: mysticHit_16
+    21300034: mysticHit_17
+    21300036: mysticHit_18
+    21300038: mysticHit_19
+    21300040: mysticHit_20
+    21300042: mysticHit_21
+    21300044: mysticHit_22
+    21300046: mysticHit_23
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +66,246 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: mysticHit_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 847
+        width: 93
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticHit_1
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 847
+        width: 93
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticHit_2
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 847
+        width: 93
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticHit_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 726
+        width: 93
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticHit_4
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 726
+        width: 93
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticHit_5
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 726
+        width: 93
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticHit_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 605
+        width: 93
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticHit_7
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 605
+        width: 93
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticHit_8
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 605
+        width: 93
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticHit_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 484
+        width: 93
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticHit_10
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 484
+        width: 93
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticHit_11
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 484
+        width: 93
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticHit_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 363
+        width: 93
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticHit_13
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 363
+        width: 93
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticHit_14
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 363
+        width: 93
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticHit_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 242
+        width: 93
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticHit_16
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 242
+        width: 93
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticHit_17
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 242
+        width: 93
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticHit_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 121
+        width: 93
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticHit_19
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 121
+        width: 93
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticHit_20
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 121
+        width: 93
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticHit_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 93
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticHit_22
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 0
+        width: 93
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticHit_23
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 0
+        width: 93
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

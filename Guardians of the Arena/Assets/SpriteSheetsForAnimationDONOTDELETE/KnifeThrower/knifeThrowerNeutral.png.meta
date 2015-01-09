@@ -1,7 +1,135 @@
 fileFormatVersion: 2
 guid: bc4ee5705d2c94f46bc6cfd4158e8ee3
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: knifeThrowerNeutral_0
+    21300002: knifeThrowerNeutral_1
+    21300004: knifeThrowerNeutral_2
+    21300006: knifeThrowerNeutral_3
+    21300008: knifeThrowerNeutral_4
+    21300010: knifeThrowerNeutral_5
+    21300012: knifeThrowerNeutral_6
+    21300014: knifeThrowerNeutral_7
+    21300016: knifeThrowerNeutral_8
+    21300018: knifeThrowerNeutral_9
+    21300020: knifeThrowerNeutral_10
+    21300022: knifeThrowerNeutral_11
+    21300024: knifeThrowerNeutral_12
+    21300026: knifeThrowerNeutral_13
+    21300028: knifeThrowerNeutral_14
+    21300030: knifeThrowerNeutral_15
+    21300032: knifeThrowerNeutral_16
+    21300034: knifeThrowerNeutral_17
+    21300036: knifeThrowerNeutral_18
+    21300038: knifeThrowerNeutral_19
+    21300040: knifeThrowerNeutral_20
+    21300042: knifeThrowerNeutral_21
+    21300044: knifeThrowerNeutral_22
+    21300046: knifeThrowerNeutral_23
+    21300048: knifeThrowerNeutral_24
+    21300050: knifeThrowerNeutral_25
+    21300052: knifeThrowerNeutral_26
+    21300054: knifeThrowerNeutral_27
+    21300056: knifeThrowerNeutral_28
+    21300058: knifeThrowerNeutral_29
+    21300060: knifeThrowerNeutral_30
+    21300062: knifeThrowerNeutral_31
+    21300064: knifeThrowerNeutral_32
+    21300066: knifeThrowerNeutral_33
+    21300068: knifeThrowerNeutral_34
+    21300070: knifeThrowerNeutral_35
+    21300072: knifeThrowerNeutral_36
+    21300074: knifeThrowerNeutral_37
+    21300076: knifeThrowerNeutral_38
+    21300078: knifeThrowerNeutral_39
+    21300080: knifeThrowerNeutral_40
+    21300082: knifeThrowerNeutral_41
+    21300084: knifeThrowerNeutral_42
+    21300086: knifeThrowerNeutral_43
+    21300088: knifeThrowerNeutral_44
+    21300090: knifeThrowerNeutral_45
+    21300092: knifeThrowerNeutral_46
+    21300094: knifeThrowerNeutral_47
+    21300096: knifeThrowerNeutral_48
+    21300098: knifeThrowerNeutral_49
+    21300100: knifeThrowerNeutral_50
+    21300102: knifeThrowerNeutral_51
+    21300104: knifeThrowerNeutral_52
+    21300106: knifeThrowerNeutral_53
+    21300108: knifeThrowerNeutral_54
+    21300110: knifeThrowerNeutral_55
+    21300112: knifeThrowerNeutral_56
+    21300114: knifeThrowerNeutral_57
+    21300116: knifeThrowerNeutral_58
+    21300118: knifeThrowerNeutral_59
+    21300120: knifeThrowerNeutral_60
+    21300122: knifeThrowerNeutral_61
+    21300124: knifeThrowerNeutral_62
+    21300126: knifeThrowerNeutral_63
+    21300128: knifeThrowerNeutral_64
+    21300130: knifeThrowerNeutral_65
+    21300132: knifeThrowerNeutral_66
+    21300134: knifeThrowerNeutral_67
+    21300136: knifeThrowerNeutral_68
+    21300138: knifeThrowerNeutral_69
+    21300140: knifeThrowerNeutral_70
+    21300142: knifeThrowerNeutral_71
+    21300144: knifeThrowerNeutral_72
+    21300146: knifeThrowerNeutral_73
+    21300148: knifeThrowerNeutral_74
+    21300150: knifeThrowerNeutral_75
+    21300152: knifeThrowerNeutral_76
+    21300154: knifeThrowerNeutral_77
+    21300156: knifeThrowerNeutral_78
+    21300158: knifeThrowerNeutral_79
+    21300160: knifeThrowerNeutral_80
+    21300162: knifeThrowerNeutral_81
+    21300164: knifeThrowerNeutral_82
+    21300166: knifeThrowerNeutral_83
+    21300168: knifeThrowerNeutral_84
+    21300170: knifeThrowerNeutral_85
+    21300172: knifeThrowerNeutral_86
+    21300174: knifeThrowerNeutral_87
+    21300176: knifeThrowerNeutral_88
+    21300178: knifeThrowerNeutral_89
+    21300180: knifeThrowerNeutral_90
+    21300182: knifeThrowerNeutral_91
+    21300184: knifeThrowerNeutral_92
+    21300186: knifeThrowerNeutral_93
+    21300188: knifeThrowerNeutral_94
+    21300190: knifeThrowerNeutral_95
+    21300192: knifeThrowerNeutral_96
+    21300194: knifeThrowerNeutral_97
+    21300196: knifeThrowerNeutral_98
+    21300198: knifeThrowerNeutral_99
+    21300200: knifeThrowerNeutral_100
+    21300202: knifeThrowerNeutral_101
+    21300204: knifeThrowerNeutral_102
+    21300206: knifeThrowerNeutral_103
+    21300208: knifeThrowerNeutral_104
+    21300210: knifeThrowerNeutral_105
+    21300212: knifeThrowerNeutral_106
+    21300214: knifeThrowerNeutral_107
+    21300216: knifeThrowerNeutral_108
+    21300218: knifeThrowerNeutral_109
+    21300220: knifeThrowerNeutral_110
+    21300222: knifeThrowerNeutral_111
+    21300224: knifeThrowerNeutral_112
+    21300226: knifeThrowerNeutral_113
+    21300228: knifeThrowerNeutral_114
+    21300230: knifeThrowerNeutral_115
+    21300232: knifeThrowerNeutral_116
+    21300234: knifeThrowerNeutral_117
+    21300236: knifeThrowerNeutral_118
+    21300238: knifeThrowerNeutral_119
+    21300240: knifeThrowerNeutral_120
+    21300242: knifeThrowerNeutral_121
+    21300244: knifeThrowerNeutral_122
+    21300246: knifeThrowerNeutral_123
+    21300248: knifeThrowerNeutral_124
+    21300250: knifeThrowerNeutral_125
+    21300252: knifeThrowerNeutral_126
+    21300254: knifeThrowerNeutral_127
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +170,1286 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: knifeThrowerNeutral_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1230
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_1
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 1230
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_2
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 1230
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_3
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 1230
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_4
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1230
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_5
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1230
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_6
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 1230
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_7
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 1230
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1149
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_9
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 1149
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_10
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 1149
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_11
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 1149
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_12
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1149
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_13
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1149
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_14
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 1149
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_15
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 1149
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1068
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_17
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 1068
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_18
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 1068
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_19
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 1068
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_20
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1068
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_21
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1068
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_22
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 1068
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_23
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 1068
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 987
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_25
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 987
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_26
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 987
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_27
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 987
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_28
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 987
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_29
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 987
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_30
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 987
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_31
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 987
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 906
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_33
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 906
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_34
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 906
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_35
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 906
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_36
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 906
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_37
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 906
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_38
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 906
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_39
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 906
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 825
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_41
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 825
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_42
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 825
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_43
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 825
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_44
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 825
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_45
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 825
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_46
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 825
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_47
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 825
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 744
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_49
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 744
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_50
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 744
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_51
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 744
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_52
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 744
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_53
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 744
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_54
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 744
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_55
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 744
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 663
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_57
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 663
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_58
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 663
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_59
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 663
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_60
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 663
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_61
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 663
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_62
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 663
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_63
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 663
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_64
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 582
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_65
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 582
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_66
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 582
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_67
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 582
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_68
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 582
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_69
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 582
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_70
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 582
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_71
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 582
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 501
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_73
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 501
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_74
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 501
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_75
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 501
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_76
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 501
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_77
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 501
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_78
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 501
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_79
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 501
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_80
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 420
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_81
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 420
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_82
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 420
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_83
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 420
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_84
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 420
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_85
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 420
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_86
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 420
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_87
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 420
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_88
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 339
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_89
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 339
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_90
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 339
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_91
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 339
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_92
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 339
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_93
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 339
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_94
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 339
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_95
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 339
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_96
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 258
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_97
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 258
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_98
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 258
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_99
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 258
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_100
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 258
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_101
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 258
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_102
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 258
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_103
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 258
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_104
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 177
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_105
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 177
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_106
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 177
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_107
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 177
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_108
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 177
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_109
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 177
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_110
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 177
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_111
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 177
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_112
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_113
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 96
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_114
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 96
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_115
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 96
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_116
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 96
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_117
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 96
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_118
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 96
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_119
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 96
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_120
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 15
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_121
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 15
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_122
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 15
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_123
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 15
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_124
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 15
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_125
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 15
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_126
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 15
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: knifeThrowerNeutral_127
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 15
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

@@ -1,7 +1,15 @@
 fileFormatVersion: 2
 guid: 9c3bfed498f5247d9bcba1723e12146f
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: mysticWalkRight_0
+    21300002: mysticWalkRight_1
+    21300004: mysticWalkRight_2
+    21300006: mysticWalkRight_3
+    21300008: mysticWalkRight_4
+    21300010: mysticWalkRight_5
+    21300012: mysticWalkRight_6
+    21300014: mysticWalkRight_7
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +50,86 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: mysticWalkRight_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7
+        width: 77
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalkRight_1
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 7
+        width: 77
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalkRight_2
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 7
+        width: 77
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalkRight_3
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 7
+        width: 77
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalkRight_4
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 7
+        width: 77
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalkRight_5
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 7
+        width: 77
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalkRight_6
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 7
+        width: 77
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticWalkRight_7
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 7
+        width: 77
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

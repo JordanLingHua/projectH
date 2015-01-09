@@ -1,7 +1,12 @@
 fileFormatVersion: 2
 guid: cd0e63afca8d04a109f7d8022e6824b1
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: swordsmanHitRight_0
+    21300002: swordsmanHitRight_1
+    21300004: swordsmanHitRight_2
+    21300006: swordsmanHitRight_3
+    21300008: swordsmanHitRight_4
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +47,56 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: swordsmanHitRight_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 19
+        width: 90
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanHitRight_1
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 19
+        width: 90
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanHitRight_2
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 19
+        width: 90
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanHitRight_3
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 19
+        width: 90
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanHitRight_4
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 19
+        width: 90
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

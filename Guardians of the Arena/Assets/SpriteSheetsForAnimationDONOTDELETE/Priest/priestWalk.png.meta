@@ -1,7 +1,151 @@
 fileFormatVersion: 2
 guid: ef376830583924b2b8284cc1b73e474d
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: priestWalk_0
+    21300002: priestWalk_1
+    21300004: priestWalk_2
+    21300006: priestWalk_3
+    21300008: priestWalk_4
+    21300010: priestWalk_5
+    21300012: priestWalk_6
+    21300014: priestWalk_7
+    21300016: priestWalk_8
+    21300018: priestWalk_9
+    21300020: priestWalk_10
+    21300022: priestWalk_11
+    21300024: priestWalk_12
+    21300026: priestWalk_13
+    21300028: priestWalk_14
+    21300030: priestWalk_15
+    21300032: priestWalk_16
+    21300034: priestWalk_17
+    21300036: priestWalk_18
+    21300038: priestWalk_19
+    21300040: priestWalk_20
+    21300042: priestWalk_21
+    21300044: priestWalk_22
+    21300046: priestWalk_23
+    21300048: priestWalk_24
+    21300050: priestWalk_25
+    21300052: priestWalk_26
+    21300054: priestWalk_27
+    21300056: priestWalk_28
+    21300058: priestWalk_29
+    21300060: priestWalk_30
+    21300062: priestWalk_31
+    21300064: priestWalk_32
+    21300066: priestWalk_33
+    21300068: priestWalk_34
+    21300070: priestWalk_35
+    21300072: priestWalk_36
+    21300074: priestWalk_37
+    21300076: priestWalk_38
+    21300078: priestWalk_39
+    21300080: priestWalk_40
+    21300082: priestWalk_41
+    21300084: priestWalk_42
+    21300086: priestWalk_43
+    21300088: priestWalk_44
+    21300090: priestWalk_45
+    21300092: priestWalk_46
+    21300094: priestWalk_47
+    21300096: priestWalk_48
+    21300098: priestWalk_49
+    21300100: priestWalk_50
+    21300102: priestWalk_51
+    21300104: priestWalk_52
+    21300106: priestWalk_53
+    21300108: priestWalk_54
+    21300110: priestWalk_55
+    21300112: priestWalk_56
+    21300114: priestWalk_57
+    21300116: priestWalk_58
+    21300118: priestWalk_59
+    21300120: priestWalk_60
+    21300122: priestWalk_61
+    21300124: priestWalk_62
+    21300126: priestWalk_63
+    21300128: priestWalk_64
+    21300130: priestWalk_65
+    21300132: priestWalk_66
+    21300134: priestWalk_67
+    21300136: priestWalk_68
+    21300138: priestWalk_69
+    21300140: priestWalk_70
+    21300142: priestWalk_71
+    21300144: priestWalk_72
+    21300146: priestWalk_73
+    21300148: priestWalk_74
+    21300150: priestWalk_75
+    21300152: priestWalk_76
+    21300154: priestWalk_77
+    21300156: priestWalk_78
+    21300158: priestWalk_79
+    21300160: priestWalk_80
+    21300162: priestWalk_81
+    21300164: priestWalk_82
+    21300166: priestWalk_83
+    21300168: priestWalk_84
+    21300170: priestWalk_85
+    21300172: priestWalk_86
+    21300174: priestWalk_87
+    21300176: priestWalk_88
+    21300178: priestWalk_89
+    21300180: priestWalk_90
+    21300182: priestWalk_91
+    21300184: priestWalk_92
+    21300186: priestWalk_93
+    21300188: priestWalk_94
+    21300190: priestWalk_95
+    21300192: priestWalk_96
+    21300194: priestWalk_97
+    21300196: priestWalk_98
+    21300198: priestWalk_99
+    21300200: priestWalk_100
+    21300202: priestWalk_101
+    21300204: priestWalk_102
+    21300206: priestWalk_103
+    21300208: priestWalk_104
+    21300210: priestWalk_105
+    21300212: priestWalk_106
+    21300214: priestWalk_107
+    21300216: priestWalk_108
+    21300218: priestWalk_109
+    21300220: priestWalk_110
+    21300222: priestWalk_111
+    21300224: priestWalk_112
+    21300226: priestWalk_113
+    21300228: priestWalk_114
+    21300230: priestWalk_115
+    21300232: priestWalk_116
+    21300234: priestWalk_117
+    21300236: priestWalk_118
+    21300238: priestWalk_119
+    21300240: priestWalk_120
+    21300242: priestWalk_121
+    21300244: priestWalk_122
+    21300246: priestWalk_123
+    21300248: priestWalk_124
+    21300250: priestWalk_125
+    21300252: priestWalk_126
+    21300254: priestWalk_127
+    21300256: priestWalk_128
+    21300258: priestWalk_129
+    21300260: priestWalk_130
+    21300262: priestWalk_131
+    21300264: priestWalk_132
+    21300266: priestWalk_133
+    21300268: priestWalk_134
+    21300270: priestWalk_135
+    21300272: priestWalk_136
+    21300274: priestWalk_137
+    21300276: priestWalk_138
+    21300278: priestWalk_139
+    21300280: priestWalk_140
+    21300282: priestWalk_141
+    21300284: priestWalk_142
+    21300286: priestWalk_143
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +186,1446 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: priestWalk_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 658
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_1
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 658
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_2
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 658
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_3
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 658
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_4
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 658
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_5
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 658
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_6
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 658
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_7
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 658
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_8
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 658
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_9
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 658
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_10
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 658
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_11
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 658
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_12
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 658
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_13
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 658
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_14
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 658
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_15
+      rect:
+        serializedVersion: 2
+        x: 1470
+        y: 658
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_16
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 658
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_17
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 658
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 564
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_19
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 564
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_20
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 564
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_21
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 564
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_22
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 564
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_23
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 564
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_24
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 564
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_25
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 564
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_26
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 564
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_27
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 564
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_28
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 564
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_29
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 564
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_30
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 564
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_31
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 564
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_32
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 564
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_33
+      rect:
+        serializedVersion: 2
+        x: 1470
+        y: 564
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_34
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 564
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_35
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 564
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 470
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_37
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 470
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_38
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 470
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_39
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 470
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_40
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 470
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_41
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 470
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_42
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 470
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_43
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 470
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_44
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 470
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_45
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 470
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_46
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 470
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_47
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 470
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_48
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 470
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_49
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 470
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_50
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 470
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_51
+      rect:
+        serializedVersion: 2
+        x: 1470
+        y: 470
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_52
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 470
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_53
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 470
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 376
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_55
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 376
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_56
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 376
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_57
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 376
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_58
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 376
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_59
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 376
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_60
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 376
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_61
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 376
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_62
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 376
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_63
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 376
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_64
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 376
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_65
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 376
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_66
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 376
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_67
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 376
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_68
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 376
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_69
+      rect:
+        serializedVersion: 2
+        x: 1470
+        y: 376
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_70
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 376
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_71
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 376
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 282
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_73
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 282
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_74
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 282
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_75
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 282
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_76
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 282
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_77
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 282
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_78
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 282
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_79
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 282
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_80
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 282
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_81
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 282
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_82
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 282
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_83
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 282
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_84
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 282
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_85
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 282
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_86
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 282
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_87
+      rect:
+        serializedVersion: 2
+        x: 1470
+        y: 282
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_88
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 282
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_89
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 282
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_90
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 188
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_91
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 188
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_92
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 188
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_93
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 188
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_94
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 188
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_95
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 188
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_96
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 188
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_97
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 188
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_98
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 188
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_99
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 188
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_100
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 188
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_101
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 188
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_102
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 188
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_103
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 188
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_104
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 188
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_105
+      rect:
+        serializedVersion: 2
+        x: 1470
+        y: 188
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_106
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 188
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_107
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 188
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_108
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 94
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_109
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 94
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_110
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 94
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_111
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 94
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_112
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 94
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_113
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 94
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_114
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 94
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_115
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 94
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_116
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 94
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_117
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 94
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_118
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 94
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_119
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 94
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_120
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 94
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_121
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 94
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_122
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 94
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_123
+      rect:
+        serializedVersion: 2
+        x: 1470
+        y: 94
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_124
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 94
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_125
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 94
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_126
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_127
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 0
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_128
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 0
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_129
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 0
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_130
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 0
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_131
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 0
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_132
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 0
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_133
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 0
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_134
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 0
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_135
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 0
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_136
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 0
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_137
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 0
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_138
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 0
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_139
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 0
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_140
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 0
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_141
+      rect:
+        serializedVersion: 2
+        x: 1470
+        y: 0
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_142
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 0
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestWalk_143
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 0
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

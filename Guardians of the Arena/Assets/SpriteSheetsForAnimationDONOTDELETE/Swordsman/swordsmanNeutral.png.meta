@@ -1,7 +1,135 @@
 fileFormatVersion: 2
 guid: e1a635f1ad67b41aa9b7dd5cefe8e33e
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: swordsmanNeutral_0
+    21300002: swordsmanNeutral_1
+    21300004: swordsmanNeutral_2
+    21300006: swordsmanNeutral_3
+    21300008: swordsmanNeutral_4
+    21300010: swordsmanNeutral_5
+    21300012: swordsmanNeutral_6
+    21300014: swordsmanNeutral_7
+    21300016: swordsmanNeutral_8
+    21300018: swordsmanNeutral_9
+    21300020: swordsmanNeutral_10
+    21300022: swordsmanNeutral_11
+    21300024: swordsmanNeutral_12
+    21300026: swordsmanNeutral_13
+    21300028: swordsmanNeutral_14
+    21300030: swordsmanNeutral_15
+    21300032: swordsmanNeutral_16
+    21300034: swordsmanNeutral_17
+    21300036: swordsmanNeutral_18
+    21300038: swordsmanNeutral_19
+    21300040: swordsmanNeutral_20
+    21300042: swordsmanNeutral_21
+    21300044: swordsmanNeutral_22
+    21300046: swordsmanNeutral_23
+    21300048: swordsmanNeutral_24
+    21300050: swordsmanNeutral_25
+    21300052: swordsmanNeutral_26
+    21300054: swordsmanNeutral_27
+    21300056: swordsmanNeutral_28
+    21300058: swordsmanNeutral_29
+    21300060: swordsmanNeutral_30
+    21300062: swordsmanNeutral_31
+    21300064: swordsmanNeutral_32
+    21300066: swordsmanNeutral_33
+    21300068: swordsmanNeutral_34
+    21300070: swordsmanNeutral_35
+    21300072: swordsmanNeutral_36
+    21300074: swordsmanNeutral_37
+    21300076: swordsmanNeutral_38
+    21300078: swordsmanNeutral_39
+    21300080: swordsmanNeutral_40
+    21300082: swordsmanNeutral_41
+    21300084: swordsmanNeutral_42
+    21300086: swordsmanNeutral_43
+    21300088: swordsmanNeutral_44
+    21300090: swordsmanNeutral_45
+    21300092: swordsmanNeutral_46
+    21300094: swordsmanNeutral_47
+    21300096: swordsmanNeutral_48
+    21300098: swordsmanNeutral_49
+    21300100: swordsmanNeutral_50
+    21300102: swordsmanNeutral_51
+    21300104: swordsmanNeutral_52
+    21300106: swordsmanNeutral_53
+    21300108: swordsmanNeutral_54
+    21300110: swordsmanNeutral_55
+    21300112: swordsmanNeutral_56
+    21300114: swordsmanNeutral_57
+    21300116: swordsmanNeutral_58
+    21300118: swordsmanNeutral_59
+    21300120: swordsmanNeutral_60
+    21300122: swordsmanNeutral_61
+    21300124: swordsmanNeutral_62
+    21300126: swordsmanNeutral_63
+    21300128: swordsmanNeutral_64
+    21300130: swordsmanNeutral_65
+    21300132: swordsmanNeutral_66
+    21300134: swordsmanNeutral_67
+    21300136: swordsmanNeutral_68
+    21300138: swordsmanNeutral_69
+    21300140: swordsmanNeutral_70
+    21300142: swordsmanNeutral_71
+    21300144: swordsmanNeutral_72
+    21300146: swordsmanNeutral_73
+    21300148: swordsmanNeutral_74
+    21300150: swordsmanNeutral_75
+    21300152: swordsmanNeutral_76
+    21300154: swordsmanNeutral_77
+    21300156: swordsmanNeutral_78
+    21300158: swordsmanNeutral_79
+    21300160: swordsmanNeutral_80
+    21300162: swordsmanNeutral_81
+    21300164: swordsmanNeutral_82
+    21300166: swordsmanNeutral_83
+    21300168: swordsmanNeutral_84
+    21300170: swordsmanNeutral_85
+    21300172: swordsmanNeutral_86
+    21300174: swordsmanNeutral_87
+    21300176: swordsmanNeutral_88
+    21300178: swordsmanNeutral_89
+    21300180: swordsmanNeutral_90
+    21300182: swordsmanNeutral_91
+    21300184: swordsmanNeutral_92
+    21300186: swordsmanNeutral_93
+    21300188: swordsmanNeutral_94
+    21300190: swordsmanNeutral_95
+    21300192: swordsmanNeutral_96
+    21300194: swordsmanNeutral_97
+    21300196: swordsmanNeutral_98
+    21300198: swordsmanNeutral_99
+    21300200: swordsmanNeutral_100
+    21300202: swordsmanNeutral_101
+    21300204: swordsmanNeutral_102
+    21300206: swordsmanNeutral_103
+    21300208: swordsmanNeutral_104
+    21300210: swordsmanNeutral_105
+    21300212: swordsmanNeutral_106
+    21300214: swordsmanNeutral_107
+    21300216: swordsmanNeutral_108
+    21300218: swordsmanNeutral_109
+    21300220: swordsmanNeutral_110
+    21300222: swordsmanNeutral_111
+    21300224: swordsmanNeutral_112
+    21300226: swordsmanNeutral_113
+    21300228: swordsmanNeutral_114
+    21300230: swordsmanNeutral_115
+    21300232: swordsmanNeutral_116
+    21300234: swordsmanNeutral_117
+    21300236: swordsmanNeutral_118
+    21300238: swordsmanNeutral_119
+    21300240: swordsmanNeutral_120
+    21300242: swordsmanNeutral_121
+    21300244: swordsmanNeutral_122
+    21300246: swordsmanNeutral_123
+    21300248: swordsmanNeutral_124
+    21300250: swordsmanNeutral_125
+    21300252: swordsmanNeutral_126
+    21300254: swordsmanNeutral_127
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +170,1286 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: swordsmanNeutral_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1590
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_1
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 1590
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_2
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 1590
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_3
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 1590
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_4
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1590
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_5
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1590
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_6
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 1590
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_7
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 1590
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1484
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_9
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 1484
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_10
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 1484
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_11
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 1484
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_12
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1484
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_13
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1484
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_14
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 1484
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_15
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 1484
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1378
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_17
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 1378
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_18
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 1378
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_19
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 1378
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_20
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1378
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_21
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1378
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_22
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 1378
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_23
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 1378
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1272
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_25
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 1272
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_26
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 1272
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_27
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 1272
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_28
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1272
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_29
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1272
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_30
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 1272
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_31
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 1272
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1166
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_33
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 1166
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_34
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 1166
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_35
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 1166
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_36
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1166
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_37
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1166
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_38
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 1166
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_39
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 1166
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1060
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_41
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 1060
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_42
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 1060
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_43
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 1060
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_44
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1060
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_45
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1060
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_46
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 1060
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_47
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 1060
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 954
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_49
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 954
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_50
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 954
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_51
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 954
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_52
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 954
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_53
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 954
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_54
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 954
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_55
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 954
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 848
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_57
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 848
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_58
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 848
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_59
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 848
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_60
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 848
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_61
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 848
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_62
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 848
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_63
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 848
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_64
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 742
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_65
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 742
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_66
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 742
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_67
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 742
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_68
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 742
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_69
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 742
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_70
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 742
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_71
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 742
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 636
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_73
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 636
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_74
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 636
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_75
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 636
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_76
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 636
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_77
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 636
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_78
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 636
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_79
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 636
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_80
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 530
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_81
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 530
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_82
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 530
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_83
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 530
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_84
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 530
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_85
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 530
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_86
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 530
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_87
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 530
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_88
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 424
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_89
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 424
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_90
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 424
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_91
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 424
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_92
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 424
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_93
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 424
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_94
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 424
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_95
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 424
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_96
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 318
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_97
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 318
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_98
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 318
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_99
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 318
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_100
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 318
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_101
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 318
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_102
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 318
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_103
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 318
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_104
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 212
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_105
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 212
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_106
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 212
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_107
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 212
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_108
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 212
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_109
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 212
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_110
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 212
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_111
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 212
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_112
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 106
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_113
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 106
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_114
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 106
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_115
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 106
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_116
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 106
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_117
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 106
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_118
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 106
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_119
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 106
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_120
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_121
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_122
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_123
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_124
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_125
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_126
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanNeutral_127
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 0
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

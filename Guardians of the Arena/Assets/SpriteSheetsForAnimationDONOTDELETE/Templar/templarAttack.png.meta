@@ -1,7 +1,263 @@
 fileFormatVersion: 2
 guid: efc50f782a1b74234929919f36a007b7
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: templarAttack_0
+    21300002: templarAttack_1
+    21300004: templarAttack_2
+    21300006: templarAttack_3
+    21300008: templarAttack_4
+    21300010: templarAttack_5
+    21300012: templarAttack_6
+    21300014: templarAttack_7
+    21300016: templarAttack_8
+    21300018: templarAttack_9
+    21300020: templarAttack_10
+    21300022: templarAttack_11
+    21300024: templarAttack_12
+    21300026: templarAttack_13
+    21300028: templarAttack_14
+    21300030: templarAttack_15
+    21300032: templarAttack_16
+    21300034: templarAttack_17
+    21300036: templarAttack_18
+    21300038: templarAttack_19
+    21300040: templarAttack_20
+    21300042: templarAttack_21
+    21300044: templarAttack_22
+    21300046: templarAttack_23
+    21300048: templarAttack_24
+    21300050: templarAttack_25
+    21300052: templarAttack_26
+    21300054: templarAttack_27
+    21300056: templarAttack_28
+    21300058: templarAttack_29
+    21300060: templarAttack_30
+    21300062: templarAttack_31
+    21300064: templarAttack_32
+    21300066: templarAttack_33
+    21300068: templarAttack_34
+    21300070: templarAttack_35
+    21300072: templarAttack_36
+    21300074: templarAttack_37
+    21300076: templarAttack_38
+    21300078: templarAttack_39
+    21300080: templarAttack_40
+    21300082: templarAttack_41
+    21300084: templarAttack_42
+    21300086: templarAttack_43
+    21300088: templarAttack_44
+    21300090: templarAttack_45
+    21300092: templarAttack_46
+    21300094: templarAttack_47
+    21300096: templarAttack_48
+    21300098: templarAttack_49
+    21300100: templarAttack_50
+    21300102: templarAttack_51
+    21300104: templarAttack_52
+    21300106: templarAttack_53
+    21300108: templarAttack_54
+    21300110: templarAttack_55
+    21300112: templarAttack_56
+    21300114: templarAttack_57
+    21300116: templarAttack_58
+    21300118: templarAttack_59
+    21300120: templarAttack_60
+    21300122: templarAttack_61
+    21300124: templarAttack_62
+    21300126: templarAttack_63
+    21300128: templarAttack_64
+    21300130: templarAttack_65
+    21300132: templarAttack_66
+    21300134: templarAttack_67
+    21300136: templarAttack_68
+    21300138: templarAttack_69
+    21300140: templarAttack_70
+    21300142: templarAttack_71
+    21300144: templarAttack_72
+    21300146: templarAttack_73
+    21300148: templarAttack_74
+    21300150: templarAttack_75
+    21300152: templarAttack_76
+    21300154: templarAttack_77
+    21300156: templarAttack_78
+    21300158: templarAttack_79
+    21300160: templarAttack_80
+    21300162: templarAttack_81
+    21300164: templarAttack_82
+    21300166: templarAttack_83
+    21300168: templarAttack_84
+    21300170: templarAttack_85
+    21300172: templarAttack_86
+    21300174: templarAttack_87
+    21300176: templarAttack_88
+    21300178: templarAttack_89
+    21300180: templarAttack_90
+    21300182: templarAttack_91
+    21300184: templarAttack_92
+    21300186: templarAttack_93
+    21300188: templarAttack_94
+    21300190: templarAttack_95
+    21300192: templarAttack_96
+    21300194: templarAttack_97
+    21300196: templarAttack_98
+    21300198: templarAttack_99
+    21300200: templarAttack_100
+    21300202: templarAttack_101
+    21300204: templarAttack_102
+    21300206: templarAttack_103
+    21300208: templarAttack_104
+    21300210: templarAttack_105
+    21300212: templarAttack_106
+    21300214: templarAttack_107
+    21300216: templarAttack_108
+    21300218: templarAttack_109
+    21300220: templarAttack_110
+    21300222: templarAttack_111
+    21300224: templarAttack_112
+    21300226: templarAttack_113
+    21300228: templarAttack_114
+    21300230: templarAttack_115
+    21300232: templarAttack_116
+    21300234: templarAttack_117
+    21300236: templarAttack_118
+    21300238: templarAttack_119
+    21300240: templarAttack_120
+    21300242: templarAttack_121
+    21300244: templarAttack_122
+    21300246: templarAttack_123
+    21300248: templarAttack_124
+    21300250: templarAttack_125
+    21300252: templarAttack_126
+    21300254: templarAttack_127
+    21300256: templarAttack_128
+    21300258: templarAttack_129
+    21300260: templarAttack_130
+    21300262: templarAttack_131
+    21300264: templarAttack_132
+    21300266: templarAttack_133
+    21300268: templarAttack_134
+    21300270: templarAttack_135
+    21300272: templarAttack_136
+    21300274: templarAttack_137
+    21300276: templarAttack_138
+    21300278: templarAttack_139
+    21300280: templarAttack_140
+    21300282: templarAttack_141
+    21300284: templarAttack_142
+    21300286: templarAttack_143
+    21300288: templarAttack_144
+    21300290: templarAttack_145
+    21300292: templarAttack_146
+    21300294: templarAttack_147
+    21300296: templarAttack_148
+    21300298: templarAttack_149
+    21300300: templarAttack_150
+    21300302: templarAttack_151
+    21300304: templarAttack_152
+    21300306: templarAttack_153
+    21300308: templarAttack_154
+    21300310: templarAttack_155
+    21300312: templarAttack_156
+    21300314: templarAttack_157
+    21300316: templarAttack_158
+    21300318: templarAttack_159
+    21300320: templarAttack_160
+    21300322: templarAttack_161
+    21300324: templarAttack_162
+    21300326: templarAttack_163
+    21300328: templarAttack_164
+    21300330: templarAttack_165
+    21300332: templarAttack_166
+    21300334: templarAttack_167
+    21300336: templarAttack_168
+    21300338: templarAttack_169
+    21300340: templarAttack_170
+    21300342: templarAttack_171
+    21300344: templarAttack_172
+    21300346: templarAttack_173
+    21300348: templarAttack_174
+    21300350: templarAttack_175
+    21300352: templarAttack_176
+    21300354: templarAttack_177
+    21300356: templarAttack_178
+    21300358: templarAttack_179
+    21300360: templarAttack_180
+    21300362: templarAttack_181
+    21300364: templarAttack_182
+    21300366: templarAttack_183
+    21300368: templarAttack_184
+    21300370: templarAttack_185
+    21300372: templarAttack_186
+    21300374: templarAttack_187
+    21300376: templarAttack_188
+    21300378: templarAttack_189
+    21300380: templarAttack_190
+    21300382: templarAttack_191
+    21300384: templarAttack_192
+    21300386: templarAttack_193
+    21300388: templarAttack_194
+    21300390: templarAttack_195
+    21300392: templarAttack_196
+    21300394: templarAttack_197
+    21300396: templarAttack_198
+    21300398: templarAttack_199
+    21300400: templarAttack_200
+    21300402: templarAttack_201
+    21300404: templarAttack_202
+    21300406: templarAttack_203
+    21300408: templarAttack_204
+    21300410: templarAttack_205
+    21300412: templarAttack_206
+    21300414: templarAttack_207
+    21300416: templarAttack_208
+    21300418: templarAttack_209
+    21300420: templarAttack_210
+    21300422: templarAttack_211
+    21300424: templarAttack_212
+    21300426: templarAttack_213
+    21300428: templarAttack_214
+    21300430: templarAttack_215
+    21300432: templarAttack_216
+    21300434: templarAttack_217
+    21300436: templarAttack_218
+    21300438: templarAttack_219
+    21300440: templarAttack_220
+    21300442: templarAttack_221
+    21300444: templarAttack_222
+    21300446: templarAttack_223
+    21300448: templarAttack_224
+    21300450: templarAttack_225
+    21300452: templarAttack_226
+    21300454: templarAttack_227
+    21300456: templarAttack_228
+    21300458: templarAttack_229
+    21300460: templarAttack_230
+    21300462: templarAttack_231
+    21300464: templarAttack_232
+    21300466: templarAttack_233
+    21300468: templarAttack_234
+    21300470: templarAttack_235
+    21300472: templarAttack_236
+    21300474: templarAttack_237
+    21300476: templarAttack_238
+    21300478: templarAttack_239
+    21300480: templarAttack_240
+    21300482: templarAttack_241
+    21300484: templarAttack_242
+    21300486: templarAttack_243
+    21300488: templarAttack_244
+    21300490: templarAttack_245
+    21300492: templarAttack_246
+    21300494: templarAttack_247
+    21300496: templarAttack_248
+    21300498: templarAttack_249
+    21300500: templarAttack_250
+    21300502: templarAttack_251
+    21300504: templarAttack_252
+    21300506: templarAttack_253
+    21300508: templarAttack_254
+    21300510: templarAttack_255
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +298,2566 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: templarAttack_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2130
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_1
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 2130
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_2
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 2130
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_3
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 2130
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_4
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 2130
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_5
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 2130
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_6
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 2130
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_7
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 2130
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_8
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 2130
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_9
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 2130
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_10
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 2130
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_11
+      rect:
+        serializedVersion: 2
+        x: 2002
+        y: 2130
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_12
+      rect:
+        serializedVersion: 2
+        x: 2184
+        y: 2130
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_13
+      rect:
+        serializedVersion: 2
+        x: 2366
+        y: 2130
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_14
+      rect:
+        serializedVersion: 2
+        x: 2548
+        y: 2130
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_15
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 2130
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1989
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_17
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 1989
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_18
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 1989
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_19
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 1989
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_20
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 1989
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_21
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 1989
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_22
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 1989
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_23
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 1989
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_24
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 1989
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_25
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 1989
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_26
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 1989
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_27
+      rect:
+        serializedVersion: 2
+        x: 2002
+        y: 1989
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_28
+      rect:
+        serializedVersion: 2
+        x: 2184
+        y: 1989
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_29
+      rect:
+        serializedVersion: 2
+        x: 2366
+        y: 1989
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_30
+      rect:
+        serializedVersion: 2
+        x: 2548
+        y: 1989
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_31
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 1989
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1848
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_33
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 1848
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_34
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 1848
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_35
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 1848
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_36
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 1848
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_37
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 1848
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_38
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 1848
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_39
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 1848
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_40
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 1848
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_41
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 1848
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_42
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 1848
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_43
+      rect:
+        serializedVersion: 2
+        x: 2002
+        y: 1848
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_44
+      rect:
+        serializedVersion: 2
+        x: 2184
+        y: 1848
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_45
+      rect:
+        serializedVersion: 2
+        x: 2366
+        y: 1848
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_46
+      rect:
+        serializedVersion: 2
+        x: 2548
+        y: 1848
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_47
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 1848
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1707
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_49
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 1707
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_50
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 1707
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_51
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 1707
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_52
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 1707
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_53
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 1707
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_54
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 1707
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_55
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 1707
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_56
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 1707
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_57
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 1707
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_58
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 1707
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_59
+      rect:
+        serializedVersion: 2
+        x: 2002
+        y: 1707
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_60
+      rect:
+        serializedVersion: 2
+        x: 2184
+        y: 1707
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_61
+      rect:
+        serializedVersion: 2
+        x: 2366
+        y: 1707
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_62
+      rect:
+        serializedVersion: 2
+        x: 2548
+        y: 1707
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_63
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 1707
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_64
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1566
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_65
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 1566
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_66
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 1566
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_67
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 1566
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_68
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 1566
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_69
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 1566
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_70
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 1566
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_71
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 1566
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_72
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 1566
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_73
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 1566
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_74
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 1566
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_75
+      rect:
+        serializedVersion: 2
+        x: 2002
+        y: 1566
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_76
+      rect:
+        serializedVersion: 2
+        x: 2184
+        y: 1566
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_77
+      rect:
+        serializedVersion: 2
+        x: 2366
+        y: 1566
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_78
+      rect:
+        serializedVersion: 2
+        x: 2548
+        y: 1566
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_79
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 1566
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_80
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1425
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_81
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 1425
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_82
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 1425
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_83
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 1425
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_84
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 1425
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_85
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 1425
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_86
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 1425
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_87
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 1425
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_88
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 1425
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_89
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 1425
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_90
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 1425
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_91
+      rect:
+        serializedVersion: 2
+        x: 2002
+        y: 1425
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_92
+      rect:
+        serializedVersion: 2
+        x: 2184
+        y: 1425
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_93
+      rect:
+        serializedVersion: 2
+        x: 2366
+        y: 1425
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_94
+      rect:
+        serializedVersion: 2
+        x: 2548
+        y: 1425
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_95
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 1425
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_96
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1284
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_97
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 1284
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_98
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 1284
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_99
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 1284
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_100
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 1284
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_101
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 1284
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_102
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 1284
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_103
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 1284
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_104
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 1284
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_105
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 1284
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_106
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 1284
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_107
+      rect:
+        serializedVersion: 2
+        x: 2002
+        y: 1284
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_108
+      rect:
+        serializedVersion: 2
+        x: 2184
+        y: 1284
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_109
+      rect:
+        serializedVersion: 2
+        x: 2366
+        y: 1284
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_110
+      rect:
+        serializedVersion: 2
+        x: 2548
+        y: 1284
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_111
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 1284
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_112
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1143
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_113
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 1143
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_114
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 1143
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_115
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 1143
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_116
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 1143
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_117
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 1143
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_118
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 1143
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_119
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 1143
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_120
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 1143
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_121
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 1143
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_122
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 1143
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_123
+      rect:
+        serializedVersion: 2
+        x: 2002
+        y: 1143
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_124
+      rect:
+        serializedVersion: 2
+        x: 2184
+        y: 1143
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_125
+      rect:
+        serializedVersion: 2
+        x: 2366
+        y: 1143
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_126
+      rect:
+        serializedVersion: 2
+        x: 2548
+        y: 1143
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_127
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 1143
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_128
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1002
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_129
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 1002
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_130
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 1002
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_131
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 1002
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_132
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 1002
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_133
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 1002
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_134
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 1002
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_135
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 1002
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_136
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 1002
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_137
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 1002
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_138
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 1002
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_139
+      rect:
+        serializedVersion: 2
+        x: 2002
+        y: 1002
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_140
+      rect:
+        serializedVersion: 2
+        x: 2184
+        y: 1002
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_141
+      rect:
+        serializedVersion: 2
+        x: 2366
+        y: 1002
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_142
+      rect:
+        serializedVersion: 2
+        x: 2548
+        y: 1002
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_143
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 1002
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_144
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 861
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_145
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 861
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_146
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 861
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_147
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 861
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_148
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 861
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_149
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 861
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_150
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 861
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_151
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 861
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_152
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 861
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_153
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 861
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_154
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 861
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_155
+      rect:
+        serializedVersion: 2
+        x: 2002
+        y: 861
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_156
+      rect:
+        serializedVersion: 2
+        x: 2184
+        y: 861
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_157
+      rect:
+        serializedVersion: 2
+        x: 2366
+        y: 861
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_158
+      rect:
+        serializedVersion: 2
+        x: 2548
+        y: 861
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_159
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 861
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_160
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 720
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_161
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 720
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_162
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 720
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_163
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 720
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_164
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 720
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_165
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 720
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_166
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 720
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_167
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 720
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_168
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 720
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_169
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 720
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_170
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 720
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_171
+      rect:
+        serializedVersion: 2
+        x: 2002
+        y: 720
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_172
+      rect:
+        serializedVersion: 2
+        x: 2184
+        y: 720
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_173
+      rect:
+        serializedVersion: 2
+        x: 2366
+        y: 720
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_174
+      rect:
+        serializedVersion: 2
+        x: 2548
+        y: 720
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_175
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 720
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_176
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 579
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_177
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 579
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_178
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 579
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_179
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 579
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_180
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 579
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_181
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 579
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_182
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 579
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_183
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 579
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_184
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 579
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_185
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 579
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_186
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 579
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_187
+      rect:
+        serializedVersion: 2
+        x: 2002
+        y: 579
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_188
+      rect:
+        serializedVersion: 2
+        x: 2184
+        y: 579
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_189
+      rect:
+        serializedVersion: 2
+        x: 2366
+        y: 579
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_190
+      rect:
+        serializedVersion: 2
+        x: 2548
+        y: 579
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_191
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 579
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_192
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 438
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_193
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 438
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_194
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 438
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_195
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 438
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_196
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 438
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_197
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 438
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_198
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 438
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_199
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 438
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_200
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 438
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_201
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 438
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_202
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 438
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_203
+      rect:
+        serializedVersion: 2
+        x: 2002
+        y: 438
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_204
+      rect:
+        serializedVersion: 2
+        x: 2184
+        y: 438
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_205
+      rect:
+        serializedVersion: 2
+        x: 2366
+        y: 438
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_206
+      rect:
+        serializedVersion: 2
+        x: 2548
+        y: 438
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_207
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 438
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_208
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 297
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_209
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 297
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_210
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 297
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_211
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 297
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_212
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 297
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_213
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 297
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_214
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 297
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_215
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 297
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_216
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 297
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_217
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 297
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_218
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 297
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_219
+      rect:
+        serializedVersion: 2
+        x: 2002
+        y: 297
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_220
+      rect:
+        serializedVersion: 2
+        x: 2184
+        y: 297
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_221
+      rect:
+        serializedVersion: 2
+        x: 2366
+        y: 297
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_222
+      rect:
+        serializedVersion: 2
+        x: 2548
+        y: 297
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_223
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 297
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_224
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 156
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_225
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 156
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_226
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 156
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_227
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 156
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_228
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 156
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_229
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 156
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_230
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 156
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_231
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 156
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_232
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 156
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_233
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 156
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_234
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 156
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_235
+      rect:
+        serializedVersion: 2
+        x: 2002
+        y: 156
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_236
+      rect:
+        serializedVersion: 2
+        x: 2184
+        y: 156
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_237
+      rect:
+        serializedVersion: 2
+        x: 2366
+        y: 156
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_238
+      rect:
+        serializedVersion: 2
+        x: 2548
+        y: 156
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_239
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 156
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_240
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 15
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_241
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 15
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_242
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 15
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_243
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 15
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_244
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 15
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_245
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 15
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_246
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 15
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_247
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 15
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_248
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 15
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_249
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 15
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_250
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 15
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_251
+      rect:
+        serializedVersion: 2
+        x: 2002
+        y: 15
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_252
+      rect:
+        serializedVersion: 2
+        x: 2184
+        y: 15
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_253
+      rect:
+        serializedVersion: 2
+        x: 2366
+        y: 15
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_254
+      rect:
+        serializedVersion: 2
+        x: 2548
+        y: 15
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarAttack_255
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 15
+        width: 182
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

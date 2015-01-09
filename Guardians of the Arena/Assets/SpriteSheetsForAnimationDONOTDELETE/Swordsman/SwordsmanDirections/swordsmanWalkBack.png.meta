@@ -1,7 +1,17 @@
 fileFormatVersion: 2
 guid: 0a14044a951b44deaba64c72032ab2c3
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: swordsmanWalkBack_0
+    21300002: swordsmanWalkBack_1
+    21300004: swordsmanWalkBack_2
+    21300006: swordsmanWalkBack_3
+    21300008: swordsmanWalkBack_4
+    21300010: swordsmanWalkBack_5
+    21300012: swordsmanWalkBack_6
+    21300014: swordsmanWalkBack_7
+    21300016: swordsmanWalkBack_8
+    21300018: swordsmanWalkBack_9
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +52,106 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: swordsmanWalkBack_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 9
+        width: 99
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalkBack_1
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 9
+        width: 99
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalkBack_2
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 9
+        width: 99
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalkBack_3
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 9
+        width: 99
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalkBack_4
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 9
+        width: 99
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalkBack_5
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 9
+        width: 99
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalkBack_6
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 9
+        width: 99
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalkBack_7
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 9
+        width: 99
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalkBack_8
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 9
+        width: 99
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanWalkBack_9
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 9
+        width: 99
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

@@ -1,7 +1,135 @@
 fileFormatVersion: 2
 guid: e06136924912e44bd80b6598a18a98e7
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: templarWalk_0
+    21300002: templarWalk_1
+    21300004: templarWalk_2
+    21300006: templarWalk_3
+    21300008: templarWalk_4
+    21300010: templarWalk_5
+    21300012: templarWalk_6
+    21300014: templarWalk_7
+    21300016: templarWalk_8
+    21300018: templarWalk_9
+    21300020: templarWalk_10
+    21300022: templarWalk_11
+    21300024: templarWalk_12
+    21300026: templarWalk_13
+    21300028: templarWalk_14
+    21300030: templarWalk_15
+    21300032: templarWalk_16
+    21300034: templarWalk_17
+    21300036: templarWalk_18
+    21300038: templarWalk_19
+    21300040: templarWalk_20
+    21300042: templarWalk_21
+    21300044: templarWalk_22
+    21300046: templarWalk_23
+    21300048: templarWalk_24
+    21300050: templarWalk_25
+    21300052: templarWalk_26
+    21300054: templarWalk_27
+    21300056: templarWalk_28
+    21300058: templarWalk_29
+    21300060: templarWalk_30
+    21300062: templarWalk_31
+    21300064: templarWalk_32
+    21300066: templarWalk_33
+    21300068: templarWalk_34
+    21300070: templarWalk_35
+    21300072: templarWalk_36
+    21300074: templarWalk_37
+    21300076: templarWalk_38
+    21300078: templarWalk_39
+    21300080: templarWalk_40
+    21300082: templarWalk_41
+    21300084: templarWalk_42
+    21300086: templarWalk_43
+    21300088: templarWalk_44
+    21300090: templarWalk_45
+    21300092: templarWalk_46
+    21300094: templarWalk_47
+    21300096: templarWalk_48
+    21300098: templarWalk_49
+    21300100: templarWalk_50
+    21300102: templarWalk_51
+    21300104: templarWalk_52
+    21300106: templarWalk_53
+    21300108: templarWalk_54
+    21300110: templarWalk_55
+    21300112: templarWalk_56
+    21300114: templarWalk_57
+    21300116: templarWalk_58
+    21300118: templarWalk_59
+    21300120: templarWalk_60
+    21300122: templarWalk_61
+    21300124: templarWalk_62
+    21300126: templarWalk_63
+    21300128: templarWalk_64
+    21300130: templarWalk_65
+    21300132: templarWalk_66
+    21300134: templarWalk_67
+    21300136: templarWalk_68
+    21300138: templarWalk_69
+    21300140: templarWalk_70
+    21300142: templarWalk_71
+    21300144: templarWalk_72
+    21300146: templarWalk_73
+    21300148: templarWalk_74
+    21300150: templarWalk_75
+    21300152: templarWalk_76
+    21300154: templarWalk_77
+    21300156: templarWalk_78
+    21300158: templarWalk_79
+    21300160: templarWalk_80
+    21300162: templarWalk_81
+    21300164: templarWalk_82
+    21300166: templarWalk_83
+    21300168: templarWalk_84
+    21300170: templarWalk_85
+    21300172: templarWalk_86
+    21300174: templarWalk_87
+    21300176: templarWalk_88
+    21300178: templarWalk_89
+    21300180: templarWalk_90
+    21300182: templarWalk_91
+    21300184: templarWalk_92
+    21300186: templarWalk_93
+    21300188: templarWalk_94
+    21300190: templarWalk_95
+    21300192: templarWalk_96
+    21300194: templarWalk_97
+    21300196: templarWalk_98
+    21300198: templarWalk_99
+    21300200: templarWalk_100
+    21300202: templarWalk_101
+    21300204: templarWalk_102
+    21300206: templarWalk_103
+    21300208: templarWalk_104
+    21300210: templarWalk_105
+    21300212: templarWalk_106
+    21300214: templarWalk_107
+    21300216: templarWalk_108
+    21300218: templarWalk_109
+    21300220: templarWalk_110
+    21300222: templarWalk_111
+    21300224: templarWalk_112
+    21300226: templarWalk_113
+    21300228: templarWalk_114
+    21300230: templarWalk_115
+    21300232: templarWalk_116
+    21300234: templarWalk_117
+    21300236: templarWalk_118
+    21300238: templarWalk_119
+    21300240: templarWalk_120
+    21300242: templarWalk_121
+    21300244: templarWalk_122
+    21300246: templarWalk_123
+    21300248: templarWalk_124
+    21300250: templarWalk_125
+    21300252: templarWalk_126
+    21300254: templarWalk_127
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +170,1286 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: templarWalk_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1590
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_1
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 1590
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_2
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 1590
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_3
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 1590
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_4
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 1590
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_5
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 1590
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_6
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 1590
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_7
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 1590
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1484
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_9
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 1484
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_10
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 1484
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_11
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 1484
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_12
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 1484
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_13
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 1484
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_14
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 1484
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_15
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 1484
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1378
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_17
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 1378
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_18
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 1378
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_19
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 1378
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_20
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 1378
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_21
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 1378
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_22
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 1378
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_23
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 1378
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1272
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_25
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 1272
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_26
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 1272
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_27
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 1272
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_28
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 1272
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_29
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 1272
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_30
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 1272
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_31
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 1272
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1166
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_33
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 1166
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_34
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 1166
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_35
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 1166
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_36
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 1166
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_37
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 1166
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_38
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 1166
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_39
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 1166
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1060
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_41
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 1060
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_42
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 1060
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_43
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 1060
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_44
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 1060
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_45
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 1060
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_46
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 1060
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_47
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 1060
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 954
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_49
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 954
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_50
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 954
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_51
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 954
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_52
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 954
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_53
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 954
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_54
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 954
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_55
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 954
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 848
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_57
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 848
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_58
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 848
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_59
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 848
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_60
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 848
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_61
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 848
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_62
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 848
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_63
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 848
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_64
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 742
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_65
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 742
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_66
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 742
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_67
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 742
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_68
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 742
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_69
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 742
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_70
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 742
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_71
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 742
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 636
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_73
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 636
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_74
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 636
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_75
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 636
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_76
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 636
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_77
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 636
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_78
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 636
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_79
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 636
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_80
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 530
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_81
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 530
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_82
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 530
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_83
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 530
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_84
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 530
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_85
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 530
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_86
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 530
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_87
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 530
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_88
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 424
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_89
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 424
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_90
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 424
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_91
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 424
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_92
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 424
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_93
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 424
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_94
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 424
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_95
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 424
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_96
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 318
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_97
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 318
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_98
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 318
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_99
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 318
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_100
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 318
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_101
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 318
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_102
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 318
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_103
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 318
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_104
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 212
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_105
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 212
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_106
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 212
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_107
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 212
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_108
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 212
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_109
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 212
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_110
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 212
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_111
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 212
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_112
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 106
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_113
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 106
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_114
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 106
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_115
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 106
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_116
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 106
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_117
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 106
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_118
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 106
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_119
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 106
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_120
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_121
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 0
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_122
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 0
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_123
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 0
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_124
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 0
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_125
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 0
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_126
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 0
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarWalk_127
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 0
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

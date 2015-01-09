@@ -1,7 +1,22 @@
 fileFormatVersion: 2
 guid: a19dbc247e97d401b9d732d563e5aed6
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: swordsmanAttackLeft_0
+    21300002: swordsmanAttackLeft_1
+    21300004: swordsmanAttackLeft_2
+    21300006: swordsmanAttackLeft_3
+    21300008: swordsmanAttackLeft_4
+    21300010: swordsmanAttackLeft_5
+    21300012: swordsmanAttackLeft_6
+    21300014: swordsmanAttackLeft_7
+    21300016: swordsmanAttackLeft_8
+    21300018: swordsmanAttackLeft_9
+    21300020: swordsmanAttackLeft_10
+    21300022: swordsmanAttackLeft_11
+    21300024: swordsmanAttackLeft_12
+    21300026: swordsmanAttackLeft_13
+    21300028: swordsmanAttackLeft_14
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +57,156 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: swordsmanAttackLeft_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5
+        width: 180
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttackLeft_1
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 5
+        width: 180
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttackLeft_2
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 5
+        width: 180
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttackLeft_3
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 5
+        width: 180
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttackLeft_4
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 5
+        width: 180
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttackLeft_5
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 5
+        width: 180
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttackLeft_6
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 5
+        width: 180
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttackLeft_7
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 5
+        width: 180
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttackLeft_8
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 5
+        width: 180
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttackLeft_9
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 5
+        width: 180
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttackLeft_10
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 5
+        width: 180
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttackLeft_11
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 5
+        width: 180
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttackLeft_12
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 5
+        width: 180
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttackLeft_13
+      rect:
+        serializedVersion: 2
+        x: 2340
+        y: 5
+        width: 180
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swordsmanAttackLeft_14
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 5
+        width: 180
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

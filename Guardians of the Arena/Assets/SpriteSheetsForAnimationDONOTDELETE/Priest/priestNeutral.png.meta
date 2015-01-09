@@ -1,7 +1,127 @@
 fileFormatVersion: 2
 guid: cce04aa869b274e549090d3b16e50706
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: priestNeutral_0
+    21300002: priestNeutral_1
+    21300004: priestNeutral_2
+    21300006: priestNeutral_3
+    21300008: priestNeutral_4
+    21300010: priestNeutral_5
+    21300012: priestNeutral_6
+    21300014: priestNeutral_7
+    21300016: priestNeutral_8
+    21300018: priestNeutral_9
+    21300020: priestNeutral_10
+    21300022: priestNeutral_11
+    21300024: priestNeutral_12
+    21300026: priestNeutral_13
+    21300028: priestNeutral_14
+    21300030: priestNeutral_15
+    21300032: priestNeutral_16
+    21300034: priestNeutral_17
+    21300036: priestNeutral_18
+    21300038: priestNeutral_19
+    21300040: priestNeutral_20
+    21300042: priestNeutral_21
+    21300044: priestNeutral_22
+    21300046: priestNeutral_23
+    21300048: priestNeutral_24
+    21300050: priestNeutral_25
+    21300052: priestNeutral_26
+    21300054: priestNeutral_27
+    21300056: priestNeutral_28
+    21300058: priestNeutral_29
+    21300060: priestNeutral_30
+    21300062: priestNeutral_31
+    21300064: priestNeutral_32
+    21300066: priestNeutral_33
+    21300068: priestNeutral_34
+    21300070: priestNeutral_35
+    21300072: priestNeutral_36
+    21300074: priestNeutral_37
+    21300076: priestNeutral_38
+    21300078: priestNeutral_39
+    21300080: priestNeutral_40
+    21300082: priestNeutral_41
+    21300084: priestNeutral_42
+    21300086: priestNeutral_43
+    21300088: priestNeutral_44
+    21300090: priestNeutral_45
+    21300092: priestNeutral_46
+    21300094: priestNeutral_47
+    21300096: priestNeutral_48
+    21300098: priestNeutral_49
+    21300100: priestNeutral_50
+    21300102: priestNeutral_51
+    21300104: priestNeutral_52
+    21300106: priestNeutral_53
+    21300108: priestNeutral_54
+    21300110: priestNeutral_55
+    21300112: priestNeutral_56
+    21300114: priestNeutral_57
+    21300116: priestNeutral_58
+    21300118: priestNeutral_59
+    21300120: priestNeutral_60
+    21300122: priestNeutral_61
+    21300124: priestNeutral_62
+    21300126: priestNeutral_63
+    21300128: priestNeutral_64
+    21300130: priestNeutral_65
+    21300132: priestNeutral_66
+    21300134: priestNeutral_67
+    21300136: priestNeutral_68
+    21300138: priestNeutral_69
+    21300140: priestNeutral_70
+    21300142: priestNeutral_71
+    21300144: priestNeutral_72
+    21300146: priestNeutral_73
+    21300148: priestNeutral_74
+    21300150: priestNeutral_75
+    21300152: priestNeutral_76
+    21300154: priestNeutral_77
+    21300156: priestNeutral_78
+    21300158: priestNeutral_79
+    21300160: priestNeutral_80
+    21300162: priestNeutral_81
+    21300164: priestNeutral_82
+    21300166: priestNeutral_83
+    21300168: priestNeutral_84
+    21300170: priestNeutral_85
+    21300172: priestNeutral_86
+    21300174: priestNeutral_87
+    21300176: priestNeutral_88
+    21300178: priestNeutral_89
+    21300180: priestNeutral_90
+    21300182: priestNeutral_91
+    21300184: priestNeutral_92
+    21300186: priestNeutral_93
+    21300188: priestNeutral_94
+    21300190: priestNeutral_95
+    21300192: priestNeutral_96
+    21300194: priestNeutral_97
+    21300196: priestNeutral_98
+    21300198: priestNeutral_99
+    21300200: priestNeutral_100
+    21300202: priestNeutral_101
+    21300204: priestNeutral_102
+    21300206: priestNeutral_103
+    21300208: priestNeutral_104
+    21300210: priestNeutral_105
+    21300212: priestNeutral_106
+    21300214: priestNeutral_107
+    21300216: priestNeutral_108
+    21300218: priestNeutral_109
+    21300220: priestNeutral_110
+    21300222: priestNeutral_111
+    21300224: priestNeutral_112
+    21300226: priestNeutral_113
+    21300228: priestNeutral_114
+    21300230: priestNeutral_115
+    21300232: priestNeutral_116
+    21300234: priestNeutral_117
+    21300236: priestNeutral_118
+    21300238: priestNeutral_119
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +162,1206 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: priestNeutral_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 658
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_1
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 658
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_2
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 658
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_3
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 658
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_4
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 658
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_5
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 658
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_6
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 658
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_7
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 658
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_8
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 658
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_9
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 658
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_10
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 658
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_11
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 658
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_12
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 658
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_13
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 658
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_14
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 658
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 564
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_16
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 564
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_17
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 564
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_18
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 564
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_19
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 564
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_20
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 564
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_21
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 564
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_22
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 564
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_23
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 564
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_24
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 564
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_25
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 564
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_26
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 564
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_27
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 564
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_28
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 564
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_29
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 564
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 470
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_31
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 470
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_32
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 470
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_33
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 470
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_34
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 470
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_35
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 470
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_36
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 470
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_37
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 470
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_38
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 470
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_39
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 470
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_40
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 470
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_41
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 470
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_42
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 470
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_43
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 470
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_44
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 470
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 376
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_46
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 376
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_47
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 376
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_48
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 376
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_49
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 376
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_50
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 376
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_51
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 376
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_52
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 376
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_53
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 376
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_54
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 376
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_55
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 376
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_56
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 376
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_57
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 376
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_58
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 376
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_59
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 376
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 282
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_61
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 282
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_62
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 282
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_63
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 282
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_64
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 282
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_65
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 282
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_66
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 282
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_67
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 282
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_68
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 282
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_69
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 282
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_70
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 282
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_71
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 282
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_72
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 282
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_73
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 282
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_74
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 282
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_75
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 188
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_76
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 188
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_77
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 188
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_78
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 188
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_79
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 188
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_80
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 188
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_81
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 188
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_82
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 188
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_83
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 188
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_84
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 188
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_85
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 188
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_86
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 188
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_87
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 188
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_88
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 188
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_89
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 188
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_90
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 94
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_91
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 94
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_92
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 94
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_93
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 94
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_94
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 94
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_95
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 94
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_96
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 94
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_97
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 94
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_98
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 94
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_99
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 94
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_100
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 94
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_101
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 94
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_102
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 94
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_103
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 94
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_104
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 94
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_105
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_106
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 0
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_107
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 0
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_108
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 0
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_109
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 0
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_110
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 0
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_111
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 0
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_112
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 0
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_113
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 0
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_114
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 0
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_115
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 0
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_116
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 0
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_117
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 0
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_118
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 0
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestNeutral_119
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 0
+        width: 52
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

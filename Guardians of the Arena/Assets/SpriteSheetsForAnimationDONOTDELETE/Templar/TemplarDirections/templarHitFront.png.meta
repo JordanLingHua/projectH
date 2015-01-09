@@ -1,7 +1,12 @@
 fileFormatVersion: 2
 guid: 46df7bb3ee49149379ef97dccd89a724
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: templarHitFront_0
+    21300002: templarHitFront_1
+    21300004: templarHitFront_2
+    21300006: templarHitFront_3
+    21300008: templarHitFront_4
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +47,56 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: templarHitFront_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3
+        width: 131
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHitFront_1
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 3
+        width: 131
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHitFront_2
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 3
+        width: 131
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHitFront_3
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 3
+        width: 131
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: templarHitFront_4
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 3
+        width: 131
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

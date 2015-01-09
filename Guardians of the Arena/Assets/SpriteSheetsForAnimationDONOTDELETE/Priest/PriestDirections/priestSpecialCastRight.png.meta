@@ -1,7 +1,22 @@
 fileFormatVersion: 2
 guid: 76e2e6c3af33f455c823552603bf1a9a
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: priestSpecialCastRight_0
+    21300002: priestSpecialCastRight_1
+    21300004: priestSpecialCastRight_2
+    21300006: priestSpecialCastRight_3
+    21300008: priestSpecialCastRight_4
+    21300010: priestSpecialCastRight_5
+    21300012: priestSpecialCastRight_6
+    21300014: priestSpecialCastRight_7
+    21300016: priestSpecialCastRight_8
+    21300018: priestSpecialCastRight_9
+    21300020: priestSpecialCastRight_10
+    21300022: priestSpecialCastRight_11
+    21300024: priestSpecialCastRight_12
+    21300026: priestSpecialCastRight_13
+    21300028: priestSpecialCastRight_14
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +57,156 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: priestSpecialCastRight_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 13
+        width: 78
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestSpecialCastRight_1
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 13
+        width: 78
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestSpecialCastRight_2
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 13
+        width: 78
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestSpecialCastRight_3
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 13
+        width: 78
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestSpecialCastRight_4
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 13
+        width: 78
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestSpecialCastRight_5
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 13
+        width: 78
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestSpecialCastRight_6
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 13
+        width: 78
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestSpecialCastRight_7
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 13
+        width: 78
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestSpecialCastRight_8
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 13
+        width: 78
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestSpecialCastRight_9
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 13
+        width: 78
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestSpecialCastRight_10
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 13
+        width: 78
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestSpecialCastRight_11
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 13
+        width: 78
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestSpecialCastRight_12
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 13
+        width: 78
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestSpecialCastRight_13
+      rect:
+        serializedVersion: 2
+        x: 1014
+        y: 13
+        width: 78
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestSpecialCastRight_14
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 13
+        width: 78
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

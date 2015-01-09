@@ -1,7 +1,19 @@
 fileFormatVersion: 2
 guid: 67f1ce79e8aa3477d895bb747e7ce9f9
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: mysticSpecialCastBack_0
+    21300002: mysticSpecialCastBack_1
+    21300004: mysticSpecialCastBack_2
+    21300006: mysticSpecialCastBack_3
+    21300008: mysticSpecialCastBack_4
+    21300010: mysticSpecialCastBack_5
+    21300012: mysticSpecialCastBack_6
+    21300014: mysticSpecialCastBack_7
+    21300016: mysticSpecialCastBack_8
+    21300018: mysticSpecialCastBack_9
+    21300020: mysticSpecialCastBack_10
+    21300022: mysticSpecialCastBack_11
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +54,126 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: mysticSpecialCastBack_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 122
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCastBack_1
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 1
+        width: 122
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCastBack_2
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 1
+        width: 122
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCastBack_3
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 1
+        width: 122
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCastBack_4
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 1
+        width: 122
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCastBack_5
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 1
+        width: 122
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCastBack_6
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 1
+        width: 122
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCastBack_7
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 1
+        width: 122
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCastBack_8
+      rect:
+        serializedVersion: 2
+        x: 976
+        y: 1
+        width: 122
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCastBack_9
+      rect:
+        serializedVersion: 2
+        x: 1098
+        y: 1
+        width: 122
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCastBack_10
+      rect:
+        serializedVersion: 2
+        x: 1220
+        y: 1
+        width: 122
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mysticSpecialCastBack_11
+      rect:
+        serializedVersion: 2
+        x: 1342
+        y: 1
+        width: 122
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

@@ -1,7 +1,39 @@
 fileFormatVersion: 2
 guid: 9ecb8d8c0bbe94928a54443f60f6629f
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: priestHit_0
+    21300002: priestHit_1
+    21300004: priestHit_2
+    21300006: priestHit_3
+    21300008: priestHit_4
+    21300010: priestHit_5
+    21300012: priestHit_6
+    21300014: priestHit_7
+    21300016: priestHit_8
+    21300018: priestHit_9
+    21300020: priestHit_10
+    21300022: priestHit_11
+    21300024: priestHit_12
+    21300026: priestHit_13
+    21300028: priestHit_14
+    21300030: priestHit_15
+    21300032: priestHit_16
+    21300034: priestHit_17
+    21300036: priestHit_18
+    21300038: priestHit_19
+    21300040: priestHit_20
+    21300042: priestHit_21
+    21300044: priestHit_22
+    21300046: priestHit_23
+    21300048: priestHit_24
+    21300050: priestHit_25
+    21300052: priestHit_26
+    21300054: priestHit_27
+    21300056: priestHit_28
+    21300058: priestHit_29
+    21300060: priestHit_30
+    21300062: priestHit_31
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +74,326 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: priestHit_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 712
+        width: 70
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestHit_1
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 712
+        width: 70
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestHit_2
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 712
+        width: 70
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestHit_3
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 712
+        width: 70
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestHit_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 611
+        width: 70
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestHit_5
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 611
+        width: 70
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestHit_6
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 611
+        width: 70
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestHit_7
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 611
+        width: 70
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestHit_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 510
+        width: 70
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestHit_9
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 510
+        width: 70
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestHit_10
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 510
+        width: 70
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestHit_11
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 510
+        width: 70
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestHit_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 409
+        width: 70
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestHit_13
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 409
+        width: 70
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestHit_14
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 409
+        width: 70
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestHit_15
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 409
+        width: 70
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestHit_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 308
+        width: 70
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestHit_17
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 308
+        width: 70
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestHit_18
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 308
+        width: 70
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestHit_19
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 308
+        width: 70
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestHit_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 207
+        width: 70
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestHit_21
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 207
+        width: 70
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestHit_22
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 207
+        width: 70
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestHit_23
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 207
+        width: 70
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestHit_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 106
+        width: 70
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestHit_25
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 106
+        width: 70
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestHit_26
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 106
+        width: 70
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestHit_27
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 106
+        width: 70
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestHit_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5
+        width: 70
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestHit_29
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 5
+        width: 70
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestHit_30
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 5
+        width: 70
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestHit_31
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 5
+        width: 70
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

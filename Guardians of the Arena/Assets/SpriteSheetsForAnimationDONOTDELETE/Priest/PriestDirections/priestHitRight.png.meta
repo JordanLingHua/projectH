@@ -1,7 +1,11 @@
 fileFormatVersion: 2
 guid: fb2cf7f3986044bab9d7e23f9d16523b
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: priestHitRight_0
+    21300002: priestHitRight_1
+    21300004: priestHitRight_2
+    21300006: priestHitRight_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +46,46 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: priestHitRight_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 70
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestHitRight_1
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 1
+        width: 70
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestHitRight_2
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 1
+        width: 70
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: priestHitRight_3
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 1
+        width: 70
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
