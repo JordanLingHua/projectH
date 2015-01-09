@@ -246,10 +246,19 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 	{
 
 		GUI.skin = mySkin;
-
+		GUI.BeginGroup (new Rect (0,0,100,100));
+		GUILayout.BeginHorizontal();
 		if (GUILayout.Button ("Visit Website", "ShortButton")) {
 			Application.OpenURL("http://skawafuc.wix.com/guardiansofthearena");
 		}
+		GUILayout.EndHorizontal();
+		GUILayout.BeginHorizontal();
+		if (GUILayout.Button ("Tutorial", "ShortButton")) {
+			Application.LoadLevel("Tutorial");
+		}
+		GUILayout.EndHorizontal();
+		GUI.EndGroup ();
+
 		if (doWindow0)
 			windowRect0 = GUI.Window (0, windowRect0, DoMyWindow0, "");
 		//now adjust to the group. (0,0) is the topleft corner of the group.

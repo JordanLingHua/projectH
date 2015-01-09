@@ -40,7 +40,6 @@ public class GameManager : MonoBehaviour {
 
 		if(Application.loadedLevelName.Equals("BoardScene"))
 		tm = GameObject.Find("TileManager").GetComponent<TileManager>();
-		uInfo = GameObject.Find("UnitInfoGUIText").GetComponent<GUIText>();
 		mana = GameObject.Find("ManaGUIText").GetComponent<GUIText>();
 		timerText = GameObject.Find("TimerGUIText").GetComponent<GUIText>();
 		combatLog = GameObject.Find("CombatLogGUIText").GetComponent<GUIText>();

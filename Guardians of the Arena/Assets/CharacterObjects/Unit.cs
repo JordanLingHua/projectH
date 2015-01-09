@@ -196,7 +196,7 @@ public class Unit    : MonoBehaviour {
 		if (gm.gs == GameManager.gameState.playerAtk && atkd){
 			info += "\nAlready attacked";
 		}
-		gm.uInfo.text = info;
+	//	gm.uInfo.text = info;
 	}
 
 	public virtual void gainXP(){
