@@ -53,17 +53,6 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 	//if you're using the spikes you'll need to find sizes that work well with them these are a few...
 
 	private Rect windowRect0 = new Rect (Screen.width / 2 - 350 / 2, 230, 350, 450);
-	
-	
-	private Vector2 scrollPosition;
-	private double HorizSliderValue = 0.5;
-	private double VertSliderValue = 0.5;
-	private bool ToggleBTN = false;
-	
-	//skin info
-	private string NecroText ="This started as a question... How flexible is the built in GUI in unity? The answer... pretty damn flexible! At first I wasn’t so sure; it seemed no one ever used it to make a non OS style GUI at least not a publicly available one. So I decided I couldn’t be sure until I tried to develop a full GUI, Long story short Necromancer was the result and is now available to the general public, free for comercial and non-comercial use. I only ask that if you add something Share it.   Credits to Kevin King for the fonts.";
-	
-
 
 	void AddSpikes(float winX)
 	{

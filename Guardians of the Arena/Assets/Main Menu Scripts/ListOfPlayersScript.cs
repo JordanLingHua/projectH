@@ -3,12 +3,11 @@ using System.Collections;
 
 public class ListOfPlayersScript : MonoBehaviour {
 
-	public GUIText guiText;
 	public ArrayList playerNames;
-
+	public string playerList;
 
 	void Start () {
-		guiText.text = "Players Online:";
+	
 		playerNames = new ArrayList();
 	}
 
@@ -20,10 +19,10 @@ public class ListOfPlayersScript : MonoBehaviour {
 	//whenever the list of players changes, refreshplayerlist updates the guitext to reflect it
 	public void refreshPlayerList()
 	{
-		string s = "Players Online:";
+		string s = string.Empty;
 		foreach (string name in playerNames) 
-			s += System.Environment.NewLine + name;
-		guiText.text = s;
+			s += name + System.Environment.NewLine;
+		playerList = s;
 	}
 
 	//add the new player and re-sort the list (for easy visual searches by the user)

@@ -116,7 +116,7 @@ public class GameProcess : MonoBehaviour {
 				playerNumber = Int32.Parse(tokens[1]);
 				DontDestroyOnLoad(GameObject.Find ("GameProcess"));
 				DontDestroyOnLoad(GameObject.Find ("PageNumber"));
-				Destroy(GameObject.Find("globalChat"));
+				Destroy(GameObject.Find("GlobalChat"));
 				Destroy(GameObject.Find("gChat"));
 				Destroy(GameObject.Find("ListOfPlayers"));
 				Destroy(GameObject.Find("ListOfPlayersGUIText"));
@@ -132,7 +132,7 @@ public class GameProcess : MonoBehaviour {
 			else if (tokens[0].Equals("globalChat"))
 			{
 				print (tokens[1] +" " + tokens[2]);
-				GameObject.Find ("globalChat").GetComponent<globalChatScript>().addLineToChat(tokens[1], tokens[2]);
+				GameObject.Find ("GlobalChat").GetComponent<globalChatScript>().addLineToChat(tokens[1], tokens[2]);
 			}
 			
 			//challengeRequest\\challengerName

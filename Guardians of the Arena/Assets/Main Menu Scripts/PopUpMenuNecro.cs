@@ -13,18 +13,15 @@ FancyTop (just an example of using the elements to do a centered header graphic)
 WaxSeal (adds the waxseal and ribbon to the right of the window)
 DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 */
-	Texture2D menuTexture;
-	public int hpSelGridInt,xpSelGridInt;
+
 	public bool allowEnemyUnitSelection, allowAutoMoveAttackToggle;
-	bool displayMenu;
 	GameManager gm;
 	AudioManager am;
 	GameProcess gp;
-	string[] selStrings = new string[] {"All", "Allied", "Enemy","Off"};
 	int displayWidth = 460;
 	int displayHeight = 590;
 	
-	bool doWindow0 = false;
+	bool doWindow1 = false;
 	
 	private float leafOffset;
 	private float frameOffset;
@@ -46,20 +43,7 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 	
 	// This script will only work with the Necromancer skin
 	public GUISkin mySkin;
-
-	
 	private Rect windowRect1;
-	
-	
-	private Vector2 scrollPosition;
-	private double HorizSliderValue = 0.5;
-	private double VertSliderValue = 0.5;
-	private bool ToggleBTN = false;
-	
-	//skin info
-	private string NecroText ="This started as a question... How flexible is the built in GUI in unity? The answer... pretty damn flexible! At first I wasn’t so sure; it seemed no one ever used it to make a non OS style GUI at least not a publicly available one. So I decided I couldn’t be sure until I tried to develop a full GUI, Long story short Necromancer was the result and is now available to the general public, free for comercial and non-comercial use. I only ask that if you add something Share it.   Credits to Kevin King for the fonts.";
-	
-	
 	
 	void AddSpikes(float winX)
 	{
@@ -256,7 +240,7 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 				}
 			}else{
 				if (GUILayout.Button ("Return to Main Menu", "ShortButton")){
-					displayMenu = false;
+					doWindow1 = false;
 					am.playButtonSFX();
 					DontDestroyOnLoad(GameObject.Find ("GameProcess"));
 					Application.LoadLevel(1);
@@ -280,7 +264,7 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 		//Close Button
 		if (GUILayout.Button ("Close Menu", "ShortButton"))
 		{
-			doWindow0 = !doWindow0;
+			doWindow1 = !doWindow1;
 		}
 		GUILayout.FlexibleSpace();
 		GUILayout.EndHorizontal();
@@ -299,7 +283,7 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 		
 		GUI.skin = mySkin;
 
-		if (doWindow0)
+		if (doWindow1)
 			windowRect1 = GUI.Window (1, windowRect1, DoMyWindow1, "");
 		//now adjust to the group. (0,0) is the topleft corner of the group.
 		GUI.BeginGroup (new Rect (0,0,100,100));
@@ -310,7 +294,6 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 	// Use this for initialization
 	void Start () {
 		allowAutoMoveAttackToggle = true;
-		menuTexture = (Texture2D)Resources.Load ("PopupMenuBG");
 		am = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 		windowRect1 = new Rect (Screen.width / 2 - 350 / 2, 0, displayWidth, displayHeight);
@@ -319,7 +302,7 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.F10) || Input.GetKeyDown(KeyCode.Escape)){
-			doWindow0 = !doWindow0;
+			doWindow1 = !doWindow1;
 		}
 	}
 }
