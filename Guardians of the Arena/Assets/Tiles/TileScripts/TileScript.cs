@@ -87,14 +87,12 @@ public class TileScript : MonoBehaviour {
 		}
 		
 		Vector3 newPos;
-		gm.movingPiece = true;
 		
 		while (tiles.Count !=0){
 			newPos = new Vector3(tiles.Peek().transform.position.x,5f,tiles.Peek().transform.position.z);
 			yield return StartCoroutine(movePiece(movingUnit.gameObject,movingUnit.transform.position,newPos,0.28f));
 			tiles.Pop();
 		}
-		gm.movingPiece = false;
 		objectOccupyingTile = movingUnit.gameObject;
 
 	}

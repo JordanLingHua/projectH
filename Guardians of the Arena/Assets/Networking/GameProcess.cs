@@ -314,6 +314,7 @@ public class GameProcess : MonoBehaviour {
 	
 	public void movePiece(int unitID, int toX, int toY)
 	{
+		gameManager.addLogToCombatLog(gameManager.units[unitID].unitName + " moved for " + gameManager.units[unitID].mvCost + " mana!");
 		if (gameManager.units [unitID].unitType == 2) {
 			Mystic x = gameManager.units[unitID] as Mystic;
 			x.revertStatsOfFocused();

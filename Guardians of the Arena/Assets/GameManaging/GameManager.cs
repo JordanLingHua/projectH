@@ -3,15 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour {
-	public bool turn, incMana;
-	public bool movingPiece,gameOver;
 	public enum gameState {playerMv,playerAtk}
+
+	//combat log window variables
+	public GUISkin mySkin;
+	int maxCombatLogMessages = 15;
+	string combatLogText;
+	Vector2 combatLogScrollPos;
+	private Rect combatLogWindowRect;
+	int combatLogWidth = 400;
+	int combatLogHeight = 250;
+	ArrayList combatLogMessages = new ArrayList();
+
+	//game managing variables
+	public bool turn, incMana,gameOver;
 	public GameObject popUpText;
 	public GUIText uInfo,mana,timerText,combatLog,suInfo;
-	//gamestate: player is moving a unit (1), attacking with a unit (2), enemy turn and moving (3), enemy turn and attacking (4);
 	public gameState gs;
 	public int pMana,maxMana;
-	readonly int GAME_MAX_MANA = 12;
 	public string buttonOption = "Attack";
 	TileManager tm;
 	GameProcess gp;
@@ -31,6 +40,8 @@ public class GameManager : MonoBehaviour {
 	public Dictionary<int,Unit>	units = new Dictionary<int, Unit>();	
 	
 	void Start () {
+		combatLogText = "";
+		combatLogWindowRect = new Rect (Screen.width-combatLogWidth,Screen.height-combatLogHeight+20, combatLogWidth, combatLogHeight);
 		pMana = 2;
 		maxMana = 2;
 		timer = TIMER_LENGTH;
@@ -60,6 +71,36 @@ public class GameManager : MonoBehaviour {
 		text.GetComponent<ErrorPopUpTextScript> ().StartCoroutine (text.GetComponent<ErrorPopUpTextScript> ().showText (error, Color.red));
 	}
 
+//	//
+//	void combatLogWindow (int windowID) 
+//	{
+//		GUILayout.BeginVertical ();
+//		GUILayout.Space (8);
+//		
+//		GUILayout.Label ("Combat Log");
+//		GUILayout.Label("", "Divider");
+//		
+//		
+//		GUILayout.BeginHorizontal ();
+//		combatLogScrollPos = GUILayout.BeginScrollView (combatLogScrollPos , false, true);
+//		GUILayout.Label ("Hi", "PlainText");
+//		GUILayout.EndScrollView ();
+//		GUILayout.EndHorizontal ();
+//		GUILayout.Space (8);
+//		
+//		GUILayout.BeginHorizontal();
+//		chat = GUILayout.TextField (chat, 50);
+//		if (GUILayout.Button ("Send", "ShortButton")) 
+//		{
+//			if (!chat.Equals (string.Empty)) 
+//			{
+//				gp.returnSocket ().SendTCPPacket ("globalChat\\" + chat);
+//				chat = string.Empty;
+//			}
+//		}
+//	}
+
+
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.Escape)){
 			clearSelection();
@@ -88,7 +129,42 @@ public class GameManager : MonoBehaviour {
 
 	}
 	
+	public void addLogToCombatLog(string log){
+		combatLogMessages.Insert(0,log+"\n");
+		if (combatLogMessages.Count > maxCombatLogMessages){
+			combatLogMessages.RemoveAt(maxCombatLogMessages);
+		}
+		combatLogText = "";
+		for (int i = 0; i < combatLogMessages.Count; i ++){
+			combatLogText += combatLogMessages[i];
+		}
+	}
+
+	void combatLogWindow (int windowID) 
+	{
+		GUILayout.BeginVertical ();
+		GUILayout.Space (8);
+		
+		GUILayout.Label ("Combat Log");
+		GUILayout.Label("", "Divider");
+		
+		
+		GUILayout.BeginHorizontal ();
+		combatLogScrollPos = GUILayout.BeginScrollView (combatLogScrollPos , false, true);
+		GUILayout.Label (combatLogText, "PlainText");
+		GUILayout.EndScrollView ();
+		GUILayout.EndHorizontal ();
+		//GUILayout.Space (8);
+		
+		GUILayout.EndVertical();
+	}
+
+
 	void OnGUI(){
+		GUI.skin = mySkin;
+		combatLogWindowRect = GUI.Window (2, combatLogWindowRect, combatLogWindow, "");
+		GUI.BeginGroup (new Rect (0,0,100,100));
+		GUI.EndGroup();
 		//extra unit on screen
 		//notworking so removed for now
 		if (selectedUnit != null){
