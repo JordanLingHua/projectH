@@ -56,6 +56,7 @@ public class Guardian :Unit {
 			}
 		}else{
 			unitAffected.showPopUpText("Invincible!",Color.red);
+			gm.addLogToCombatLog(this.unitName +" attacked "+ unitAffected.unitName + " but it was invincible!");
 		}
 		//clean up the board colors
 		gm.accessibleTiles.Clear();

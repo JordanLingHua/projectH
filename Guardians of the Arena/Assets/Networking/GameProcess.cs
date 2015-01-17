@@ -260,6 +260,7 @@ public class GameProcess : MonoBehaviour {
 			{
 				gameManager.pMana -= gameManager.units[Int32.Parse (tokens[1])].atkCost;
 				if (Int32.Parse (tokens[2]) != 0){
+	
 					for (int i = 0; i < Int32.Parse (tokens[2]); i ++ ){
 						//gameManager.units[Int32.Parse (tokens[1])].gainXP();
 						if (gameManager.units[Int32.Parse (tokens[1])].unitType == 2){
@@ -269,6 +270,7 @@ public class GameProcess : MonoBehaviour {
 					}
 				}else{
 					gameManager.units[Int32.Parse (tokens[1])].showPopUpText("Attacked Nothing!", Color.red);
+					gameManager.addLogToCombatLog(gameManager.units[Int32.Parse (tokens[1])] + " attacked nothing for " + gameManager.units[Int32.Parse (tokens[1])].atkCost + " mana!");
 				}
 				if (pum.allowAutoMoveAttackToggle){
 					gameManager.changeToMoving();

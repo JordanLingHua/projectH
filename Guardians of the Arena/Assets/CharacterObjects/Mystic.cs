@@ -32,7 +32,7 @@ public class Mystic: Unit {
 			unitFocused.atkRange = oldAtkRange;
 			unitFocused.atk = oldAtkDmg;
 			showPopUpText("Lost Focus!",Color.red);
-			unitFocused = null;
+			gm.addLogToCombatLog(this.unitName + " lost focus of " + unitFocused.unitName);
 		}
 	
 	}

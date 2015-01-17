@@ -15,7 +15,7 @@ public class SoulStone: Unit {
 		mvRange = 0;
 		mvCost = 0;
 		atkRange = 0;
-		atkCost = 500;
+		atkCost = 0;
 		
 		invincible = true;//can be changed later
 		unitRole = 507;//Kingpin
@@ -23,7 +23,7 @@ public class SoulStone: Unit {
 	}
 
 	public override void showMvTiles(allegiance ally){
-
+		
 	}
 
 	void Update () {
