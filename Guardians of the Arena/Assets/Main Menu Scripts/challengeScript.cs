@@ -3,7 +3,7 @@ using System.Collections;
 
 public class challengeScript : MonoBehaviour {
 
-	public GUIText challengeText;
+	public string challengeText;
 	bool showChallengeOptions;
 	GameProcess gp;
 	ArrayList challengeRequests;
@@ -41,11 +41,11 @@ public class challengeScript : MonoBehaviour {
 			if (challengeRequests.Count > 0)
 			{
 				challenger = (string)challengeRequests.GetEnumerator().Current;
-				challengeText.text = challenger + " has challenged you! Do you accept?";
+				challengeText = challenger + " has challenged you! Do you accept?";
 				showChallengeOptions = true;
 			}
 			else
-				challengeText.text = string.Empty;
+				challengeText = string.Empty;
 		}	
 	}
 
@@ -61,7 +61,7 @@ public class challengeScript : MonoBehaviour {
 			challengeRequests.Remove (challengeCanceller);
 		else 
 		{
-			challengeText.text = challengeCanceller + " has cancelled the challenge";
+			challengeText = challengeCanceller + " has cancelled the challenge";
 			showChallengeOptions = false;
 		}
 

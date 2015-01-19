@@ -17,6 +17,7 @@ public class GameProcess : MonoBehaviour {
 	public GameManager gameManager;
 	AudioManager am;
 	PopUpMenu pum;
+	AIManager aiManager;
 	public PlayerSetup playerSetup;
 	
 	//PRIVATE MEMBERS
@@ -106,7 +107,7 @@ public class GameProcess : MonoBehaviour {
 			// alreadyLoggedIn\\username
 			else if (tokens[0].Equals("alreadyLoggedIn"))
 			{
-				GameObject.Find("Login_GUI").GetComponent<LoginScreenGUI>().guiText.text =
+				GameObject.Find("Login_GUI").GetComponent<LoginScreenGUI>().loginText =
 					tokens[1] + " is already logged in!";
 			}
 			
@@ -125,6 +126,23 @@ public class GameProcess : MonoBehaviour {
 				DontDestroyOnLoad(pum);
 				Application.LoadLevel(3);
 				
+				
+			}
+
+			// startGame\\playerNumber
+			else if (tokens[0].Equals("startAI"))
+			{
+				playerNumber = Int32.Parse(tokens[1]);
+				DontDestroyOnLoad(GameObject.Find ("GameProcess"));
+				DontDestroyOnLoad(GameObject.Find ("PageNumber"));
+				Destroy(GameObject.Find("GlobalChat"));
+				Destroy(GameObject.Find("gChat"));
+				Destroy(GameObject.Find("ListOfPlayers"));
+				Destroy(GameObject.Find("ListOfPlayersGUIText"));
+				DontDestroyOnLoad(this);
+				DontDestroyOnLoad (am);
+				DontDestroyOnLoad(pum);
+				Application.LoadLevel(5);				
 				
 			}
 			
@@ -262,7 +280,7 @@ public class GameProcess : MonoBehaviour {
 				if (Int32.Parse (tokens[2]) != 0){
 	
 					for (int i = 0; i < Int32.Parse (tokens[2]); i ++ ){
-						//gameManager.units[Int32.Parse (tokens[1])].gainXP();
+						gameManager.units[Int32.Parse (tokens[1])].gainXP();
 						if (gameManager.units[Int32.Parse (tokens[1])].unitType == 2){
 							(gameManager.units[Int32.Parse (tokens[1])] as Mystic).revertStatsOfFocused();
 						}
@@ -281,7 +299,10 @@ public class GameProcess : MonoBehaviour {
 			//switchTurns
 			else if (tokens[0].Equals("switchTurns"))
 			{
-				gameManager.nextTurn(Int32.Parse (tokens[1]));
+				if(Application.loadedLevelName.Equals("BoardScene"))
+					gameManager.nextTurn(Int32.Parse (tokens[1]));
+				else if(Application.loadedLevelName.Equals("AIScene"))
+				    aiManager.nextTurn(Int32.Parse (tokens[1]));
 			}
 			
 			//TODO mmr
@@ -345,6 +366,8 @@ public class GameProcess : MonoBehaviour {
 			playerSetup = GameObject.Find ("PlayerSetup").GetComponent<PlayerSetup> ();
 		else if (sceneNumber == 0)
 			socks = new Sockets ();
+		else if (sceneNumber == 5)
+			loadAI ();
 		
 	}
 
@@ -355,6 +378,10 @@ public class GameProcess : MonoBehaviour {
 		}catch(Exception e){
 			print ("Error on disconnect: " + e);
 		}		
+	}
+
+	public void loadAI(){
+		aiManager = GameObject.Find("AI").GetComponent<AIManager>();
 	}
 	
 	public void loadManagers()

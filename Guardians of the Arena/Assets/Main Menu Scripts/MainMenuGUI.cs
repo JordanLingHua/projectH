@@ -6,16 +6,18 @@ using System;
 public class MainMenuGUI : MonoBehaviour {
 	
 	public bool showGUI;
-	public GUIText guiText;
+	public string infoText;
 	GameProcess gp;
 	PageNumberScript pageNumber;
+	PageNameScript pageNameScript;
 	globalChatScript globalChatScript;
 	ListOfPlayersScript listOfPlayers;
 	public string chat;
 	public string challengedPlayer;
 	string challengedPlayerCopy;
+	public int space;
 
-	bool challengePending;
+	public bool challengePending;
 	AudioManager am;
 
 	bool doWindow2 = true;
@@ -39,29 +41,33 @@ public class MainMenuGUI : MonoBehaviour {
 	private float WSribbonOffsetY;
 	
 	private int spikeCount;
+	private int windowSeparation;
 	public Vector2 scrollPosition3;
 	public Vector2 scrollPosition4;
 	
 	// This script will only work with the Necromancer skin
 	public GUISkin mySkin;
 	
-	
-	private Rect windowRect2;
+	//menu window
+	public Rect windowRect2;
 	int displayWidth2 = 400;
-	int displayHeight2 = 400;
+	int displayHeight2 = 500;
 
-	private Rect windowRect3;
+	//chat window
+	public Rect windowRect3;
 	int displayWidth3 = 400;
-	int displayHeight3 = 350;
+	int displayHeight3 = 450;
 
-	private Rect windowRect4;
+	//players online window
+	public Rect windowRect4;
 	int displayWidth4 = 275;
-	int displayHeight4 = 350;
+	int displayHeight4 = 450;
 
 	// Use this for initialization
 	void Start () {
-		pageNumber = GameObject.Find ("PageNumber").GetComponent<PageNumberScript>();
-		guiText.text = string.Empty;
+		pageNumber = GameObject.Find ("PageInfo").GetComponent<PageNumberScript>();
+		pageNameScript = GameObject.Find ("PageInfo").GetComponent<PageNameScript>();
+		infoText = string.Empty;
 		challengedPlayerCopy = string.Empty;
 		showGUI = true;
 		am = GameObject.Find ("AudioManager").GetComponent<AudioManager> ();
@@ -71,10 +77,11 @@ public class MainMenuGUI : MonoBehaviour {
 		chat = string.Empty;
 		challengePending = false;
 
-		windowRect2 = new Rect (Screen.width / 2 - 350 / 2, 0, displayWidth2, displayHeight2);
-		windowRect3 = new Rect (20, Screen.height / 2 - 200, displayWidth3, displayHeight3);
-		windowRect4 = new Rect (Screen.width - 300, Screen.height / 2, displayWidth4, displayHeight4);
-	
+		windowSeparation = 25;
+		windowRect2 = new Rect (Screen.width / 2 - displayWidth2 / 2, Screen.height / 2 - 250, displayWidth2, displayHeight2);
+		windowRect3 = new Rect (Screen.width / 2 - displayWidth2 / 2 - displayWidth2 - windowSeparation, Screen.height / 2 - 200, displayWidth3, displayHeight3);
+		windowRect4 = new Rect (Screen.width / 2 + displayWidth2 / 2 + windowSeparation, Screen.height / 2 - 200, displayWidth4, displayHeight4);
+		space = 10;
 
 	}
 
@@ -131,13 +138,14 @@ public class MainMenuGUI : MonoBehaviour {
 	
 	void DoMyWindow2 (int windowID) 
 	{
-		//FancyTop(windowRect1.width);
+		AddSpikes(windowRect2.width);
+		FancyTop(windowRect2.width);
 
 		// use the spike function to add the spikes
 		// note: were passing the width of the window to the function
 		//	AddSpikes(windowRect1.width);
 		GUILayout.BeginVertical ();
-		GUILayout.Space (8);
+		GUILayout.Space (space);
 
 		GUILayout.Label ("Menu");
 		GUILayout.Label("", "Divider");//-------------------------------- custom
@@ -148,13 +156,28 @@ public class MainMenuGUI : MonoBehaviour {
 			{
 				GUILayout.BeginHorizontal();
 				GUILayout.FlexibleSpace();
-				if (GUILayout.Button ("Play Game", "ShortButton")) 
+				if (GUILayout.Button ("Start Matchmaking", "ShortButton")) 
 				{
 					am.playButtonSFX ();
 					//send search request
 					gp.returnSocket ().SendTCPPacket ("search\\" + pageNumber.selectedPage);
 
-					guiText.text = "Searching for Opponent...";
+					infoText = "Searching for Opponent...";
+					showGUI = false;
+				}
+				GUILayout.FlexibleSpace();
+				GUILayout.EndHorizontal();
+				GUILayout.Label("", "Divider");//-------------------------------- custom
+
+				GUILayout.BeginHorizontal();
+				GUILayout.FlexibleSpace();
+				if (GUILayout.Button ("Play vs AI", "ShortButton")) 
+				{
+					am.playButtonSFX ();
+					//send search request
+					gp.returnSocket ().SendTCPPacket ("playAI\\" + pageNumber.selectedPage);
+					
+					infoText = "Searching for Opponent...";
 					showGUI = false;
 				}
 				GUILayout.FlexibleSpace();
@@ -171,7 +194,7 @@ public class MainMenuGUI : MonoBehaviour {
 					gp.returnSocket ().SendTCPPacket ("challengeRequest\\" + gp.playerName + "\\" + challengedPlayer);
 					challengePending = true;
 					challengedPlayerCopy = challengedPlayer;
-					guiText.text = "Waiting for " + challengedPlayer + " to respond...";
+					infoText = "Waiting for " + challengedPlayer + " to respond...";
 
 
 				}
@@ -182,19 +205,30 @@ public class MainMenuGUI : MonoBehaviour {
 
 				GUILayout.BeginHorizontal();
 				GUILayout.FlexibleSpace();
+				GUILayout.Label ("Selected Setup: " + pageNameScript.pages[pageNumber.selectedPage - 1], "PlainText");//------------------------------------ custom
+				GUILayout.FlexibleSpace();
+				GUILayout.EndHorizontal();
+
+				GUILayout.BeginHorizontal();
+				//GUILayout.FlexibleSpace();
 				if (GUILayout.Button ("Setup Boards", "ShortButton")) 
 				{
 					am.playButtonSFX ();
 					DontDestroyOnLoad (gp);
 					DontDestroyOnLoad (GameObject.Find ("GlobalChat"));
 					DontDestroyOnLoad (GameObject.Find ("gChat"));
-					DontDestroyOnLoad (GameObject.Find ("PageNumber"));
+					DontDestroyOnLoad (GameObject.Find ("PageInfo"));
 					DontDestroyOnLoad (GameObject.Find ("ListOfPlayers"));
 					DontDestroyOnLoad (GameObject.Find ("ListOfPlayersGUIText"));
 					Application.LoadLevel (2);
 				}
 				GUILayout.FlexibleSpace();
+				GUILayout.Label ("", "PlainText"); // spacing... placeholder for chose setup
+				GUILayout.FlexibleSpace();
 				GUILayout.EndHorizontal();
+
+
+				GUILayout.Space(10);
 				GUILayout.Label("", "Divider");//-------------------------------- custom
 				
 				GUILayout.BeginHorizontal();
@@ -220,7 +254,7 @@ public class MainMenuGUI : MonoBehaviour {
 					//send search request
 					gp.returnSocket ().SendTCPPacket ("cancelChallenge\\" + gp.playerName + "\\" + challengedPlayerCopy);
 					challengedPlayer = string.Empty;
-					guiText.text = string.Empty;
+					infoText = string.Empty;
 					challengePending = false;
 				}
 				GUILayout.FlexibleSpace();
@@ -239,7 +273,7 @@ public class MainMenuGUI : MonoBehaviour {
 				am.playErrorSFX();
 				gp.returnSocket().SendTCPPacket("cancelSearch");
 				
-				guiText.text = string.Empty;
+				infoText = string.Empty;
 				showGUI = true;
 			}
 			GUILayout.FlexibleSpace();
@@ -252,7 +286,7 @@ public class MainMenuGUI : MonoBehaviour {
 
 		GUILayout.BeginVertical ();
 		//GUILayout.Label("", "Divider");//-------------------------------- custom
-		GUILayout.Label (guiText.text);
+		GUILayout.Label (infoText);
 
 		GUILayout.EndVertical ();
 
@@ -263,6 +297,7 @@ public class MainMenuGUI : MonoBehaviour {
 
 	void DoMyWindow3 (int windowID) 
 	{
+		//AddSpikes(windowRect3.width);
 		GUILayout.BeginVertical ();
 		GUILayout.Space (8);
 
@@ -291,10 +326,14 @@ public class MainMenuGUI : MonoBehaviour {
 		GUILayout.EndHorizontal();
 		GUILayout.EndVertical ();
 
+		// Make the windows be draggable.
+		//GUI.DragWindow (new Rect (0,0,10000,10000));
+
 	}
 
 	void DoMyWindow4 (int windowID) 
 	{
+		//AddSpikes(windowRect4.width);
 		GUILayout.BeginVertical ();
 		GUILayout.Space (8);
 
@@ -308,9 +347,10 @@ public class MainMenuGUI : MonoBehaviour {
 		GUILayout.Label (listOfPlayers.playerList, "PlainText");
 		GUILayout.EndScrollView ();
 		GUILayout.EndHorizontal ();
-	
-
 		GUILayout.EndVertical ();
+
+		// Make the windows be draggable.
+		//GUI.DragWindow (new Rect (0,0,10000,10000));
 	}
 	
 	
@@ -342,19 +382,19 @@ public class MainMenuGUI : MonoBehaviour {
 		// End the group we started above. This is very important to remember!
 		GUI.EndGroup ();
 		
-		GUI.SetNextControlName ("chatField");
-		
-		if (Input.GetKeyDown (KeyCode.Return)) 
-		{
-			GUI.FocusControl ("chatField");
-			chat = string.Empty;
-		}
-
-		if (Event.current.keyCode == KeyCode.Return && !chat.Equals(string.Empty)) 
-		{
-			gp.returnSocket().SendTCPPacket("globalChat\\" + chat);
-			chat = string.Empty;
-		}
+//		GUI.SetNextControlName ("chatField");
+//		
+//		if (Input.GetKeyDown (KeyCode.Return)) 
+//		{
+//			GUI.FocusControl ("chatField");
+//			chat = string.Empty;
+//		}
+//
+//		if (Event.current.keyCode == KeyCode.Return && !chat.Equals(string.Empty)) 
+//		{
+//			gp.returnSocket().SendTCPPacket("globalChat\\" + chat);
+//			chat = string.Empty;
+//		}
 	}
 	
 	// Update is called once per frame

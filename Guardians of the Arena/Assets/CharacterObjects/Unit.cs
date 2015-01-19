@@ -19,7 +19,7 @@ public class Unit    : MonoBehaviour {
 
 	public GameObject popUpText;
 
-	public readonly int[] XP_TO_LEVEL = {20,40,100000};
+	public readonly int[] XP_TO_LEVEL = {20,20,100000};
 
 	//unit cost will be utilized here or elsewhere
 	//public string unitRole;//name called in switch statement here or elsewhere
@@ -204,8 +204,9 @@ public class Unit    : MonoBehaviour {
 
 		if (xp >= XP_TO_LEVEL [unitLevel - 1]) {
 			unitLevel ++;
-			hp += 5;
-			maxHP += 5;
+			//hp += 5;
+			//maxHP += 5;
+			xp = 0;
 			refreshUnitText ();
 			showPopUpText("Leveled Up!",Color.yellow);
 		} else {
@@ -290,7 +291,7 @@ public class Unit    : MonoBehaviour {
 		refreshUnitText();
 	}
 
-	void selectUnit(){
+	public void selectUnit(){
 		gm.selectedUnit = this;
 		gm.accessibleTiles.Clear();
 		

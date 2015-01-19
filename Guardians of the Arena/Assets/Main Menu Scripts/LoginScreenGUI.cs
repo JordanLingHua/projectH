@@ -13,7 +13,8 @@ FancyTop (just an example of using the elements to do a centered header graphic)
 WaxSeal (adds the waxseal and ribbon to the right of the window)
 DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 */
-	public GUIText guiText;
+	public string loginText;
+	private bool enterDown;
 	public string userName;
 	public string password;
 	public string reEnteredPassword;
@@ -142,26 +143,26 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 		GUILayout.EndHorizontal();
 		
 		GUILayout.BeginHorizontal();
+		GUILayout.FlexibleSpace ();
 		if (GUILayout.Button ("Login", "ShortButton")) { //-------------------------------- custom
 			am.playButtonSFX();	
 			if (buttonText.Equals("Cancel"))
 			{
 				if (password.Equals(reEnteredPassword)){
-					//am.playButtonSFX();		
 					attemptLogin();
 				}
 
 				else
 				{
 					am.playErrorSFX ();
-					guiText.text = "Passwords do not match";
+					loginText = "Passwords do not match";
 				}
 			}
 
 			else
 				attemptLogin();
 		}
-
+		GUILayout.FlexibleSpace ();
 		if (GUILayout.Button (buttonText, "ShortButton")) { //-------------------------------- custom
 			if (buttonText.Equals("Create Account"))
 			{
@@ -178,11 +179,11 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 				WaxSeal(windowRect0.width , windowRect0.height);
 			}
 		}
-
+		GUILayout.FlexibleSpace ();
 		GUILayout.EndHorizontal();	
 		GUILayout.Label("", "Divider");//-------------------------------- custom
 
-		GUILayout.Label(guiText.text);
+		GUILayout.Label(loginText);
 
 		//GUILayout.Label("", "Divider");//-------------------------------- custom
 
@@ -207,16 +208,16 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 		
 		if(!connected)
 		{
-			guiText.text = "Connecting...";
+			loginText = "Connecting...";
 			if ( process.returnSocket().Connect() )
 			{						
-				guiText.text = "Connect Succeeded";	
+				loginText = "Connect Succeeded";	
 				connected = true;
 			}
 			
 			else {
 				am.playErrorSFX ();
-				guiText.text = "Connect Failed";}
+				loginText = "Connect Failed";}
 		}
 		
 		string source = password;
@@ -254,11 +255,39 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 		GUI.BeginGroup (new Rect (0,0,100,100));
 		// End the group we started above. This is very important to remember!
 		GUI.EndGroup ();
+
+
+		if (Event.current.keyCode == KeyCode.Return && !enterDown) 
+		{
+			enterDown = true;
+			am.playButtonSFX();	
+			if (buttonText.Equals("Cancel"))
+			{
+				if (password.Equals(reEnteredPassword)){
+					//am.playButtonSFX();		
+					attemptLogin();
+				}
+				
+				else
+				{
+					am.playErrorSFX ();
+					loginText = "Passwords do not match";
+				}
+			}
+			
+			else
+				attemptLogin();
+		}
+
+		if (Input.GetKeyUp (KeyCode.Return)) {
+			enterDown = false;
+				}
 	}
 
 	// Use this for initialization
 	void Start () {
-
+		loginText = string.Empty;
+		enterDown = false;
 		connected = false;
 		pum = GameObject.Find ("PopUpMenu").GetComponent<PopUpMenu> ();
 		am = GameObject.Find("AudioManager").GetComponent<AudioManager>();
@@ -276,7 +305,7 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 	{
 		password = string.Empty;
 		am.playErrorSFX ();
-		guiText.text = "Invalid Login Info. Try Again.";
+		loginText = "Invalid Login Info. Try Again.";
 	}
 	
 	//server verifies info and user is logged in
@@ -311,7 +340,7 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 	
 	public void resetGuiText()
 	{
-		guiText.text = string.Empty;
+		loginText = string.Empty;
 	}
 	
 	// Update is called once per frame
