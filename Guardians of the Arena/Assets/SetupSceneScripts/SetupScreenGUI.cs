@@ -7,7 +7,11 @@ public class SetupScreenGUI : MonoBehaviour {
 	public GUIText guiText;
 	GameProcess gp;
 	PageNumberScript pageNumber;
+	PageNameScript pageNameScript;
 	public PlayerSetup playerSetup;
+	private bool editName;
+	private string tempName;
+	private bool enterDown;
 
 	bool doWindow5 = true;
 
@@ -38,7 +42,8 @@ public class SetupScreenGUI : MonoBehaviour {
 
 	void Start () {
 		showGUI = true;
-		pageNumber = GameObject.Find ("PageNumber").GetComponent<PageNumberScript> ();
+		pageNumber = GameObject.Find ("PageInfo").GetComponent<PageNumberScript> ();
+		pageNameScript = GameObject.Find ("PageInfo").GetComponent<PageNameScript> ();
 		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 		playerSetup = GameObject.Find("PlayerSetup").GetComponent<PlayerSetup>();
 		windowRect5 = new Rect (Screen.width - 350, Screen.height / 2 - 250, displayWidth5, displayHeight5);
@@ -106,16 +111,16 @@ public class SetupScreenGUI : MonoBehaviour {
 
 		GUILayout.Label ("Other Menu");
 
-		GUILayout.BeginHorizontal ();
-		GUILayout.FlexibleSpace();
-		if(GUILayout.Button("Clear Board", "ShortButton"))
-		{
-			Application.LoadLevel (2);
-		}
-		GUILayout.FlexibleSpace();
-		GUILayout.EndHorizontal ();
+//		GUILayout.BeginHorizontal ();
+//		GUILayout.FlexibleSpace();
+//		if(GUILayout.Button("Clear Board", "ShortButton"))
+//		{
+//			Application.LoadLevel (2);
+//		}
+//		GUILayout.FlexibleSpace();
+//		GUILayout.EndHorizontal ();
 
-		GUILayout.Label("", "Divider");//-------------------------------- custom
+		//GUILayout.Label("", "Divider");//-------------------------------- custom
 
 		GUILayout.BeginHorizontal ();
 		GUILayout.FlexibleSpace();		
@@ -154,9 +159,38 @@ public class SetupScreenGUI : MonoBehaviour {
 		GUILayout.EndHorizontal();
 		GUILayout.Space (8);
 
+		GUILayout.BeginHorizontal();
+
+		if (!editName) 
+		{
+			GUILayout.FlexibleSpace();
+			GUILayout.Label (getPageName (), "PlainText");
+		}
+		else 
+		{
+			tempName = GUILayout.TextField (tempName, 20);
+		}
+	
+		if (!editName) 
+		{
+			GUILayout.FlexibleSpace();
+			if (GUILayout.Button ("Rename", "ShortButton")) {
+				editName = true;
+				tempName = getPageName();
+			}
+		}
+		else
+			if (GUILayout.Button ("Save", "ShortButton")) {
+				editName = false;
+				pageNameScript.pages[playerSetup.activePage] = tempName;
+			}
+
+		GUILayout.EndHorizontal();
+
 		GUILayout.BeginHorizontal ();
 		if (GUILayout.Button("1", "ShortButton"))
 		{
+			editName = false;
 			playerSetup.deleteAllUnits();
 			gp.returnSocket().SendTCPPacket("getBoardData\\1");
 			playerSetup.activePage = 0;
@@ -165,6 +199,7 @@ public class SetupScreenGUI : MonoBehaviour {
 		
 		if (GUILayout.Button("2", "ShortButton"))
 		{
+			editName = false;
 			playerSetup.deleteAllUnits();
 			gp.returnSocket().SendTCPPacket("getBoardData\\2");
 			playerSetup.activePage = 1;
@@ -173,14 +208,16 @@ public class SetupScreenGUI : MonoBehaviour {
 		
 		if (GUILayout.Button("3", "ShortButton"))
 		{
+			editName = false;
 			playerSetup.deleteAllUnits();
 			gp.returnSocket().SendTCPPacket("getBoardData\\3");
 			playerSetup.activePage = 2;
-			pageNumber.selectedPage = 4;
+			pageNumber.selectedPage = 3;
 		}
 		
 		if (GUILayout.Button("4", "ShortButton"))
 		{
+			editName = false;
 			playerSetup.deleteAllUnits();
 			gp.returnSocket().SendTCPPacket("getBoardData\\4");
 			playerSetup.activePage = 3;
@@ -189,6 +226,7 @@ public class SetupScreenGUI : MonoBehaviour {
 		
 		if (GUILayout.Button("5", "ShortButton"))
 		{
+			editName = false;
 			playerSetup.deleteAllUnits();
 			gp.returnSocket().SendTCPPacket("getBoardData\\5");
 			playerSetup.activePage = 4;
@@ -198,6 +236,11 @@ public class SetupScreenGUI : MonoBehaviour {
 		GUILayout.EndHorizontal ();
 		GUILayout.EndVertical ();
 
+	}
+
+	string getPageName()
+	{
+		return pageNameScript.pages[playerSetup.activePage];
 	}
 
 
@@ -212,11 +255,23 @@ public class SetupScreenGUI : MonoBehaviour {
 		GUI.BeginGroup (new Rect (0,0,100,100));
 		// End the group we started above. This is very important to remember!
 		GUI.EndGroup ();
+
+
+		if (Event.current.keyCode == KeyCode.Return && !enterDown && editName) 
+		{
+			enterDown = true;
+			editName = false;
+			pageNameScript.pages[playerSetup.activePage] = tempName;
+		}
+		
+		if (Input.GetKeyUp (KeyCode.Return)) {
+			enterDown = false;
+		}
 	}	
 
 	
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
 }

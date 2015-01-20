@@ -11,7 +11,7 @@ public class globalChatScript : MonoBehaviour {
 	void Start () {
 		chatLines = new ArrayList();
 		gChat = string.Empty;
-		maxLinesToShow = 20; //before chat begins to scroll up
+		maxLinesToShow = 50; //before chat begins to scroll up
 	}
 	
 	// Update is called once per frame

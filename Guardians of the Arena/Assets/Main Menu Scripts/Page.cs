@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Page {
-
+	public string name;
 	public PlayerSetup playerSetup;
 	public ArrayList onBoardPieces;
 	public ArrayList offBoardPieces;
