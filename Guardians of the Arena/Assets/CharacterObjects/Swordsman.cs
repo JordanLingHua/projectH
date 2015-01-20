@@ -22,7 +22,9 @@ public class Swordsman : Unit {
 	}
 
 	public override void attackUnit(Unit unitAffected){
-
+		bool players = ((gp.playerNumber ==  1 && this.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && this.alleg == allegiance.playerTwo));
+		string player = players ? "Your " : "Opponent's ";
+		string unitAffectedPlayer = ((gp.playerNumber ==  1 && unitAffected.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && unitAffected.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
 		//WIN-dfury
 		if (unitLevel == 3) {
 			if (atkCharges > 0){
@@ -41,11 +43,14 @@ public class Swordsman : Unit {
 			}
 			unitAffected.hp -= this.atk;
 			unitAffected.showPopUpText("-" +this.atk,Color.red);
-			gm.addLogToCombatLog(this.unitName +" attacked "+ unitAffected.unitName + " for " + this.atk + " damage!");
+			if (pum.clo == PopUpMenuNecro.combatLogOption.all){
+
+			}
+			gm.addLogToCombatLog(player + this.unitName +" attacked "+ unitAffected.unitName + " for " + this.atk + " damage!");
 			if (unitLevel >= 2){
 				this.hp += 5;
 				showPopUpText("+5",Color.green);
-				gm.addLogToCombatLog(this.unitName + " gained 5 health from lifesteal!");
+				gm.addLogToCombatLog(player + this.unitName + " gained 5 health from lifesteal!");
 				//dont overheal on lifesteal
 				if (hp > maxHP){
 					this.hp = maxHP;
@@ -71,7 +76,7 @@ public class Swordsman : Unit {
 				}else if (unitAffected.unitType == 11){
 					gm.gameOver = true;
 				}
-				gm.addLogToCombatLog(unitAffected.unitName + " was killed!");
+				gm.addLogToCombatLog(unitAffectedPlayer + unitAffected.unitName + " was killed!");
 				//Kill unit and remove from game
 				gm.units.Remove(unitAffected.unitID);
 				unitAffected.transform.parent.GetComponent<TileScript>().objectOccupyingTile = null;
@@ -79,7 +84,7 @@ public class Swordsman : Unit {
 			}
 		}else{
 			unitAffected.showPopUpText("Invincible!",Color.red);
-			gm.addLogToCombatLog(this.unitName +" attacked "+ unitAffected.unitName + " but it was invincible!");
+			gm.addLogToCombatLog(player + this.unitName +" attacked "+ unitAffected.unitName + " but it was invincible!");
 		}
 
 		//clean up the board colors checks atkd here for windfury

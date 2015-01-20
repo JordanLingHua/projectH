@@ -16,7 +16,7 @@ public class GameProcess : MonoBehaviour {
 	public TileManager tileManager;
 	public GameManager gameManager;
 	AudioManager am;
-	PopUpMenu pum;
+	PopUpMenuNecro pum;
 	public PlayerSetup playerSetup;
 	
 	//PRIVATE MEMBERS
@@ -25,7 +25,7 @@ public class GameProcess : MonoBehaviour {
 	private string tempBuffer;
 	
 	void Start () {
-		pum = GameObject.Find ("PopUpMenu").GetComponent<PopUpMenu> ();
+		pum = GameObject.Find ("PopUpMenu").GetComponent<PopUpMenuNecro> ();
 		am = GameObject.Find ("AudioManager").GetComponent<AudioManager> ();
 		uniClock = new Stopwatch();
 		
@@ -75,7 +75,6 @@ public class GameProcess : MonoBehaviour {
 			{
 				GameObject.Find("Login_GUI").GetComponent<LoginScreenGUI>().loginFail();
 			}
-			
 			// hasLoggedIn\\playerNameToAdd
 			else if (tokens[0].Equals("hasLoggedIn"))
 			{
@@ -122,7 +121,7 @@ public class GameProcess : MonoBehaviour {
 				Destroy(GameObject.Find("ListOfPlayersGUIText"));
 				DontDestroyOnLoad(this);
 				DontDestroyOnLoad (am);
-				DontDestroyOnLoad(pum);
+				DontDestroyOnLoad(GameObject.Find ("PopUpMenu"));
 				Application.LoadLevel(3);
 				
 				
@@ -262,7 +261,7 @@ public class GameProcess : MonoBehaviour {
 				if (Int32.Parse (tokens[2]) != 0){
 	
 					for (int i = 0; i < Int32.Parse (tokens[2]); i ++ ){
-						//gameManager.units[Int32.Parse (tokens[1])].gainXP();
+						gameManager.units[Int32.Parse (tokens[1])].gainXP();
 						if (gameManager.units[Int32.Parse (tokens[1])].unitType == 2){
 							(gameManager.units[Int32.Parse (tokens[1])] as Mystic).revertStatsOfFocused();
 						}
@@ -316,7 +315,12 @@ public class GameProcess : MonoBehaviour {
 	
 	public void movePiece(int unitID, int toX, int toY)
 	{
-		gameManager.addLogToCombatLog(gameManager.units[unitID].unitName + " moved for " + gameManager.units[unitID].mvCost + " mana!");
+		bool players = ((playerNumber ==  1 && gameManager.units [unitID].alleg == Unit.allegiance.playerOne) || (playerNumber ==  2 && gameManager.units [unitID].alleg == Unit.allegiance.playerTwo));
+		if (players && pum.clo == PopUpMenuNecro.combatLogOption.playerOnly  || pum.clo == PopUpMenuNecro.combatLogOption.all){
+			gameManager.addLogToCombatLog("Your " + gameManager.units[unitID].unitName + " moved for " + gameManager.units[unitID].mvCost + " mana!");
+		}else if (!players && pum.clo == PopUpMenuNecro.combatLogOption.enemyOnly  || pum.clo == PopUpMenuNecro.combatLogOption.all){
+			gameManager.addLogToCombatLog("Your " + gameManager.units[unitID].unitName + " moved for " + gameManager.units[unitID].mvCost + " mana!");
+		}
 		if (gameManager.units [unitID].unitType == 2) {
 			Mystic x = gameManager.units[unitID] as Mystic;
 			x.revertStatsOfFocused();

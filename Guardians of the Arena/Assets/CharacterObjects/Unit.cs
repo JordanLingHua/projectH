@@ -19,7 +19,7 @@ public class Unit    : MonoBehaviour {
 
 	public GameObject popUpText;
 
-	public readonly int[] XP_TO_LEVEL = {20,40,100000};
+	public readonly int[] XP_TO_LEVEL = {20,20,100000};
 
 	//unit cost will be utilized here or elsewhere
 	//public string unitRole;//name called in switch statement here or elsewhere
@@ -69,7 +69,7 @@ public class Unit    : MonoBehaviour {
 	public Texture2D hpBarBG,hpBarHigh,hpBarMedium,hpBarLow,xpBar;
 	public GameManager gm;
 	public GameProcess gp;
-	public PopUpMenu pum;
+	public PopUpMenuNecro pum;
 	public AudioManager am;
 	public virtual void Start () {
 		unitLevel = 1;
@@ -81,7 +81,7 @@ public class Unit    : MonoBehaviour {
 		xpBar = Resources.Load("XPBar") as Texture2D;
 		am = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
-		pum = GameObject.Find ("PopUpMenu").GetComponent<PopUpMenu> ();
+		pum = GameObject.Find ("PopUpMenu").GetComponent<PopUpMenuNecro> ();
 		if (Application.loadedLevelName.Equals("BoardScene")){
 			gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 		}
@@ -203,9 +203,8 @@ public class Unit    : MonoBehaviour {
 		xp += 5;
 
 		if (xp >= XP_TO_LEVEL [unitLevel - 1]) {
+			xp = 0;
 			unitLevel ++;
-			hp += 5;
-			maxHP += 5;
 			refreshUnitText ();
 			showPopUpText("Leveled Up!",Color.yellow);
 		} else {
@@ -232,6 +231,8 @@ public class Unit    : MonoBehaviour {
 
 	//TODO: move this logic to the server
 	public virtual void attackUnit(Unit unitAffected){
+		string player = ((gp.playerNumber ==  1 && this.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && this.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
+		string unitAffectedPlayer = ((gp.playerNumber ==  1 && unitAffected.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && unitAffected.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
 		atkd = true;
 
 		if (!unitAffected.invincible){
@@ -276,6 +277,7 @@ public class Unit    : MonoBehaviour {
 				}
 
 				//Kill unit and remove from game
+				gm.addLogToCombatLog(unitAffectedPlayer + unitAffected.unitName + " was killed!");
 				gm.units.Remove(unitAffected.unitID);
 				unitAffected.transform.parent.GetComponent<TileScript>().objectOccupyingTile = null;
 				Destroy(unitAffected.gameObject);

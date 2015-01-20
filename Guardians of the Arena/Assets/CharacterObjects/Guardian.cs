@@ -23,6 +23,8 @@ public class Guardian :Unit {
 	
 	//TODO: move this logic to the server
 	public override void attackUnit(Unit unitAffected){
+		string player = ((gp.playerNumber ==  1 && this.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && this.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
+		string unitAffectedPlayer = ((gp.playerNumber ==  1 && unitAffected.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && unitAffected.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
 		atkd = true;
 		
 		if (!unitAffected.invincible){
@@ -50,6 +52,7 @@ public class Guardian :Unit {
 				}
 				
 				//Kill unit and remove from game
+				gm.addLogToCombatLog(unitAffectedPlayer + unitAffected.unitName + " was killed!");
 				gm.units.Remove(unitAffected.unitID);
 				unitAffected.transform.parent.GetComponent<TileScript>().objectOccupyingTile = null;
 				Destroy(unitAffected.gameObject);

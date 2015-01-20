@@ -20,11 +20,12 @@ public class Templar : Unit{
 		//unitRole = "AOE";//O is NOT a zero.  it is capital O
 		unitRole = 502;//AOE
 		renderer.material.color = new Color32(255,255,0,1);
-
 	}
 
 
 	public override void attackUnit(Unit unitAffected){
+		string player = ((gp.playerNumber ==  1 && this.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && this.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
+		string unitAffectedPlayer = ((gp.playerNumber ==  1 && unitAffected.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && unitAffected.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
 		atkd = true;
 		
 		if (!unitAffected.invincible){
@@ -33,7 +34,7 @@ public class Templar : Unit{
 			if (unitLevel == 3 && ((alleg == Unit.allegiance.playerOne && unitAffected.alleg == Unit.allegiance.playerOne) || (alleg == Unit.allegiance.playerTwo && unitAffected.alleg == Unit.allegiance.playerTwo))){
 				unitAffected.hp += this.atk;
 				unitAffected.showPopUpText("+" + this.atk,Color.green);
-				gm.addLogToCombatLog(this.unitName + " healed " + unitAffected + " for " + this.atk );
+				gm.addLogToCombatLog(player + this.unitName + " healed " + unitAffected + " for " + this.atk );
 				if (unitAffected.hp > unitAffected.maxHP){
 					unitAffected.hp = unitAffected.maxHP;
 				}
@@ -42,7 +43,7 @@ public class Templar : Unit{
 
 				if (unitAffected.unitType == 10 && unitAffected.unitLevel >=2){
 					unitAffected.hp -= 10;
-					gm.addLogToCombatLog(this.unitName + " attacked " + unitAffected.unitName + " for 10 damage ("+ (this.atk-10) + "blocked)" );
+					gm.addLogToCombatLog(player + this.unitName + " attacked " + unitAffectedPlayer + unitAffected.unitName + " for 10 damage ("+ (this.atk-10) + "blocked)" );
 					unitAffected.showPopUpText("-10 ("+ (this.atk-10) + "blocked)",Color.red);
 				}else{
 					if(unitAffected.unitType == 2){
@@ -50,20 +51,20 @@ public class Templar : Unit{
 					}
 					unitAffected.hp -= this.atk +5;
 					unitAffected.showPopUpText("-" + (this.atk+5)+"!",Color.red);
-					gm.addLogToCombatLog(this.unitName + " attacked " + unitAffected.unitName + " for "+ (this.atk+5) + " damage" );
+					gm.addLogToCombatLog(player + this.unitName + " attacked "+unitAffectedPlayer + unitAffected.unitName + " for "+ (this.atk+5) + " damage" );
 				}
 			}else{
 				if (unitAffected.unitType == 10 && unitAffected.unitLevel >=2){
 					unitAffected.hp -= 10;
 					unitAffected.showPopUpText("-10 ("+ (this.atk-10) + "blocked)",Color.red);
-					gm.addLogToCombatLog(this.unitName + " attacked " + unitAffected.unitName + " for 10 ("+ (this.atk-10) + "blocked)" );
+					gm.addLogToCombatLog(player + this.unitName + " attacked "+unitAffectedPlayer + unitAffected.unitName + " for 10 ("+ (this.atk-10) + "blocked)" );
 				}else{
 					if(unitAffected.unitType == 2){
 						(unitAffected as Mystic).revertStatsOfFocused();
 					}
 					unitAffected.hp -= this.atk;
 					unitAffected.showPopUpText("-" + this.atk,Color.red);
-					gm.addLogToCombatLog(this.unitName + " attacked " + unitAffected.unitName + " for " + this.atk + " damage" );
+					gm.addLogToCombatLog(player + this.unitName + " attacked "+unitAffectedPlayer + unitAffected.unitName + " for " + this.atk + " damage" );
 				}
 			}
 
@@ -89,6 +90,7 @@ public class Templar : Unit{
 				}
 				
 				//Kill unit and remove from game
+				gm.addLogToCombatLog(unitAffectedPlayer + unitAffected.unitName + " was killed!");
 				gm.units.Remove(unitAffected.unitID);
 				unitAffected.transform.parent.GetComponent<TileScript>().objectOccupyingTile = null;
 				Destroy(unitAffected.gameObject);
