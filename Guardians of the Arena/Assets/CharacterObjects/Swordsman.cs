@@ -46,11 +46,15 @@ public class Swordsman : Unit {
 			if (pum.clo == PopUpMenuNecro.combatLogOption.all){
 
 			}
-			gm.addLogToCombatLog(player + this.unitName +" attacked "+ unitAffected.unitName + " for " + this.atk + " damage!");
+			if ((player == "Your " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.playerOnly)) || (player == "Opponent's " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.enemyOnly))){
+				gm.addLogToCombatLog(player + this.unitName +" attacked "+ unitAffected.unitName + " for " + this.atk + " damage!");
+			}
 			if (unitLevel >= 2){
 				this.hp += 5;
 				showPopUpText("+5",Color.green);
-				gm.addLogToCombatLog(player + this.unitName + " gained 5 health from lifesteal!");
+				if ((player == "Your " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.playerOnly)) || (player == "Opponent's " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.enemyOnly))){
+					gm.addLogToCombatLog(player + this.unitName + " gained 5 health from lifesteal!");
+				}
 				//dont overheal on lifesteal
 				if (hp > maxHP){
 					this.hp = maxHP;
@@ -84,7 +88,9 @@ public class Swordsman : Unit {
 			}
 		}else{
 			unitAffected.showPopUpText("Invincible!",Color.red);
-			gm.addLogToCombatLog(player + this.unitName +" attacked "+ unitAffected.unitName + " but it was invincible!");
+			if ((player == "Your " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.playerOnly)) || (player == "Opponent's " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.enemyOnly))){
+				gm.addLogToCombatLog(player + this.unitName +" attacked "+ unitAffected.unitName + " but it was invincible!");
+			}
 		}
 
 		//clean up the board colors checks atkd here for windfury

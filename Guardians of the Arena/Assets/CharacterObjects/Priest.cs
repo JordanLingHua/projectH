@@ -25,11 +25,18 @@ public class Priest : Unit {
 	public override void gainXP(){
 		xp += 5;
 		if (xp >= XP_TO_LEVEL[unitLevel-1]){
+			xp = 0;
 			unitLevel ++;
 			//Max heal
 			//just sets attack to heal for more then any hp in game atm
 			if (unitLevel == 2){
 				atk = -500;
+			}
+			if ((pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.playerOnly) &&  ((alleg == allegiance.playerOne && gp.playerNumber == 1) || (alleg == allegiance.playerTwo && gp.playerNumber == 2))){
+				gm.addLogToCombatLog("Your " + unitName + " has leveled up to level " + unitLevel + "!");
+			}
+			if ((pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.enemyOnly) &&  ((alleg == allegiance.playerTwo && gp.playerNumber == 1) || (alleg == allegiance.playerOne && gp.playerNumber == 2))){
+				gm.addLogToCombatLog("Opponent's " + unitName + " has leveled up to level " + unitLevel + "!");
 			}
 			showPopUpText("Leveled Up!",Color.yellow);
 		}else {

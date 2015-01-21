@@ -29,10 +29,16 @@ public class Guardian :Unit {
 		
 		if (!unitAffected.invincible){
 			if (unitLevel == 3 && (((float)unitAffected.hp/unitAffected.maxHP) < 0.5)){
+				if ((player == "Your " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.playerOnly)) || (player == "Opponent's " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.enemyOnly))){
+					gm.addLogToCombatLog(player + this.unitName +" executed "+ unitAffected.unitName + " for " + unitAffected.hp + " damage!");
+				}
 				unitAffected.hp = 0;
 				unitAffected.showPopUpText("Executed!",Color.red);
 			}else{
 				unitAffected.hp -= this.atk;
+				if ((player == "Your " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.playerOnly)) || (player == "Opponent's " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.enemyOnly))){
+					gm.addLogToCombatLog(player + this.unitName +" attacked "+ unitAffected.unitName + " for " + this.atk + " damage!");
+				}
 				unitAffected.showPopUpText("-" + this.atk,Color.red);
 			}
 
@@ -59,7 +65,9 @@ public class Guardian :Unit {
 			}
 		}else{
 			unitAffected.showPopUpText("Invincible!",Color.red);
-			gm.addLogToCombatLog(this.unitName +" attacked "+ unitAffected.unitName + " but it was invincible!");
+			if ((player == "Your " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.playerOnly)) || (player == "Opponent's " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo ==  PopUpMenuNecro.combatLogOption.enemyOnly))){
+				gm.addLogToCombatLog(player + this.unitName +" attacked "+ unitAffected.unitName + " but it was invincible!");
+			}
 		}
 		//clean up the board colors
 		gm.accessibleTiles.Clear();

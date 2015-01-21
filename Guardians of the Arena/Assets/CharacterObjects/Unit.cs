@@ -148,8 +148,6 @@ public class Unit    : MonoBehaviour {
 
 		if (Application.loadedLevelName.Equals("BoardScene")){
 			transform.parent.GetComponent<TileScript> ().OnMouseEnter ();
-		// this was for hovered over unit info - not used
-		//	refreshUnitText ();
 		}else{
 			//used for setup screen info
 			string info = "Unit Information:\n" +unitName + "\nHP: " + hp + "/" + maxHP;
@@ -178,34 +176,18 @@ public class Unit    : MonoBehaviour {
 		return nothing;
 	}
 
-	void refreshUnitText()
-	{
-		info = unitName + "\nHP: " + hp + "/" + maxHP;
-		info += "\nLevel: " + unitLevel;
-		info += unitLevel == 3? "" :" Experience: " + xp + "/" + XP_TO_LEVEL[unitLevel-1];
-		info += mvCost > 0? "\nMove Cost: " + mvCost : "";
-		info += atkCost > 0? "\nAttack Cost: " + atkCost : "";
-		info += atk > 0? "\nDamage: " + atk : "";
-
-		if (invincible){
-			info+="\nINVINCIBLE";
-		}
-		if (gm.gs == GameManager.gameState.playerMv && mvd){
-			info += "\nAlready moved";
-		}
-		if (gm.gs == GameManager.gameState.playerAtk && atkd){
-			info += "\nAlready attacked";
-		}
-	//	gm.uInfo.text = info;
-	}
-
 	public virtual void gainXP(){
 		xp += 5;
 
 		if (xp >= XP_TO_LEVEL [unitLevel - 1]) {
 			xp = 0;
 			unitLevel ++;
-			refreshUnitText ();
+			if ((pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.playerOnly) &&  ((alleg == allegiance.playerOne && gp.playerNumber == 1) || (alleg == allegiance.playerTwo && gp.playerNumber == 2))){
+				gm.addLogToCombatLog("Your " + unitName + " has leveled up to level " + unitLevel + "!");
+			}
+			if ((pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.enemyOnly) &&  ((alleg == allegiance.playerTwo && gp.playerNumber == 1) || (alleg == allegiance.playerOne && gp.playerNumber == 2))){
+				gm.addLogToCombatLog("Opponent's " + unitName + " has leveled up to level " + unitLevel + "!");
+			}
 			showPopUpText("Leveled Up!",Color.yellow);
 		} else {
 			showPopUpText("XP+5!",Color.magenta);
@@ -229,6 +211,20 @@ public class Unit    : MonoBehaviour {
 		}
 	}
 
+
+	public virtual void takeDmg(int amt){
+		string player = ((gp.playerNumber ==  1 && this.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && this.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
+
+		this.hp -= amt;
+		if (this.hp <=0){				
+			//Kill unit and remove from game
+			gm.addLogToCombatLog(player + this.unitName + " was killed!");
+			gm.units.Remove(this.unitID);
+			this.transform.parent.GetComponent<TileScript>().objectOccupyingTile = null;
+			Destroy(this.gameObject);
+		}
+	}
+
 	//TODO: move this logic to the server
 	public virtual void attackUnit(Unit unitAffected){
 		string player = ((gp.playerNumber ==  1 && this.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && this.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
@@ -236,7 +232,6 @@ public class Unit    : MonoBehaviour {
 		atkd = true;
 
 		if (!unitAffected.invincible){
-			//gm.combatLog.text = "Combat Log:\nDealt " + unitThatAttacked.atk + " damage!";
 			if (this.atk > 0){
 				//block dmg if killing guardian lvl 2
 				if (unitAffected.unitType == 10 && unitAffected.unitLevel >=2 && this.atk > 10){
@@ -284,15 +279,16 @@ public class Unit    : MonoBehaviour {
 			}
 		}else{
 			unitAffected.showPopUpText("Invincible!",Color.red);
-			gm.addLogToCombatLog(this.unitName +" attacked "+ unitAffected.unitName + " but it was invincible!");
+			if ((player == "Your " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.playerOnly)) || (player == "Opponent's " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.enemyOnly))){
+				gm.addLogToCombatLog(this.unitName +" attacked "+ unitAffected.unitName + " but it was invincible!");
+			}
 		}
 		//clean up the board colors
 		gm.accessibleTiles.Clear();
 		this.transform.parent.gameObject.transform.parent.GetComponent<TileManager>().clearAllTiles();
-		refreshUnitText();
 	}
 
-	void selectUnit(){
+	public void selectUnit(){
 		gm.selectedUnit = this;
 		gm.accessibleTiles.Clear();
 		

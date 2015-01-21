@@ -261,11 +261,11 @@ public class GameProcess : MonoBehaviour {
 				if (Int32.Parse (tokens[2]) != 0){
 	
 					for (int i = 0; i < Int32.Parse (tokens[2]); i ++ ){
-						gameManager.units[Int32.Parse (tokens[1])].gainXP();
 						if (gameManager.units[Int32.Parse (tokens[1])].unitType == 2){
 							(gameManager.units[Int32.Parse (tokens[1])] as Mystic).revertStatsOfFocused();
 						}
 						gameManager.units[Int32.Parse (tokens[1])].attackUnit(gameManager.units[Int32.Parse(tokens[3+i])]);
+						gameManager.units[Int32.Parse (tokens[1])].gainXP();
 					}
 				}else{
 					gameManager.units[Int32.Parse (tokens[1])].showPopUpText("Attacked Nothing!", Color.red);

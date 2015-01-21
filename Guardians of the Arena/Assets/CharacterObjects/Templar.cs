@@ -34,13 +34,15 @@ public class Templar : Unit{
 			if (unitLevel == 3 && ((alleg == Unit.allegiance.playerOne && unitAffected.alleg == Unit.allegiance.playerOne) || (alleg == Unit.allegiance.playerTwo && unitAffected.alleg == Unit.allegiance.playerTwo))){
 				unitAffected.hp += this.atk;
 				unitAffected.showPopUpText("+" + this.atk,Color.green);
-				gm.addLogToCombatLog(player + this.unitName + " healed " + unitAffected + " for " + this.atk );
+				if ((player == "Your " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.playerOnly)) || (player == "Opponent's " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.enemyOnly))){
+					gm.addLogToCombatLog(player + this.unitName + " healed " + unitAffected + " for " + this.atk );
+				}
 				if (unitAffected.hp > unitAffected.maxHP){
 					unitAffected.hp = unitAffected.maxHP;
 				}
 			//Deal extra dmg to full hp units at level 2+
 			}else if (unitLevel >= 2 && unitAffected.hp == unitAffected.maxHP) {
-
+				//reduced dmg to guardian
 				if (unitAffected.unitType == 10 && unitAffected.unitLevel >=2){
 					unitAffected.hp -= 10;
 					gm.addLogToCombatLog(player + this.unitName + " attacked " + unitAffectedPlayer + unitAffected.unitName + " for 10 damage ("+ (this.atk-10) + "blocked)" );
