@@ -3,7 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class TileScript : MonoBehaviour {
-	
+
+	//
+	//protected Animator animator;
+
 	private class Node{
 		public Node parent;
 		public TileScript myNode;
@@ -170,6 +173,16 @@ public class TileScript : MonoBehaviour {
 
 			gp.returnSocket().SendTCPPacket("move\\" + gm.selectedUnit.unitID+ "\\" + this.x + "\\" + this.y);
 			print ("Sent move packet");
+			/*
+			if(this.x == 0 && this.y > 0)
+				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 4);
+			else if(this.x == 0 && this.y < 0)
+				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 5);
+			else if(this.x < 0 && this.y == 0)
+				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 6);
+			else if(this.x > 0 && this.y == 0)
+				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 7);
+			*/
 			am.playButtonSFX();
 		}else{
 			am.playErrorSFX();
@@ -198,6 +211,18 @@ public class TileScript : MonoBehaviour {
 		    ((gm.selectedUnit.alleg == Unit.allegiance.playerOne && gp.playerNumber == 1) || (gm.selectedUnit.alleg == Unit.allegiance.playerTwo && gp.playerNumber == 2))) {
 			gp.returnSocket ().SendTCPPacket ("attack\\" + gm.selectedUnit.unitID + "\\" + this.x + "\\" + this.y);
 			print ("Sent attack packet");
+			//
+
+			if(this.x == 0 && this.y > 0)
+				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 8);
+			else if(this.x == 0 && this.y < 0)
+				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 9);
+			else if(this.x < 0 && this.y == 0)
+				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 10);
+			else if(this.x > 0 && this.y == 0)
+				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 11);
+
+			//
 			am.playButtonSFX();
 		} else {
 			am.playErrorSFX();
