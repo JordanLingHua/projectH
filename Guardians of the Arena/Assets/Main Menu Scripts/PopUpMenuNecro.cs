@@ -21,7 +21,7 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 	AudioManager am;
 	GameProcess gp;
 	int displayWidth = 460;
-	int displayHeight = 590;
+	int displayHeight = 620;
 	
 	bool doWindow1 = false;
 	
@@ -331,7 +331,7 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.F10) || Input.GetKeyDown(KeyCode.Escape)){
+		if (Input.GetKeyDown(KeyCode.F10)){
 			doWindow1 = !doWindow1;
 		}
 	}

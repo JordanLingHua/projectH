@@ -214,14 +214,15 @@ public class Unit    : MonoBehaviour {
 
 	public virtual void takeDmg(int amt){
 		string player = ((gp.playerNumber ==  1 && this.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && this.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
-
-		this.hp -= amt;
-		if (this.hp <=0){				
-			//Kill unit and remove from game
-			gm.addLogToCombatLog(player + this.unitName + " was killed!");
-			gm.units.Remove(this.unitID);
-			this.transform.parent.GetComponent<TileScript>().objectOccupyingTile = null;
-			Destroy(this.gameObject);
+		if (!this.invincible) {
+			this.hp -= amt;
+			if (this.hp <= 0) {				
+				//Kill unit and remove from game
+				gm.addLogToCombatLog (player + this.unitName + " was killed!");
+				gm.units.Remove (this.unitID);
+				this.transform.parent.GetComponent<TileScript> ().objectOccupyingTile = null;
+				Destroy (this.gameObject);
+			}
 		}
 	}
 
