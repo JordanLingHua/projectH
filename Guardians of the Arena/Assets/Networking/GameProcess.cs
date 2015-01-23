@@ -287,14 +287,14 @@ public class GameProcess : MonoBehaviour {
 			else if (tokens[0].Equals("victory"))
 			{
 				gameManager.gameOver = true;
-				gameManager.combatLog.text = "You won!";
+				gameManager.addLogToCombatLog("Congratulations! You have won!");
 			}
 			
 			//TODO mmr
 			else if (tokens[0].Equals("defeat"))
 			{
 				gameManager.gameOver = true;
-				gameManager.combatLog.text = "You lost!";
+				gameManager.addLogToCombatLog("You were: REKT ☑\nREKTangle \n☑ SHREKT \n☑ REKT-it Ralph \n☑ Total REKTall \n☑ The Lord of the REKT \n☑ The Usual SusREKTs \n☑ North by NorthREKT \n☑ REKT");
 			}
 			#endregion
 			

@@ -212,16 +212,44 @@ public class Unit    : MonoBehaviour {
 	}
 
 
-	public virtual void takeDmg(int amt){
+	public virtual void takeDmg(Unit unitAttacking,int amt){
+		string unitAffectedPlayer = ((gp.playerNumber ==  1 && unitAttacking.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && unitAttacking.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
 		string player = ((gp.playerNumber ==  1 && this.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && this.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
 		if (!this.invincible) {
+
+
 			this.hp -= amt;
+
+			//if healed up dont let it have more than max hp
+			if (hp > maxHP){
+				hp = maxHP;
+			}
+
+			if (amt > 0){
+				//taking damage
+				if ((player == "Your " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.playerOnly)) || (player == "Opponent's " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.enemyOnly))){
+					gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" attacked "+ unitName + " for " + this.atk + " damage!");
+				}
+				showPopUpText("-" + amt,Color.red);
+			}else{
+				//getting healed
+				if ((player == "Your " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.playerOnly)) || (player == "Opponent's " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.enemyOnly))){
+					gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" healed "+ unitName + " for " + this.atk + " damage!");
+				}
+				showPopUpText("+" + (-1*amt),Color.green);
+			}
+
 			if (this.hp <= 0) {				
 				//Kill unit and remove from game
 				gm.addLogToCombatLog (player + this.unitName + " was killed!");
 				gm.units.Remove (this.unitID);
 				this.transform.parent.GetComponent<TileScript> ().objectOccupyingTile = null;
 				Destroy (this.gameObject);
+			}
+		}else{
+			showPopUpText("Invincible!",Color.red);
+			if ((player == "Your " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.playerOnly)) || (player == "Opponent's " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.enemyOnly))){
+				gm.addLogToCombatLog(unitAttacking.unitName +" attacked "+ unitName + " but it was invincible!");
 			}
 		}
 	}
@@ -231,59 +259,7 @@ public class Unit    : MonoBehaviour {
 		string player = ((gp.playerNumber ==  1 && this.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && this.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
 		string unitAffectedPlayer = ((gp.playerNumber ==  1 && unitAffected.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && unitAffected.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
 		atkd = true;
-
-		if (!unitAffected.invincible){
-			if (this.atk > 0){
-				//block dmg if killing guardian lvl 2
-				if (unitAffected.unitType == 10 && unitAffected.unitLevel >=2 && this.atk > 10){
-					unitAffected.hp -= 10;
-					unitAffected.showPopUpText("-10 "+ (this.atk-10) + "blocked",Color.red);
-				}else{
-					if(unitAffected.unitType == 2){
-						Mystic x = unitAffected as Mystic;
-						x.revertStatsOfFocused();
-					}	
-					unitAffected.hp -= this.atk;
-					unitAffected.showPopUpText("-" + this.atk,Color.red);
-				}
-
-			}else{
-				unitAffected.hp -= this.atk;
-				unitAffected.showPopUpText("+" + (-1*this.atk),Color.green);
-			}
-
-			//if healed up dont let it have more than max hp
-			if (unitAffected.hp > unitAffected.maxHP){
-				unitAffected.hp = unitAffected.maxHP;
-			}
-			
-			//if the unit attacked was killed, remove it from the board and unit list
-			if (unitAffected.hp <=0){				
-
-				//Kill Guardian then SS vulnerable
-				if (unitAffected.unitType == 10){
-					if (unitAffected.alleg == allegiance.playerOne){
-						playerSSKillable();
-					}else{
-						enemySSKillable();
-					}
-				
-				}else if (unitAffected.unitType == 11){
-					gm.gameOver = true;
-				}
-
-				//Kill unit and remove from game
-				gm.addLogToCombatLog(unitAffectedPlayer + unitAffected.unitName + " was killed!");
-				gm.units.Remove(unitAffected.unitID);
-				unitAffected.transform.parent.GetComponent<TileScript>().objectOccupyingTile = null;
-				Destroy(unitAffected.gameObject);
-			}
-		}else{
-			unitAffected.showPopUpText("Invincible!",Color.red);
-			if ((player == "Your " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.playerOnly)) || (player == "Opponent's " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.enemyOnly))){
-				gm.addLogToCombatLog(this.unitName +" attacked "+ unitAffected.unitName + " but it was invincible!");
-			}
-		}
+		unitAffected.takeDmg(this,this.atk);
 		//clean up the board colors
 		gm.accessibleTiles.Clear();
 		this.transform.parent.gameObject.transform.parent.GetComponent<TileManager>().clearAllTiles();

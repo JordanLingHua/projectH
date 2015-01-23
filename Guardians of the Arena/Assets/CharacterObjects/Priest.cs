@@ -48,7 +48,7 @@ public class Priest : Unit {
 	public override List<GameObject> showAoEAffectedTiles(TileScript tile){
 		List <GameObject> ret = new List<GameObject> ();
 		if (unitLevel == 3) {
-			rangeAoE (ret,tile,2);
+			rangeAoE (ret,tile,1);
 		}
 		return ret;
 	}
@@ -77,20 +77,5 @@ public class Priest : Unit {
 		}
 	
 	}
-
-//	public override void showAtkTiles(){
-//		if (!atkd){
-//			foreach (int key in gm.units.Keys){
-//				if (gp.playerNumber == 1 && gm.units[key].alleg == Unit.allegiance.playerOne){
-//					gm.accessibleTiles.Add(gm.units[key].transform.parent.GetComponent<TileScript>());
-//					gm.units[key].transform.parent.gameObject.renderer.material.color = new Color(1f,0.4f,0f, 0f);
-//				}
-//				if (gp.playerNumber == 2 && gm.units[key].alleg == Unit.allegiance.playerTwo){
-//					gm.accessibleTiles.Add(gm.units[key].transform.parent.GetComponent<TileScript>());
-//					gm.units[key].transform.parent.gameObject.renderer.material.color = new Color(1f,0.4f,0f, 0f);
-//				}
-//			}
-//		}
-//	}
 
 }
