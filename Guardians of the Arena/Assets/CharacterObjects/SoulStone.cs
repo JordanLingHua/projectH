@@ -43,7 +43,7 @@ public class SoulStone: Unit {
 			if (this.hp <= 0) {				
 				//Kill unit and remove from game
 				gm.gameOver = true;
-				gm.addLogToCombatLog (player + this.unitName + " was killed!");
+				gm.addLogToCombatLog (this.unitName + " was killed!");
 				gm.units.Remove (this.unitID);
 				this.transform.parent.GetComponent<TileScript> ().objectOccupyingTile = null;
 				Destroy (this.gameObject);

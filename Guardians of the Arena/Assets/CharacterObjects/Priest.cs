@@ -8,6 +8,8 @@ public class Priest : Unit {
 
 	void Start () {
 		base.Start ();
+		levelBonus [0] = "Mighty Heal - Heal now heals the target to full health";
+		levelBonus [1] = "Rain of Light - Healing a unit now heals units near it for 10 health";
 		unitName = "Priest";
 		unitType = 8;
 		hp = 20;

@@ -13,6 +13,7 @@ public class Unit    : MonoBehaviour {
 	public bool atkd, mvd;
 	public string unitName = string.Empty;
 	public string info = string.Empty;
+	public string[] levelBonus = {"",""};
 	public bool invincible,displayHPBar,displayXPBar;
 	public Mystic mysticFocusingThis;
 
@@ -228,20 +229,20 @@ public class Unit    : MonoBehaviour {
 			if (amt > 0){
 				//taking damage
 				if ((player == "Your " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.playerOnly)) || (player == "Opponent's " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.enemyOnly))){
-					gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" attacked "+ unitName + " for " + this.atk + " damage!");
+					gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" attacked "+ unitName + " for " + unitAttacking.atk + " damage!");
 				}
 				showPopUpText("-" + amt,Color.red);
 			}else{
 				//getting healed
 				if ((player == "Your " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.playerOnly)) || (player == "Opponent's " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.enemyOnly))){
-					gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" healed "+ unitName + " for " + this.atk + " damage!");
+					gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" healed "+ unitName + " for " + unitAttacking.atk + " damage!");
 				}
 				showPopUpText("+" + (-1*amt),Color.green);
 			}
 
 			if (this.hp <= 0) {				
 				//Kill unit and remove from game
-				gm.addLogToCombatLog (player + this.unitName + " was killed!");
+				gm.addLogToCombatLog (this.unitName + " was killed!");
 				gm.units.Remove (this.unitID);
 				this.transform.parent.GetComponent<TileScript> ().objectOccupyingTile = null;
 				Destroy (this.gameObject);

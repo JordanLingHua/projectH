@@ -7,6 +7,8 @@ public class Guardian :Unit {
 
 	void Start(){
 		base.Start ();
+		levelBonus [0] = "Hardened Skin - Cannot take more than 10 damage per attack";
+		levelBonus [1] = "Executioner - Instantly kills units below 50% hp on attack";
 		unitType = 10;
 		unitName = "Guardian";
 		hp = 45;
@@ -28,7 +30,7 @@ public class Guardian :Unit {
 
 			if (unitLevel >=2 && amt > 10){
 				hp -= 10;
-				showPopUpText("-10 "+ (this.atk-10) + "blocked",Color.red);
+				showPopUpText("-10 "+ (unitAttacking.atk-10) + "blocked",Color.red);
 			}else{
 				this.hp -= amt;
 			}
@@ -54,7 +56,7 @@ public class Guardian :Unit {
 				}
 
 				//Kill unit and remove from game
-				gm.addLogToCombatLog (player + this.unitName + " was killed!");
+				gm.addLogToCombatLog (this.unitName + " was killed!");
 				gm.units.Remove (this.unitID);
 				this.transform.parent.GetComponent<TileScript> ().objectOccupyingTile = null;
 				Destroy (this.gameObject);
@@ -75,17 +77,9 @@ public class Guardian :Unit {
 		atkd = true;
 
 		if (unitLevel == 3 && (((float)unitAffected.hp/unitAffected.maxHP) < 0.5)){
-			if ((player == "Your " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.playerOnly)) || (player == "Opponent's " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.enemyOnly))){
-				gm.addLogToCombatLog(player + this.unitName +" executed "+ unitAffected.unitName + " for " + unitAffected.hp + " damage!");
-			}
-			unitAffected.hp = 0;
-			unitAffected.showPopUpText("Executed!",Color.red);
+			unitAffected.takeDmg(this,unitAffected.hp);
 		}else{
-			unitAffected.hp -= this.atk;
-			if ((player == "Your " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.playerOnly)) || (player == "Opponent's " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.enemyOnly))){
-				gm.addLogToCombatLog(player + this.unitName +" attacked "+ unitAffected.unitName + " for " + this.atk + " damage!");
-			}
-			unitAffected.showPopUpText("-" + this.atk,Color.red);
+			unitAffected.takeDmg(this,this.atk);
 		}
 		//clean up the board colors
 		gm.accessibleTiles.Clear();

@@ -8,6 +8,8 @@ public class Templar : Unit{
 
 	void Start(){
 		base.Start ();
+		levelBonus [0] = "Mighty Swing - Attacks now deal an additional 5 damage to full health units";
+		levelBonus [1] = "Healing Blade - Attacks that hit allies now heal them instead of dealing damage";
 		unitType = 3;
 		unitName = "Templar";
 		hp = 38;//hp can --//all other stats cannot --//some other stats ++ for growth
@@ -27,81 +29,16 @@ public class Templar : Unit{
 		string player = ((gp.playerNumber ==  1 && this.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && this.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
 		string unitAffectedPlayer = ((gp.playerNumber ==  1 && unitAffected.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && unitAffected.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
 		atkd = true;
-		
-		if (!unitAffected.invincible){
-
-			//level 3 Heal ally units
-			if (unitLevel == 3 && ((alleg == Unit.allegiance.playerOne && unitAffected.alleg == Unit.allegiance.playerOne) || (alleg == Unit.allegiance.playerTwo && unitAffected.alleg == Unit.allegiance.playerTwo))){
-				unitAffected.hp += this.atk;
-				unitAffected.showPopUpText("+" + this.atk,Color.green);
-				if ((player == "Your " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.playerOnly)) || (player == "Opponent's " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.enemyOnly))){
-					gm.addLogToCombatLog(player + this.unitName + " healed " + unitAffected + " for " + this.atk );
-				}
-				if (unitAffected.hp > unitAffected.maxHP){
-					unitAffected.hp = unitAffected.maxHP;
-				}
-			//Deal extra dmg to full hp units at level 2+
-			}else if (unitLevel >= 2 && unitAffected.hp == unitAffected.maxHP) {
-				//reduced dmg to guardian
-				if (unitAffected.unitType == 10 && unitAffected.unitLevel >=2){
-					unitAffected.hp -= 10;
-					gm.addLogToCombatLog(player + this.unitName + " attacked " + unitAffectedPlayer + unitAffected.unitName + " for 10 damage ("+ (this.atk-10) + "blocked)" );
-					unitAffected.showPopUpText("-10 ("+ (this.atk-10) + "blocked)",Color.red);
-				}else{
-					if(unitAffected.unitType == 2){
-						(unitAffected as Mystic).revertStatsOfFocused();
-					}
-					unitAffected.hp -= this.atk +5;
-					unitAffected.showPopUpText("-" + (this.atk+5)+"!",Color.red);
-					gm.addLogToCombatLog(player + this.unitName + " attacked "+unitAffectedPlayer + unitAffected.unitName + " for "+ (this.atk+5) + " damage" );
-				}
-			}else{
-				if (unitAffected.unitType == 10 && unitAffected.unitLevel >=2){
-					unitAffected.hp -= 10;
-					unitAffected.showPopUpText("-10 ("+ (this.atk-10) + "blocked)",Color.red);
-					gm.addLogToCombatLog(player + this.unitName + " attacked "+unitAffectedPlayer + unitAffected.unitName + " for 10 ("+ (this.atk-10) + "blocked)" );
-				}else{
-					if(unitAffected.unitType == 2){
-						(unitAffected as Mystic).revertStatsOfFocused();
-					}
-					unitAffected.hp -= this.atk;
-					unitAffected.showPopUpText("-" + this.atk,Color.red);
-					gm.addLogToCombatLog(player + this.unitName + " attacked "+unitAffectedPlayer + unitAffected.unitName + " for " + this.atk + " damage" );
-				}
-			}
-
-
-			//if healed up dont let it have more than max hp
-			if (unitAffected.hp > unitAffected.maxHP){
-				unitAffected.hp = unitAffected.maxHP;
-			}
-			
-			//if the unit attacked was killed, remove it from the board and unit list
-			if (unitAffected.hp <=0){				
-				
-				//Kill Guardian then SS vulnerable
-				if (unitAffected.unitType == 10){
-					if (unitAffected.alleg == allegiance.playerOne){
-						playerSSKillable();
-					}else{
-						enemySSKillable();
-					}
-					
-				}else if (unitAffected.unitType == 11){
-					gm.gameOver = true;
-				}
-				
-				//Kill unit and remove from game
-				gm.addLogToCombatLog(unitAffectedPlayer + unitAffected.unitName + " was killed!");
-				gm.units.Remove(unitAffected.unitID);
-				unitAffected.transform.parent.GetComponent<TileScript>().objectOccupyingTile = null;
-				Destroy(unitAffected.gameObject);
-			}
+	
+		//level 3 Heal ally units
+		if (unitLevel == 3 && ((alleg == Unit.allegiance.playerOne && unitAffected.alleg == Unit.allegiance.playerOne) || (alleg == Unit.allegiance.playerTwo && unitAffected.alleg == Unit.allegiance.playerTwo))){
+			unitAffected.takeDmg (this,-1*this.atk);
+		//Deal extra dmg to full hp units at level 2+
+		}else if (unitLevel >= 2 && unitAffected.hp == unitAffected.maxHP) {
+			unitAffected.takeDmg (this,this.atk+5);
 		}else{
-			unitAffected.showPopUpText("Invincible!",Color.red);
-			gm.addLogToCombatLog(this.unitName +" attacked "+ unitAffected.unitName + " but it was invincible!");
+			unitAffected.takeDmg(this,this.atk);
 		}
-		//clean up the board colors
 		gm.accessibleTiles.Clear();
 		this.transform.parent.gameObject.transform.parent.GetComponent<TileManager>().clearAllTiles();
 	}

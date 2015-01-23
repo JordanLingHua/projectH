@@ -5,8 +5,10 @@ public class Swordsman : Unit {
 
 	int atkCharges = 2;
 
-	void Start(){
+	 void Start(){
 		base.Start ();
+		levelBonus [0] = "Lifesteal - Gains +5 HP on each attack";
+		levelBonus [1] = "Swift Strike - Ability to attack twice per turn";
 		unitType = 7;
 		unitName = "Swordsman";
 		hp = 38;

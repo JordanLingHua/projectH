@@ -294,7 +294,7 @@ public class GameProcess : MonoBehaviour {
 			else if (tokens[0].Equals("defeat"))
 			{
 				gameManager.gameOver = true;
-				gameManager.addLogToCombatLog("You were: REKT ☑\nREKTangle \n☑ SHREKT \n☑ REKT-it Ralph \n☑ Total REKTall \n☑ The Lord of the REKT \n☑ The Usual SusREKTs \n☑ North by NorthREKT \n☑ REKT");
+				gameManager.addLogToCombatLog("You were: REKT ☑\nREKTangle ☑ \nSHREKT ☑ \nREKT-it Ralph ☑ \nTotal REKTall ☑ \nThe Lord of the REKT ☑ \nThe Usual SusREKTs ☑ North by NorthREKT ☑");
 			}
 			#endregion
 			
