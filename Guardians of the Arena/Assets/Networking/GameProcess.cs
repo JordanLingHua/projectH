@@ -124,15 +124,13 @@ public class GameProcess : MonoBehaviour {
 				DontDestroyOnLoad(this);
 				DontDestroyOnLoad (am);
 				DontDestroyOnLoad(pum);
-				Application.LoadLevel(3);
-				
-				
+				Application.LoadLevel(3);				
 			}
 
-			// startGame\\playerNumber
+			// startAI
 			else if (tokens[0].Equals("startAI"))
 			{
-				playerNumber = Int32.Parse(tokens[1]);
+				playerNumber = 1;//Int32.Parse(tokens[1]);
 				DontDestroyOnLoad(GameObject.Find ("GameProcess"));
 				DontDestroyOnLoad(GameObject.Find ("PageNumber"));
 				Destroy(GameObject.Find("GlobalChat"));
@@ -142,7 +140,8 @@ public class GameProcess : MonoBehaviour {
 				DontDestroyOnLoad(this);
 				DontDestroyOnLoad (am);
 				DontDestroyOnLoad(pum);
-				Application.LoadLevel(5);				
+				Application.LoadLevel(5);		
+
 				
 			}
 			
@@ -360,15 +359,16 @@ public class GameProcess : MonoBehaviour {
 	
 	void OnLevelWasLoaded(int sceneNumber)
 	{
-		if (sceneNumber == 3)
-			loadManagers ();
-		else if (sceneNumber == 2)
-			playerSetup = GameObject.Find ("PlayerSetup").GetComponent<PlayerSetup> ();
-		else if (sceneNumber == 0)
-			socks = new Sockets ();
-		else if (sceneNumber == 5)
-			loadAI ();
-		
+		if (sceneNumber == 3)//PvP multiplayer
+						loadManagers ();
+				else if (sceneNumber == 2)
+						playerSetup = GameObject.Find ("PlayerSetup").GetComponent<PlayerSetup> ();
+				else if (sceneNumber == 0)
+						socks = new Sockets ();
+				else if (sceneNumber == 5) {
+						loadManagers ();
+						loadAI ();
+				}
 	}
 
 	void OnApplicationQuit(){

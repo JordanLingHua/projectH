@@ -146,7 +146,7 @@ public class Unit    : MonoBehaviour {
 	void OnMouseEnter(){
 		//show unit info when hovering over it
 
-		if (Application.loadedLevelName.Equals("BoardScene")){
+		if (Application.loadedLevelName.Equals("BoardScene") || Application.loadedLevelName.Equals("AIScene")){
 			transform.parent.GetComponent<TileScript> ().OnMouseEnter ();
 		// this was for hovered over unit info - not used
 		//	refreshUnitText ();
@@ -164,7 +164,7 @@ public class Unit    : MonoBehaviour {
 
 	void OnMouseExit(){
 		//clear unit info when not hovering over it
-		if (Application.loadedLevelName.Equals("BoardScene")){
+		if (Application.loadedLevelName.Equals("BoardScene") || Application.loadedLevelName.Equals("AIScene")){
 			transform.parent.GetComponent<TileScript> ().OnMouseExit ();
 			//gm.uInfo.text  = "";
 		}else {

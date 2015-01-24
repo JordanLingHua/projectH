@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour {
 	string[] unitOptionStrings = new string[] {"Mo(v)e","(A)ttack"};
 	//Selected unit and available move squares
 	public Unit selectedUnit = null;
-	public HashSet<TileScript> accessibleTiles = new HashSet<TileScript>();
+	public List<TileScript> accessibleTiles = new List<TileScript>();
 
 	public GameObject UnitOne,UnitTwo,UnitThree,UnitFour,UnitFive,UnitSix,UnitSeven,UnitEight,UnitNine,UnitTen,UnitEleven;
 	GameObject selectedUnitDisplay;
@@ -352,6 +352,9 @@ public class GameManager : MonoBehaviour {
 			resetPlayerTwoUnits();
 		}
 		clearSelection();	
+
+		if (Application.loadedLevelName.Equals ("AIScene") && !turn) 
+			GameObject.Find("AI").GetComponentInParent<AIScript>().makeGameAction();
 	}
 	
 }

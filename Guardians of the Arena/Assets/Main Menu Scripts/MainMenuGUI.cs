@@ -175,11 +175,10 @@ public class MainMenuGUI : MonoBehaviour {
 				{
 					am.playButtonSFX ();
 					//send search request
-					gp.returnSocket ().SendTCPPacket ("playAI\\" + pageNumber.selectedPage);
-					
-					infoText = "Searching for Opponent...";
-					showGUI = false;
+				    gp.returnSocket ().SendTCPPacket ("playAI\\" + pageNumber.selectedPage);
+					showGUI = false;		
 				}
+
 				GUILayout.FlexibleSpace();
 				GUILayout.EndHorizontal();
 				GUILayout.Label("", "Divider");//-------------------------------- custom
@@ -382,19 +381,19 @@ public class MainMenuGUI : MonoBehaviour {
 		// End the group we started above. This is very important to remember!
 		GUI.EndGroup ();
 		
-//		GUI.SetNextControlName ("chatField");
-//		
-//		if (Input.GetKeyDown (KeyCode.Return)) 
-//		{
-//			GUI.FocusControl ("chatField");
-//			chat = string.Empty;
-//		}
-//
-//		if (Event.current.keyCode == KeyCode.Return && !chat.Equals(string.Empty)) 
-//		{
-//			gp.returnSocket().SendTCPPacket("globalChat\\" + chat);
-//			chat = string.Empty;
-//		}
+		GUI.SetNextControlName ("chatField");
+		
+		if (Input.GetKeyDown (KeyCode.Return)) 
+		{
+			GUI.FocusControl ("chatField");
+			chat = string.Empty;
+		}
+
+		if (Event.current.keyCode == KeyCode.Return && !chat.Equals(string.Empty)) 
+		{
+			gp.returnSocket().SendTCPPacket("globalChat\\" + chat);
+			chat = string.Empty;
+		}
 	}
 	
 	// Update is called once per frame

@@ -49,7 +49,7 @@ public class AIManager : MonoBehaviour {
 		gp = GameObject.Find ("GameProcess").GetComponent<GameProcess>();
 		suInfo = GameObject.Find("SelectedUnitInfoGUIText").GetComponent<GUIText>();
 
-		if(Application.loadedLevelName.Equals("BoardScene"))
+		if(Application.loadedLevelName.Equals("BoardScene") || Application.loadedLevelName.Equals("AIScene"))
 		tm = GameObject.Find("TileManager").GetComponent<TileManager>();
 		mana = GameObject.Find("ManaGUIText").GetComponent<GUIText>();
 		timerText = GameObject.Find("TimerGUIText").GetComponent<GUIText>();
