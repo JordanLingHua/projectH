@@ -121,7 +121,6 @@ public class GameProcess : MonoBehaviour {
 				Destroy(GameObject.Find("ListOfPlayersGUIText"));
 				DontDestroyOnLoad(this);
 				DontDestroyOnLoad (am);
-<<<<<<< HEAD
 				DontDestroyOnLoad(pum);
 				Application.LoadLevel(3);				
 			}
@@ -143,13 +142,10 @@ public class GameProcess : MonoBehaviour {
 
 				
 			}
-=======
-				DontDestroyOnLoad(GameObject.Find ("PopUpMenu"));
-				Application.LoadLevel(3);
-				
-				
-			}
->>>>>>> origin/master
+
+//			DontDestroyOnLoad(GameObject.Find ("PopUpMenu"));
+//			Application.LoadLevel(3);
+
 			
 			// globalChat\\userName\\chatContent
 			else if (tokens[0].Equals("globalChat"))
@@ -334,8 +330,8 @@ public class GameProcess : MonoBehaviour {
 				}
 				UnityEngine.Debug.Log(packet);
 			}
-		}
-	}
+		}}  
+
 	
 	public void movePiece(int unitID, int toX, int toY)
 	{
@@ -367,7 +363,7 @@ public class GameProcess : MonoBehaviour {
 	
 	void OnLevelWasLoaded(int sceneNumber)
 	{
-<<<<<<< HEAD
+
 		if (sceneNumber == 3)//PvP multiplayer
 						loadManagers ();
 				else if (sceneNumber == 2)
@@ -376,9 +372,9 @@ public class GameProcess : MonoBehaviour {
 						socks = new Sockets ();
 				else if (sceneNumber == 5) {
 						loadManagers ();
-						loadAI ();
+						//loadAI ();
 				}
-=======
+
 		if (sceneNumber == 3)
 			loadManagers ();
 		else if (sceneNumber == 2)
@@ -386,7 +382,7 @@ public class GameProcess : MonoBehaviour {
 		else if (sceneNumber == 0)
 			socks = new Sockets ();
 		
->>>>>>> origin/master
+
 	}
 
 	void OnApplicationQuit(){
