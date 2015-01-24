@@ -7,8 +7,10 @@ public class Mystic: Unit {
 	public int oldMvRange, oldAtkRange,oldAtkDmg;
 
 	void Start () {
-		unitFocused = null;
 		base.Start ();
+		unitFocused = null;
+		levelBonus [0] = "Enchant Might - Allied focused units now gain +5 attack damage";
+		levelBonus [1] = "Crippling Focus - Enemy focused units now take 8 damage at the end of every your turn";
 		unitType = 2;
 		unitName = "Mystic";
 		hp = 30;
@@ -25,6 +27,8 @@ public class Mystic: Unit {
 
 	public void revertStatsOfFocused(){
 		if (unitFocused != null) {
+			string player = ((gp.playerNumber ==  1 && this.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && this.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
+			string unitAffectedPlayer = ((gp.playerNumber ==  1 && unitFocused.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && unitFocused.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
 			//allied units get only increased mv range and attack damage
 			unitFocused.mysticFocusingThis = null;
 			unitFocused.showPopUpText("No Longer Focused!",Color.yellow);
@@ -36,9 +40,44 @@ public class Mystic: Unit {
 		}
 	
 	}
-	
+
+	public override void takeDmg(Unit unitAttacking,int amt){
+		string player = ((gp.playerNumber ==  1 && this.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && this.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
+		if (!this.invincible) {
+			this.hp -= amt;
+			revertStatsOfFocused();
+			//if healed up dont let it have more than max hp
+			if (hp > maxHP){
+				hp = maxHP;
+			}
+			
+			if (amt > 0){
+				//taking damage
+				showPopUpText("-" + amt,Color.red);
+			}else{
+				//getting healed
+				showPopUpText("+" + (-1*amt),Color.green);
+			}
+			
+			if (this.hp <= 0) {				
+				//Kill unit and remove from game
+				gm.addLogToCombatLog (this.unitName + " was killed!");
+				gm.units.Remove (this.unitID);
+				this.transform.parent.GetComponent<TileScript> ().objectOccupyingTile = null;
+				Destroy (this.gameObject);
+			}
+		}else{
+			showPopUpText("Invincible!",Color.red);
+			if ((player == "Your " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.playerOnly)) || (player == "Opponent's " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.enemyOnly))){
+				gm.addLogToCombatLog(unitAttacking.unitName +" attacked "+ unitName + " but it was invincible!");
+			}
+		}
+	}
+
 	//Unit Focused needs to take dmg after turn ends if level 3 and enemy unit
 	public override void attackUnit(Unit unitAffected){
+		string player = ((gp.playerNumber ==  1 && this.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && this.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
+		string unitAffectedPlayer = ((gp.playerNumber ==  1 && unitAffected.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && unitAffected.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
 		atkd = true;
 		if (!unitAffected.invincible){
 			//save variables for reverting later
@@ -80,6 +119,8 @@ public class Mystic: Unit {
 
 //		//deal 8 dmg to unit every time if level 3 and focusing enemy unit
 		if (unitFocused != null && ((alleg ==Unit.allegiance.playerOne && unitFocused.alleg == Unit.allegiance.playerTwo) || (alleg == Unit.allegiance.playerTwo && unitFocused.alleg == Unit.allegiance.playerOne)) && unitLevel == 3) {
+			string player = ((gp.playerNumber ==  1 && this.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && this.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
+			string unitAffectedPlayer = ((gp.playerNumber ==  1 && unitFocused.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && unitFocused.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
 			if (!invincible){
 				unitFocused.hp -= 8;
 				unitFocused.showPopUpText("-8",Color.red);
@@ -100,12 +141,13 @@ public class Mystic: Unit {
 					}
 					
 					//Kill unit and remove from game
+					gm.addLogToCombatLog(unitFocused.unitName + " was killed!");
 					gm.units.Remove(unitFocused.unitID);
 					unitFocused.transform.parent.GetComponent<TileScript>().objectOccupyingTile = null;
 					Destroy(unitFocused.gameObject);
 				}
 			}else{
-				gm.combatLog.text = "Combat Log:\nTarget is invincible!";
+				gm.addLogToCombatLog("Mystic couldn't deal damage it was invincible!");
 			}
 		}
 	}

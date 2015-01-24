@@ -15,10 +15,10 @@ public class TileManager : MonoBehaviour {
 	public GameObject environmentObject, cp, UnitOne,UnitTwo,UnitThree,UnitFour,UnitFive,UnitSix,UnitSeven,UnitEight,UnitNine,UnitTen,UnitEleven;
 	public GameManager gm;
 	public GameProcess gp;
-	public PopUpMenu pum;
+	public PopUpMenuNecro pum;
 	
 	void Start () {
-		pum =  GameObject.Find("PopUpMenu").GetComponent<PopUpMenu>();
+		pum =  GameObject.Find("PopUpMenu").GetComponent<PopUpMenuNecro>();
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 		tiles = new GameObject[xTiles, yTiles];
@@ -114,7 +114,9 @@ public class TileManager : MonoBehaviour {
 			//All units
 		case 0:
 			foreach (int key in gm.units.Keys) {
-				gm.units [key].displayXPBar = true;
+				if (gm.units [key].alleg != Unit.allegiance.neutral){
+					gm.units [key].displayXPBar = true;
+				}
 			}
 			break;
 			//Friendly units

@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour {
 	//game managing variables
 	public bool turn, incMana,gameOver;
 	public GameObject popUpText;
-	public GUIText uInfo,mana,timerText,combatLog,suInfo;
+	public GUIText uInfo,mana,timerText,suInfo;
 	public gameState gs;
 	public int pMana,maxMana;
 	public string buttonOption = "Attack";
@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour {
 	public Dictionary<int,Unit>	units = new Dictionary<int, Unit>();	
 	
 	void Start () {
+		combatLogScrollPos = new Vector2 (0.0f, 0.0f);
 		combatLogText = "";
 		combatLogWindowRect = new Rect (Screen.width-combatLogWidth,Screen.height-combatLogHeight+20, combatLogWidth, combatLogHeight);
 		pMana = 2;
@@ -53,8 +54,6 @@ public class GameManager : MonoBehaviour {
 		tm = GameObject.Find("TileManager").GetComponent<TileManager>();
 		mana = GameObject.Find("ManaGUIText").GetComponent<GUIText>();
 		timerText = GameObject.Find("TimerGUIText").GetComponent<GUIText>();
-		combatLog = GameObject.Find("CombatLogGUIText").GetComponent<GUIText>();
-
 		if (gp.playerNumber == 1)
 			turn = true;
 	}
@@ -70,35 +69,6 @@ public class GameManager : MonoBehaviour {
 		GameObject text = (GameObject) Instantiate(popUpText,textPos,Quaternion.identity);
 		text.GetComponent<ErrorPopUpTextScript> ().StartCoroutine (text.GetComponent<ErrorPopUpTextScript> ().showText (error, Color.red));
 	}
-
-//	//
-//	void combatLogWindow (int windowID) 
-//	{
-//		GUILayout.BeginVertical ();
-//		GUILayout.Space (8);
-//		
-//		GUILayout.Label ("Combat Log");
-//		GUILayout.Label("", "Divider");
-//		
-//		
-//		GUILayout.BeginHorizontal ();
-//		combatLogScrollPos = GUILayout.BeginScrollView (combatLogScrollPos , false, true);
-//		GUILayout.Label ("Hi", "PlainText");
-//		GUILayout.EndScrollView ();
-//		GUILayout.EndHorizontal ();
-//		GUILayout.Space (8);
-//		
-//		GUILayout.BeginHorizontal();
-//		chat = GUILayout.TextField (chat, 50);
-//		if (GUILayout.Button ("Send", "ShortButton")) 
-//		{
-//			if (!chat.Equals (string.Empty)) 
-//			{
-//				gp.returnSocket ().SendTCPPacket ("globalChat\\" + chat);
-//				chat = string.Empty;
-//			}
-//		}
-//	}
 
 
 	void Update () {

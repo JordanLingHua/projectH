@@ -13,6 +13,7 @@ public class Unit    : MonoBehaviour {
 	public bool atkd, mvd;
 	public string unitName = string.Empty;
 	public string info = string.Empty;
+	public string[] levelBonus = {"",""};
 	public bool invincible,displayHPBar,displayXPBar;
 	public Mystic mysticFocusingThis;
 
@@ -69,7 +70,7 @@ public class Unit    : MonoBehaviour {
 	public Texture2D hpBarBG,hpBarHigh,hpBarMedium,hpBarLow,xpBar;
 	public GameManager gm;
 	public GameProcess gp;
-	public PopUpMenu pum;
+	public PopUpMenuNecro pum;
 	public AudioManager am;
 	public virtual void Start () {
 		unitLevel = 1;
@@ -81,7 +82,7 @@ public class Unit    : MonoBehaviour {
 		xpBar = Resources.Load("XPBar") as Texture2D;
 		am = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
-		pum = GameObject.Find ("PopUpMenu").GetComponent<PopUpMenu> ();
+		pum = GameObject.Find ("PopUpMenu").GetComponent<PopUpMenuNecro> ();
 		if (Application.loadedLevelName.Equals("BoardScene")){
 			gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 		}
@@ -148,8 +149,6 @@ public class Unit    : MonoBehaviour {
 
 		if (Application.loadedLevelName.Equals("BoardScene") || Application.loadedLevelName.Equals("AIScene")){
 			transform.parent.GetComponent<TileScript> ().OnMouseEnter ();
-		// this was for hovered over unit info - not used
-		//	refreshUnitText ();
 		}else{
 			//used for setup screen info
 			string info = "Unit Information:\n" +unitName + "\nHP: " + hp + "/" + maxHP;
@@ -178,36 +177,18 @@ public class Unit    : MonoBehaviour {
 		return nothing;
 	}
 
-	void refreshUnitText()
-	{
-		info = unitName + "\nHP: " + hp + "/" + maxHP;
-		info += "\nLevel: " + unitLevel;
-		info += unitLevel == 3? "" :" Experience: " + xp + "/" + XP_TO_LEVEL[unitLevel-1];
-		info += mvCost > 0? "\nMove Cost: " + mvCost : "";
-		info += atkCost > 0? "\nAttack Cost: " + atkCost : "";
-		info += atk > 0? "\nDamage: " + atk : "";
-
-		if (invincible){
-			info+="\nINVINCIBLE";
-		}
-		if (gm.gs == GameManager.gameState.playerMv && mvd){
-			info += "\nAlready moved";
-		}
-		if (gm.gs == GameManager.gameState.playerAtk && atkd){
-			info += "\nAlready attacked";
-		}
-	//	gm.uInfo.text = info;
-	}
-
 	public virtual void gainXP(){
 		xp += 5;
 
 		if (xp >= XP_TO_LEVEL [unitLevel - 1]) {
-			unitLevel ++;
-			//hp += 5;
-			//maxHP += 5;
 			xp = 0;
-			refreshUnitText ();
+			unitLevel ++;
+			if ((pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.playerOnly) &&  ((alleg == allegiance.playerOne && gp.playerNumber == 1) || (alleg == allegiance.playerTwo && gp.playerNumber == 2))){
+				gm.addLogToCombatLog("Your " + unitName + " has leveled up to level " + unitLevel + "!");
+			}
+			if ((pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.enemyOnly) &&  ((alleg == allegiance.playerTwo && gp.playerNumber == 1) || (alleg == allegiance.playerOne && gp.playerNumber == 2))){
+				gm.addLogToCombatLog("Opponent's " + unitName + " has leveled up to level " + unitLevel + "!");
+			}
 			showPopUpText("Leveled Up!",Color.yellow);
 		} else {
 			showPopUpText("XP+5!",Color.magenta);
@@ -231,64 +212,58 @@ public class Unit    : MonoBehaviour {
 		}
 	}
 
-	//TODO: move this logic to the server
-	public virtual void attackUnit(Unit unitAffected){
-		atkd = true;
 
-		if (!unitAffected.invincible){
-			//gm.combatLog.text = "Combat Log:\nDealt " + unitThatAttacked.atk + " damage!";
-			if (this.atk > 0){
-				//block dmg if killing guardian lvl 2
-				if (unitAffected.unitType == 10 && unitAffected.unitLevel >=2 && this.atk > 10){
-					unitAffected.hp -= 10;
-					unitAffected.showPopUpText("-10 "+ (this.atk-10) + "blocked",Color.red);
-				}else{
-					if(unitAffected.unitType == 2){
-						Mystic x = unitAffected as Mystic;
-						x.revertStatsOfFocused();
-					}	
-					unitAffected.hp -= this.atk;
-					unitAffected.showPopUpText("-" + this.atk,Color.red);
-				}
+	public virtual void takeDmg(Unit unitAttacking,int amt){
+		string unitAffectedPlayer = ((gp.playerNumber ==  1 && unitAttacking.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && unitAttacking.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
+		string player = ((gp.playerNumber ==  1 && this.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && this.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
+		if (!this.invincible) {
 
-			}else{
-				unitAffected.hp -= this.atk;
-				unitAffected.showPopUpText("+" + (-1*this.atk),Color.green);
-			}
+
+			this.hp -= amt;
 
 			//if healed up dont let it have more than max hp
-			if (unitAffected.hp > unitAffected.maxHP){
-				unitAffected.hp = unitAffected.maxHP;
+			if (hp > maxHP){
+				hp = maxHP;
 			}
-			
-			//if the unit attacked was killed, remove it from the board and unit list
-			if (unitAffected.hp <=0){				
 
-				//Kill Guardian then SS vulnerable
-				if (unitAffected.unitType == 10){
-					if (unitAffected.alleg == allegiance.playerOne){
-						playerSSKillable();
-					}else{
-						enemySSKillable();
-					}
-				
-				}else if (unitAffected.unitType == 11){
-					gm.gameOver = true;
+			if (amt > 0){
+				//taking damage
+				if ((player == "Your " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.playerOnly)) || (player == "Opponent's " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.enemyOnly))){
+					gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" attacked "+ unitName + " for " + unitAttacking.atk + " damage!");
 				}
+				showPopUpText("-" + amt,Color.red);
+			}else{
+				//getting healed
+				if ((player == "Your " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.playerOnly)) || (player == "Opponent's " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.enemyOnly))){
+					gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" healed "+ unitName + " for " + unitAttacking.atk + " damage!");
+				}
+				showPopUpText("+" + (-1*amt),Color.green);
+			}
 
+			if (this.hp <= 0) {				
 				//Kill unit and remove from game
-				gm.units.Remove(unitAffected.unitID);
-				unitAffected.transform.parent.GetComponent<TileScript>().objectOccupyingTile = null;
-				Destroy(unitAffected.gameObject);
+				gm.addLogToCombatLog (this.unitName + " was killed!");
+				gm.units.Remove (this.unitID);
+				this.transform.parent.GetComponent<TileScript> ().objectOccupyingTile = null;
+				Destroy (this.gameObject);
 			}
 		}else{
-			unitAffected.showPopUpText("Invincible!",Color.red);
-			gm.addLogToCombatLog(this.unitName +" attacked "+ unitAffected.unitName + " but it was invincible!");
+			showPopUpText("Invincible!",Color.red);
+			if ((player == "Your " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.playerOnly)) || (player == "Opponent's " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.enemyOnly))){
+				gm.addLogToCombatLog(unitAttacking.unitName +" attacked "+ unitName + " but it was invincible!");
+			}
 		}
+	}
+
+	//TODO: move this logic to the server
+	public virtual void attackUnit(Unit unitAffected){
+		string player = ((gp.playerNumber ==  1 && this.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && this.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
+		string unitAffectedPlayer = ((gp.playerNumber ==  1 && unitAffected.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && unitAffected.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
+		atkd = true;
+		unitAffected.takeDmg(this,this.atk);
 		//clean up the board colors
 		gm.accessibleTiles.Clear();
 		this.transform.parent.gameObject.transform.parent.GetComponent<TileManager>().clearAllTiles();
-		refreshUnitText();
 	}
 
 	public void selectUnit(){

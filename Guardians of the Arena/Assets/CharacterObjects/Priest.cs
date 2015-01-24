@@ -8,6 +8,8 @@ public class Priest : Unit {
 
 	void Start () {
 		base.Start ();
+		levelBonus [0] = "Mighty Heal - Heal now heals the target to full health";
+		levelBonus [1] = "Rain of Light - Healing a unit now heals units near it for 10 health";
 		unitName = "Priest";
 		unitType = 8;
 		hp = 20;
@@ -25,11 +27,18 @@ public class Priest : Unit {
 	public override void gainXP(){
 		xp += 5;
 		if (xp >= XP_TO_LEVEL[unitLevel-1]){
+			xp = 0;
 			unitLevel ++;
 			//Max heal
 			//just sets attack to heal for more then any hp in game atm
 			if (unitLevel == 2){
 				atk = -500;
+			}
+			if ((pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.playerOnly) &&  ((alleg == allegiance.playerOne && gp.playerNumber == 1) || (alleg == allegiance.playerTwo && gp.playerNumber == 2))){
+				gm.addLogToCombatLog("Your " + unitName + " has leveled up to level " + unitLevel + "!");
+			}
+			if ((pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.enemyOnly) &&  ((alleg == allegiance.playerTwo && gp.playerNumber == 1) || (alleg == allegiance.playerOne && gp.playerNumber == 2))){
+				gm.addLogToCombatLog("Opponent's " + unitName + " has leveled up to level " + unitLevel + "!");
 			}
 			showPopUpText("Leveled Up!",Color.yellow);
 		}else {
@@ -41,7 +50,7 @@ public class Priest : Unit {
 	public override List<GameObject> showAoEAffectedTiles(TileScript tile){
 		List <GameObject> ret = new List<GameObject> ();
 		if (unitLevel == 3) {
-			rangeAoE (ret,tile,2);
+			rangeAoE (ret,tile,1);
 		}
 		return ret;
 	}
@@ -70,20 +79,5 @@ public class Priest : Unit {
 		}
 	
 	}
-
-//	public override void showAtkTiles(){
-//		if (!atkd){
-//			foreach (int key in gm.units.Keys){
-//				if (gp.playerNumber == 1 && gm.units[key].alleg == Unit.allegiance.playerOne){
-//					gm.accessibleTiles.Add(gm.units[key].transform.parent.GetComponent<TileScript>());
-//					gm.units[key].transform.parent.gameObject.renderer.material.color = new Color(1f,0.4f,0f, 0f);
-//				}
-//				if (gp.playerNumber == 2 && gm.units[key].alleg == Unit.allegiance.playerTwo){
-//					gm.accessibleTiles.Add(gm.units[key].transform.parent.GetComponent<TileScript>());
-//					gm.units[key].transform.parent.gameObject.renderer.material.color = new Color(1f,0.4f,0f, 0f);
-//				}
-//			}
-//		}
-//	}
 
 }

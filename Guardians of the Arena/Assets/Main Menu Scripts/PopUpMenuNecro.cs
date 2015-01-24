@@ -13,13 +13,15 @@ FancyTop (just an example of using the elements to do a centered header graphic)
 WaxSeal (adds the waxseal and ribbon to the right of the window)
 DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 */
-
+	public enum combatLogOption {all,playerOnly,enemyOnly}
 	public bool allowEnemyUnitSelection, allowAutoMoveAttackToggle;
+	public int hpSelGridInt, xpSelGridInt;
+	public combatLogOption clo;
 	GameManager gm;
 	AudioManager am;
 	GameProcess gp;
 	int displayWidth = 460;
-	int displayHeight = 590;
+	int displayHeight = 620;
 	
 	bool doWindow1 = false;
 	
@@ -123,6 +125,7 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 		{
 			am.playButtonSFX();
 			if( Application.loadedLevelName.Equals ("BoardScene")){
+				hpSelGridInt = 0;
 				GameObject.Find ("TileManager").GetComponent<TileManager>().displayHPBars(0);
 			}
 		}
@@ -130,6 +133,7 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 		{
 			am.playButtonSFX();
 			if( Application.loadedLevelName.Equals ("BoardScene")){
+				hpSelGridInt = 1;
 				GameObject.Find ("TileManager").GetComponent<TileManager>().displayHPBars(1);
 			}
 		}
@@ -137,6 +141,7 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 		{
 			am.playButtonSFX();
 			if( Application.loadedLevelName.Equals ("BoardScene")){
+				hpSelGridInt = 2;
 				GameObject.Find ("TileManager").GetComponent<TileManager>().displayHPBars(2);
 			}
 		}
@@ -144,6 +149,7 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 		{
 			am.playButtonSFX();
 			if( Application.loadedLevelName.Equals ("BoardScene")){
+				hpSelGridInt = 3;
 				GameObject.Find ("TileManager").GetComponent<TileManager>().displayHPBars(3);
 			}
 		}
@@ -158,6 +164,7 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 		{
 			am.playButtonSFX();
 			if( Application.loadedLevelName.Equals ("BoardScene")){
+				xpSelGridInt = 0;
 				GameObject.Find ("TileManager").GetComponent<TileManager>().displayXPBars(0);
 			}
 		}
@@ -165,6 +172,7 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 		{
 			am.playButtonSFX();
 			if( Application.loadedLevelName.Equals ("BoardScene")){
+				xpSelGridInt = 1;
 				GameObject.Find ("TileManager").GetComponent<TileManager>().displayXPBars(1);
 			}
 		}
@@ -172,6 +180,7 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 		{
 			am.playButtonSFX();
 			if( Application.loadedLevelName.Equals ("BoardScene")){
+				xpSelGridInt = 2;
 				GameObject.Find ("TileManager").GetComponent<TileManager>().displayXPBars(2);
 			}
 		}
@@ -179,11 +188,31 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 		{
 			am.playButtonSFX();
 			if( Application.loadedLevelName.Equals ("BoardScene")){
+				xpSelGridInt = 3;
 				GameObject.Find ("TileManager").GetComponent<TileManager>().displayXPBars(3);
 			}
 		}
 		GUILayout.EndHorizontal();
-
+		
+		GUILayout.Label("Combat Log", "PlainText");
+		
+		GUILayout.BeginHorizontal();
+		if (GUILayout.Button ("All Activity", "ShortButton"))
+		{
+			am.playButtonSFX();
+			clo = combatLogOption.all;
+		}
+		if (GUILayout.Button ("My Actions Only", "ShortButton"))
+		{
+			am.playButtonSFX();
+			clo = combatLogOption.playerOnly;
+		}
+		if (GUILayout.Button ("Opponent Actions Only", "ShortButton"))
+		{
+			am.playButtonSFX();
+			clo = combatLogOption.enemyOnly;
+		}
+		GUILayout.EndHorizontal();
 
 		GUILayout.Label("", "Divider");//-------------------------------- custom
 
@@ -293,6 +322,7 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 	
 	// Use this for initialization
 	void Start () {
+		clo = combatLogOption.all;
 		allowAutoMoveAttackToggle = true;
 		am = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
@@ -301,7 +331,7 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.F10) || Input.GetKeyDown(KeyCode.Escape)){
+		if (Input.GetKeyDown(KeyCode.F10)){
 			doWindow1 = !doWindow1;
 		}
 	}

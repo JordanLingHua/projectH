@@ -14,7 +14,7 @@ namespace Guardians_Of_The_Arena_Server.Units
             maxHealth = 25;
             armor = 8;
             damage = 18;
-            movementRange = 3;
+            movementRange = 4;
             movementCost = 1;
             attackCost = 2;
             attackRange = 4;

@@ -313,7 +313,7 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 	{
 		DontDestroyOnLoad(process);
 		DontDestroyOnLoad (am);
-		DontDestroyOnLoad (pum);
+		DontDestroyOnLoad (GameObject.Find ("PopUpMenu"));
 		Application.LoadLevel(1);
 	}
 	

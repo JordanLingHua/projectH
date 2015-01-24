@@ -16,8 +16,7 @@ public class GameProcess : MonoBehaviour {
 	public TileManager tileManager;
 	public GameManager gameManager;
 	AudioManager am;
-	PopUpMenu pum;
-	AIManager aiManager;
+	PopUpMenuNecro pum;
 	public PlayerSetup playerSetup;
 	
 	//PRIVATE MEMBERS
@@ -26,7 +25,7 @@ public class GameProcess : MonoBehaviour {
 	private string tempBuffer;
 	
 	void Start () {
-		pum = GameObject.Find ("PopUpMenu").GetComponent<PopUpMenu> ();
+		pum = GameObject.Find ("PopUpMenu").GetComponent<PopUpMenuNecro> ();
 		am = GameObject.Find ("AudioManager").GetComponent<AudioManager> ();
 		uniClock = new Stopwatch();
 		
@@ -76,7 +75,6 @@ public class GameProcess : MonoBehaviour {
 			{
 				GameObject.Find("Login_GUI").GetComponent<LoginScreenGUI>().loginFail();
 			}
-			
 			// hasLoggedIn\\playerNameToAdd
 			else if (tokens[0].Equals("hasLoggedIn"))
 			{
@@ -107,7 +105,7 @@ public class GameProcess : MonoBehaviour {
 			// alreadyLoggedIn\\username
 			else if (tokens[0].Equals("alreadyLoggedIn"))
 			{
-				GameObject.Find("Login_GUI").GetComponent<LoginScreenGUI>().loginText =
+				GameObject.Find("Login_GUI").GetComponent<LoginScreenGUI>().guiText.text =
 					tokens[1] + " is already logged in!";
 			}
 			
@@ -123,6 +121,7 @@ public class GameProcess : MonoBehaviour {
 				Destroy(GameObject.Find("ListOfPlayersGUIText"));
 				DontDestroyOnLoad(this);
 				DontDestroyOnLoad (am);
+<<<<<<< HEAD
 				DontDestroyOnLoad(pum);
 				Application.LoadLevel(3);				
 			}
@@ -144,6 +143,13 @@ public class GameProcess : MonoBehaviour {
 
 				
 			}
+=======
+				DontDestroyOnLoad(GameObject.Find ("PopUpMenu"));
+				Application.LoadLevel(3);
+				
+				
+			}
+>>>>>>> origin/master
 			
 			// globalChat\\userName\\chatContent
 			else if (tokens[0].Equals("globalChat"))
@@ -279,11 +285,11 @@ public class GameProcess : MonoBehaviour {
 				if (Int32.Parse (tokens[2]) != 0){
 	
 					for (int i = 0; i < Int32.Parse (tokens[2]); i ++ ){
-						gameManager.units[Int32.Parse (tokens[1])].gainXP();
 						if (gameManager.units[Int32.Parse (tokens[1])].unitType == 2){
 							(gameManager.units[Int32.Parse (tokens[1])] as Mystic).revertStatsOfFocused();
 						}
 						gameManager.units[Int32.Parse (tokens[1])].attackUnit(gameManager.units[Int32.Parse(tokens[3+i])]);
+						gameManager.units[Int32.Parse (tokens[1])].gainXP();
 					}
 				}else{
 					gameManager.units[Int32.Parse (tokens[1])].showPopUpText("Attacked Nothing!", Color.red);
@@ -298,24 +304,21 @@ public class GameProcess : MonoBehaviour {
 			//switchTurns
 			else if (tokens[0].Equals("switchTurns"))
 			{
-				if(Application.loadedLevelName.Equals("BoardScene"))
-					gameManager.nextTurn(Int32.Parse (tokens[1]));
-				else if(Application.loadedLevelName.Equals("AIScene"))
-				    aiManager.nextTurn(Int32.Parse (tokens[1]));
+				gameManager.nextTurn(Int32.Parse (tokens[1]));
 			}
 			
 			//TODO mmr
 			else if (tokens[0].Equals("victory"))
 			{
 				gameManager.gameOver = true;
-				gameManager.combatLog.text = "You won!";
+				gameManager.addLogToCombatLog("Congratulations! You have won!");
 			}
 			
 			//TODO mmr
 			else if (tokens[0].Equals("defeat"))
 			{
 				gameManager.gameOver = true;
-				gameManager.combatLog.text = "You lost!";
+				gameManager.addLogToCombatLog("You were: REKT ☑\nREKTangle ☑ \nSHREKT ☑ \nREKT-it Ralph ☑ \nTotal REKTall ☑ \nThe Lord of the REKT ☑ \nThe Usual SusREKTs ☑ North by NorthREKT ☑");
 			}
 			#endregion
 			
@@ -336,7 +339,12 @@ public class GameProcess : MonoBehaviour {
 	
 	public void movePiece(int unitID, int toX, int toY)
 	{
-		gameManager.addLogToCombatLog(gameManager.units[unitID].unitName + " moved for " + gameManager.units[unitID].mvCost + " mana!");
+		bool players = ((playerNumber ==  1 && gameManager.units [unitID].alleg == Unit.allegiance.playerOne) || (playerNumber ==  2 && gameManager.units [unitID].alleg == Unit.allegiance.playerTwo));
+		if (players && pum.clo == PopUpMenuNecro.combatLogOption.playerOnly  || pum.clo == PopUpMenuNecro.combatLogOption.all){
+			gameManager.addLogToCombatLog("Your " + gameManager.units[unitID].unitName + " moved for " + gameManager.units[unitID].mvCost + " mana!");
+		}else if (!players && pum.clo == PopUpMenuNecro.combatLogOption.enemyOnly  || pum.clo == PopUpMenuNecro.combatLogOption.all){
+			gameManager.addLogToCombatLog("Your " + gameManager.units[unitID].unitName + " moved for " + gameManager.units[unitID].mvCost + " mana!");
+		}
 		if (gameManager.units [unitID].unitType == 2) {
 			Mystic x = gameManager.units[unitID] as Mystic;
 			x.revertStatsOfFocused();
@@ -359,6 +367,7 @@ public class GameProcess : MonoBehaviour {
 	
 	void OnLevelWasLoaded(int sceneNumber)
 	{
+<<<<<<< HEAD
 		if (sceneNumber == 3)//PvP multiplayer
 						loadManagers ();
 				else if (sceneNumber == 2)
@@ -369,6 +378,15 @@ public class GameProcess : MonoBehaviour {
 						loadManagers ();
 						loadAI ();
 				}
+=======
+		if (sceneNumber == 3)
+			loadManagers ();
+		else if (sceneNumber == 2)
+			playerSetup = GameObject.Find ("PlayerSetup").GetComponent<PlayerSetup> ();
+		else if (sceneNumber == 0)
+			socks = new Sockets ();
+		
+>>>>>>> origin/master
 	}
 
 	void OnApplicationQuit(){
@@ -378,10 +396,6 @@ public class GameProcess : MonoBehaviour {
 		}catch(Exception e){
 			print ("Error on disconnect: " + e);
 		}		
-	}
-
-	public void loadAI(){
-		aiManager = GameObject.Find("AI").GetComponent<AIManager>();
 	}
 	
 	public void loadManagers()
