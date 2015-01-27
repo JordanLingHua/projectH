@@ -50,8 +50,8 @@ public class GameManager : MonoBehaviour {
 		gp = GameObject.Find ("GameProcess").GetComponent<GameProcess>();
 		suInfo = GameObject.Find("SelectedUnitInfoGUIText").GetComponent<GUIText>();
 
-		if(Application.loadedLevelName.Equals("BoardScene"))
-		tm = GameObject.Find("TileManager").GetComponent<TileManager>();
+		if(Application.loadedLevelName.Equals("BoardScene") || Application.loadedLevelName.Equals("AIScene"))
+			tm = GameObject.Find("TileManager").GetComponent<TileManager>();
 		mana = GameObject.Find("ManaGUIText").GetComponent<GUIText>();
 		timerText = GameObject.Find("TimerGUIText").GetComponent<GUIText>();
 		if (gp.playerNumber == 1)
@@ -312,7 +312,7 @@ public class GameManager : MonoBehaviour {
 		
 		//toggle between players turns and reset units
 		tm.clearAllTiles();
-
+		accessibleTiles.Clear ();
 		//possibly wrong
 		if ((gp.playerNumber == 1 && turn) || (gp.playerNumber == 2 && !turn)){
 			resetPlayerOneUnits();
@@ -323,8 +323,11 @@ public class GameManager : MonoBehaviour {
 		}
 		clearSelection();	
 
-		if (Application.loadedLevelName.Equals ("AIScene") && !turn) 
-			GameObject.Find("AI").GetComponentInParent<AIScript>().makeGameAction();
+		gs = gameState.playerMv;
+		if (Application.loadedLevelName.Equals ("AIScene") && !turn) {
+
+						GameObject.Find ("AI").GetComponent<AIScript> ().makeGameAction (null);
+				}
 	}
 	
 }

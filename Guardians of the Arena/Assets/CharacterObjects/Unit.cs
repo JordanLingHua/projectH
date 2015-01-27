@@ -83,7 +83,7 @@ public class Unit    : MonoBehaviour {
 		am = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 		pum = GameObject.Find ("PopUpMenu").GetComponent<PopUpMenuNecro> ();
-		if (Application.loadedLevelName.Equals("BoardScene")){
+		if (Application.loadedLevelName.Equals("BoardScene") || Application.loadedLevelName.Equals("AIScene")){
 			gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 		}
 		info = string.Empty;
@@ -200,7 +200,7 @@ public class Unit    : MonoBehaviour {
 		//the game is in attack mode
 		//the unit selected is in range of the selected unit
 
-		if (Application.loadedLevelName.Equals("BoardScene")) {
+		if (Application.loadedLevelName.Equals("BoardScene") || Application.loadedLevelName.Equals("AIScene")) {
 			if (gm.gs == GameManager.gameState.playerAtk && gm.accessibleTiles.Contains (this.transform.parent.GetComponent<TileScript> ())) {
 				transform.parent.GetComponent<TileScript>().attackTile ();
 			} else {
@@ -319,8 +319,8 @@ public class Unit    : MonoBehaviour {
 		}
 	}
 
-	public HashSet<TileScript> getMvAccessibleTiles(allegiance ally){
-		HashSet<TileScript> tileSet = new HashSet<TileScript>();
+	public List<TileScript> getMvAccessibleTiles(allegiance ally){
+		List<TileScript> tileSet = new List<TileScript>();
 		if (!mvd){
 			getMvAccessibleTiles(tileSet,this.transform.parent.GetComponent<TileScript>(),mvRange,ally);
 			//can't move to the tile it's in

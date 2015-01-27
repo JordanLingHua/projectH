@@ -259,7 +259,7 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 		GUILayout.Label("", "Divider");//-------------------------------- custom
 
 		GUILayout.BeginHorizontal();
-		if (Application.loadedLevelName.Equals("BoardScene")){
+		if (Application.loadedLevelName.Equals("BoardScene") || Application.loadedLevelName.Equals("AIScene")){
 			//Surrender Button
 			if (!GameObject.Find("GameManager").GetComponent<GameManager>().gameOver){
 				if (GUILayout.Button ("Surrender", "ShortButton"))

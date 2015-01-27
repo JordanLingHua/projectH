@@ -92,6 +92,7 @@ public class GameProcess : MonoBehaviour {
 					UnityEngine.Debug.Log ("Logging out through playername");
 					Destroy(pum);
 					Destroy(am);
+					Destroy(GameObject.Find ("ListOfPlayers"));
 
 					// KILL THREAD AND SERVER CONNECTION
 					returnSocket().t.Abort();
@@ -105,7 +106,7 @@ public class GameProcess : MonoBehaviour {
 			// alreadyLoggedIn\\username
 			else if (tokens[0].Equals("alreadyLoggedIn"))
 			{
-				GameObject.Find("Login_GUI").GetComponent<LoginScreenGUI>().guiText.text =
+				GameObject.Find("Login_GUI").GetComponent<LoginScreenGUI>().loginText =
 					tokens[1] + " is already logged in!";
 			}
 			

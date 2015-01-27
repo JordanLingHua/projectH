@@ -71,7 +71,7 @@ public class PopUpMenu : MonoBehaviour {
 			allowEnemyUnitSelection = GUI.Toggle (new Rect(20,250,displayWidth - 20,20),allowEnemyUnitSelection,"Allow Enemy Unit Selection");
 
 
-			if (Application.loadedLevelName.Equals("BoardScene")){
+			if (Application.loadedLevelName.Equals("BoardScene") || Application.loadedLevelName.Equals("AIScene")){
 				//Surrender Button
 				if (!GameObject.Find("GameManager").GetComponent<GameManager>().gameOver){
 					if (GUI.Button (new Rect ((displayWidth - 100)/ 2, displayHeight- 55, 100, 20), "Surrender"))
