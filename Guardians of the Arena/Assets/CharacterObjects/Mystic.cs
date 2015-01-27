@@ -35,6 +35,10 @@ public class Mystic: Unit {
 			unitFocused.mvRange = oldMvRange;
 			unitFocused.atkRange = oldAtkRange;
 			unitFocused.atk = oldAtkDmg;
+
+			if (unitFocused.alleg != this.alleg){
+				unitFocused.paralyzed = false;
+			}
 			showPopUpText("Lost Focus!",Color.red);
 			gm.addLogToCombatLog(this.unitName + " lost focus of " + unitFocused.unitName);
 		}
@@ -83,6 +87,9 @@ public class Mystic: Unit {
 			//save variables for reverting later
 			unitFocused = unitAffected;
 			unitFocused.mysticFocusingThis = this;
+			if (unitFocused.alleg != this.alleg){
+				unitFocused.paralyzed = true;
+			}
 			if (unitAffected.unitType == 2){
 				(unitAffected as Mystic).revertStatsOfFocused();
 			}

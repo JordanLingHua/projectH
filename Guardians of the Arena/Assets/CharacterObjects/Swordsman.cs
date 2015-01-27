@@ -23,6 +23,27 @@ public class Swordsman : Unit {
 		renderer.material.color = new Color32(102,51,0,1);
 	}
 
+	public virtual void gainXP(){
+		xp += 5;
+		if (xp >= XP_TO_LEVEL [unitLevel - 1]) {
+			xp = 0;
+			unitLevel ++;
+			//allow double attacks for windfury
+			if (unitLevel == 3){
+				atkd = false;
+			}
+			if ((pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.playerOnly) &&  ((alleg == allegiance.playerOne && gp.playerNumber == 1) || (alleg == allegiance.playerTwo && gp.playerNumber == 2))){
+				gm.addLogToCombatLog("Your " + unitName + " has leveled up to level " + unitLevel + "!");
+			}
+			if ((pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.enemyOnly) &&  ((alleg == allegiance.playerTwo && gp.playerNumber == 1) || (alleg == allegiance.playerOne && gp.playerNumber == 2))){
+				gm.addLogToCombatLog("Opponent's " + unitName + " has leveled up to level " + unitLevel + "!");
+			}
+			showPopUpText("Leveled Up!",Color.yellow);
+		} else {
+			showPopUpText("XP+5!",Color.magenta);
+		}
+	}
+
 	public override void attackUnit(Unit unitAffected){
 		bool players = ((gp.playerNumber ==  1 && this.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && this.alleg == allegiance.playerTwo));
 		string player = players ? "Your " : "Opponent's ";

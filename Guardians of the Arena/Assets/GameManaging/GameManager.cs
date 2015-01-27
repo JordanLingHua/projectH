@@ -196,7 +196,7 @@ public class GameManager : MonoBehaviour {
 			info += "\nHP: " + script.hp + "/" + script.maxHP;
 			info += (script.unitLevel == 3 || script.unitName.Equals("Shrub") )? "": "\nXP: " + script.xp + "/" + script.XP_TO_LEVEL[script.unitLevel-1];
 
-			if (script.mysticFocusingThis == null || script.mysticFocusingThis.alleg == script.alleg){
+			if (!script.paralyzed){
 				info +=  script.atk > 0? "\nDamage: " + script.atk : "";
 				info += script.mvCost > 0? "\nMove Cost: " + script.mvCost : "";
 				info += script.atkCost > 0? "\nAttack Cost: " + script.atkCost : "";
@@ -275,9 +275,9 @@ public class GameManager : MonoBehaviour {
 		tm.clearAllTiles ();
 		accessibleTiles.Clear ();
 		gs = gameState.playerMv;
-		
+
 		if (selectedUnit != null) 
-			selectedUnit.GetComponent<Unit>().showMvTiles(turn ? Unit.allegiance.playerOne : Unit.allegiance.playerTwo);
+			selectedUnit.GetComponent<Unit>().showMvTiles(selectedUnit.alleg == Unit.allegiance.playerOne? Unit.allegiance.playerOne : Unit.allegiance.playerTwo);
 	}
 	
 	void clearSelection(){

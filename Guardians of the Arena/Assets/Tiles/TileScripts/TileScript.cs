@@ -34,7 +34,7 @@ public class TileScript : MonoBehaviour {
 		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 	}
 
-	public void OnMouseEnter(){
+	public void OnMouseOver(){
 		renderer.material.shader = Shader.Find ("Toon/Lighted");
 		if (gm.selectedUnit != null && gm.gs == GameManager.gameState.playerAtk && gm.accessibleTiles.Contains (this)) {
 			AoETiles = gm.selectedUnit.showAoEAffectedTiles(this);
