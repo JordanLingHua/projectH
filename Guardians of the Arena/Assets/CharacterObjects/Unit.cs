@@ -10,10 +10,11 @@ public class Unit    : MonoBehaviour {
 	//All these are public, so we can modify them all for now.  
 	public int unitID, xpos, ypos;//, unitType;
 	public int hp,maxHP,atk,mvRange,atkRange,mvCost,atkCost, xp, unitLevel,popUpTextNum;
-	public bool atkd, mvd;
+	public bool atkd, mvd,paralyzed;
 	public string unitName = string.Empty;
 	public string info = string.Empty;
-	public string[] levelBonus = {"",""};
+	public string[] levelBonusShort = {"",""};
+	public string[] levelBonusLong = {"",""};
 	public bool invincible,displayHPBar,displayXPBar;
 	public Mystic mysticFocusingThis;
 
@@ -144,11 +145,11 @@ public class Unit    : MonoBehaviour {
 		}
 	}
 
-	void OnMouseEnter(){
+	void OnMouseOver(){
 		//show unit info when hovering over it
 
 		if (Application.loadedLevelName.Equals("BoardScene") || Application.loadedLevelName.Equals("AIScene")){
-			transform.parent.GetComponent<TileScript> ().OnMouseEnter ();
+			transform.parent.GetComponent<TileScript> ().OnMouseOver ();
 		}else{
 			//used for setup screen info
 			string info = "Unit Information:\n" +unitName + "\nHP: " + hp + "/" + maxHP;
@@ -281,9 +282,11 @@ public class Unit    : MonoBehaviour {
 	}
 	
 	public virtual void showMvTiles(allegiance ally){
-		showMvAccessibleTiles(this.transform.parent.GetComponent<TileScript>(),mvRange,ally);
-		//can't move to the tile it's in
-		gm.accessibleTiles.Remove(this.transform.parent.GetComponent<TileScript>());	
+		if (!paralyzed){
+			showMvAccessibleTiles(this.transform.parent.GetComponent<TileScript>(),mvRange,ally);
+			//can't move to the tile it's in
+			gm.accessibleTiles.Remove(this.transform.parent.GetComponent<TileScript>());
+		}
 
 	}	
 
@@ -352,7 +355,7 @@ public class Unit    : MonoBehaviour {
 	}
 
 	public virtual void showAtkTiles(){
-		if (!atkd){
+		if (!paralyzed){
 			showAtkAccessibleTiles(this.transform.parent.GetComponent<TileScript>(),atkRange);
 			gm.accessibleTiles.Remove(this.transform.parent.GetComponent<TileScript>());
 
@@ -392,7 +395,15 @@ public class Unit    : MonoBehaviour {
 			}
 		}
 	}
-	
+
+	public void makeRock(){
+		alleg = allegiance.neutral;
+		unitName = "Rock";
+		hp = 10000;
+		maxHP = 10000;
+		invincible = true;
+	}
+
 	public void makeTree(){
 		alleg = allegiance.neutral;
 		unitName = "Shrub";

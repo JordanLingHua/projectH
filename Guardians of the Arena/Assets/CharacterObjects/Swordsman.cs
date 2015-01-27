@@ -7,8 +7,10 @@ public class Swordsman : Unit {
 
 	 void Start(){
 		base.Start ();
-		levelBonus [0] = "Lifesteal - Gains +5 HP on each attack";
-		levelBonus [1] = "Swift Strike - Ability to attack twice per turn";
+		levelBonusShort [0] = "Lifesteal";
+		levelBonusShort [1] = "Swift Strike";
+		levelBonusLong [0] = "Gains +5 HP on each attack";
+		levelBonusLong [1] = "Ability to attack twice per turn";
 		unitType = 7;
 		unitName = "Swordsman";
 		hp = 38;
@@ -21,6 +23,27 @@ public class Swordsman : Unit {
 		
 		unitRole = 505;//MeleeTank
 		renderer.material.color = new Color32(102,51,0,1);
+	}
+
+	public virtual void gainXP(){
+		xp += 5;
+		if (xp >= XP_TO_LEVEL [unitLevel - 1]) {
+			xp = 0;
+			unitLevel ++;
+			//allow double attacks for windfury
+			if (unitLevel == 3){
+				atkd = false;
+			}
+			if ((pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.playerOnly) &&  ((alleg == allegiance.playerOne && gp.playerNumber == 1) || (alleg == allegiance.playerTwo && gp.playerNumber == 2))){
+				gm.addLogToCombatLog("Your " + unitName + " has leveled up to level " + unitLevel + "!");
+			}
+			if ((pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.enemyOnly) &&  ((alleg == allegiance.playerTwo && gp.playerNumber == 1) || (alleg == allegiance.playerOne && gp.playerNumber == 2))){
+				gm.addLogToCombatLog("Opponent's " + unitName + " has leveled up to level " + unitLevel + "!");
+			}
+			showPopUpText("Leveled Up!",Color.yellow);
+		} else {
+			showPopUpText("XP+5!",Color.magenta);
+		}
 	}
 
 	public override void attackUnit(Unit unitAffected){

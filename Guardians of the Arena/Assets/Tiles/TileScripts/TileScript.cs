@@ -34,7 +34,7 @@ public class TileScript : MonoBehaviour {
 		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 	}
 
-	public void OnMouseEnter(){
+	public void OnMouseOver(){
 		renderer.material.shader = Shader.Find ("Toon/Lighted");
 		if (gm.selectedUnit != null && gm.gs == GameManager.gameState.playerAtk && gm.accessibleTiles.Contains (this)) {
 			AoETiles = gm.selectedUnit.showAoEAffectedTiles(this);
@@ -72,9 +72,30 @@ public class TileScript : MonoBehaviour {
 		float i = 0.0f;
 		float rate = 1.0f / time;
 
+		bool isOpponentPiece = false;//Temporarily here.  Will make global after non-opponent
+		//logic implemented
+
 		while (i < 1.0f) {
 			i += Time.deltaTime * rate;
 			move.transform.position = Vector3.Lerp(start, end, i);
+
+			/*Choose animation*/
+			if(isOpponentPiece == false)
+			{
+				if(this.x == 0 && this.y > 0)
+					this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 4);
+				else if(this.x == 0 && this.y < 0)
+					this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 5);
+				else if(this.x < 0 && this.y == 0)
+					this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 6);
+				else if(this.x > 0 && this.y == 0)
+					this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 7);
+			}
+			else
+			{
+			}
+
+
 			yield return null; 
 		}
 	}
@@ -94,6 +115,7 @@ public class TileScript : MonoBehaviour {
 		while (tiles.Count !=0){
 			newPos = new Vector3(tiles.Peek().transform.position.x,5f,tiles.Peek().transform.position.z);
 			yield return StartCoroutine(movePiece(movingUnit.gameObject,movingUnit.transform.position,newPos,0.28f));
+			/*movePiece, containing start and end args, is called here*/
 			tiles.Pop();
 		}
 		objectOccupyingTile = movingUnit.gameObject;
@@ -211,8 +233,7 @@ public class TileScript : MonoBehaviour {
 		    ((gm.selectedUnit.alleg == Unit.allegiance.playerOne && gp.playerNumber == 1) || (gm.selectedUnit.alleg == Unit.allegiance.playerTwo && gp.playerNumber == 2))) {
 			gp.returnSocket ().SendTCPPacket ("attack\\" + gm.selectedUnit.unitID + "\\" + this.x + "\\" + this.y);
 			print ("Sent attack packet");
-			//
-
+			/*
 			if(this.x == 0 && this.y > 0)
 				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 8);
 			else if(this.x == 0 && this.y < 0)
@@ -221,8 +242,7 @@ public class TileScript : MonoBehaviour {
 				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 10);
 			else if(this.x > 0 && this.y == 0)
 				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 11);
-
-			//
+			*/
 			am.playButtonSFX();
 		} else {
 			am.playErrorSFX();

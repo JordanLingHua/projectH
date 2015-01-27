@@ -9,8 +9,10 @@ public class Mystic: Unit {
 	void Start () {
 		base.Start ();
 		unitFocused = null;
-		levelBonus [0] = "Enchant Might - Allied focused units now gain +5 attack damage";
-		levelBonus [1] = "Crippling Focus - Enemy focused units now take 8 damage at the end of every your turn";
+		levelBonusShort [0] = "Enchant Might";
+		levelBonusShort [1] = "Crippling Focus";
+		levelBonusLong [0] = "Allied focused units now gain\n+5 attack damage";
+		levelBonusLong [1] = "Enemy focused units now take 8\ndamage at the end of every your turn";
 		unitType = 2;
 		unitName = "Mystic";
 		hp = 30;
@@ -35,6 +37,10 @@ public class Mystic: Unit {
 			unitFocused.mvRange = oldMvRange;
 			unitFocused.atkRange = oldAtkRange;
 			unitFocused.atk = oldAtkDmg;
+
+			if (unitFocused.alleg != this.alleg){
+				unitFocused.paralyzed = false;
+			}
 			showPopUpText("Lost Focus!",Color.red);
 			gm.addLogToCombatLog(this.unitName + " lost focus of " + unitFocused.unitName);
 		}
@@ -83,6 +89,9 @@ public class Mystic: Unit {
 			//save variables for reverting later
 			unitFocused = unitAffected;
 			unitFocused.mysticFocusingThis = this;
+			if (unitFocused.alleg != this.alleg){
+				unitFocused.paralyzed = true;
+			}
 			if (unitAffected.unitType == 2){
 				(unitAffected as Mystic).revertStatsOfFocused();
 			}

@@ -11,14 +11,14 @@ public class GameManager : MonoBehaviour {
 	string combatLogText;
 	Vector2 combatLogScrollPos;
 	private Rect combatLogWindowRect;
-	int combatLogWidth = 400;
-	int combatLogHeight = 250;
+	float combatLogWidth = Screen.width*0.43f;
+	float combatLogHeight = Screen.width*0.28f;
 	ArrayList combatLogMessages = new ArrayList();
 
 	//game managing variables
 	public bool turn, incMana,gameOver;
 	public GameObject popUpText;
-	public GUIText uInfo,mana,timerText,suInfo;
+	public GUIText uInfo,mana,timerText,suInfo,suLevel1BonusShort,suLevel1BonusLong,suLevel2BonusShort,suLevel2BonusLong;
 	public gameState gs;
 	public int pMana,maxMana;
 	public string buttonOption = "Attack";
@@ -50,8 +50,22 @@ public class GameManager : MonoBehaviour {
 		gp = GameObject.Find ("GameProcess").GetComponent<GameProcess>();
 		suInfo = GameObject.Find("SelectedUnitInfoGUIText").GetComponent<GUIText>();
 
+<<<<<<< HEAD
 		if(Application.loadedLevelName.Equals("BoardScene") || Application.loadedLevelName.Equals("AIScene"))
 			tm = GameObject.Find("TileManager").GetComponent<TileManager>();
+=======
+		if (Application.loadedLevelName.Equals ("BoardScene")) {
+			tm = GameObject.Find ("TileManager").GetComponent<TileManager> ();
+			suLevel1BonusLong = GameObject.Find("Level1BonusDescriptionGUIText").GetComponent<GUIText>();
+			suLevel1BonusShort = GameObject.Find("Level1BonusNameGUIText").GetComponent<GUIText>();
+			suLevel2BonusLong = GameObject.Find("Level2BonusDescriptionGUIText").GetComponent<GUIText>();
+			suLevel2BonusShort = GameObject.Find("Level2BonusNameGUIText").GetComponent<GUIText>();
+			suLevel1BonusShort.color = Color.gray;
+			suLevel1BonusLong.color = Color.gray;
+			suLevel2BonusShort.color = Color.gray;
+			suLevel2BonusLong.color = Color.gray;
+		}
+>>>>>>> origin/master
 		mana = GameObject.Find("ManaGUIText").GetComponent<GUIText>();
 		timerText = GameObject.Find("TimerGUIText").GetComponent<GUIText>();
 		if (gp.playerNumber == 1)
@@ -196,13 +210,13 @@ public class GameManager : MonoBehaviour {
 			info += "\nHP: " + script.hp + "/" + script.maxHP;
 			info += (script.unitLevel == 3 || script.unitName.Equals("Shrub") )? "": "\nXP: " + script.xp + "/" + script.XP_TO_LEVEL[script.unitLevel-1];
 
-			if (script.mysticFocusingThis == null || script.mysticFocusingThis.alleg == script.alleg){
+			if (!script.paralyzed){
 				info +=  script.atk > 0? "\nDamage: " + script.atk : "";
 				info += script.mvCost > 0? "\nMove Cost: " + script.mvCost : "";
 				info += script.atkCost > 0? "\nAttack Cost: " + script.atkCost : "";
 			}else{
 				info += "\nFocused! Cannot move or attack!";
-				info += "\nAttack enemy Mystic to break his channel";
+				info += "\nAttack enemy Mystic to\nbreak his channel";
 			}
 			
 			if (script.invincible){
@@ -216,9 +230,22 @@ public class GameManager : MonoBehaviour {
 			}
 			
 			suInfo.text =  info;
+			if (script.unitLevel >= 2){
+				suLevel1BonusShort.color = Color.white;
+				suLevel1BonusLong.color = Color.white;
+			}
+			if (script.unitLevel >= 3){
+				suLevel2BonusShort.color = Color.white;
+				suLevel2BonusLong.color = Color.white;
+			}
+			suLevel1BonusShort.text = script.levelBonusShort[0];
+			suLevel1BonusLong.text = script.levelBonusLong[0];
+			suLevel2BonusShort.text = script.levelBonusShort[1];
+			suLevel2BonusLong.text = script.levelBonusLong[1];
 		}
 		//set display for mana
-		mana.text = "Mana: " + pMana + "/" + maxMana;
+
+		mana.text = turn? "Mana: " + pMana + "/" + maxMana : "Opponent's Mana: " + pMana + "/" + maxMana;
 
 
 		//Button to toggle between attacking and moving a piece
@@ -242,7 +269,8 @@ public class GameManager : MonoBehaviour {
 					endTurn ();
 				}
 			}else{
-				GUI.Label(new Rect(Screen.width*0.335f,Screen.height-((float)Screen.height*0.105f),Screen.width*0.3f,(Screen.height-((float)Screen.height*0.905f))), "Opponent's Turn");
+				GUI.Label(new Rect(Screen.width*0.335f,Screen.height-((float)Screen.height*0.080f),Screen.width*0.15f,35), "Opponent's Turn");
+				//GUI.Label(new Rect(Screen.width*0.335f,Screen.height-((float)Screen.height*0.105f),Screen.width*0.3f,(Screen.height-((float)Screen.height*0.905f))), "Opponent's Turn");
 			}
 		}
 
@@ -275,13 +303,23 @@ public class GameManager : MonoBehaviour {
 		tm.clearAllTiles ();
 		accessibleTiles.Clear ();
 		gs = gameState.playerMv;
-		
+
 		if (selectedUnit != null) 
-			selectedUnit.GetComponent<Unit>().showMvTiles(turn ? Unit.allegiance.playerOne : Unit.allegiance.playerTwo);
+			selectedUnit.GetComponent<Unit>().showMvTiles(selectedUnit.alleg == Unit.allegiance.playerOne? Unit.allegiance.playerOne : Unit.allegiance.playerTwo);
 	}
 	
 	void clearSelection(){
 		suInfo.text = "";
+
+		suLevel1BonusShort.color = Color.gray;
+		suLevel1BonusLong.color = Color.gray;
+		suLevel2BonusShort.color = Color.gray;
+		suLevel2BonusLong.color = Color.gray;
+
+		suLevel1BonusShort.text = "";
+		suLevel1BonusLong.text = "";
+		suLevel2BonusShort.text ="";
+		suLevel2BonusLong.text = "";
 		Destroy (selectedUnitDisplay);
 		selectedUnit = null;
 		accessibleTiles.Clear();
