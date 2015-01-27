@@ -8,8 +8,10 @@ public class Templar : Unit{
 
 	void Start(){
 		base.Start ();
-		levelBonus [0] = "Mighty Swing - Attacks now deal an additional 5 damage to full health units";
-		levelBonus [1] = "Healing Blade - Attacks that hit allies now heal them instead of dealing damage";
+		levelBonusShort [0] = "Mighty Swing";
+		levelBonusShort [1] = "Healing Blade";
+		levelBonusLong [0] = "Attacks now deal an additional\n5 damage to full health units";
+		levelBonusLong [1] = "Attacks that hit allies now heal\nthem instead of dealing damage";
 		unitType = 3;
 		unitName = "Templar";
 		hp = 38;//hp can --//all other stats cannot --//some other stats ++ for growth

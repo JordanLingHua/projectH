@@ -7,8 +7,10 @@ public class Guardian :Unit {
 
 	void Start(){
 		base.Start ();
-		levelBonus [0] = "Hardened Skin - Cannot take more than 10 damage per attack";
-		levelBonus [1] = "Executioner - Instantly kills units below 50% hp on attack";
+		levelBonusShort [0] = "Hardened Skin";
+		levelBonusShort [1] = "Executioner";
+		levelBonusLong [0] = "Cannot take more than 10\ndamage per attack";
+		levelBonusLong [1] = "Instantly kills units below\n50% hp on attack";
 		unitType = 10;
 		unitName = "Guardian";
 		hp = 45;

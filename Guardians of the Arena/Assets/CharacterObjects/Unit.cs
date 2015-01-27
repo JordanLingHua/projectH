@@ -13,7 +13,8 @@ public class Unit    : MonoBehaviour {
 	public bool atkd, mvd,paralyzed;
 	public string unitName = string.Empty;
 	public string info = string.Empty;
-	public string[] levelBonus = {"",""};
+	public string[] levelBonusShort = {"",""};
+	public string[] levelBonusLong = {"",""};
 	public bool invincible,displayHPBar,displayXPBar;
 	public Mystic mysticFocusingThis;
 
