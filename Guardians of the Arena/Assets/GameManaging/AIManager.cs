@@ -354,7 +354,7 @@ public class AIManager : MonoBehaviour {
 		clearSelection();	
 
 		if (Application.loadedLevelName.Equals ("AIScene") && !turn) {
-			this.GetComponentInParent<AIScript>().makeGameAction();
+			this.GetComponentInParent<AIScript>().makeGameAction(null);
 		}
 	}
 	

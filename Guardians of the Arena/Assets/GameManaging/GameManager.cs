@@ -50,10 +50,7 @@ public class GameManager : MonoBehaviour {
 		gp = GameObject.Find ("GameProcess").GetComponent<GameProcess>();
 		suInfo = GameObject.Find("SelectedUnitInfoGUIText").GetComponent<GUIText>();
 
-<<<<<<< HEAD
-		if(Application.loadedLevelName.Equals("BoardScene") || Application.loadedLevelName.Equals("AIScene"))
-			tm = GameObject.Find("TileManager").GetComponent<TileManager>();
-=======
+
 		if (Application.loadedLevelName.Equals ("BoardScene")) {
 			tm = GameObject.Find ("TileManager").GetComponent<TileManager> ();
 			suLevel1BonusLong = GameObject.Find("Level1BonusDescriptionGUIText").GetComponent<GUIText>();
@@ -65,7 +62,6 @@ public class GameManager : MonoBehaviour {
 			suLevel2BonusShort.color = Color.gray;
 			suLevel2BonusLong.color = Color.gray;
 		}
->>>>>>> origin/master
 		mana = GameObject.Find("ManaGUIText").GetComponent<GUIText>();
 		timerText = GameObject.Find("TimerGUIText").GetComponent<GUIText>();
 		if (gp.playerNumber == 1)

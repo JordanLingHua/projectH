@@ -52,7 +52,9 @@ public class AIScript : MonoBehaviour {
 		}
 
 		toMove.selectUnit ();
-		List<TileScript> possibleMoveTiles = toMove.getMvAccessibleTiles (toMove.alleg);
+		HashSet<TileScript> possMvTile = toMove.getMvAccessibleTiles (toMove.alleg);
+		List<TileScript> possibleMoveTiles = new List<TileScript>(possMvTile);
+		
 
 		//int tileIndex = (int)(rand.NextDouble() * gameManager.accessibleTiles.Count);
 		int tileIndex = (int)(rand.NextDouble() * possibleMoveTiles.Count);

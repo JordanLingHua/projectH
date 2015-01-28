@@ -322,8 +322,8 @@ public class Unit    : MonoBehaviour {
 		}
 	}
 
-	public List<TileScript> getMvAccessibleTiles(allegiance ally){
-		List<TileScript> tileSet = new List<TileScript>();
+	public HashSet<TileScript> getMvAccessibleTiles(allegiance ally){
+		HashSet<TileScript> tileSet = new HashSet<TileScript>();
 		if (!mvd){
 			getMvAccessibleTiles(tileSet,this.transform.parent.GetComponent<TileScript>(),mvRange,ally);
 			//can't move to the tile it's in
