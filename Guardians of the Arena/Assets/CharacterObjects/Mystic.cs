@@ -9,8 +9,10 @@ public class Mystic: Unit {
 	void Start () {
 		base.Start ();
 		unitFocused = null;
-		levelBonus [0] = "Enchant Might - Allied focused units now gain +5 attack damage";
-		levelBonus [1] = "Crippling Focus - Enemy focused units now take 8 damage at the end of every your turn";
+		levelBonusShort [0] = "Enchant Might";
+		levelBonusShort [1] = "Crippling Focus";
+		levelBonusLong [0] = "Allied focused units now gain\n+5 attack damage";
+		levelBonusLong [1] = "Enemy focused units now take 8\ndamage at the end of every your turn";
 		unitType = 2;
 		unitName = "Mystic";
 		hp = 30;

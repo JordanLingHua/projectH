@@ -6,63 +6,87 @@ using System.Collections.Generic;
 public class AIScript : MonoBehaviour {
 
 	GameManager gameManager;
+	bool firstMove;
 	//GameManager gm = GameObject.Find ("GameManager").GetComponent<GameManager> ();
 	GameProcess gp;
-	public List<Unit> aiUnits;
+	//public List<Unit> gameManager.units;
 	public System.Random rand;
 	// Use this for initialization
 	void Start () {
-		aiUnits = new List<Unit>();
+	//	gameManager.units = new List<Unit>();
 		rand = new System.Random ();
 		gameManager = GameObject.Find ("GameManager").GetComponent<GameManager> ();
 		gp = GameObject.Find ("GameProcess").GetComponent<GameProcess> ();
 	}
 
-	void Awake()
-	{
-		gameManager = GameObject.Find ("GameManager").GetComponent<GameManager> ();
-		foreach (int key in gameManager.units.Keys) 
-		{
-			if (gameManager.units [key].alleg == Unit.allegiance.playerTwo) 
-			{
-				aiUnits.Add (gameManager.units [key]);
-			}
-		}
-	}
+//	void Awake()
+//	{
+//		gameManager = GameObject.Find ("GameManager").GetComponent<GameManager> ();
+//		foreach (int key in gameManager.units.Keys) 
+//		{
+//			if (gameManager.units [key].alleg == Unit.allegiance.playerTwo) 
+//			{
+//				gameManager.units.Add (gameManager.units [key]);
+//			}
+//		}
+//	}
 
-	public void makeGameAction()
+	public void makeGameAction(Unit u)
 	{
-		Unit toMove = checkForValidGameAction ();
-		if (toMove != null)
-		{
+		//Unit toMove = checkForValidGameAction ();
+		//if (toMove != null)
+		//{
 			//select a random unit
-			//aiUnits[(int)(rand.NextDouble() * aiUnits.Count)].selectUnit();
-			toMove.selectUnit();
-
-			//select a random move tile
-			TileScript destinationTile = gameManager.accessibleTiles[(int)(rand.NextDouble() * gameManager.accessibleTiles.Count)];
-
-			//send packet
-			gp.returnSocket().SendTCPPacket("move\\" + gameManager.selectedUnit.unitID+ "\\" + destinationTile.x + "\\" + destinationTile.y);
-			print ("Sent move packet");
-
-			//wait(3);
-			makeGameAction();
-
+		Unit toMove;
+		if (firstMove) 
+		{
+			int index = (int)(rand.NextDouble () * 10 + 1);
+			firstMove = false;
+			Debug.Log ("index is: " + index);
+			Debug.Log ("indexModified is: " + (index + 10));
+			toMove = gameManager.units [(index + 10)];
+		} 
+		else 
+		{
+			toMove = u;
 		}
 
-		gp.returnSocket().SendTCPPacket("endTurn");
+		toMove.selectUnit ();
+		List<TileScript> possibleMoveTiles = toMove.getMvAccessibleTiles (toMove.alleg);
+
+		//int tileIndex = (int)(rand.NextDouble() * gameManager.accessibleTiles.Count);
+		int tileIndex = (int)(rand.NextDouble() * possibleMoveTiles.Count);
+		Debug.Log ("tileindex: " + tileIndex);
+		//select a random move tile
+		TileScript destinationTile = possibleMoveTiles[tileIndex + 1];
+
+		Debug.Log ("destX: " + destinationTile.x + "destY: " + destinationTile.y);
+		//send packet
+		gp.returnSocket().SendTCPPacket("move\\" + gameManager.selectedUnit.unitID+ "\\" + destinationTile.x + "\\" + destinationTile.y);
+		print ("The AI sent a move packet");
+
+		wait(3);
+
+		Unit next = checkForValidGameAction ();
+		if (next != null)
+				makeGameAction (next);
+		else 
+		{
+			firstMove = true;
+			gp.returnSocket ().SendTCPPacket ("endTurn");
+		}
 	}
 
 	public Unit checkForValidGameAction()
 	{
 		if (gameManager.pMana > 0) 
 		{
-			foreach (Unit u in aiUnits)
+			foreach (int key in gameManager.units.Keys)
 			{
-				if (u.mvCost <= gameManager.pMana && !u.mvd)
+				Unit u = gameManager.units[key];
+				if (u.mvCost <= gameManager.pMana && !u.mvd && u.alleg == Unit.allegiance.playerTwo)
 				{
-					return u;
+					return u; 
 					break;
 				}
 
@@ -100,6 +124,8 @@ public class AIScript : MonoBehaviour {
 //	17              if β ≤ α
 //	18                  break (* α cut-off *)
 //	19          return v
+
+	//int abMiniMax (
 
 
 	// Update is called once per frame

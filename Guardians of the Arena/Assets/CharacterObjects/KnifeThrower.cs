@@ -6,8 +6,10 @@ public class KnifeThrower : Unit {
 
 	void Start () {
 		base.Start ();
-		levelBonus [0] = "Farsight - Gain +1 range";
-		levelBonus [1] = "Rain of Knives - Gain an area of affect attack (area range of 1)";
+		levelBonusShort [0] = "Farsight";
+		levelBonusShort [1] = "Rain of Knives";
+		levelBonusLong [0] = "Gain +1 range";
+		levelBonusLong [1] = "Gain an area of affect attack\n(area range of 1)";
 		unitType = 1;
 		unitName = "Knife Thrower";
 		hp = 25;
