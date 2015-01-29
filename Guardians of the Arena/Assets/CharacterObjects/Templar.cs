@@ -2,10 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 
+#pragma warning disable 0114
 public class Templar : Unit{
 	
-
-
 	void Start(){
 		base.Start ();
 		levelBonusShort [0] = "Mighty Swing";
@@ -27,10 +26,7 @@ public class Templar : Unit{
 	}
 
 	public override void attackUnit(Unit unitAffected){
-		string player = ((gp.playerNumber ==  1 && this.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && this.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
-		string unitAffectedPlayer = ((gp.playerNumber ==  1 && unitAffected.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && unitAffected.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
-		atkd = true;
-	
+		atkd = true;	
 		//level 3 Heal ally units
 		if (unitLevel == 3 && ((alleg == Unit.allegiance.playerOne && unitAffected.alleg == Unit.allegiance.playerOne) || (alleg == Unit.allegiance.playerTwo && unitAffected.alleg == Unit.allegiance.playerTwo))){
 			unitAffected.takeDmg (this,-1*this.atk);

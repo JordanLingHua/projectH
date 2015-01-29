@@ -37,7 +37,7 @@ public class AudioManager : MonoBehaviour {
 				bgMusic.volume = musicVolume * masterVolume;
 				setSFXVolume(masterVolume);
 			}catch(UnassignedReferenceException e){
-				print ("Music still loading;;");
+				print (e.Message + " Music still loading;;");
 			}
 		}
 	}

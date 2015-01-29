@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
+#pragma warning disable 0114
 public class KnifeThrower : Unit {
 
 	void Start () {

@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+#pragma warning disable 0114
 
 public class UtilityUnit : Unit {
 	//NOT IN DEVELOPMENT
-
 
 	void Start () {
 		base.Start ();
@@ -20,9 +20,4 @@ public class UtilityUnit : Unit {
 		renderer.material.color = new Color32(0,255,255,1);
 	}
 
-
-
-	void Update () {
-	
-	}
 }

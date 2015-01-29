@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+#pragma warning disable 0114
 public class RangedUnit : Unit {
-
 	//NOT IN DEVELOPMENT
-
 
 	void Start () {
 		base.Start ();
@@ -22,8 +21,4 @@ public class RangedUnit : Unit {
 		renderer.material.color = new Color32(96,96,96,1);
 	}
 
-
-	void Update () {
-	
-	}
 }

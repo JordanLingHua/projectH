@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+#pragma warning disable 0114
 public class SoulStone: Unit {
-	
-
 
 	void Start () {
 		base.Start ();

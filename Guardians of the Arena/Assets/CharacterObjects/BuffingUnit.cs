@@ -1,11 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+#pragma warning disable 0114
 public class BuffingUnit : Unit {
-	//NOT IN DEVELOPMENT
-
-
-
 	void Start(){
 		base.Start ();
 		unitType = 6;
@@ -22,7 +19,4 @@ public class BuffingUnit : Unit {
 		renderer.material.color = new Color32(255,0,255,1);
 	}
 
-	void Update () {
-	
-	}
 }

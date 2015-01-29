@@ -232,10 +232,7 @@ public class Unit    : MonoBehaviour {
 		}
 	}
 
-	//TODO: move this logic to the server
 	public virtual void attackUnit(Unit unitAffected){
-		string player = ((gp.playerNumber ==  1 && this.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && this.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
-		string unitAffectedPlayer = ((gp.playerNumber ==  1 && unitAffected.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && unitAffected.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
 		atkd = true;
 		unitAffected.takeDmg(this,this.atk);
 		//clean up the board colors
