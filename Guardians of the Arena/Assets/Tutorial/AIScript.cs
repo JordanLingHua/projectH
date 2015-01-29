@@ -108,10 +108,12 @@ public class AIScript : MonoBehaviour {
 
 	TileScript checkForEnemyInRange(Unit attacker)
 	{
-		gameManager.gs = gameManager.gameState.playerAtk;
+		gameManager.gs = GameManager.gameState.playerAtk;
 		attacker.selectUnit ();
-		List<TileScript> attackTiles = new List<TileScript> ();
-		attackTiles = attacker.getAtkAccessibleTiles ();
+
+		HashSet<TileScript> attackTiles2 = attacker.getAtkAccessibleTiles ();
+		List<TileScript> attackTiles = new List<TileScript> (attackTiles2);
+
 		foreach (TileScript t in attackTiles) {
 			if(t.objectOccupyingTile != null && t.objectOccupyingTile.GetComponent<Unit>() != null && t.objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerOne)
 				return t;
