@@ -123,25 +123,18 @@ public class TileScript : MonoBehaviour {
 
 			newPos = new Vector3(tiles.Peek().transform.position.x,5f,tiles.Peek().transform.position.z);
 			yield return StartCoroutine(movePiece(movingUnit.gameObject,movingUnit.transform.position,newPos,5.0f));//0.28f
-			/*movePiece, containing start and end args, is called here*/
-
-			//if unit is going to this tile, change t
-
-			/*
-			if(newPos.z > movingUnitTransPos.z)
-				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 4);
-			else if(newPos.z < movingUnitTransPos.z)
-				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 5);
-			else if(newPos.x < movingUnitTransPos.x)
-				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 6);
-			else if(newPos.x > movingUnitTransPos.x)
-				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 7);
-				*/
-
 
 			tiles.Pop();
 
-
+			//Set unit back to neutral animation now that it has moved to the final tile
+			if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 4)
+				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 0);
+			else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 5)
+				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 1);
+			else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 6)
+				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 2);
+			else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 7)
+				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 3);
 
 		}
 
