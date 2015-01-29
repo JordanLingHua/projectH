@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -71,26 +71,24 @@ public class TileScript : MonoBehaviour {
 	IEnumerator movePiece (GameObject move, Vector3 start, Vector3 end, float time){
 		float i = 0.0f;
 		float rate = 1.0f / time;
-
+		//1.0f
 		bool isOpponentPiece = false;//Temporarily here.  Will make global after non-opponent
 		//logic implemented
-
+		//1.0f
 		while (i < 1.0f) {
 			i += Time.deltaTime * rate;
 			move.transform.position = Vector3.Lerp(start, end, i);
 
 			/*Choose animation*/
 			if(isOpponentPiece == false){
-				/*
-				if((start.x == end.x) && (start.z+end.z > start.z))
+				if(end.z > start.z)
 					this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 4);
-				else if((start.x == end.x) && (start.z+end.z < start.z))
+				else if(end.z < start.z)
 					this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 5);
-				else if((start.z == end.z) && (start.x+end.x > start.x))
+				else if(end.x < start.x)
 					this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 6);
-				else if((start.z == end.z) && (start.x+end.x < start.x))
+				else if(end.x > start.x)
 					this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 7);
-					*/
 			}
 			else{
 			}
@@ -111,6 +109,7 @@ public class TileScript : MonoBehaviour {
 		}
 		
 		Vector3 newPos;
+		Vector3 misterPos;
 
 		float tilePeekX;
 		float tilePeekZ;
@@ -123,20 +122,27 @@ public class TileScript : MonoBehaviour {
 			movingUnitTransPos = movingUnit.transform.position;
 
 			newPos = new Vector3(tiles.Peek().transform.position.x,5f,tiles.Peek().transform.position.z);
-			yield return StartCoroutine(movePiece(movingUnit.gameObject,movingUnit.transform.position,newPos,0.28f));
+			yield return StartCoroutine(movePiece(movingUnit.gameObject,movingUnit.transform.position,newPos,5.0f));//0.28f
 			/*movePiece, containing start and end args, is called here*/
 
 			//if unit is going to this tile, change t
-			if(newPos.z > movingUnitTransPos.z && newPos.x == movingUnitTransPos.x)
+
+			/*
+			if(newPos.z > movingUnitTransPos.z)
 				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 4);
-			else if(newPos.z < movingUnitTransPos.z && newPos.x == movingUnitTransPos.x)
+			else if(newPos.z < movingUnitTransPos.z)
 				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 5);
-			else if(newPos.x < movingUnitTransPos.x && newPos.z == movingUnitTransPos.z)
+			else if(newPos.x < movingUnitTransPos.x)
 				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 6);
-			else if(newPos.x > movingUnitTransPos.x && newPos.z == movingUnitTransPos.z)
+			else if(newPos.x > movingUnitTransPos.x)
 				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 7);
+				*/
+
 
 			tiles.Pop();
+
+
+
 		}
 
 
