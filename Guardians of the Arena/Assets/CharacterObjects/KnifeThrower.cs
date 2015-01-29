@@ -23,27 +23,7 @@ public class KnifeThrower : Unit {
 		unitRole = 500;//ranged
 		renderer.material.color = new Color32(255,153,204,1);
 	}
-
-
-	 public override void showAtkTiles(){
-		if (!atkd){
-			showAtkAccessibleTiles(this.transform.parent.GetComponent<TileScript>(),atkRange);
-			gm.accessibleTiles.Remove(this.transform.parent.GetComponent<TileScript>());
-			
-			switch(alleg){
-			case allegiance.playerOne:
-				this.transform.parent.renderer.material.color = Color.blue;
-				break;
-			case allegiance.playerTwo:
-				this.transform.parent.renderer.material.color = Color.red;
-				break;
-			case allegiance.neutral:
-				this.transform.parent.renderer.material.color = Color.gray;
-				break;
-			}
-		}
-	}	
-
+	
 	//gain xp add attack range for lvl 2
 	public override void gainXP(){
 		xp += 5;
@@ -53,10 +33,10 @@ public class KnifeThrower : Unit {
 			if (unitLevel == 2) {
 				atkRange++;
 			}
-			if ((pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.playerOnly) &&  ((alleg == allegiance.playerOne && gp.playerNumber == 1) || (alleg == allegiance.playerTwo && gp.playerNumber == 2))){
+			if ((alleg == allegiance.playerOne && gp.playerNumber == 1) || (alleg == allegiance.playerTwo && gp.playerNumber == 2)){
 				gm.addLogToCombatLog("Your " + unitName + " has leveled up to level " + unitLevel + "!");
 			}
-			if ((pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.enemyOnly) &&  ((alleg == allegiance.playerTwo && gp.playerNumber == 1) || (alleg == allegiance.playerOne && gp.playerNumber == 2))){
+			if ((alleg == allegiance.playerTwo && gp.playerNumber == 1) || (alleg == allegiance.playerOne && gp.playerNumber == 2)){
 				gm.addLogToCombatLog("Opponent's " + unitName + " has leveled up to level " + unitLevel + "!");
 			}
 			showPopUpText("Leveled Up!",Color.yellow);
@@ -90,46 +70,39 @@ public class KnifeThrower : Unit {
 		return ret;
 	}
 
-
-	new void showAtkAccessibleTiles(TileScript tile, int num){
-
-		TileScript tileS = tile.transform.GetComponent<TileScript>();
-
+	public override HashSet<TileScript> getAtkAccessibleTiles ()
+	{
+		HashSet<TileScript> tileSet = new HashSet<TileScript>();
+		TileScript tileS = this.transform.parent.GetComponent<TileScript> ();
 		TileScript temp = tileS;
 		for (int i = 0; i < atkRange; i ++){
 			if (temp.up != null){
-				gm.accessibleTiles.Add(temp.up.GetComponent<TileScript>());
+				tileSet.Add (temp.up.GetComponent<TileScript>());
 				temp = temp.up.GetComponent<TileScript>();
-				temp.gameObject.renderer.material.color = new Color(1f,0.4f,0f, 0f);
 			}
 		}
 		temp = tileS;
 		for (int i = 0; i < atkRange; i ++){
 			if (temp.down != null){
-				gm.accessibleTiles.Add(temp.down.GetComponent<TileScript>());
+				tileSet.Add (temp.down.GetComponent<TileScript>());
 				temp = temp.down.GetComponent<TileScript>();
-				temp.gameObject.renderer.material.color = new Color(1f,0.4f,0f, 0f);
 			}
 		}
 		temp = tileS;
 		for (int i = 0; i < atkRange; i ++){
 			if (temp.left != null){
-				gm.accessibleTiles.Add(temp.left.GetComponent<TileScript>());
+				tileSet.Add (temp.left.GetComponent<TileScript>());
 				temp = temp.left.GetComponent<TileScript>();
-				temp.gameObject.renderer.material.color = new Color(1f,0.4f,0f, 0f);
 			}
 		}
 		temp = tileS;
 		for (int i = 0; i < atkRange; i ++){
 			if (temp.right != null){
-				gm.accessibleTiles.Add(temp.right.GetComponent<TileScript>());
+				tileSet.Add (temp.right.GetComponent<TileScript>());
 				temp = temp.right.GetComponent<TileScript>();
-				temp.gameObject.renderer.material.color = new Color(1f,0.4f,0f, 0f);
 			}
 		}
+		return tileSet;
 	}
 
-	void Update () {
-	
-	}
 }

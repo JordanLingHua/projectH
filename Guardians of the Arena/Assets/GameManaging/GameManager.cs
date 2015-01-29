@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour {
 	string[] unitOptionStrings = new string[] {"Mo(v)e","(A)ttack"};
 	//Selected unit and available move squares
 	public Unit selectedUnit = null;
-	public List<TileScript> accessibleTiles = new List<TileScript>();
+	public HashSet<TileScript> accessibleTiles = new HashSet<TileScript>();
 
 	public GameObject UnitOne,UnitTwo,UnitThree,UnitFour,UnitFive,UnitSix,UnitSeven,UnitEight,UnitNine,UnitTen,UnitEleven;
 	GameObject selectedUnitDisplay;
@@ -110,7 +110,7 @@ public class GameManager : MonoBehaviour {
 	}
 	
 	public void addLogToCombatLog(string log){
-		combatLogMessages.Insert(0,log+"\n");
+		combatLogMessages.Add (log+"\n");
 		if (combatLogMessages.Count > maxCombatLogMessages){
 			combatLogMessages.RemoveAt(maxCombatLogMessages);
 		}
@@ -118,6 +118,7 @@ public class GameManager : MonoBehaviour {
 		for (int i = 0; i < combatLogMessages.Count; i ++){
 			combatLogText += combatLogMessages[i];
 		}
+		combatLogScrollPos.y = Mathf.Infinity;
 	}
 
 	void combatLogWindow (int windowID) 

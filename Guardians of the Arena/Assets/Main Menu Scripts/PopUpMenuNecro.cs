@@ -13,10 +13,8 @@ FancyTop (just an example of using the elements to do a centered header graphic)
 WaxSeal (adds the waxseal and ribbon to the right of the window)
 DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 */
-	public enum combatLogOption {all,playerOnly,enemyOnly}
 	public bool allowEnemyUnitSelection, allowAutoMoveAttackToggle;
 	public int hpSelGridInt, xpSelGridInt;
-	public combatLogOption clo;
 	GameManager gm;
 	AudioManager am;
 	GameProcess gp;
@@ -193,26 +191,6 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 			}
 		}
 		GUILayout.EndHorizontal();
-		
-		GUILayout.Label("Combat Log", "PlainText");
-		
-		GUILayout.BeginHorizontal();
-		if (GUILayout.Button ("All Activity", "ShortButton"))
-		{
-			am.playButtonSFX();
-			clo = combatLogOption.all;
-		}
-		if (GUILayout.Button ("My Actions Only", "ShortButton"))
-		{
-			am.playButtonSFX();
-			clo = combatLogOption.playerOnly;
-		}
-		if (GUILayout.Button ("Opponent Actions Only", "ShortButton"))
-		{
-			am.playButtonSFX();
-			clo = combatLogOption.enemyOnly;
-		}
-		GUILayout.EndHorizontal();
 
 		GUILayout.Label("", "Divider");//-------------------------------- custom
 
@@ -322,7 +300,6 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 	
 	// Use this for initialization
 	void Start () {
-		clo = combatLogOption.all;
 		allowAutoMoveAttackToggle = true;
 		am = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();

@@ -290,12 +290,12 @@ public class GameProcess : MonoBehaviour {
 					}
 				}else{
 					gameManager.units[Int32.Parse (tokens[1])].showPopUpText("Attacked Nothing!", Color.red);
-					gameManager.addLogToCombatLog(gameManager.units[Int32.Parse (tokens[1])] + " attacked nothing for " + gameManager.units[Int32.Parse (tokens[1])].atkCost + " mana!");
+					string player = ((playerNumber ==  1 && gameManager.units[Int32.Parse (tokens[1])].alleg == Unit.allegiance.playerOne) || (playerNumber ==  2 && gameManager.units[Int32.Parse (tokens[1])].alleg == Unit.allegiance.playerTwo)) ? "Your " : "Opponent's ";
+					gameManager.addLogToCombatLog(player + gameManager.units[Int32.Parse (tokens[1])].unitName + " attacked nothing for " + gameManager.units[Int32.Parse (tokens[1])].atkCost + " mana!");
 				}
 				if (pum.allowAutoMoveAttackToggle){
 					gameManager.changeToMoving();
 				}
-				tileManager.clearAllTiles();
 			}
 
 			//switchTurns
@@ -337,10 +337,10 @@ public class GameProcess : MonoBehaviour {
 	public void movePiece(int unitID, int toX, int toY)
 	{
 		bool players = ((playerNumber ==  1 && gameManager.units [unitID].alleg == Unit.allegiance.playerOne) || (playerNumber ==  2 && gameManager.units [unitID].alleg == Unit.allegiance.playerTwo));
-		if (players && pum.clo == PopUpMenuNecro.combatLogOption.playerOnly  || pum.clo == PopUpMenuNecro.combatLogOption.all){
+		if (players){
 			gameManager.addLogToCombatLog("Your " + gameManager.units[unitID].unitName + " moved for " + gameManager.units[unitID].mvCost + " mana!");
-		}else if (!players && pum.clo == PopUpMenuNecro.combatLogOption.enemyOnly  || pum.clo == PopUpMenuNecro.combatLogOption.all){
-			gameManager.addLogToCombatLog("Your " + gameManager.units[unitID].unitName + " moved for " + gameManager.units[unitID].mvCost + " mana!");
+		}else if (!players){
+			gameManager.addLogToCombatLog("Opponent's " + gameManager.units[unitID].unitName + " moved for " + gameManager.units[unitID].mvCost + " mana!");
 		}
 		if (gameManager.units [unitID].unitType == 2) {
 			Mystic x = gameManager.units[unitID] as Mystic;

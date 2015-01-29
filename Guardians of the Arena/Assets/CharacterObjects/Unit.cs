@@ -35,8 +35,6 @@ public class Unit    : MonoBehaviour {
 	 * Jordan Hua
 	 * 
 	 * Unit Roles:  
-	 * 
-	 * DO NOT DELETE THIS COMMENT!!!!//Made them 500 in case we need to send as byte to server and back
 	 * Rubric-  
 	 * Ranged = 500
 	 * BuffDebuff = 501
@@ -46,26 +44,6 @@ public class Unit    : MonoBehaviour {
 	 * MeleeTank = 505
 	 * Healer = 506
 	 * Kingpin = 507
-	 * Temporary unit identification.  For now, it's just colors.  We have to assign them
-	 * different models later
-	 * 
-	 * 
-	 * unit1: pink //255,153,204
-	 * unit2: orange//255,128,0
-	 * unit3: yellow//255,255,0
-	 * unit4: green//0,255,0
-	 * unit5: cyan//0,255,255
-	 * unit6: magenta//255,0,255
-	 * unit7: brown//102,51,0
-	 * unit8: pear //204,255,153
-	 * unit9: grey//96,96,96
-	 * unit10: black//0,0,0
-	 * unit11: white//255,255,255
-	 * 
-	 * 
-	 * 
-	 * DO NOT DELETE THIS COMMENT!!!!//Made them 10 to 20 in case we need to send as byte to server and back
-	 * 
 	 */
 
 	public Texture2D hpBarBG,hpBarHigh,hpBarMedium,hpBarLow,xpBar;
@@ -184,10 +162,10 @@ public class Unit    : MonoBehaviour {
 		if (xp >= XP_TO_LEVEL [unitLevel - 1]) {
 			xp = 0;
 			unitLevel ++;
-			if ((pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.playerOnly) &&  ((alleg == allegiance.playerOne && gp.playerNumber == 1) || (alleg == allegiance.playerTwo && gp.playerNumber == 2))){
+			if ((alleg == allegiance.playerOne && gp.playerNumber == 1) || (alleg == allegiance.playerTwo && gp.playerNumber == 2)){
 				gm.addLogToCombatLog("Your " + unitName + " has leveled up to level " + unitLevel + "!");
 			}
-			if ((pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.enemyOnly) &&  ((alleg == allegiance.playerTwo && gp.playerNumber == 1) || (alleg == allegiance.playerOne && gp.playerNumber == 2))){
+			if ((alleg == allegiance.playerTwo && gp.playerNumber == 1) || (alleg == allegiance.playerOne && gp.playerNumber == 2)){
 				gm.addLogToCombatLog("Opponent's " + unitName + " has leveled up to level " + unitLevel + "!");
 			}
 			showPopUpText("Leveled Up!",Color.yellow);
@@ -229,15 +207,13 @@ public class Unit    : MonoBehaviour {
 
 			if (amt > 0){
 				//taking damage
-				if ((player == "Your " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.playerOnly)) || (player == "Opponent's " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.enemyOnly))){
-					gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" attacked "+ unitName + " for " + unitAttacking.atk + " damage!");
-				}
+				gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" attacked "+ player + unitName + " for " + unitAttacking.atk + " damage!");
+
 				showPopUpText("-" + amt,Color.red);
 			}else{
 				//getting healed
-				if ((player == "Your " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.playerOnly)) || (player == "Opponent's " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.enemyOnly))){
-					gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" healed "+ unitName + " for " + unitAttacking.atk + " damage!");
-				}
+
+				gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" healed "+ player + unitName + " for " + (-1*unitAttacking.atk));
 				showPopUpText("+" + (-1*amt),Color.green);
 			}
 
@@ -250,9 +226,9 @@ public class Unit    : MonoBehaviour {
 			}
 		}else{
 			showPopUpText("Invincible!",Color.red);
-			if ((player == "Your " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.playerOnly)) || (player == "Opponent's " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.enemyOnly))){
-				gm.addLogToCombatLog(unitAttacking.unitName +" attacked "+ unitName + " but it was invincible!");
-			}
+
+			gm.addLogToCombatLog(unitAttacking.unitName +" attacked "+ unitName + " but it was invincible!");
+
 		}
 	}
 
@@ -283,9 +259,12 @@ public class Unit    : MonoBehaviour {
 	
 	public virtual void showMvTiles(allegiance ally){
 		if (!paralyzed){
-			showMvAccessibleTiles(this.transform.parent.GetComponent<TileScript>(),mvRange,ally);
-			//can't move to the tile it's in
-			gm.accessibleTiles.Remove(this.transform.parent.GetComponent<TileScript>());
+			HashSet<TileScript> tiles = getMvAccessibleTiles(ally);
+			tiles.Remove(this.transform.parent.GetComponent<TileScript>());
+			gm.accessibleTiles = tiles;
+			foreach (TileScript tile in tiles){
+				tile.renderer.material.color = Color.green;
+			}
 		}
 
 	}	
@@ -354,26 +333,51 @@ public class Unit    : MonoBehaviour {
 		}
 	}
 
-	public virtual void showAtkTiles(){
-		if (!paralyzed){
-			showAtkAccessibleTiles(this.transform.parent.GetComponent<TileScript>(),atkRange);
-			gm.accessibleTiles.Remove(this.transform.parent.GetComponent<TileScript>());
 
-			switch(alleg){
-				case allegiance.playerOne:
-					this.transform.parent.renderer.material.color = Color.blue;
-					break;
-				case allegiance.playerTwo:
-					this.transform.parent.renderer.material.color = Color.red;
-					break;
-				case allegiance.neutral:
-					this.transform.parent.renderer.material.color = Color.gray;
-					break;
+	public virtual HashSet<TileScript> getAtkAccessibleTiles(){
+		HashSet<TileScript> tileSet = new HashSet<TileScript>();
+		if (!paralyzed && !atkd){
+			getAtkAccessibleTiles(tileSet,this.transform.parent.GetComponent<TileScript>(),atkRange);
+		}
+		return tileSet;
+	}
+
+	void getAtkAccessibleTiles(HashSet<TileScript> list,TileScript tile, int num){
+		TileScript tileS = tile.transform.GetComponent<TileScript>();
+		if (num != 0){
+			if (tileS.up != null){
+				list.Add (tileS.up.GetComponent<TileScript> ());
+				getAtkAccessibleTiles (list, tileS.up.GetComponent<TileScript> (), num - 1);
+			}
+			if (tileS.down != null){
+				list.Add (tileS.down.GetComponent<TileScript> ());
+				getAtkAccessibleTiles (list, tileS.down.GetComponent<TileScript> (), num - 1);
+			}
+			if (tileS.left != null){
+				list.Add (tileS.left.GetComponent<TileScript> ());
+				getAtkAccessibleTiles (list, tileS.left.GetComponent<TileScript> (), num - 1);
+			}
+			if (tileS.right != null){
+				list.Add (tileS.right.GetComponent<TileScript> ());
+				getAtkAccessibleTiles (list, tileS.right.GetComponent<TileScript> (), num - 1);
 			}
 		}
 	}
 	
-	public void showAtkAccessibleTiles(TileScript tile, int num){
+	
+	public virtual void showAtkTiles(){
+		if (!paralyzed){
+
+			HashSet<TileScript> tiles = getAtkAccessibleTiles();
+			//tiles.Remove(this.transform.parent.GetComponent<TileScript>());
+			gm.accessibleTiles = tiles;
+			foreach (TileScript tile in tiles){
+				tile.renderer.material.color = new Color(1f,0.4f,0f, 0f);
+			}
+		}
+	}
+
+	void showAtkAccessibleTiles(TileScript tile, int num){
 		tile.renderer.material.color = new Color(1f,0.4f,0f, 0f);
 		TileScript tileS = tile.transform.GetComponent<TileScript>();
 		if (num != 0){

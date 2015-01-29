@@ -26,7 +26,6 @@ public class Templar : Unit{
 		renderer.material.color = new Color32(255,255,0,1);
 	}
 
-
 	public override void attackUnit(Unit unitAffected){
 		string player = ((gp.playerNumber ==  1 && this.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && this.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
 		string unitAffectedPlayer = ((gp.playerNumber ==  1 && unitAffected.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && unitAffected.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
@@ -100,53 +99,5 @@ public class Templar : Unit{
 			}
 		}
 		return ret;
-	}
-
-
-	public override void showAtkTiles(){
-		if (!atkd){
-			showAtkAccessibleTiles(this.transform.parent.GetComponent<TileScript>(),atkRange);
-			gm.accessibleTiles.Remove(this.transform.parent.GetComponent<TileScript>());
-			
-			switch(alleg){
-			case allegiance.playerOne:
-				this.transform.parent.renderer.material.color = Color.blue;
-				break;
-			case allegiance.playerTwo:
-				this.transform.parent.renderer.material.color = Color.red;
-				break;
-			case allegiance.neutral:
-				this.transform.parent.renderer.material.color = Color.gray;
-				break;
-			}
-
-		}
-	}
-
-
-	void showAtkAccessibleTiles(TileScript tile, int num){
-		tile.renderer.material.color = new Color (1f, 0.4f, 0f, 0f);
-		TileScript tileS = tile.transform.GetComponent<TileScript>();
-		if (num != 0){
-			if (tileS.up != null){
-				showAtkAccessibleTiles(tileS.up.GetComponent<TileScript>(),num-1);
-				gm.accessibleTiles.Add(tileS.up.GetComponent<TileScript>());
-			}
-			if (tileS.down != null){
-				showAtkAccessibleTiles(tileS.down.GetComponent<TileScript>(),num-1);
-				gm.accessibleTiles.Add(tileS.down.GetComponent<TileScript>());
-			}
-			if (tileS.left != null){
-				showAtkAccessibleTiles(tileS.left.GetComponent<TileScript>(),num-1);
-				gm.accessibleTiles.Add(tileS.left.GetComponent<TileScript>());
-			}
-			if (tileS.right != null){
-				showAtkAccessibleTiles(tileS.right.GetComponent<TileScript>(),num-1);
-				gm.accessibleTiles.Add(tileS.right.GetComponent<TileScript>());
-			}
-		}
-	}
-	void Update () {
-	
 	}
 }

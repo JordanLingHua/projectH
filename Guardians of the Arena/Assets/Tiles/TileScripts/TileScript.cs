@@ -80,18 +80,18 @@ public class TileScript : MonoBehaviour {
 			move.transform.position = Vector3.Lerp(start, end, i);
 
 			/*Choose animation*/
-			if(isOpponentPiece == false){
-				if(end.z > start.z)
-					this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 4);
-				else if(end.z < start.z)
-					this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 5);
-				else if(end.x < start.x)
-					this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 6);
-				else if(end.x > start.x)
-					this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 7);
-			}
-			else{
-			}
+//			if(isOpponentPiece == false){
+//				if(end.z > start.z)
+//					this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 4);
+//				else if(end.z < start.z)
+//					this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 5);
+//				else if(end.x < start.x)
+//					this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 6);
+//				else if(end.x > start.x)
+//					this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 7);
+//			}
+//			else{
+//			}
 
 
 			yield return null; 
@@ -126,15 +126,15 @@ public class TileScript : MonoBehaviour {
 
 			tiles.Pop();
 
-			//Set unit back to neutral animation now that it has moved to the final tile
-			if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 4)
-				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 0);
-			else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 5)
-				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 1);
-			else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 6)
-				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 2);
-			else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 7)
-				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 3);
+//			//Set unit back to neutral animation now that it has moved to the final tile
+//			if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 4)
+//				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 0);
+//			else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 5)
+//				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 1);
+//			else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 6)
+//				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 2);
+//			else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 7)
+//				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 3);
 
 		}
 
@@ -192,11 +192,7 @@ public class TileScript : MonoBehaviour {
 	
 	void OnMouseDown(){
 		if (gm.selectedUnit != null) {
-
-			if (!gm.turn){
-				am.playErrorSFX();
-				gm.showErrorMessage("It's not your turn!");
-			}else if (gm.gs == GameManager.gameState.playerMv) {
+			if (gm.gs == GameManager.gameState.playerMv) {
 				moveToTile ();
 			} else if (gm.gs == GameManager.gameState.playerAtk) {
 				attackTile ();
@@ -205,18 +201,19 @@ public class TileScript : MonoBehaviour {
 	}
 
 	public void moveToTile(){
-		
+
 		
 		//move unit selected to this tile if it can go there
-		if (gm.accessibleTiles.Contains(this) && 
-		    this.objectOccupyingTile == null && 
-		    !gm.selectedUnit.GetComponent<Unit>().mvd &&
-		    gm.pMana >= gm.selectedUnit.GetComponent<Unit>().mvCost && 
-		    ((gm.selectedUnit.alleg == Unit.allegiance.playerOne && gp.playerNumber == 1) || (gm.selectedUnit.alleg == Unit.allegiance.playerTwo && gp.playerNumber == 2))){
+		if (gm.turn && 
+			gm.accessibleTiles.Contains (this) && 
+			this.objectOccupyingTile == null && 
+			!gm.selectedUnit.GetComponent<Unit> ().mvd &&
+			gm.pMana >= gm.selectedUnit.GetComponent<Unit> ().mvCost && 
+			((gm.selectedUnit.alleg == Unit.allegiance.playerOne && gp.playerNumber == 1) || (gm.selectedUnit.alleg == Unit.allegiance.playerTwo && gp.playerNumber == 2))) {
 
-			gp.returnSocket().SendTCPPacket("move\\" + gm.selectedUnit.unitID+ "\\" + this.x + "\\" + this.y);
+			gp.returnSocket ().SendTCPPacket ("move\\" + gm.selectedUnit.unitID + "\\" + this.x + "\\" + this.y);
 			print ("Sent move packet");
-			/*
+						/*
 			if(this.x == 0 && this.y > 0)
 				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 4);
 			else if(this.x == 0 && this.y < 0)
@@ -226,11 +223,12 @@ public class TileScript : MonoBehaviour {
 			else if(this.x > 0 && this.y == 0)
 				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 7);
 			*/
-			am.playButtonSFX();
-		}else{
-			am.playErrorSFX();
-
-			if ((gm.selectedUnit.alleg == Unit.allegiance.playerOne && gp.playerNumber == 2) || (gm.selectedUnit.alleg == Unit.allegiance.playerTwo && gp.playerNumber == 1)){
+			am.playButtonSFX ();
+		} else {
+			am.playErrorSFX ();
+			if(!gm.turn){
+				gm.showErrorMessage("It's not your turn!");
+			}else if ((gm.selectedUnit.alleg == Unit.allegiance.playerOne && gp.playerNumber == 2) || (gm.selectedUnit.alleg == Unit.allegiance.playerTwo && gp.playerNumber == 1)){
 				gm.showErrorMessage("Cannot move an opponent's piece!");
 			}else if (gm.selectedUnit.GetComponent<Unit>().mvd){
 				gm.showErrorMessage("That unit has already moved this turn!");
@@ -248,7 +246,8 @@ public class TileScript : MonoBehaviour {
 	
 
 	public void attackTile(){
-		if (gm.accessibleTiles.Contains (this) && 
+		if (gm.turn &&
+		    gm.accessibleTiles.Contains (this) && 
 		    gm.pMana >= gm.selectedUnit.GetComponent<Unit> ().atkCost && 
 		    !gm.selectedUnit.GetComponent<Unit>().atkd &&
 		    ((gm.selectedUnit.alleg == Unit.allegiance.playerOne && gp.playerNumber == 1) || (gm.selectedUnit.alleg == Unit.allegiance.playerTwo && gp.playerNumber == 2))) {
@@ -267,22 +266,18 @@ public class TileScript : MonoBehaviour {
 			am.playButtonSFX();
 		} else {
 			am.playErrorSFX();
-			if (((gm.selectedUnit.alleg == Unit.allegiance.playerOne && gp.playerNumber == 2) || (gm.selectedUnit.alleg == Unit.allegiance.playerTwo && gp.playerNumber == 1))){
+			if(!gm.turn){
+				gm.showErrorMessage("It's not your turn!");
+			}else if (((gm.selectedUnit.alleg == Unit.allegiance.playerOne && gp.playerNumber == 2) || (gm.selectedUnit.alleg == Unit.allegiance.playerTwo && gp.playerNumber == 1))){
 				gm.showErrorMessage("Cannot attack with an opponent's piece!");
 			}else if (gm.selectedUnit.GetComponent<Unit>().atkd){
 				gm.showErrorMessage("That unit has already attacked this turn!");
-			}else if (gm.pMana < gm.selectedUnit.mvCost){
+			}else if (gm.pMana < gm.selectedUnit.atkCost){
 				gm.showErrorMessage("Not enough mana to attack!");
 			}else if (gm.accessibleTiles.Contains(this)){
 				gm.showErrorMessage("Cannot attack there!");
 			}
 		}
-
-
 	}
-	
-	
-	
-	
-	
+
 }

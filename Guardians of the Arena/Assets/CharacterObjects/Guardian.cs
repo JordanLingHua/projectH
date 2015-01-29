@@ -26,7 +26,7 @@ public class Guardian :Unit {
 	}
 
 	public override void takeDmg(Unit unitAttacking, int amt){
-
+		string unitAffectedPlayer = ((gp.playerNumber ==  1 && unitAttacking.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && unitAttacking.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
 		string player = ((gp.playerNumber ==  1 && this.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && this.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
 		if (!this.invincible) {
 
@@ -44,9 +44,13 @@ public class Guardian :Unit {
 			
 			if (amt > 0){
 				//taking damage
+				gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" attacked "+ player + unitName + " for " + unitAttacking.atk + " damage!");
+				
 				showPopUpText("-" + amt,Color.red);
 			}else{
 				//getting healed
+				
+				gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" healed "+ player + unitName + " for " + (-1*unitAttacking.atk));
 				showPopUpText("+" + (-1*amt),Color.green);
 			}
 			
@@ -65,9 +69,8 @@ public class Guardian :Unit {
 			}
 		}else{
 			showPopUpText("Invincible!",Color.red);
-			if ((player == "Your " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.playerOnly)) || (player == "Opponent's " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.enemyOnly))){
-				gm.addLogToCombatLog(unitAttacking.unitName +" attacked "+ unitName + " but it was invincible!");
-			}
+			gm.addLogToCombatLog(unitAttacking.unitName +" attacked "+ unitName + " but it was invincible!");
+
 		}
 	}
 

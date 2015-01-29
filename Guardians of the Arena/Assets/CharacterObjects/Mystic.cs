@@ -20,7 +20,7 @@ public class Mystic: Unit {
 		atk = 0;//change later
 		mvRange = 2;
 		mvCost = 1;
-		atkRange = 4;
+		atkRange = 3;
 		atkCost = 4;	
 		//unitRole = "BuffDebuff";
 		unitRole = 504;//BuffDebuff
@@ -42,12 +42,13 @@ public class Mystic: Unit {
 				unitFocused.paralyzed = false;
 			}
 			showPopUpText("Lost Focus!",Color.red);
-			gm.addLogToCombatLog(this.unitName + " lost focus of " + unitFocused.unitName);
+			gm.addLogToCombatLog(player + this.unitName + " lost focus of " + unitAffectedPlayer + unitFocused.unitName);
 		}
 	
 	}
 
 	public override void takeDmg(Unit unitAttacking,int amt){
+		string unitAffectedPlayer = ((gp.playerNumber ==  1 && unitAttacking.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && unitAttacking.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
 		string player = ((gp.playerNumber ==  1 && this.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && this.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
 		if (!this.invincible) {
 			this.hp -= amt;
@@ -59,9 +60,11 @@ public class Mystic: Unit {
 			
 			if (amt > 0){
 				//taking damage
+				gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" attacked "+ player + unitName + " for " + unitAttacking.atk + " damage!");
 				showPopUpText("-" + amt,Color.red);
 			}else{
 				//getting healed
+				gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" healed "+ player + unitName + " for " + (-1*unitAttacking.atk));
 				showPopUpText("+" + (-1*amt),Color.green);
 			}
 			
@@ -74,9 +77,8 @@ public class Mystic: Unit {
 			}
 		}else{
 			showPopUpText("Invincible!",Color.red);
-			if ((player == "Your " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.playerOnly)) || (player == "Opponent's " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.enemyOnly))){
-				gm.addLogToCombatLog(unitAttacking.unitName +" attacked "+ unitName + " but it was invincible!");
-			}
+			gm.addLogToCombatLog(unitAttacking.unitName +" attacked "+ unitName + " but it was invincible!");
+
 		}
 	}
 
@@ -95,6 +97,9 @@ public class Mystic: Unit {
 			if (unitAffected.unitType == 2){
 				(unitAffected as Mystic).revertStatsOfFocused();
 			}
+
+			gm.addLogToCombatLog(player + unitName +" focused "+ unitAffectedPlayer +  unitAffected.unitName);
+
 			oldMvRange = unitAffected.mvRange;
 			oldAtkRange = unitAffected.atkRange;
 			oldAtkDmg = unitAffected.atk;
@@ -159,9 +164,5 @@ public class Mystic: Unit {
 				gm.addLogToCombatLog("Mystic couldn't deal damage it was invincible!");
 			}
 		}
-	}
-
-	void Update () {
-		
 	}
 }

@@ -34,10 +34,10 @@ public class Swordsman : Unit {
 			if (unitLevel == 3){
 				atkd = false;
 			}
-			if ((pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.playerOnly) &&  ((alleg == allegiance.playerOne && gp.playerNumber == 1) || (alleg == allegiance.playerTwo && gp.playerNumber == 2))){
+			if ((alleg == allegiance.playerOne && gp.playerNumber == 1) || (alleg == allegiance.playerTwo && gp.playerNumber == 2)){
 				gm.addLogToCombatLog("Your " + unitName + " has leveled up to level " + unitLevel + "!");
 			}
-			if ((pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.enemyOnly) &&  ((alleg == allegiance.playerTwo && gp.playerNumber == 1) || (alleg == allegiance.playerOne && gp.playerNumber == 2))){
+			if ((alleg == allegiance.playerTwo && gp.playerNumber == 1) || (alleg == allegiance.playerOne && gp.playerNumber == 2)){
 				gm.addLogToCombatLog("Opponent's " + unitName + " has leveled up to level " + unitLevel + "!");
 			}
 			showPopUpText("Leveled Up!",Color.yellow);
@@ -65,9 +65,7 @@ public class Swordsman : Unit {
 		if (unitLevel >= 2){
 			this.hp += 5;
 			showPopUpText("+5",Color.green);
-			if ((player == "Your " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.playerOnly)) || (player == "Opponent's " && (pum.clo == PopUpMenuNecro.combatLogOption.all || pum.clo == PopUpMenuNecro.combatLogOption.enemyOnly))){
-				gm.addLogToCombatLog(player + this.unitName + " gained 5 health from lifesteal!");
-			}
+			gm.addLogToCombatLog(player + this.unitName + " gained 5 health from lifesteal!");
 			//dont overheal on lifesteal
 			if (hp > maxHP){
 				this.hp = maxHP;
@@ -85,9 +83,5 @@ public class Swordsman : Unit {
 		base.resetUnitAbilities ();
 		atkCharges = 2;
 	}
-
-
-	void Update () {
 	
-	}
 }
