@@ -19,24 +19,8 @@ public class AIScript : MonoBehaviour {
 		gp = GameObject.Find ("GameProcess").GetComponent<GameProcess> ();
 	}
 
-//	void Awake()
-//	{
-//		gameManager = GameObject.Find ("GameManager").GetComponent<GameManager> ();
-//		foreach (int key in gameManager.units.Keys) 
-//		{
-//			if (gameManager.units [key].alleg == Unit.allegiance.playerTwo) 
-//			{
-//				gameManager.units.Add (gameManager.units [key]);
-//			}
-//		}
-//	}
-
 	public void makeGameAction(Unit u)
 	{
-		//Unit toMove = checkForValidGameAction ();
-		//if (toMove != null)
-		//{
-			//select a random unit
 		Unit toMove;
 		if (firstMove) 
 		{
@@ -54,18 +38,40 @@ public class AIScript : MonoBehaviour {
 		toMove.selectUnit ();
 		HashSet<TileScript> possMvTile = toMove.getMvAccessibleTiles (toMove.alleg);
 		List<TileScript> possibleMoveTiles = new List<TileScript>(possMvTile);
-		
 
-		//int tileIndex = (int)(rand.NextDouble() * gameManager.accessibleTiles.Count);
-		int tileIndex = (int)(rand.NextDouble() * possibleMoveTiles.Count);
+		List<TileScript> forwardMoveTiles  = new List<TileScript>();
+
+		foreach (TileScript t in possibleMoveTiles)
+		{
+			if (t.y > toMove.GetComponentInParent<TileScript>().x)
+				forwardMoveTiles.Add (t);
+		}
+
+		List<TileScript> finalMoveTiles = new List<TileScript> ();
+		if (forwardMoveTiles.Count == 0) 
+			finalMoveTiles = possibleMoveTiles;				
+		else
+			finalMoveTiles = forwardMoveTiles;
+
+		int tileIndex = (int)(rand.NextDouble() * finalMoveTiles.Count);
 		Debug.Log ("tileindex: " + tileIndex);
 		//select a random move tile
-		TileScript destinationTile = possibleMoveTiles[tileIndex + 1];
+		TileScript destinationTile = finalMoveTiles[tileIndex + 1];
 
 		Debug.Log ("destX: " + destinationTile.x + "destY: " + destinationTile.y);
 		//send packet
 		gp.returnSocket().SendTCPPacket("move\\" + gameManager.selectedUnit.unitID+ "\\" + destinationTile.x + "\\" + destinationTile.y);
 		print ("The AI sent a move packet");
+
+		wait(3);
+
+		///////////////CHECK IF CAN ATTACK ANY ENEMY///////////////////
+		TileScript enemyInRange = checkForEnemyInRange (toMove);
+		if (toMove.atkCost <= gameManager.pMana && enemyInRange != null) 
+		{
+			gp.returnSocket().SendTCPPacket("attack\\" + gameManager.selectedUnit.unitID+ "\\" + enemyInRange.x + "\\" + enemyInRange.y);
+			print ("The AI sent an attack packet");
+		}
 
 		wait(3);
 
@@ -91,7 +97,6 @@ public class AIScript : MonoBehaviour {
 					return u; 
 					break;
 				}
-
 			}
 			return null;
 		}
@@ -101,33 +106,22 @@ public class AIScript : MonoBehaviour {
 		}
 	}
 
+	TileScript checkForEnemyInRange(Unit attacker)
+	{
+		gameManager.gs = gameManager.gameState.playerAtk;
+		attacker.selectUnit ();
+		List<TileScript> attackTiles = new List<TileScript> ();
+		attackTiles = attacker.getAtkAccessibleTiles ();
+		foreach (TileScript t in attackTiles) {
+			if(t.objectOccupyingTile != null && t.objectOccupyingTile.GetComponent<Unit>() != null && t.objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerOne)
+				return t;
+		}
+		return null;
+	}
+
 	IEnumerator wait(int sec){
 		yield return new WaitForSeconds(sec);
 	}
-
-
-
-//	01 function alphabeta(node, depth, α, β, maximizingPlayer)
-//	02      if depth = 0 or node is a terminal node
-//	03          return the heuristic value of node
-//	04      if maximizingPlayer
-//	05          v := -∞
-//	06          for each child of node
-//	07              v := max(v, alphabeta(child, depth - 1, α, β, FALSE))
-//	08              α := max(α, v)
-//	09              if β ≤ α
-//	10                  break (* β cut-off *)
-//	11          return v
-//	12      else
-//	13          v := ∞
-//	14          for each child of node
-//	15              v := min(v, alphabeta(child, depth - 1, α, β, TRUE))
-//	16              β := min(β, v)
-//	17              if β ≤ α
-//	18                  break (* α cut-off *)
-//	19          return v
-
-	//int abMiniMax (
 
 
 	// Update is called once per frame
