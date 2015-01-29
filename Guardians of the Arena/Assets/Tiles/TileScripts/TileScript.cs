@@ -158,7 +158,7 @@ public class TileScript : MonoBehaviour {
 
 		//start node
 		open.Enqueue(new Node(null,movingUnit.transform.parent.GetComponent<TileScript>()));
-		HashSet<TileScript> tileList = movingUnit.getMvAccessibleTiles (movingUnit.alleg == Unit.allegiance.playerOne ? Unit.allegiance.playerOne : Unit.allegiance.playerTwo);
+		List<TileScript> tileList = movingUnit.getMvAccessibleTiles (movingUnit.alleg == Unit.allegiance.playerOne ? Unit.allegiance.playerOne : Unit.allegiance.playerTwo);
 		
 		//endnode
 		TileScript end = this;
