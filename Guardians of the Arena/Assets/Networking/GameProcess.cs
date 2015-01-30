@@ -18,6 +18,10 @@ public class GameProcess : MonoBehaviour {
 	AudioManager am;
 	PopUpMenuNecro pum;
 	public PlayerSetup playerSetup;
+
+	//
+	public float targetTileX, targetTileZ;
+
 	
 	//PRIVATE MEMBERS
 	private Sockets socks;
@@ -279,6 +283,21 @@ public class GameProcess : MonoBehaviour {
 			else if (tokens[0].Equals("attack"))
 			{
 				gameManager.pMana -= gameManager.units[Int32.Parse (tokens[1])].atkCost;
+
+				//Use the values assigned to targetTileX and targetTileZ from TileScript.cs:
+				//Attack animation based on the position of the tile that is going to be attacked
+				if(gameManager.units[Int32.Parse (tokens[1])].transform.position.z > targetTileZ)
+					gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 8);
+				else if(gameManager.units[Int32.Parse (tokens[1])].transform.position.z < targetTileZ)
+					gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 9);
+				else if(gameManager.units[Int32.Parse (tokens[1])].transform.position.x > targetTileX)
+					gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 10);
+				else if(gameManager.units[Int32.Parse (tokens[1])].transform.position.x < targetTileX)
+					gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 11);
+				//hmm it seems to always play the attack_front animation
+
+
+
 				if (Int32.Parse (tokens[2]) != 0){
 	
 					for (int i = 0; i < Int32.Parse (tokens[2]); i ++ ){

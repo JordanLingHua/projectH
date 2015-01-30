@@ -22,6 +22,10 @@ public class TileScript : MonoBehaviour {
 	public GameObject left, right, down, up;
 	public GameObject objectOccupyingTile = null;
 	public int x,y;
+
+	//
+	//public float targetTileX, targetTileZ;
+
 	
 	public GameProcess gp;
 	AudioManager am;
@@ -64,6 +68,17 @@ public class TileScript : MonoBehaviour {
 			}
 		}
 		AoETiles.Clear ();
+
+		//Change attack animation back to idle since the
+		if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 8)
+			this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 0);
+		else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 9)
+			this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 1);
+		else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 10)
+			this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 2);
+		else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 11)
+			this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 3);
+
 	}
 
 	//taken from user dcarrier on unity forums
@@ -253,16 +268,12 @@ public class TileScript : MonoBehaviour {
 		    ((gm.selectedUnit.alleg == Unit.allegiance.playerOne && gp.playerNumber == 1) || (gm.selectedUnit.alleg == Unit.allegiance.playerTwo && gp.playerNumber == 2))) {
 			gp.returnSocket ().SendTCPPacket ("attack\\" + gm.selectedUnit.unitID + "\\" + this.x + "\\" + this.y);
 			print ("Sent attack packet");
-			/*
-			if(this.x == 0 && this.y > 0)
-				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 8);
-			else if(this.x == 0 && this.y < 0)
-				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 9);
-			else if(this.x < 0 && this.y == 0)
-				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 10);
-			else if(this.x > 0 && this.y == 0)
-				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 11);
-			*/
+
+			//extract the info of the tile selected to be attacked, so that the attacking tile can know which attack direction animation to play
+			GameObject.Find ("GameProcess").GetComponent<GameProcess>().targetTileX = this.x;
+			GameObject.Find ("GameProcess").GetComponent<GameProcess>().targetTileZ = this.y;
+			//targetTileX and targetTileZ are then used inside GameProcess when attack is called
+
 			am.playButtonSFX();
 		} else {
 			am.playErrorSFX();
