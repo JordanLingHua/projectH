@@ -241,6 +241,7 @@ public class Unit    : MonoBehaviour {
 	}
 
 	public void selectUnit(){
+		gm.clearSelection();
 		gm.selectedUnit = this;
 		gm.accessibleTiles.Clear();
 		
