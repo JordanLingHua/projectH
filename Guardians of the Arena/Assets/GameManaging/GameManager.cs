@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour {
 	ArrayList combatLogMessages = new ArrayList();
 
 	//game managing variables
-	public bool turn, incMana,gameOver;
+	public bool turn, incMana,gameOver,sentEndTurn;
 	public GameObject popUpText;
 	public GUIText uInfo,mana,timerText,suInfo,suLevel1BonusShort,suLevel1BonusLong,suLevel2BonusShort,suLevel2BonusLong;
 	public gameState gs;
@@ -275,7 +275,10 @@ public class GameManager : MonoBehaviour {
 
 	void endTurn(){
 		if (turn) {
-			gp.returnSocket ().SendTCPPacket ("endTurn");
+			if (!sentEndTurn){
+				gp.returnSocket ().SendTCPPacket ("endTurn");
+				sentEndTurn = true;
+			}
 			am.playButtonSFX ();
 		} else {
 			am.playButtonSFX ();
@@ -305,7 +308,7 @@ public class GameManager : MonoBehaviour {
 			selectedUnit.GetComponent<Unit>().showMvTiles(selectedUnit.alleg == Unit.allegiance.playerOne? Unit.allegiance.playerOne : Unit.allegiance.playerTwo);
 	}
 	
-	void clearSelection(){
+	public void clearSelection(){
 		suInfo.text = "";
 
 		suLevel1BonusShort.color = Color.gray;

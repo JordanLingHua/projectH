@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System;
 using System.Diagnostics;
-
+ 
 public class GameProcess : MonoBehaviour {
 	
 	//PUBLIC MEMBERS 
@@ -57,8 +57,7 @@ public class GameProcess : MonoBehaviour {
 
 			UnityEngine.Debug.Log(s);
 			///////////////////////////////////////////////////////////////////////////////////
-			
-			
+
 			// Determine the content of the string sent from the server
 			
 			// client\\clientNumber
@@ -320,6 +319,7 @@ public class GameProcess : MonoBehaviour {
 			//switchTurns
 			else if (tokens[0].Equals("switchTurns"))
 			{
+				gameManager.sentEndTurn = false;
 				gameManager.nextTurn(Int32.Parse (tokens[1]));
 			}
 			
