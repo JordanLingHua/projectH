@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour {
 	public HashSet<TileScript> accessibleTiles = new HashSet<TileScript>();
 
 	public GameObject UnitOne,UnitTwo,UnitThree,UnitFour,UnitFive,UnitSix,UnitSeven,UnitEight,UnitNine,UnitTen,UnitEleven;
-	GameObject selectedUnitDisplay;
+//	GameObject selectedUnitDisplay;
 
 	//Timer variables
 	readonly float TIMER_LENGTH = 60f;
@@ -317,7 +317,7 @@ public class GameManager : MonoBehaviour {
 		suLevel1BonusLong.text = "";
 		suLevel2BonusShort.text ="";
 		suLevel2BonusLong.text = "";
-		Destroy (selectedUnitDisplay);
+//		Destroy (selectedUnitDisplay);
 		selectedUnit = null;
 		accessibleTiles.Clear();
 		tm.clearAllTiles();

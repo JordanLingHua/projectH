@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+#pragma warning disable 0114
 public class Swordsman : Unit {
 
 	int atkCharges = 2;
@@ -49,7 +50,6 @@ public class Swordsman : Unit {
 	public override void attackUnit(Unit unitAffected){
 		bool players = ((gp.playerNumber ==  1 && this.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && this.alleg == allegiance.playerTwo));
 		string player = players ? "Your " : "Opponent's ";
-		string unitAffectedPlayer = ((gp.playerNumber ==  1 && unitAffected.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && unitAffected.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
 		//WIN-dfury
 		if (unitLevel == 3) {
 			if (atkCharges > 0){

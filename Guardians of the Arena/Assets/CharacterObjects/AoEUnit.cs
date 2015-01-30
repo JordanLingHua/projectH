@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+#pragma warning disable 0114
 public class AoEUnit : Unit {
 	//NOT IN DEVELOPMENT
-
-
 
 	void Start () {
 		base.Start ();
@@ -20,10 +19,5 @@ public class AoEUnit : Unit {
 		//unitRole = "AOE";
 		unitRole = 502;//AOE
 		renderer.material.color = new Color32(0,255,0,1);
-	}
-
-
-	void Update () {
-	
 	}
 }

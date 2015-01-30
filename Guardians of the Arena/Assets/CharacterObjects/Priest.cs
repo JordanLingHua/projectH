@@ -2,9 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 
+#pragma warning disable 0114
 public class Priest : Unit {
-
-
 
 	void Start () {
 		base.Start ();
