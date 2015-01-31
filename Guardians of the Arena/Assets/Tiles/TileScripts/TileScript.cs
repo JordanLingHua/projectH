@@ -124,7 +124,7 @@ public class TileScript : MonoBehaviour {
 		}
 		
 		Vector3 newPos;
-		Vector3 misterPos;
+		//Vector3 misterPos;
 
 		float tilePeekX;
 		float tilePeekZ;
