@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour {
 		suInfo = GameObject.Find("SelectedUnitInfoGUIText").GetComponent<GUIText>();
 
 
-		if (Application.loadedLevelName.Equals ("BoardScene")) {
+		if (Application.loadedLevelName.Equals ("BoardScene") || Application.loadedLevelName.Equals ("AIScene")) {
 			tm = GameObject.Find ("TileManager").GetComponent<TileManager> ();
 			suLevel1BonusLong = GameObject.Find("Level1BonusDescriptionGUIText").GetComponent<GUIText>();
 			suLevel1BonusShort = GameObject.Find("Level1BonusNameGUIText").GetComponent<GUIText>();

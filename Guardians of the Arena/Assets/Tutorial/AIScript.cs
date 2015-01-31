@@ -11,24 +11,39 @@ public class AIScript : MonoBehaviour {
 	GameProcess gp;
 	//public List<Unit> gameManager.units;
 	public System.Random rand;
+	List<Unit> AIUnits;
 	// Use this for initialization
 	void Start () {
 	//	gameManager.units = new List<Unit>();
+		firstMove = true;
 		rand = new System.Random ();
 		gameManager = GameObject.Find ("GameManager").GetComponent<GameManager> ();
 		gp = GameObject.Find ("GameProcess").GetComponent<GameProcess> ();
+
+		AIUnits = new List<Unit>();
+	
+		
 	}
 
 	public void makeGameAction(Unit u)
 	{
+		AIUnits.Clear ();
+		foreach (Unit x in gameManager.units.Values)
+		{
+			if(x.alleg == Unit.allegiance.playerTwo)
+			{
+				print ("nameunit: " + x.name);
+				AIUnits.Add(x);
+			}
+		}
+
+		print ("AIUNITS size: " + AIUnits.Count);
+
 		Unit toMove;
 		if (firstMove) 
-		{
-			int index = (int)(rand.NextDouble () * 10 + 1);
+		{			
 			firstMove = false;
-			Debug.Log ("index is: " + index);
-			Debug.Log ("indexModified is: " + (index + 10));
-			toMove = gameManager.units [(index + 10)];
+			toMove = AIUnits[(int)rand.NextDouble() * AIUnits.Count];
 		} 
 		else 
 		{
@@ -54,12 +69,17 @@ public class AIScript : MonoBehaviour {
 			finalMoveTiles = forwardMoveTiles;
 
 		int tileIndex = (int)(rand.NextDouble() * finalMoveTiles.Count);
-		Debug.Log ("tileindex: " + tileIndex);
+		foreach (TileScript t in finalMoveTiles)
+		{
+			Debug.Log ("tileX: " + t.x + "tileY: " + t.y);
+		}
+		Debug.Log ("tileindex: " + tileIndex + "tileListSize: " + finalMoveTiles.Count);
 		//select a random move tile
-		TileScript destinationTile = finalMoveTiles[tileIndex + 1];
+		TileScript destinationTile = finalMoveTiles[tileIndex];
 
 		Debug.Log ("destX: " + destinationTile.x + "destY: " + destinationTile.y);
 		//send packet
+		gameManager.gs = GameManager.gameState.playerMv;
 		gp.returnSocket().SendTCPPacket("move\\" + gameManager.selectedUnit.unitID+ "\\" + destinationTile.x + "\\" + destinationTile.y);
 		print ("The AI sent a move packet");
 
@@ -69,11 +89,12 @@ public class AIScript : MonoBehaviour {
 		TileScript enemyInRange = checkForEnemyInRange (toMove);
 		if (toMove.atkCost <= gameManager.pMana && enemyInRange != null) 
 		{
+			gameManager.gs = GameManager.gameState.playerAtk;
 			gp.returnSocket().SendTCPPacket("attack\\" + gameManager.selectedUnit.unitID+ "\\" + enemyInRange.x + "\\" + enemyInRange.y);
 			print ("The AI sent an attack packet");
 		}
 
-		wait(3);
+	//	wait(3);
 
 		Unit next = checkForValidGameAction ();
 		if (next != null)
@@ -94,8 +115,8 @@ public class AIScript : MonoBehaviour {
 				Unit u = gameManager.units[key];
 				if (u.mvCost <= gameManager.pMana && !u.mvd && u.alleg == Unit.allegiance.playerTwo)
 				{
+					gameManager.gs = GameManager.gameState.playerMv;
 					return u; 
-					break;
 				}
 			}
 			return null;
@@ -108,7 +129,7 @@ public class AIScript : MonoBehaviour {
 
 	TileScript checkForEnemyInRange(Unit attacker)
 	{
-		gameManager.gs = GameManager.gameState.playerAtk;
+
 		attacker.selectUnit ();
 
 		HashSet<TileScript> attackTiles2 = attacker.getAtkAccessibleTiles ();
