@@ -289,9 +289,9 @@ public class GameProcess : MonoBehaviour {
 				print ("attacker animation state #:" + gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().GetInteger("mode_and_dir"));
 				//Use the values assigned to targetTileX and targetTileZ from TileScript.cs:
 				//Attack animation based on the position of the tile that is going to be attacked
-				if(gameManager.units[Int32.Parse (tokens[1])].transform.position.z > (targetTileZ*10))
+				if(gameManager.units[Int32.Parse (tokens[1])].transform.position.z < (targetTileZ*10))
 					gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 8);
-				else if(gameManager.units[Int32.Parse (tokens[1])].transform.position.z < (targetTileZ*10))
+				else if(gameManager.units[Int32.Parse (tokens[1])].transform.position.z > (targetTileZ*10))
 					gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 9);
 				else if(gameManager.units[Int32.Parse (tokens[1])].transform.position.x > (targetTileX*10))
 					gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 10);
