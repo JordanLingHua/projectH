@@ -301,6 +301,10 @@ public class GameProcess : MonoBehaviour {
 
 
 
+
+
+
+
 				if (Int32.Parse (tokens[2]) != 0){
 	
 					for (int i = 0; i < Int32.Parse (tokens[2]); i ++ ){
@@ -315,6 +319,33 @@ public class GameProcess : MonoBehaviour {
 					string player = ((playerNumber ==  1 && gameManager.units[Int32.Parse (tokens[1])].alleg == Unit.allegiance.playerOne) || (playerNumber ==  2 && gameManager.units[Int32.Parse (tokens[1])].alleg == Unit.allegiance.playerTwo)) ? "Your " : "Opponent's ";
 					gameManager.addLogToCombatLog(player + gameManager.units[Int32.Parse (tokens[1])].unitName + " attacked nothing for " + gameManager.units[Int32.Parse (tokens[1])].atkCost + " mana!");
 				}
+
+
+				//
+				/*
+				AnimatorStateInfo stateInfo = gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().GetCurrentAnimatorStateInfo(0);
+				int x = 0;
+				while(x < stateInfo.normalizedTime*Time.deltaTime)
+					x++;
+
+				if(gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().GetInteger("mode_and_dir")==8){
+					gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 0);
+				}
+				else if(gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().GetInteger("mode_and_dir")==9){
+					gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 1);
+				}	
+				else if(gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().GetInteger("mode_and_dir")==10){
+					gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 2);
+				}
+				else if(gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().GetInteger("mode_and_dir")==11){
+					gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 3);
+				}
+				*/
+
+
+
+
+
 				if (pum.allowAutoMoveAttackToggle){
 					gameManager.changeToMoving();
 				}
