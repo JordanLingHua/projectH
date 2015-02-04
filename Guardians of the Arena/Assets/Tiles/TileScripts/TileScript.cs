@@ -91,13 +91,13 @@ public class TileScript : MonoBehaviour {
 		//Step 1)  Before you do anything, Transition from neutral_states in the post_attack version, to the actual neutral states
 		//NOTE:  the post_attack neutral states don't get signified by a mode_and_dir.  occured at exit time of attack.  So mode_and_dir is still 
 		//== the attack state it left off at
-		if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 8)
+		if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 8 || this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 12)
 			this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 0);
-		else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 9)
+		else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 9 || this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 13)
 			this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 1);
-		else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 10)
+		else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 10 || this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 14)
 			this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 2);
-		else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 11)
+		else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 11 || this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 15)
 			this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 3);
 		//NOTE:  I will use the above switch state as the preamble to nearly every switch statement like below
 		

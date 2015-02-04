@@ -245,7 +245,7 @@ public class Unit    : MonoBehaviour {
 		while(x < stateInfo.normalizedTime*Time.deltaTime)
 			x++;
 			*/
-		///*
+		/*
 		if(this.GetComponent<Animator>().GetInteger("mode_and_dir")==8){
 			this.GetComponent<Animator>().SetInteger("mode_and_dir", 0);
 		}
@@ -258,7 +258,7 @@ public class Unit    : MonoBehaviour {
 		else if(this.GetComponent<Animator>().GetInteger("mode_and_dir")==11){
 			this.GetComponent<Animator>().SetInteger("mode_and_dir", 3);
 		}
-		//*/
+		*/
 
 
 	}
