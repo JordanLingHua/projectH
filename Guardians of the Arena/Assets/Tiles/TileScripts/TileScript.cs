@@ -70,6 +70,7 @@ public class TileScript : MonoBehaviour {
 		AoETiles.Clear ();
 
 		//Change attack animation back to idle since the
+		/*
 		if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 8)
 			this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 0);
 		else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 9)
@@ -78,12 +79,30 @@ public class TileScript : MonoBehaviour {
 			this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 2);
 		else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 11)
 			this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 3);
+			*/
 
 	}
 
 	//taken from user dcarrier on unity forums
 	//http://answers.unity3d.com/questions/14279/make-an-object-move-from-point-a-to-point-b-then-b.html
 	IEnumerator movePiece (GameObject move, Vector3 start, Vector3 end, float time){
+
+		//new
+		//Step 1)  Before you do anything, Transition from neutral_states in the post_attack version, to the actual neutral states
+		//NOTE:  the post_attack neutral states don't get signified by a mode_and_dir.  occured at exit time of attack.  So mode_and_dir is still 
+		//== the attack state it left off at
+		if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 8)
+			this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 0);
+		else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 9)
+			this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 1);
+		else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 10)
+			this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 2);
+		else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 11)
+			this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 3);
+		//NOTE:  I will use the above switch state as the preamble to nearly every switch statement like below
+		
+		
+		
 		float i = 0.0f;
 		float rate = 1.0f / time;
 		//1.0f
@@ -96,6 +115,12 @@ public class TileScript : MonoBehaviour {
 
 			/*Choose animation*/
 			if(isOpponentPiece == false){
+
+
+
+
+				//old
+				//Step 2 (regular transition trigger)
 				if(end.z > start.z)
 					this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 4);
 				else if(end.z < start.z)
@@ -140,6 +165,9 @@ public class TileScript : MonoBehaviour {
 			yield return StartCoroutine(movePiece(movingUnit.gameObject,movingUnit.transform.position,newPos,1.0f));//0.28f
 
 			tiles.Pop();
+
+
+
 
 			//Set unit back to neutral animation now that it has moved to the final tile
 			if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 4)
