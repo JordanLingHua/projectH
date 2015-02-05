@@ -142,12 +142,23 @@ public class GameManager : MonoBehaviour {
 
 
 	void OnGUI(){
+		//show button for returning to main menu
+		GUI.BeginGroup (new Rect(Screen.width*0.35f,Screen.height-((float)Screen.height*0.080f),Screen.width*0.15f,35));
+		GUILayout.BeginHorizontal();
+		if (gameOver){
+			if (GUILayout.Button ("Return to main menu", "ShortButton")) {
+				am.playButtonSFX();
+				DontDestroyOnLoad(GameObject.Find ("GameProcess"));
+				Application.LoadLevel(1);
+			}
+		}
+		GUILayout.EndHorizontal();
+		GUI.EndGroup ();
+
 		GUI.skin = mySkin;
 		combatLogWindowRect = GUI.Window (2, combatLogWindowRect, combatLogWindow, "");
 		GUI.BeginGroup (new Rect (0,0,100,100));
 		GUI.EndGroup();
-		//extra unit on screen
-		//notworking so removed for now
 		if (selectedUnit != null){
 //			Vector3 worldPoint = gp.playerNumber == 1? new Vector3(122,20,75) : new Vector3(-23,20,30);
 //			if (selectedUnitDisplay == null  || selectedUnitDisplay.name != (selectedUnit.unitName + "(Clone)")){
@@ -227,18 +238,21 @@ public class GameManager : MonoBehaviour {
 			}
 			
 			suInfo.text =  info;
-			if (script.unitLevel >= 2){
-				suLevel1BonusShort.color = Color.white;
-				suLevel1BonusLong.color = Color.white;
+
+			if (!script.paralyzed){
+				if (script.unitLevel >= 2){
+					suLevel1BonusShort.color = Color.white;
+					suLevel1BonusLong.color = Color.white;
+				}
+				if (script.unitLevel >= 3){
+					suLevel2BonusShort.color = Color.white;
+					suLevel2BonusLong.color = Color.white;
+				}
+				suLevel1BonusShort.text = script.levelBonusShort[0];
+				suLevel1BonusLong.text = script.levelBonusLong[0];
+				suLevel2BonusShort.text = script.levelBonusShort[1];
+				suLevel2BonusLong.text = script.levelBonusLong[1];
 			}
-			if (script.unitLevel >= 3){
-				suLevel2BonusShort.color = Color.white;
-				suLevel2BonusLong.color = Color.white;
-			}
-			suLevel1BonusShort.text = script.levelBonusShort[0];
-			suLevel1BonusLong.text = script.levelBonusLong[0];
-			suLevel2BonusShort.text = script.levelBonusShort[1];
-			suLevel2BonusLong.text = script.levelBonusLong[1];
 		}
 		//set display for mana
 

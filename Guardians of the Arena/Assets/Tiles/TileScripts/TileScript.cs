@@ -87,20 +87,20 @@ public class TileScript : MonoBehaviour {
 	//http://answers.unity3d.com/questions/14279/make-an-object-move-from-point-a-to-point-b-then-b.html
 	IEnumerator movePiece (GameObject move, Vector3 start, Vector3 end, float time){
 
-		//new
-		//Step 1)  Before you do anything, Transition from neutral_states in the post_attack version, to the actual neutral states
-		//NOTE:  the post_attack neutral states don't get signified by a mode_and_dir.  occured at exit time of attack.  So mode_and_dir is still 
-		//== the attack state it left off at
-		if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 8 || this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 12)
-			this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 0);
-		else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 9 || this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 13)
-			this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 1);
-		else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 10 || this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 14)
-			this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 2);
-		else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 11 || this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 15)
-			this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 3);
-		//NOTE:  I will use the above switch state as the preamble to nearly every switch statement like below
-		
+//		//new
+//		//Step 1)  Before you do anything, Transition from neutral_states in the post_attack version, to the actual neutral states
+//		//NOTE:  the post_attack neutral states don't get signified by a mode_and_dir.  occured at exit time of attack.  So mode_and_dir is still 
+//		//== the attack state it left off at
+//		if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 8 || this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 12)
+//			this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 0);
+//		else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 9 || this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 13)
+//			this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 1);
+//		else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 10 || this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 14)
+//			this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 2);
+//		else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 11 || this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 15)
+//			this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 3);
+//		//NOTE:  I will use the above switch state as the preamble to nearly every switch statement like below
+//		
 		
 		
 		float i = 0.0f;
@@ -113,25 +113,25 @@ public class TileScript : MonoBehaviour {
 			i += Time.deltaTime * rate;
 			move.transform.position = Vector3.Lerp(start, end, i);
 
-			/*Choose animation*/
-			if(isOpponentPiece == false){
-
-
-
-
-				//old
-				//Step 2 (regular transition trigger)
-				if(end.z > start.z)
-					this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 4);
-				else if(end.z < start.z)
-					this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 5);
-				else if(end.x < start.x)
-					this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 6);
-				else if(end.x > start.x)
-					this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 7);
-			}
-			else{
-			}
+//			/*Choose animation*/
+//			if(isOpponentPiece == false){
+//
+//
+//
+//
+//				//old
+//				//Step 2 (regular transition trigger)
+//				if(end.z > start.z)
+//					this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 4);
+//				else if(end.z < start.z)
+//					this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 5);
+//				else if(end.x < start.x)
+//					this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 6);
+//				else if(end.x > start.x)
+//					this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 7);
+//			}
+//			else{
+//			}
 
 
 			yield return null; 
@@ -169,15 +169,15 @@ public class TileScript : MonoBehaviour {
 
 
 
-			//Set unit back to neutral animation now that it has moved to the final tile
-			if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 4)
-				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 0);
-			else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 5)
-				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 1);
-			else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 6)
-				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 2);
-			else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 7)
-				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 3);
+//			//Set unit back to neutral animation now that it has moved to the final tile
+//			if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 4)
+//				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 0);
+//			else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 5)
+//				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 1);
+//			else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 6)
+//				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 2);
+//			else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 7)
+//				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 3);
 
 		}
 
@@ -244,10 +244,10 @@ public class TileScript : MonoBehaviour {
 	}
 
 	public void moveToTile(){
-
-		
+		if (!gm.accessibleTiles.Contains (this)){
+			gm.clearSelection();
 		//move unit selected to this tile if it can go there
-		if (gm.turn && 
+		}else if (gm.turn && 
 			gm.accessibleTiles.Contains (this) && 
 			this.objectOccupyingTile == null && 
 			!gm.selectedUnit.GetComponent<Unit> ().mvd &&
@@ -289,7 +289,9 @@ public class TileScript : MonoBehaviour {
 	
 
 	public void attackTile(){
-		if (gm.turn &&
+		if (!gm.accessibleTiles.Contains (this)){
+			gm.clearSelection();
+		}else if (gm.turn &&
 		    gm.accessibleTiles.Contains (this) && 
 		    gm.pMana >= gm.selectedUnit.GetComponent<Unit> ().atkCost && 
 		    !gm.selectedUnit.GetComponent<Unit>().atkd &&

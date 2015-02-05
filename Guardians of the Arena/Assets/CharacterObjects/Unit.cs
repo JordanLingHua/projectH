@@ -130,7 +130,7 @@ public class Unit    : MonoBehaviour {
 			transform.parent.GetComponent<TileScript> ().OnMouseOver ();
 		}else{
 			//used for setup screen info
-			string info = "Unit Information:\n" +unitName + "\nHP: " + hp + "/" + maxHP;
+			string info = "" +unitName + "\nHP: " + hp + "/" + maxHP;
 			info += "\nMovement Range: " + mvRange;
 			info += mvCost > 0? "\nMove Cost: " + mvCost : "";
 			info += atkCost > 0? "\nAttack Cost: " + atkCost : "";
@@ -146,7 +146,7 @@ public class Unit    : MonoBehaviour {
 			transform.parent.GetComponent<TileScript> ().OnMouseExit ();
 			//gm.uInfo.text  = "";
 		}else {
-			GameObject.Find ("SetupScreenUnitInfo").GetComponent<GUIText>().text = "Unit Information:";
+			GameObject.Find ("SetupScreenUnitInfo").GetComponent<GUIText>().text = "";
 		}
 	}
 
@@ -183,7 +183,7 @@ public class Unit    : MonoBehaviour {
 			if (gm.gs == GameManager.gameState.playerAtk && gm.accessibleTiles.Contains (this.transform.parent.GetComponent<TileScript> ())) {
 				transform.parent.GetComponent<TileScript>().attackTile ();
 			} else {
-				if ((this.alleg == allegiance.playerOne && gp.playerNumber == 1 || this.alleg == allegiance.playerTwo && gp.playerNumber == 2 ) || pum.allowEnemyUnitSelection){
+				if ((this.alleg == allegiance.neutral || (this.alleg == allegiance.playerOne && gp.playerNumber == 1 || this.alleg == allegiance.playerTwo && gp.playerNumber == 2 )) || pum.allowEnemyUnitSelection){
 					selectUnit ();
 					am.playButtonSFX();
 				}
