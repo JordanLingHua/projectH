@@ -9,8 +9,11 @@ public class Guardian :Unit {
 		base.Start ();
 		levelBonusShort [0] = "Hardened Skin";
 		levelBonusShort [1] = "Executioner";
-		levelBonusLong [0] = "Cannot take more than 10\ndamage per attack";
-		levelBonusLong [1] = "Instantly kills units below\n50% hp on attack";
+		levelBonusLong [0] = "Cannot take more than 10\ndamage when attacked";
+		levelBonusLong [1] = "Instantly kills units below\n50% health on attack";
+		description = "A melee unit that protects the Soulstone. If this\n" +
+						"unit dies the player's Soulstone becomes\n" +
+						"vulnerable to death.";
 		unitType = 10;
 		unitName = "Guardian";
 		hp = 45;

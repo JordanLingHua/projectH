@@ -12,8 +12,10 @@ public class Mystic: Unit {
 		unitFocused = null;
 		levelBonusShort [0] = "Enchant Might";
 		levelBonusShort [1] = "Crippling Focus";
-		levelBonusLong [0] = "Allied focused units now gain\n+5 attack damage";
-		levelBonusLong [1] = "Enemy focused units now take 8\ndamage at the end of every your turn";
+		levelBonusLong [0] = "Focusing allies gives\nthem +5 attack damage";
+		levelBonusLong [1] = "Focusing enemies deals\n8 damage every turn";
+		description = "A powerful wizard that can paralyze enemy\n" +
+						"units or give allies increased mobility";
 		unitType = 2;
 		unitName = "Mystic";
 		hp = 30;

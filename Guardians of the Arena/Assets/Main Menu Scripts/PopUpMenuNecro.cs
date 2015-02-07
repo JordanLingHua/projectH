@@ -287,8 +287,16 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 	
 	void OnGUI ()
 	{
-		
 		GUI.skin = mySkin;
+
+		GUI.BeginGroup (new Rect(0,0,Screen.width*0.09f,30));
+		GUILayout.BeginHorizontal();
+		if (GUILayout.Button ("Options", "ShortButton")) {
+			doWindow1 = !doWindow1;
+			am.playButtonSFX();
+		}
+		GUILayout.EndHorizontal();
+		GUI.EndGroup ();
 
 		if (doWindow1)
 			windowRect1 = GUI.Window (1, windowRect1, DoMyWindow1, "");
