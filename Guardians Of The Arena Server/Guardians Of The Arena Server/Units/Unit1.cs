@@ -42,7 +42,7 @@ namespace Guardians_Of_The_Arena_Server.Units
                         Console.WriteLine("Unit Hit: {0}", temp.CurrentUnit.UniqueID);
                         unitsHit.Add(temp.CurrentUnit.UniqueID);
 
-                        if (level  < 2)
+                        if (level < 3)
                             return unitsHit;
                     }
                 }
@@ -59,7 +59,7 @@ namespace Guardians_Of_The_Arena_Server.Units
                         Console.WriteLine("Unit Hit: {0}", temp.CurrentUnit.UniqueID);
                         unitsHit.Add(temp.CurrentUnit.UniqueID);
 
-                        if (level < 2)
+                        if (level < 3)
                             return unitsHit;
                     }
                 }
@@ -77,7 +77,7 @@ namespace Guardians_Of_The_Arena_Server.Units
                         Console.WriteLine("Unit Hit: {0}", temp.CurrentUnit.UniqueID);
                         unitsHit.Add(temp.CurrentUnit.UniqueID);
 
-                        if (level < 2)
+                        if (level < 3)
                             return unitsHit;
                     }
                 }
@@ -95,7 +95,7 @@ namespace Guardians_Of_The_Arena_Server.Units
                         unitsHit.Add(temp.CurrentUnit.UniqueID);
 
 
-                        if (level < 2)
+                        if (level < 3)
                             return unitsHit;
                     }
                 }
@@ -112,7 +112,7 @@ namespace Guardians_Of_The_Arena_Server.Units
 
             switch(Level)
             {
-                case 1 :
+                case 2 :
                     attackRange++;
                     break;
                 default :

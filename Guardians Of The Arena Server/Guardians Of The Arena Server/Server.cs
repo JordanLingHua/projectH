@@ -83,7 +83,7 @@ namespace Guardians_Of_The_Arena_Server
                         
                         numberOfClients++;
 
-                        Client client = new Client(nws, sr, sw, ++clientNumbers, soc);
+                        Client client = new Client(this, nws, sr, sw, ++clientNumbers, soc);
                         client.thread.Start();
 
                         clientArray.AddLast(client);
@@ -174,7 +174,8 @@ namespace Guardians_Of_The_Arena_Server
                             Client client1 = matchqueue.dequeue();
                             Client client2 = matchqueue.dequeue();
 
-                            Game newGame = new Game(client1, client2, dm);
+                            Game newGame = new Game(client1, client2, dm, false);
+
                             client1.gameRef = newGame;
                             client2.gameRef = newGame;
                             client1.inGame = true;
@@ -212,6 +213,22 @@ namespace Guardians_Of_The_Arena_Server
                                     client.boardSetup = Int32.Parse(tokens[1]);
                                     matchqueue.enqueue(client);
                                 }
+                                else if (tokens[0].Equals("playAI")){
+
+                                    //Client AI = new Client(client.nws, client.sr, client.sw, 666, client.socket);
+                                    //AI.clientName = client.clientName;
+                                    //client.boardSetup = Int32.Parse(tokens[1]);
+                                    //AI.boardSetup = client.boardSetup;
+
+                                    Game newGame = new Game(client, client, dm, true);
+
+                                    client.gameRef = newGame;
+                                    //AI.gameRef = newGame;
+                                    client.inGame = true;
+                                    //AI.inGame = true;
+
+                                    newGame.GameThread.Start();
+                                }
                                 else if (tokens[0].Equals("cancelSearch"))
                                 {
                                     matchqueue.removeFromQueue(client);
@@ -236,11 +253,21 @@ namespace Guardians_Of_The_Arena_Server
                                         {
                                             if (tokens[2].Equals(dm.getUserPassword(tokens[1])))
                                             {
-                                                client.sw.WriteLine("loginSucceed\\" + tokens[1]);
-                                                client.sw.WriteLine("hasLoggedIn\\" + tokens[1]);
                                                 loginNames.Add(tokens[1]);
                                                 client.clientName = tokens[1];
                                                 Console.WriteLine(tokens[1] + " has logged in");
+
+                                                SQLiteDataReader reader = dm.getSetupNames(client.clientName);
+                                                string setupNames = "";
+
+                                                while (reader.Read())
+                                                {
+                                                    setupNames += "\\" + reader["setupName"];
+                                                }
+
+                                                client.sw.WriteLine("loginSucceed\\" + tokens[1] + setupNames + "\\0");
+                                                client.sw.WriteLine("hasLoggedIn\\" + tokens[1]);
+                                                
                                                 //dm.printTable();
 
 
@@ -268,9 +295,21 @@ namespace Guardians_Of_The_Arena_Server
                                         {
                                             dm.insertIntoPlayer(tokens[1], tokens[2]);
                                             loginNames.Add(tokens[1]);
-                                            client.sw.WriteLine("loginSucceed\\" + tokens[1]);
-                                            client.sw.WriteLine("hasLoggedIn\\" + tokens[1]);
                                             client.clientName = tokens[1];
+                                            Console.WriteLine("{0} has created an account", tokens[1]);
+
+                                            SQLiteDataReader reader = dm.getSetupNames(client.clientName);
+                                            string setupNames = "";
+
+                                            while (reader.Read())
+                                            {
+                                                setupNames += "\\" + reader["setupName"];
+                                            }
+
+                                            client.sw.WriteLine("loginSucceed\\" + tokens[1] + setupNames + "\\1");
+                                            client.sw.WriteLine("hasLoggedIn\\" + tokens[1]);
+                                            
+                                            
                                             // dm.insertIntoHighScores(client.clientName, client.score);
                                             //dm.printTable();
 
@@ -337,7 +376,10 @@ namespace Guardians_Of_The_Arena_Server
                                         , Int32.Parse(tokens[7])
                                         , onField);
                                 }
-
+                                else if (tokens[0].Equals("updateSetupName"))
+                                {
+                                    dm.updateSetupName(client.clientName, Int32.Parse(tokens[1]), tokens[2]);
+                                }
                                 else
                                 {
                                     //do nothing
@@ -358,7 +400,7 @@ namespace Guardians_Of_The_Arena_Server
                 catch (Exception e)
                 {
                     Console.WriteLine(e.StackTrace);
-                    Console.WriteLine(e.Message);
+                    Console.WriteLine(e.Message );
                 }
             }
         }
@@ -374,7 +416,7 @@ namespace Guardians_Of_The_Arena_Server
             public Socket socket;
             public Queue<string> commandQueue;
             public Thread thread;
-
+    
             public int clientNumber;
             public string clientName = "";
 
@@ -385,12 +427,15 @@ namespace Guardians_Of_The_Arena_Server
             public Game gameRef;
             public int boardSetup = 1;
 
+            private Server serverRef;
+
             //each client must keep track of the network stream between itself and the server
             //the stream reader used by the server to read in client messages
             //the stream writer used by the server to send the client messages
             //an assigned client number
-            public Client(NetworkStream nws, StreamReader sr, StreamWriter sw, int clientNumber, Socket socket)
+            public Client(Server serverRef, NetworkStream nws, StreamReader sr, StreamWriter sw, int clientNumber, Socket socket)
             {
+                this.serverRef = serverRef;
                 this.nws = nws;
                 this.sr = sr;
                 this.sw = sw;
@@ -429,6 +474,9 @@ namespace Guardians_Of_The_Arena_Server
 
                 catch (Exception e)
                 {
+                    this.serverRef.RemoveClient(this);
+                    Console.WriteLine("Exception type: {0}", e);
+                    Console.WriteLine(e.StackTrace);
                     Console.WriteLine(e.Message);
                 }
             }

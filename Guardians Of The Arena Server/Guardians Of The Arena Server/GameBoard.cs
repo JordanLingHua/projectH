@@ -93,7 +93,7 @@ namespace Guardians_Of_The_Arena_Server
 
             string returnString = "";
 
-            unitCount = 0;
+            unitCount = 1;
             while (reader.Read())
             {
                 

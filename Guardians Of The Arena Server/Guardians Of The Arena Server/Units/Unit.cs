@@ -129,6 +129,7 @@ namespace Guardians_Of_The_Arena_Server
             currentTile.CurrentUnit = null;
             destination.CurrentUnit = this;
             currentTile = destination;
+            Moved = true;
         }
 
         //Recursively Add all the tiles that this unit is able to atravel to
@@ -210,10 +211,15 @@ namespace Guardians_Of_The_Arena_Server
             }
         }
 
+        public virtual void Attack(Unit unitAttacking)
+        {
+            unitAttacking.ApplyDamage(this.damage);
+        }
+
         public virtual void ApplyDamage(int damage)
         {
             this.health -= damage;
-            Console.WriteLine("LOG: Unit " + uniqueID + " takes " + damage + " damage.");
+            Console.WriteLine("LOG: Unit {0} takes {1} damage. Is now at {2} health", this.UniqueID, damage, this.health);
 
             if (health > maxHealth)
                 health = maxHealth;
@@ -233,9 +239,11 @@ namespace Guardians_Of_The_Arena_Server
         {
             XP += 5;
 
-            if ((Level == 1 && XP >= 20) || (Level == 2 && XP >= 40))
+            if (XP >= 20)
             {
+                level++;
                 LevelUp();
+                Console.WriteLine("LOG: Unit {0} has leveled up", this.uniqueID);
             }
         }
 

@@ -121,12 +121,45 @@ namespace Guardians_Of_The_Arena_Server.Units
             return unitsHit;
         }
 
+        //templar will attack enemies within AOE
+        //if level 3 and hits friendly unit, it will heal instead of damage
+        public override void Attack(Unit unitAttacking)
+        {
+            int damageDealt = this.damage;
+
+            if (this.level >= 2)
+            {
+                if (unitAttacking.Health == unitAttacking.MaxHealth)
+                {
+                    damageDealt += 5;
+                }
+            }
+
+            if (this.level >= 3)
+            {
+                if (unitAttacking.unitAllegiance == this.unitAllegiance)
+                {
+                    unitAttacking.ApplyDamage(-damageDealt);
+                }
+                else
+                {
+                    unitAttacking.ApplyDamage(damageDealt);
+                }
+            }
+            else
+            {
+                unitAttacking.ApplyDamage(damageDealt);
+            }
+
+
+        }
+
         public override void LevelUp()
         {
             XP = currentXP % 20;
 
-            switch (Level)
-            { }
+            //switch (Level)
+            
         }
     }
 }

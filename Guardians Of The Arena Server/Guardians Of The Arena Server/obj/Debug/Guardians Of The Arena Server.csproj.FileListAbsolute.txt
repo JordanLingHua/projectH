@@ -29,4 +29,12 @@ C:\Users\Steve\Documents\GitHub\projectH\Guardians Of The Arena Server\Guardians
 C:\Users\Steve\Documents\GitHub\projectH\Guardians Of The Arena Server\Guardians Of The Arena Server\obj\Debug\Guardians Of The Arena Server.csprojResolveAssemblyReference.cache
 C:\Users\tenor_000\Documents\GitHub\projectH\Guardians Of The Arena Server\Guardians Of The Arena Server\bin\Debug\Guardians Of The Arena Server.exe
 C:\Users\tenor_000\Documents\GitHub\projectH\Guardians Of The Arena Server\Guardians Of The Arena Server\bin\Debug\Guardians Of The Arena Server.pdb
+C:\Users\tenor_000\Documents\GitHub\projectH\Guardians Of The Arena Server\Guardians Of The Arena Server\bin\Debug\System.Data.SQLite.DLL
 C:\Users\tenor_000\Documents\GitHub\projectH\Guardians Of The Arena Server\Guardians Of The Arena Server\obj\Debug\Guardians Of The Arena Server.csprojResolveAssemblyReference.cache
+C:\Users\tenor_000\Desktop\Guardians Of The Arena Server_Newer\Guardians Of The Arena Server\bin\Debug\Guardians Of The Arena Server.exe.config
+C:\Users\tenor_000\Desktop\Guardians Of The Arena Server_Newer\Guardians Of The Arena Server\obj\Debug\Guardians Of The Arena Server.exe
+C:\Users\tenor_000\Desktop\Guardians Of The Arena Server_Newer\Guardians Of The Arena Server\bin\Debug\Guardians Of The Arena Server.exe
+C:\Users\tenor_000\Desktop\Guardians Of The Arena Server_Newer\Guardians Of The Arena Server\bin\Debug\Guardians Of The Arena Server.pdb
+C:\Users\tenor_000\Desktop\Guardians Of The Arena Server_Newer\Guardians Of The Arena Server\bin\Debug\System.Data.SQLite.DLL
+C:\Users\tenor_000\Desktop\Guardians Of The Arena Server_Newer\Guardians Of The Arena Server\obj\Debug\Guardians Of The Arena Server.csprojResolveAssemblyReference.cache
+C:\Users\tenor_000\Desktop\Guardians Of The Arena Server_Newer\Guardians Of The Arena Server\obj\Debug\Guardians Of The Arena Server.pdb

@@ -17,6 +17,7 @@ namespace Guardians_Of_The_Arena_Server
         protected Thread gameThread;
         protected Player[] players;
 
+        public bool isAI_Game = false;
         public enum TURN { PLAYER_1, PLAYER_2 }
         public TURN currentTurn = TURN.PLAYER_1;
         public int currentPlay = 0;
@@ -32,9 +33,9 @@ namespace Guardians_Of_The_Arena_Server
             get { return gameThread; }
         }
 
-        public Game(Server.Client client1, Server.Client client2, DataManager dm)
+        public Game(Server.Client client1, Server.Client client2, DataManager dm, bool isAI_Game)
         {
-
+            this.isAI_Game = isAI_Game;
             player1 = new Player(client1);
             player1.playerAllegiance = Unit.Allegiance.PLAYER_1;
             player2 = new Player(client2);
@@ -56,16 +57,23 @@ namespace Guardians_Of_The_Arena_Server
 
             player1.isMyTurn = true;
 
-            client1.sw.WriteLine("startGame\\1");
-            client2.sw.WriteLine("startGame\\2");
+            if (!isAI_Game)
+            {
+                client1.sw.WriteLine("startGame\\1");
+                client2.sw.WriteLine("startGame\\2");
+            }
+            else
+            {
+                client1.sw.WriteLine("startAI");
+            }
 
             string treeString = board.spawnObstacles();
 
             client1.sw.WriteLine("spawnObstacles{0}", treeString);
-            client2.sw.WriteLine("spawnObstacles{0}", treeString);
+            if (!isAI_Game) { client2.sw.WriteLine("spawnObstacles{0}", treeString); }
 
             client1.sw.WriteLine(setupString);
-            client2.sw.WriteLine(setupString);
+            if (!isAI_Game) { client2.sw.WriteLine(setupString); }
 
             //We need to send each player the position of each unit on the board
 
@@ -74,6 +82,8 @@ namespace Guardians_Of_The_Arena_Server
 
             Console.WriteLine("Game between " + player1.playerClient.clientName
                     + " and " + player2.playerClient.clientName + " has started.");
+
+            //Console.WriteLine(" It is {0} 's turn", client1.clientName);
         }
 
         public void gameLoop()
@@ -89,180 +99,228 @@ namespace Guardians_Of_The_Arena_Server
         {
             foreach (Player currentPlayer in players)
             {
-
-                Queue<string> packetQueue = currentPlayer.playerClient.commandQueue;
-
-                if (packetQueue.Count > 0)
+                if (currentPlayer.isMyTurn)
                 {
-                    String command = packetQueue.Dequeue();
-                    string[] message = command.Split(new string[] { "\\" }, StringSplitOptions.None);
-                    string log = "NETWORK LOG:";
-                    foreach (string s in message)
-                    {
-                        log += s + "\\";
-                    }
 
-                    Console.WriteLine(log);
+                    Queue<string> packetQueue = currentPlayer.playerClient.commandQueue;
 
-                    //move message sends the command, the tile we are coming from and the tile we are going too
-                    if (message[0].Equals("move"))
+                    if (packetQueue.Count > 0)
                     {
-                        //if it is the turn of the client that sent this command
-                        //AND if the tile we want to move to is in the list off accessible tiles of the object on the starting tile
-                        //THEN we send a packet to both clients allow the object to move tiles.
-                        if (currentPlayer.isMyTurn)
+                        String command = packetQueue.Dequeue();
+                        string[] message = command.Split(new string[] { "\\" }, StringSplitOptions.None);
+                        string log = "NETWORK LOG:";
+                        foreach (string s in message)
                         {
-                            Unit movingUnit = board.getUnitByID(Int32.Parse(message[1]));
-                            GameBoard.Tile startTile = movingUnit.CurrentTile;
-                            GameBoard.Tile destinationTile = board.Tiles[Int32.Parse(message[2]), Int32.Parse(message[3])];
-                            movingUnit.setAccessibleTiles(startTile, movingUnit.MovementRange);
-
-                            if (currentPlayer.playerAllegiance == movingUnit.unitAllegiance 
-                                && currentPlayer.mana >= movingUnit.MovementCost
-                                && !movingUnit.Paralyzed
-                                && !movingUnit.Moved
-                                && movingUnit.accessibleTiles.Contains(destinationTile))
-                            {
-                                currentPlayer.mana -= movingUnit.MovementCost;
-
-                                Console.WriteLine("LOG: moving unit from tile(" + startTile.x + "," + startTile.y + ") to tile(" + destinationTile.x + "," + destinationTile.y + ")");
-                                movingUnit.moveUnit(destinationTile);
-
-                                //Tell the clients to move the unit
-                                player2.playerClient.sw.WriteLine("move\\" + message[1] + "\\" + destinationTile.x + "\\" + destinationTile.y);
-
-                                player1.playerClient.sw.WriteLine("move\\" + message[1] + "\\" + destinationTile.x + "\\" + destinationTile.y);
-                            }
-
-                            movingUnit.accessibleTiles.Clear();
+                            log += s + "\\";
                         }
-                    }
 
-                    else if (message[0].Equals("attack"))
-                    {
-                        if (currentPlayer.isMyTurn)
+                        Console.WriteLine(log);
+
+                        //move message sends the command, the tile we are coming from and the tile we are going too
+                        if (message[0].Equals("move"))
                         {
-                            Unit attackingUnit = board.getUnitByID(Int32.Parse(message[1]));
-                            GameBoard.Tile tileToAttack = board.Tiles[Int32.Parse(message[2]), Int32.Parse(message[3])];
-                            attackingUnit.setAttackTiles(attackingUnit.CurrentTile, attackingUnit.AttackRange);
-
-                            if (currentPlayer.playerAllegiance == attackingUnit.unitAllegiance)
+                            //if it is the turn of the client that sent this command
+                            //AND if the tile we want to move to is in the list off accessible tiles of the object on the starting tile
+                            //THEN we send a packet to both clients allow the object to move tiles.
+                            if (currentPlayer.isMyTurn)
                             {
-                                if ( !attackingUnit.Paralyzed)
+                                Unit movingUnit = board.getUnitByID(Int32.Parse(message[1]));
+                                GameBoard.Tile startTile = movingUnit.CurrentTile;
+                                GameBoard.Tile destinationTile = board.Tiles[Int32.Parse(message[2]), Int32.Parse(message[3])];
+                                movingUnit.setAccessibleTiles(startTile, movingUnit.MovementRange);
+
+                                if (currentPlayer.playerAllegiance == movingUnit.unitAllegiance)
                                 {
-                                    if (!attackingUnit.Attacked)
+                                    if (currentPlayer.mana >= movingUnit.MovementCost)
                                     {
-                                        if ( currentPlayer.mana >= attackingUnit.AttackCost)
+                                        if (!movingUnit.Paralyzed)
                                         {
-                                            if ( attackingUnit.accessibleTiles.Contains(tileToAttack))
+                                            if (!movingUnit.Moved)
                                             {
-                                                Console.WriteLine("LOG: Unit " + attackingUnit.UniqueID + " is attacking tile(" + tileToAttack.x + ", " + tileToAttack.y + ")");
-                                                currentPlayer.mana -= attackingUnit.AttackCost;
-
-                                                //get a list of all the unit IDs that were attacked
-                                                //apply damage to all units
-                                                ArrayList unitIDs = attackingUnit.AttackTile(tileToAttack);
-                                                string sendMessage = "attack\\" + attackingUnit.UniqueID + "\\" + unitIDs.Count;
-
-                                                foreach (int id in unitIDs)
+                                                if (movingUnit.accessibleTiles.Contains(destinationTile))
                                                 {
-                                                    Unit unitHit = board.getUnitByID(id);
-                                                    unitHit.ApplyDamage(attackingUnit.Damage);
-                                                    sendMessage += ("\\" + id);
-                                                    attackingUnit.addXP();
+                                                    currentPlayer.mana -= movingUnit.MovementCost;
+
+                                                    Console.WriteLine("LOG: moving unit from tile (" + startTile.x + "," + startTile.y + ") to tile(" + destinationTile.x + "," + destinationTile.y + ")");
+                                                    movingUnit.moveUnit(destinationTile);
+                                                    //Tell the clients to move the unit
+                                                    if (!isAI_Game) { player2.playerClient.sw.WriteLine("move\\" + message[1] + "\\" + destinationTile.x + "\\" + destinationTile.y); }
+                                                    player1.playerClient.sw.WriteLine("move\\" + message[1] + "\\" + destinationTile.x + "\\" + destinationTile.y);
                                                 }
+                                                else
+                                                {
+                                                    Console.WriteLine("LOG: Tile is not in range.");
 
-
-                                                player1.playerClient.sw.WriteLine(sendMessage);
-                                                player2.playerClient.sw.WriteLine(sendMessage);
-                                                attackingUnit.Attacked = true;
+                                                    if (destinationTile.CurrentUnit == null)
+                                                    {
+                                                        Console.WriteLine("LOG: WTF");
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.WriteLine("LOG: {0} ", destinationTile.CurrentUnit);
+                                                    }
+                                                }
                                             }
-
-                                        
                                             else
                                             {
-                                                Console.WriteLine("LOG: Enemy is not in range.");
+                                                Console.WriteLine("LOG: Unit has already moved");
                                             }
                                         }
                                         else
                                         {
-                                            Console.WriteLine("LOG: Player does not have enough mana to attack.");
+                                            Console.WriteLine("LOG: Unit is paralyzed");
                                         }
                                     }
-                                    else
+                                    else 
                                     {
-                                        Console.WriteLine("LOG: Unit has already attacked");
+                                        Console.WriteLine("LOG: Player does not have enough mana.");
                                     }
                                 }
-                                else 
+                                else
                                 {
-                                    Console.WriteLine("LOG: Unit is paralyzed. Cannot Attack.");
+                                    Console.WriteLine("LOG: Unit is not of same allegiance.");
                                 }
+
+                                movingUnit.accessibleTiles.Clear();
                             }
                             else
                             {
-                                Console.WriteLine("LOG: Unit is not of same allegiance.");
+                                Console.WriteLine("LOG: It is not this player's turn");
                             }
+                        }
+                       
 
-                            //fix this, should only need to perform this once
-                            if (board.player1_Guardian.Health <= 0)
+                        else if (message[0].Equals("attack"))
+                        {
+                            if (currentPlayer.isMyTurn)
                             {
-                                board.player1_Soulstone.Invulnerable = false;
-                            }
-                            if (board.player2_Guardian.Health <= 0)
-                            {
-                                board.player2_Soulstone.Invulnerable = false;
-                            }
+                                Unit attackingUnit = board.getUnitByID(Int32.Parse(message[1]));
+                                GameBoard.Tile tileToAttack = board.Tiles[Int32.Parse(message[2]), Int32.Parse(message[3])];
+                                attackingUnit.setAttackTiles(attackingUnit.CurrentTile, attackingUnit.AttackRange);
 
-                            if (board.player1_Soulstone.Health <= 0)
+                                if (currentPlayer.playerAllegiance == attackingUnit.unitAllegiance){
+                                    if ( !attackingUnit.Paralyzed){
+                                        if (!attackingUnit.Attacked){
+                                            if ( currentPlayer.mana >= attackingUnit.AttackCost){
+                                                if ( attackingUnit.accessibleTiles.Contains(tileToAttack)){
+
+                                                    Console.WriteLine("LOG: Unit {0} is attacking tile ( {1} , {2} )"
+                                                                        , attackingUnit.UniqueID
+                                                                        , tileToAttack.x
+                                                                        , tileToAttack.y);
+                                                    currentPlayer.mana -= attackingUnit.AttackCost;
+
+                                                    //get a list of all the unit IDs that were attacked
+                                                    //apply damage to all units
+                                                    ArrayList unitIDs = attackingUnit.AttackTile(tileToAttack);
+                                                    string sendMessage = "attack\\" + attackingUnit.UniqueID + "\\" + unitIDs.Count;
+
+                                                    attackingUnit.Attacked = true;
+
+                                                    foreach (int id in unitIDs)
+                                                    {
+                                                        Unit unitHit = board.getUnitByID(id);
+                                                        attackingUnit.Attack(unitHit);
+                                                        sendMessage += ("\\" + id);
+                                                        attackingUnit.addXP();
+                                                    }
+
+
+                                                    player1.playerClient.sw.WriteLine(sendMessage);
+                                                    if (!isAI_Game) { 
+
+                                                        player2.playerClient.sw.WriteLine(sendMessage);
+                                                    }
+                                                
+                                                }
+
+                                        
+                                                else
+                                                {
+                                                    Console.WriteLine("LOG: Enemy is not in range.");
+                                                }
+                                            }
+                                            else
+                                            {
+                                                Console.WriteLine("LOG: Player does not have enough mana to attack.");
+                                            }
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine("LOG: Unit has already attacked");
+                                        }
+                                    }
+                                    else 
+                                    {
+                                        Console.WriteLine("LOG: Unit is paralyzed. Cannot Attack.");
+                                    }
+                                }
+                                else
+                                {
+                                    Console.WriteLine("LOG: Unit is not of same allegiance.");
+                                }
+
+                                //fix this, should only need to perform this once
+                                if (board.player1_Guardian.Health <= 0)
+                                {
+                                    board.player1_Soulstone.Invulnerable = false;
+                                }
+                                if (board.player2_Guardian.Health <= 0)
+                                {
+                                    board.player2_Soulstone.Invulnerable = false;
+                                }
+
+                                if (board.player1_Soulstone.Health <= 0)
+                                {
+                                    player1.playerClient.sw.WriteLine("defeat");
+                                    if (!isAI_Game) { player2.playerClient.sw.WriteLine("victory"); }
+                                    gameOver = true;
+                                    player1.playerClient.inGame = false;
+                                    player2.playerClient.inGame = false;
+                                }
+                                else if (board.player2_Soulstone.Health <= 0)
+                                {
+                                    player1.playerClient.sw.WriteLine("victory");
+                                    if (!isAI_Game) { player2.playerClient.sw.WriteLine("defeat"); }
+                                    gameOver = true;
+                                    player1.playerClient.inGame = false;
+                                    player2.playerClient.inGame = false;
+                                }
+
+                                attackingUnit.accessibleTiles.Clear();
+                            }
+                        }
+
+                        else if (message[0].Equals("endTurn"))
+                        {
+                            if (currentPlayer.isMyTurn)
+                            {
+                                int maxMana = switchTurns();
+                                player1.playerClient.sw.WriteLine("switchTurns\\{0}", maxMana);
+                                if (!isAI_Game) { player2.playerClient.sw.WriteLine("switchTurns\\{0}", maxMana); }
+                            }
+                        }
+                        else if (message[0].Equals("surrender"))
+                        {
+                            if (currentPlayer.playerAllegiance == Unit.Allegiance.PLAYER_1)
                             {
                                 player1.playerClient.sw.WriteLine("defeat");
-                                player2.playerClient.sw.WriteLine("victory");
-                                gameOver = true;
-                                player1.playerClient.inGame = false;
-                                player2.playerClient.inGame = false;
+                                if (!isAI_Game) { player2.playerClient.sw.WriteLine("victory"); }
                             }
-                            else if (board.player2_Soulstone.Health <= 0)
+                            else
                             {
                                 player1.playerClient.sw.WriteLine("victory");
-                                player2.playerClient.sw.WriteLine("defeat");
-                                gameOver = true;
-                                player1.playerClient.inGame = false;
-                                player2.playerClient.inGame = false;
+                                if (!isAI_Game) { player2.playerClient.sw.WriteLine("defeat"); }
                             }
 
-                            attackingUnit.accessibleTiles.Clear();
+                            gameOver = true;
+                            player1.playerClient.inGame = false;
+                            player2.playerClient.inGame = false;
                         }
                     }
-
-                    else if (message[0].Equals("endTurn"))
-                    {
-                        if (currentPlayer.isMyTurn)
-                        {
-                            int maxMana = switchTurns();
-                            player1.playerClient.sw.WriteLine("switchTurns\\{0}", maxMana);
-                            player2.playerClient.sw.WriteLine("switchTurns\\{0}", maxMana);
-                        }
-                    }
-                    else if (message[0].Equals("surrender"))
-                    {
-                        if (currentPlayer.playerAllegiance == Unit.Allegiance.PLAYER_1)
-                        {
-                            player1.playerClient.sw.WriteLine("defeat");
-                            player2.playerClient.sw.WriteLine("victory");
-                        }
-                        else
-                        {
-                            player1.playerClient.sw.WriteLine("victory");
-                            player2.playerClient.sw.WriteLine("defeat");
-                        }
-
-                        gameOver = true;
-                        player1.playerClient.inGame = false;
-                        player2.playerClient.inGame = false;
-                    }
-                }
+                }       
             }
+
         }
         
         public int switchTurns()
@@ -303,6 +361,7 @@ namespace Guardians_Of_The_Arena_Server
             public int mana;
             public int maxMana;
             public bool isMyTurn;
+            public Queue<string> commandQueue;
 
             public Player(Server.Client playerClient)
             {
@@ -313,7 +372,7 @@ namespace Guardians_Of_The_Arena_Server
 
             public void IncreaseMana()
             {
-                if (maxMana < 12)
+                if (maxMana < 8)
                     maxMana += 2;
 
                 mana = maxMana;

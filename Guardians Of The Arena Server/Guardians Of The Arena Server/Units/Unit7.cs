@@ -7,6 +7,8 @@ namespace Guardians_Of_The_Arena_Server.Units
 {
     class Unit7 : Unit
     {
+        private int attackCountPerTurn = 0;
+
         public Unit7(int ID)
             : base(ID)
         {
@@ -18,6 +20,33 @@ namespace Guardians_Of_The_Arena_Server.Units
             movementCost = 1;
             attackCost = 1;
             attackRange = 1;
+        }
+
+        public override void Attack(Unit unitAttacking)
+        {
+            attackCountPerTurn++;
+
+            if (level >= 2)
+            {
+                if (unitAttacking.unitAllegiance != this.unitAllegiance)
+                {
+                    this.ApplyDamage(-10);
+                }
+            }
+
+            if (level >= 3)
+            {
+                if (attackCountPerTurn < 2)
+                {
+                    this.alreadyAttacked = false;
+                }
+                else
+                {
+                    attackCountPerTurn = 0;
+                }
+            }
+
+            unitAttacking.ApplyDamage(this.damage);
         }
 
         public override ArrayList AttackTile(GameBoard.Tile tile)
@@ -33,8 +62,8 @@ namespace Guardians_Of_The_Arena_Server.Units
         {
             XP = currentXP % 20;
 
-            switch (Level)
-            { }
+            //switch (Level)
+            //{ }
         }
 
     }
