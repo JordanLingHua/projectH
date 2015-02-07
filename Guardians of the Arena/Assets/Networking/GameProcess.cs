@@ -304,7 +304,7 @@ public class GameProcess : MonoBehaviour {
 			// unitID (that attacked) \\number of units affected\\ units
 			else if (tokens[0].Equals("attack"))
 			{
-<<<<<<< HEAD
+
 				gameManager.pMana -= gameManager.units[Int32.Parse (tokens[1])].atkCost;
 
 				//Use the values assigned to targetTileX and targetTileZ from TileScript.cs:
@@ -321,7 +321,7 @@ public class GameProcess : MonoBehaviour {
 
 
 
-=======
+
 //				//new
 //				//Step 1)  Before you do anything, Transition from neutral_states in the post_attack version, to the actual neutral states
 //				//NOTE:  the post_attack neutral states don't get signified by a mode_and_dir.  occured at exit time of attack.  So mode_and_dir is still 
@@ -369,7 +369,7 @@ public class GameProcess : MonoBehaviour {
 //
 //
 //
->>>>>>> origin/master
+
 				if (Int32.Parse (tokens[2]) != 0){
 //	
 					for (int i = 0; i < Int32.Parse (tokens[2]); i ++ ){

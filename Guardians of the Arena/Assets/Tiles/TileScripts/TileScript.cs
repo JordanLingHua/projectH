@@ -70,7 +70,7 @@ public class TileScript : MonoBehaviour {
 		AoETiles.Clear ();
 
 		//Change attack animation back to idle since the
-<<<<<<< HEAD
+
 //		if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 8)
 //			this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 0);
 //		else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 9)
@@ -79,7 +79,7 @@ public class TileScript : MonoBehaviour {
 //			this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 2);
 //		else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 11)
 //			this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 3);
-=======
+
 		/*
 		if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 8)
 			this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 0);
@@ -90,7 +90,7 @@ public class TileScript : MonoBehaviour {
 		else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 11)
 			this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 3);
 			*/
->>>>>>> origin/master
+
 
 	}
 
@@ -124,10 +124,10 @@ public class TileScript : MonoBehaviour {
 			i += Time.deltaTime * rate;
 			move.transform.position = Vector3.Lerp(start, end, i);
 
-<<<<<<< HEAD
+
 			/*Choose animation*/
 //			if(isOpponentPiece == false){
-=======
+
 //			/*Choose animation*/
 //			if(isOpponentPiece == false){
 //
@@ -136,7 +136,7 @@ public class TileScript : MonoBehaviour {
 //
 //				//old
 //				//Step 2 (regular transition trigger)
->>>>>>> origin/master
+
 //				if(end.z > start.z)
 //					this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 4);
 //				else if(end.z < start.z)
@@ -182,14 +182,14 @@ public class TileScript : MonoBehaviour {
 
 			tiles.Pop();
 
-<<<<<<< HEAD
+
 			//Set unit back to neutral animation now that it has moved to the final tile
-=======
+
 
 
 
 //			//Set unit back to neutral animation now that it has moved to the final tile
->>>>>>> origin/master
+
 //			if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 4)
 //				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 0);
 //			else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 5)

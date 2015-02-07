@@ -163,13 +163,13 @@ public class AIScript : MonoBehaviour {
 		switch (toMove.unitType) 
 		{
 			//Units that attack the players units to deal damage
-			case 1:
-			case 3:
-			case 7:
-			case 10:
+		case 1:
+		case 3:
+		case 7:
+		case 10:
 			foreach (TileScript t in toMove.getAtkAccessibleTiles()) {
 				if(t.objectOccupyingTile != null && t.objectOccupyingTile.GetComponent<Unit>().alleg != Unit.allegiance.playerTwo)
-					targetUnits.Add(t.objectOccupyingTile);
+					targetUnits.Add(t.objectOccupyingTile.GetComponent<Unit>());
 			}
 			break;
 			
@@ -178,9 +178,12 @@ public class AIScript : MonoBehaviour {
 			case 2:
 			foreach (TileScript t in toMove.getAtkAccessibleTiles()) 
 				if(t.objectOccupyingTile != null && t.objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerTwo)
-					targetUnits.Add(t.objectOccupyingTile);
-
+					targetUnits.Add(t.objectOccupyingTile.GetComponent<Unit>());
+			break;
 			//TODO MYSTIC
+		default:
+			Debug.Log ("i am rekt m8");
+			break;
 		}
 
 
