@@ -136,12 +136,12 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 			reEnteredPassword = GUILayout.PasswordField(reEnteredPassword, '*', 20);
 			GUILayout.EndHorizontal();
 		}
-
-		GUILayout.BeginHorizontal();
-		GUILayout.Label ("Set IP :", "BoldOutlineText");//----------------- custom
-		ip = GUILayout.TextField(ip, 20);
-		GUILayout.EndHorizontal();
-		
+//
+//		GUILayout.BeginHorizontal();
+//		GUILayout.Label ("Set IP :", "BoldOutlineText");//----------------- custom
+//		ip = GUILayout.TextField(ip, 20);
+//		GUILayout.EndHorizontal();
+//		
 		GUILayout.BeginHorizontal();
 		GUILayout.FlexibleSpace ();
 		if (GUILayout.Button ("Login", "ShortButton")) { //-------------------------------- custom

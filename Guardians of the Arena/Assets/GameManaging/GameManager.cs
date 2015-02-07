@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour {
 	//game managing variables
 	public bool turn, incMana,gameOver,sentEndTurn;
 	public GameObject popUpText;
-	public GUIText uInfo,mana,timerText,suInfo,suLevel1BonusShort,suLevel1BonusLong,suLevel2BonusShort,suLevel2BonusLong;
+	public GUIText mana,timerText,suInfo,suLevel1BonusShort,suLevel1BonusLong,suLevel2BonusShort,suLevel2BonusLong,unitNameGUI,unitDescriptionGUI;
 	public gameState gs;
 	public int pMana,maxMana;
 	public string buttonOption = "Attack";
@@ -52,6 +52,8 @@ public class GameManager : MonoBehaviour {
 
 
 		if (Application.loadedLevelName.Equals ("BoardScene") || Application.loadedLevelName.Equals ("AIScene")) {
+			unitNameGUI = GameObject.Find ("SelectedUnitNameGUIText").GetComponent<GUIText> ();
+			unitDescriptionGUI = GameObject.Find ("SelectedUnitDescriptionGUIText").GetComponent<GUIText> ();
 			tm = GameObject.Find ("TileManager").GetComponent<TileManager> ();
 			suLevel1BonusLong = GameObject.Find("Level1BonusDescriptionGUIText").GetComponent<GUIText>();
 			suLevel1BonusShort = GameObject.Find("Level1BonusNameGUIText").GetComponent<GUIText>();
@@ -214,12 +216,18 @@ public class GameManager : MonoBehaviour {
 //			}
 
 			Unit script = selectedUnit.GetComponent<Unit>();
-			string info ="Level " + script.unitLevel + " " + script.unitName;
-			info += "\nHP: " + script.hp + "/" + script.maxHP;
+
+			string info ="\nHP: " + script.hp + "/" + script.maxHP;
 			info += (script.unitLevel == 3 || script.unitName.Equals("Shrub") )? "": "\nXP: " + script.xp + "/" + script.XP_TO_LEVEL[script.unitLevel-1];
 
 			if (!script.paralyzed){
-				info +=  script.atk > 0? "\nDamage: " + script.atk : "";
+				if (script.atk > 0){
+					info +="\nDamage: " + script.atk; 
+				}else if (script.atk < 0){
+					info += "\nHeals for: " + -1*script.atk;
+				}else{
+					info += "";
+				}
 				info += script.mvCost > 0? "\nMove Cost: " + script.mvCost : "";
 				info += script.atkCost > 0? "\nAttack Cost: " + script.atkCost : "";
 			}else{
@@ -238,7 +246,8 @@ public class GameManager : MonoBehaviour {
 			}
 			
 			suInfo.text =  info;
-
+			unitNameGUI.text = script.unitName;
+			unitDescriptionGUI.text = script.description;
 			if (!script.paralyzed){
 				if (script.unitLevel >= 2){
 					suLevel1BonusShort.color = Color.white;
@@ -324,7 +333,8 @@ public class GameManager : MonoBehaviour {
 	
 	public void clearSelection(){
 		suInfo.text = "";
-
+		unitNameGUI.text = "";
+		unitDescriptionGUI.text = "";
 		suLevel1BonusShort.color = Color.gray;
 		suLevel1BonusLong.color = Color.gray;
 		suLevel2BonusShort.color = Color.gray;
