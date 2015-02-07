@@ -9,8 +9,10 @@ public class Priest : Unit {
 		base.Start ();
 		levelBonusShort [0] = "Mighty Heal";
 		levelBonusShort [1] = "Rain of Light";
-		levelBonusLong [0] = "Heal now heals the target to\nfull health";
-		levelBonusLong [1] = "Healing a unit now heals units\nnear it for 10 health";
+		levelBonusLong [0] = "Heal now heals the target\nto full health";
+		levelBonusLong [1] = "Heals allies near target\nfor 10 health";
+		description = "A great support healing unit that can help\n" +
+						"her allies from a distance";
 		unitName = "Priest";
 		unitType = 8;
 		hp = 20;

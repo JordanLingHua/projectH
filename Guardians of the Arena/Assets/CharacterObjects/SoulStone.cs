@@ -7,6 +7,9 @@ public class SoulStone: Unit {
 		base.Start ();
 		unitType = 11;
 		unitName = "Soulstone";
+		description = "The Soulstone allows the player to control\n" +
+						"units, if it is destroyed the player loses.\n" +
+						"It is invincible until the Guardian is killed";
 		hp = 1;
 		maxHP = 1;
 		atk = 0;

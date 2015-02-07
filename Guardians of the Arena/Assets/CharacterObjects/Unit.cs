@@ -13,6 +13,7 @@ public class Unit    : MonoBehaviour {
 	public bool atkd, mvd,paralyzed;
 	public string unitName = string.Empty;
 	public string info = string.Empty;
+	public string description = string.Empty;
 	public string[] levelBonusShort = {"",""};
 	public string[] levelBonusLong = {"",""};
 	public bool invincible,displayHPBar,displayXPBar;
@@ -130,13 +131,33 @@ public class Unit    : MonoBehaviour {
 			transform.parent.GetComponent<TileScript> ().OnMouseOver ();
 		}else{
 			//used for setup screen info
-			string info = "" +unitName + "\nHP: " + hp + "/" + maxHP;
-			info += "\nMovement Range: " + mvRange;
+			string info ="\nHP: " + hp + "/" + maxHP;
+			if (atk > 0){
+				info +="\nDamage: " + atk; 
+			} else if (atk == 0){
+				info += "";
+			}else {
+				info += "\nHeals for: " + -1*atk;
+			}
 			info += mvCost > 0? "\nMove Cost: " + mvCost : "";
+			info += mvRange >0? "\nMove Range: " + mvRange : "";
 			info += atkCost > 0? "\nAttack Cost: " + atkCost : "";
-			info += atk > 0? "\nDamage: " + atk : "";
+			info += atkRange > 0? "\nAttack Range: " + atkRange: "";
+
+
+			GameObject.Find ("Level1BonusNameGUIText").GetComponent<GUIText>().text = levelBonusShort[0];
+			GameObject.Find ("Level1BonusDescriptionGUIText").GetComponent<GUIText>().text = levelBonusLong[0];
+			GameObject.Find ("Level2BonusNameGUIText").GetComponent<GUIText>().text = levelBonusShort[1];
+			GameObject.Find ("Level2BonusDescriptionGUIText").GetComponent<GUIText>().text = levelBonusLong[1];
 
 			GameObject.Find ("SetupScreenUnitInfo").GetComponent<GUIText>().text = info;
+			if (unitName == "Soulstone"){
+				GameObject.Find("UnitDescription").transform.position = new Vector3(0.7f,0.88f);
+			}else if (unitName == "Mystic"){
+				GameObject.Find("UnitDescription").transform.position = new Vector3(0.7f,0.74f);
+			}
+			GameObject.Find ("UnitNameInfo").GetComponent<GUIText>().text = unitName;
+			GameObject.Find("UnitDescription").GetComponent<GUIText>().text = description;
 		}		
 	}
 
@@ -147,6 +168,13 @@ public class Unit    : MonoBehaviour {
 			//gm.uInfo.text  = "";
 		}else {
 			GameObject.Find ("SetupScreenUnitInfo").GetComponent<GUIText>().text = "";
+			GameObject.Find ("Level1BonusNameGUIText").GetComponent<GUIText>().text = "";
+			GameObject.Find ("Level1BonusDescriptionGUIText").GetComponent<GUIText>().text = "";
+			GameObject.Find ("Level2BonusNameGUIText").GetComponent<GUIText>().text = "";
+			GameObject.Find ("Level2BonusDescriptionGUIText").GetComponent<GUIText>().text = "";
+			GameObject.Find ("UnitNameInfo").GetComponent<GUIText>().text = "";
+			GameObject.Find("UnitDescription").GetComponent<GUIText>().text = "";
+			GameObject.Find("UnitDescription").transform.position = new Vector3(0.7f,0.71f);
 		}
 	}
 

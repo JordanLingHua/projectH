@@ -47,7 +47,7 @@ public class SetupScreenGUI : MonoBehaviour {
 		pageNameScript = GameObject.Find ("PageInfo").GetComponent<PageNameScript> ();
 		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 		playerSetup = GameObject.Find("PlayerSetup").GetComponent<PlayerSetup>();
-		windowRect5 = new Rect (Screen.width - 330, Screen.height - 360, displayWidth5, displayHeight5);
+		windowRect5 = new Rect (Screen.width - 315, Screen.height - 330, displayWidth5, displayHeight5);
 		am = GameObject.Find ("AudioManager").GetComponent<AudioManager> ();
 	}
 	
