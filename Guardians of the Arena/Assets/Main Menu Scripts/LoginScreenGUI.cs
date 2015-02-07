@@ -211,13 +211,14 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 			loginText = "Connecting...";
 			if ( process.returnSocket().Connect() )
 			{						
-				loginText = "Connect Succeeded";	
+				loginText = "Logging in ";
+				StartCoroutine(loginDots());
 				connected = true;
 			}
 			
 			else {
 				am.playErrorSFX ();
-				loginText = "Connect Failed";}
+				loginText = "Connect Failed!";}
 		}
 		
 		string source = password;
@@ -230,6 +231,17 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 			Console.WriteLine("The MD5 hash of " + source + " is: " + hash + ".");				
 			process.returnSocket().SendTCPPacket("userInfo\\" + userName + "\\" + hash);
 		}
+	}
+
+	IEnumerator loginDots()
+	{
+		while (true) {
+						if (loginText.Equals ("Logging in ..."))
+								loginText = ("Logging in ");
+						else
+								loginText += ".";
+						yield return new WaitForSeconds (0.3f);
+				}
 	}
 	
 	void OnGUI ()

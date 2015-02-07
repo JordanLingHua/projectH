@@ -186,6 +186,7 @@ public class SetupScreenGUI : MonoBehaviour {
 			if (GUILayout.Button ("Save", "ShortButton")) {
 				editName = false;
 				pageNameScript.pages[playerSetup.activePage] = tempName;
+				gp.returnSocket().SendTCPPacket("updateSetupName" + "\\" + pageNumber.selectedPage + "\\" + tempName);
 			}
 
 		GUILayout.EndHorizontal();

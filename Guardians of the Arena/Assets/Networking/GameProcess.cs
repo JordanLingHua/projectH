@@ -9,7 +9,9 @@ public class GameProcess : MonoBehaviour {
 	public int clientNumber;
 	public int playerNumber;
 	public string playerName;
+	public string[] tempPageNameStorage;
 	public bool play;
+	private bool loaded;
 	
 	public DateTime dT;
 	public Stopwatch uniClock;
@@ -35,6 +37,13 @@ public class GameProcess : MonoBehaviour {
 		
 		socks = new Sockets();
 		play = false;
+		tempPageNameStorage = new string[5];
+//		tempPageNameStorage [0] = "";
+//		tempPageNameStorage [1] = "";
+//		tempPageNameStorage [2] = "";
+//		tempPageNameStorage [3] = "";
+//		tempPageNameStorage [4] = "";
+		loaded = false;
 	}
 
 	void Update () {
@@ -69,8 +78,18 @@ public class GameProcess : MonoBehaviour {
 			// loginSucceed\\correctUsername
 			else if (tokens[0].Equals("loginSucceed"))
 			{
+				for (int i = 0; i < 5; i++)
+				{
+					tempPageNameStorage[i] = tokens[i+2];
+				}
+
+				if (tokens[7].Equals("1"))
+					GameObject.Find("Login_GUI").GetComponent<LoginScreenGUI>().loginText =
+						"Creating Account...";
 				GameObject.Find("Login_GUI").GetComponent<LoginScreenGUI>().loginSucceed();
 				playerName = tokens[1];
+
+
 			}
 			
 			// loginFail
@@ -112,6 +131,8 @@ public class GameProcess : MonoBehaviour {
 				GameObject.Find("Login_GUI").GetComponent<LoginScreenGUI>().loginText =
 					tokens[1] + " is already logged in!";
 			}
+
+		
 			
 			// startGame\\playerNumber
 			else if (tokens[0].Equals("startGame"))
@@ -276,6 +297,8 @@ public class GameProcess : MonoBehaviour {
 				if (pum.allowAutoMoveAttackToggle){
 					gameManager.changeToAttacking();
 				}
+				if (Application.loadedLevelName.Equals("AIScene"))
+					GameObject.Find("AI").GetComponent<AIScript>().serverResponded = true;
 			}
 			
 			// unitID (that attacked) \\number of units affected\\ units
@@ -285,15 +308,15 @@ public class GameProcess : MonoBehaviour {
 
 				//Use the values assigned to targetTileX and targetTileZ from TileScript.cs:
 				//Attack animation based on the position of the tile that is going to be attacked
-				if(gameManager.units[Int32.Parse (tokens[1])].transform.position.z > targetTileZ)
-					gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 8);
-				else if(gameManager.units[Int32.Parse (tokens[1])].transform.position.z < targetTileZ)
-					gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 9);
-				else if(gameManager.units[Int32.Parse (tokens[1])].transform.position.x > targetTileX)
-					gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 10);
-				else if(gameManager.units[Int32.Parse (tokens[1])].transform.position.x < targetTileX)
-					gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 11);
-				//hmm it seems to always play the attack_front animation
+//				if(gameManager.units[Int32.Parse (tokens[1])].transform.position.z > targetTileZ)
+//					gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 8);
+//				else if(gameManager.units[Int32.Parse (tokens[1])].transform.position.z < targetTileZ)
+//					gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 9);
+//				else if(gameManager.units[Int32.Parse (tokens[1])].transform.position.x > targetTileX)
+//					gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 10);
+//				else if(gameManager.units[Int32.Parse (tokens[1])].transform.position.x < targetTileX)
+//					gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 11);
+//				//hmm it seems to always play the attack_front animation
 
 
 
@@ -314,6 +337,9 @@ public class GameProcess : MonoBehaviour {
 				if (pum.allowAutoMoveAttackToggle){
 					gameManager.changeToMoving();
 				}
+
+				if (Application.loadedLevelName.Equals("AIScene"))
+					GameObject.Find("AI").GetComponent<AIScript>().serverResponded = true;
 			}
 
 			//switchTurns
@@ -383,22 +409,28 @@ public class GameProcess : MonoBehaviour {
 	
 	void OnLevelWasLoaded(int sceneNumber)
 	{
-
+		if (sceneNumber == 1) {
+			if (!loaded){
+				loaded = true;
+			PageNameScript pns = GameObject.Find("PageInfo").GetComponent<PageNameScript>();
+			pns.pages = new string[5];
+			for (int i = 0; i < 5; i++)
+			{
+				pns.pages[i] = tempPageNameStorage[i];
+			}
+		}
+				
+		}
 		if (sceneNumber == 3)//PvP multiplayer
-						loadManagers ();
-				else if (sceneNumber == 2)
-						playerSetup = GameObject.Find ("PlayerSetup").GetComponent<PlayerSetup> ();
-				else if (sceneNumber == 0)
-						socks = new Sockets ();
-				else if (sceneNumber == 5) {
-						loadManagers ();
-						//loadAI ();
-				}
-
-		if (sceneNumber == 3)
-			loadManagers ();
+				loadManagers ();
 		else if (sceneNumber == 2)
-			playerSetup = GameObject.Find ("PlayerSetup").GetComponent<PlayerSetup> ();
+				playerSetup = GameObject.Find ("PlayerSetup").GetComponent<PlayerSetup> ();
+		else if (sceneNumber == 0)
+				socks = new Sockets ();
+		else if (sceneNumber == 5) {
+				loadManagers ();
+				//loadAI ();
+		}
 		else if (sceneNumber == 0)
 			socks = new Sockets ();
 		
