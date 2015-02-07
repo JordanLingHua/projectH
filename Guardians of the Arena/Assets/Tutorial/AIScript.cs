@@ -13,6 +13,7 @@ public class AIScript : MonoBehaviour {
 	List<Unit> AIUnits;
 	List<Unit> targetUnits;
 	List<Unit> obstacles;
+	List<Unit> playerUnits;
 	// Use this for initialization
 
 	void Start () {
@@ -23,6 +24,7 @@ public class AIScript : MonoBehaviour {
 		AIUnits = new List<Unit>();		
 		targetUnits = new List<Unit>();	
 		obstacles = new List<Unit>();	
+		playerUnits = new List<Unit>();	
 	}
 
 	public void makeGameAction(Unit u)
@@ -40,6 +42,13 @@ public class AIScript : MonoBehaviour {
 //			if(x.alleg == Unit.allegiance.playerOne)
 //				targetUnits.Add(x);
 //		}
+
+		playerUnits.Clear ();
+		foreach (Unit x in gameManager.units.Values)
+		{
+			if(x.alleg == Unit.allegiance.playerOne)
+				playerUnits.Add(x);
+		}
 
 		obstacles.Clear ();
 		foreach (Unit x in gameManager.units.Values)
@@ -85,6 +94,7 @@ public class AIScript : MonoBehaviour {
 			List<TileScript> possibleMoveTiles = new List<TileScript> (possMvTile);
 
 			Unit closestTarget = getClosestTarget (toMove);
+			Debug.Log("clostestsadfadf: " + closestTarget.name);
 
 			TileScript destinationTile = getTileClosestToNearestTarget (possibleMoveTiles, closestTarget);
 
@@ -160,62 +170,66 @@ public class AIScript : MonoBehaviour {
 		float minDistance = 50;
 		TileScript toMoveTileScript = toMove.GetComponentInParent<TileScript> ();
 
-		switch (toMove.unitType) 
-		{
-			//Units that attack the players units to deal damage
-		case 1:
-		case 3:
-		case 7:
-		case 10:
-			foreach (TileScript t in toMove.getAtkAccessibleTiles()) {
-				if(t.objectOccupyingTile != null && t.objectOccupyingTile.GetComponent<Unit>().alleg != Unit.allegiance.playerTwo)
-					targetUnits.Add(t.objectOccupyingTile.GetComponent<Unit>());
-			}
-			break;
+		switch (toMove.unitType) {
+				//Units that attack the players units to deal damage
+				case 1:
+				case 3:
+				case 7:
+				case 10:
+						foreach (Unit u in gameManager.units.Values) {
+								if (u.GetComponent<Unit> ().alleg != Unit.allegiance.playerTwo) {
+										//targetUnits.Add(t.objectOccupyingTile.GetComponent<Unit>());
+										targetUnits.Add (u);
+								}
+						}
+						break;
 			
-			//healer targets lowest health ally
-			case 8:
-			case 2:
-			foreach (TileScript t in toMove.getAtkAccessibleTiles()) 
-				if(t.objectOccupyingTile != null && t.objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerTwo)
-					targetUnits.Add(t.objectOccupyingTile.GetComponent<Unit>());
-			break;
-			//TODO MYSTIC
-		default:
-			Debug.Log ("i am rekt m8");
-			break;
-		}
+				//healer targets lowest health ally
+				case 8:
+				case 2:
+						foreach (Unit u in gameManager.units.Values) {
+								if (u.GetComponent<Unit> ().alleg == Unit.allegiance.playerTwo)
+										targetUnits.Add (u);
+						}
+						break;
+				//TODO MYSTIC
 
-
-		foreach (Unit p in targetUnits)
-		{
-			TileScript pTileScript = p.GetComponentInParent<TileScript>();
+				default:
+						Debug.Log ("i am rekt m8");
+						break;
 		
-			tempDistance = Math.Abs(pTileScript.x - toMoveTileScript.x) + Math.Abs(pTileScript.y - toMoveTileScript.y);
 
-			if (tempDistance < minDistance)
-			{
-				closestTarget = p;
-				minDistance = tempDistance;
-			}
-		}
+						Debug.Log ("");
+						foreach (Unit p in targetUnits) {
+								TileScript pTileScript = p.GetComponentInParent<TileScript> ();
+		
+								tempDistance = Math.Abs (pTileScript.x - toMoveTileScript.x) + Math.Abs (pTileScript.y - toMoveTileScript.y);
+
+								if (tempDistance < minDistance) {
+										closestTarget = p;
+										minDistance = tempDistance;
+								}
+						}
+				}
 		
 		return closestTarget;
 	}
-
+	
 	TileScript getTileClosestToNearestTarget(List<TileScript> moveTiles, Unit closestTarget){
 		float minDistance = 50;
-		float tempDistance;
+		float tempDistance2;
+		Debug.Log ("closestTarget: " + closestTarget.name);
+		Debug.Log (" tile: " + closestTarget.GetComponentInParent<TileScript>());
 		TileScript targetLocation = closestTarget.GetComponentInParent<TileScript> ();
 		TileScript destinationTile = null;
 		foreach (TileScript t in moveTiles)
 		{			
-			tempDistance = Math.Abs(t.x - targetLocation.x) + Math.Abs(t.y - targetLocation.y);
+			tempDistance2 = Math.Abs(t.x - targetLocation.x) + Math.Abs(t.y - targetLocation.y);
 			
-			if (tempDistance < minDistance && t.GetComponent<TileScript>().objectOccupyingTile == null)
+			if (tempDistance2 < minDistance && t.GetComponent<TileScript>().objectOccupyingTile == null)
 			{
 				destinationTile = t;
-				minDistance = tempDistance;
+				minDistance = tempDistance2;
 			}
 		}
 		return destinationTile;
