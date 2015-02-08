@@ -28,11 +28,11 @@ public class GameManager : MonoBehaviour {
 	int unitActionOption;
 	string[] unitOptionStrings = new string[] {"Mo(v)e","(A)ttack"};
 	//Selected unit and available move squares
-	public Unit selectedUnit = null;
+	public Unit selectedUnit = null,hoverOverUnit = null;
 	public HashSet<TileScript> accessibleTiles = new HashSet<TileScript>();
 
 	public GameObject UnitOne,UnitTwo,UnitThree,UnitFour,UnitFive,UnitSix,UnitSeven,UnitEight,UnitNine,UnitTen,UnitEleven;
-//	GameObject selectedUnitDisplay;
+	GameObject hoverUnitDisplay;
 
 	//Timer variables
 	readonly float TIMER_LENGTH = 60f;
@@ -143,83 +143,63 @@ public class GameManager : MonoBehaviour {
 	}
 
 
-	void OnGUI(){
-		//show button for returning to main menu
-		GUI.BeginGroup (new Rect(Screen.width*0.35f,Screen.height-((float)Screen.height*0.080f),Screen.width*0.15f,35));
-		GUILayout.BeginHorizontal();
-		if (gameOver){
-			if (GUILayout.Button ("Return to main menu", "ShortButton")) {
-				am.playButtonSFX();
-				DontDestroyOnLoad(GameObject.Find ("GameProcess"));
-				Application.LoadLevel(1);
-			}
-		}
-		GUILayout.EndHorizontal();
-		GUI.EndGroup ();
-
-		GUI.skin = mySkin;
-		combatLogWindowRect = GUI.Window (2, combatLogWindowRect, combatLogWindow, "");
-		GUI.BeginGroup (new Rect (0,0,100,100));
-		GUI.EndGroup();
-		if (selectedUnit != null){
-//			Vector3 worldPoint = gp.playerNumber == 1? new Vector3(122,20,75) : new Vector3(-23,20,30);
-//			if (selectedUnitDisplay == null  || selectedUnitDisplay.name != (selectedUnit.unitName + "(Clone)")){
-//				Destroy(selectedUnitDisplay);
-//				switch(selectedUnit.unitType){
+	public void displayUnitInfo(Unit unit){
+		if (unit!= null){
+//			Vector3 worldPoint = gp.playerNumber == 1? new Vector3(122,20,75):new Vector3(-23,20,30) ;
+//			if (hoverUnitDisplay == null){
+//				switch(unit.unitType){
 //				case 1:
-//					selectedUnitDisplay = (GameObject)Instantiate(UnitOne, worldPoint, new Quaternion());
-//					Destroy(selectedUnitDisplay.GetComponent<KnifeThrower>());
+//					hoverUnitDisplay = (GameObject)Instantiate(UnitOne, worldPoint, new Quaternion());
+//					Destroy(hoverUnitDisplay.GetComponent<KnifeThrower>());
 //					break;
 //				case 2:
-//					selectedUnitDisplay = (GameObject)Instantiate(UnitTwo, worldPoint, new Quaternion());
-//					Destroy(selectedUnitDisplay.GetComponent<Mystic>());
+//					hoverUnitDisplay = (GameObject)Instantiate(UnitTwo, worldPoint, new Quaternion());
+//					Destroy(hoverUnitDisplay.GetComponent<Mystic>());
 //					break;
 //				case 3:
-//					selectedUnitDisplay = (GameObject)Instantiate(UnitThree, worldPoint, new Quaternion());
-//					Destroy(selectedUnitDisplay.GetComponent<Templar>());
+//					hoverUnitDisplay = (GameObject)Instantiate(UnitThree, worldPoint, new Quaternion());
+//					Destroy(hoverUnitDisplay.GetComponent<Templar>());
 //					break;
 //				case 4:
-//					selectedUnitDisplay = (GameObject)Instantiate(UnitFour,worldPoint, new Quaternion());
-//					Destroy(selectedUnitDisplay.GetComponent<AoEUnit>());
+//					hoverUnitDisplay = (GameObject)Instantiate(UnitFour,worldPoint, new Quaternion());
+//					Destroy(hoverUnitDisplay.GetComponent<AoEUnit>());
 //					break;
 //				case 5:
-//					selectedUnitDisplay = (GameObject)Instantiate(UnitFive,worldPoint, new Quaternion());
-//					Destroy(selectedUnitDisplay.GetComponent<UtilityUnit>());
+//					hoverUnitDisplay = (GameObject)Instantiate(UnitFive,worldPoint, new Quaternion());
+//					Destroy(hoverUnitDisplay.GetComponent<UtilityUnit>());
 //					break;
 //				case 6:
-//					selectedUnitDisplay = (GameObject)Instantiate(UnitSix, worldPoint, new Quaternion());
-//					Destroy(selectedUnitDisplay.GetComponent<BuffingUnit>());
+//					hoverUnitDisplay = (GameObject)Instantiate(UnitSix, worldPoint, new Quaternion());
+//					Destroy(hoverUnitDisplay.GetComponent<BuffingUnit>());
 //					break;
 //				case 7:
-//					selectedUnitDisplay = (GameObject)Instantiate(UnitSeven, worldPoint,new Quaternion());
-//					Destroy(selectedUnitDisplay.GetComponent<Swordsman>());
+//					hoverUnitDisplay = (GameObject)Instantiate(UnitSeven, worldPoint,new Quaternion());
+//					Destroy(hoverUnitDisplay.GetComponent<Swordsman>());
 //					break;
 //				case 8:
-//					selectedUnitDisplay = (GameObject)Instantiate(UnitEight, worldPoint,new Quaternion());
-//					Destroy(selectedUnitDisplay.GetComponent<Priest>());
+//					hoverUnitDisplay = (GameObject)Instantiate(UnitEight, worldPoint,new Quaternion());
+//					Destroy(hoverUnitDisplay.GetComponent<Priest>());
 //					break;
 //				case 9:
-//					selectedUnitDisplay = (GameObject)Instantiate(UnitNine, worldPoint, new Quaternion());
-//					Destroy(selectedUnitDisplay.GetComponent<RangedUnit>());
+//					hoverUnitDisplay = (GameObject)Instantiate(UnitNine, worldPoint, new Quaternion());
+//					Destroy(hoverUnitDisplay.GetComponent<RangedUnit>());
 //					break;
 //				case 10:
-//					selectedUnitDisplay = (GameObject)Instantiate(UnitTen, worldPoint, new Quaternion());
-//					Destroy(selectedUnitDisplay.GetComponent<Guardian>());
+//					hoverUnitDisplay = (GameObject)Instantiate(UnitTen, worldPoint, new Quaternion());
+//					Destroy(hoverUnitDisplay.GetComponent<Guardian>());
 //					break;
 //				case 11:
-//					selectedUnitDisplay = (GameObject)Instantiate(UnitEleven,worldPoint,new Quaternion());
-//					Destroy(selectedUnitDisplay.GetComponent<SoulStone>());
+//					hoverUnitDisplay = (GameObject)Instantiate(UnitEleven,worldPoint,new Quaternion());
+//					Destroy(hoverUnitDisplay.GetComponent<SoulStone>());
 //					break;
 //				}
-//				selectedUnitDisplay.transform.localScale = new Vector3(20,20,20);
-//
+//				//hoverUnitDisplay.transform.localScale = new Vector3(40,40,20);
 //			}
-
-			Unit script = selectedUnit.GetComponent<Unit>();
-
+			Unit script = unit.GetComponent<Unit>();
+			
 			string info ="\nHP: " + script.hp + "/" + script.maxHP;
 			info += (script.unitLevel == 3 || script.unitName.Equals("Shrub") )? "": "\nXP: " + script.xp + "/" + script.XP_TO_LEVEL[script.unitLevel-1];
-
+			
 			if (!script.paralyzed){
 				if (script.atk > 0){
 					info +="\nDamage: " + script.atk; 
@@ -263,11 +243,29 @@ public class GameManager : MonoBehaviour {
 				suLevel2BonusLong.text = script.levelBonusLong[1];
 			}
 		}
+	}
+
+	void OnGUI(){
+		//show button for returning to main menu
+		GUI.BeginGroup (new Rect(Screen.width*0.35f,Screen.height-((float)Screen.height*0.080f),Screen.width*0.15f,35));
+		GUILayout.BeginHorizontal();
+		if (gameOver){
+			if (GUILayout.Button ("Return to main menu", "ShortButton")) {
+				am.playButtonSFX();
+				DontDestroyOnLoad(GameObject.Find ("GameProcess"));
+				Application.LoadLevel(1);
+			}
+		}
+		GUILayout.EndHorizontal();
+		GUI.EndGroup ();
+
+		GUI.skin = mySkin;
+		combatLogWindowRect = GUI.Window (2, combatLogWindowRect, combatLogWindow, "");
+		GUI.BeginGroup (new Rect (0,0,100,100));
+		GUI.EndGroup();
+		displayUnitInfo (hoverOverUnit);
 		//set display for mana
-
 		mana.text = turn? "Mana: " + pMana + "/" + maxMana : "Opponent's Mana: " + pMana + "/" + maxMana;
-
-
 		//Button to toggle between attacking and moving a piece
 		//only change options if changed
 		int prev = unitActionOption;
@@ -330,8 +328,10 @@ public class GameManager : MonoBehaviour {
 		if (selectedUnit != null) 
 			selectedUnit.GetComponent<Unit>().showMvTiles(selectedUnit.alleg == Unit.allegiance.playerOne? Unit.allegiance.playerOne : Unit.allegiance.playerTwo);
 	}
-	
-	public void clearSelection(){
+
+
+	public void clearHoverUnitInfo(){
+
 		suInfo.text = "";
 		unitNameGUI.text = "";
 		unitDescriptionGUI.text = "";
@@ -339,12 +339,15 @@ public class GameManager : MonoBehaviour {
 		suLevel1BonusLong.color = Color.gray;
 		suLevel2BonusShort.color = Color.gray;
 		suLevel2BonusLong.color = Color.gray;
-
+		
 		suLevel1BonusShort.text = "";
 		suLevel1BonusLong.text = "";
 		suLevel2BonusShort.text ="";
 		suLevel2BonusLong.text = "";
-//		Destroy (selectedUnitDisplay);
+		Destroy (hoverUnitDisplay);
+	}
+
+	public void clearSelection(){
 		selectedUnit = null;
 		accessibleTiles.Clear();
 		tm.clearAllTiles();
@@ -387,9 +390,8 @@ public class GameManager : MonoBehaviour {
 
 		gs = gameState.playerMv;
 		if (Application.loadedLevelName.Equals ("AIScene") && !turn) {
-
-						GameObject.Find ("AI").GetComponent<AIScript> ().makeGameAction (null);
-				}
+			GameObject.Find ("AI").GetComponent<AIScript> ().makeGameAction (null);
+		}
 	}
 	
 }

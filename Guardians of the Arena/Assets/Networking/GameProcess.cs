@@ -558,7 +558,10 @@ public class GameProcess : MonoBehaviour {
 
 	void OnApplicationQuit(){
 		try{
-			socks.Disconnect();
+			returnSocket().SendTCPPacket("logout\\" + playerName);
+			returnSocket().t.Abort();
+			returnSocket().endThread();
+			returnSocket().Disconnect();
 			Console.WriteLine("Application disconnected through application quit");
 		}catch(Exception e){
 			print ("Error on disconnect: " + e);

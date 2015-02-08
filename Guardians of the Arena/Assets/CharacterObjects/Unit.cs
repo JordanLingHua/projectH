@@ -129,6 +129,7 @@ public class Unit    : MonoBehaviour {
 
 		if (Application.loadedLevelName.Equals("BoardScene") || Application.loadedLevelName.Equals("AIScene")){
 			transform.parent.GetComponent<TileScript> ().OnMouseOver ();
+			gm.hoverOverUnit = this;
 		}else{
 			//used for setup screen info
 			string info ="\nHP: " + hp + "/" + maxHP;
@@ -165,6 +166,8 @@ public class Unit    : MonoBehaviour {
 		//clear unit info when not hovering over it
 		if (Application.loadedLevelName.Equals("BoardScene") || Application.loadedLevelName.Equals("AIScene")){
 			transform.parent.GetComponent<TileScript> ().OnMouseExit ();
+			gm.hoverOverUnit = null;
+			gm.clearHoverUnitInfo();
 			//gm.uInfo.text  = "";
 		}else {
 			GameObject.Find ("SetupScreenUnitInfo").GetComponent<GUIText>().text = "";
