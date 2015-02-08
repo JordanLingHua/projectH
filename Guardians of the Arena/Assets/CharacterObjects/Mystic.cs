@@ -35,13 +35,13 @@ public class Mystic: Unit {
 			string player = ((gp.playerNumber ==  1 && this.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && this.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
 			string unitAffectedPlayer = ((gp.playerNumber ==  1 && unitFocused.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && unitFocused.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
 			//allied units get only increased mv range and attack damage
-			unitFocused.mysticFocusingThis = null;
 			unitFocused.showPopUpText("No Longer Focused!",Color.yellow);
-			unitFocused.mvRange = oldMvRange;
-			unitFocused.atkRange = oldAtkRange;
-			unitFocused.atk = oldAtkDmg;
-
-			if (unitFocused.alleg != this.alleg){
+			if (unitFocused.alleg == this.alleg){
+				unitFocused.allyFocusingThis = null;
+				unitFocused.mvRange = oldMvRange;
+				unitFocused.atkRange = oldAtkRange;
+				unitFocused.atk = oldAtkDmg;
+			}else if (unitFocused.alleg != this.alleg){
 				unitFocused.paralyzed = false;
 			}
 			showPopUpText("Lost Focus!",Color.red);
@@ -93,9 +93,9 @@ public class Mystic: Unit {
 		if (!unitAffected.invincible){
 			//save variables for reverting later
 			unitFocused = unitAffected;
-			unitFocused.mysticFocusingThis = this;
 			if (unitFocused.alleg != this.alleg){
 				unitFocused.paralyzed = true;
+				unitAffected.showPopUpText("Focused!",Color.red);
 			}
 			if (unitAffected.unitType == 2){
 				(unitAffected as Mystic).revertStatsOfFocused();
@@ -103,22 +103,17 @@ public class Mystic: Unit {
 
 			gm.addLogToCombatLog(player + unitName +" focused "+ unitAffectedPlayer +  unitAffected.unitName);
 
-			oldMvRange = unitAffected.mvRange;
-			oldAtkRange = unitAffected.atkRange;
-			oldAtkDmg = unitAffected.atk;
-
 			if ((alleg == Unit.allegiance.playerOne  && unitFocused.alleg == Unit.allegiance.playerOne) || (alleg == Unit.allegiance.playerTwo && unitFocused.alleg == Unit.allegiance.playerTwo)){
+				oldMvRange = unitAffected.mvRange;
+				oldAtkRange = unitAffected.atkRange;
+				oldAtkDmg = unitAffected.atk;
+
 				unitAffected.mvRange += 3;
+				allyFocusingThis = this;
 				unitAffected.showPopUpText("Focused!",Color.green);
 				if (unitLevel == 2){
 					unitAffected.atk += 5;
 				}
-			//Enemy units are frozen
-			}else if ((alleg == Unit.allegiance.playerOne && unitFocused.alleg == Unit.allegiance.playerTwo) || (alleg == Unit.allegiance.playerTwo && unitFocused.alleg == Unit.allegiance.playerOne)){
-				unitAffected.atkRange = 0;
-				unitAffected.mvRange = 0;
-				unitAffected.atk = 0;
-				unitAffected.showPopUpText("Focused!",Color.red);
 			}
 
 

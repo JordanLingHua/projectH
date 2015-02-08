@@ -226,7 +226,7 @@ public class AIManager : MonoBehaviour {
 			info += "\nHP: " + script.hp + "/" + script.maxHP;
 			info += (script.unitLevel == 3 || script.unitName.Equals("Shrub") )? "": "\nXP: " + script.xp + "/" + script.XP_TO_LEVEL[script.unitLevel-1];
 
-			if (script.mysticFocusingThis == null || script.mysticFocusingThis.alleg == script.alleg){
+			if (!script.paralyzed){
 				info +=  script.atk > 0? "\nDamage: " + script.atk : "";
 				info += script.mvCost > 0? "\nMove Cost: " + script.mvCost : "";
 				info += script.atkCost > 0? "\nAttack Cost: " + script.atkCost : "";

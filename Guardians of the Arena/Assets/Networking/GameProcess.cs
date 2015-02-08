@@ -428,8 +428,11 @@ public class GameProcess : MonoBehaviour {
 //							gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 15);
 //
 
+						if (!gameManager.units[Int32.Parse(tokens[3+i])].invincible){
+							gameManager.units[Int32.Parse (tokens[1])].gainXP();
+						}
 
-						gameManager.units[Int32.Parse (tokens[1])].gainXP();
+
 					}
 			}else{
 					gameManager.units[Int32.Parse (tokens[1])].showPopUpText("Attacked Nothing!", Color.red);

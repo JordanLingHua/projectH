@@ -17,7 +17,7 @@ public class Unit    : MonoBehaviour {
 	public string[] levelBonusShort = {"",""};
 	public string[] levelBonusLong = {"",""};
 	public bool invincible,displayHPBar,displayXPBar;
-	public Mystic mysticFocusingThis;
+	public Mystic allyFocusingThis;
 
 
 	public GameObject popUpText;
