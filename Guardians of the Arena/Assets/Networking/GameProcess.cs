@@ -279,15 +279,28 @@ public class GameProcess : MonoBehaviour {
 				tileManager.displayXPBars(pum.xpSelGridInt);
 			}
 
-			else if (tokens[0].Equals("spawnObstacles"))
+			else if (tokens[0].Equals("spawnTrees"))
 			{
 				//    | Repeat for all trees
 				//    v                                      
 				//treeID\\xPos\\yPos
 				int i = 1;
-				while(!tokens[i].Equals("endSpawnObstacles"))
+				while(!tokens[i].Equals("endSpawnTrees"))
 				{
 					tileManager.addTree(Int32.Parse(tokens[i+1]), Int32.Parse(tokens[i+2]), Int32.Parse(tokens[i]));
+					i += 3;
+				}
+			}
+
+			else if (tokens[0].Equals("spawnRocks"))
+			{
+				//    | Repeat for all rocks
+				//    v                                      
+				//rockID\\xPos\\yPos
+				int i = 1;
+				while(!tokens[i].Equals("endSpawnRocks"))
+				{
+					tileManager.addRock(Int32.Parse(tokens[i+1]), Int32.Parse(tokens[i+2]), Int32.Parse(tokens[i]));
 					i += 3;
 				}
 			}
@@ -560,9 +573,9 @@ public class GameProcess : MonoBehaviour {
 
 	void OnApplicationQuit(){
 		try{
-			returnSocket().SendTCPPacket("logout\\" + playerName);
-			returnSocket().t.Abort();
-			returnSocket().endThread();
+			//returnSocket().SendTCPPacket("logout\\" + playerName);
+			//returnSocket().t.Abort();
+			//returnSocket().endThread();
 			returnSocket().Disconnect();
 			Console.WriteLine("Application disconnected through application quit");
 		}catch(Exception e){

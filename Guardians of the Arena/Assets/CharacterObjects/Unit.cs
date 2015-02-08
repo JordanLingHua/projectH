@@ -357,6 +357,19 @@ public class Unit    : MonoBehaviour {
 		HashSet<TileScript> tileSet = new HashSet<TileScript>();
 		if (!mvd){
 			getMvAccessibleTiles(tileSet,this.transform.parent.GetComponent<TileScript>(),mvRange,ally);
+			//cannot move to tiles that have units in them
+			HashSet<TileScript> temp = new HashSet<TileScript>();
+			foreach(TileScript tile in tileSet){
+				if (tile.objectOccupyingTile != null){
+					temp.Add (tile);
+				}
+			}
+
+			foreach(TileScript tile in temp){
+				if (tile.objectOccupyingTile != null){
+					tileSet.Remove (tile);
+				}
+			}
 			//can't move to the tile it's in
 			//gm.accessibleTiles.Remove(this.transform.parent.GetComponent<TileScript>());	
 		}

@@ -147,7 +147,21 @@ public class TileManager : MonoBehaviour {
 			break;
 		}
 	}
+	public void addRock(int x, int y,int unitID){
+		TileScript placeTile = tiles[x,y].GetComponent<TileScript>();
+		GameObject rock = (GameObject)Instantiate(cp, 
+		                                          new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
+		                                          new Quaternion());
+		rock.renderer.material.color = new Color32(139,69,19,255);
+		rock.transform.parent = placeTile.transform;
+		rock.GetComponent<Unit> ().makeRock ();
+		placeTile.objectOccupyingTile = rock;
 
+		placeTile.gameObject.renderer.material.color = Color.gray;
+		
+		gm.units.Add (unitID, rock.GetComponent<Unit>());
+		
+	}
 
 	public void addTree(int x, int y,int unitID){
 		TileScript placeTile = tiles[x,y].GetComponent<TileScript>();

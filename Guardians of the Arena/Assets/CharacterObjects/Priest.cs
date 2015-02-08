@@ -27,6 +27,18 @@ public class Priest : Unit {
 		renderer.material.color = new Color32(204,255,153,1);
 	}
 
+	public override void attackUnit(Unit unitAffected){
+		atkd = true;
+		if (unitLevel == 3 && atkd){
+			unitAffected.takeDmg(this,-10);
+		}
+		unitAffected.takeDmg(this,this.atk);
+		//clean up the board colors
+		gm.accessibleTiles.Clear();
+		this.transform.parent.gameObject.transform.parent.GetComponent<TileManager>().clearAllTiles();
+	}
+
+
 	public override void gainXP(){
 		xp += 5;
 		if (xp >= XP_TO_LEVEL[unitLevel-1]){
