@@ -219,11 +219,11 @@ namespace Guardians_Of_The_Arena_Server
         public virtual void ApplyDamage(int damage)
         {
             this.health -= damage;
-            Console.WriteLine("LOG: Unit {0} takes {1} damage. Is now at {2} health", this.UniqueID, damage, this.health);
-
+            
             if (health > maxHealth)
                 health = maxHealth;
 
+            Console.WriteLine("LOG: Unit {0} takes {1} damage. Is now at {2} health", this.UniqueID, damage, this.health);
 
             if (health <= 0)
             {
@@ -237,7 +237,7 @@ namespace Guardians_Of_The_Arena_Server
 
         public void addXP()
         {
-            XP += 5;
+            XP += 20;
 
             if (XP >= 20)
             {

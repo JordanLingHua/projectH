@@ -72,10 +72,9 @@ namespace Guardians_Of_The_Arena_Server.Units
             if (damage >= 0)
             {
                 unfocus();
-                Console.WriteLine("wtf");
             }
 
-            Console.WriteLine("LOG: Unit {0} takes {1} damage. Is now at {2} healthffffffff", this.UniqueID, damage, this.health);
+            Console.WriteLine("LOG: Unit {0} takes {1} damage. Is now at {2} health", this.UniqueID, damage, this.health);
 
             this.health -= damage;
             Console.WriteLine("LOG: Unit " + uniqueID + " takes " + damage + " damage.");

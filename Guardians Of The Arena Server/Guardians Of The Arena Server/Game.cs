@@ -67,10 +67,15 @@ namespace Guardians_Of_The_Arena_Server
                 client1.sw.WriteLine("startAI");
             }
 
-            string treeString = board.spawnObstacles();
+            string treeString = board.spawnTrees();
+            string rockString = board.SpawnRocks();
 
-            client1.sw.WriteLine("spawnObstacles{0}", treeString);
-            if (!isAI_Game) { client2.sw.WriteLine("spawnObstacles{0}", treeString); }
+            client1.sw.WriteLine("spawnTrees{0}", treeString);
+            client1.sw.WriteLine("spawnRocks{0}", rockString);
+            if (!isAI_Game) { 
+                client2.sw.WriteLine("spawnTrees{0}", treeString);
+                client2.sw.WriteLine("spawnRocks{0}", rockString);
+            }
 
             client1.sw.WriteLine(setupString);
             if (!isAI_Game) { client2.sw.WriteLine(setupString); }
@@ -222,7 +227,9 @@ namespace Guardians_Of_The_Arena_Server
                                                         Unit unitHit = board.getUnitByID(id);
                                                         attackingUnit.Attack(unitHit);
                                                         sendMessage += ("\\" + id);
-                                                        attackingUnit.addXP();
+
+                                                        if (id < 500)
+                                                            attackingUnit.addXP();
                                                     }
 
 

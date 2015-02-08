@@ -107,23 +107,6 @@ namespace Guardians_Of_The_Arena_Server
 
         }
 
-        //check if the socket is still connect;
-        bool SocketConnected(Socket s)
-        {
-            //bool part1 = s.Poll(1000000, SelectMode.SelectRead);
-            //bool part2 = (s.Available == 0);
-            //if (part1 && part2)
-            //{
-            //    Console.WriteLine("NETWORK LOG: Lost connection from socket {0}", s.ToString());
-            //    return false;           
-            //}
-            //else
-            //{
-            //    return true;
-            //}
-
-            return true;
-        }
 
 
         //if a client is disconnected in anyway
@@ -131,6 +114,9 @@ namespace Guardians_Of_The_Arena_Server
         //and inform all other clients that this client has disconnected
         public void RemoveClient(Client client)
         {
+            if (!clientArray.Contains(client) || clientsToRemove.Contains(client))
+                return; //the client has already been removed
+
             lock (removeLock)
             {
                 clientsToRemove.Add(client);
@@ -168,9 +154,36 @@ namespace Guardians_Of_The_Arena_Server
             }
         }
 
-        public void AddClient()
-        {
 
+        //Add a client to server and inform all clients of this client's existence
+        public void AddClient(Client client, String clientName)
+        {
+                loginNames.Add(clientName);
+                client.clientName = clientName;
+                Console.WriteLine(clientName + " has logged in");
+
+                SQLiteDataReader reader = dm.getSetupNames(client.clientName);
+                string setupNames = "";
+
+                while (reader.Read())
+                {
+                    setupNames += "\\" + reader["setupName"];
+                }
+
+                client.sw.WriteLine("loginSucceed\\" + clientName + setupNames + "\\0");
+                client.sw.WriteLine("hasLoggedIn\\" + clientName);
+                                               
+
+                foreach (Client clientToSend in clientArray)
+                {
+                    //Client clientToSend = clientArray[j];
+
+                    if (client.clientNumber != clientToSend.clientNumber)
+                    {
+                        client.sw.WriteLine("hasLoggedIn\\" + clientToSend.clientName);
+                        clientToSend.sw.WriteLine("hasLoggedIn\\" + client.clientName);
+                    }
+                }
         }
 
         //server loop that checks messages from clients
@@ -204,8 +217,6 @@ namespace Guardians_Of_The_Arena_Server
 
                         foreach (Client client in clientArray)
                         {
-                            if (!SocketConnected(client.socket))
-                                RemoveClient(client);
 
                             //the server must check if it has recieved any commands from the clients
                             if (client.commandQueue.Count > 0 && !client.inGame)
@@ -262,34 +273,7 @@ namespace Guardians_Of_The_Arena_Server
                                         {
                                             if (tokens[2].Equals(dm.getUserPassword(tokens[1])))
                                             {
-                                                loginNames.Add(tokens[1]);
-                                                client.clientName = tokens[1];
-                                                Console.WriteLine(tokens[1] + " has logged in");
-
-                                                SQLiteDataReader reader = dm.getSetupNames(client.clientName);
-                                                string setupNames = "";
-
-                                                while (reader.Read())
-                                                {
-                                                    setupNames += "\\" + reader["setupName"];
-                                                }
-
-                                                client.sw.WriteLine("loginSucceed\\" + tokens[1] + setupNames + "\\0");
-                                                client.sw.WriteLine("hasLoggedIn\\" + tokens[1]);
-                                                
-                                                //dm.printTable();
-
-
-                                                foreach (Client clientToSend in clientArray)
-                                                {
-                                                    //Client clientToSend = clientArray[j];
-
-                                                    if (client.clientNumber != clientToSend.clientNumber)
-                                                    {
-                                                        client.sw.WriteLine("hasLoggedIn\\" + clientToSend.clientName);
-                                                        clientToSend.sw.WriteLine("hasLoggedIn\\" + client.clientName);
-                                                    }
-                                                }
+                                                this.AddClient(client, tokens[1]);                                                                                               
                                             }
                                             else
                                             {
@@ -301,38 +285,9 @@ namespace Guardians_Of_The_Arena_Server
 
                                         else
                                         {
-                                            dm.insertIntoPlayer(tokens[1], tokens[2]);
-                                            loginNames.Add(tokens[1]);
-                                            client.clientName = tokens[1];
+                                            dm.insertIntoPlayer(tokens[1], tokens[2]);                                         
                                             Console.WriteLine("{0} has created an account", tokens[1]);
-
-                                            SQLiteDataReader reader = dm.getSetupNames(client.clientName);
-                                            string setupNames = "";
-
-                                            while (reader.Read())
-                                            {
-                                                setupNames += "\\" + reader["setupName"];
-                                            }
-
-                                            client.sw.WriteLine("loginSucceed\\" + tokens[1] + setupNames + "\\1");
-                                            client.sw.WriteLine("hasLoggedIn\\" + tokens[1]);
-                                            
-                                            
-                                            // dm.insertIntoHighScores(client.clientName, client.score);
-                                            //dm.printTable();
-
-                                            //-------------------------REMOVE COPY AND PASTED CODE! CLEAN UP! ASAP! --------------------------------------------------//
-
-                                            foreach (Client clientToSend in clientArray)
-                                            {
-                                                //Client clientToSend = clientArray[j];
-
-                                                if (client.clientNumber != clientToSend.clientNumber)
-                                                {
-                                                    client.sw.WriteLine("hasLoggedIn\\" + clientToSend.clientName);
-                                                    clientToSend.sw.WriteLine("hasLoggedIn\\" + client.clientName);
-                                                }
-                                            }
+                                            this.AddClient(client, tokens[1]);                                            
                                         }
 
 
@@ -383,6 +338,18 @@ namespace Guardians_Of_The_Arena_Server
                                 else if (tokens[0].Equals("updateSetupName"))
                                 {
                                     dm.updateSetupName(client.clientName, Int32.Parse(tokens[1]), tokens[2]);
+                                }
+                                else if (tokens[0].Equals("pageNames"))
+                                {
+                                    SQLiteDataReader reader = dm.getSetupNames(client.clientName);
+                                    string setupNames = "pageNames";
+
+                                    while (reader.Read())
+                                    {
+                                        setupNames += "\\" + reader["setupName"];
+                                    }
+
+                                    client.sw.WriteLine(setupNames);
                                 }
                                 else
                                 {

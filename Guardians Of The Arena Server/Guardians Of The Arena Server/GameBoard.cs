@@ -237,11 +237,13 @@ namespace Guardians_Of_The_Arena_Server
         }
 
         //create all the trees and return a string with all of their locations
-        public string spawnObstacles()
+        public string spawnTrees()
         {
             string returnString = "";
 
             #region Trees Region
+
+            /*
 
             Unit tree = new Units.Tree(100);
             tree.CurrentTile = tiles[10, 6];
@@ -329,11 +331,111 @@ namespace Guardians_Of_The_Arena_Server
             unitTable.Add(tree.UniqueID, tree);
             returnString += "\\" + tree.UniqueID + "\\" + tree.CurrentTile.x + "\\" + tree.CurrentTile.y + "\\endSpawnObstacles";
 
+             
+             */
+ 
             #endregion
 
+            Unit tree = new Units.Tree(100);
+            tree.CurrentTile = tiles[5, 6];
+            tiles[5, 6].CurrentUnit = tree;
+            unitTable.Add(tree.UniqueID, tree);
+            returnString += "\\" + tree.UniqueID + "\\" + tree.CurrentTile.x + "\\" + tree.CurrentTile.y;
+
+
+            tree = new Units.Tree(101);
+            tree.CurrentTile = tiles[4, 5];
+            tiles[4, 5].CurrentUnit = tree;
+            unitTable.Add(tree.UniqueID, tree);
+            returnString += "\\" + tree.UniqueID + "\\" + tree.CurrentTile.x + "\\" + tree.CurrentTile.y;
+
+            tree = new Units.Tree(102);
+            tree.CurrentTile = tiles[6, 5];
+            tiles[6, 5].CurrentUnit = tree;
+            unitTable.Add(tree.UniqueID, tree);
+            returnString += "\\" + tree.UniqueID + "\\" + tree.CurrentTile.x + "\\" + tree.CurrentTile.y;
+
+            tree = new Units.Tree(103);
+            tree.CurrentTile = tiles[5, 4];
+            tiles[5, 4].CurrentUnit = tree;
+            unitTable.Add(tree.UniqueID, tree);
+            returnString += "\\" + tree.UniqueID + "\\" + tree.CurrentTile.x + "\\" + tree.CurrentTile.y;
+
+            tree = new Units.Tree(104);
+            tree.CurrentTile = tiles[9, 5];
+            tiles[9, 5].CurrentUnit = tree;
+            unitTable.Add(tree.UniqueID, tree);
+            returnString += "\\" + tree.UniqueID + "\\" + tree.CurrentTile.x + "\\" + tree.CurrentTile.y;
+
+            tree = new Units.Tree(105);
+            tree.CurrentTile = tiles[1, 5];
+            tiles[1, 5].CurrentUnit = tree;
+            unitTable.Add(tree.UniqueID, tree);
+            returnString += "\\" + tree.UniqueID + "\\" + tree.CurrentTile.x + "\\" + tree.CurrentTile.y + "\\endSpawnTrees";
+
             return returnString;
+        }
 
+        public string SpawnRocks()
+        {
+            string returnString = "";
+            int rockID = 500;
 
+            Unit rock = new Units.InvulnerableRock(rockID++);
+            rock.CurrentTile = tiles[0, 5];
+            tiles[0, 5].CurrentUnit = rock;
+            unitTable.Add(rock.UniqueID, rock);
+            returnString += "\\" + rock.UniqueID + "\\" + rock.CurrentTile.x + "\\" + rock.CurrentTile.y;
+
+            rock = new Units.InvulnerableRock(rockID++);
+            rock.CurrentTile = tiles[0, 4];
+            tiles[0, 4].CurrentUnit = rock;
+            unitTable.Add(rock.UniqueID, rock);
+            returnString += "\\" + rock.UniqueID + "\\" + rock.CurrentTile.x + "\\" + rock.CurrentTile.y;
+
+            rock = new Units.InvulnerableRock(rockID++);
+            rock.CurrentTile = tiles[1, 4];
+            tiles[1, 4].CurrentUnit = rock;
+            unitTable.Add(rock.UniqueID, rock);
+            returnString += "\\" + rock.UniqueID + "\\" + rock.CurrentTile.x + "\\" + rock.CurrentTile.y;
+
+            rock = new Units.InvulnerableRock(rockID++);
+            rock.CurrentTile = tiles[2, 4];
+            tiles[2, 4].CurrentUnit = rock;
+            unitTable.Add(rock.UniqueID, rock);
+            returnString += "\\" + rock.UniqueID + "\\" + rock.CurrentTile.x + "\\" + rock.CurrentTile.y;
+
+            rock = new Units.InvulnerableRock(rockID++);
+            rock.CurrentTile = tiles[5, 5];
+            tiles[5, 5].CurrentUnit = rock;
+            unitTable.Add(rock.UniqueID, rock);
+            returnString += "\\" + rock.UniqueID + "\\" + rock.CurrentTile.x + "\\" + rock.CurrentTile.y;
+
+            rock = new Units.InvulnerableRock(rockID++);
+            rock.CurrentTile = tiles[8, 6];
+            tiles[8, 6].CurrentUnit = rock;
+            unitTable.Add(rock.UniqueID, rock);
+            returnString += "\\" + rock.UniqueID + "\\" + rock.CurrentTile.x + "\\" + rock.CurrentTile.y;
+
+            rock = new Units.InvulnerableRock(rockID++);
+            rock.CurrentTile = tiles[9, 6];
+            tiles[9, 6].CurrentUnit = rock;
+            unitTable.Add(rock.UniqueID, rock);
+            returnString += "\\" + rock.UniqueID + "\\" + rock.CurrentTile.x + "\\" + rock.CurrentTile.y;
+
+            rock = new Units.InvulnerableRock(rockID++);
+            rock.CurrentTile = tiles[10, 6];
+            tiles[10, 6].CurrentUnit = rock;
+            unitTable.Add(rock.UniqueID, rock);
+            returnString += "\\" + rock.UniqueID + "\\" + rock.CurrentTile.x + "\\" + rock.CurrentTile.y;
+
+            rock = new Units.InvulnerableRock(rockID++);
+            rock.CurrentTile = tiles[10, 5];
+            tiles[10, 5].CurrentUnit = rock;
+            unitTable.Add(rock.UniqueID, rock);
+            returnString += "\\" + rock.UniqueID + "\\" + rock.CurrentTile.x + "\\" + rock.CurrentTile.y + "\\endSpawnRocks";
+
+            return returnString;       
         }
 
         public void moveUnit(Tile start, Tile destination)

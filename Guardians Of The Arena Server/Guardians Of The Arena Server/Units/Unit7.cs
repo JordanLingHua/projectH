@@ -38,7 +38,7 @@ namespace Guardians_Of_The_Arena_Server.Units
             {
                 if (attackCountPerTurn < 2)
                 {
-                    this.alreadyAttacked = false;
+                    this.Attacked = false;
                 }
                 else
                 {
@@ -62,8 +62,13 @@ namespace Guardians_Of_The_Arena_Server.Units
         {
             XP = currentXP % 20;
 
-            //switch (Level)
-            //{ }
+            switch(level)
+            {
+                case 3:
+                    alreadyAttacked = false;
+                    attackCountPerTurn = 1;
+                    break;
+            }
         }
 
     }

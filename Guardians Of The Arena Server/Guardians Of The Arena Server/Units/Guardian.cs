@@ -22,13 +22,14 @@ namespace Guardians_Of_The_Arena_Server.Units
 
         public override void Attack(Unit unitAttacking)
         {
-            if (this.level >= 3)
+            int damageDealt = this.damage;
+
+            if (this.level >= 3 && unitAttacking.Health < unitAttacking.MaxHealth / 2)
             {
-                if (unitAttacking.Health < unitAttacking.MaxHealth / 2)
-                    unitAttacking.ApplyDamage(1000);
-                else
-                    unitAttacking.ApplyDamage(damage);
+                damageDealt = 1000;
             }
+
+            unitAttacking.ApplyDamage(damageDealt);
         }
 
        public override ArrayList AttackTile(GameBoard.Tile tile)
