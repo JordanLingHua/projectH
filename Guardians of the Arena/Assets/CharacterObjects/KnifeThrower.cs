@@ -8,9 +8,9 @@ public class KnifeThrower : Unit {
 	void Start () {
 		base.Start ();
 		levelBonusShort [0] = "Farsight";
-		levelBonusShort [1] = "Rain of Knives";
+		levelBonusShort [1] = "Piercing Light";
 		levelBonusLong [0] = "Gain +1 attack range";
-		levelBonusLong [1] = "Attacks additionally\nhits units near target";
+		levelBonusLong [1] = "Attacks all units to targeted tile";
 		description = "Ranged unit that will hit any unit that gets\n" +
 						"in its way";
 		unitType = 1;
@@ -46,31 +46,6 @@ public class KnifeThrower : Unit {
 		} else {
 			showPopUpText("XP+5!",Color.magenta);
 		}
-	}
-
-	//show new AoE ability for level 3
-	public override List<GameObject> showAoEAffectedTiles(TileScript tile){
-		List <GameObject> ret = new List<GameObject> ();
-		if (unitLevel == 3) {
-			if (tile.up != null){
-				ret.Add (tile.up);
-				tile.up.renderer.material.color = new Color(1f,0.7f,0f, 0f);
-			}
-			if (tile.down != null){
-				ret.Add (tile.down);
-				tile.down.renderer.material.color = new Color(1f,0.7f,0f, 0f);
-			}
-			if (tile.left != null){
-				ret.Add (tile.left);
-				tile.left.renderer.material.color = new Color(1f,0.7f,0f, 0f);
-			}
-			if (tile.right != null){
-				ret.Add (tile.right);
-				tile.right.renderer.material.color = new Color(1f,0.7f,0f, 0f);
-			}
-
-		}
-		return ret;
 	}
 
 	public override HashSet<TileScript> getAtkAccessibleTiles ()

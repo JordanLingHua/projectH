@@ -30,8 +30,9 @@ public class Priest : Unit {
 	public override void attackUnit(Unit unitAffected){
 		if (unitLevel == 3 && atkd){
 			unitAffected.takeDmg(this,-10);
+		}else{
+			unitAffected.takeDmg(this,this.atk);
 		}
-		unitAffected.takeDmg(this,this.atk);
 		//clean up the board colors
 		gm.accessibleTiles.Clear();
 		this.transform.parent.gameObject.transform.parent.GetComponent<TileManager>().clearAllTiles();

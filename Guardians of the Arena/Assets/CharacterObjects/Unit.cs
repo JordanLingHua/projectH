@@ -390,9 +390,7 @@ public class Unit    : MonoBehaviour {
 
 	public virtual HashSet<TileScript> getAtkAccessibleTiles(){
 		HashSet<TileScript> tileSet = new HashSet<TileScript>();
-		if (!paralyzed && !atkd){
-			getAtkAccessibleTiles(tileSet,this.transform.parent.GetComponent<TileScript>(),atkRange);
-		}
+		getAtkAccessibleTiles(tileSet,this.transform.parent.GetComponent<TileScript>(),atkRange);
 		return tileSet;
 	}
 

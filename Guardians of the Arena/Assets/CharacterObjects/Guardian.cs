@@ -8,9 +8,9 @@ public class Guardian :Unit {
 	void Start(){
 		base.Start ();
 		levelBonusShort [0] = "Hardened Skin";
-		levelBonusShort [1] = "Executioner";
+		levelBonusShort [1] = "Thorns";
 		levelBonusLong [0] = "Cannot take more than 10\ndamage when attacked";
-		levelBonusLong [1] = "Instantly kills units below\n50% health on attack";
+		levelBonusLong [1] = "Deals 5 damage to attackers";
 		description = "A melee unit that protects the Soulstone. If this\n" +
 						"unit dies the player's Soulstone becomes\n" +
 						"vulnerable to death.";
@@ -32,24 +32,25 @@ public class Guardian :Unit {
 		string unitAffectedPlayer = ((gp.playerNumber ==  1 && unitAttacking.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && unitAttacking.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
 		string player = ((gp.playerNumber ==  1 && this.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && this.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
 		if (!this.invincible) {
-
-			if (unitLevel >=2 && amt > 10){
-				hp -= 10;
-				showPopUpText("-10 "+ (unitAttacking.atk-10) + "blocked",Color.red);
-			}else{
-				this.hp -= amt;
-			}
 			
 			//if healed up dont let it have more than max hp
 			if (hp > maxHP){
 				hp = maxHP;
 			}
-			
+			//taking damage
 			if (amt > 0){
-				//taking damage
-				gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" attacked "+ player + unitName + " for " + unitAttacking.atk + " damage!");
-				
-				showPopUpText("-" + amt,Color.red);
+				//thorns
+				if (unitLevel == 3){
+					unitAttacking.takeDmg (this,5);
+				}
+
+				if (unitLevel >=2 && amt > 10){
+					hp -=10;
+					gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" attacked "+ player + unitName + " for " + 10 + " damage!");
+				}else{
+					gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" attacked "+ player + unitName + " for " + unitAttacking.atk + " damage!");
+					showPopUpText("-" + amt,Color.red);
+				}
 			}else{
 				//getting healed
 				

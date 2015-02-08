@@ -27,14 +27,17 @@ public class Swordsman : Unit {
 		renderer.material.color = new Color32(102,51,0,1);
 	}
 
-	public virtual void gainXP(){
+	public override void gainXP(){
 		xp += 20;
 		if (xp >= XP_TO_LEVEL [unitLevel - 1]) {
 			xp = 0;
 			unitLevel ++;
 			//allow double attacks for windfury
+			print (unitLevel + " is the unit level");
 			if (unitLevel == 3){
+				atkCharges = 1;
 				atkd = false;
+				print ("hi");
 			}
 			if ((alleg == allegiance.playerOne && gp.playerNumber == 1) || (alleg == allegiance.playerTwo && gp.playerNumber == 2)){
 				gm.addLogToCombatLog("Your " + unitName + " has leveled up to level " + unitLevel + "!");

@@ -231,12 +231,12 @@ public class GameManager : MonoBehaviour {
 			if (script.invincible){
 				info+="\nINVINCIBLE";
 			}
-			if (gs == gameState.playerMv && script.mvd){
-				info += "\nAlready moved";
-			}
-			if (gs ==  gameState.playerAtk && script.atkd){
-				info += "\nAlready attacked";
-			}
+//			if (gs == gameState.playerMv && script.mvd){
+//				info += "\nAlready moved";
+//			}
+//			if (gs ==  gameState.playerAtk && script.atkd){
+//				info += "\nAlready attacked";
+//			}
 			
 			suInfo.text =  info;
 			unitNameGUI.text = script.unitName;
@@ -259,6 +259,8 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void OnGUI(){
+		GUI.skin = mySkin;
+
 		//show button for returning to main menu
 		GUI.BeginGroup (new Rect(Screen.width*0.35f,Screen.height-((float)Screen.height*0.080f),Screen.width*0.15f,35));
 		GUILayout.BeginHorizontal();
@@ -272,7 +274,6 @@ public class GameManager : MonoBehaviour {
 		GUILayout.EndHorizontal();
 		GUI.EndGroup ();
 
-		GUI.skin = mySkin;
 		combatLogWindowRect = GUI.Window (2, combatLogWindowRect, combatLogWindow, "");
 		GUI.BeginGroup (new Rect (0,0,100,100));
 		GUI.EndGroup();

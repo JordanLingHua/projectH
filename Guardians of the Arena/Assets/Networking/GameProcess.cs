@@ -428,7 +428,7 @@ public class GameProcess : MonoBehaviour {
 //							gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 15);
 //
 
-						if (!gameManager.units[Int32.Parse(tokens[3+i])].invincible){
+						if (gameManager.units.ContainsKey(Int32.Parse(tokens[3+i])) && !gameManager.units[Int32.Parse(tokens[3+i])].invincible){
 							gameManager.units[Int32.Parse (tokens[1])].gainXP();
 						}
 
@@ -501,7 +501,7 @@ public class GameProcess : MonoBehaviour {
 			else if (tokens[0].Equals("defeat"))
 			{
 				gameManager.gameOver = true;
-				gameManager.addLogToCombatLog("You were: REKT ☑\nREKTangle ☑ \nSHREKT ☑ \nREKT-it Ralph ☑ \nTotal REKTall ☑ \nThe Lord of the REKT ☑ \nThe Usual SusREKTs ☑ North by NorthREKT ☑");
+				gameManager.addLogToCombatLog("You have lost!");
 			}
 			#endregion
 			
