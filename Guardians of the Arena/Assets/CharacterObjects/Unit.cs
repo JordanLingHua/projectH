@@ -213,7 +213,9 @@ public class Unit    : MonoBehaviour {
 			}
 			showPopUpText("Leveled Up!",Color.yellow);
 		} else {
-			showPopUpText("XP+5!",Color.magenta);
+			if (unitLevel!=3){
+				showPopUpText("XP+5!",Color.magenta);
+			}
 		}
 	}
 

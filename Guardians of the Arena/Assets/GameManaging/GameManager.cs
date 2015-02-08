@@ -225,7 +225,7 @@ public class GameManager : MonoBehaviour {
 //			}
 			
 			suInfo.text =  info;
-			unitNameGUI.text = script.unitName;
+			unitNameGUI.text = "Level " +script.unitLevel + " "  + script.unitName;
 			unitDescriptionGUI.text = script.description;
 			if (!script.paralyzed){
 				if (script.unitLevel >= 2){
