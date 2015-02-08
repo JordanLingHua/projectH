@@ -388,7 +388,7 @@ public class GameManager : MonoBehaviour {
 		gs = gameState.playerMv;
 		if (Application.loadedLevelName.Equals ("AIScene") && !turn) {
 
-						GameObject.Find ("AI").GetComponent<AIScript> ().makeGameAction (null);
+			StartCoroutine (GameObject.Find ("AI").GetComponent<AIScript> ().makeGameAction (null));
 				}
 	}
 	

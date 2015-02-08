@@ -7,6 +7,7 @@ public class AIScript : MonoBehaviour {
 
 	GameManager gameManager;
 	public bool serverResponded;
+	private float actionDelay;
 	bool firstMove;
 	GameProcess gp;
 	public System.Random rand;
@@ -25,9 +26,10 @@ public class AIScript : MonoBehaviour {
 		targetUnits = new List<Unit>();	
 		obstacles = new List<Unit>();	
 		playerUnits = new List<Unit>();	
+		actionDelay = 2.0f;
 	}
 
-	public void makeGameAction(Unit u)
+	public IEnumerator makeGameAction(Unit u)
 	{
 		AIUnits.Clear ();
 		foreach (Unit x in gameManager.units.Values)
@@ -37,11 +39,6 @@ public class AIScript : MonoBehaviour {
 		}
 
 		targetUnits.Clear ();
-//		foreach (Unit x in gameManager.units.Values)
-//		{
-//			if(x.alleg == Unit.allegiance.playerOne)
-//				targetUnits.Add(x);
-//		}
 
 		playerUnits.Clear ();
 		foreach (Unit x in gameManager.units.Values)
@@ -58,20 +55,21 @@ public class AIScript : MonoBehaviour {
 		}
 
 		Unit toMove;
-		//if (firstMove) 
-		//{			
-		//	firstMove = false;
+		if (firstMove) 
+		{			
+			firstMove = false;
 	
-		while (true) {
-			toMove = AIUnits [(int)(rand.NextDouble () * AIUnits.Count)];
-			if (toMove.unitType != 11)
-				break;
+			while (true) {
+				toMove = AIUnits [(int)(rand.NextDouble () * AIUnits.Count)];
+				if (toMove.unitType != 11)
+					break;
+			}
+		} 
+
+		else 
+		{
+			toMove = u;
 		}
-//		} 
-//		else 
-//		{
-//			toMove = u;
-		//}
 
 		///////////////CHECK IF SELECTED UNIT CAN ATTACK A TARGET///////////////////
 		toMove.selectUnit ();
@@ -84,7 +82,9 @@ public class AIScript : MonoBehaviour {
 		if (toMove.atkCost <= gameManager.pMana && tileOfTarget != null && !toMove.atkd) {
 			gp.returnSocket ().SendTCPPacket ("attack\\" + gameManager.selectedUnit.unitID + "\\" + tileOfTarget.x + "\\" + tileOfTarget.y);
 			print ("The AI sent an attack packet");
+			yield return new WaitForSeconds(actionDelay);
 		} 
+
 		//NO TARGETS WERE IN RANGE, MOVING TO CLOSEST TARGET
 		else {
 
@@ -94,7 +94,7 @@ public class AIScript : MonoBehaviour {
 			List<TileScript> possibleMoveTiles = new List<TileScript> (possMvTile);
 
 			Unit closestTarget = getClosestTarget (toMove);
-			Debug.Log("clostestsadfadf: " + closestTarget.name);
+			//Debug.Log("clostestsadfadf: " + closestTarget.name);
 
 			TileScript destinationTile = getTileClosestToNearestTarget (possibleMoveTiles, closestTarget);
 
@@ -103,7 +103,8 @@ public class AIScript : MonoBehaviour {
 			gp.returnSocket ().SendTCPPacket ("move\\" + gameManager.selectedUnit.unitID + "\\" + destinationTile.x + "\\" + destinationTile.y);
 			print ("The AI sent a move packet");
 
-
+		
+			yield return new WaitForSeconds(actionDelay);
 
 			//RECHECK THE ATTACK SINCE UNIT IS ON NEW TILE
 			gameManager.gs = GameManager.gameState.playerAtk;
@@ -111,30 +112,28 @@ public class AIScript : MonoBehaviour {
 			
 			if (tileOfTarget != null)
 				print ("targetting: " +tileOfTarget.x + "  " + tileOfTarget.y);
+			else
+				print ("NO TARGET FOUDN AFTER MOVE");
 			
 			if (toMove.atkCost <= gameManager.pMana && tileOfTarget != null && !toMove.atkd) {
 				gp.returnSocket ().SendTCPPacket ("attack\\" + gameManager.selectedUnit.unitID + "\\" + tileOfTarget.x + "\\" + tileOfTarget.y);
 				print ("The AI sent an attack packet");
-				StartCoroutine (wait (5));
+				yield return new WaitForSeconds(actionDelay);
 			}
+		}
 
-//		Unit next = checkForValidGameAction ();
-//		if (next != null)
-//				makeGameAction (next);
-//		else 
-//		{
-		StartCoroutine (stallNextTurn ());
-			
-		//}
-	}
+		Unit next = checkForValidGameAction ();
+		//print ("next unit up1 : " + next.name);
+		if (next != null)
+			StartCoroutine(makeGameAction (next));
+		else 
+		{
+			yield return new WaitForSeconds (actionDelay);
+			firstMove = true;
+			gp.returnSocket ().SendTCPPacket ("endTurn");		
+		}
 	}
 
-	IEnumerator stallNextTurn()
-	{
-		yield return new WaitForSeconds (3.0f);
-		firstMove = true;
-		gp.returnSocket ().SendTCPPacket ("endTurn");
-	}
 
 	public Unit checkForValidGameAction()
 	{
@@ -177,7 +176,7 @@ public class AIScript : MonoBehaviour {
 				case 7:
 				case 10:
 						foreach (Unit u in gameManager.units.Values) {
-								if (u.GetComponent<Unit> ().alleg != Unit.allegiance.playerTwo) {
+								if ( u != null && u.GetComponent<Unit> ().alleg != Unit.allegiance.playerTwo) {
 										//targetUnits.Add(t.objectOccupyingTile.GetComponent<Unit>());
 										targetUnits.Add (u);
 								}
@@ -187,8 +186,8 @@ public class AIScript : MonoBehaviour {
 				//healer targets lowest health ally
 				case 8:
 				case 2:
-						foreach (Unit u in gameManager.units.Values) {
-								if (u.GetComponent<Unit> ().alleg == Unit.allegiance.playerTwo)
+				foreach (Unit u in gameManager.units.Values) {
+				if (u != null && u.GetComponent<Unit> ().alleg == Unit.allegiance.playerTwo && u.GetComponent<Unit>().unitType != 11)
 										targetUnits.Add (u);
 						}
 						break;
@@ -198,19 +197,19 @@ public class AIScript : MonoBehaviour {
 						Debug.Log ("i am rekt m8");
 						break;
 		
+				}
+				//Debug.Log ("");
+				foreach (Unit p in targetUnits) {
+						TileScript pTileScript = p.GetComponentInParent<TileScript> ();
 
-						Debug.Log ("");
-						foreach (Unit p in targetUnits) {
-								TileScript pTileScript = p.GetComponentInParent<TileScript> ();
-		
-								tempDistance = Math.Abs (pTileScript.x - toMoveTileScript.x) + Math.Abs (pTileScript.y - toMoveTileScript.y);
+						tempDistance = Math.Abs (pTileScript.x - toMoveTileScript.x) + Math.Abs (pTileScript.y - toMoveTileScript.y);
 
-								if (tempDistance < minDistance) {
-										closestTarget = p;
-										minDistance = tempDistance;
-								}
+						if (tempDistance < minDistance) {
+								closestTarget = p;
+								minDistance = tempDistance;
 						}
 				}
+				
 		
 		return closestTarget;
 	}
@@ -250,6 +249,8 @@ public class AIScript : MonoBehaviour {
 			case 7:
 			case 10:
 			foreach (TileScript t in attackTiles) {
+				if(t.objectOccupyingTile != null)
+					print ("aaa : " + t.objectOccupyingTile.name);
 				if(t.objectOccupyingTile != null && t.objectOccupyingTile.GetComponent<Unit>().alleg != Unit.allegiance.playerTwo)
 					return t;
 			}
@@ -258,9 +259,10 @@ public class AIScript : MonoBehaviour {
 			//healer targets lowest health ally
 			case 8:
 			int mostMissing = 100;
-			TileScript toHeal;
+			TileScript toHeal = null;
 			foreach (TileScript t in attackTiles) {
-				if(t.objectOccupyingTile != null && t.objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerTwo)
+				if(t.objectOccupyingTile != null && t.objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerTwo
+				   && t.objectOccupyingTile.GetComponent<Unit>().unitType != 11)
 				{
 					int currentHP = t.GetComponentInChildren<Unit>().hp;
 					int maxHP = t.GetComponentInChildren<Unit>().maxHP;
@@ -276,7 +278,8 @@ public class AIScript : MonoBehaviour {
 				}
 
 			}
-			return null;
+			return toHeal;
+		
 			break;
 
 			//Mystic can target enemy or ally but wont move or attack while focusing

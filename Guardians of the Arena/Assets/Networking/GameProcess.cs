@@ -38,11 +38,11 @@ public class GameProcess : MonoBehaviour {
 		socks = new Sockets();
 		play = false;
 		tempPageNameStorage = new string[5];
-//		tempPageNameStorage [0] = "";
-//		tempPageNameStorage [1] = "";
-//		tempPageNameStorage [2] = "";
-//		tempPageNameStorage [3] = "";
-//		tempPageNameStorage [4] = "";
+		tempPageNameStorage [0] = "";
+		tempPageNameStorage [1] = "";
+		tempPageNameStorage [2] = "";
+		tempPageNameStorage [3] = "";
+		tempPageNameStorage [4] = "";
 		loaded = false;
 	}
 
@@ -106,6 +106,8 @@ public class GameProcess : MonoBehaviour {
 			// hasLoggedOut\\playerNameToRemove
 			else if (tokens[0].Equals("hasLoggedOut"))
 			{	
+				loaded = false;
+
 				if (GameObject.Find("ListOfPlayers") != null)
 					GameObject.Find("ListOfPlayers").GetComponent<ListOfPlayersScript>().removePlayer(tokens[1]);
 				
