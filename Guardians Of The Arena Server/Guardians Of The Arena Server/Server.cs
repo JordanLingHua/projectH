@@ -32,6 +32,7 @@ namespace Guardians_Of_The_Arena_Server
         public Thread loopThread;
 
         private Object listLock = new Object();
+        private Object removeLock = new Object();
 
         private MatchMakingQueue<Client> matchqueue;
 
@@ -130,31 +131,46 @@ namespace Guardians_Of_The_Arena_Server
         //and inform all other clients that this client has disconnected
         public void RemoveClient(Client client)
         {
-            clientsToRemove.Add(client);
-            
-            numberOfClients--;
-
-            if (loginNames.Contains(client.clientName))
+            lock (removeLock)
             {
-                loginNames.Remove(client.clientName);
+                clientsToRemove.Add(client);
+
+                numberOfClients--;
+
+                if (loginNames.Contains(client.clientName))
+                {
+                    loginNames.Remove(client.clientName);
+                }
+                //dm.deleteFromHighScores(client.clientName);
+
+                foreach (Client c in clientArray)
+                {
+                    //if (SocketConnected(c.socket))
+                    try
+                    {
+                        c.sw.WriteLine("hasLoggedOut\\" + client.clientName);
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine("Client Lost Connection");
+                    }
+                }
+
+                Console.WriteLine("Client " + client.clientNumber + " has disconnected");
+                Console.WriteLine("There are now " + numberOfClients + " clients");
+
+                socArray.Remove(client.socket);
+                client.nws.Close();
+                client.sw.Close();
+                client.sr.Close();
+                client.socket.Disconnect(true);
+                client.thread.Abort();
             }
-            //dm.deleteFromHighScores(client.clientName);
+        }
 
-            foreach (Client c in clientArray)
-            {
-                //if (SocketConnected(c.socket))
-                    c.sw.WriteLine("hasLoggedOut\\" + client.clientName);
-            }
+        public void AddClient()
+        {
 
-            Console.WriteLine("Client " + client.clientNumber + " has disconnected");
-            Console.WriteLine("There are now " + numberOfClients + " clients");
-
-            socArray.Remove(client.socket);
-            client.nws.Close();
-            client.sw.Close();
-            client.sr.Close();
-            client.socket.Disconnect(true);
-            client.thread.Abort();
         }
 
         //server loop that checks messages from clients
@@ -215,17 +231,10 @@ namespace Guardians_Of_The_Arena_Server
                                 }
                                 else if (tokens[0].Equals("playAI")){
 
-                                    //Client AI = new Client(client.nws, client.sr, client.sw, 666, client.socket);
-                                    //AI.clientName = client.clientName;
-                                    //client.boardSetup = Int32.Parse(tokens[1]);
-                                    //AI.boardSetup = client.boardSetup;
-
                                     Game newGame = new Game(client, client, dm, true);
 
                                     client.gameRef = newGame;
-                                    //AI.gameRef = newGame;
                                     client.inGame = true;
-                                    //AI.inGame = true;
 
                                     newGame.GameThread.Start();
                                 }
@@ -281,7 +290,6 @@ namespace Guardians_Of_The_Arena_Server
                                                         clientToSend.sw.WriteLine("hasLoggedIn\\" + client.clientName);
                                                     }
                                                 }
-
                                             }
                                             else
                                             {
@@ -341,10 +349,6 @@ namespace Guardians_Of_The_Arena_Server
                                 {
                                     Console.WriteLine("Client " + client.clientNumber + " wants to log out.");
                                     RemoveClient(client);
-                                    //Console.WriteLine("Name about to be removed {0}", tokens[1]);
-                                    //loginNames.Remove(tokens[1]);
-                                    //dm.deleteFromHighScores(client.clientName);
-                                    //dm.sendPacket("remove", client.clientName, client.score);
 
                                 }
                                 else if (tokens[0].Equals("getBoardData"))
@@ -388,12 +392,15 @@ namespace Guardians_Of_The_Arena_Server
                             }
                         }
 
-                        foreach(Client c in clientsToRemove)
+                        lock (removeLock)
                         {
-                            clientArray.Remove(c);
-                        }
+                            foreach (Client c in clientsToRemove)
+                            {
+                                clientArray.Remove(c);
+                            }
 
-                        clientsToRemove.Clear();
+                            clientsToRemove.Clear();
+                        }
                     }
 
                 }
