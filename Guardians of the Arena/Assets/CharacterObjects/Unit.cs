@@ -315,7 +315,9 @@ public class Unit    : MonoBehaviour {
 			tiles.Remove(this.transform.parent.GetComponent<TileScript>());
 			gm.accessibleTiles = tiles;
 			foreach (TileScript tile in tiles){
+				if (tile.objectOccupyingTile == null){
 				tile.renderer.material.color = Color.green;
+				}
 			}
 		}
 
@@ -326,50 +328,37 @@ public class Unit    : MonoBehaviour {
 		mvd = false;
 	}
 
-	void showMvAccessibleTiles(TileScript tile, int num,allegiance ally){
-		TileScript tileS = tile.transform.GetComponent<TileScript>();
-		
-		if (tileS.objectOccupyingTile == null){
-			tile.renderer.material.color = Color.green;
-		}
-		
-		if (num!=0){
-			if (tileS.up != null && (tileS.up.GetComponent<TileScript>().objectOccupyingTile ==null  || tileS.up.GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == ((ally == allegiance.playerOne) ? allegiance.playerOne: allegiance.playerTwo))){
-				showMvAccessibleTiles(tileS.up.GetComponent<TileScript>(),num-1,ally);
-				gm.accessibleTiles.Add(tileS.up.GetComponent<TileScript>());
-			}
-			if (tileS.down != null && (tileS.down.GetComponent<TileScript>().objectOccupyingTile ==null  || tileS.down.GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == ((ally == allegiance.playerOne) ? allegiance.playerOne: allegiance.playerTwo))){
-				showMvAccessibleTiles(tileS.down.GetComponent<TileScript>(),num-1,ally);
-				gm.accessibleTiles.Add(tileS.down.GetComponent<TileScript>());
-			}
-			if (tileS.left != null && (tileS.left.GetComponent<TileScript>().objectOccupyingTile ==null || tileS.left.GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == ((ally == allegiance.playerOne) ? allegiance.playerOne: allegiance.playerTwo))){
-				showMvAccessibleTiles(tileS.left.GetComponent<TileScript>(),num-1,ally);
-				gm.accessibleTiles.Add(tileS.left.GetComponent<TileScript>());
-			}
-			if (tileS.right != null && (tileS.right.GetComponent<TileScript>().objectOccupyingTile ==null || tileS.right.GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == ((ally == allegiance.playerOne) ? allegiance.playerOne: allegiance.playerTwo))){
-				showMvAccessibleTiles(tileS.right.GetComponent<TileScript>(),num-1,ally);
-				gm.accessibleTiles.Add(tileS.right.GetComponent<TileScript>());
-			}	
-		}
-	}
+//	void showMvAccessibleTiles(TileScript tile, int num,allegiance ally){
+//		TileScript tileS = tile.transform.GetComponent<TileScript>();
+//		
+//		if (tileS.objectOccupyingTile == null){
+//			tile.renderer.material.color = Color.green;
+//		}
+//		
+//		if (num!=0){
+//			if (tileS.up != null && (tileS.up.GetComponent<TileScript>().objectOccupyingTile ==null  || tileS.up.GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == ((ally == allegiance.playerOne) ? allegiance.playerOne: allegiance.playerTwo))){
+//				showMvAccessibleTiles(tileS.up.GetComponent<TileScript>(),num-1,ally);
+//				gm.accessibleTiles.Add(tileS.up.GetComponent<TileScript>());
+//			}
+//			if (tileS.down != null && (tileS.down.GetComponent<TileScript>().objectOccupyingTile ==null  || tileS.down.GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == ((ally == allegiance.playerOne) ? allegiance.playerOne: allegiance.playerTwo))){
+//				showMvAccessibleTiles(tileS.down.GetComponent<TileScript>(),num-1,ally);
+//				gm.accessibleTiles.Add(tileS.down.GetComponent<TileScript>());
+//			}
+//			if (tileS.left != null && (tileS.left.GetComponent<TileScript>().objectOccupyingTile ==null || tileS.left.GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == ((ally == allegiance.playerOne) ? allegiance.playerOne: allegiance.playerTwo))){
+//				showMvAccessibleTiles(tileS.left.GetComponent<TileScript>(),num-1,ally);
+//				gm.accessibleTiles.Add(tileS.left.GetComponent<TileScript>());
+//			}
+//			if (tileS.right != null && (tileS.right.GetComponent<TileScript>().objectOccupyingTile ==null || tileS.right.GetComponent<TileScript>().objectOccupyingTile.GetComponent<Unit>().alleg == ((ally == allegiance.playerOne) ? allegiance.playerOne: allegiance.playerTwo))){
+//				showMvAccessibleTiles(tileS.right.GetComponent<TileScript>(),num-1,ally);
+//				gm.accessibleTiles.Add(tileS.right.GetComponent<TileScript>());
+//			}	
+//		}
+//	}
 
 	public HashSet<TileScript> getMvAccessibleTiles(allegiance ally){
 		HashSet<TileScript> tileSet = new HashSet<TileScript>();
 		if (!mvd){
 			getMvAccessibleTiles(tileSet,this.transform.parent.GetComponent<TileScript>(),mvRange,ally);
-			//cannot move to tiles that have units in them
-			HashSet<TileScript> temp = new HashSet<TileScript>();
-			foreach(TileScript tile in tileSet){
-				if (tile.objectOccupyingTile != null){
-					temp.Add (tile);
-				}
-			}
-
-			foreach(TileScript tile in temp){
-				if (tile.objectOccupyingTile != null){
-					tileSet.Remove (tile);
-				}
-			}
 			//can't move to the tile it's in
 			//gm.accessibleTiles.Remove(this.transform.parent.GetComponent<TileScript>());	
 		}
