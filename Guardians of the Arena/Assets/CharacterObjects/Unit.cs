@@ -188,7 +188,7 @@ public class Unit    : MonoBehaviour {
 	}
 
 	public virtual void gainXP(){
-		xp += 5;
+		xp += 20;
 
 		if (xp >= XP_TO_LEVEL [unitLevel - 1]) {
 			xp = 0;

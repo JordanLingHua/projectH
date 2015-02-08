@@ -29,7 +29,7 @@ public class KnifeThrower : Unit {
 	
 	//gain xp add attack range for lvl 2
 	public override void gainXP(){
-		xp += 5;
+		xp += 20;
 		if (xp >= XP_TO_LEVEL [unitLevel - 1]) {
 			xp = 0;
 			unitLevel ++;
