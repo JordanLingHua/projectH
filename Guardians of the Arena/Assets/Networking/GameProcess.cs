@@ -78,11 +78,6 @@ public class GameProcess : MonoBehaviour {
 			// loginSucceed\\correctUsername
 			else if (tokens[0].Equals("loginSucceed"))
 			{
-				for (int i = 0; i < 5; i++)
-				{
-					tempPageNameStorage[i] = tokens[i+2];
-				}
-
 				if (tokens[7].Equals("1"))
 					GameObject.Find("Login_GUI").GetComponent<LoginScreenGUI>().loginText =
 						"Creating Account...";
@@ -90,6 +85,15 @@ public class GameProcess : MonoBehaviour {
 				playerName = tokens[1];
 
 
+			}
+
+			else if (tokens[0].Equals("pageNames"))
+			{
+				PageNameScript pns = GameObject.Find ("PageInfo").GetComponent<PageNameScript>();
+				for (int i = 0; i < 5; i++)
+				{
+					pns.pages[i] = tokens[i+1];
+				}
 			}
 			
 			// loginFail
@@ -544,15 +548,24 @@ public class GameProcess : MonoBehaviour {
 	void OnLevelWasLoaded(int sceneNumber)
 	{
 		if (sceneNumber == 1) {
-			if (!loaded){
-				loaded = true;
-			PageNameScript pns = GameObject.Find("PageInfo").GetComponent<PageNameScript>();
-			pns.pages = new string[5];
-			for (int i = 0; i < 5; i++)
-			{
-				pns.pages[i] = tempPageNameStorage[i];
-			}
-		}
+//			PageNameScript pns = GameObject.Find("PageInfo").GetComponent<PageNameScript>();
+//			pns.pages = new string[5];
+//			if (!loaded){
+//				loaded = true;
+//			
+//			for (int i = 0; i < 5; i++)
+//			{
+//				pns.pages[i] = tempPageNameStorage[i];
+//			}
+//		}
+//
+//			else{
+//				for (int i = 0; i < 5; i++)
+//				{
+//				pns.pages[i] = GameObject.Find ("PageInfo").GetComponent<PageNameScript>().pages[i];
+//				}
+//			}
+			returnSocket().SendTCPPacket("pageNames");
 				
 		}
 		if (sceneNumber == 3)//PvP multiplayer
