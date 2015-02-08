@@ -187,12 +187,24 @@ public class Unit    : MonoBehaviour {
 		return nothing;
 	}
 
+
+	public virtual void gainLevelTwoBonus (){
+
+	}
+	public virtual void gainLevelThreeBonus(){
+
+	}
 	public virtual void gainXP(){
 		xp += 20;
 
 		if (xp >= XP_TO_LEVEL [unitLevel - 1]) {
 			xp = 0;
 			unitLevel ++;
+			if (unitLevel == 2){
+				gainLevelTwoBonus();
+			}else if (unitLevel == 3){
+				gainLevelThreeBonus();
+			}
 			if ((alleg == allegiance.playerOne && gp.playerNumber == 1) || (alleg == allegiance.playerTwo && gp.playerNumber == 2)){
 				gm.addLogToCombatLog("Your " + unitName + " has leveled up to level " + unitLevel + "!");
 			}
@@ -224,8 +236,13 @@ public class Unit    : MonoBehaviour {
 
 
 	public virtual void takeDmg(Unit unitAttacking,int amt){
-		string unitAffectedPlayer = ((gp.playerNumber ==  1 && unitAttacking.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && unitAttacking.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
-		string player = ((gp.playerNumber ==  1 && this.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && this.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
+		string unitAffectedPlayer = ((gp.playerNumber == 1 && unitAttacking.alleg == allegiance.playerOne) || (gp.playerNumber == 2 && unitAttacking.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
+		string player = "";
+		if ((gp.playerNumber == 1 && this.alleg == allegiance.playerOne) || (gp.playerNumber == 2 && this.alleg == allegiance.playerTwo)) {
+				player = "Your ";
+		} else if ((gp.playerNumber == 1 && this.alleg == allegiance.playerTwo) || (gp.playerNumber == 2 && this.alleg == allegiance.playerOne)){
+				player = "Opponent's ";
+		}
 		if (!this.invincible) {
 
 

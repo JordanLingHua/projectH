@@ -26,26 +26,10 @@ public class KnifeThrower : Unit {
 		unitRole = 500;//ranged
 		renderer.material.color = new Color32(255,153,204,1);
 	}
-	
-	//gain xp add attack range for lvl 2
-	public override void gainXP(){
-		xp += 20;
-		if (xp >= XP_TO_LEVEL [unitLevel - 1]) {
-			xp = 0;
-			unitLevel ++;
-			if (unitLevel == 2) {
-				atkRange++;
-			}
-			if ((alleg == allegiance.playerOne && gp.playerNumber == 1) || (alleg == allegiance.playerTwo && gp.playerNumber == 2)){
-				gm.addLogToCombatLog("Your " + unitName + " has leveled up to level " + unitLevel + "!");
-			}
-			if ((alleg == allegiance.playerTwo && gp.playerNumber == 1) || (alleg == allegiance.playerOne && gp.playerNumber == 2)){
-				gm.addLogToCombatLog("Opponent's " + unitName + " has leveled up to level " + unitLevel + "!");
-			}
-			showPopUpText("Leveled Up!",Color.yellow);
-		} else {
-			showPopUpText("XP+5!",Color.magenta);
-		}
+
+	public override void gainLevelTwoBonus ()
+	{
+		atkRange ++;
 	}
 
 	public override HashSet<TileScript> getAtkAccessibleTiles ()

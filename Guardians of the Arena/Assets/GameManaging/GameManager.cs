@@ -82,23 +82,9 @@ public class GameManager : MonoBehaviour {
 		text.GetComponent<ErrorPopUpTextScript> ().StartCoroutine (text.GetComponent<ErrorPopUpTextScript> ().showText (error, Color.red));
 	}
 
-
-	void levelAllUnitsUp(){
-		foreach (int key in units.Keys){
-			for (int i = 0; i < 4; i++){
-				units[key].gainXP();
-			}
-		}
-
-	}
-
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.Escape)){
 			clearSelection();
-		}
-
-		if (Input.GetKeyDown(KeyCode.Insert)){
-			levelAllUnitsUp ();
 		}
 
 		if (Input.GetKeyDown (KeyCode.V)) {

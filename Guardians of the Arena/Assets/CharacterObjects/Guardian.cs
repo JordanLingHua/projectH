@@ -77,18 +77,4 @@ public class Guardian :Unit {
 
 		}
 	}
-
-	
-	public override void attackUnit(Unit unitAffected){
-		atkd = true;
-
-		if (unitLevel == 3 && (((float)unitAffected.hp/unitAffected.maxHP) < 0.5)){
-			unitAffected.takeDmg(this,unitAffected.hp);
-		}else{
-			unitAffected.takeDmg(this,this.atk);
-		}
-		//clean up the board colors
-		gm.accessibleTiles.Clear();
-		this.transform.parent.gameObject.transform.parent.GetComponent<TileManager>().clearAllTiles();
-	}
 }
