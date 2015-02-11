@@ -337,7 +337,6 @@ public class GameProcess : MonoBehaviour {
 
 				gameManager.pMana -= gameManager.units[Int32.Parse (tokens[1])].atkCost;
 
-<<<<<<< HEAD
 //				//Use the values assigned to targetTileX and targetTileZ from TileScript.cs:
 //				//Attack animation based on the position of the tile that is going to be attacked
 //				if(gameManager.units[Int32.Parse (tokens[1])].transform.position.z > targetTileZ)
@@ -350,13 +349,6 @@ public class GameProcess : MonoBehaviour {
 //					gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 11);
 //				//hmm it seems to always play the attack_front animation
 //
-=======
-
-
-
-
-
->>>>>>> origin/master
 
 
 
@@ -382,7 +374,6 @@ public class GameProcess : MonoBehaviour {
 
 
 
-<<<<<<< HEAD
 //
 //				//Step 2)  Now you can use the appropriate states for this attack functionality
 //				print ("attacker position x:" + gameManager.units[Int32.Parse (tokens[1])].transform.position.x);
@@ -402,7 +393,7 @@ public class GameProcess : MonoBehaviour {
 //					gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 11);
 //				//hmm it seems to always play the attack_front animation
 //
-=======
+
 
 				//Step 2)  Now you can use the appropriate states for this attack functionality
 				print ("attacker position x:" + gameManager.units[Int32.Parse (tokens[1])].transform.position.x);
@@ -435,7 +426,6 @@ public class GameProcess : MonoBehaviour {
 						gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 11);
 					//hmm it seems to always play the attack_front animation
 				}
->>>>>>> origin/master
 
 
 
@@ -456,7 +446,6 @@ public class GameProcess : MonoBehaviour {
 						//Step 1)  Before you do anything, Transition from neutral_states in the post_attack version, to the actual neutral states
 						//NOTE:  the post_attack neutral states don't get signified by a mode_and_dir.  occured at exit time of attack.  So mode_and_dir is still 
 						//== the attack state it left off at
-<<<<<<< HEAD
 //						if(gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 8 || 
 //						   gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 12)
 //							gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 0);
@@ -481,7 +470,7 @@ public class GameProcess : MonoBehaviour {
 //							gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 14);
 //						else if(gameManager.units[Int32.Parse(tokens[3+i])].transform.position.x < gameManager.units[Int32.Parse (tokens[1])].transform.position.x)
 //							gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 15);
-=======
+
 						if(gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 8 || 
 						   gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 12)
 							gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 0);
@@ -521,8 +510,6 @@ public class GameProcess : MonoBehaviour {
 							else if(gameManager.units[Int32.Parse(tokens[3+i])].transform.position.x > gameManager.units[Int32.Parse (tokens[1])].transform.position.x)
 								gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 15);
 						}
->>>>>>> origin/master
-
 
 						if (gameManager.units.ContainsKey(Int32.Parse(tokens[3+i])) && !gameManager.units[Int32.Parse(tokens[3+i])].invincible){
 							gameManager.units[Int32.Parse (tokens[1])].gainXP();
