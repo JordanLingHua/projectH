@@ -41,7 +41,7 @@ namespace Guardians_Of_The_Arena_Server.Units
             return null;
         }
 
-        public override void ApplyDamage(int damage)
+        public override void ApplyDamage(int damage, Unit attackingUnit)
         {
             if (invulnerable)
                 damage = 0;

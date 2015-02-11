@@ -25,7 +25,7 @@ namespace Guardians_Of_The_Arena_Server.Units
             throw new NotImplementedException();
         }
 
-        public override void ApplyDamage(int damage)
+        public override void ApplyDamage(int damage, Unit attackingUnit)
         {
             Console.WriteLine("LOG: THIS ROCK IS TOO POWERFUL TO DESTROY!!!!");
         }

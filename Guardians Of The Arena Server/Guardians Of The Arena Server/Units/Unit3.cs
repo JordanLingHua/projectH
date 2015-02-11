@@ -139,16 +139,16 @@ namespace Guardians_Of_The_Arena_Server.Units
             {
                 if (unitAttacking.unitAllegiance == this.unitAllegiance)
                 {
-                    unitAttacking.ApplyDamage(-damageDealt);
+                    unitAttacking.ApplyDamage(-damageDealt, this);
                 }
                 else
                 {
-                    unitAttacking.ApplyDamage(damageDealt);
+                    unitAttacking.ApplyDamage(damageDealt, this);
                 }
             }
             else
             {
-                unitAttacking.ApplyDamage(damageDealt);
+                unitAttacking.ApplyDamage(damageDealt, this);
             }
 
 

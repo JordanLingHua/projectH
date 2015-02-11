@@ -213,17 +213,18 @@ namespace Guardians_Of_The_Arena_Server
 
         public virtual void Attack(Unit unitAttacking)
         {
-            unitAttacking.ApplyDamage(this.damage);
+            unitAttacking.ApplyDamage(this.damage, this);
         }
 
-        public virtual void ApplyDamage(int damage)
+        public virtual void ApplyDamage(int damage, Unit attackingUnit)
         {
             this.health -= damage;
             
             if (health > maxHealth)
                 health = maxHealth;
 
-            Console.WriteLine("LOG: Unit {0} takes {1} damage. Is now at {2} health", this.UniqueID, damage, this.health);
+            Console.WriteLine("LOG: Unit {0} deals {1} damage to Unit {2}. Is now at {3} health"
+                                , attackingUnit.UniqueID, damage, this.uniqueID, health);
 
             if (health <= 0)
             {

@@ -60,7 +60,7 @@ namespace Guardians_Of_The_Arena_Server.Units
             if (unitsHealed > 0)
                 damageApplied = levelThreeBonus_Heal;
 
-            unitAttacking.ApplyDamage(damageApplied);
+            unitAttacking.ApplyDamage(damageApplied, this);
 
             unitsHealed++;
 

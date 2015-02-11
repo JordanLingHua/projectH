@@ -12,6 +12,7 @@ namespace Guardians_Of_The_Arena_Server
         private Tile[,] tiles;
         private Dictionary<int, Unit> unitTable;
         private int unitCount;
+        private Game gameRef;
 
         //need to know what is happening with the guardian and soulstone at all times
         //so we will have to keep track of them
@@ -40,8 +41,10 @@ namespace Guardians_Of_The_Arena_Server
             get { return height; }
         }
 
-        public GameBoard()
+        public GameBoard(Game gameRef)
         {
+            this.gameRef = gameRef;
+
             tiles = new Tile[width, height];
             unitTable = new Dictionary<int, Unit>();
 
@@ -133,7 +136,7 @@ namespace Guardians_Of_The_Arena_Server
                         }
                     case 10:
                         {
-                            unit = new Units.Guardian(unitCount);
+                            unit = new Units.Guardian(unitCount, gameRef);
                             player1_Guardian = (Units.Guardian)unit;
                             break;
                         }
@@ -204,7 +207,7 @@ namespace Guardians_Of_The_Arena_Server
                         }
                     case 10:
                         {
-                            unit = new Units.Guardian(unitCount);
+                            unit = new Units.Guardian(unitCount, gameRef);
                             player2_Guardian = (Units.Guardian)unit;
                             break;
                         }
