@@ -30,7 +30,7 @@ namespace Guardians_Of_The_Arena_Server.Units
             {
                 if (unitAttacking.unitAllegiance != this.unitAllegiance)
                 {
-                    this.ApplyDamage(-10);
+                    this.ApplyDamage(-10, this);
                 }
             }
 
@@ -46,7 +46,7 @@ namespace Guardians_Of_The_Arena_Server.Units
                 }
             }
 
-            unitAttacking.ApplyDamage(this.damage);
+            unitAttacking.ApplyDamage(this.damage, this);
         }
 
         public override ArrayList AttackTile(GameBoard.Tile tile)

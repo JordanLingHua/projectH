@@ -7,7 +7,9 @@ namespace Guardians_Of_The_Arena_Server.Units
 {
     public class Guardian : Unit
     {
-        public Guardian(int ID)
+        Game gameRef;
+
+        public Guardian(int ID, Game gameRef)
             : base(ID)
         {
             health = 45;
@@ -18,18 +20,15 @@ namespace Guardians_Of_The_Arena_Server.Units
             movementCost = 1;
             attackCost = 2;
             attackRange = 1;
+
+            this.gameRef = gameRef;
         }
 
         public override void Attack(Unit unitAttacking)
         {
             int damageDealt = this.damage;
 
-            if (this.level >= 3 && unitAttacking.Health < unitAttacking.MaxHealth / 2)
-            {
-                damageDealt = 1000;
-            }
-
-            unitAttacking.ApplyDamage(damageDealt);
+            unitAttacking.ApplyDamage(this.damage, this);
         }
 
        public override ArrayList AttackTile(GameBoard.Tile tile)
@@ -50,16 +49,29 @@ namespace Guardians_Of_The_Arena_Server.Units
            //{ }
        }
 
-       public override void ApplyDamage(int damage)
+       public override void ApplyDamage(int damage, Unit attackingUnit)
        {
            if (this.level >= 2 && damage > 10)
                damage = 10;
 
+           if (this.level >= 3)
+           {
+               //int baseDamage = this.damage;
+               //this.damage = 5;
+               //gameRef.sendAttackedUnits(AttackTile(attackingUnit.CurrentTile), this);
+               //this.damage = baseDamage;             
+
+               attackingUnit.ApplyDamage(5, this);
+           }
+
+
            this.health -= damage;
-           Console.WriteLine("LOG: Unit " + uniqueID + " takes " + damage + " damage.");
 
            if (health > maxHealth)
                health = maxHealth;
+
+           Console.WriteLine("LOG: Unit {0} deals {1} damage to Unit {2}. Is now at {3} health"
+                                , attackingUnit.UniqueID, damage, this.uniqueID, health);
 
 
            if (health <= 0)
