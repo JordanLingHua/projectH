@@ -108,7 +108,7 @@ public class Mystic: Unit {
 				oldAtkRange = unitAffected.atkRange;
 				oldAtkDmg = unitAffected.atk;
 
-				unitAffected.mvRange += 3;
+				unitAffected.mvRange += 2;
 				allyFocusingThis = this;
 				unitAffected.showPopUpText("Focused!",Color.green);
 				if (unitLevel == 2){

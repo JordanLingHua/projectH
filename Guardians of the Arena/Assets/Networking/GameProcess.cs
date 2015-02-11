@@ -4,7 +4,7 @@ using System;
 using System.Diagnostics;
  
 public class GameProcess : MonoBehaviour {
-	
+	public GUISkin mySkin;
 	//PUBLIC MEMBERS 
 	public int clientNumber;
 	public int playerNumber;
@@ -12,7 +12,7 @@ public class GameProcess : MonoBehaviour {
 	public string[] tempPageNameStorage;
 	public bool play;
 	private bool loaded;
-	
+
 	public DateTime dT;
 	public Stopwatch uniClock;
 	public TileManager tileManager;
@@ -20,9 +20,15 @@ public class GameProcess : MonoBehaviour {
 	AudioManager am;
 	PopUpMenuNecro pum;
 	public PlayerSetup playerSetup;
-
-	//
 	public float targetTileX, targetTileZ;
+
+	//variables for popup windows and tips
+	Rect popUpWindowRect;
+	bool showPopUpTip,neverShowPopUpWindow;
+	ArrayList popUpWindowText;
+	string popUpTitle;
+	int popUpIndex;
+
 
 	
 	//PRIVATE MEMBERS
@@ -31,6 +37,11 @@ public class GameProcess : MonoBehaviour {
 	private string tempBuffer;
 	
 	void Start () {
+		showPopUpTip = true;
+		popUpWindowText = new ArrayList();
+		popUpIndex = 0;
+		setupScreenTips();
+		popUpWindowRect = new Rect(0,0,400,400);
 		pum = GameObject.Find ("PopUpMenu").GetComponent<PopUpMenuNecro> ();
 		am = GameObject.Find ("AudioManager").GetComponent<AudioManager> ();
 		uniClock = new Stopwatch();
@@ -326,18 +337,18 @@ public class GameProcess : MonoBehaviour {
 
 				gameManager.pMana -= gameManager.units[Int32.Parse (tokens[1])].atkCost;
 
-				//Use the values assigned to targetTileX and targetTileZ from TileScript.cs:
-				//Attack animation based on the position of the tile that is going to be attacked
-				if(gameManager.units[Int32.Parse (tokens[1])].transform.position.z > targetTileZ)
-					gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 8);
-				else if(gameManager.units[Int32.Parse (tokens[1])].transform.position.z < targetTileZ)
-					gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 9);
-				else if(gameManager.units[Int32.Parse (tokens[1])].transform.position.x > targetTileX)
-					gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 10);
-				else if(gameManager.units[Int32.Parse (tokens[1])].transform.position.x < targetTileX)
-					gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 11);
-				//hmm it seems to always play the attack_front animation
-
+//				//Use the values assigned to targetTileX and targetTileZ from TileScript.cs:
+//				//Attack animation based on the position of the tile that is going to be attacked
+//				if(gameManager.units[Int32.Parse (tokens[1])].transform.position.z > targetTileZ)
+//					gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 8);
+//				else if(gameManager.units[Int32.Parse (tokens[1])].transform.position.z < targetTileZ)
+//					gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 9);
+//				else if(gameManager.units[Int32.Parse (tokens[1])].transform.position.x > targetTileX)
+//					gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 10);
+//				else if(gameManager.units[Int32.Parse (tokens[1])].transform.position.x < targetTileX)
+//					gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 11);
+//				//hmm it seems to always play the attack_front animation
+//
 
 
 
@@ -345,43 +356,43 @@ public class GameProcess : MonoBehaviour {
 				//Step 1)  Before you do anything, Transition from neutral_states in the post_attack version, to the actual neutral states
 				//NOTE:  the post_attack neutral states don't get signified by a mode_and_dir.  occured at exit time of attack.  So mode_and_dir is still 
 				//== the attack state it left off at
-				if(gameManager.units[Int32.Parse (tokens[1])].GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 8 || 
-				   gameManager.units[Int32.Parse (tokens[1])].GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 12)
-					gameManager.units[Int32.Parse (tokens[1])].GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 0);
-				else if(gameManager.units[Int32.Parse (tokens[1])].GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 9 || 
-				   gameManager.units[Int32.Parse (tokens[1])].GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 13)
-					gameManager.units[Int32.Parse (tokens[1])].GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 1);
-				else if(gameManager.units[Int32.Parse (tokens[1])].GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 10 || 
-				   gameManager.units[Int32.Parse (tokens[1])].GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 14)
-					gameManager.units[Int32.Parse (tokens[1])].GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 2);
-				else if(gameManager.units[Int32.Parse (tokens[1])].GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 11 || 
-				   gameManager.units[Int32.Parse (tokens[1])].GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 15)
-					gameManager.units[Int32.Parse (tokens[1])].GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 3);
-				//NOTE:  I will use the above switch state as the preamble to nearly every switch statement like below
-
-
+//				if(gameManager.units[Int32.Parse (tokens[1])].GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 8 || 
+//				   gameManager.units[Int32.Parse (tokens[1])].GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 12)
+//					gameManager.units[Int32.Parse (tokens[1])].GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 0);
+//				else if(gameManager.units[Int32.Parse (tokens[1])].GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 9 || 
+//				   gameManager.units[Int32.Parse (tokens[1])].GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 13)
+//					gameManager.units[Int32.Parse (tokens[1])].GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 1);
+//				else if(gameManager.units[Int32.Parse (tokens[1])].GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 10 || 
+//				   gameManager.units[Int32.Parse (tokens[1])].GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 14)
+//					gameManager.units[Int32.Parse (tokens[1])].GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 2);
+//				else if(gameManager.units[Int32.Parse (tokens[1])].GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 11 || 
+//				   gameManager.units[Int32.Parse (tokens[1])].GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 15)
+//					gameManager.units[Int32.Parse (tokens[1])].GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 3);
+//				//NOTE:  I will use the above switch state as the preamble to nearly every switch statement like below
+//
+//
 
 				gameManager.pMana -= gameManager.units[Int32.Parse (tokens[1])].atkCost;
 
-
-				//Step 2)  Now you can use the appropriate states for this attack functionality
-				print ("attacker position x:" + gameManager.units[Int32.Parse (tokens[1])].transform.position.x);
-				print ("attacker position z:" + gameManager.units[Int32.Parse (tokens[1])].transform.position.z);
-				print ("attacked position x:" + targetTileX);
-				print ("attacked position z:" + targetTileZ);
-				print ("attacker animation state #:" + gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().GetInteger("mode_and_dir"));
-				//Use the values assigned to targetTileX and targetTileZ from TileScript.cs:
-				//Attack animation based on the position of the tile that is going to be attacked
-				if(gameManager.units[Int32.Parse (tokens[1])].transform.position.z < (targetTileZ*10))
-					gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 8);
-				else if(gameManager.units[Int32.Parse (tokens[1])].transform.position.z > (targetTileZ*10))
-					gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 9);
-				else if(gameManager.units[Int32.Parse (tokens[1])].transform.position.x > (targetTileX*10))
-					gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 10);
-				else if(gameManager.units[Int32.Parse (tokens[1])].transform.position.x < (targetTileX*10))
-					gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 11);
-				//hmm it seems to always play the attack_front animation
-
+//
+//				//Step 2)  Now you can use the appropriate states for this attack functionality
+//				print ("attacker position x:" + gameManager.units[Int32.Parse (tokens[1])].transform.position.x);
+//				print ("attacker position z:" + gameManager.units[Int32.Parse (tokens[1])].transform.position.z);
+//				print ("attacked position x:" + targetTileX);
+//				print ("attacked position z:" + targetTileZ);
+//				print ("attacker animation state #:" + gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().GetInteger("mode_and_dir"));
+//				//Use the values assigned to targetTileX and targetTileZ from TileScript.cs:
+//				//Attack animation based on the position of the tile that is going to be attacked
+//				if(gameManager.units[Int32.Parse (tokens[1])].transform.position.z < (targetTileZ*10))
+//					gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 8);
+//				else if(gameManager.units[Int32.Parse (tokens[1])].transform.position.z > (targetTileZ*10))
+//					gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 9);
+//				else if(gameManager.units[Int32.Parse (tokens[1])].transform.position.x > (targetTileX*10))
+//					gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 10);
+//				else if(gameManager.units[Int32.Parse (tokens[1])].transform.position.x < (targetTileX*10))
+//					gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 11);
+//				//hmm it seems to always play the attack_front animation
+//
 
 
 
@@ -402,30 +413,30 @@ public class GameProcess : MonoBehaviour {
 						//Step 1)  Before you do anything, Transition from neutral_states in the post_attack version, to the actual neutral states
 						//NOTE:  the post_attack neutral states don't get signified by a mode_and_dir.  occured at exit time of attack.  So mode_and_dir is still 
 						//== the attack state it left off at
-						if(gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 8 || 
-						   gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 12)
-							gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 0);
-						else if(gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 9 || 
-						   gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 13)
-							gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 1);
-						else if(gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 10 || 
-						   gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 14)
-							gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 2);
-						else if(gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 11 || 
-						   gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 15)
-							gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 3);
-						//NOTE:  I will use the above switch state as the preamble to nearly every switch statement like below
-
-						//Step 2
-						//Unit gets hit facing the direction of the attacker
-						if(gameManager.units[Int32.Parse(tokens[3+i])].transform.position.z < gameManager.units[Int32.Parse (tokens[1])].transform.position.z)
-							gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 12);
-						else if(gameManager.units[Int32.Parse(tokens[3+i])].transform.position.z > gameManager.units[Int32.Parse (tokens[1])].transform.position.z)
-							gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 13);
-						else if(gameManager.units[Int32.Parse(tokens[3+i])].transform.position.x > gameManager.units[Int32.Parse (tokens[1])].transform.position.x)
-							gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 14);
-						else if(gameManager.units[Int32.Parse(tokens[3+i])].transform.position.x < gameManager.units[Int32.Parse (tokens[1])].transform.position.x)
-							gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 15);
+//						if(gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 8 || 
+//						   gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 12)
+//							gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 0);
+//						else if(gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 9 || 
+//						   gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 13)
+//							gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 1);
+//						else if(gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 10 || 
+//						   gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 14)
+//							gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 2);
+//						else if(gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 11 || 
+//						   gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 15)
+//							gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 3);
+//						//NOTE:  I will use the above switch state as the preamble to nearly every switch statement like below
+//
+//						//Step 2
+//						//Unit gets hit facing the direction of the attacker
+//						if(gameManager.units[Int32.Parse(tokens[3+i])].transform.position.z < gameManager.units[Int32.Parse (tokens[1])].transform.position.z)
+//							gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 12);
+//						else if(gameManager.units[Int32.Parse(tokens[3+i])].transform.position.z > gameManager.units[Int32.Parse (tokens[1])].transform.position.z)
+//							gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 13);
+//						else if(gameManager.units[Int32.Parse(tokens[3+i])].transform.position.x > gameManager.units[Int32.Parse (tokens[1])].transform.position.x)
+//							gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 14);
+//						else if(gameManager.units[Int32.Parse(tokens[3+i])].transform.position.x < gameManager.units[Int32.Parse (tokens[1])].transform.position.x)
+//							gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 15);
 
 
 						if (gameManager.units.ContainsKey(Int32.Parse(tokens[3+i])) && !gameManager.units[Int32.Parse(tokens[3+i])].invincible){
@@ -598,7 +609,51 @@ public class GameProcess : MonoBehaviour {
 			print ("Error on disconnect: " + e);
 		}		
 	}
-	
+
+	void popUpWindow(int windowID) 
+	{
+		GUI.DragWindow(new Rect(0, 30, 10000, 25));
+		//GUILayout.BeginVertical ();
+		//title
+
+		GUILayout.Label (popUpTitle);
+		GUILayout.BeginVertical();
+		GUILayout.BeginHorizontal ();
+		GUILayout.Label ((string)popUpWindowText[popUpIndex], "PlainText");
+		GUILayout.EndHorizontal ();
+
+		GUILayout.BeginHorizontal();
+		GUILayout.FlexibleSpace();
+		neverShowPopUpWindow = GUILayout.Toggle(neverShowPopUpWindow,"Never display this tip again");
+		GUILayout.FlexibleSpace();
+		GUILayout.EndHorizontal();
+		GUILayout.BeginHorizontal();
+		GUILayout.FlexibleSpace();
+		if (GUILayout.Button ("Close Tip", "ShortButton")) 
+			showPopUpTip = false;
+		GUILayout.FlexibleSpace();
+		GUILayout.EndHorizontal();
+		
+		GUILayout.EndVertical();
+	}
+
+	void OnGUI(){
+		GUI.skin = mySkin;
+		if (showPopUpTip){
+			popUpWindowRect = GUI.Window (1, popUpWindowRect, popUpWindow,"");
+		}
+
+	}
+
+	public void setupScreenTips(){
+		popUpTitle = "Tip";
+		popUpIndex = 0;
+		popUpWindowText.Add("This is the setup screen. Hover over units with your mouse to see more information about it.");
+		popUpWindowText.Add("test 2");
+		popUpWindowText.Add("Test 3");
+	}
+
+
 	public void loadManagers()
 	{
 		tileManager = GameObject.Find("TileManager").GetComponent<TileManager>();
