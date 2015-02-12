@@ -316,10 +316,14 @@ public class Unit    : MonoBehaviour {
 		
 		this.transform.parent.gameObject.transform.parent.GetComponent<TileManager>().clearAllTiles();
 		//if player is moving a piece
-		if (gm.gs == GameManager.gameState.playerMv){
-			showMvTiles(alleg == allegiance.playerOne? allegiance.playerOne : allegiance.playerTwo);
-		//if player is attacking with a piece	
-		}else if (gm.gs == GameManager.gameState.playerAtk){
+		//if (gm.gs == GameManager.gameState.playerMv){
+		if (!mvd || (mvd && atkd)) {
+			gm.changeToMoving();
+			showMvTiles (alleg == allegiance.playerOne ? allegiance.playerOne : allegiance.playerTwo);
+			//if player is attacking with a piece	
+		}else{
+			gm.changeToAttacking();
+		//}else if (gm.gs == GameManager.gameState.playerAtk){
 			showAtkTiles();
 		}
 	}
@@ -345,11 +349,7 @@ public class Unit    : MonoBehaviour {
 
 	public HashSet<TileScript> getMvAccessibleTiles(allegiance ally){
 		HashSet<TileScript> tileSet = new HashSet<TileScript>();
-		if (!mvd){
-			getMvAccessibleTiles(tileSet,this.transform.parent.GetComponent<TileScript>(),mvRange,ally);
-			//can't move to the tile it's in
-			//gm.accessibleTiles.Remove(this.transform.parent.GetComponent<TileScript>());	
-		}
+		getMvAccessibleTiles(tileSet,this.transform.parent.GetComponent<TileScript>(),mvRange,ally);
 		return tileSet;
 	}
 	
