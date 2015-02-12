@@ -37,12 +37,13 @@ public class GameProcess : MonoBehaviour {
 	private string tempBuffer;
 	
 	void Start () {
-		showPopUpTip = true;
 		popUpWindowText = new ArrayList();
-		popUpIndex = 0;
-		firstLoginTips ();
-		setupScreenTips();
 		popUpWindowRect = new Rect(0,0,400,400);
+		popUpIndex = 0;
+		//showPopUpTip = true;
+		firstLoginTips ();
+
+
 		pum = GameObject.Find ("PopUpMenu").GetComponent<PopUpMenuNecro> ();
 		am = GameObject.Find ("AudioManager").GetComponent<AudioManager> ();
 		uniClock = new Stopwatch();
@@ -705,9 +706,22 @@ public class GameProcess : MonoBehaviour {
 		GUI.DragWindow (new Rect (0, 30, 10000, 25));
 		//variable window height based on how long the current tip is
 		popUpWindowRect.height = 200 + (((string)popUpWindowText [popUpIndex]).Length / 40 * 20);
-
 		GUILayout.Label (popUpTitle);
 		GUILayout.BeginVertical ();
+
+		
+		
+		GUILayout.BeginHorizontal ();
+		GUILayout.Label ((string)popUpWindowText [popUpIndex], "PlainText");
+		GUILayout.EndHorizontal ();
+
+		GUILayout.BeginHorizontal ();
+		GUILayout.FlexibleSpace ();
+		if (popUpIndex == popUpWindowText.Count - 1) {
+			neverShowPopUpWindow = GUILayout.Toggle (neverShowPopUpWindow, "Never display this tip again");
+		}
+		GUILayout.FlexibleSpace ();
+		GUILayout.EndHorizontal ();
 
 		GUILayout.BeginHorizontal ();
 		if (popUpIndex > 0) {
@@ -734,19 +748,6 @@ public class GameProcess : MonoBehaviour {
 		}
 		GUILayout.EndHorizontal();
 
-		GUILayout.BeginHorizontal ();
-		GUILayout.FlexibleSpace ();
-		if (popUpIndex == popUpWindowText.Count - 1) {
-			neverShowPopUpWindow = GUILayout.Toggle (neverShowPopUpWindow, "Never display this tip again");
-		}
-		GUILayout.FlexibleSpace ();
-		GUILayout.EndHorizontal ();
-
-
-		GUILayout.BeginHorizontal ();
-		GUILayout.Label ((string)popUpWindowText [popUpIndex], "PlainText");
-		GUILayout.EndHorizontal ();
-
 		GUILayout.EndVertical();
 	}
 
@@ -766,6 +767,8 @@ public class GameProcess : MonoBehaviour {
 		popUpIndex = 0;
 		popUpWindowText.Clear ();
 		popUpWindowText.Add("Welcome to Guardians of the Arena! We recommend newer players take a look at either the setup screen!");	
+		popUpWindowText.Add("Welcome to Guardians of the Arena! We recommend newer players take a look at either the setup screen!");
+		popUpWindowRect.y = (Screen.height - (200 + (((string)popUpWindowText [popUpIndex]).Length / 40 * 20)));
 	}
 
 
@@ -780,6 +783,7 @@ public class GameProcess : MonoBehaviour {
 		popUpWindowText.Add("Welcome to the Arena! Clicking on one of your units will select it and hovering over a unit will show information about it! Pressing escape will de-select the unit.");	
 		popUpWindowText.Add("A unit can either move (shown with green tiles) or attack (shown with red tiles). You can toggle between attacking and moving by either clicking on the buttons on the bottom of your screen, or pressing the 'v' or 'a' keys on your keyboard.");
 		popUpWindowText.Add("Each turn is one minute long mana resets on each turn. Mana will increase as the game progresses to a maximum of 8 mana.");
+		popUpWindowRect.y = (Screen.height - (200 + (((string)popUpWindowText [popUpIndex]).Length / 40 * 20)));
 	}
 
 
@@ -796,6 +800,7 @@ public class GameProcess : MonoBehaviour {
 		popUpWindowText.Add("Click and drag a unit around to reposition it. Once the game starts, all units in the green area will be brought to battle.");
 		popUpWindowText.Add("The gray area is for units that are not going to be used. You are required to have the Guardian and Soulstone in the green area, and you can have up to 10 units on the board, so choose which units you bring to battle carefully!");
 		popUpWindowText.Add("Your setup is automatically saved everytime you move a piece so feel free to switch between your other setups or go back to the Game Lobby.");
+		popUpWindowRect.y = (Screen.height - (200 + (((string)popUpWindowText [popUpIndex]).Length / 40 * 20)));
 	}
 
 
