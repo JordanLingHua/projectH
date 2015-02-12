@@ -442,9 +442,10 @@ public class Unit    : MonoBehaviour {
 
 	public void makeRock(){
 		alleg = allegiance.neutral;
+		displayHPBar = false;
 		unitName = "Rock";
-		hp = 10000;
-		maxHP = 10000;
+		hp = 1;
+		maxHP = 1;
 		invincible = true;
 	}
 

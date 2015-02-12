@@ -126,7 +126,7 @@ public class SetupScreenGUI : MonoBehaviour {
 
 		GUILayout.BeginHorizontal ();
 		GUILayout.FlexibleSpace();		
-		if (GUILayout.Button("Return to Main Menu", "ShortButton"))
+		if (GUILayout.Button("Return to Game Lobby", "ShortButton"))
 		{
 			Application.LoadLevel(1);
 		}

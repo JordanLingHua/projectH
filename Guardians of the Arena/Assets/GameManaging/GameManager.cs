@@ -196,8 +196,8 @@ public class GameManager : MonoBehaviour {
 //			}
 			Unit script = unit.GetComponent<Unit>();
 			
-			string info ="\nHP: " + script.hp + "/" + script.maxHP;
-			info += (script.unitLevel == 3 || script.unitName.Equals("Shrub") )? "": "\nXP: " + script.xp + "/" + script.XP_TO_LEVEL[script.unitLevel-1];
+			string info =script.invincible? "" : "\nHP: " + script.hp + "/" + script.maxHP;
+			info += (script.unitLevel == 3 || script.alleg == Unit.allegiance.neutral || script.unitType == 11)? "": "\nXP: " + script.xp + "/" + script.XP_TO_LEVEL[script.unitLevel-1];
 			
 			if (!script.paralyzed){
 				if (script.atk > 0){
@@ -225,7 +225,7 @@ public class GameManager : MonoBehaviour {
 //			}
 			
 			suInfo.text =  info;
-			unitNameGUI.text = "Level " +script.unitLevel + " "  + script.unitName;
+			unitNameGUI.text = script.alleg != Unit.allegiance.neutral ? "Level " +script.unitLevel + " " + script.unitName : script.unitName;
 			unitDescriptionGUI.text = script.description;
 			if (!script.paralyzed){
 				if (script.unitLevel >= 2){

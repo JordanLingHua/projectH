@@ -76,7 +76,9 @@ public class TileManager : MonoBehaviour {
 		//All units
 		case 0:
 			foreach (int key in gm.units.Keys) {
-				gm.units [key].displayHPBar = true;
+				if (gm.units [key].unitName != "Rock"){
+					gm.units [key].displayHPBar = true;
+				}
 			}
 			break;
 		//Friendly units

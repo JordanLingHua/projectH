@@ -28,7 +28,7 @@ public class GameProcess : MonoBehaviour {
 	ArrayList popUpWindowText;
 	string popUpTitle;
 	int popUpIndex;
-
+	string popUpName;
 
 	
 	//PRIVATE MEMBERS
@@ -40,6 +40,7 @@ public class GameProcess : MonoBehaviour {
 		showPopUpTip = true;
 		popUpWindowText = new ArrayList();
 		popUpIndex = 0;
+		firstLoginTips ();
 		setupScreenTips();
 		popUpWindowRect = new Rect(0,0,400,400);
 		pum = GameObject.Find ("PopUpMenu").GetComponent<PopUpMenuNecro> ();
@@ -214,6 +215,23 @@ public class GameProcess : MonoBehaviour {
 				
 			}
 
+			
+			else if (tokens[0].Equals("showTip"))
+			{
+				switch(tokens[1]){
+					case "firstLogin":
+						firstLoginTips();
+						break;
+					case "setUpTips":
+						setupScreenTips();
+						break;
+					case "playVsAI":
+						playVsAITips();
+						break;
+				}
+
+			}
+
 			//challengeCancelled\\challengerName
 			else if (tokens[0].Equals("challengeCancelled"))
 			{
@@ -254,7 +272,7 @@ public class GameProcess : MonoBehaviour {
 				}
 			}
 			#endregion
-			
+
 			#region GAME PACKETS
 
 			//spawnPieces\\...
@@ -684,45 +702,100 @@ public class GameProcess : MonoBehaviour {
 
 	void popUpWindow(int windowID) 
 	{
-		GUI.DragWindow(new Rect(0, 30, 10000, 25));
-		//GUILayout.BeginVertical ();
-		//title
+		GUI.DragWindow (new Rect (0, 30, 10000, 25));
+		//variable window height based on how long the current tip is
+		popUpWindowRect.height = 200 + (((string)popUpWindowText [popUpIndex]).Length / 40 * 20);
 
 		GUILayout.Label (popUpTitle);
-		GUILayout.BeginVertical();
+		GUILayout.BeginVertical ();
+
 		GUILayout.BeginHorizontal ();
-		GUILayout.Label ((string)popUpWindowText[popUpIndex], "PlainText");
+		if (popUpIndex > 0) {
+			if (GUILayout.Button ("Previous Tip", "ShortButton")) {
+				popUpIndex --;
+			}
+		}
+
+		GUILayout.FlexibleSpace ();
+		if (popUpIndex == popUpWindowText.Count - 1) {
+			if (GUILayout.Button ("Close Tip", "ShortButton")) {
+				showPopUpTip = false;
+				if (neverShowPopUpWindow) {
+					returnSocket ().SendTCPPacket ("dontDisplayTip\\" + popUpName);
+				}
+			}
+		}
+
+		GUILayout.FlexibleSpace();
+		if (popUpIndex < popUpWindowText.Count-1){
+			if (GUILayout.Button ("Next Tip", "ShortButton")) {
+				popUpIndex ++;
+			}
+		}
+		GUILayout.EndHorizontal();
+
+		GUILayout.BeginHorizontal ();
+		GUILayout.FlexibleSpace ();
+		if (popUpIndex == popUpWindowText.Count - 1) {
+			neverShowPopUpWindow = GUILayout.Toggle (neverShowPopUpWindow, "Never display this tip again");
+		}
+		GUILayout.FlexibleSpace ();
 		GUILayout.EndHorizontal ();
 
-		GUILayout.BeginHorizontal();
-		GUILayout.FlexibleSpace();
-		neverShowPopUpWindow = GUILayout.Toggle(neverShowPopUpWindow,"Never display this tip again");
-		GUILayout.FlexibleSpace();
-		GUILayout.EndHorizontal();
-		GUILayout.BeginHorizontal();
-		GUILayout.FlexibleSpace();
-		if (GUILayout.Button ("Close Tip", "ShortButton")) 
-			showPopUpTip = false;
-		GUILayout.FlexibleSpace();
-		GUILayout.EndHorizontal();
-		
+
+		GUILayout.BeginHorizontal ();
+		GUILayout.Label ((string)popUpWindowText [popUpIndex], "PlainText");
+		GUILayout.EndHorizontal ();
+
 		GUILayout.EndVertical();
 	}
 
 	void OnGUI(){
 		GUI.skin = mySkin;
 		if (showPopUpTip){
-			popUpWindowRect = GUI.Window (1, popUpWindowRect, popUpWindow,"");
+			popUpWindowRect = GUI.Window (10, popUpWindowRect, popUpWindow,"");
 		}
 
 	}
 
-	public void setupScreenTips(){
+	void firstLoginTips(){
+		neverShowPopUpWindow = false;
+		showPopUpTip = true;
+		popUpName = "firstLogin";
 		popUpTitle = "Tip";
 		popUpIndex = 0;
-		popUpWindowText.Add("This is the setup screen. Hover over units with your mouse to see more information about it.");
-		popUpWindowText.Add("test 2");
-		popUpWindowText.Add("Test 3");
+		popUpWindowText.Clear ();
+		popUpWindowText.Add("Welcome to Guardians of the Arena! We recommend newer players take a look at either the setup screen!");	
+	}
+
+
+
+	void playVsAITips(){
+		neverShowPopUpWindow = false;
+		showPopUpTip = true;
+		popUpName = "playVsAI";
+		popUpTitle = "Tip";
+		popUpIndex = 0;
+		popUpWindowText.Clear ();
+		popUpWindowText.Add("Welcome to the Arena! Clicking on one of your units will select it and hovering over a unit will show information about it! Pressing escape will de-select the unit.");	
+		popUpWindowText.Add("A unit can either move (shown with green tiles) or attack (shown with red tiles). You can toggle between attacking and moving by either clicking on the buttons on the bottom of your screen, or pressing the 'v' or 'a' keys on your keyboard.");
+		popUpWindowText.Add("Each turn is one minute long mana resets on each turn. Mana will increase as the game progresses to a maximum of 8 mana.");
+	}
+
+
+	void setupScreenTips(){
+		neverShowPopUpWindow = false;
+		showPopUpTip = true;
+		popUpName = "setUpTips";
+		popUpTitle = "Tip";
+		popUpIndex = 0;
+		popUpWindowText.Clear ();
+		popUpWindowText.Add("Welcome to the setup screen. Hover over units with your mouse to see more information about it.");
+		popUpWindowText.Add("The movement cost is the amount of mana it takes to move a piece. Likewise the the attack cost is the amount of mana it takes to attack with it.");
+		popUpWindowText.Add("Units gain experience through battle and gain unique abilities when they level up which is shown as the level 2 and level 3 bonuses. All units start at level one every time a game starts.");
+		popUpWindowText.Add("Click and drag a unit around to reposition it. Once the game starts, all units in the green area will be brought to battle.");
+		popUpWindowText.Add("The gray area is for units that are not going to be used. You are required to have the Guardian and Soulstone in the green area, and you can have up to 10 units on the board, so choose which units you bring to battle carefully!");
+		popUpWindowText.Add("Your setup is automatically saved everytime you move a piece so feel free to switch between your other setups or go back to the Game Lobby.");
 	}
 
 
