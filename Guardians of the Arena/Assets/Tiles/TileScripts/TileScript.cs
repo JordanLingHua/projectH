@@ -140,6 +140,16 @@ public class TileScript : MonoBehaviour {
 				//old
 				//Step 2 (regular transition trigger)
 				if (this.GetComponentInChildren<Unit>().alleg ==  Unit.allegiance.playerTwo && gp.playerNumber == 1){
+					if(end.z < start.z)
+						this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 4);
+					else if(end.z > start.z)
+						this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 5);
+					else if(end.x > start.x)
+						this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 6);
+					else if(end.x < start.x)
+						this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 7);
+				}
+				else if (this.GetComponentInChildren<Unit>().alleg ==  Unit.allegiance.playerTwo && gp.playerNumber == 2){
 					if(end.z > start.z)
 						this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 4);
 					else if(end.z < start.z)
@@ -149,24 +159,14 @@ public class TileScript : MonoBehaviour {
 					else if(end.x > start.x)
 						this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 7);
 				}
-				else if (this.GetComponentInChildren<Unit>().alleg ==  Unit.allegiance.playerTwo && gp.playerNumber == 2){
-					if(end.z < start.z)
-						this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 4);
-					else if(end.z > start.z)
-						this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 5);
-					else if(end.x > start.x)
-						this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 6);
-					else if(end.x < start.x)
-						this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 7);
-				}
 				else{
-					if(end.z < start.z)
+					if(end.z > start.z)
 						this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 4);
-					else if(end.z > start.z)
+					else if(end.z < start.z)
 						this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 5);
-					else if(end.x > start.x)
-						this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 6);
 					else if(end.x < start.x)
+						this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 6);
+					else if(end.x > start.x)
 						this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 7);
 				}
 			}
