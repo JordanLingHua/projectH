@@ -218,7 +218,7 @@ namespace Guardians_Of_The_Arena_Server
 
         public virtual void ApplyDamage(int damage, Unit attackingUnit)
         {
-            this.health -= damage;
+            this.health -= (damage - this.armor);
             
             if (health > maxHealth)
                 health = maxHealth;
