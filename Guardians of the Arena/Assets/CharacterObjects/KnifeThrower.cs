@@ -10,9 +10,8 @@ public class KnifeThrower : Unit {
 		levelBonusShort [0] = "Farsight";
 		levelBonusShort [1] = "Piercing Light";
 		levelBonusLong [0] = "Gain +1 attack range";
-		levelBonusLong [1] = "Attacks all units to\ntargeted tile";
-		description = "Ranged unit that will hit any unit that gets\n" +
-						"in its way";
+		levelBonusLong [1] = "Attacks all units to targeted tile";
+		description = "Ranged unit that will hit any unit that gets in its way";
 		unitType = 1;
 		unitName = "Knife Thrower";
 		hp = 25;

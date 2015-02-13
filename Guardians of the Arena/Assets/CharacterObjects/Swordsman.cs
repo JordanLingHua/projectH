@@ -10,7 +10,7 @@ public class Swordsman : Unit {
 		base.Start ();
 		levelBonusShort [0] = "Lifesteal";
 		levelBonusShort [1] = "Swift Strike";
-		levelBonusLong [0] = "Heals for 5 health on\nattack";
+		levelBonusLong [0] = "Heals for 5 health on attack";
 		levelBonusLong [1] = "Can attack twice per turn";
 		description = "A melee unit specializing in high mobility";
 		unitType = 7;

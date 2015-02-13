@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 using System.Collections.Generic;
 
 public class Unit    : MonoBehaviour {
@@ -17,7 +18,7 @@ public class Unit    : MonoBehaviour {
 	public string[] levelBonusShort = {"",""};
 	public string[] levelBonusLong = {"",""};
 	public bool invincible,displayHPBar,displayXPBar;
-	public Mystic allyFocusingThis;
+	public Mystic enemyFocusingThis;
 
 
 	public GameObject popUpText;
@@ -127,7 +128,10 @@ public class Unit    : MonoBehaviour {
 
 		if (Application.loadedLevelName.Equals("BoardScene") || Application.loadedLevelName.Equals("AIScene")){
 			transform.parent.GetComponent<TileScript> ().OnMouseOver ();
-			gm.hoverOverUnit = this;
+			gm.hoverOverUnit = this; 
+			if (enemyFocusingThis != null){
+				enemyFocusingThis.gameObject.GetComponentInParent<TileScript>().renderer.material.color = enemyFocusingThis.alleg == Unit.allegiance.playerOne ? Color.magenta : Color.black;
+			}
 		}else{
 			//used for setup screen info
 			string info ="\nHP: " + hp + "/" + maxHP;
@@ -144,21 +148,56 @@ public class Unit    : MonoBehaviour {
 			info += atkRange > 0? "\nAttack Range: " + atkRange: "";
 
 
-			GameObject.Find ("Level1BonusNameGUIText").GetComponent<GUIText>().text = levelBonusShort[0];
-			GameObject.Find ("Level1BonusDescriptionGUIText").GetComponent<GUIText>().text = levelBonusLong[0];
-			GameObject.Find ("Level2BonusNameGUIText").GetComponent<GUIText>().text = levelBonusShort[1];
-			GameObject.Find ("Level2BonusDescriptionGUIText").GetComponent<GUIText>().text = levelBonusLong[1];
+			GameObject.Find ("Level1BonusNameGUIText").GetComponent<GUIText>().text = (unitType == 11)?"" :"Lvl.2 Bonus: " + levelBonusShort[0];
+			GameObject.Find ("Level1BonusDescriptionGUIText").GetComponent<GUIText>().text =  wordWrap(25,levelBonusLong[0]);
+			GameObject.Find ("Level2BonusNameGUIText").GetComponent<GUIText>().text = (unitType == 11)?"" :"Lvl.3 Bonus: " + levelBonusShort[1];
+			GameObject.Find ("Level2BonusDescriptionGUIText").GetComponent<GUIText>().text = wordWrap(25,levelBonusLong[1]);
 
 			GameObject.Find ("SetupScreenUnitInfo").GetComponent<GUIText>().text = info;
 			if (unitName == "Soulstone"){
 				GameObject.Find("UnitDescription").transform.position = new Vector3(0.7f,0.88f);
 			}else if (unitName == "Mystic"){
-				GameObject.Find("UnitDescription").transform.position = new Vector3(0.7f,0.74f);
+				GameObject.Find("UnitDescription").transform.position = new Vector3(0.7f,0.62f);
+				GameObject.Find("Level2BonusNameGUIText").transform.position = new Vector3(0.82f,0.77f);
+				GameObject.Find("Level2BonusDescriptionGUIText").transform.position = new Vector3(0.82f,0.74f);
 			}
 			GameObject.Find ("UnitNameInfo").GetComponent<GUIText>().text = unitName;
-			GameObject.Find("UnitDescription").GetComponent<GUIText>().text = description;
+			GameObject.Find("UnitDescription").GetComponent<GUIText>().text = wordWrap(40, description);
 		}		
 	}
+
+	public string wordWrap (int length,string word){
+		string ret = "";
+		int tempLength = 0;
+		string[] tokens = word.Split(new string[] {" "}, StringSplitOptions.None);
+		for (int i = 0; i < tokens.Length; i++)
+		{
+			if (tokens[i].Contains("\n")){				
+				string temp = tokens[i].Substring(0,tokens[i].IndexOf("\n"));
+				string temp2 = tokens[i].Substring(tokens[i].IndexOf("\n")+1);
+	
+
+				if (tempLength + temp.Length <= length){
+					ret+= temp + "\n" + temp2 + " ";
+					tempLength = temp2.Length;
+				}else{
+					ret += "\n"+ temp + "\n" + temp2;
+					tempLength = temp2.Length;
+				}
+
+			}else {
+				if (tempLength + tokens[i].Length <= length){
+				ret+= tokens[i] + " ";
+				tempLength += tokens[i].Length;	
+				}else{
+					ret += "\n"+ tokens[i] + " ";
+					tempLength = tokens[i].Length;
+				}
+			}
+		}
+		return ret;
+	}
+
 
 	void OnMouseExit(){
 		//clear unit info when not hovering over it
@@ -166,6 +205,9 @@ public class Unit    : MonoBehaviour {
 			transform.parent.GetComponent<TileScript> ().OnMouseExit ();
 			gm.hoverOverUnit = null;
 			gm.clearHoverUnitInfo();
+			if (enemyFocusingThis != null){
+				enemyFocusingThis.gameObject.GetComponentInParent<TileScript>().renderer.material.color = enemyFocusingThis.alleg == allegiance.playerOne? Color.blue: Color.red;
+			}
 			//gm.uInfo.text  = "";
 		}else {
 			GameObject.Find ("SetupScreenUnitInfo").GetComponent<GUIText>().text = "";
@@ -176,6 +218,8 @@ public class Unit    : MonoBehaviour {
 			GameObject.Find ("UnitNameInfo").GetComponent<GUIText>().text = "";
 			GameObject.Find("UnitDescription").GetComponent<GUIText>().text = "";
 			GameObject.Find("UnitDescription").transform.position = new Vector3(0.7f,0.71f);
+			GameObject.Find("Level2BonusNameGUIText").transform.position = new Vector3(0.82f,0.83f);
+			GameObject.Find("Level2BonusDescriptionGUIText").transform.position = new Vector3(0.82f,0.8f);
 		}
 	}
 
@@ -243,22 +287,18 @@ public class Unit    : MonoBehaviour {
 				player = "Opponent's ";
 		}
 		if (!this.invincible) {
-
-
-			this.hp -= (amt - this.armor);
-
-			//if healed up dont let it have more than max hp
-			if (hp > maxHP){
-				hp = maxHP;
-			}
-
 			if (amt > 0){
 				//taking damage
+				this.hp -= (amt - this.armor);
 				gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" attacked "+ player + unitName + " for " + (amt - this.armor) + " damage!");
 				showPopUpText("-" + amt,Color.red);
 			}else{
 				//getting healed
-
+				this.hp -= amt;
+				//if healed up dont let it have more than max hp
+				if (hp > maxHP){
+					hp = maxHP;
+				}
 				gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" healed "+ player + unitName + " for " + (-1*amt));
 				showPopUpText("+" + (-1*amt),Color.green);
 			}

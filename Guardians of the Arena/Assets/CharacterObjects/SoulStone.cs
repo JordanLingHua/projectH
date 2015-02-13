@@ -7,9 +7,7 @@ public class SoulStone: Unit {
 		base.Start ();
 		unitType = 11;
 		unitName = "Soulstone";
-		description = "The Soulstone allows the player to control\n" +
-						"units, if it is destroyed the player loses.\n" +
-						"It is invincible until the Guardian is killed";
+		description = "The Soulstone allows the player to control units, if it is destroyed the player loses. It is invincible until the Guardian is killed";
 		hp = 1;
 		maxHP = 1;
 		atk = 0;
@@ -27,19 +25,19 @@ public class SoulStone: Unit {
 		string unitAffectedPlayer = ((gp.playerNumber ==  1 && unitAttacking.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && unitAttacking.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
 		string player = ((gp.playerNumber ==  1 && this.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && this.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
 		if (!this.invincible) {
-			this.hp -= (amt - this.armor);
-			
-			//if healed up dont let it have more than max hp
-			if (hp > maxHP){
-				hp = maxHP;
-			}
-			
+
 			if (amt > 0){
 				//taking damage
+				this.hp -= (amt - this.armor);
 				gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" attacked "+ player + unitName + " for " + (amt - this.armor) + " damage!");
 				showPopUpText("-" + amt,Color.red);
 			}else{
 				//getting healed
+				this.hp -= amt;
+				//if healed up dont let it have more than max hp
+				if (hp > maxHP){
+					hp = maxHP;
+				}
 				gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" healed "+ player + unitName + " for " + (-1*amt));
 				showPopUpText("+" + (-1*amt),Color.green);
 			}

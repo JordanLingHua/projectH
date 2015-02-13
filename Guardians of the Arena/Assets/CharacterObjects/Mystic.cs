@@ -1,21 +1,20 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 #pragma warning disable 0114
 public class Mystic: Unit {
 	
 	public Unit unitFocused;
-	public int oldMvRange, oldAtkRange,oldAtkDmg,oldArmor;
+	public int levelOnFocus;
 
 	void Start () {
 		base.Start ();
 		unitFocused = null;
-		levelBonusShort [0] = "Enchant Might";
-		levelBonusShort [1] = "Crippling Focus";
-		levelBonusLong [0] = "Focusing allies gives\nthem +3 attack damage";
-		levelBonusLong [1] = "Focusing enemies deals\n8 damage every turn";
-		description = "A powerful wizard that can paralyze enemy\n" +
-						"units or give allies increased mobility";
+		levelBonusShort [0] = "Greater Focus";
+		levelBonusShort [1] = "Mighty Focus";
+		levelBonusLong [0] = "Focusing allies gives them +3 attack damage\nFocusing enemies increases damage they take by 2";
+		levelBonusLong [1] = "Focusing allies reduces damage they take by 3\nFocusing enemies increases damage they take by 4";
+		description = "A powerful wizard that can paralyze enemy units or give allies increased mobility";
 		unitType = 2;
 		unitName = "Mystic";
 		hp = 30;
@@ -36,19 +35,22 @@ public class Mystic: Unit {
 			string unitAffectedPlayer = ((gp.playerNumber ==  1 && unitFocused.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && unitFocused.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
 			//allied units get only increased mv range and attack damage
 			unitFocused.showPopUpText("No Longer Focused!",Color.yellow);
+
 			if (unitFocused.alleg == this.alleg){
-				unitFocused.allyFocusingThis = null;
-				unitFocused.mvRange = oldMvRange;
-				unitFocused.atkRange = oldAtkRange;
-				unitFocused.atk = oldAtkDmg;
-				if (unitLevel == 3){
+
+				if(levelOnFocus == 3){
 					unitFocused.armor -= 3;
 				}
+				if (levelOnFocus >= 2){
+					unitFocused.atk -= 3;
+				}
+
 			}else if (unitFocused.alleg != this.alleg){
+				unitFocused.enemyFocusingThis = null;
 				unitFocused.paralyzed = false;
-				if (unitLevel == 3){
+				if (levelOnFocus == 3){
 					unitFocused.armor += 4;
-				}else if (unitLevel == 2){
+				}else if (levelOnFocus == 2){
 					unitFocused.armor +=2;
 				}
 			}
@@ -99,82 +101,40 @@ public class Mystic: Unit {
 		string unitAffectedPlayer = ((gp.playerNumber ==  1 && unitAffected.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && unitAffected.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
 		atkd = true;
 		if (!unitAffected.invincible){
-			//save variables for reverting later
+			levelOnFocus = unitLevel;
 			unitFocused = unitAffected;
+			//focusing enemy unit
 			if (unitFocused.alleg != this.alleg){
+				//focusing enemy mystic
+				unitFocused.enemyFocusingThis = this;
+				if (unitAffected.unitType == 2){
+					(unitAffected as Mystic).revertStatsOfFocused();
+				}
 				unitFocused.paralyzed = true;
 				if (unitLevel == 3){
 					unitFocused.armor -= 4;
 				}else if (unitLevel == 2){
-					unitFocused.armor -=2;
+					unitFocused.armor -= 2;
 				}
 				unitAffected.showPopUpText("Focused!",Color.red);
-			}
-			if (unitAffected.unitType == 2){
-				(unitAffected as Mystic).revertStatsOfFocused();
-			}
 
-			gm.addLogToCombatLog(player + unitName +" focused "+ unitAffectedPlayer +  unitAffected.unitName);
-
-			if (unitFocused.alleg == this.alleg){
-				oldMvRange = unitAffected.mvRange;
-				oldAtkRange = unitAffected.atkRange;
-				oldAtkDmg = unitAffected.atk;
-	
+				//focusing ally
+			}else if (unitFocused.alleg == this.alleg){
 				unitAffected.mvRange += 2;
-				allyFocusingThis = this;
 				unitAffected.showPopUpText("Focused!",Color.green);
-				if (unitLevel == 2){
+				if (unitLevel >= 2){
 					unitAffected.atk += 3;
 				}
 				if (unitLevel == 3){
 					unitAffected.armor += 3;
 				}
 			}
-
-
+			gm.addLogToCombatLog(player + unitName +" focused "+ unitAffectedPlayer +  unitAffected.unitName);
 		}else{
 			unitAffected.showPopUpText("Invincible!",Color.red);
 		}
 		//clean up the board colors
 		gm.accessibleTiles.Clear();
 		this.transform.parent.gameObject.transform.parent.GetComponent<TileManager>().clearAllTiles();
-	}
-
-	public override void resetUnitAbilities ()
-	{
-		base.resetUnitAbilities ();
-
-//		//deal 8 dmg to unit every time if level 3 and focusing enemy unit
-		if (unitFocused != null && ((alleg ==Unit.allegiance.playerOne && unitFocused.alleg == Unit.allegiance.playerTwo) || (alleg == Unit.allegiance.playerTwo && unitFocused.alleg == Unit.allegiance.playerOne)) && unitLevel == 3) {
-			if (!invincible){
-				unitFocused.hp -= 8;
-				unitFocused.showPopUpText("-8",Color.red);
-
-				//if the unit attacked was killed, remove it from the board and unit list
-				if (unitFocused.hp <=0){				
-					
-					//Kill Guardian then SS vulnerable
-					if (unitFocused.unitType == 10){
-						if (unitFocused.alleg == allegiance.playerOne){
-							playerSSKillable();
-						}else{
-							enemySSKillable();
-						}
-						
-					}else if (unitFocused.unitType == 11){
-						gm.gameOver = true;
-					}
-					
-					//Kill unit and remove from game
-					gm.addLogToCombatLog(unitFocused.unitName + " was killed!");
-					gm.units.Remove(unitFocused.unitID);
-					unitFocused.transform.parent.GetComponent<TileScript>().objectOccupyingTile = null;
-					Destroy(unitFocused.gameObject);
-				}
-			}else{
-				gm.addLogToCombatLog("Mystic couldn't deal damage it was invincible!");
-			}
-		}
 	}
 }

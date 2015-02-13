@@ -9,11 +9,9 @@ public class Guardian :Unit {
 		base.Start ();
 		levelBonusShort [0] = "Hardened Skin";
 		levelBonusShort [1] = "Thorns";
-		levelBonusLong [0] = "Cannot take more than 10\ndamage when attacked";
+		levelBonusLong [0] = "Cannot take more than 10 damage when attacked";
 		levelBonusLong [1] = "Deals 5 damage to attackers";
-		description = "A melee unit that protects the Soulstone. If this\n" +
-						"unit dies the player's Soulstone becomes\n" +
-						"vulnerable to death.";
+		description = "A melee unit that protects the Soulstone. If this unit dies the player's Soulstone becomes vulnerable to death.";
 		unitType = 10;
 		unitName = "Guardian";
 		hp = 45;
@@ -33,10 +31,7 @@ public class Guardian :Unit {
 		string player = ((gp.playerNumber ==  1 && this.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && this.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
 		if (!this.invincible) {
 			
-			//if healed up dont let it have more than max hp
-			if (hp > maxHP){
-				hp = maxHP;
-			}
+
 			//taking damage
 			if (amt > 0){
 				//thorns
@@ -54,7 +49,11 @@ public class Guardian :Unit {
 				}
 			}else{
 				//getting healed
-				
+				this.hp -= amt;
+				//if healed up dont let it have more than max hp
+				if (hp > maxHP){
+					hp = maxHP;
+				}
 				gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" healed "+ player + unitName + " for " + (-1*unitAttacking.atk));
 				showPopUpText("+" + (-1*amt),Color.green);
 			}

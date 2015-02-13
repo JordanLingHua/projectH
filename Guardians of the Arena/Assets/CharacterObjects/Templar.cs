@@ -9,10 +9,9 @@ public class Templar : Unit{
 		base.Start ();
 		levelBonusShort [0] = "Mighty Swing";
 		levelBonusShort [1] = "Healing Blade";
-		levelBonusLong [0] = "Attacking full health units\ndeals 5 additional damage";
-		levelBonusLong [1] = "Attacking allied units\nheals them";
-		description = "A melee unit that deals damage to all units in a\n" +
-						"cone in front of him";
+		levelBonusLong [0] = "Attacking full health units deals 5 additional damage";
+		levelBonusLong [1] = "Attacking allied units heals them";
+		description = "A melee unit that deals damage to all units in a cone in front of him";
 		unitType = 3;
 		unitName = "Templar";
 		hp = 38;//hp can --//all other stats cannot --//some other stats ++ for growth
