@@ -14,7 +14,7 @@ namespace Guardians_Of_The_Arena_Server.Units
         {
             health = 45;
             maxHealth = 45;
-            armor = 60;
+            armor = 0;
             damage = 23;
             movementRange = 2;
             movementCost = 1;
@@ -51,8 +51,11 @@ namespace Guardians_Of_The_Arena_Server.Units
 
        public override void ApplyDamage(int damage, Unit attackingUnit)
        {
+
            if (this.level >= 2 && damage > 10)
                damage = 10;
+
+           damage -= armor;
 
            if (this.level >= 3)
            {

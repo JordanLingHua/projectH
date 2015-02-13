@@ -5,14 +5,14 @@ using System.Collections;
 public class Mystic: Unit {
 	
 	public Unit unitFocused;
-	public int oldMvRange, oldAtkRange,oldAtkDmg;
+	public int oldMvRange, oldAtkRange,oldAtkDmg,oldArmor;
 
 	void Start () {
 		base.Start ();
 		unitFocused = null;
 		levelBonusShort [0] = "Enchant Might";
 		levelBonusShort [1] = "Crippling Focus";
-		levelBonusLong [0] = "Focusing allies gives\nthem +5 attack damage";
+		levelBonusLong [0] = "Focusing allies gives\nthem +3 attack damage";
 		levelBonusLong [1] = "Focusing enemies deals\n8 damage every turn";
 		description = "A powerful wizard that can paralyze enemy\n" +
 						"units or give allies increased mobility";
@@ -41,8 +41,16 @@ public class Mystic: Unit {
 				unitFocused.mvRange = oldMvRange;
 				unitFocused.atkRange = oldAtkRange;
 				unitFocused.atk = oldAtkDmg;
+				if (unitLevel == 3){
+					unitFocused.armor -= 3;
+				}
 			}else if (unitFocused.alleg != this.alleg){
 				unitFocused.paralyzed = false;
+				if (unitLevel == 3){
+					unitFocused.armor += 4;
+				}else if (unitLevel == 2){
+					unitFocused.armor +=2;
+				}
 			}
 			showPopUpText("Lost Focus!",Color.red);
 			gm.addLogToCombatLog(player + this.unitName + " lost focus of " + unitAffectedPlayer + unitFocused.unitName);
@@ -54,7 +62,7 @@ public class Mystic: Unit {
 		string unitAffectedPlayer = ((gp.playerNumber ==  1 && unitAttacking.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && unitAttacking.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
 		string player = ((gp.playerNumber ==  1 && this.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && this.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
 		if (!this.invincible) {
-			this.hp -= amt;
+			this.hp -= (amt - this.armor);
 			revertStatsOfFocused();
 			//if healed up dont let it have more than max hp
 			if (hp > maxHP){
@@ -63,11 +71,11 @@ public class Mystic: Unit {
 			
 			if (amt > 0){
 				//taking damage
-				gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" attacked "+ player + unitName + " for " + unitAttacking.atk + " damage!");
+				gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" attacked "+ player + unitName + " for " + (amt - this.armor) + " damage!");
 				showPopUpText("-" + amt,Color.red);
 			}else{
 				//getting healed
-				gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" healed "+ player + unitName + " for " + (-1*unitAttacking.atk));
+				gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" healed "+ player + unitName + " for " + (-1*amt));
 				showPopUpText("+" + (-1*amt),Color.green);
 			}
 			
@@ -95,6 +103,11 @@ public class Mystic: Unit {
 			unitFocused = unitAffected;
 			if (unitFocused.alleg != this.alleg){
 				unitFocused.paralyzed = true;
+				if (unitLevel == 3){
+					unitFocused.armor -= 4;
+				}else if (unitLevel == 2){
+					unitFocused.armor -=2;
+				}
 				unitAffected.showPopUpText("Focused!",Color.red);
 			}
 			if (unitAffected.unitType == 2){
@@ -103,16 +116,19 @@ public class Mystic: Unit {
 
 			gm.addLogToCombatLog(player + unitName +" focused "+ unitAffectedPlayer +  unitAffected.unitName);
 
-			if ((alleg == Unit.allegiance.playerOne  && unitFocused.alleg == Unit.allegiance.playerOne) || (alleg == Unit.allegiance.playerTwo && unitFocused.alleg == Unit.allegiance.playerTwo)){
+			if (unitFocused.alleg == this.alleg){
 				oldMvRange = unitAffected.mvRange;
 				oldAtkRange = unitAffected.atkRange;
 				oldAtkDmg = unitAffected.atk;
-
+	
 				unitAffected.mvRange += 2;
 				allyFocusingThis = this;
 				unitAffected.showPopUpText("Focused!",Color.green);
 				if (unitLevel == 2){
-					unitAffected.atk += 5;
+					unitAffected.atk += 3;
+				}
+				if (unitLevel == 3){
+					unitAffected.armor += 3;
 				}
 			}
 
