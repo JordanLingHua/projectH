@@ -423,7 +423,29 @@ public class GameProcess : MonoBehaviour {
 				//Use the values assigned to targetTileX and targetTileZ from TileScript.cs:
 				//Attack animation based on the position of the tile that is going to be attacked
 				//IF you are controlling player 2
-				if (gameManager.units[Int32.Parse (tokens[1])].alleg ==  Unit.allegiance.playerOne && playerNumber == 1){
+				if (gameManager.units[Int32.Parse (tokens[1])].alleg ==  Unit.allegiance.playerTwo && playerNumber == 1){
+					if(gameManager.units[Int32.Parse (tokens[1])].transform.position.z < (targetTileZ*10))
+						gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 8);
+					else if(gameManager.units[Int32.Parse (tokens[1])].transform.position.z > (targetTileZ*10))
+						gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 9);
+					else if(gameManager.units[Int32.Parse (tokens[1])].transform.position.x > (targetTileX*10))
+						gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 10);
+					else if(gameManager.units[Int32.Parse (tokens[1])].transform.position.x < (targetTileX*10))
+						gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 11);
+				}
+				//If the opponent is controlling player 2
+				else if (gameManager.units[Int32.Parse (tokens[1])].alleg ==  Unit.allegiance.playerTwo && playerNumber == 2){
+					if(gameManager.units[Int32.Parse (tokens[1])].transform.position.z > (targetTileZ*10))
+						gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 8);
+					else if(gameManager.units[Int32.Parse (tokens[1])].transform.position.z < (targetTileZ*10))
+						gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 9);
+					else if(gameManager.units[Int32.Parse (tokens[1])].transform.position.x < (targetTileX*10))
+						gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 10);
+					else if(gameManager.units[Int32.Parse (tokens[1])].transform.position.x > (targetTileX*10))
+						gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 11);
+				}
+				//If you are player 1
+				else if (gameManager.units[Int32.Parse (tokens[1])].alleg ==  Unit.allegiance.playerOne && playerNumber == 1){
 					if(gameManager.units[Int32.Parse (tokens[1])].transform.position.z < (targetTileZ*10))
 						gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 8);
 					else if(gameManager.units[Int32.Parse (tokens[1])].transform.position.z > (targetTileZ*10))
@@ -434,8 +456,8 @@ public class GameProcess : MonoBehaviour {
 						gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 11);
 					//hmm it seems to always play the attack_front animation
 				}
-				//If the opponent is controlling player 2
-				else if (gameManager.units[Int32.Parse (tokens[1])].alleg ==  Unit.allegiance.playerOne && playerNumber == 2){
+				//If the opponent is player 1
+				else{
 					if(gameManager.units[Int32.Parse (tokens[1])].transform.position.z > (targetTileZ*10))
 						gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 8);
 					else if(gameManager.units[Int32.Parse (tokens[1])].transform.position.z < (targetTileZ*10))
@@ -445,17 +467,7 @@ public class GameProcess : MonoBehaviour {
 					else if(gameManager.units[Int32.Parse (tokens[1])].transform.position.x > (targetTileX*10))
 						gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 11);
 				}
-				else {
-					if(gameManager.units[Int32.Parse (tokens[1])].transform.position.z > (targetTileZ*10))
-						gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 8);
-					else if(gameManager.units[Int32.Parse (tokens[1])].transform.position.z < (targetTileZ*10))
-						gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 9);
-					else if(gameManager.units[Int32.Parse (tokens[1])].transform.position.x < (targetTileX*10))
-						gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 10);
-					else if(gameManager.units[Int32.Parse (tokens[1])].transform.position.x > (targetTileX*10))
-						gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 11);
-					//hmm it seems to always play the attack_front animation
-				}
+
 
 
 
@@ -496,7 +508,8 @@ public class GameProcess : MonoBehaviour {
 						//Step 2
 						//Unit gets hit facing the direction of the attacker
 						//IF you are controlling player 2
-						if (gameManager.units[Int32.Parse (tokens[1])].alleg ==  Unit.allegiance.playerOne && playerNumber == 1){
+
+						if (gameManager.units[Int32.Parse (tokens[1])].alleg ==  Unit.allegiance.playerTwo && playerNumber == 1){
 							if(gameManager.units[Int32.Parse(tokens[3+i])].transform.position.z < gameManager.units[Int32.Parse (tokens[1])].transform.position.z)
 								gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 12);
 							else if(gameManager.units[Int32.Parse(tokens[3+i])].transform.position.z > gameManager.units[Int32.Parse (tokens[1])].transform.position.z)
@@ -505,10 +518,10 @@ public class GameProcess : MonoBehaviour {
 								gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 14);
 							else if(gameManager.units[Int32.Parse(tokens[3+i])].transform.position.x < gameManager.units[Int32.Parse (tokens[1])].transform.position.x)
 								gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 15);
-
+							
 						}
 						//If the opponent is controlling player 2
-						else if (gameManager.units[Int32.Parse (tokens[1])].alleg ==  Unit.allegiance.playerOne && playerNumber == 2){
+						else if (gameManager.units[Int32.Parse (tokens[1])].alleg ==  Unit.allegiance.playerTwo && playerNumber == 2){
 							if(gameManager.units[Int32.Parse(tokens[3+i])].transform.position.z > gameManager.units[Int32.Parse (tokens[1])].transform.position.z)
 								gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 12);
 							else if(gameManager.units[Int32.Parse(tokens[3+i])].transform.position.z < gameManager.units[Int32.Parse (tokens[1])].transform.position.z)
@@ -517,8 +530,20 @@ public class GameProcess : MonoBehaviour {
 								gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 14);
 							else if(gameManager.units[Int32.Parse(tokens[3+i])].transform.position.x > gameManager.units[Int32.Parse (tokens[1])].transform.position.x)
 								gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 15);
+						}
+						//If you are player 1
+						else if (gameManager.units[Int32.Parse (tokens[1])].alleg ==  Unit.allegiance.playerOne && playerNumber == 1){
+							if(gameManager.units[Int32.Parse(tokens[3+i])].transform.position.z < gameManager.units[Int32.Parse (tokens[1])].transform.position.z)
+								gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 12);
+							else if(gameManager.units[Int32.Parse(tokens[3+i])].transform.position.z > gameManager.units[Int32.Parse (tokens[1])].transform.position.z)
+								gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 13);
+							else if(gameManager.units[Int32.Parse(tokens[3+i])].transform.position.x > gameManager.units[Int32.Parse (tokens[1])].transform.position.x)
+								gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 14);
+							else if(gameManager.units[Int32.Parse(tokens[3+i])].transform.position.x < gameManager.units[Int32.Parse (tokens[1])].transform.position.x)
+								gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 15);
 							
 						}
+						//If the opponent is player 1
 						else{
 							if(gameManager.units[Int32.Parse(tokens[3+i])].transform.position.z > gameManager.units[Int32.Parse (tokens[1])].transform.position.z)
 								gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 12);
@@ -529,6 +554,7 @@ public class GameProcess : MonoBehaviour {
 							else if(gameManager.units[Int32.Parse(tokens[3+i])].transform.position.x > gameManager.units[Int32.Parse (tokens[1])].transform.position.x)
 								gameManager.units[Int32.Parse(tokens[3+i])].GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 15);
 						}
+
 
 						if (gameManager.units.ContainsKey(Int32.Parse(tokens[3+i])) && !gameManager.units[Int32.Parse(tokens[3+i])].invincible){
 							gameManager.units[Int32.Parse (tokens[1])].gainXP();

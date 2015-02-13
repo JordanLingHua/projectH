@@ -139,6 +139,7 @@ public class TileScript : MonoBehaviour {
 
 				//old
 				//Step 2 (regular transition trigger)
+				//If you are player 2
 				if (this.GetComponentInChildren<Unit>().alleg ==  Unit.allegiance.playerTwo && gp.playerNumber == 1){
 					if(end.z > start.z)
 						this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 4);
@@ -149,6 +150,7 @@ public class TileScript : MonoBehaviour {
 					else if(end.x > start.x)
 						this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 7);
 				}
+				//If opponent is player 2
 				else if (this.GetComponentInChildren<Unit>().alleg ==  Unit.allegiance.playerTwo && gp.playerNumber == 2){
 					if(end.z < start.z)
 						this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 4);
@@ -160,7 +162,8 @@ public class TileScript : MonoBehaviour {
 						this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 7);
 
 				}
-				else{
+				//If you are player 1
+				else if (this.GetComponentInChildren<Unit>().alleg ==  Unit.allegiance.playerOne && gp.playerNumber == 1){
 					if(end.z > start.z)
 						this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 4);
 					else if(end.z < start.z)
@@ -168,6 +171,17 @@ public class TileScript : MonoBehaviour {
 					else if(end.x < start.x)
 						this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 6);
 					else if(end.x > start.x)
+						this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 7);
+				}
+				//If opponent is player 1
+				else{
+					if(end.z < start.z)
+						this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 4);
+					else if(end.z > start.z)
+						this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 5);
+					else if(end.x > start.x)
+						this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 6);
+					else if(end.x < start.x)
 						this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 7);
 				}
 			}
