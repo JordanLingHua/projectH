@@ -9,7 +9,7 @@ public class Unit    : MonoBehaviour {
 	public allegiance alleg;
 	//All these are public, so we can modify them all for now.  
 	public int unitID, xpos, ypos;//, unitType;
-	public int hp,maxHP,atk,mvRange,atkRange,mvCost,atkCost, xp, unitLevel,popUpTextNum;
+	public int hp,maxHP,atk,mvRange,atkRange,mvCost,atkCost, xp, unitLevel,popUpTextNum,armor;
 	public bool atkd, mvd,paralyzed;
 	public string unitName = string.Empty;
 	public string info = string.Empty;
@@ -53,6 +53,7 @@ public class Unit    : MonoBehaviour {
 	public PopUpMenuNecro pum;
 	public AudioManager am;
 	public virtual void Start () {
+		armor = 0;
 		unitLevel = 1;
 		popUpText = GameObject.Find ("popUpText");
 		hpBarBG = Resources.Load("HPBarBG") as Texture2D;
@@ -244,7 +245,7 @@ public class Unit    : MonoBehaviour {
 		if (!this.invincible) {
 
 
-			this.hp -= amt;
+			this.hp -= (amt - this.armor);
 
 			//if healed up dont let it have more than max hp
 			if (hp > maxHP){
@@ -253,13 +254,12 @@ public class Unit    : MonoBehaviour {
 
 			if (amt > 0){
 				//taking damage
-				gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" attacked "+ player + unitName + " for " + unitAttacking.atk + " damage!");
-
+				gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" attacked "+ player + unitName + " for " + (amt - this.armor) + " damage!");
 				showPopUpText("-" + amt,Color.red);
 			}else{
 				//getting healed
 
-				gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" healed "+ player + unitName + " for " + (-1*unitAttacking.atk));
+				gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" healed "+ player + unitName + " for " + (-1*amt));
 				showPopUpText("+" + (-1*amt),Color.green);
 			}
 
