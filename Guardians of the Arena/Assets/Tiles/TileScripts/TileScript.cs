@@ -106,15 +106,34 @@ public class TileScript : MonoBehaviour {
 		//== the attack state it left off at
 
 		//this.objectOccupyingTile. <--------This is another way to access the object
-	
-		if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 8 || this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 12)
-			this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 0);
-		else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 9 || this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 13)
-			this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 1);
-		else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 10 || this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 14)
-			this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 2);
-		else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 11 || this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 15)
-			this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 3);
+
+		if (this.GetComponentInChildren<Animator> () != null) {
+						///*
+						if (this.GetComponentInChildren<Animator> ().GetInteger ("mode_and_dir") == 8 || this.GetComponentInChildren<Animator> ().GetInteger ("mode_and_dir") == 12)
+								this.GetComponentInChildren<Animator> ().SetInteger ("mode_and_dir", 0);
+						else if (this.GetComponentInChildren<Animator> ().GetInteger ("mode_and_dir") == 9 || this.GetComponentInChildren<Animator> ().GetInteger ("mode_and_dir") == 13)
+								this.GetComponentInChildren<Animator> ().SetInteger ("mode_and_dir", 1);
+						else if (this.GetComponentInChildren<Animator> ().GetInteger ("mode_and_dir") == 10 || this.GetComponentInChildren<Animator> ().GetInteger ("mode_and_dir") == 14)
+								this.GetComponentInChildren<Animator> ().SetInteger ("mode_and_dir", 2);
+						else if (this.GetComponentInChildren<Animator> ().GetInteger ("mode_and_dir") == 11 || this.GetComponentInChildren<Animator> ().GetInteger ("mode_and_dir") == 15)
+								this.GetComponentInChildren<Animator> ().SetInteger ("mode_and_dir", 3);
+						//*/
+				}
+
+		/*
+		//if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 8 || this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 12)
+		if(objectOccupyingTile.GetComponent<Animator>().GetInteger("mode_and_dir") == 8 || objectOccupyingTile.GetComponent<Animator>().GetInteger("mode_and_dir") == 12)
+			objectOccupyingTile.GetComponent<Animator>().SetInteger("mode_and_dir", 0);
+		//else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 9 || this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 13)
+		else if(objectOccupyingTile.GetComponent<Animator>().GetInteger("mode_and_dir") == 9 || objectOccupyingTile.GetComponent<Animator>().GetInteger("mode_and_dir") == 13)
+			objectOccupyingTile.GetComponent<Animator>().SetInteger("mode_and_dir", 1);
+		//else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 10 || this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 14)
+		else if(objectOccupyingTile.GetComponent<Animator>().GetInteger("mode_and_dir") == 10 || objectOccupyingTile.GetComponent<Animator>().GetInteger("mode_and_dir") == 14)
+			objectOccupyingTile.GetComponent<Animator>().SetInteger("mode_and_dir", 2);
+		//else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 11 || this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 15)
+		else if(objectOccupyingTile.GetComponent<Animator>().GetInteger("mode_and_dir") == 11 || objectOccupyingTile.GetComponent<Animator>().GetInteger("mode_and_dir") == 15)
+			tobjectOccupyingTile.GetComponent<Animator>().SetInteger("mode_and_dir", 3);
+		//*/
 
 
 		
@@ -135,54 +154,56 @@ public class TileScript : MonoBehaviour {
 			if(isOpponentPiece == false){
 
 
+			if (this.GetComponentInChildren<Animator> () != null){
+					///*
+					//old
+					//Step 2 (regular transition trigger)
+					//If you are player 2
+					if (this.GetComponentInChildren<Unit>().alleg ==  Unit.allegiance.playerTwo && gp.playerNumber == 1){
+						if(end.z > start.z)
+							this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 4);
+						else if(end.z < start.z)
+							this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 5);
+						else if(end.x < start.x)
+							this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 6);
+						else if(end.x > start.x)
+							this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 7);
+					}
+					//If opponent is player 2
+					else if (this.GetComponentInChildren<Unit>().alleg ==  Unit.allegiance.playerTwo && gp.playerNumber == 2){
+						if(end.z < start.z)
+							this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 4);
+						else if(end.z > start.z)
+							this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 5);
+						else if(end.x > start.x)
+							this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 6);
+						else if(end.x < start.x)
+							this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 7);
 
-
-				//old
-				//Step 2 (regular transition trigger)
-				//If you are player 2
-				if (this.GetComponentInChildren<Unit>().alleg ==  Unit.allegiance.playerTwo && gp.playerNumber == 1){
-					if(end.z > start.z)
-						this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 4);
-					else if(end.z < start.z)
-						this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 5);
-					else if(end.x < start.x)
-						this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 6);
-					else if(end.x > start.x)
-						this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 7);
-				}
-				//If opponent is player 2
-				else if (this.GetComponentInChildren<Unit>().alleg ==  Unit.allegiance.playerTwo && gp.playerNumber == 2){
-					if(end.z < start.z)
-						this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 4);
-					else if(end.z > start.z)
-						this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 5);
-					else if(end.x > start.x)
-						this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 6);
-					else if(end.x < start.x)
-						this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 7);
-
-				}
-				//If you are player 1
-				else if (this.GetComponentInChildren<Unit>().alleg ==  Unit.allegiance.playerOne && gp.playerNumber == 1){
-					if(end.z > start.z)
-						this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 4);
-					else if(end.z < start.z)
-						this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 5);
-					else if(end.x < start.x)
-						this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 6);
-					else if(end.x > start.x)
-						this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 7);
-				}
-				//If opponent is player 1
-				else{
-					if(end.z < start.z)
-						this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 4);
-					else if(end.z > start.z)
-						this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 5);
-					else if(end.x > start.x)
-						this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 6);
-					else if(end.x < start.x)
-						this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 7);
+					}
+					//If you are player 1
+					else if (this.GetComponentInChildren<Unit>().alleg ==  Unit.allegiance.playerOne && gp.playerNumber == 1){
+						if(end.z > start.z)
+							this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 4);
+						else if(end.z < start.z)
+							this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 5);
+						else if(end.x < start.x)
+							this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 6);
+						else if(end.x > start.x)
+							this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 7);
+					}
+					//If opponent is player 1
+					else{
+						if(end.z < start.z)
+							this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 4);
+						else if(end.z > start.z)
+							this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 5);
+						else if(end.x > start.x)
+							this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 6);
+						else if(end.x < start.x)
+							this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 7);
+					}
+					//*/
 				}
 			}
 			else{
