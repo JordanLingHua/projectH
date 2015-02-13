@@ -185,6 +185,19 @@ public class AIScript : MonoBehaviour {
 			
 				//healer targets lowest health ally
 				case 8:
+					foreach (Unit u in gameManager.units.Values) {
+						if (u != null && u.GetComponent<Unit> ().alleg == Unit.allegiance.playerTwo && u.GetComponent<Unit>().unitType != 11 && u.hp < u.maxHP)
+							targetUnits.Add (u);
+					}
+
+					//no injured units, just go to nearby unit
+					if (targetUnits.Count == 0)
+					foreach (Unit u in gameManager.units.Values) {
+						if (u != null && u.GetComponent<Unit> ().alleg == Unit.allegiance.playerTwo && u.GetComponent<Unit>().unitType != 11)
+							targetUnits.Add (u);
+					}
+				break;
+
 				case 2:
 				foreach (Unit u in gameManager.units.Values) {
 				if (u != null && u.GetComponent<Unit> ().alleg == Unit.allegiance.playerTwo && u.GetComponent<Unit>().unitType != 11)
@@ -251,7 +264,8 @@ public class AIScript : MonoBehaviour {
 			foreach (TileScript t in attackTiles) {
 				if(t.objectOccupyingTile != null)
 					print ("aaa : " + t.objectOccupyingTile.name);
-				if(t.objectOccupyingTile != null && t.objectOccupyingTile.GetComponent<Unit>().alleg != Unit.allegiance.playerTwo)
+				if(t.objectOccupyingTile != null && (t.objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerOne 
+				                                     || (t.objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.neutral && (t.objectOccupyingTile.GetComponent<Unit>().unitID < 150 && t.objectOccupyingTile.GetComponent<Unit>().unitID > 100))))
 					return t;
 			}
 			break;
