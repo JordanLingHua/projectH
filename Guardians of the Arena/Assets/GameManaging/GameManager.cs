@@ -82,6 +82,12 @@ public class GameManager : MonoBehaviour {
 		text.GetComponent<ErrorPopUpTextScript> ().StartCoroutine (text.GetComponent<ErrorPopUpTextScript> ().showText (error, Color.red));
 	}
 
+	public void showCenterMessage(string message){
+		GUI.depth = -1;
+		GameObject text = (GameObject) Instantiate(GameObject.Find ("CenterPopUpText"),GameObject.Find ("CenterPopUpText").transform.position,Quaternion.identity);
+		text.GetComponent<CenterPopUpTextScript> ().StartCoroutine (text.GetComponent<CenterPopUpTextScript> ().showText (message));
+	}
+
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.Escape)){
 			clearSelection();
@@ -385,16 +391,17 @@ public class GameManager : MonoBehaviour {
 		timer = TIMER_LENGTH;
 		turn = !turn;
 		pMana = maxMana = mana;
-		
+
+		if (turn){
+			showCenterMessage("Your Turn!");
+		}
 		//toggle between players turns and reset units
 		tm.clearAllTiles();
 		accessibleTiles.Clear ();
 		//possibly wrong
 		if ((gp.playerNumber == 1 && turn) || (gp.playerNumber == 2 && !turn)){
 			resetPlayerOneUnits();
-			print ("reset player ones units");
 		}else{
-			print ("reset player twos units");
 			resetPlayerTwoUnits();
 		}
 		clearSelection();	

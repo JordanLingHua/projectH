@@ -52,6 +52,12 @@ public class ScrollText : MonoBehaviour {
 		combatLogScrollPos.y = Mathf.Infinity;
 	}
 
+	public void showCenterMessage(string message){
+		GUI.depth = -1;
+		GameObject text = (GameObject) Instantiate(GameObject.Find ("CenterPopUpText"),GameObject.Find ("CenterPopUpText").transform.position,Quaternion.identity);
+		text.GetComponent<CenterPopUpTextScript> ().StartCoroutine (text.GetComponent<CenterPopUpTextScript> ().showText (message));
+	}
+
 	void OnGUI(){
 		GUI.skin = mySkin;
 		combatLogWindowRect = GUI.Window (2, combatLogWindowRect, combatLogWindow, "");
@@ -60,6 +66,7 @@ public class ScrollText : MonoBehaviour {
 		if (GUI.Button (new Rect (Screen.width * 0.335f, Screen.height - ((float)Screen.height * 0.105f), Screen.width * 0.15f, (Screen.height - ((float)Screen.height * 0.905f))), "(E)nd Turn")) {
 			addLogToCombatLog("count: " + count);
 			count++;
+			showCenterMessage("Your Turn");
 		}
 	}
 
