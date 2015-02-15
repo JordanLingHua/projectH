@@ -12,7 +12,7 @@ public class Page {
 	public Page () {
 		playerSetup = GameObject.Find("PlayerSetup").GetComponent<PlayerSetup>();
 		onBoardPieces = new ArrayList(playerSetup.boardCapacity);
-		offBoardPieces = new ArrayList(playerSetup.boardCapacity);
+		offBoardPieces = new ArrayList(playerSetup.maxUnitCount);
 	}
 	
 	// Update is called once per frame

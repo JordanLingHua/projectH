@@ -20,8 +20,8 @@ public class PlayerSetup : MonoBehaviour {
 	public GameObject UnitEleven;
 	public GameObject cp;
 
-	public int boardCapacity = 10;
-	public int maxUnitCount = 10;
+	public int boardCapacity;
+	public int maxUnitCount;
 
 	//These special tiles seperate from the half of the game board (tiles) stores 
 	//the units that are dragged off the game board.  
@@ -131,6 +131,8 @@ public class PlayerSetup : MonoBehaviour {
 
 	void Start () {
 		gp = GameObject.Find ("GameProcess").GetComponent<GameProcess> ();
+		boardCapacity = 8;
+		maxUnitCount = 14;
 
 		//Tile Creation
 		tiles = new GameObject[xTiles, yTiles];

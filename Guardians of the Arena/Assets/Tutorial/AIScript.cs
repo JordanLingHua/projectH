@@ -295,7 +295,7 @@ public class AIScript : MonoBehaviour {
 
 			//healer targets lowest health ally
 			case 8:
-				int mostMissing = 100;
+				int mostMissing = 0;
 				TileScript toHeal = null;
 				foreach (TileScript t in attackTiles) {
 					if(t.objectOccupyingTile != null && t.objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerTwo

@@ -17,8 +17,8 @@ public class DropDownMenu : MonoBehaviour {
 	public Popup popup;
 	
 	void Start () {
-		tempX = 145 + 30;
-		tempY = 283 + 25;
+		tempX = 145 + 50;
+		tempY = 283 + 20;
 		pageNumber = GameObject.Find("PageInfo").GetComponent<PageNumberScript>();
 		pageNameScript = GameObject.Find("PageInfo").GetComponent<PageNameScript>();
 		mmg = GameObject.Find ("MainMenuGUI").GetComponent<MainMenuGUI> ();
