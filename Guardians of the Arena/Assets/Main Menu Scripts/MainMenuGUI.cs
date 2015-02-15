@@ -185,21 +185,21 @@ public class MainMenuGUI : MonoBehaviour {
 
 
 
-				GUILayout.BeginHorizontal();
-				challengedPlayer = GUILayout.TextField(challengedPlayer, 20);
-				if (GUILayout.Button ("Send Challenge", "ShortButton")) {
-					am.playButtonSFX ();
-					//TODO: 
-					gp.returnSocket ().SendTCPPacket ("challengeRequest\\" + gp.playerName + "\\" + challengedPlayer);
-					challengePending = true;
-					challengedPlayerCopy = challengedPlayer;
-					infoText = "Waiting for " + challengedPlayer + " to respond...";
-
-
-				}
-
-
-				GUILayout.EndHorizontal();
+//				GUILayout.BeginHorizontal();
+//				challengedPlayer = GUILayout.TextField(challengedPlayer, 20);
+//				if (GUILayout.Button ("Send Challenge", "ShortButton")) {
+//					am.playButtonSFX ();
+//					//TODO: 
+//					gp.returnSocket ().SendTCPPacket ("challengeRequest\\" + gp.playerName + "\\" + challengedPlayer);
+//					challengePending = true;
+//					challengedPlayerCopy = challengedPlayer;
+//					infoText = "Waiting for " + challengedPlayer + " to respond...";
+//
+//
+//				}
+//
+//
+//				GUILayout.EndHorizontal();
 				GUILayout.Label("", "Divider");//-------------------------------- custom
 
 				GUILayout.BeginHorizontal();
