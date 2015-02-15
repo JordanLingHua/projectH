@@ -29,11 +29,12 @@ namespace Guardians_Of_The_Arena_Server
             }
 
             connectToDatabase();
-            //createTables();
-            //clearTable();
+            
+            clearTable();
             //fillPlayerTable();
             //printTable();
             //dropTable();
+            //createTables();
 
         }
 
@@ -79,6 +80,11 @@ namespace Guardians_Of_The_Arena_Server
             sql = "CREATE TABLE unitSetups(name VARCHAR(20), setupName VARCHAR(50), setupID TINYINT, unitType TINYINT, x TINYINT, y TINYINT, onField BIT)";
             command = new SQLiteCommand(sql, userDatabase);
             command.ExecuteNonQuery();
+
+            sql = "CREATE TABLE tooltips(name VARCHAR(20), tooltipID TINYINT, showTip BIT)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
      
         }
 
@@ -97,22 +103,19 @@ namespace Guardians_Of_The_Arena_Server
             sql = "DELETE FROM unitSetups";
             command = new SQLiteCommand(sql, userDatabase);
             reader = command.ExecuteReader();
+
+            sql = "DELETE FROM tooltips";
+            command = new SQLiteCommand(sql, userDatabase);
+            reader = command.ExecuteReader();
         }
 
         public void dropTable()
         {
 
-            string sql = "DROP TABLE unitSetups";
+            string sql = "DROP TABLE unitSetups; DROP TABLE playerInfo; DROP TABLE highScores; DROP TABLE tooltips;";
             SQLiteCommand command = new SQLiteCommand(sql, userDatabase);
             SQLiteDataReader reader = command.ExecuteReader();
-
-            sql = "DROP TABLE playerInfo";
-            command = new SQLiteCommand(sql, userDatabase);
-            reader = command.ExecuteReader();
-
-            sql = "DROP TABLE highScores";
-            command = new SQLiteCommand(sql, userDatabase);
-            reader = command.ExecuteReader();
+            
         }
 
         // print the tables to the console
@@ -128,7 +131,7 @@ namespace Guardians_Of_The_Arena_Server
 
         // check to see if a value exist in the table
 
-        public bool existsInTable(String name)
+        public bool existsInTable(string name)
         {
             string sql = "SELECT count(*) FROM playerInfo WHERE name=:Name";
             SQLiteCommand command = new SQLiteCommand(sql, userDatabase);
@@ -140,7 +143,7 @@ namespace Guardians_Of_The_Arena_Server
 
         // get the user's password from the playerInfo database
 
-        public string getUserPassword(String name)
+        public string getUserPassword(string name)
         {
             string sql = "select password from playerInfo where name=" + "'" + name + "'";
             SQLiteCommand command = new SQLiteCommand(sql, userDatabase);
@@ -151,7 +154,7 @@ namespace Guardians_Of_The_Arena_Server
 
 
 
-        public void getTableEntry(String name)
+        public void getTableEntry(string name)
         {
             string sql = "select * from playerInfo where name=" + "'" + name + "'";
             SQLiteCommand command = new SQLiteCommand(sql, userDatabase);
@@ -259,10 +262,18 @@ namespace Guardians_Of_The_Arena_Server
 
         public void createDefaultUnitSetup(string name)
         {
+            string sql = "";
+
+            sql =  "INSERT INTO tooltips (name, tooltipID, showTip) VALUES ('" + name +"' , 1, 1);";
+            sql += "INSERT INTO tooltips (name, tooltipID, showTip) VALUES ('" + name + "' , 2, 1);";
+            sql += "INSERT INTO tooltips (name, tooltipID, showTip) VALUES('" + name + "' , 3, 1);";
+
+            SQLiteCommand command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
             for (int i = 1; i <= 5; i++)
             {
-                string sql = "";
-                SQLiteCommand command;
+                sql = "";
                 //unit type 1 at 5, 1
                 sql = "   INSERT INTO unitSetups  ";
                 sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
@@ -377,11 +388,10 @@ namespace Guardians_Of_The_Arena_Server
             command.Parameters.AddWithValue("@name", name);
             command.Parameters.AddWithValue("@setupID", setupID);
             return command.ExecuteReader();
-
-
+            
         }
 
-        public void updateSetup(string name, int setupID, int unitType, int oldX, int oldY, int newX, int newY, int onfield)
+         public void updateSetup(string name, int setupID, int unitType, int oldX, int oldY, int newX, int newY, int onfield)
         {
             string sql   = "UPDATE unitSetups ";
             sql         += "SET x = @newX, y = @newY, onField = @onField ";
@@ -405,9 +415,27 @@ namespace Guardians_Of_The_Arena_Server
             //    Console.WriteLine(reader["setupID"] + " " + reader["unitType"] + " " + reader["x"] + " " + reader["y"]);
         }
 
-        public void sendPacket(String action, String name, int score)
+         public SQLiteDataReader getTooltips(string name, int tooltipID)
+         {
+             string sql = "SELECT tooltipID, showTip FROM tooltips WHERE name = @name AND tooltipID = @tooltipID";
+             SQLiteCommand command = new SQLiteCommand(sql, userDatabase);
+             command.Parameters.AddWithValue("@name", name);
+             command.Parameters.AddWithValue("@tooltipID", tooltipID);
+             return command.ExecuteReader();
+         }
+
+         public void updateTooltip(string name, int tooltipID)
+         {
+             string sql = "UPDATE tooltips SET showTip = 0 WHERE name = @name AND tooltipID = @ID;";
+             SQLiteCommand command = new SQLiteCommand(sql, userDatabase);
+             command.Parameters.AddWithValue("@name", name);
+             command.Parameters.AddWithValue("@ID", tooltipID);
+             command.ExecuteNonQuery();
+         }
+
+        public void sendPacket(string action, string name, int score)
         {
-            Byte[] data = Encoding.ASCII.GetBytes(String.Format("{0}/{1}/{2}", action, name, score));
+            Byte[] data = Encoding.ASCII.GetBytes(string.Format("{0}/{1}/{2}", action, name, score));
             s.SendTo(data, data.Length, SocketFlags.None, RemoteEndPoint);
         }
 

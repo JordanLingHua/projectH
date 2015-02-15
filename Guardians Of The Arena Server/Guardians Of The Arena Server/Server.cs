@@ -351,6 +351,19 @@ namespace Guardians_Of_The_Arena_Server
 
                                     client.sw.WriteLine(setupNames);
                                 }
+                                else if (tokens[0].Equals("requestTooltip"))
+                                {
+                                    SQLiteDataReader reader = dm.getTooltips(client.clientName, Int32.Parse(tokens[1]));
+                                    string tooltip = "showTip\\" + reader["tooltipID"];
+                                    string showTip = "" + reader["showTip"];
+
+                                    if (showTip.Equals("True"))
+                                        client.sw.WriteLine(tooltip);
+                                }
+                                else if (tokens[0].Equals("dontDisplayTip"))
+                                {
+                                    dm.updateTooltip(client.clientName, Int32.Parse(tokens[1]));
+                                }
                                 else
                                 {
                                     //do nothing

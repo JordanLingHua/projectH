@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
+using System.Data.SQLite;
 
 namespace Guardians_Of_The_Arena_Server
 {
@@ -83,6 +84,21 @@ namespace Guardians_Of_The_Arena_Server
             //We need to send each player the position of each unit on the board
 
             //player2's setups
+            //send the tooltips
+            SQLiteDataReader reader = dm.getTooltips(client1.clientName, 3);
+            string tooltip = "showTip\\" + reader["tooltipID"];
+            string showTip = "" + reader["showTip"];
+
+            if (showTip.Equals("True"))
+                client1.sw.WriteLine(tooltip);
+
+            reader = dm.getTooltips(client2.clientName, 3);
+            tooltip = "showTip\\" + reader["tooltipID"];
+            showTip = "" + reader["showTip"];
+
+            if (showTip.Equals("True"))
+                client2.sw.WriteLine(tooltip);
+
 
 
             Console.WriteLine("Game between " + player1.playerClient.clientName
