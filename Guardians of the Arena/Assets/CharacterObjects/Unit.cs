@@ -72,15 +72,17 @@ public class Unit    : MonoBehaviour {
 	}	
 
 	public void showPopUpText(string affect,Color newColor){
-		Camera cam = Camera.main;
-		GUI.depth = -1;
-		Vector3 textPos = cam.WorldToScreenPoint(gameObject.transform.position);
-		textPos.x = (textPos.x - 10) / Screen.width;
-		textPos.y = (textPos.y + 20 + (10 * popUpTextNum)) / Screen.height;
-		textPos.z = 0;
-		GameObject text = (GameObject) Instantiate(popUpText,textPos,Quaternion.identity);
-		popUpTextNum++;
-		text.GetComponent<popUpTextScript> ().StartCoroutine (text.GetComponent<popUpTextScript> ().showText (this, affect, newColor));
+		if (gameObject != null) {
+			Camera cam = Camera.main;
+			GUI.depth = -1;
+			Vector3 textPos = cam.WorldToScreenPoint (gameObject.transform.position);
+			textPos.x = (textPos.x - 10) / Screen.width;
+			textPos.y = (textPos.y + 20 + (10 * popUpTextNum)) / Screen.height;
+			textPos.z = 0;
+			GameObject text = (GameObject)Instantiate (popUpText, textPos, Quaternion.identity);
+			popUpTextNum++;
+			text.GetComponent<popUpTextScript> ().StartCoroutine (text.GetComponent<popUpTextScript> ().showText (this, affect, newColor));
+		}
 	}
 
 	void OnGUI(){

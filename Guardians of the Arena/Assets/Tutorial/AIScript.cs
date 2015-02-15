@@ -26,7 +26,7 @@ public class AIScript : MonoBehaviour {
 		targetUnits = new List<Unit>();	
 		obstacles = new List<Unit>();	
 		playerUnits = new List<Unit>();	
-		actionDelay = 2.0f;
+		actionDelay = 5.0f;
 	}
 
 	public IEnumerator makeGameAction(Unit u)
@@ -96,29 +96,32 @@ public class AIScript : MonoBehaviour {
 			Unit closestTarget = getClosestTarget (toMove);
 			//Debug.Log("clostestsadfadf: " + closestTarget.name);
 
-			TileScript destinationTile = getTileClosestToNearestTarget (possibleMoveTiles, closestTarget);
+			if (closestTarget != null)
+			{
+				TileScript destinationTile = getTileClosestToNearestTarget (possibleMoveTiles, closestTarget);
 
-			//send packet
-			gameManager.gs = GameManager.gameState.playerMv;
-			gp.returnSocket ().SendTCPPacket ("move\\" + gameManager.selectedUnit.unitID + "\\" + destinationTile.x + "\\" + destinationTile.y);
-			print ("The AI sent a move packet");
+				//send packet
+				gameManager.gs = GameManager.gameState.playerMv;
+				gp.returnSocket ().SendTCPPacket ("move\\" + gameManager.selectedUnit.unitID + "\\" + destinationTile.x + "\\" + destinationTile.y);
+				print ("The AI sent a move packet");
 
-		
-			yield return new WaitForSeconds(actionDelay);
-
-			//RECHECK THE ATTACK SINCE UNIT IS ON NEW TILE
-			gameManager.gs = GameManager.gameState.playerAtk;
-			tileOfTarget = checkForTargetInRange (toMove);
 			
-			if (tileOfTarget != null)
-				print ("targetting: " +tileOfTarget.x + "  " + tileOfTarget.y);
-			else
-				print ("NO TARGET FOUDN AFTER MOVE");
-			
-			if (toMove.atkCost <= gameManager.pMana && tileOfTarget != null && !toMove.atkd) {
-				gp.returnSocket ().SendTCPPacket ("attack\\" + gameManager.selectedUnit.unitID + "\\" + tileOfTarget.x + "\\" + tileOfTarget.y);
-				print ("The AI sent an attack packet");
 				yield return new WaitForSeconds(actionDelay);
+
+				//RECHECK THE ATTACK SINCE UNIT IS ON NEW TILE
+				gameManager.gs = GameManager.gameState.playerAtk;
+				tileOfTarget = checkForTargetInRange (toMove);
+				
+				if (tileOfTarget != null)
+					print ("targetting: " +tileOfTarget.x + "  " + tileOfTarget.y);
+				else
+					print ("NO TARGET FOUND AFTER MOVE");
+				
+				if (toMove.atkCost <= gameManager.pMana && tileOfTarget != null && !toMove.atkd) {
+					gp.returnSocket ().SendTCPPacket ("attack\\" + gameManager.selectedUnit.unitID + "\\" + tileOfTarget.x + "\\" + tileOfTarget.y);
+					print ("The AI sent an attack packet");
+					yield return new WaitForSeconds(actionDelay);
+				}
 			}
 		}
 
@@ -137,25 +140,26 @@ public class AIScript : MonoBehaviour {
 
 	public Unit checkForValidGameAction()
 	{
+		List<Unit> readyUnits = new List<Unit>();
 		print ("MANA: " + gameManager.pMana);
 		if (gameManager.pMana > 0) 
 		{
-			//TODO randomly select next unit to make action rather than just the first in the list
 			foreach (Unit u in AIUnits)
 			{
 				if (u.atkCost <= gameManager.pMana && !u.atkd && u.unitType != 11)
 				{
-					gameManager.gs = GameManager.gameState.playerAtk;
-					return u; 
+					readyUnits.Add (u); 
 				}
 
 				if (u.mvCost <= gameManager.pMana && !u.mvd && u.unitType != 11)
 				{
-					gameManager.gs = GameManager.gameState.playerMv;
-					return u; 
+					readyUnits.Add (u);
 				}
 			}
-			return null;
+			if (readyUnits.Count == 0)
+				return null;
+			else
+				return readyUnits[(int)(rand.NextDouble () * readyUnits.Count)];
 		}
 		else 
 		{
@@ -170,18 +174,28 @@ public class AIScript : MonoBehaviour {
 		TileScript toMoveTileScript = toMove.GetComponentInParent<TileScript> ();
 
 		switch (toMove.unitType) {
-				//Units that attack the players units to deal damage
+				//Swordsmen attack barrels and enemies
 				case 1:
+					foreach (Unit u in gameManager.units.Values) {
+						if ( u != null && u.GetComponent<Unit> ().alleg != Unit.allegiance.playerTwo) {
+							//targetUnits.Add(t.objectOccupyingTile.GetComponent<Unit>());
+							targetUnits.Add (u);
+						}
+					}
+				break;
+				
+				//All other combat units only attack enemies
 				case 3:
 				case 7:
 				case 10:
-						foreach (Unit u in gameManager.units.Values) {
-								if ( u != null && u.GetComponent<Unit> ().alleg != Unit.allegiance.playerTwo) {
-										//targetUnits.Add(t.objectOccupyingTile.GetComponent<Unit>());
-										targetUnits.Add (u);
-								}
+					foreach (Unit u in gameManager.units.Values) {
+						if ( u != null && u.GetComponent<Unit> ().alleg == Unit.allegiance.playerOne) {
+							//targetUnits.Add(t.objectOccupyingTile.GetComponent<Unit>());
+							targetUnits.Add (u);
 						}
-						break;
+					}
+				break;
+						
 			
 				//healer targets lowest health ally
 				case 8:
@@ -199,19 +213,19 @@ public class AIScript : MonoBehaviour {
 				break;
 
 				case 2:
-				foreach (Unit u in gameManager.units.Values) {
-				if (u != null && u.GetComponent<Unit> ().alleg == Unit.allegiance.playerTwo && u.GetComponent<Unit>().unitType != 11)
-										targetUnits.Add (u);
-						}
-						break;
-				//TODO MYSTIC
+					foreach (Unit u in gameManager.units.Values) {
+					if (u != null && u.GetComponent<Unit> ().alleg == Unit.allegiance.playerTwo && u.GetComponent<Unit>().unitType != 11)
+							targetUnits.Add (u);
+					}
+				break;
+				
 
 				default:
 						Debug.Log ("i am rekt m8");
 						break;
 		
 				}
-				//Debug.Log ("");
+				
 				foreach (Unit p in targetUnits) {
 						TileScript pTileScript = p.GetComponentInParent<TileScript> ();
 
@@ -258,55 +272,67 @@ public class AIScript : MonoBehaviour {
 		{
 			//Units that attack the players units to deal damage
 			case 1:
+				foreach (TileScript t in attackTiles) {
+					if(t.objectOccupyingTile != null && t.objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerOne)
+				   		return t;
+
+				    else if(t.objectOccupyingTile != null && (t.objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.neutral && (t.objectOccupyingTile.GetComponent<Unit>().unitID < 150 && t.objectOccupyingTile.GetComponent<Unit>().unitID > 100)))
+						return t;
+				}
+			break;
+
 			case 3:
 			case 7:
 			case 10:
-			foreach (TileScript t in attackTiles) {
-				if(t.objectOccupyingTile != null)
-					print ("aaa : " + t.objectOccupyingTile.name);
-				if(t.objectOccupyingTile != null && (t.objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerOne 
-				                                     || (t.objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.neutral && (t.objectOccupyingTile.GetComponent<Unit>().unitID < 150 && t.objectOccupyingTile.GetComponent<Unit>().unitID > 100))))
-					return t;
-			}
+				foreach (TileScript t in attackTiles) {
+					if(t.objectOccupyingTile != null)
+						print ("aaa : " + t.objectOccupyingTile.name);
+					if(t.objectOccupyingTile != null && (t.objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerOne))				                                   
+						return t;
+				}
+
 			break;
 
 			//healer targets lowest health ally
 			case 8:
-			int mostMissing = 100;
-			TileScript toHeal = null;
-			foreach (TileScript t in attackTiles) {
-				if(t.objectOccupyingTile != null && t.objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerTwo
-				   && t.objectOccupyingTile.GetComponent<Unit>().unitType != 11)
-				{
-					int currentHP = t.GetComponentInChildren<Unit>().hp;
-					int maxHP = t.GetComponentInChildren<Unit>().maxHP;
-					if (currentHP < maxHP)
+				int mostMissing = 100;
+				TileScript toHeal = null;
+				foreach (TileScript t in attackTiles) {
+					if(t.objectOccupyingTile != null && t.objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerTwo
+					   && t.objectOccupyingTile.GetComponent<Unit>().unitType != 11)
 					{
-						int healthMissing = Math.Abs(currentHP - maxHP);
-						if ( healthMissing > mostMissing)
+						int currentHP = t.GetComponentInChildren<Unit>().hp;
+						int maxHP = t.GetComponentInChildren<Unit>().maxHP;
+						if (currentHP < maxHP)
 						{
-							toHeal = t;
-							mostMissing = healthMissing;
+							int healthMissing = Math.Abs(currentHP - maxHP);
+							if ( healthMissing > mostMissing)
+							{
+								toHeal = t;
+								mostMissing = healthMissing;
+							}
 						}
 					}
-				}
 
-			}
-			return toHeal;
+				}
+				return toHeal;
 		
 			break;
 
 			//Mystic can target enemy or ally but wont move or attack while focusing
 			case 2:
-			foreach (TileScript t in attackTiles) {
-				if(t.objectOccupyingTile != null && t.objectOccupyingTile.GetComponent<Unit>().alleg != Unit.allegiance.neutral)
-					if (t.objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerTwo && !t.objectOccupyingTile.GetComponent<Unit>().mvd)
-						return t;
-					else if (t.objectOccupyingTile.GetComponent<Unit>().alleg != Unit.allegiance.playerOne)
-						return t;
-					
-			}
-			return null;
+				foreach (TileScript t in attackTiles) {
+					if(t.objectOccupyingTile != null && t.objectOccupyingTile.GetComponent<Unit>().alleg != Unit.allegiance.neutral 
+					   && attacker.GetComponent<Mystic>().unitFocused == null && t.objectOccupyingTile.GetComponent<Unit>().unitType != 11)
+						{
+						   if(t.objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerTwo && !t.objectOccupyingTile.GetComponent<Unit>().mvd)
+								return t;
+							else if (t.objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerOne)
+								return t;
+						
+					}
+				}
+				return null;
 			break;
 
 		}
