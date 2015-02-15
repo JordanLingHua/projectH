@@ -12,7 +12,7 @@ public class TileManager : MonoBehaviour {
 	public GameObject[,] tiles;
 	
 	public GameObject tile;
-	public GameObject environmentObject, cp, UnitOne,UnitTwo,UnitThree,UnitFour,UnitFive,UnitSix,UnitSeven,UnitEight,UnitNine,UnitTen,UnitEleven;
+	public GameObject environmentObject, cp, UnitOne,UnitTwo,UnitThree,UnitFour,UnitFive,UnitSix,UnitSeven,UnitEight,UnitNine,UnitTen,UnitEleven,Barrel;
 	public GameManager gm;
 	public GameProcess gp;
 	public PopUpMenuNecro pum;
@@ -167,16 +167,21 @@ public class TileManager : MonoBehaviour {
 
 	public void addTree(int x, int y,int unitID){
 		TileScript placeTile = tiles[x,y].GetComponent<TileScript>();
-		GameObject tree = (GameObject)Instantiate(environmentObject, 
-		                                          new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
+		GameObject tree = (GameObject)Instantiate(Barrel, 
+		                                          new Vector3(placeTile.transform.position.x, 5, placeTile.transform.position.z), 
 		                                          new Quaternion());
 		tree.transform.parent = placeTile.transform;
-		tree.GetComponent<Unit> ().makeTree ();
+		//tree.GetComponent<Unit> ().makeTree ();
 		placeTile.objectOccupyingTile = tree;
 		placeTile.gameObject.renderer.material.color = Color.gray;
 
 		gm.units.Add (unitID, tree.GetComponent<Unit>());
-
+		tree.transform.localScale = new Vector3(1.25f,12.5f,1.25f);
+		tree.transform.eulerAngles = new Vector3(4.5f,0,0f);
+		if (gp.playerNumber == 2) {
+			tree.transform.eulerAngles = new Vector3(4.5f,180f,0f);
+		}
+		
 	}
 	
 	public GameObject addUnit(int x, int y, int type, int pNum, int unitID){

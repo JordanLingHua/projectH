@@ -37,11 +37,11 @@ public class Mystic: Unit {
 			unitFocused.showPopUpText("No Longer Focused!",Color.yellow);
 
 			if (unitFocused.alleg == this.alleg){
-
+				unitFocused.mvRange -= 2;
 				if(levelOnFocus == 3){
 					unitFocused.armor -= 3;
 				}
-				if (levelOnFocus >= 2){
+				if (levelOnFocus >= 2 && unitFocused.unitType != 8){
 					unitFocused.atk -= 3;
 				}
 
@@ -54,6 +54,7 @@ public class Mystic: Unit {
 					unitFocused.armor +=2;
 				}
 			}
+			unitFocused = null;
 			showPopUpText("Lost Focus!",Color.red);
 			gm.addLogToCombatLog(player + this.unitName + " lost focus of " + unitAffectedPlayer + unitFocused.unitName);
 		}
@@ -122,7 +123,7 @@ public class Mystic: Unit {
 			}else if (unitFocused.alleg == this.alleg){
 				unitAffected.mvRange += 2;
 				unitAffected.showPopUpText("Focused!",Color.green);
-				if (unitLevel >= 2){
+				if (unitLevel >= 2 && unitAffected.unitType != 8){
 					unitAffected.atk += 3;
 				}
 				if (unitLevel == 3){

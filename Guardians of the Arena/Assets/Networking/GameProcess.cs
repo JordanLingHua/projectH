@@ -128,7 +128,7 @@ public class GameProcess : MonoBehaviour {
 				if (playerName == tokens[1])
 				{
 					UnityEngine.Debug.Log ("Logging out through playername");
-					Destroy(pum);
+					//Destroy(pum);
 					Destroy(am);
 					Destroy(GameObject.Find ("ListOfPlayers"));
 
