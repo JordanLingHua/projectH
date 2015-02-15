@@ -72,7 +72,7 @@ public class Unit    : MonoBehaviour {
 	}	
 
 	public void showPopUpText(string affect,Color newColor){
-		if (gameObject != null) {
+		if (this.gameObject != null) {
 			Camera cam = Camera.main;
 			GUI.depth = -1;
 			Vector3 textPos = cam.WorldToScreenPoint (gameObject.transform.position);
@@ -489,6 +489,7 @@ public class Unit    : MonoBehaviour {
 		hp = 1;
 		maxHP = 1;
 		invincible = true;
+		unitType = 21;
 	}
 
 	public void makeTree(){
@@ -496,6 +497,7 @@ public class Unit    : MonoBehaviour {
 		unitName = "Shrub";
 		hp = 1;
 		maxHP = 1;
+		unitType = 20;
 	}
 	
 }

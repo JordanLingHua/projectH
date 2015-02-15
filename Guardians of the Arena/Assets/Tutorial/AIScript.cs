@@ -26,7 +26,7 @@ public class AIScript : MonoBehaviour {
 		targetUnits = new List<Unit>();	
 		obstacles = new List<Unit>();	
 		playerUnits = new List<Unit>();	
-		actionDelay = 5.0f;
+		actionDelay = 2.0f;
 	}
 
 	public IEnumerator makeGameAction(Unit u)
@@ -76,25 +76,24 @@ public class AIScript : MonoBehaviour {
 		gameManager.gs = GameManager.gameState.playerAtk;
 		TileScript tileOfTarget = checkForTargetInRange (toMove);
 		
-		if (tileOfTarget != null)
-			print ("targetting: " +tileOfTarget.x + "  " + tileOfTarget.y);
-		
 		if (toMove.atkCost <= gameManager.pMana && tileOfTarget != null && !toMove.atkd) {
 			gp.returnSocket ().SendTCPPacket ("attack\\" + gameManager.selectedUnit.unitID + "\\" + tileOfTarget.x + "\\" + tileOfTarget.y);
 			print ("The AI sent an attack packet");
+			//print ("attacking: " +tileOfTarget.x + "  " + tileOfTarget.y);
 			yield return new WaitForSeconds(actionDelay);
 		} 
 
-		//NO TARGETS WERE IN RANGE, MOVING TO CLOSEST TARGET
+		//NO TARGETS WERE IN RANGE, MOVING TOWARDS CLOSEST TARGET
 		else {
-
-			print ("selectedUnitName: " + toMove.name);
 			toMove.selectUnit ();
 			HashSet<TileScript> possMvTile = toMove.getMvAccessibleTiles (toMove.alleg);
 			List<TileScript> possibleMoveTiles = new List<TileScript> (possMvTile);
 
 			Unit closestTarget = getClosestTarget (toMove);
-			//Debug.Log("clostestsadfadf: " + closestTarget.name);
+			if (closestTarget != null)
+				Debug.Log("closest target is not null and it is: " + closestTarget.name);
+			else
+				Debug.Log ("closest target is NULL!");
 
 			if (closestTarget != null)
 			{
@@ -113,7 +112,7 @@ public class AIScript : MonoBehaviour {
 				tileOfTarget = checkForTargetInRange (toMove);
 				
 				if (tileOfTarget != null)
-					print ("targetting: " +tileOfTarget.x + "  " + tileOfTarget.y);
+					print ("TARGET FOUND AFTER MOVE: " +tileOfTarget.x + "  " + tileOfTarget.y);
 				else
 					print ("NO TARGET FOUND AFTER MOVE");
 				
@@ -141,15 +140,15 @@ public class AIScript : MonoBehaviour {
 	public Unit checkForValidGameAction()
 	{
 		List<Unit> readyUnits = new List<Unit>();
-		print ("MANA: " + gameManager.pMana);
+		//print ("MANA: " + gameManager.pMana);
 		if (gameManager.pMana > 0) 
 		{
 			foreach (Unit u in AIUnits)
 			{
-				if (u.atkCost <= gameManager.pMana && !u.atkd && u.unitType != 11)
-				{
-					readyUnits.Add (u); 
-				}
+				//if (u.atkCost <= gameManager.pMana && !u.atkd && u.unitType != 11)
+				//{
+				//	readyUnits.Add (u); 
+				//}
 
 				if (u.mvCost <= gameManager.pMana && !u.mvd && u.unitType != 11)
 				{
@@ -169,15 +168,15 @@ public class AIScript : MonoBehaviour {
 
 	Unit getClosestTarget(Unit toMove){
 		Unit closestTarget = null;
-		float tempDistance;
+		float tempDistance = 50;
 		float minDistance = 50;
 		TileScript toMoveTileScript = toMove.GetComponentInParent<TileScript> ();
 
 		switch (toMove.unitType) {
 				//Swordsmen attack barrels and enemies
-				case 1:
+				case 7:
 					foreach (Unit u in gameManager.units.Values) {
-						if ( u != null && u.GetComponent<Unit> ().alleg != Unit.allegiance.playerTwo) {
+						if ( u != null && u.GetComponent<Unit> ().alleg != Unit.allegiance.playerTwo && u.GetComponent<Unit>().unitType != 21) {
 							//targetUnits.Add(t.objectOccupyingTile.GetComponent<Unit>());
 							targetUnits.Add (u);
 						}
@@ -186,7 +185,7 @@ public class AIScript : MonoBehaviour {
 				
 				//All other combat units only attack enemies
 				case 3:
-				case 7:
+				case 1:
 				case 10:
 					foreach (Unit u in gameManager.units.Values) {
 						if ( u != null && u.GetComponent<Unit> ().alleg == Unit.allegiance.playerOne) {
@@ -200,21 +199,24 @@ public class AIScript : MonoBehaviour {
 				//healer targets lowest health ally
 				case 8:
 					foreach (Unit u in gameManager.units.Values) {
-						if (u != null && u.GetComponent<Unit> ().alleg == Unit.allegiance.playerTwo && u.GetComponent<Unit>().unitType != 11 && u.hp < u.maxHP)
+						if (u != null && u.GetComponent<Unit> ().alleg == Unit.allegiance.playerTwo && u.GetComponent<Unit>().unitType != 11 
+				  			  && u.GetComponent<Unit>().unitType != 8 && u.hp < u.maxHP)
 							targetUnits.Add (u);
 					}
 
 					//no injured units, just go to nearby unit
 					if (targetUnits.Count == 0)
 					foreach (Unit u in gameManager.units.Values) {
-						if (u != null && u.GetComponent<Unit> ().alleg == Unit.allegiance.playerTwo && u.GetComponent<Unit>().unitType != 11)
+						if (u != null && u.GetComponent<Unit> ().alleg == Unit.allegiance.playerTwo && u.GetComponent<Unit>().unitType != 11
+				   		 && u.GetComponent<Unit>().unitType != 8)
 							targetUnits.Add (u);
 					}
 				break;
 
 				case 2:
 					foreach (Unit u in gameManager.units.Values) {
-					if (u != null && u.GetComponent<Unit> ().alleg == Unit.allegiance.playerTwo && u.GetComponent<Unit>().unitType != 11)
+					if (u != null && u.GetComponent<Unit> ().alleg == Unit.allegiance.playerTwo && u.GetComponent<Unit>().unitType != 11
+				    && u.GetComponent<Unit>().unitType != 2 && toMove.GetComponent<Mystic>().unitFocused == null)
 							targetUnits.Add (u);
 					}
 				break;
@@ -226,15 +228,16 @@ public class AIScript : MonoBehaviour {
 		
 				}
 				
-				foreach (Unit p in targetUnits) {
-						TileScript pTileScript = p.GetComponentInParent<TileScript> ();
+				foreach (Unit p in targetUnits) 
+				{
+					TileScript pTileScript = p.GetComponentInParent<TileScript> ();
+					tempDistance = Math.Abs (pTileScript.x - toMoveTileScript.x) + Math.Abs (pTileScript.y - toMoveTileScript.y);
 
-						tempDistance = Math.Abs (pTileScript.x - toMoveTileScript.x) + Math.Abs (pTileScript.y - toMoveTileScript.y);
-
-						if (tempDistance < minDistance) {
-								closestTarget = p;
-								minDistance = tempDistance;
-						}
+					if (tempDistance < minDistance)
+					{
+						closestTarget = p;
+						minDistance = tempDistance;
+					}
 				}
 				
 		
@@ -245,7 +248,7 @@ public class AIScript : MonoBehaviour {
 		float minDistance = 50;
 		float tempDistance2;
 		Debug.Log ("closestTarget: " + closestTarget.name);
-		Debug.Log (" tile: " + closestTarget.GetComponentInParent<TileScript>());
+		//Debug.Log (" tile: " + closestTarget.GetComponentInParent<TileScript>());
 		TileScript targetLocation = closestTarget.GetComponentInParent<TileScript> ();
 		TileScript destinationTile = null;
 		foreach (TileScript t in moveTiles)
@@ -271,22 +274,20 @@ public class AIScript : MonoBehaviour {
 		switch (attacker.unitType) 
 		{
 			//Units that attack the players units to deal damage
-			case 1:
+			case 7:
 				foreach (TileScript t in attackTiles) {
 					if(t.objectOccupyingTile != null && t.objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerOne)
 				   		return t;
 
-				    else if(t.objectOccupyingTile != null && (t.objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.neutral && (t.objectOccupyingTile.GetComponent<Unit>().unitID < 150 && t.objectOccupyingTile.GetComponent<Unit>().unitID > 100)))
+				else if(t.objectOccupyingTile != null && t.objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.neutral && t.objectOccupyingTile.GetComponent<Unit>().unitType == 20)
 						return t;
 				}
 			break;
 
 			case 3:
-			case 7:
+			case 1:
 			case 10:
 				foreach (TileScript t in attackTiles) {
-					if(t.objectOccupyingTile != null)
-						print ("aaa : " + t.objectOccupyingTile.name);
 					if(t.objectOccupyingTile != null && (t.objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerOne))				                                   
 						return t;
 				}
