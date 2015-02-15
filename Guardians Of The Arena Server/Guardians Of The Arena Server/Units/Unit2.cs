@@ -8,6 +8,8 @@ namespace Guardians_Of_The_Arena_Server.Units
     class Unit2 : Unit
     {
         private bool focused;
+        private bool focusedOnLevel2;
+        private bool focusedOnLevel3;
         private Unit unitFocused;
         private int movementSpeedBuff;
         private int baseMovementRange;
@@ -28,11 +30,13 @@ namespace Guardians_Of_The_Arena_Server.Units
             attackRange = 3;
 
             focused = false;
+            focusedOnLevel2 = false;
+            focusedOnLevel3 = false;
             unitFocused = null;
             movementSpeedBuff = 3;
             attackBuff = 3;
-            armorBuff = 2;
-            armorDebuff = 3;
+            armorBuff = 3;
+            armorDebuff = 2;
         }
 
         public override void moveUnit(GameBoard.Tile destination)
@@ -63,11 +67,13 @@ namespace Guardians_Of_The_Arena_Server.Units
 
                     if (this.level >= 2)
                     {
-                        unitFocused.Damage += this.attackBuff;
+                        unitHit.Damage += this.attackBuff;
+                        Console.WriteLine("LOG: this unit can now do {0} damage", unitHit.Damage);
 
                         if (this.level >= 3)
                         {
-                            unitFocused.Armor += this.armorBuff;
+                            unitHit.Armor += this.armorBuff;
+                            Console.WriteLine("LOG: this unit takes {0} less damage", unitHit.Armor);
                         }
                     }
                 }
@@ -153,13 +159,15 @@ namespace Guardians_Of_The_Arena_Server.Units
                     unitFocused.MovementRange -= movementSpeedBuff;
                     Console.WriteLine("LOG: Unit {0} debuffed.", unitFocused.UniqueID);
 
-                    if (this.level >= 2)
+                    if (this.level >= 2 && (!focusedOnLevel2 || focusedOnLevel3))
                     {
                         unitFocused.Damage -= this.attackBuff;
+                        Console.WriteLine("LOG: this unit can now do {0} damage", unitFocused.Damage);
 
-                        if (this.level >= 3)
+                        if (this.level >= 3 && !focusedOnLevel3)
                         {
                             unitFocused.Armor -= armorBuff;
+                            Console.WriteLine("LOG: this unit takes {0} less damage", unitFocused.Armor);
                         }
                     }
 
@@ -175,7 +183,13 @@ namespace Guardians_Of_The_Arena_Server.Units
                     }
 
                 }
+
+                unitFocused = null;
             }
+
+            focusedOnLevel2 = false;
+            focusedOnLevel3 = false;
+
         }
 
         public override void LevelUp()
@@ -184,7 +198,13 @@ namespace Guardians_Of_The_Arena_Server.Units
 
             switch (Level)
             {
+                case 2:
+                    if (focused)
+                        focusedOnLevel2 = true;
+                    break;
                 case 3:
+                    if (focused)
+                        focusedOnLevel3 = true;
                     armorDebuff = 4;
                     break;
             }

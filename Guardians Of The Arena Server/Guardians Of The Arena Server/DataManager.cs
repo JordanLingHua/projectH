@@ -30,7 +30,7 @@ namespace Guardians_Of_The_Arena_Server
 
             connectToDatabase();
             
-            clearTable();
+            //clearTable();
             //fillPlayerTable();
             //printTable();
             //dropTable();
