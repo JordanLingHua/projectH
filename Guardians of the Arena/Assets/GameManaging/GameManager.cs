@@ -82,10 +82,10 @@ public class GameManager : MonoBehaviour {
 		text.GetComponent<ErrorPopUpTextScript> ().StartCoroutine (text.GetComponent<ErrorPopUpTextScript> ().showText (error, Color.red));
 	}
 
-	public void showCenterMessage(string message){
+	public void showCenterMessage(string message,Color textColor){
 		GUI.depth = -1;
 		GameObject text = (GameObject) Instantiate(GameObject.Find ("CenterPopUpText"),GameObject.Find ("CenterPopUpText").transform.position,Quaternion.identity);
-		text.GetComponent<CenterPopUpTextScript> ().StartCoroutine (text.GetComponent<CenterPopUpTextScript> ().showText (message));
+		text.GetComponent<CenterPopUpTextScript> ().StartCoroutine (text.GetComponent<CenterPopUpTextScript> ().showText (message,textColor));
 	}
 
 	void Update () {
@@ -393,7 +393,7 @@ public class GameManager : MonoBehaviour {
 		pMana = maxMana = mana;
 
 		if (turn){
-			showCenterMessage("Your Turn!");
+			showCenterMessage("Your Turn!",GameObject.Find("CenterPopUpText").GetComponent<GUIText>().color);
 		}
 		//toggle between players turns and reset units
 		tm.clearAllTiles();

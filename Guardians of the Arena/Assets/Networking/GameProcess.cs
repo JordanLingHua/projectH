@@ -585,6 +585,7 @@ public class GameProcess : MonoBehaviour {
 			else if (tokens[0].Equals("victory"))
 			{
 				gameManager.gameOver = true;
+				gameManager.showCenterMessage("Victory!",GameObject.Find("CenterPopUpText").GetComponent<GUIText>().color);
 				gameManager.addLogToCombatLog("Congratulations! You have won!");
 			}
 			
@@ -592,6 +593,7 @@ public class GameProcess : MonoBehaviour {
 			else if (tokens[0].Equals("defeat"))
 			{
 				gameManager.gameOver = true;
+				gameManager.showCenterMessage("Defeat!",Color.red);
 				gameManager.addLogToCombatLog("You have lost!");
 			}
 			#endregion

@@ -55,7 +55,7 @@ public class ScrollText : MonoBehaviour {
 	public void showCenterMessage(string message){
 		GUI.depth = -1;
 		GameObject text = (GameObject) Instantiate(GameObject.Find ("CenterPopUpText"),GameObject.Find ("CenterPopUpText").transform.position,Quaternion.identity);
-		text.GetComponent<CenterPopUpTextScript> ().StartCoroutine (text.GetComponent<CenterPopUpTextScript> ().showText (message));
+		text.GetComponent<CenterPopUpTextScript> ().StartCoroutine (text.GetComponent<CenterPopUpTextScript> ().showText (message,GameObject.Find("CenterPopUpText").GetComponent<GUIText>().color));
 	}
 
 	void OnGUI(){

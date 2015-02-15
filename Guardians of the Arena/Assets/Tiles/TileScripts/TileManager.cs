@@ -171,7 +171,7 @@ public class TileManager : MonoBehaviour {
 	public void addTree(int x, int y,int unitID){
 		TileScript placeTile = tiles[x,y].GetComponent<TileScript>();
 		GameObject tree = (GameObject)Instantiate(Barrel, 
-		                                          new Vector3(placeTile.transform.position.x, 5, placeTile.transform.position.z), 
+		                                          new Vector3(placeTile.transform.position.x+0.2f, 8, placeTile.transform.position.z+0.1f), 
 		                                          new Quaternion());
 		tree.transform.parent = placeTile.transform;
 		//tree.GetComponent<Unit> ().makeTree ();

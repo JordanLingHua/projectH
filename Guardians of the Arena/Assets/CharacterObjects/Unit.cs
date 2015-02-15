@@ -89,6 +89,10 @@ public class Unit    : MonoBehaviour {
 		if (displayHPBar){
 			Camera cam = Camera.main;
 			Vector3 HPBarPos = cam.WorldToScreenPoint(gameObject.transform.position);
+			if (unitType == 20){
+				HPBarPos.y -= 10;
+				HPBarPos.x += 5;
+			}
 			GUI.DrawTexture (new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-20,  25, 3),hpBarBG);
 			float barColorSwitch = (float)hp/maxHP;
 			if (barColorSwitch > .6){
