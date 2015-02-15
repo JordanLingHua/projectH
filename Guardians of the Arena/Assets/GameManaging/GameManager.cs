@@ -246,7 +246,7 @@ public class GameManager : MonoBehaviour {
 				suLevel1BonusLong.text = script.wordWrap(28,script.levelBonusLong[0]);
 				suLevel2BonusShort.text = (script.unitType == 11 || script.alleg == Unit.allegiance.neutral )?"" :"Lvl.3 Bonus: " + script.levelBonusShort[1];
 				suLevel2BonusLong.text = script.wordWrap(28,script.levelBonusLong[1]);
-				if (script.unitType == 11){
+				if (script.unitType == 11 || script.unitType == 20 || script.unitType == 21){
 					unitDescriptionGUI.transform.position = new Vector3(0.62f,0.76f);
 				}else if (script.unitType == 2){
 					suLevel2BonusShort.transform.position = new Vector3(0.77f,0.66f);

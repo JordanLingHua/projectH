@@ -293,7 +293,7 @@ public class Unit    : MonoBehaviour {
 				//taking damage
 				this.hp -= (amt - this.armor);
 				gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" attacked "+ player + unitName + " for " + (amt - this.armor) + " damage!");
-				showPopUpText("-" + amt,Color.red);
+				showPopUpText("-" + (amt - this.armor),Color.red);
 			}else{
 				//getting healed
 				this.hp -= amt;
@@ -489,13 +489,14 @@ public class Unit    : MonoBehaviour {
 		hp = 1;
 		maxHP = 1;
 		invincible = true;
+		description = "Indestructable environment";
 	}
 
-	public void makeTree(){
-		alleg = allegiance.neutral;
-		unitName = "Shrub";
-		hp = 1;
-		maxHP = 1;
-	}
+//	public void makeTree(){
+//		alleg = allegiance.neutral;
+//		unitName = "Shrub";
+//		hp = 1;
+//		maxHP = 1;
+//	}
 	
 }

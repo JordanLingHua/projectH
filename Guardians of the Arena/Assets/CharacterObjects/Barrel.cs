@@ -10,6 +10,7 @@ public class Barrel : Unit {
 		base.Start ();
 		unitType = 20;
 		unitName = "Barrel";
+		description = "Destructable environment. Kill it to open paths.";
 		alleg = allegiance.neutral;
 		hp = 1;
 		maxHP = 1;
