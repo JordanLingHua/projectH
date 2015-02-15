@@ -45,7 +45,7 @@ public class Guardian :Unit {
 				}else{
 					this.hp -= (amt - this.armor);
 					gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" attacked "+ player + unitName + " for " + amt + " damage!");
-					showPopUpText("-" + amt,Color.red);
+					showPopUpText("-" + (amt - this.armor),Color.red);
 				}
 			}else{
 				//getting healed

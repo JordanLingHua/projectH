@@ -54,9 +54,10 @@ public class Mystic: Unit {
 					unitFocused.armor +=2;
 				}
 			}
-			unitFocused = null;
+
 			showPopUpText("Lost Focus!",Color.red);
 			gm.addLogToCombatLog(player + this.unitName + " lost focus of " + unitAffectedPlayer + unitFocused.unitName);
+			unitFocused = null;
 		}
 	
 	}
@@ -75,7 +76,7 @@ public class Mystic: Unit {
 			if (amt > 0){
 				//taking damage
 				gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" attacked "+ player + unitName + " for " + (amt - this.armor) + " damage!");
-				showPopUpText("-" + amt,Color.red);
+				showPopUpText("-" + (amt - this.armor),Color.red);
 			}else{
 				//getting healed
 				gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" healed "+ player + unitName + " for " + (-1*amt));
