@@ -40,9 +40,6 @@ public class GameProcess : MonoBehaviour {
 		popUpWindowText = new ArrayList();
 		popUpWindowRect = new Rect(0,0,400,400);
 		popUpIndex = 0;
-		//firstLoginTips ();
-		setupScreenTips();
-		//playVsAITips();
 
 		pum = GameObject.Find ("PopUpMenu").GetComponent<PopUpMenuNecro> ();
 		am = GameObject.Find ("AudioManager").GetComponent<AudioManager> ();
@@ -220,13 +217,13 @@ public class GameProcess : MonoBehaviour {
 			else if (tokens[0].Equals("showTip"))
 			{
 				switch(tokens[1]){
-					case "firstLogin":
+					case "1":
 						firstLoginTips();
 						break;
-					case "setUpTips":
+					case "2":
 						setupScreenTips();
 						break;
-					case "playVsAI":
+					case "3":
 						playVsAITips();
 						break;
 				}
@@ -644,7 +641,9 @@ public class GameProcess : MonoBehaviour {
 	
 	void OnLevelWasLoaded(int sceneNumber)
 	{
+		//game lobby
 		if (sceneNumber == 1) {
+			returnSocket().SendTCPPacket("requestTooltip\\1");
 //			PageNameScript pns = GameObject.Find("PageInfo").GetComponent<PageNameScript>();
 //			pns.pages = new string[5];
 //			if (!loaded){
@@ -665,20 +664,21 @@ public class GameProcess : MonoBehaviour {
 			returnSocket().SendTCPPacket("pageNames");
 				
 		}
-		if (sceneNumber == 3)//PvP multiplayer
-				loadManagers ();
-		else if (sceneNumber == 2)
-				playerSetup = GameObject.Find ("PlayerSetup").GetComponent<PlayerSetup> ();
-		else if (sceneNumber == 0)
-				socks = new Sockets ();
-		else if (sceneNumber == 5) {
-				loadManagers ();
-				//loadAI ();
-		}
-		else if (sceneNumber == 0)
+		//setup screen
+		else if (sceneNumber == 2){
+		returnSocket().SendTCPPacket("requestTooltip\\2");
+		playerSetup = GameObject.Find ("PlayerSetup").GetComponent<PlayerSetup> ();
+		//login screen
+		}else if (sceneNumber == 3){//PvP multiplayer
+			loadManagers ();;
+		}else if (sceneNumber == 0){
 			socks = new Sockets ();
-		
-
+		//ai screen
+		}else if (sceneNumber == 5) {
+			returnSocket().SendTCPPacket("requestTooltip\\3");
+			loadManagers ();
+			//loadAI ();
+		}
 	}
 
 	void OnApplicationQuit(){
@@ -754,7 +754,7 @@ public class GameProcess : MonoBehaviour {
 	void firstLoginTips(){
 		neverShowPopUpWindow = false;
 		showPopUpTip = true;
-		popUpName = "firstLogin";
+		popUpName = "1";
 		popUpTitle = "Tip";
 		popUpIndex = 0;
 		popUpWindowText.Clear ();
@@ -767,7 +767,7 @@ public class GameProcess : MonoBehaviour {
 	void playVsAITips(){
 		neverShowPopUpWindow = false;
 		showPopUpTip = true;
-		popUpName = "playVsAI";
+		popUpName = "3";
 		popUpTitle = "Tip";
 		popUpIndex = 0;
 		popUpWindowText.Clear ();
@@ -781,7 +781,7 @@ public class GameProcess : MonoBehaviour {
 	void setupScreenTips(){
 		neverShowPopUpWindow = false;
 		showPopUpTip = true;
-		popUpName = "setUpTips";
+		popUpName = "2";
 		popUpTitle = "Tip";
 		popUpIndex = 0;
 		popUpWindowText.Clear ();
