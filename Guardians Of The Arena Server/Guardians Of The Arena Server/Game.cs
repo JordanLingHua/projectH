@@ -23,6 +23,8 @@ namespace Guardians_Of_The_Arena_Server
         public TURN currentTurn = TURN.PLAYER_1;
         public int currentPlay = 0;
 
+        private DataManager dm;
+
 
         public bool GameOver
         {
@@ -36,6 +38,7 @@ namespace Guardians_Of_The_Arena_Server
 
         public Game(Server.Client client1, Server.Client client2, DataManager dm, bool isAI_Game)
         {
+            this.dm = dm;
             this.isAI_Game = isAI_Game;
             player1 = new Player(client1);
             player1.playerAllegiance = Unit.Allegiance.PLAYER_1;
@@ -120,23 +123,28 @@ namespace Guardians_Of_The_Arena_Server
         {
             foreach (Player currentPlayer in players)
             {
-                if (currentPlayer.isMyTurn)
+                Queue<string> packetQueue = currentPlayer.playerClient.commandQueue;
+
+                if (packetQueue.Count > 0)
                 {
-
-                    Queue<string> packetQueue = currentPlayer.playerClient.commandQueue;
-
-                    if (packetQueue.Count > 0)
+                    String command = packetQueue.Peek();
+                    string[] message = command.Split(new string[] { "\\" }, StringSplitOptions.None);
+                    string log = "NETWORK LOG:";
+                    foreach (string s in message)
                     {
-                        String command = packetQueue.Dequeue();
-                        string[] message = command.Split(new string[] { "\\" }, StringSplitOptions.None);
-                        string log = "NETWORK LOG:";
-                        foreach (string s in message)
-                        {
-                            log += s + "\\";
-                        }
+                        log += s + "\\";
+                    }
 
-                        Console.WriteLine(log);
+                    Console.WriteLine(log);
 
+                    if (message[0].Equals("dontDisplayTip"))
+                    {
+                        dm.updateTooltip(currentPlayer.playerClient.clientName, Int32.Parse(message[1]));
+                        packetQueue.Dequeue();
+                    }
+                    else if (currentPlayer.isMyTurn)
+                    {
+                        packetQueue.Dequeue();
                         //move message sends the command, the tile we are coming from and the tile we are going too
                         if (message[0].Equals("move"))
                         {
