@@ -12,7 +12,7 @@ public class TileManager : MonoBehaviour {
 	public GameObject[,] tiles;
 	
 	public GameObject tile;
-	public GameObject environmentObject, cp, UnitOne,UnitTwo,UnitThree,UnitFour,UnitFive,UnitSix,UnitSeven,UnitEight,UnitNine,UnitTen,UnitEleven,Barrel;
+	public GameObject environmentObject, cp, UnitOne,UnitTwo,UnitThree,UnitFour,UnitFive,UnitSix,UnitSeven,UnitEight,UnitNine,UnitTen,UnitEleven,Barrel,Rock;
 	public GameManager gm;
 	public GameProcess gp;
 	public PopUpMenuNecro pum;
@@ -151,16 +151,19 @@ public class TileManager : MonoBehaviour {
 	}
 	public void addRock(int x, int y,int unitID){
 		TileScript placeTile = tiles[x,y].GetComponent<TileScript>();
-		GameObject rock = (GameObject)Instantiate(cp, 
-		                                          new Vector3(placeTile.transform.position.x, 0, placeTile.transform.position.z), 
+		GameObject rock = (GameObject)Instantiate(Rock, 
+		                                          new Vector3(placeTile.transform.position.x, 5, placeTile.transform.position.z), 
 		                                          new Quaternion());
-		rock.renderer.material.color = new Color32(139,69,19,255);
+		//rock.renderer.material.color = new Color32(139,69,19,255);
 		rock.transform.parent = placeTile.transform;
-		rock.GetComponent<Unit> ().makeRock ();
+		rock.transform.localScale = new Vector3(1.25f,12.5f,1.25f);
+		rock.transform.eulerAngles = new Vector3(4.5f,0,0f);
 		placeTile.objectOccupyingTile = rock;
 
 		placeTile.gameObject.renderer.material.color = Color.gray;
-		
+		if (gp.playerNumber == 2) {
+			rock.transform.eulerAngles = new Vector3(4.5f,180f,0f);
+		}
 		gm.units.Add (unitID, rock.GetComponent<Unit>());
 		
 	}

@@ -482,21 +482,15 @@ public class Unit    : MonoBehaviour {
 		}
 	}
 
-	public void makeRock(){
-		alleg = allegiance.neutral;
-		displayHPBar = false;
-		unitName = "Rock";
-		hp = 1;
-		maxHP = 1;
-		invincible = true;
-		description = "Indestructable environment";
-	}
-
-//	public void makeTree(){
+//	public void makeRock(){
 //		alleg = allegiance.neutral;
-//		unitName = "Shrub";
+//		displayHPBar = false;
+//		unitName = "Rock";
 //		hp = 1;
 //		maxHP = 1;
+//		invincible = true;
+//		unitType = 21;
+//		description = "Indestructable environment";
 //	}
-	
+
 }
