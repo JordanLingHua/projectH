@@ -760,7 +760,8 @@ public class GameProcess : MonoBehaviour {
 		popUpTitle = "Tip";
 		popUpIndex = 0;
 		popUpWindowText.Clear ();
-		popUpWindowText.Add("Welcome to Guardians of the Arena! We recommend newer players take a look at \"Setup Boards\"");	
+		popUpWindowText.Add("Welcome to Guardians of the Arena! We recommend newer players take a look at \"Setup Boards\"");
+		popUpWindowText.Add("These tips will pop up to help you understand the game, and this window is movable.");
 		popUpWindowRect.y = (Screen.height - (200 + (((string)popUpWindowText [popUpIndex]).Length / 40 * 20)));
 	}
 
@@ -791,7 +792,7 @@ public class GameProcess : MonoBehaviour {
 		popUpWindowText.Add("The movement cost is the amount of mana it takes to move a piece. Likewise the the attack cost is the amount of mana it takes to attack with it.");
 		popUpWindowText.Add("Units gain experience through battle and gain unique abilities when they level up which is shown as the level 2 and level 3 bonuses. All units start at level one every time a new game starts.");
 		popUpWindowText.Add("Click and drag a unit around to reposition it. Once a game starts, all units on the battlefield (green area) will be brought to battle.");
-		popUpWindowText.Add("The gray area is for units that are not going to be used. You are required to have the Guardian and Soulstone in the green area, and you can have up to 10 units on the board, so choose which units you bring to battle carefully!");
+		popUpWindowText.Add("The gray area is for units that are not going to be used. You are required to have the Guardian and Soulstone in the green area, and you can have up to 8 units on the board, so choose which units you bring to battle carefully!");
 		popUpWindowText.Add("Your setup is automatically saved everytime you move a piece so feel free to switch between your other setups or go back to the Game Lobby.");
 		popUpWindowRect.y = (Screen.height - (200 + (((string)popUpWindowText [popUpIndex]).Length / 40 * 20)));
 	}
