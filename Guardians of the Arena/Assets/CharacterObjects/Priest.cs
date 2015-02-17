@@ -20,7 +20,7 @@ public class Priest : Unit {
 		mvRange = 3;
 		mvCost = 1;
 		atkRange = 4;
-		atkCost = 4;
+		atkCost = 3;
 		
 		unitRole = 506;//Healer
 		renderer.material.color = new Color32(204,255,153,1);

@@ -407,9 +407,7 @@ public class GameManager : MonoBehaviour {
 		clearSelection();	
 
 		gs = gameState.playerMv;
-		if (Application.loadedLevelName.Equals ("AIScene") && !turn) {
-
-
+		if (Application.loadedLevelName.Equals ("AIScene") && !turn && !gameOver) {
 			StartCoroutine (GameObject.Find ("AI").GetComponent<AIScript> ().makeGameAction (null));
 		}
 

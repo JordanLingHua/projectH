@@ -146,10 +146,10 @@ public class AIScript : MonoBehaviour {
 		{
 			foreach (Unit u in AIUnits)
 			{
-				if (u.atkCost <= gameManager.pMana && !u.atkd && u.unitType != 11)
-				{
-					readyUnits.Add (u); 
-				}
+				//if (u.atkCost <= gameManager.pMana && !u.atkd && u.unitType != 11)
+				//{
+				//	readyUnits.Add (u); 
+				//}
 
 				if (u.mvCost <= gameManager.pMana && !u.mvd && u.unitType != 11)
 				{
@@ -207,14 +207,14 @@ public class AIScript : MonoBehaviour {
 					//no injured units, just go to nearby unit
 					if (targetUnits.Count == 0)
 					foreach (Unit u in gameManager.units.Values) {
-						if (u != null && u.GetComponent<Unit> ().alleg == Unit.allegiance.playerTwo && u.GetComponent<Unit>().unitType != 11)
+				if (u != null && u.GetComponent<Unit> ().alleg == Unit.allegiance.playerTwo && u.GetComponent<Unit>().unitType != 11 && u.GetComponent<Unit>().unitType != 8)
 							targetUnits.Add (u);
 					}
 				break;
 
 				case 2:
 					foreach (Unit u in gameManager.units.Values) {
-					if (u != null && u.GetComponent<Unit> ().alleg == Unit.allegiance.playerTwo && u.GetComponent<Unit>().unitType != 11)
+				if (u != null && u.GetComponent<Unit> ().alleg == Unit.allegiance.playerTwo && u.GetComponent<Unit>().unitType != 11 && u.GetComponent<Unit>().unitType != 2)
 							targetUnits.Add (u);
 					}
 				break;

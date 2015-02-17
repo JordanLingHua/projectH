@@ -138,6 +138,12 @@ public class GameProcess : MonoBehaviour {
 					returnSocket().Disconnect();
 
 					Application.LoadLevel(0);
+
+					if (Application.loadedLevelName.Equals("LoginScreen"))
+					{
+
+						GameObject.Find ("LoginScreenGUI").GetComponent<LoginScreenGUI>().loginText = "Invalid Login Info. Try Again.";
+					}
 				}
 			}
 			

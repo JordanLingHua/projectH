@@ -238,8 +238,14 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 		while (true) {
 						if (loginText.Equals ("Logging in ..."))
 								loginText = ("Logging in ");
+						else if (loginText.Equals ("Invalid Login Info. Try Again."))
+						{
+							//do nothing
+						}
+							
 						else
 								loginText += ".";
+
 						yield return new WaitForSeconds (0.3f);
 				}
 	}
