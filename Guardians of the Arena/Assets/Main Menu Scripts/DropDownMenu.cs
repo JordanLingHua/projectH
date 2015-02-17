@@ -18,7 +18,7 @@ public class DropDownMenu : MonoBehaviour {
 	
 	void Start () {
 		tempX = 203;
-		tempY = 272;
+		tempY = 262;
 		pageNumber = GameObject.Find("PageInfo").GetComponent<PageNumberScript>();
 		pageNameScript = GameObject.Find("PageInfo").GetComponent<PageNameScript>();
 		mmg = GameObject.Find ("MainMenuGUI").GetComponent<MainMenuGUI> ();

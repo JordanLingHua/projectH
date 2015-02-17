@@ -672,7 +672,7 @@ public class GameProcess : MonoBehaviour {
 		playerSetup = GameObject.Find ("PlayerSetup").GetComponent<PlayerSetup> ();
 		//login screen
 		}else if (sceneNumber == 3){//PvP multiplayer
-			loadManagers ();;
+			loadManagers ();
 		}else if (sceneNumber == 0){
 			socks = new Sockets ();
 		//ai screen
@@ -680,6 +680,10 @@ public class GameProcess : MonoBehaviour {
 			returnSocket().SendTCPPacket("requestTooltip\\3");
 			loadManagers ();
 			//loadAI ();
+		}
+
+		if (showPopUpTip){
+			showPopUpTip = false;
 		}
 	}
 

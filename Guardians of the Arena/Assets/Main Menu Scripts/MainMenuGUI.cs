@@ -200,7 +200,7 @@ public class MainMenuGUI : MonoBehaviour {
 //
 //
 //				GUILayout.EndHorizontal();
-				GUILayout.Label("", "Divider");//-------------------------------- custom
+//				GUILayout.Label("", "Divider");//-------------------------------- custom
 
 				GUILayout.BeginHorizontal();
 				GUILayout.FlexibleSpace();
