@@ -26,7 +26,7 @@ public class AIScript : MonoBehaviour {
 		targetUnits = new List<Unit>();	
 		obstacles = new List<Unit>();	
 		playerUnits = new List<Unit>();	
-		actionDelay = 5.0f;
+		actionDelay = 2.0f;
 	}
 
 	public IEnumerator makeGameAction(Unit u)
