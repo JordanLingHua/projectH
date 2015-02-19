@@ -151,7 +151,7 @@ public class AIScript : MonoBehaviour {
 				//	readyUnits.Add (u); 
 				//}
 
-				if (u.mvCost <= gameManager.pMana && !u.mvd && u.unitType != 11)
+				if (u.mvCost <= gameManager.pMana && !u.mvd && !u.atkd && u.unitType != 11)
 				{
 					readyUnits.Add (u);
 				}
