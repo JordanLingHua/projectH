@@ -292,8 +292,11 @@ public class GameProcess : MonoBehaviour {
 					unitToAdd = tileManager.addUnit(Int32.Parse(tokens[i+2]), Int32.Parse(tokens[i+3]), Int32.Parse(tokens[i]),1, Int32.Parse(tokens[i+1]));
 					if (playerNumber == 1)
 						unitToAdd.GetComponent<unitSetupScript>().rotateForPlayerOne();
-					else
+					else{
 						unitToAdd.GetComponent<unitSetupScript>().rotateForPlayerTwo();
+						//unitToAdd.GetComponent<Animator>().SetInteger ("mode_and_dir", 1);
+						//print ("unit of playerNumber 2:" + unitToAdd.GetComponent<Animator>().GetInteger("mode_and_dir"));
+					}
 					i += 4;
 				}
 				i++;
@@ -306,8 +309,11 @@ public class GameProcess : MonoBehaviour {
 					unitToAdd = tileManager.addUnit(Int32.Parse(tokens[i+2]), Int32.Parse(tokens[i+3]), Int32.Parse(tokens[i]),2, Int32.Parse(tokens[i+1]));
 					if (playerNumber == 1)
 						unitToAdd.GetComponent<unitSetupScript>().rotateForPlayerOne();
-					else
+					else{
 						unitToAdd.GetComponent<unitSetupScript>().rotateForPlayerTwo();
+						//unitToAdd.GetComponent<Animator>().SetInteger ("mode_and_dir", 1);
+						//print ("unit of playerNumber 2:" + unitToAdd.GetComponent<Animator>().GetInteger("mode_and_dir"));
+					}
 					i += 4;
 				}
 

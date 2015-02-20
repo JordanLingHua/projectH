@@ -266,6 +266,26 @@ public class TileManager : MonoBehaviour {
 			unit.transform.eulerAngles = new Vector3(4.5f,180f,0f);
 		}
 
+		//The following description is on the perspective that these are rendered on player 1's screen
+		//Change starting animation to neutral_back
+		
+		if(unit.GetComponent<Animator>() != null)
+		{
+			//If this piece belongs to the opponent and the opponent controls player 2, render it facing back on your side
+			if(unit.GetComponent<Unit> ().alleg == Unit.allegiance.playerTwo && gp.playerNumber == 1)
+			{
+				unit.GetComponent<Animator>().SetInteger ("mode_and_dir", 1);
+			}
+			//If this piece belongs to you and the and you control player 2, render it facing back on their side
+			if(unit.GetComponent<Unit> ().alleg == Unit.allegiance.playerOne && gp.playerNumber == 2)
+			{
+				unit.GetComponent<Animator>().SetInteger ("mode_and_dir", 1);
+			}
+
+		}
+
+
+
 		return unit;
 	}
 	
