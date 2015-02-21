@@ -36,21 +36,22 @@ public class SetupScreenGUI : MonoBehaviour {
 	
 	// This script will only work with the Necromancer skin
 	public GUISkin mySkin;
-
+	GUIText boardCapacityGUIText;
 	private Rect windowRect5;
 	int displayWidth5 = 320;
 	int displayHeight5 = 350;
 
 	void Start () {
 		showGUI = true;
+		boardCapacityGUIText = GameObject.Find("BoardCapacityGUIText").GetComponent<GUIText>();
 		pageNumber = GameObject.Find ("PageInfo").GetComponent<PageNumberScript> ();
 		pageNameScript = GameObject.Find ("PageInfo").GetComponent<PageNameScript> ();
 		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 		playerSetup = GameObject.Find("PlayerSetup").GetComponent<PlayerSetup>();
 		windowRect5 = new Rect (Screen.width - 315, Screen.height - 330, displayWidth5, displayHeight5);
 		am = GameObject.Find ("AudioManager").GetComponent<AudioManager> ();
-	}
-	
+	}	
+
 	void AddSpikes(float winX)
 	{
 		spikeCount = (int)Mathf.Floor(winX - 152)/22;
@@ -250,7 +251,7 @@ public class SetupScreenGUI : MonoBehaviour {
 
 	
 	void OnGUI () {
-
+		boardCapacityGUIText.text = "Units on Field: " +playerSetup.pages[playerSetup.activePage].onBoardPieces.Count + "/" + playerSetup.boardCapacity;
 		GUI.skin = mySkin;
 
 		if (doWindow5)
@@ -271,6 +272,8 @@ public class SetupScreenGUI : MonoBehaviour {
 		if (Input.GetKeyUp (KeyCode.Return)) {
 			enterDown = false;
 		}
+
+
 	}	
 
 	

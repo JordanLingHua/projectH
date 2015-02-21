@@ -3,7 +3,7 @@ using System.Collections;
 
 
 public class move : MonoBehaviour {
-
+	AudioManager am;
 	GameProcess gp;
 	GameObject oldTile;
 	GameObject currentTile;
@@ -24,8 +24,13 @@ public class move : MonoBehaviour {
 	//slot tag's name 
 	public string tagName = "Tile";
 
+	//for error message
+	GameObject popUpText;
+
 	void Start()
 	{
+		am = GameObject.Find ("AudioManager").GetComponent<AudioManager> ();
+		popUpText = GameObject.Find ("ErrorPopUpText");
 		gp = GameObject.Find ("GameProcess").GetComponent<GameProcess>();
 		pieceMoved = false;
 		trackMouse = false;
@@ -39,6 +44,18 @@ public class move : MonoBehaviour {
 		isTouched = true;
 		trackMouse = true;
 
+	}
+
+	public void showErrorMessage(string error){
+		GUI.depth = -1;
+		Vector3 textPos = new Vector3((Screen.width*0.08f)/Screen.width,(Screen.height-((float)Screen.height*0.05f))/Screen.height,0);
+		
+		//TODO: Error with different error text overlapping
+		if (GameObject.Find ("ErrorPopUpText(Clone)")!=null){
+			Destroy (GameObject.Find ("ErrorPopUpText(Clone)"));
+		}
+		GameObject text = (GameObject) Instantiate(popUpText,textPos,Quaternion.identity);
+		text.GetComponent<ErrorPopUpTextScript> ().StartCoroutine (text.GetComponent<ErrorPopUpTextScript> ().showText (error, Color.red));
 	}
 	
 	void OnMouseUp()
@@ -60,6 +77,13 @@ public class move : MonoBehaviour {
 				{
 					pieceMoved = true;
 					onField = true;
+				}else {
+					if (gameObject.GetComponent<Unit>().unitType == 10){
+						showErrorMessage("Guardian must be on the field");
+					}else if(gameObject.GetComponent<Unit>().unitType == 11) {
+						showErrorMessage("Soulstone must be on the field");
+					}
+					am.playErrorSFX();
 				}
 			}
 
@@ -88,12 +112,10 @@ public class move : MonoBehaviour {
 						playerSetup.pages[playerSetup.activePage].offBoardPieces.Add(this.gameObject);
 						playerSetup.pages[playerSetup.activePage].onBoardPieces.Remove(this.gameObject);
 					}
-
 					pieceMoved = true;
 					onField = false;
 				}
 			}
-
 			else //board is at max capacity
 			{
 				if(nearestTile.GetComponent<SetupTileScript>().tt == SetupTileScript.TileType.ONFIELD)
@@ -103,11 +125,15 @@ public class move : MonoBehaviour {
 					{
 						pieceMoved = true;
 						onField = true;
+					}else{
+						showErrorMessage("Board at maximum capacity");
+						am.playErrorSFX();
 					}
 				}
 
 				else //offfield - player is moving a piece when the board is full
 				{
+
 					//the piece being moved off the field
 					if(playerSetup.pages[playerSetup.activePage].onBoardPieces.Contains(gameObject))
 					{
@@ -152,6 +178,7 @@ public class move : MonoBehaviour {
 		else		
 		{
 			transform.position = playerSetup.prevPosition;
+
 		}
 	}
 

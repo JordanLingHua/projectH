@@ -23,7 +23,7 @@ public class GameProcess : MonoBehaviour {
 	public float targetTileX, targetTileZ;
 
 	//variables for popup windows and tips
-	Rect popUpWindowRect;
+	public Rect popUpWindowRect;
 	bool showPopUpTip,neverShowPopUpWindow;
 	ArrayList popUpWindowText;
 	string popUpTitle;
@@ -38,7 +38,7 @@ public class GameProcess : MonoBehaviour {
 	
 	void Start () {
 		popUpWindowText = new ArrayList();
-		popUpWindowRect = new Rect(0,0,400,400);
+		popUpWindowRect = new Rect((Screen.width - 200) / 2,127,400,400);
 		popUpIndex = 0;
 
 		pum = GameObject.Find ("PopUpMenu").GetComponent<PopUpMenuNecro> ();
@@ -786,7 +786,6 @@ public class GameProcess : MonoBehaviour {
 		popUpWindowText.Clear ();
 		popUpWindowText.Add("Welcome to Guardians of the Arena! We recommend newer players take a look at \"Setup Boards\"");
 		popUpWindowText.Add("These tips will pop up to help you understand the game, and this window is movable.");
-		popUpWindowRect.y = (Screen.height - (200 + (((string)popUpWindowText [popUpIndex]).Length / 40 * 20)));
 	}
 
 
@@ -801,7 +800,6 @@ public class GameProcess : MonoBehaviour {
 		popUpWindowText.Add("Welcome to the Arena! Clicking on one of your units will select it and hovering over a unit will show information about it! Pressing escape will de-select the unit.");	
 		popUpWindowText.Add("A unit can either move (shown with green tiles) or attack (shown with red tiles). You can toggle between attacking and moving by either clicking on the buttons on the bottom of your screen, or pressing the 'v' or 'a' keys on your keyboard.");
 		popUpWindowText.Add("Each turn is one minute long mana resets on each turn. Mana will increase as the game progresses to a maximum of 8 mana.");
-		popUpWindowRect.y = (Screen.height - (200 + (((string)popUpWindowText [popUpIndex]).Length / 40 * 20)));
 	}
 
 
@@ -818,7 +816,6 @@ public class GameProcess : MonoBehaviour {
 		popUpWindowText.Add("Click and drag a unit around to reposition it. Once a game starts, all units on the battlefield (green area) will be brought to battle.");
 		popUpWindowText.Add("The gray area is for units that are not going to be used. You are required to have the Guardian and Soulstone in the green area, and you can have up to 8 units on the board, so choose which units you bring to battle carefully!");
 		popUpWindowText.Add("Your setup is automatically saved everytime you move a piece so feel free to switch between your other setups or go back to the Game Lobby.");
-		popUpWindowRect.y = (Screen.height - (200 + (((string)popUpWindowText [popUpIndex]).Length / 40 * 20)));
 	}
 
 
