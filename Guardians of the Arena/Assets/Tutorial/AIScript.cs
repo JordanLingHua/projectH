@@ -213,10 +213,15 @@ public class AIScript : MonoBehaviour {
 				break;
 
 				case 2:
-					foreach (Unit u in gameManager.units.Values) {
-				if (u != null && u.GetComponent<Unit> ().alleg == Unit.allegiance.playerTwo && u.GetComponent<Unit>().unitType != 11 && u.GetComponent<Unit>().unitType != 2)
-							targetUnits.Add (u);
+					if(toMove.GetComponent<Mystic>().unitFocused == null)
+					{
+						foreach (Unit u in gameManager.units.Values) {
+							if (u != null && u.GetComponent<Unit> ().alleg == Unit.allegiance.playerTwo && u.GetComponent<Unit>().unitType != 11 && u.GetComponent<Unit>().unitType != 2)
+								targetUnits.Add (u);
+						}
 					}
+					else
+						return null;
 				break;
 				
 
@@ -321,17 +326,24 @@ public class AIScript : MonoBehaviour {
 
 			//Mystic can target enemy or ally but wont move or attack while focusing
 			case 2:
-				foreach (TileScript t in attackTiles) {
+			if(attacker.GetComponent<Mystic>().unitFocused == null)
+			{
+				foreach (TileScript t in attackTiles) 
+				{
 					if(t.objectOccupyingTile != null && t.objectOccupyingTile.GetComponent<Unit>().alleg != Unit.allegiance.neutral 
-					   && attacker.GetComponent<Mystic>().unitFocused == null && t.objectOccupyingTile.GetComponent<Unit>().unitType != 11)
+					    && t.objectOccupyingTile.GetComponent<Unit>().unitType != 11)
 						{
 						   if(t.objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerTwo && !t.objectOccupyingTile.GetComponent<Unit>().mvd)
 								return t;
 							else if (t.objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerOne)
 								return t;
 						
-					}
+						}
 				}
+				return null;
+			}
+
+			else
 				return null;
 			break;
 
