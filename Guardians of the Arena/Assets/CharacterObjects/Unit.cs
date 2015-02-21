@@ -48,7 +48,7 @@ public class Unit    : MonoBehaviour {
 	 * Kingpin = 507
 	 */
 
-	public Texture2D hpBarBG,hpBarHigh,hpBarMedium,hpBarLow,xpBar;
+	public Texture2D hpBarBG,hpBarHigh,hpBarMedium,hpBarLow,xpBar,level2Symbol,level3Symbol;
 	public GameManager gm;
 	public GameProcess gp;
 	public PopUpMenuNecro pum;
@@ -56,6 +56,8 @@ public class Unit    : MonoBehaviour {
 	public virtual void Start () {
 		armor = 0;
 		unitLevel = 1;
+		level2Symbol = Resources.Load("Level2Symbol") as Texture2D;
+		level3Symbol = Resources.Load("Level3Symbol") as Texture2D;
 		popUpText = GameObject.Find ("popUpText");
 		hpBarBG = Resources.Load("HPBarBG") as Texture2D;
 		hpBarHigh = Resources.Load("HPBarHigh") as Texture2D;
@@ -86,28 +88,33 @@ public class Unit    : MonoBehaviour {
 	}
 
 	void OnGUI(){
+		Camera cam = Camera.main;
+		Vector3 unitScreenPos = cam.WorldToScreenPoint(gameObject.transform.position);
+		if (unitLevel == 2){
+			GUI.DrawTexture (new Rect(unitScreenPos.x-40, Screen.height - unitScreenPos.y-40,  20, 20),level2Symbol);
+		}else if (unitLevel == 3){
+			GUI.DrawTexture (new Rect(unitScreenPos.x-40, Screen.height - unitScreenPos.y-40,  20, 20),level3Symbol);
+		}
+
 		if (displayHPBar){
-			Camera cam = Camera.main;
-			Vector3 HPBarPos = cam.WorldToScreenPoint(gameObject.transform.position);
 			if (unitType == 20){
-				HPBarPos.y -= 10;
-				HPBarPos.x += 5;
+				unitScreenPos.y -= 10;
+				unitScreenPos.x += 5;
 			}
-			GUI.DrawTexture (new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-20,  25, 3),hpBarBG);
+
+			GUI.DrawTexture (new Rect(unitScreenPos.x-15, Screen.height - unitScreenPos.y-20,  25, 3),hpBarBG);
 			float barColorSwitch = (float)hp/maxHP;
 			if (barColorSwitch > .6){
-				GUI.DrawTexture(new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-20, barColorSwitch * 25, 3),hpBarHigh);
+				GUI.DrawTexture(new Rect(unitScreenPos.x-15, Screen.height - unitScreenPos.y-20, barColorSwitch * 25, 3),hpBarHigh);
 			}else if (barColorSwitch > 0.3){
-				GUI.DrawTexture(new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-20, barColorSwitch * 25, 3),hpBarMedium);
+				GUI.DrawTexture(new Rect(unitScreenPos.x-15, Screen.height - unitScreenPos.y-20, barColorSwitch * 25, 3),hpBarMedium);
 			}else{
-				GUI.DrawTexture(new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-20, barColorSwitch * 25, 3),hpBarLow);
+				GUI.DrawTexture(new Rect(unitScreenPos.x-15, Screen.height - unitScreenPos.y-20, barColorSwitch * 25, 3),hpBarLow);
 			}
 		}
 		if (displayXPBar){
-			Camera cam = Camera.main;
-			Vector3 HPBarPos = cam.WorldToScreenPoint(gameObject.transform.position);
-			GUI.DrawTexture (new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-17,  25, 3),hpBarBG);
-			GUI.DrawTexture(new Rect(HPBarPos.x-15, Screen.height - HPBarPos.y-17, ((float)xp/XP_TO_LEVEL[unitLevel-1])* 25, 3),xpBar);
+			GUI.DrawTexture (new Rect(unitScreenPos.x-15, Screen.height - unitScreenPos.y-17,  25, 3),hpBarBG);
+			GUI.DrawTexture(new Rect(unitScreenPos.x-15, Screen.height - unitScreenPos.y-17, ((float)xp/XP_TO_LEVEL[unitLevel-1])* 25, 3),xpBar);
 		}
 	}
 
@@ -242,7 +249,7 @@ public class Unit    : MonoBehaviour {
 
 	}
 	public virtual void gainXP(){
-		xp += 5;
+		xp += 20;
 
 		if (xp >= XP_TO_LEVEL [unitLevel - 1]) {
 			xp = 0;
