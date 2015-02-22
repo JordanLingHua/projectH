@@ -236,6 +236,7 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 		GUILayout.Label("", "Divider");//-------------------------------- custom
 
 		GUILayout.BeginHorizontal();
+		GUILayout.FlexibleSpace();
 		if (Application.loadedLevelName.Equals("BoardScene") || Application.loadedLevelName.Equals("AIScene")){
 			//Surrender Button
 			if (!GameObject.Find("GameManager").GetComponent<GameManager>().gameOver){
@@ -252,10 +253,11 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 					Application.LoadLevel(1);
 				}
 			}
-			GUILayout.Label("", "Divider");//-------------------------------- custom
-		}
-		GUILayout.EndHorizontal();
 
+		}
+		GUILayout.FlexibleSpace();
+		GUILayout.EndHorizontal();
+		GUILayout.Label("", "Divider");//-------------------------------- custom
 
 
 		GUILayout.BeginHorizontal();

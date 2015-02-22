@@ -164,8 +164,8 @@ public class GameProcess : MonoBehaviour {
 				DontDestroyOnLoad(GameObject.Find ("PageNumber"));
 				Destroy(GameObject.Find("GlobalChat"));
 				Destroy(GameObject.Find("gChat"));
-				Destroy(GameObject.Find("ListOfPlayers"));
-				Destroy(GameObject.Find("ListOfPlayersGUIText"));
+				DontDestroyOnLoad(GameObject.Find("ListOfPlayers"));
+				DontDestroyOnLoad(GameObject.Find("ListOfPlayersGUIText"));
 				DontDestroyOnLoad(this);
 				DontDestroyOnLoad (am);
 				DontDestroyOnLoad(pum);
@@ -180,8 +180,8 @@ public class GameProcess : MonoBehaviour {
 				DontDestroyOnLoad(GameObject.Find ("PageNumber"));
 				Destroy(GameObject.Find("GlobalChat"));
 				Destroy(GameObject.Find("gChat"));
-				Destroy(GameObject.Find("ListOfPlayers"));
-				Destroy(GameObject.Find("ListOfPlayersGUIText"));
+				DontDestroyOnLoad(GameObject.Find("ListOfPlayers"));
+				DontDestroyOnLoad(GameObject.Find("ListOfPlayersGUIText"));
 				DontDestroyOnLoad(this);
 				DontDestroyOnLoad (am);
 				DontDestroyOnLoad(pum);

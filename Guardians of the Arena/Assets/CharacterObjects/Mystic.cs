@@ -6,6 +6,8 @@ public class Mystic: Unit {
 	
 	public Unit unitFocused;
 	public int levelOnFocus;
+	GameObject partSys;
+	GameObject partSys2;
 
 	void Start () {
 		base.Start ();
@@ -30,6 +32,9 @@ public class Mystic: Unit {
 	}
 
 	public void revertStatsOfFocused(){
+		GameObject.Destroy (partSys);
+		GameObject.Destroy (partSys2);
+
 		if (unitFocused != null) {
 			string player = ((gp.playerNumber ==  1 && this.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && this.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
 			string unitAffectedPlayer = ((gp.playerNumber ==  1 && unitFocused.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && unitFocused.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
@@ -144,9 +149,6 @@ public class Mystic: Unit {
 
 	void addParticles(Unit unitFocused)
 	{
-		GameObject partSys;
-		GameObject partSys2;
-
 		int playerNumber = GameObject.Find ("GameProcess").GetComponent<GameProcess> ().playerNumber;
 		if ((playerNumber == 1 && alleg == allegiance.playerOne) || (playerNumber == 2 && alleg == allegiance.playerTwo))
 		{
@@ -158,8 +160,6 @@ public class Mystic: Unit {
 		{
 			partSys = (GameObject)Instantiate (Resources.Load ("MysticFocusRed"));			
 			partSys2 = (GameObject)Instantiate (Resources.Load ("MysticFocusRed"));
-
-
 		}
 
 		 
