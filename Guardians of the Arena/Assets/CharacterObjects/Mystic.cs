@@ -99,6 +99,8 @@ public class Mystic: Unit {
 
 	//Unit Focused needs to take dmg after turn ends if level 3 and enemy unit
 	public override void attackUnit(Unit unitAffected){
+		addParticles (unitAffected);
+
 		string player = ((gp.playerNumber ==  1 && this.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && this.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
 		string unitAffectedPlayer = ((gp.playerNumber ==  1 && unitAffected.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && unitAffected.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
 		atkd = true;
@@ -138,5 +140,42 @@ public class Mystic: Unit {
 		//clean up the board colors
 		gm.accessibleTiles.Clear();
 		this.transform.parent.gameObject.transform.parent.GetComponent<TileManager>().clearAllTiles();
+	}
+
+	void addParticles(Unit unitFocused)
+	{
+		GameObject partSys;
+		GameObject partSys2;
+
+		int playerNumber = GameObject.Find ("GameProcess").GetComponent<GameProcess> ().playerNumber;
+		if ((playerNumber == 1 && alleg == allegiance.playerOne) || (playerNumber == 2 && alleg == allegiance.playerTwo))
+		{
+			partSys = (GameObject)Instantiate (Resources.Load ("MysticFocusBlue"));
+			partSys2 = (GameObject)Instantiate (Resources.Load ("MysticFocusBlue"));			
+		} 
+
+		else 
+		{
+			partSys = (GameObject)Instantiate (Resources.Load ("MysticFocusRed"));			
+			partSys2 = (GameObject)Instantiate (Resources.Load ("MysticFocusRed"));
+
+
+		}
+
+		 
+		partSys.transform.parent = this.transform;
+		partSys.transform.position = this.transform.position;
+		partSys.transform.Translate (0.0f, 0.0f, -4.0f);		
+
+		partSys2.transform.parent = unitFocused.transform;
+		partSys2.transform.position = unitFocused.transform.position;
+		partSys2.transform.Translate (0.0f, 0.0f, -4.0f);
+
+		if (Application.loadedLevelName.Equals ("BoardScene") && !((playerNumber == 1 && alleg == allegiance.playerOne) || (playerNumber == 2 && alleg == allegiance.playerTwo)))
+		{
+			partSys.transform.Rotate (0.0f, 0.0f, 180.0f);
+			partSys2.transform.Rotate (0.0f, 0.0f, 180.0f);
+		}
+
 	}
 }
