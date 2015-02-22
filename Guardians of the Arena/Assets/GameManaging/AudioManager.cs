@@ -52,7 +52,7 @@ public class AudioManager : MonoBehaviour {
 			if (level == 3) {
 				GameProcess gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 				if (gp.playerNumber == 2){
-					this.transform.position = new Vector3(0f,160f,97f);
+					this.transform.position = new Vector3(0f,196f,97f);
 				}
 				if(bgMusic != gameMusic){
 					bgMusic.Stop();
