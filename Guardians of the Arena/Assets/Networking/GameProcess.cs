@@ -454,8 +454,12 @@ public class GameProcess : MonoBehaviour {
 						if (gameManager.units[Int32.Parse (tokens[1])].unitType == 2){
 							(gameManager.units[Int32.Parse (tokens[1])] as Mystic).revertStatsOfFocused();
 						}
-						gameManager.units[Int32.Parse (tokens[1])].attackUnit(gameManager.units[Int32.Parse(tokens[3+i])]);
 
+						bool wasInvincible = gameManager.units[Int32.Parse(tokens[3+i])].invincible;
+						gameManager.units[Int32.Parse (tokens[1])].attackUnit(gameManager.units[Int32.Parse(tokens[3+i])]);
+						if (!wasInvincible){
+							gameManager.units[Int32.Parse (tokens[1])].gainXP();
+						}
 
 						//new
 						//Step 1)  Before you do anything, Transition from neutral_states in the post_attack version, to the actual neutral states
@@ -539,9 +543,7 @@ public class GameProcess : MonoBehaviour {
 
 						}
 
-						if (gameManager.units.ContainsKey(Int32.Parse(tokens[3+i])) && !gameManager.units[Int32.Parse(tokens[3+i])].invincible){
-							gameManager.units[Int32.Parse (tokens[1])].gainXP();
-						}
+
 
 
 					}

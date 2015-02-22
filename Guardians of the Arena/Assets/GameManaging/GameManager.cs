@@ -281,21 +281,7 @@ public class GameManager : MonoBehaviour {
 
 	void OnGUI(){
 		GUI.skin = mySkin;
-
-		//show button for returning to main menu
-		GUI.BeginGroup (new Rect(Screen.width*0.35f,Screen.height-((float)Screen.height*0.080f),Screen.width*0.15f,35));
-		GUILayout.BeginHorizontal();
-		if (gameOver){
-			if (GUILayout.Button ("Return to main menu", "ShortButton")) {
-				am.playButtonSFX();
-				DontDestroyOnLoad(GameObject.Find ("GameProcess"));
-				Application.LoadLevel(1);
-			}
-		}
-		GUILayout.EndHorizontal();
-		GUI.EndGroup ();
-
-		combatLogWindowRect = GUI.Window (2, combatLogWindowRect, combatLogWindow, "");
+				combatLogWindowRect = GUI.Window (2, combatLogWindowRect, combatLogWindow, "");
 		GUI.BeginGroup (new Rect (0,0,100,100));
 		GUI.EndGroup();
 		displayUnitInfo (hoverOverUnit);
@@ -313,9 +299,15 @@ public class GameManager : MonoBehaviour {
 				changeToAttacking();
 			}
 		}
+		//show button for returning to main menu
 
-
-		if (!gameOver){
+		if (gameOver){
+			if (GUI.Button (new Rect(Screen.width*0.52f,Screen.height-((float)Screen.height*0.10f),Screen.width*0.1f,(Screen.height-((float)Screen.height*0.90f))),"Lobby")) {
+				am.playButtonSFX();
+				DontDestroyOnLoad(GameObject.Find ("GameProcess"));
+				Application.LoadLevel(1);
+			}
+		}else if (!gameOver){
 			//End turn button
 			if (turn){
 				if (GUI.Button (new Rect(Screen.width*0.52f,Screen.height-((float)Screen.height*0.10f),Screen.width*0.1f,(Screen.height-((float)Screen.height*0.90f))),"(E)nd Turn")){
