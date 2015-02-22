@@ -171,10 +171,18 @@ public class Mystic: Unit {
 		partSys2.transform.position = unitFocused.transform.position;
 		partSys2.transform.Translate (0.0f, 0.0f, -4.0f);
 
-		if (Application.loadedLevelName.Equals ("BoardScene") && !((playerNumber == 1 && alleg == allegiance.playerOne) || (playerNumber == 2 && alleg == allegiance.playerTwo)))
+	//	if (Application.loadedLevelName.Equals ("BoardScene") && !((playerNumber == 1 && alleg == allegiance.playerOne) || (playerNumber == 2 && alleg == allegiance.playerTwo)))
+		if (Application.loadedLevelName.Equals ("BoardScene") && (playerNumber == 2))
 		{
-			partSys.transform.Rotate (0.0f, 0.0f, 180.0f);
-			partSys2.transform.Rotate (0.0f, 0.0f, 180.0f);
+			Debug.Log("switcheroo!");
+			partSys.transform.rotation = this.transform.rotation;
+			partSys2.transform.rotation = unitFocused.transform.rotation;
+
+			partSys.transform.Rotate(300.0f, 0.0f, 0.0f);
+//			partSys.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, 0.0f);
+//
+			partSys2.transform.Rotate(300.0f, 0.0f, 0.0f);
+//			partSys2.transform.position = new Vector3(unitFocused.transform.position.x, unitFocused.transform.position.y, 0.0f);
 		}
 
 	}
