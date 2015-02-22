@@ -159,9 +159,12 @@ public class move : MonoBehaviour {
 
 			int unitType = this.gameObject.GetComponent<Unit>().unitType;
 
+			bool oldOnField = oldScript.tt == SetupTileScript.TileType.ONFIELD ? true : false;
+
 			//send the server movePiece\\playerName\\activePageNumber\\unitType\\oldX\\oldY\\newX\\newY\\onOrOffField
 			gp.returnSocket().SendTCPPacket("movePiece\\" + gp.playerName + "\\" + (playerSetup.activePage + 1) + "\\"
-			                                + unitType + "\\" + oldX + "\\" + oldY + "\\" + newX + "\\" + newY + "\\" + onField);
+			                                + unitType + "\\" + oldX + "\\" + oldY + "\\" + newX + "\\" + newY + "\\"
+			                                + oldOnField + "\\" + onField);
 
 			//set the current tile to unoccupied (the piece is moving away from this tile)
 			this.gameObject.GetComponentInParent<SetupTileScript>().occupied = false;
