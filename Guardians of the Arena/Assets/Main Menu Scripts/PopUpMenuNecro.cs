@@ -246,7 +246,7 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 					gp.returnSocket().SendTCPPacket("surrender");
 				}
 			}else{
-				if (GUILayout.Button ("Return to Main Menu", "ShortButton")){
+				if (GUILayout.Button ("Return to Game Lobby", "ShortButton")){
 					doWindow1 = false;
 					am.playButtonSFX();
 					DontDestroyOnLoad(GameObject.Find ("GameProcess"));
