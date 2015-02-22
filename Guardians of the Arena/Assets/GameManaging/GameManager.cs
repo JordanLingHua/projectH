@@ -321,10 +321,11 @@ public class GameManager : MonoBehaviour {
 				if (GUI.Button (new Rect(Screen.width*0.52f,Screen.height-((float)Screen.height*0.10f),Screen.width*0.1f,(Screen.height-((float)Screen.height*0.90f))),"(E)nd Turn")){
 					endTurn ();
 				}
-			}else{
-				GUI.Label(new Rect(Screen.width*0.335f,Screen.height-((float)Screen.height*0.080f),Screen.width*0.15f,35), "Opponent's Turn");
-				//GUI.Label(new Rect(Screen.width*0.335f,Screen.height-((float)Screen.height*0.105f),Screen.width*0.3f,(Screen.height-((float)Screen.height*0.905f))), "Opponent's Turn");
 			}
+//			}else{
+//				GUI.Label(new Rect(Screen.width*0.335f,Screen.height-((float)Screen.height*0.080f),Screen.width*0.15f,35), "Opponent's Turn");
+//				//GUI.Label(new Rect(Screen.width*0.335f,Screen.height-((float)Screen.height*0.105f),Screen.width*0.3f,(Screen.height-((float)Screen.height*0.905f))), "Opponent's Turn");
+//			}
 		}
 
 	}
