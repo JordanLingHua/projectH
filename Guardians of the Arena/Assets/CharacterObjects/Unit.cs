@@ -90,11 +90,11 @@ public class Unit    : MonoBehaviour {
 	void OnGUI(){
 		Camera cam = Camera.main;
 		Vector3 unitScreenPos = cam.WorldToScreenPoint(gameObject.transform.position);
-		if (unitLevel == 2){
-			GUI.DrawTexture (new Rect(unitScreenPos.x+10, Screen.height - unitScreenPos.y+10,  15, 15),level2Symbol);
-		}else if (unitLevel == 3){
-			GUI.DrawTexture (new Rect(unitScreenPos.x-40, Screen.height - unitScreenPos.y-40,  20, 20),level3Symbol);
-		}
+//		if (unitLevel == 2){
+//			GUI.DrawTexture (new Rect(unitScreenPos.x+10, Screen.height - unitScreenPos.y+10,  15, 15),level2Symbol);
+//		}else if (unitLevel == 3){
+//			GUI.DrawTexture (new Rect(unitScreenPos.x+10, Screen.height - unitScreenPos.y+10,  15, 15),level3Symbol);
+//		}
 
 		if (displayHPBar){
 			if (unitType == 20){

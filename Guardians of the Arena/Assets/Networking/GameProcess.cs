@@ -483,7 +483,7 @@ public class GameProcess : MonoBehaviour {
 						//Unit gets hit facing the direction of the attacker
 						//IF you are controlling player 2
 						//if(!gameManager.units[Int32.Parse(tokens[3+i])].transform.gameObject.name.Contains("BigTree")){
-						if(gameManager.units[Int32.Parse(tokens[3+i])].GetComponent<Animator>() != null){
+						if(gameManager.units.ContainsKey(Int32.Parse(tokens[3+i])) && gameManager.units[Int32.Parse(tokens[3+i])].GetComponent<Animator>() != null){
 
 							if (gameManager.units[Int32.Parse (tokens[1])].unitName == "Barrel")
 							{
