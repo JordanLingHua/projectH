@@ -40,8 +40,6 @@ namespace Guardians_Of_The_Arena_Server.Units
                     if (upTile.CurrentUnit != null)
                         unitsHit.Add(upTile.CurrentUnit.UniqueID);
 
-
-
                     tile = upTile.RIGHT;
 
                     if (tile != null && tile.CurrentUnit != null)

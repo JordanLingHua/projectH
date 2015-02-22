@@ -432,11 +432,13 @@ namespace Guardians_Of_The_Arena_Server
             
         }
 
-         public void updateSetup(string name, int setupID, int unitType, int oldX, int oldY, int newX, int newY, int onfield)
+         public void updateSetup(string name, int setupID, int unitType, int oldX, int oldY
+                                , int newX, int newY, int oldOnField, int newOnField)
         {
-            string sql   = "UPDATE unitSetups ";
-            sql         += "SET x = @newX, y = @newY, onField = @onField ";
-            sql         += "WHERE name = @name AND setupID = @setupID AND x = @oldX AND y = @oldY AND unitType = @unitType";
+            
+            String sql   =     "UPDATE unitSetups ";
+            sql         += "SET x = @newX, y = @newY, onField = @newOnField ";
+            sql         += "WHERE name = @name AND setupID = @setupID AND x = @oldX AND y = @oldY AND onField = @oldOnField AND unitType = @unitType";
             SQLiteCommand command = new SQLiteCommand(sql, userDatabase);
             command.Parameters.AddWithValue("@name", name);
             command.Parameters.AddWithValue("@newX", newX);
@@ -444,7 +446,8 @@ namespace Guardians_Of_The_Arena_Server
             command.Parameters.AddWithValue("@unitType", unitType);
             command.Parameters.AddWithValue("@oldX", oldX);
             command.Parameters.AddWithValue("@oldY", oldY);
-            command.Parameters.AddWithValue("@onField", onfield);
+            command.Parameters.AddWithValue("@oldOnField", oldOnField);
+            command.Parameters.AddWithValue("@newOnField", newOnField);
             command.Parameters.AddWithValue("@setupID", setupID);
             command.ExecuteNonQuery();
 

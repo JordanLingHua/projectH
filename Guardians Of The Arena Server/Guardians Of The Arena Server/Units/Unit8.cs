@@ -34,8 +34,8 @@ namespace Guardians_Of_The_Arena_Server.Units
             ArrayList unitsHit = new ArrayList();
             if (tile.CurrentUnit != null)
             {
-                unitsHit.Add(tile.CurrentUnit.UniqueID); //first unit in the list will 
-
+                unitsHit.Add(tile.CurrentUnit.UniqueID); //first unit in the list will receive the most healing
+                
                 if (level >= 3)
                 {
                     getLevelThreeBonusHealedUnits(tile, levelThreeBonus_Range);
@@ -47,15 +47,18 @@ namespace Guardians_Of_The_Arena_Server.Units
                     }
 
                     levelThreeBonus_UnitList.Clear();
-                    unitsToHeal = unitsHit.Count;
+                    
                 }
             }
+
+            unitsToHeal = unitsHit.Count;
             return unitsHit;
         }
 
         public override void Attack(Unit unitAttacking)
         {
             int damageApplied = this.damage;
+            
 
             if (unitsHealed > 0)
                 damageApplied = levelThreeBonus_Heal;
@@ -126,22 +129,22 @@ namespace Guardians_Of_The_Arena_Server.Units
             {
                 if (currentTile.UP != null) 
                 {
-                    setAccessibleTiles(currentTile.UP, distance - 1);
+                    setAttackTiles(currentTile.UP, distance - 1);
                     accessibleTiles.Add(currentTile.UP);
                 }
                 if (currentTile.DOWN != null )
                 {
-                    setAccessibleTiles(currentTile.DOWN, distance - 1);
+                    setAttackTiles(currentTile.DOWN, distance - 1);
                     accessibleTiles.Add(currentTile.DOWN);
                 }
                 if (currentTile.RIGHT != null )
                 {
-                    setAccessibleTiles(currentTile.RIGHT, distance - 1);
+                    setAttackTiles(currentTile.RIGHT, distance - 1);
                     accessibleTiles.Add(currentTile.RIGHT);
                 }
                 if (currentTile.LEFT != null )
                 {
-                    setAccessibleTiles(currentTile.LEFT, distance - 1);
+                    setAttackTiles(currentTile.LEFT, distance - 1);
                     accessibleTiles.Add(currentTile.LEFT);
                 }
             }

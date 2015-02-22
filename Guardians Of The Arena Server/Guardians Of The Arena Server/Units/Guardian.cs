@@ -18,7 +18,7 @@ namespace Guardians_Of_The_Arena_Server.Units
             damage = 23;
             movementRange = 2;
             movementCost = 1;
-            attackCost = 2;
+            attackCost = 1;
             attackRange = 1;
 
             this.gameRef = gameRef;

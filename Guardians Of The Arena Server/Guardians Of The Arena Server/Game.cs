@@ -341,6 +341,19 @@ namespace Guardians_Of_The_Arena_Server
             }
         }
 
+        //if the player disconnects midgame, the other player should be declared the winner
+        public void surrenderByDisconnect(Server.Client disconnectedClient)
+        {
+            if (!isAI_Game)
+            {
+                Server.Client winner = (disconnectedClient == player1.playerClient) ? player2.playerClient : player1.playerClient;
+                winner.sw.WriteLine("victory");
+                gameOver = true;
+                player1.playerClient.inGame = false;
+                player2.playerClient.inGame = false;
+            }
+        }
+
         public void sendAttackedUnits(ArrayList unitIDs, Unit attackingUnit)
         {
 

@@ -242,6 +242,7 @@ namespace Guardians_Of_The_Arena_Server
                                 }
                                 else if (tokens[0].Equals("playAI")){
 
+                                    client.boardSetup = Int32.Parse(tokens[1]);
                                     Game newGame = new Game(client, client, dm, true);
 
                                     client.gameRef = newGame;
@@ -321,11 +322,13 @@ namespace Guardians_Of_The_Arena_Server
                                 }
                                 else if (tokens[0].Equals("movePiece"))
                                 {
-                                    int onField = 0;
+                                    //foreach (string s in tokens)
+                                    //    Console.WriteLine(" {0} ", s);
 
-                                    if (tokens[8].Equals("True"))
-                                        onField = 1;
+                                    int oldOnField = (tokens[8].Equals("True")) ? 1 : 0;
+                                    int newOnField = (tokens[9].Equals("True")) ? 1 : 0;                                                                
 
+                                 
                                     dm.updateSetup(tokens[1]
                                         , Int32.Parse(tokens[2])
                                         , Int32.Parse(tokens[3])
@@ -333,7 +336,7 @@ namespace Guardians_Of_The_Arena_Server
                                         , Int32.Parse(tokens[5])
                                         , Int32.Parse(tokens[6])
                                         , Int32.Parse(tokens[7])
-                                        , onField);
+                                        , oldOnField, newOnField);
                                 }
                                 else if (tokens[0].Equals("updateSetupName"))
                                 {
@@ -461,10 +464,15 @@ namespace Guardians_Of_The_Arena_Server
 
                 catch (Exception e)
                 {
+                    if (this.inGame)
+                    {
+                        gameRef.surrenderByDisconnect(this);
+                    }
+
                     this.serverRef.RemoveClient(this);
-                    Console.WriteLine("Exception type: {0}", e);
-                    Console.WriteLine(e.StackTrace);
-                    Console.WriteLine(e.Message);
+                    //Console.WriteLine("EXCEPTION TYPE: {0}", e);
+                    //Console.WriteLine("STACK TRACE: {0}", e.StackTrace);
+                    //Console.WriteLine("EXCEPTION MESSAGE: {0}", e.Message);
                 }
             }
         }

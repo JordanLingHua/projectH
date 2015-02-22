@@ -33,7 +33,7 @@ namespace Guardians_Of_The_Arena_Server.Units
             focusedOnLevel2 = false;
             focusedOnLevel3 = false;
             unitFocused = null;
-            movementSpeedBuff = 3;
+            movementSpeedBuff = 2;
             attackBuff = 3;
             armorBuff = 3;
             armorDebuff = 2;

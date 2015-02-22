@@ -220,6 +220,8 @@ namespace Guardians_Of_The_Arena_Server
         {
             if (damage > 0)
                 this.health -= (damage - this.armor);
+            else
+                this.health -= damage;
             
             if (health > maxHealth)
                 health = maxHealth;
@@ -239,7 +241,7 @@ namespace Guardians_Of_The_Arena_Server
 
         public void addXP()
         {
-            XP += 20;
+            XP += 5;
 
             if (XP >= 20)
             {
