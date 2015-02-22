@@ -721,6 +721,7 @@ public class GameProcess : MonoBehaviour {
 
 	void popUpWindow(int windowID) 
 	{
+		GUI.depth = -10;
 		GUI.DragWindow (new Rect (0, 30, 10000, 25));
 		//variable window height based on how long the current tip is
 		popUpWindowRect.height = 200 + (((string)popUpWindowText [popUpIndex]).Length / 40 * 20);

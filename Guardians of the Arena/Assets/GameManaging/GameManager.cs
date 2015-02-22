@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour {
 	string combatLogText;
 	Vector2 combatLogScrollPos;
 	private Rect combatLogWindowRect;
-	float combatLogWidth = Screen.width*0.43f;
+	float combatLogWidth = Screen.width*0.40f;
 	float combatLogHeight = Screen.width*0.28f;
 	ArrayList combatLogMessages = new ArrayList();
 
@@ -304,7 +304,7 @@ public class GameManager : MonoBehaviour {
 		//Button to toggle between attacking and moving a piece
 		//only change options if changed
 		int prev = unitActionOption;
-		unitActionOption = GUI.SelectionGrid(new Rect(Screen.width*0.03f, Screen.height-((float)Screen.height*0.105f),Screen.width*0.3f, (Screen.height-((float)Screen.height*0.905f))), unitActionOption, unitOptionStrings, 2);
+		unitActionOption = GUI.SelectionGrid(new Rect(Screen.width*0.52f, Screen.height-((float)Screen.height*0.30f),Screen.width*0.1f, (Screen.height-((float)Screen.height*0.80f))), unitActionOption, unitOptionStrings, 1);
 		if (prev != unitActionOption){
 			if (unitActionOption == 0){
 				changeToMoving();
@@ -318,7 +318,7 @@ public class GameManager : MonoBehaviour {
 		if (!gameOver){
 			//End turn button
 			if (turn){
-				if (GUI.Button (new Rect(Screen.width*0.335f,Screen.height-((float)Screen.height*0.105f),Screen.width*0.15f,(Screen.height-((float)Screen.height*0.905f))),"(E)nd Turn")){
+				if (GUI.Button (new Rect(Screen.width*0.52f,Screen.height-((float)Screen.height*0.10f),Screen.width*0.1f,(Screen.height-((float)Screen.height*0.90f))),"(E)nd Turn")){
 					endTurn ();
 				}
 			}else{
