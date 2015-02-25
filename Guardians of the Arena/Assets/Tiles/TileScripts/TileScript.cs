@@ -38,6 +38,30 @@ public class TileScript : MonoBehaviour {
 		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 	}
 
+
+
+	///*
+	//Check certain conditions in the tile throughout the game constantly
+	//Wait until the animation finishes x of unit finishes playing, and check in here to see if it finally reached the state
+	//that allows it to be destroyed
+	void Update ()
+	{
+		if(this != null)
+		{
+			//If the barrel is in the barrel_broken animation state, destroy the barrel
+			if (this.GetComponentInChildren<Animator> ().GetCurrentAnimatorStateInfo(0).IsName("barrel_broken"))
+			{
+				gm.units.Remove(this.GetComponentInChildren<Unit>().unitID);
+				objectOccupyingTile = null;
+				Destroy (this.GetComponentInChildren<Unit>().gameObject);
+			}
+		}
+
+	}
+	//*/
+
+
+
 	public void OnMouseOver(){
 		renderer.material.shader = Shader.Find ("Toon/Lighted");
 		if (gm.selectedUnit != null && gm.gs == GameManager.gameState.playerAtk && gm.accessibleTiles.Contains (this)) {

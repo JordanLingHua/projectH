@@ -316,12 +316,30 @@ public class Unit    : MonoBehaviour {
 				showPopUpText("+" + (-1*amt),Color.green);
 			}
 
-			if (this.hp <= 0) {				
-				//Kill unit and remove from game
-				gm.addLogToCombatLog (this.unitName + " was killed!");
-				gm.units.Remove (this.unitID);
-				this.transform.parent.GetComponent<TileScript> ().objectOccupyingTile = null;
-				Destroy (this.gameObject);
+			//If the unit's hp is destroyed, we should switch to 
+			if (this.hp <= 0) {	
+
+				//If the unit's hp is destroyed
+				if(this.unitName == "Barrel")
+				{
+					this.GetComponent<Animator>().Play("barrel_break");
+					//this.GetComponent<Animator>().SetBool("breakTheBarrel", true);
+					gm.addLogToCombatLog (this.unitName + " was killed!");
+					//gm.units.Remove (this.unitID);
+					//this.transform.parent.GetComponent<TileScript> ().objectOccupyingTile = null;
+					//Destroy (this.gameObject);
+
+				}
+
+				else{
+					//Kill unit and remove from game
+					gm.addLogToCombatLog (this.unitName + " was killed!");
+					gm.units.Remove (this.unitID);
+					this.transform.parent.GetComponent<TileScript> ().objectOccupyingTile = null;
+					Destroy (this.gameObject);
+				}
+
+
 			}
 		}else{
 			showPopUpText("Invincible!",Color.red);
