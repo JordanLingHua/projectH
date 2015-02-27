@@ -459,7 +459,7 @@ public class GameProcess : MonoBehaviour {
 
 						bool wasInvincible = gameManager.units[Int32.Parse(tokens[3+i])].invincible;
 						gameManager.units[Int32.Parse (tokens[1])].attackUnit(gameManager.units[Int32.Parse(tokens[3+i])]);
-						if (!wasInvincible){
+						if (!wasInvincible && gameManager.units.ContainsKey(Int32.Parse (tokens[1]))){
 							gameManager.units[Int32.Parse (tokens[1])].gainXP();
 						}
 
@@ -489,14 +489,14 @@ public class GameProcess : MonoBehaviour {
 						//Unit gets hit facing the direction of the attacker
 						//IF you are controlling player 2
 						//if(!gameManager.units[Int32.Parse(tokens[3+i])].transform.gameObject.name.Contains("BigTree")){
-						if(gameManager.units.ContainsKey(Int32.Parse(tokens[3+i])) && gameManager.units[Int32.Parse(tokens[3+i])].GetComponent<Animator>() != null){
+						if(gameManager.units.ContainsKey (Int32.Parse (tokens[1])) && gameManager.units.ContainsKey(Int32.Parse(tokens[3+i])) && gameManager.units[Int32.Parse(tokens[3+i])].GetComponent<Animator>() != null){
 
-							if (gameManager.units[Int32.Parse (tokens[1])].unitName == "Barrel")
+							if (gameManager.units.ContainsKey (Int32.Parse (tokens[1])) && gameManager.units[Int32.Parse (tokens[1])].unitName == "Barrel")
 							{
 								gameManager.units[Int32.Parse(tokens[3+i])].GetComponent<Animator>().SetBool ("breakTheBarrel", true);
 							}
 							else{
-								if (gameManager.units[Int32.Parse (tokens[1])].alleg ==  Unit.allegiance.playerTwo && playerNumber == 1){
+								if ( gameManager.units[Int32.Parse (tokens[1])].alleg ==  Unit.allegiance.playerTwo && playerNumber == 1){
 									if(gameManager.units[Int32.Parse(tokens[3+i])].transform.position.z < gameManager.units[Int32.Parse (tokens[1])].transform.position.z)
 										gameManager.units[Int32.Parse(tokens[3+i])].GetComponent<Animator>().SetInteger("mode_and_dir", 12);
 									else if(gameManager.units[Int32.Parse(tokens[3+i])].transform.position.z > gameManager.units[Int32.Parse (tokens[1])].transform.position.z)

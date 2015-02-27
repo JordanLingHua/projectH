@@ -108,7 +108,7 @@ public class Unit    : MonoBehaviour {
 				GUI.DrawTexture(new Rect(unitScreenPos.x-15, Screen.height - unitScreenPos.y-20, barColorSwitch * 25, 3),hpBarHigh);
 			}else if (barColorSwitch > 0.3){
 				GUI.DrawTexture(new Rect(unitScreenPos.x-15, Screen.height - unitScreenPos.y-20, barColorSwitch * 25, 3),hpBarMedium);
-			}else{
+			}else if (barColorSwitch > 0){
 				GUI.DrawTexture(new Rect(unitScreenPos.x-15, Screen.height - unitScreenPos.y-20, barColorSwitch * 25, 3),hpBarLow);
 			}
 		}
@@ -249,7 +249,7 @@ public class Unit    : MonoBehaviour {
 
 	}
 	public virtual void gainXP(){
-		xp += 5;
+		xp += 20;
 
 		if (xp >= XP_TO_LEVEL [unitLevel - 1]) {
 			xp = 0;
@@ -510,16 +510,5 @@ public class Unit    : MonoBehaviour {
 			}
 		}
 	}
-
-//	public void makeRock(){
-//		alleg = allegiance.neutral;
-//		displayHPBar = false;
-//		unitName = "Rock";
-//		hp = 1;
-//		maxHP = 1;
-//		invincible = true;
-//		unitType = 21;
-//		description = "Indestructable environment";
-//	}
 
 }

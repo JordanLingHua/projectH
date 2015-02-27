@@ -241,7 +241,7 @@ namespace Guardians_Of_The_Arena_Server
 
         public void addXP()
         {
-            XP += 5;
+            XP += 20;
 
             if (XP >= 20)
             {
