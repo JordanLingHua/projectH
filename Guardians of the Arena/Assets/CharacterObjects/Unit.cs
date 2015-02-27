@@ -32,21 +32,7 @@ public class Unit    : MonoBehaviour {
 	public int unitRole;//compare this int to the ints provided inside gameManager or wherever unitRole is compared
 
 
-	/*
-	 * DO NOT DELETE THIS COMMENT!!!!
-	 * Jordan Hua
-	 * 
-	 * Unit Roles:  
-	 * Rubric-  
-	 * Ranged = 500
-	 * BuffDebuff = 501
-	 * AOE = 502
-	 * Utility = 503
-	 * BuffDebuff = 504
-	 * MeleeTank = 505
-	 * Healer = 506
-	 * Kingpin = 507
-	 */
+
 
 	public Texture2D hpBarBG,hpBarHigh,hpBarMedium,hpBarLow,xpBar,level2Symbol,level3Symbol;
 	public GameManager gm;
@@ -291,7 +277,11 @@ public class Unit    : MonoBehaviour {
 	}
 
 
+
 	public virtual void takeDmg(Unit unitAttacking,int amt){
+
+		//yield return new WaitForSeconds (1.0f);
+
 		string unitAffectedPlayer = ((gp.playerNumber == 1 && unitAttacking.alleg == allegiance.playerOne) || (gp.playerNumber == 2 && unitAttacking.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
 		string player = "";
 		if ((gp.playerNumber == 1 && this.alleg == allegiance.playerOne) || (gp.playerNumber == 2 && this.alleg == allegiance.playerTwo)) {
@@ -322,6 +312,7 @@ public class Unit    : MonoBehaviour {
 				//If the unit's hp is destroyed
 				if(this.unitName == "Barrel")
 				{
+
 					this.GetComponent<Animator>().Play("barrel_break");
 					//this.GetComponent<Animator>().SetBool("breakTheBarrel", true);
 					gm.addLogToCombatLog (this.unitName + " was killed!");

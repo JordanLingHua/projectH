@@ -27,6 +27,9 @@ public class Guardian :Unit {
 	}
 
 	public override void takeDmg(Unit unitAttacking, int amt){
+
+		//yield return new WaitForSeconds (1.0f);
+
 		string unitAffectedPlayer = ((gp.playerNumber ==  1 && unitAttacking.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && unitAttacking.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
 		string player = ((gp.playerNumber ==  1 && this.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && this.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
 		if (!this.invincible) {
