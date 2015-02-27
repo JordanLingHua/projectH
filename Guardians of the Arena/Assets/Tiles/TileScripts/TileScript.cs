@@ -46,7 +46,7 @@ public class TileScript : MonoBehaviour {
 	//that allows it to be destroyed
 	void Update ()
 	{
-		if(this != null)
+		if(this != null && this.GetComponentInChildren<Animator>()!= null)
 		{
 			//If the barrel is in the barrel_broken animation state, destroy the barrel
 			if (this.GetComponentInChildren<Animator> ().GetCurrentAnimatorStateInfo(0).IsName("barrel_broken"))
