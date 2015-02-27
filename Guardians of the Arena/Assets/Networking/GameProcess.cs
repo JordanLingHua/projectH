@@ -352,8 +352,10 @@ public class GameProcess : MonoBehaviour {
 			else if (tokens[0].Equals("move"))
 			{
 				movePiece(Int32.Parse(tokens[1]), Int32.Parse(tokens[2]), Int32.Parse(tokens[3]));
-				if (pum.allowAutoMoveAttackToggle){
+				if (pum.allowAutoMoveAttackToggle && gameManager.units.ContainsKey(Int32.Parse(tokens[1])) && !gameManager.units[Int32.Parse(tokens[1])].atkd){
 					gameManager.changeToAttacking();
+				}else{
+					gameManager.clearSelection();
 				}
 				if (Application.loadedLevelName.Equals("AIScene"))
 					GameObject.Find("AI").GetComponent<AIScript>().serverResponded = true;
@@ -584,12 +586,10 @@ public class GameProcess : MonoBehaviour {
 				}
 				*/
 
-
-
-
-
-				if (pum.allowAutoMoveAttackToggle){
+				if (pum.allowAutoMoveAttackToggle && gameManager.units.ContainsKey(Int32.Parse(tokens[1])) && !gameManager.units[Int32.Parse(tokens[1])].mvd){
 					gameManager.changeToMoving();
+				}else{
+					gameManager.clearSelection();
 				}
 
 				if (Application.loadedLevelName.Equals("AIScene"))

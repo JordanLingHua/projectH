@@ -206,7 +206,7 @@ public class GameManager : MonoBehaviour {
 			info += (script.unitLevel == 3 || script.alleg == Unit.allegiance.neutral || script.unitType == 11)? "": "\nXP: " + script.xp + "/" + script.XP_TO_LEVEL[script.unitLevel-1];
 			
 			if (!script.paralyzed){
-				if (script.atk > 0){
+				if (script.atk > 0 && script.unitType != 11){
 					info +="\nDamage: " + script.atk; 
 				}else if (script.atk < 0){
 					info += "\nHeals for: " + -1*script.atk;
