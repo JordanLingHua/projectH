@@ -203,25 +203,6 @@ public class GameProcess : MonoBehaviour {
 				GameObject.Find ("GlobalChat").GetComponent<globalChatScript>().addLineToChat(tokens[1], tokens[2]);
 			}
 			
-			//challengeRequest\\challengerName
-			else if (tokens[0].Equals("challengeRequest"))
-			{
-				GameObject.Find ("challengeManager").GetComponent<challengeScript>().addChallengeRequest(tokens[1]);
-			}
-
-			//TODO
-			else if (tokens[0].Equals("challengeAccepted"))
-			{
-				
-			}
-
-			//TODO
-			else if (tokens[0].Equals("challengeDeclined"))
-			{
-				
-			}
-
-			
 			else if (tokens[0].Equals("showTip"))
 			{
 				switch(tokens[1]){
@@ -236,12 +217,6 @@ public class GameProcess : MonoBehaviour {
 						break;
 				}
 
-			}
-
-			//challengeCancelled\\challengerName
-			else if (tokens[0].Equals("challengeCancelled"))
-			{
-				GameObject.Find ("challengeManager").GetComponent<challengeScript>().removeChallengeRequest(tokens[1]);
 			}
 
 			#region SETTING UP BOARDS
