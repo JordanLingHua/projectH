@@ -18,6 +18,7 @@ public class PlayerSetup : MonoBehaviour {
 	public GameObject UnitNine;
 	public GameObject UnitTen;
 	public GameObject UnitEleven;
+	public GameObject Rock;
 	public GameObject cp;
 
 	public int boardCapacity;
@@ -26,15 +27,15 @@ public class PlayerSetup : MonoBehaviour {
 	//These special tiles seperate from the half of the game board (tiles) stores 
 	//the units that are dragged off the game board.  
 	public GameObject[,] unit_storage_tiles;
-	private int xStorage_Tiles = 11;
+	private int xStorage_Tiles = 9;
 	private int yStorage_Tiles = 2;
 	public GameObject storage_tile;
 	
 	//We only need 1 prevPosition because we are only moving one piece at a time.  
 	public Vector3 prevPosition;
 
-	private int xTiles = 11;
-	private int yTiles = 4;
+	private int xTiles = 9;
+	private int yTiles = 3;
 	public GameObject[,] tiles;
 	public GameObject tile;
 
@@ -48,7 +49,19 @@ public class PlayerSetup : MonoBehaviour {
 			GameObject.Destroy (piece);
 		}
 	}
-	
+
+	public void addRock(int x, int y){
+		SetupTileScript placeTile = tiles[x,y].GetComponent<SetupTileScript>();
+		GameObject rock = (GameObject)Instantiate(Rock, 
+		                                          new Vector3(placeTile.transform.position.x, 5, placeTile.transform.position.z), 
+		                                          new Quaternion());
+		rock.transform.parent = placeTile.transform;
+		rock.transform.localScale = new Vector3(1.25f,12.5f,1.25f);
+		rock.transform.eulerAngles = new Vector3(4.5f,0,0f);
+		
+	}
+
+
 	//Unit Type and Unit ID are the exact same thing
 	public GameObject addUnit(placement placementType, int x, int y,int type){//, int unitID){
 
@@ -159,6 +172,7 @@ public class PlayerSetup : MonoBehaviour {
 		{
 			for (int j = 0; j < yTiles; j++)
 			{
+				if (tiles[i,j] != null){
 				SetupTileScript script = tiles[i, j].GetComponent<SetupTileScript>();
 				
 				//set tile id e.g. 5,2
@@ -180,6 +194,7 @@ public class PlayerSetup : MonoBehaviour {
 				if (j != yTiles - 1)
 				{
 					script.left = tiles[i, j + 1];
+				}
 				}
 			}
 		}
@@ -250,6 +265,9 @@ public class PlayerSetup : MonoBehaviour {
 		//The stupd screen defaults to the first page (index "0" in the pages array, "1" on the server)
 		activePage = 0;
 		gp.returnSocket().SendTCPPacket("getBoardData\\1\\" + gp.playerName);
+
+		addRock(0,0);
+		addRock(8,0);
 	}
 
 	// Update is called once per frame

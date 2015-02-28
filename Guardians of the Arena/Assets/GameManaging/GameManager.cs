@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour {
 	float combatLogWidth = Screen.width*0.40f;
 	float combatLogHeight = Screen.width*0.28f;
 	ArrayList combatLogMessages = new ArrayList();
+	bool displayCombatLog;
 
 	//game managing variables
 	public bool turn, incMana,gameOver,sentEndTurn;
@@ -40,6 +41,7 @@ public class GameManager : MonoBehaviour {
 	public Dictionary<int,Unit>	units = new Dictionary<int, Unit>();	
 	
 	void Start () {
+		displayCombatLog = true;
 		combatLogScrollPos = new Vector2 (0.0f, 0.0f);
 		combatLogText = "";
 		combatLogWindowRect = new Rect (Screen.width-combatLogWidth,Screen.height-combatLogHeight+20, combatLogWidth, combatLogHeight);
@@ -132,17 +134,20 @@ public class GameManager : MonoBehaviour {
 	{
 		GUILayout.BeginVertical ();
 		GUILayout.Space (8);
-		
 		GUILayout.Label ("Combat Log");
-		GUILayout.Label("", "Divider");
-		
 		
 		GUILayout.BeginHorizontal ();
 		combatLogScrollPos = GUILayout.BeginScrollView (combatLogScrollPos , false, true);
 		GUILayout.Label (combatLogText, "PlainText");
 		GUILayout.EndScrollView ();
 		GUILayout.EndHorizontal ();
-		//GUILayout.Space (8);
+		GUILayout.BeginHorizontal ();
+		GUILayout.FlexibleSpace();
+		if (GUILayout.Button ("Minimize Combat Log", "ShortButton")){
+			displayCombatLog = false;
+		}
+		GUILayout.FlexibleSpace();
+		GUILayout.EndHorizontal ();
 		
 		GUILayout.EndVertical();
 	}
@@ -281,7 +286,16 @@ public class GameManager : MonoBehaviour {
 
 	void OnGUI(){
 		GUI.skin = mySkin;
-				combatLogWindowRect = GUI.Window (2, combatLogWindowRect, combatLogWindow, "");
+		if (displayCombatLog){
+			combatLogWindowRect = GUI.Window (2, combatLogWindowRect, combatLogWindow, "");
+		}else{
+			GUI.BeginGroup (new Rect (Screen.width - 120,Screen.height - 25,120,100));
+			if (GUILayout.Button ("Show Combat Log", "ShortButton")){
+				displayCombatLog = true;
+			}
+
+			GUI.EndGroup();
+		}
 		GUI.BeginGroup (new Rect (0,0,100,100));
 		GUI.EndGroup();
 		displayUnitInfo (hoverOverUnit);

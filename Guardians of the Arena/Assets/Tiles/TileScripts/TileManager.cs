@@ -7,8 +7,8 @@ using System.Collections;
 
 public class TileManager : MonoBehaviour {
 	
-	private int xTiles = 11;
-	private int yTiles = 11;
+	private int xTiles = 9;
+	private int yTiles = 9;
 	public GameObject[,] tiles;
 	
 	public GameObject tile;
@@ -35,6 +35,7 @@ public class TileManager : MonoBehaviour {
 				newtile.AddComponent("TileScript");
 				tiles[i,j] = newtile;
 				newtile.transform.parent = this.transform;
+
 			}
 		}
 		
@@ -67,7 +68,10 @@ public class TileManager : MonoBehaviour {
 				}
 			}
 		}
-
+		addRock(0,0,1000);
+		addRock(8,0,1001);
+		addRock(8,8,1002);
+		addRock(0,8,1003);
 	}
 
 	public void displayHPBars(int choice){
