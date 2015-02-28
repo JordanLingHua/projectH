@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour {
 
 	public void showErrorMessage(string error){
 		GUI.depth = -1;
-		Vector3 textPos = new Vector3((Screen.width*0.03f)/Screen.width,(Screen.height-((float)Screen.height*0.02f))/Screen.height,0);
+		Vector3 textPos = new Vector3(0.28f,0.5f,0);
 
 		//TODO: Error with different error text overlapping
 		if (GameObject.Find ("ErrorPopUpText(Clone)")!=null){

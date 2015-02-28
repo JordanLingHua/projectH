@@ -39,7 +39,7 @@ public class SetupScreenGUI : MonoBehaviour {
 	GUIText boardCapacityGUIText;
 	private Rect windowRect5;
 	int displayWidth5 = 320;
-	int displayHeight5 = 350;
+	int displayHeight5 = 290;
 
 	void Start () {
 		showGUI = true;
@@ -48,7 +48,7 @@ public class SetupScreenGUI : MonoBehaviour {
 		pageNameScript = GameObject.Find ("PageInfo").GetComponent<PageNameScript> ();
 		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 		playerSetup = GameObject.Find("PlayerSetup").GetComponent<PlayerSetup>();
-		windowRect5 = new Rect (Screen.width - 315, Screen.height - 330, displayWidth5, displayHeight5);
+		windowRect5 = new Rect (Screen.width - 315, Screen.height - 270, displayWidth5, displayHeight5);
 		am = GameObject.Find ("AudioManager").GetComponent<AudioManager> ();
 	}	
 
@@ -137,24 +137,24 @@ public class SetupScreenGUI : MonoBehaviour {
 		GUILayout.Label("", "Divider");//-------------------------------- custom
 
 
-		GUILayout.BeginHorizontal ();
-		GUILayout.FlexibleSpace();
-		if (GUILayout.Button("Logout", "ShortButton"))
-		{
-			//send a disconnect packet
-			am.playErrorSFX ();
-			gp.returnSocket().SendTCPPacket("logout\\" + gp.playerName);
-			
-			//keep the gameprocess object intact and return to main menu (level 0)
-//			Destroy(GameObject.Find ("ListOfPlayers"));
-//			Destroy(GameObject.Find ("ListOfPlayersGUIText"));
-//			DontDestroyOnLoad(gp);
-//			Application.LoadLevel(0);
-		}
-		GUILayout.FlexibleSpace();
-		GUILayout.EndHorizontal ();
+//		GUILayout.BeginHorizontal ();
+//		GUILayout.FlexibleSpace();
+//		if (GUILayout.Button("Logout", "ShortButton"))
+//		{
+//			//send a disconnect packet
+//			am.playErrorSFX ();
+//			gp.returnSocket().SendTCPPacket("logout\\" + gp.playerName);
+//			
+//			//keep the gameprocess object intact and return to main menu (level 0)
+////			Destroy(GameObject.Find ("ListOfPlayers"));
+////			Destroy(GameObject.Find ("ListOfPlayersGUIText"));
+////			DontDestroyOnLoad(gp);
+////			Application.LoadLevel(0);
+//		}
+//		GUILayout.FlexibleSpace();
+//		GUILayout.EndHorizontal ();
 
-		GUILayout.Label("", "Divider");//-------------------------------- custom
+		//GUILayout.Label("", "Divider");//-------------------------------- custom
 
 		GUILayout.BeginHorizontal();
 		GUILayout.FlexibleSpace();

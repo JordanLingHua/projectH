@@ -18,6 +18,7 @@ public class Unit    : MonoBehaviour {
 	public string[] levelBonusShort = {"",""};
 	public string[] levelBonusLong = {"",""};
 	public bool invincible,displayHPBar,displayXPBar;
+	public int barXOffset, barYOffset;
 	public Mystic enemyFocusingThis;
 
 
@@ -40,6 +41,8 @@ public class Unit    : MonoBehaviour {
 	public PopUpMenuNecro pum;
 	public AudioManager am;
 	public virtual void Start () {
+		barXOffset = 15;
+		barYOffset = 25;
 		armor = 0;
 		unitLevel = 1;
 		level2Symbol = Resources.Load("Level2Symbol") as Texture2D;
@@ -85,22 +88,22 @@ public class Unit    : MonoBehaviour {
 		if (displayHPBar){
 			if (unitType == 20){
 				unitScreenPos.y -= 10;
-				unitScreenPos.x += 5;
+				unitScreenPos.x -= -5;
 			}
-
-			GUI.DrawTexture (new Rect(unitScreenPos.x-15, Screen.height - unitScreenPos.y-20,  25, 3),hpBarBG);
+			GUI.depth = 10;
+			GUI.DrawTexture (new Rect(unitScreenPos.x-barXOffset, Screen.height - unitScreenPos.y-barYOffset,  25, 3),hpBarBG);
 			float barColorSwitch = (float)hp/maxHP;
 			if (barColorSwitch > .6){
-				GUI.DrawTexture(new Rect(unitScreenPos.x-15, Screen.height - unitScreenPos.y-20, barColorSwitch * 25, 3),hpBarHigh);
+				GUI.DrawTexture(new Rect(unitScreenPos.x-barXOffset, Screen.height - unitScreenPos.y-barYOffset, barColorSwitch * 25, 3),hpBarHigh);
 			}else if (barColorSwitch > 0.3){
-				GUI.DrawTexture(new Rect(unitScreenPos.x-15, Screen.height - unitScreenPos.y-20, barColorSwitch * 25, 3),hpBarMedium);
+				GUI.DrawTexture(new Rect(unitScreenPos.x-barXOffset, Screen.height - unitScreenPos.y-barYOffset, barColorSwitch * 25, 3),hpBarMedium);
 			}else if (barColorSwitch > 0){
-				GUI.DrawTexture(new Rect(unitScreenPos.x-15, Screen.height - unitScreenPos.y-20, barColorSwitch * 25, 3),hpBarLow);
+				GUI.DrawTexture(new Rect(unitScreenPos.x-barXOffset, Screen.height - unitScreenPos.y-barYOffset, barColorSwitch * 25, 3),hpBarLow);
 			}
 		}
 		if (displayXPBar){
-			GUI.DrawTexture (new Rect(unitScreenPos.x-15, Screen.height - unitScreenPos.y-17,  25, 3),hpBarBG);
-			GUI.DrawTexture(new Rect(unitScreenPos.x-15, Screen.height - unitScreenPos.y-17, ((float)xp/XP_TO_LEVEL[unitLevel-1])* 25, 3),xpBar);
+			GUI.DrawTexture (new Rect(unitScreenPos.x-15, Screen.height - unitScreenPos.y-(barYOffset-3),  25, 3),hpBarBG);
+			GUI.DrawTexture(new Rect(unitScreenPos.x-15, Screen.height - unitScreenPos.y-(barYOffset-3), ((float)xp/XP_TO_LEVEL[unitLevel-1])* 25, 3),xpBar);
 		}
 	}
 
