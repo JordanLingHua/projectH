@@ -103,13 +103,13 @@ public class GameManager : MonoBehaviour {
 			endTurn();	
 		}
 
-
-		timerText.text = "Time Left: " + (int)timer;
-
-		if (!gameOver){
+		if (!gameOver && !Application.loadedLevelName.Equals ("AIScene")){
+			timerText.text = "Time Left: " + (int)timer;
 			timer -= Time.deltaTime;
-		    if (timer <= 0  && turn){
-				endTurn ();
+		    if (timer <= 0){
+				if (turn){
+					endTurn ();
+				}
 				timer = 0f;
 			}
 		}
