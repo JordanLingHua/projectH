@@ -315,18 +315,11 @@ public class Unit    : MonoBehaviour {
 				//If the unit's hp is destroyed
 				if(this.unitName == "Barrel")
 				{
-
 					this.GetComponent<Animator>().Play("barrel_break");
-					//this.GetComponent<Animator>().SetBool("breakTheBarrel", true);
 					gm.addLogToCombatLog (this.unitName + " was killed!");
-					//gm.units.Remove (this.unitID);
-					//this.transform.parent.GetComponent<TileScript> ().objectOccupyingTile = null;
-					//Destroy (this.gameObject);
-
-				}
-
-				else{
+				}else{
 					//Kill unit and remove from game
+					gm.addUnitToGraveyard(this.unitName,this.alleg);
 					gm.addLogToCombatLog (this.unitName + " was killed!");
 					gm.units.Remove (this.unitID);
 					this.transform.parent.GetComponent<TileScript> ().objectOccupyingTile = null;

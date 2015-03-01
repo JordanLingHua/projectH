@@ -69,6 +69,7 @@ public class Guardian :Unit {
 				}
 
 				//Kill unit and remove from game
+				gm.addUnitToGraveyard(this.unitName,this.alleg);
 				gm.addLogToCombatLog (this.unitName + " was killed!");
 				gm.units.Remove (this.unitID);
 				this.transform.parent.GetComponent<TileScript> ().objectOccupyingTile = null;

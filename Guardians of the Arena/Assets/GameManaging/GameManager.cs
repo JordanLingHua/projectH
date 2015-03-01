@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour {
 	public GUISkin mySkin;
 	int maxCombatLogMessages = 15;
 	string combatLogText;
+	string graveyardText;
+	ArrayList myUnitsLost = new ArrayList();
+	ArrayList enemyUnitsLost = new ArrayList();
 	Vector2 combatLogScrollPos;
 	private Rect combatLogWindowRect;
 	float combatLogWidth = Screen.width*0.44f;
@@ -31,9 +34,6 @@ public class GameManager : MonoBehaviour {
 	//Selected unit and available move squares
 	public Unit selectedUnit = null,hoverOverUnit = null;
 	public HashSet<TileScript> accessibleTiles = new HashSet<TileScript>();
-
-	public GameObject UnitOne,UnitTwo,UnitThree,UnitFour,UnitFive,UnitSix,UnitSeven,UnitEight,UnitNine,UnitTen,UnitEleven;
-	GameObject hoverUnitDisplay;
 
 	//Timer variables
 	readonly float TIMER_LENGTH = 60f;
@@ -117,11 +117,36 @@ public class GameManager : MonoBehaviour {
 		}
 
 	}
+
+	public void addUnitToGraveyard(string unitName, Unit.allegiance alleg){
+		if ((gp.playerNumber == 1 && alleg == Unit.allegiance.playerOne) || (gp.playerNumber == 2 && alleg == Unit.allegiance.playerTwo)){
+			myUnitsLost.Add(unitName);
+		}else if ((gp.playerNumber == 2 && alleg == Unit.allegiance.playerOne) || (gp.playerNumber == 1 && alleg == Unit.allegiance.playerTwo)){
+			enemyUnitsLost.Add (unitName);
+		}
+		graveyardText = "Your units lost:\n";
+		if (myUnitsLost.Count == 0){
+			graveyardText += "None";
+		}else{
+			for (int i = 0; i < myUnitsLost.Count; i++){
+				graveyardText += myUnitsLost[i] + " ";
+			}
+		}
+		graveyardText += "\nEnemy Units Lost:\n";
+		if (enemyUnitsLost.Count == 0){
+			graveyardText += "None";
+		}else{
+			for (int i = 0; i < enemyUnitsLost.Count; i++){
+				graveyardText += enemyUnitsLost[i] + " ";
+			}
+		}
+	}
+
 	
 	public void addLogToCombatLog(string log){
 		combatLogMessages.Add (log+"\n");
 		if (combatLogMessages.Count > maxCombatLogMessages){
-			combatLogMessages.RemoveAt(maxCombatLogMessages);
+			combatLogMessages.RemoveAt(0);
 		}
 		combatLogText = "";
 		for (int i = 0; i < combatLogMessages.Count; i ++){
@@ -134,17 +159,30 @@ public class GameManager : MonoBehaviour {
 	{
 		GUILayout.BeginVertical ();
 		GUILayout.Space (8);
-		GUILayout.Label ("Combat Log");
-		
+		if (displayCombatLog){
+			GUILayout.Label ("Combat Log");
+		}else{
+			GUILayout.Label("Graveyard");
+		}
 		GUILayout.BeginHorizontal ();
 		combatLogScrollPos = GUILayout.BeginScrollView (combatLogScrollPos , false, true);
-		GUILayout.Label (combatLogText, "PlainText");
+		if (displayCombatLog){
+			GUILayout.Label (combatLogText, "PlainText");
+		}else{
+			GUILayout.Label (graveyardText, "PlainText");
+		}
 		GUILayout.EndScrollView ();
 		GUILayout.EndHorizontal ();
 		GUILayout.BeginHorizontal ();
 		GUILayout.FlexibleSpace();
-		if (GUILayout.Button ("Minimize Combat Log", "ShortButton")){
-			displayCombatLog = false;
+		if (displayCombatLog){
+			if (GUILayout.Button ("Show Graveyard", "ShortButton")){
+				displayCombatLog = false;
+			}
+		}else{
+			if (GUILayout.Button ("Show Combat Log", "ShortButton")){
+				displayCombatLog = true;
+			}
 		}
 		GUILayout.FlexibleSpace();
 		GUILayout.EndHorizontal ();
@@ -155,56 +193,6 @@ public class GameManager : MonoBehaviour {
 
 	public void displayUnitInfo(Unit unit){
 		if (unit!= null){
-//			Vector3 worldPoint = gp.playerNumber == 1? new Vector3(122,20,75):new Vector3(-23,20,30) ;
-//			if (hoverUnitDisplay == null){
-//				switch(unit.unitType){
-//				case 1:
-//					hoverUnitDisplay = (GameObject)Instantiate(UnitOne, worldPoint, new Quaternion());
-//					Destroy(hoverUnitDisplay.GetComponent<KnifeThrower>());
-//					break;
-//				case 2:
-//					hoverUnitDisplay = (GameObject)Instantiate(UnitTwo, worldPoint, new Quaternion());
-//					Destroy(hoverUnitDisplay.GetComponent<Mystic>());
-//					break;
-//				case 3:
-//					hoverUnitDisplay = (GameObject)Instantiate(UnitThree, worldPoint, new Quaternion());
-//					Destroy(hoverUnitDisplay.GetComponent<Templar>());
-//					break;
-//				case 4:
-//					hoverUnitDisplay = (GameObject)Instantiate(UnitFour,worldPoint, new Quaternion());
-//					Destroy(hoverUnitDisplay.GetComponent<AoEUnit>());
-//					break;
-//				case 5:
-//					hoverUnitDisplay = (GameObject)Instantiate(UnitFive,worldPoint, new Quaternion());
-//					Destroy(hoverUnitDisplay.GetComponent<UtilityUnit>());
-//					break;
-//				case 6:
-//					hoverUnitDisplay = (GameObject)Instantiate(UnitSix, worldPoint, new Quaternion());
-//					Destroy(hoverUnitDisplay.GetComponent<BuffingUnit>());
-//					break;
-//				case 7:
-//					hoverUnitDisplay = (GameObject)Instantiate(UnitSeven, worldPoint,new Quaternion());
-//					Destroy(hoverUnitDisplay.GetComponent<Swordsman>());
-//					break;
-//				case 8:
-//					hoverUnitDisplay = (GameObject)Instantiate(UnitEight, worldPoint,new Quaternion());
-//					Destroy(hoverUnitDisplay.GetComponent<Priest>());
-//					break;
-//				case 9:
-//					hoverUnitDisplay = (GameObject)Instantiate(UnitNine, worldPoint, new Quaternion());
-//					Destroy(hoverUnitDisplay.GetComponent<RangedUnit>());
-//					break;
-//				case 10:
-//					hoverUnitDisplay = (GameObject)Instantiate(UnitTen, worldPoint, new Quaternion());
-//					Destroy(hoverUnitDisplay.GetComponent<Guardian>());
-//					break;
-//				case 11:
-//					hoverUnitDisplay = (GameObject)Instantiate(UnitEleven,worldPoint,new Quaternion());
-//					Destroy(hoverUnitDisplay.GetComponent<SoulStone>());
-//					break;
-//				}
-//				//hoverUnitDisplay.transform.localScale = new Vector3(40,40,20);
-//			}
 			Unit script = unit.GetComponent<Unit>();
 			
 			string info =script.invincible? "" : "\nHP: " + script.hp + "/" + script.maxHP;
@@ -281,22 +269,12 @@ public class GameManager : MonoBehaviour {
 		suLevel2BonusShort.transform.position = new Vector3(0.77f,0.72f);
 		suLevel2BonusLong.transform.position = new Vector3(0.77f,0.69f);
 		unitDescriptionGUI.transform.position = new Vector3(0.62f,0.6f);
-		Destroy (hoverUnitDisplay);
 	}
 
 
 	void OnGUI(){
 		GUI.skin = mySkin;
-		if (displayCombatLog){
-			combatLogWindowRect = GUI.Window (2, combatLogWindowRect, combatLogWindow, "");
-		}else{
-			GUI.BeginGroup (new Rect (Screen.width - 120,Screen.height - 25,120,100));
-			if (GUILayout.Button ("Show Combat Log", "ShortButton")){
-				displayCombatLog = true;
-			}
-
-			GUI.EndGroup();
-		}
+		combatLogWindowRect = GUI.Window (2, combatLogWindowRect, combatLogWindow, "");
 		GUI.BeginGroup (new Rect (0,0,100,100));
 		GUI.EndGroup();
 		displayUnitInfo (hoverOverUnit);

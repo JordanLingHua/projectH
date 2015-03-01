@@ -13,7 +13,7 @@ public class KnifeThrower : Unit {
 		levelBonusLong [1] = "Attacks all units to targeted tile";
 		description = "Ranged unit that will hit any unit that gets in its way";
 		unitType = 1;
-		unitName = "Knife Thrower";
+		unitName = "Archer";
 		hp = 25;
 		maxHP = 25;
 		atk = 18;  
