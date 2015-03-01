@@ -263,6 +263,8 @@ namespace Guardians_Of_The_Arena_Server
         public void createDefaultUnitSetup(string name)
         {
             string sql = "";
+            int pageNumber = -1;
+            string pageName = "";
 
             sql =  "INSERT INTO tooltips (name, tooltipID, showTip) VALUES ('" + name +"' , 1, 1);";
             sql += "INSERT INTO tooltips (name, tooltipID, showTip) VALUES ('" + name + "' , 2, 1);";
@@ -271,122 +273,603 @@ namespace Guardians_Of_The_Arena_Server
             SQLiteCommand command = new SQLiteCommand(sql, userDatabase);
             command.ExecuteNonQuery();
 
-            for (int i = 1; i <= 5; i++)
-            {
-                sql = "";
-                //unit type 1 at 5, 1
-                sql = "   INSERT INTO unitSetups  ";
-                sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
-                sql += "   VALUES  ";
-                sql += "   ('" + name + "', 'default " + i + "'," + i + ",1 , 5, 1, 1)";
-                command = new SQLiteCommand(sql, userDatabase);
-                command.ExecuteNonQuery();
-                //unit type 2 at 6, 0
-                sql = "   INSERT INTO unitSetups  ";
-                sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
-                sql += "   VALUES  ";
-                sql += "   ('" + name + "', 'default " + i + "', " + i + ",2 , 6, 0, 1)";
-                command = new SQLiteCommand(sql, userDatabase);
-                command.ExecuteNonQuery();
-                //unit type 3 at 3, 1
-                sql = "   INSERT INTO unitSetups  ";
-                sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
-                sql += "   VALUES  ";
-                sql += "   ('" + name + "', 'default " + i + "', " + i + ",3 , 3, 1, 1)";
-                command = new SQLiteCommand(sql, userDatabase);
-                command.ExecuteNonQuery();
-                
+            ///////////////////PAGE 1/////////////////////
+            pageNumber = 1;
+            pageName = "Siege";
+            sql = "";
+            ////////////// ON BOARD UNITS ////////////////
+            //unit type 2 at 2, 1
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ", 2, 2, 1, 1)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
 
-                //unit type 7, at 4, 2
-                sql = "   INSERT INTO unitSetups  ";
-                sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
-                sql += "   VALUES  ";
-                sql += "   ('" + name + "', 'default " + i + "', " + i + ",7 , 4, 2, 1)";
-                command = new SQLiteCommand(sql, userDatabase);
-                command.ExecuteNonQuery();
-                //unit type 7 at 5, 3
-                sql = "   INSERT INTO unitSetups  ";
-                sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
-                sql += "   VALUES  ";
-                sql += "   ('" + name + "', 'default " + i + "', " + i + ",7 , 5, 3, 1)";
-                command = new SQLiteCommand(sql, userDatabase);
-                command.ExecuteNonQuery();
+            //unit type 3 at 2, 2
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",3 , 2, 2, 1)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+           
+            //unit type 3 at 3, 2
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",3 , 3, 2, 1)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();                
+
+            //unit type 3 at 4, 2
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",3 , 4, 2, 1)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //unit type 10 at 1, 2
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," +  pageNumber + ",10 , 1, 2, 1)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
                
-                //unit type 8 at 4, 0
-                sql = "   INSERT INTO unitSetups  ";
-                sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
-                sql += "   VALUES  ";
-                sql += "   ('" + name + "', 'default " + i + "', " + i + ",8 , 4, 0, 1)";
-                command = new SQLiteCommand(sql, userDatabase);
-                command.ExecuteNonQuery();
-                //unit type 10 at 5, 2
-                sql = "   INSERT INTO unitSetups  ";
-                sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
-                sql += "   VALUES  ";
-                sql += "   ('" + name + "', 'default " + i + "', " + i + ",10 , 5, 2, 1)";
-                command = new SQLiteCommand(sql, userDatabase);
-                command.ExecuteNonQuery();
-                //unit type 11 at 5, 0
-                sql = "   INSERT INTO unitSetups  ";
-                sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
-                sql += "   VALUES  ";
-                sql += "   ('" + name + "', 'default " + i + "', " + i + ",11 , 5, 0, 1)";
-                command = new SQLiteCommand(sql, userDatabase);
-                command.ExecuteNonQuery();
+            //unit type 11 at 2, 0
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",11 , 2, 0, 1)";
+            command = new SQLiteCommand(sql, userDatabase);
+
+            command.ExecuteNonQuery();
+            //unit type 1 at 3, 1
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",1 , 3, 1, 1)";
+            command = new SQLiteCommand(sql, userDatabase);
+
+            command.ExecuteNonQuery();
+            //unit type 1 at 4, 1
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",1 , 4, 1, 1)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //////////////////////// OFF BOARD PIECES///////////////////////
+            //unit type 7 at 0, 0
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",7 , 0, 0, 0)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //pieces off the board
+            //unit type 7 at 1, 0
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",7 , 1, 0, 0)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //unit type 7 at 2, 0
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",7 , 2, 0, 0)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //unit type 7 at 3, 0
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",7 , 3, 0, 0)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //unit type 8 at 4, 0
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",1 , 8, 0, 0)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //unit type 8 at 5, 0
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",8 , 8, 0, 0)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            ///////////////////PAGE 2/////////////////////
+            pageNumber = 2;
+            pageName = "Frontline";
+            sql = "";
+            ////////////// ON BOARD UNITS ////////////////
+            //unit type 7 at 1, 2
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ", 7, 1, 2, 1)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //unit type 3 at 2, 2
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",3 , 2, 2, 1)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //unit type 7 at 3, 2
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",7 , 3, 2, 1)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //unit type 7 at 5, 2
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",7 , 5, 2, 1)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //unit type 10 at 4, 2
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",10 , 4, 2, 1)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //unit type 11 at 4, 0
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",11 , 4, 0, 1)";
+            command = new SQLiteCommand(sql, userDatabase);
+
+            command.ExecuteNonQuery();
+            //unit type 3 at 6, 2
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",3 , 6, 2, 1)";
+            command = new SQLiteCommand(sql, userDatabase);
+
+            command.ExecuteNonQuery();
+            //unit type 7 at 7, 2
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",7 , 7, 2, 1)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //////////////////////// OFF BOARD PIECES///////////////////////
+            //unit type 1 at 0, 0
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",1 , 0, 0, 0)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //pieces off the board
+            //unit type 1 at 1, 0
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",1 , 1, 0, 0)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //unit type 2 at 2, 0
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",2 , 2, 0, 0)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //unit type 3 at 3, 0
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",3 , 3, 0, 0)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //unit type 8 at 4, 0
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",8 , 4, 0, 0)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //unit type 8 at 5, 0
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",8 , 5, 0, 0)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            ///////////////////PAGE 3/////////////////////
+            pageNumber = 3;
+            pageName = "Aggro";
+            sql = "";
+            ////////////// ON BOARD UNITS ////////////////
+            //unit type 7 at 2, 2
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ", 7, 2, 2, 1)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //unit type 3 at 3, 2
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",3 , 3, 2, 1)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //unit type 10 at 4, 2
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",10 , 4, 2, 1)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //unit type 3 at 5, 2
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",3 , 5, 2, 1)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //unit type 7 at 6, 2
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",7 , 6, 2, 1)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //unit type 1 at 3, 1
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",1 , 3, 1, 1)";
+            command = new SQLiteCommand(sql, userDatabase);
+
+            command.ExecuteNonQuery();
+            //unit type 1 at 5, 1
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",1 , 5, 1, 1)";
+            command = new SQLiteCommand(sql, userDatabase);
+
+            command.ExecuteNonQuery();
+            //unit type 11 at 4, 0
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",11 , 4, 0, 1)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //////////////////////// OFF BOARD PIECES///////////////////////
+            //unit type 2 at 0, 0
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",2 , 0, 0, 0)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //pieces off the board
+            //unit type 3 at 1, 0
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",3 , 1, 0, 0)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //unit type 7 at 2, 0
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",7 , 2, 0, 0)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //unit type 7 at 3, 0
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",7 , 3, 0, 0)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //unit type 8 at 4, 0
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",8 , 4, 0, 0)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //unit type 8 at 5, 0
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",8 , 5, 0, 0)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            ///////////////////PAGE 4/////////////////////
+            pageNumber = 4;
+            pageName = "Midrange";
+            sql = "";
+            ////////////// ON BOARD UNITS ////////////////
+            //unit type 3 at 3, 2
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ", 3, 3, 2, 1)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //unit type 7 at 4, 2
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",7 , 4, 2, 1)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //unit type 3 at 5, 2
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",3 , 5, 2, 1)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //unit type 10 at 4, 1
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",10 , 4, 1, 1)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //unit type 2 at 5, 1
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",2 , 5, 1, 1)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //unit type 1 at 6, 1
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",1 , 6, 1, 1)";
+            command = new SQLiteCommand(sql, userDatabase);
+
+            command.ExecuteNonQuery();
+            //unit type 8 at 5, 0
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",8 , 5, 0, 1)";
+            command = new SQLiteCommand(sql, userDatabase);
+
+            command.ExecuteNonQuery();
+            //unit type 11 at 4, 0
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",11 , 4, 0, 1)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //////////////////////// OFF BOARD PIECES///////////////////////
+            //unit type 1 at 0, 0
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",1 , 0, 0, 0)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //pieces off the board
+            //unit type 3 at 1, 0
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",3 , 1, 0, 0)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //unit type 7 at 2, 0
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",7 , 2, 0, 0)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //unit type 7 at 3, 0
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",7 , 3, 0, 0)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //unit type 7 at 4, 0
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",7 , 4, 0, 0)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //unit type 8 at 5, 0
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",8 , 5, 0, 0)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            ///////////////////PAGE 5/////////////////////
+            pageNumber = 5;
+            pageName = "Turtle";
+            sql = "";
+            ////////////// ON BOARD UNITS ////////////////
+            //unit type 10 at 0, 2
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ", 10, 0, 2, 1)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //unit type 3 at 1, 2
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",3 , 1, 2, 1)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //unit type 3 at 2, 2
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",3 , 2, 2, 1)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //unit type 7 at 3, 2
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",7 , 3, 2, 1)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //unit type 8 at 0, 1
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",8 , 0, 1, 1)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //unit type 8 at 1, 1
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",8 , 1, 1, 1)";
+            command = new SQLiteCommand(sql, userDatabase);
+
+            command.ExecuteNonQuery();
+            //unit type 1 at 2, 1
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",1 , 2, 1, 1)";
+            command = new SQLiteCommand(sql, userDatabase);
+
+            command.ExecuteNonQuery();
+            //unit type 11 at 1, 0
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",11 , 1, 0, 1)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //////////////////////// OFF BOARD PIECES///////////////////////
+            //unit type 1 at 0, 0
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",1 , 0, 0, 0)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //pieces off the board
+            //unit type 2 at 1, 0
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",2 , 1, 0, 0)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //unit type 3 at 2, 0
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",3 , 2, 0, 0)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //unit type 7 at 3, 0
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",7 , 3, 0, 0)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //unit type 7 at 4, 0
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",7 , 4, 0, 0)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
+
+            //unit type 7 at 5, 0
+            sql = "   INSERT INTO unitSetups  ";
+            sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
+            sql += "   VALUES  ";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",7 , 5, 0, 0)";
+            command = new SQLiteCommand(sql, userDatabase);
+            command.ExecuteNonQuery();
 
 
-                //pieces off the board
-                //unit type 7 at 6, 2
-                sql = "   INSERT INTO unitSetups  ";
-                sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
-                sql += "   VALUES  ";
-                sql += "   ('" + name + "', 'default " + i + "', " + i + ",7 , 0, 0, 0)";
-                command = new SQLiteCommand(sql, userDatabase);
-                command.ExecuteNonQuery();
 
-                //pieces off the board
-                //unit type 7 at 6, 2
-                sql = "   INSERT INTO unitSetups  ";
-                sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
-                sql += "   VALUES  ";
-                sql += "   ('" + name + "', 'default " + i + "', " + i + ",7 , 1, 0, 0)";
-                command = new SQLiteCommand(sql, userDatabase);
-                command.ExecuteNonQuery();
-
-
-                //unit type 3 at 7, 1
-                sql = "   INSERT INTO unitSetups  ";
-                sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
-                sql += "   VALUES  ";
-                sql += "   ('" + name + "', 'default " + i + "', " + i + ",3 , 2, 0, 0)";
-                command = new SQLiteCommand(sql, userDatabase);
-                command.ExecuteNonQuery();
-
-                //unit type 3 at 7, 1
-                sql = "   INSERT INTO unitSetups  ";
-                sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
-                sql += "   VALUES  ";
-                sql += "   ('" + name + "', 'default " + i + "', " + i + ",3 , 3, 0, 0)";
-                command = new SQLiteCommand(sql, userDatabase);
-                command.ExecuteNonQuery();
-
-                //unit type 1 at 7, 1
-                sql = "   INSERT INTO unitSetups  ";
-                sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
-                sql += "   VALUES  ";
-                sql += "   ('" + name + "', 'default " + i + "', " + i + ",1 , 4, 0, 0)";
-                command = new SQLiteCommand(sql, userDatabase);
-                command.ExecuteNonQuery();
-
-                //unit type 8 at 4, 0
-                sql = "   INSERT INTO unitSetups  ";
-                sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
-                sql += "   VALUES  ";
-                sql += "   ('" + name + "', 'default " + i + "', " + i + ",8 , 5, 0, 0)";
-                command = new SQLiteCommand(sql, userDatabase);
-                command.ExecuteNonQuery();
-
-            }
         }
 
         public SQLiteDataReader getBoardSetup(string name, int setupID)
