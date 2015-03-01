@@ -11,8 +11,8 @@ public class GameManager : MonoBehaviour {
 	string combatLogText;
 	Vector2 combatLogScrollPos;
 	private Rect combatLogWindowRect;
-	float combatLogWidth = Screen.width*0.40f;
-	float combatLogHeight = Screen.width*0.28f;
+	float combatLogWidth = Screen.width*0.44f;
+	float combatLogHeight = Screen.width*0.25f;
 	ArrayList combatLogMessages = new ArrayList();
 	bool displayCombatLog;
 
@@ -219,6 +219,7 @@ public class GameManager : MonoBehaviour {
 					info += "";
 				}
 				info += script.mvCost > 0? "\nMove Cost: " + script.mvCost : "";
+	
 				info += script.atkCost > 0? "\nAttack Cost: " + script.atkCost : "";
 			}else{
 				info += "\nFocused! Cannot move or attack!";
@@ -304,7 +305,7 @@ public class GameManager : MonoBehaviour {
 		//Button to toggle between attacking and moving a piece
 		//only change options if changed
 		int prev = unitActionOption;
-		unitActionOption = GUI.SelectionGrid(new Rect(Screen.width*0.52f, Screen.height-((float)Screen.height*0.30f),Screen.width*0.1f, (Screen.height-((float)Screen.height*0.80f))), unitActionOption, unitOptionStrings, 1);
+		unitActionOption = GUI.SelectionGrid(new Rect(Screen.width*0.57f, Screen.height-((float)Screen.height*0.45f),Screen.width*0.27f, (Screen.height-((float)Screen.height*0.9f))), unitActionOption, unitOptionStrings, 2);
 		if (prev != unitActionOption){
 			if (unitActionOption == 0){
 				changeToMoving();
@@ -316,7 +317,7 @@ public class GameManager : MonoBehaviour {
 		//show button for returning to main menu
 
 		if (gameOver){
-			if (GUI.Button (new Rect(Screen.width*0.52f,Screen.height-((float)Screen.height*0.10f),Screen.width*0.1f,(Screen.height-((float)Screen.height*0.90f))),"Lobby")) {
+			if (GUI.Button (new Rect(Screen.width*0.85f,Screen.height-((float)Screen.height*0.45f),Screen.width*0.13f,(Screen.height-((float)Screen.height*0.90f))),"Lobby")) {
 				am.playButtonSFX();
 				DontDestroyOnLoad(GameObject.Find ("GameProcess"));
 				Application.LoadLevel(1);
@@ -324,9 +325,11 @@ public class GameManager : MonoBehaviour {
 		}else if (!gameOver){
 			//End turn button
 			if (turn){
-				if (GUI.Button (new Rect(Screen.width*0.52f,Screen.height-((float)Screen.height*0.10f),Screen.width*0.1f,(Screen.height-((float)Screen.height*0.90f))),"(E)nd Turn")){
+				if (GUI.Button (new Rect(Screen.width*0.85f,Screen.height-((float)Screen.height*0.45f),Screen.width*0.13f,(Screen.height-((float)Screen.height*0.90f))),"(E)nd Turn")){
 					endTurn ();
 				}
+			}else{
+				GUI.Label(new Rect(Screen.width*0.85f,Screen.height-((float)Screen.height*0.45f),Screen.width*0.13f,(Screen.height-((float)Screen.height*0.90f))),"Opponent's Turn");
 			}
 //			}else{
 //				GUI.Label(new Rect(Screen.width*0.335f,Screen.height-((float)Screen.height*0.080f),Screen.width*0.15f,35), "Opponent's Turn");
