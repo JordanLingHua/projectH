@@ -749,7 +749,7 @@ public class GameProcess : MonoBehaviour {
 
 
 		yield return StartCoroutine (attackProcess (tokens, time));
-		yield return new WaitForSeconds (2.0f);
+		yield return new WaitForSeconds (0.5f);//(2.0f);
 
 		if (Int32.Parse (tokens [2]) != 0) {
 						//	
