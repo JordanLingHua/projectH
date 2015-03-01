@@ -1,0 +1,278 @@
+fileFormatVersion: 2
+guid: e579fec1700edf94db8089aa87cce022
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: soulstone_2_front_edit_1_0
+    21300002: soulstone_2_front_edit_1_1
+    21300004: soulstone_2_front_edit_1_2
+    21300006: soulstone_2_front_edit_1_3
+    21300008: soulstone_2_front_edit_1_4
+    21300010: soulstone_2_front_edit_1_5
+    21300012: soulstone_2_front_edit_1_6
+    21300014: soulstone_2_front_edit_1_7
+    21300016: soulstone_2_front_edit_1_8
+    21300018: soulstone_2_front_edit_1_9
+    21300020: soulstone_2_front_edit_1_10
+    21300022: soulstone_2_front_edit_1_11
+    21300024: soulstone_2_front_edit_1_12
+    21300026: soulstone_2_front_edit_1_13
+    21300028: soulstone_2_front_edit_1_14
+    21300030: soulstone_2_front_edit_1_15
+    21300032: soulstone_2_front_edit_1_16
+    21300034: soulstone_2_front_edit_1_17
+    21300036: soulstone_2_front_edit_1_18
+    21300038: soulstone_2_front_edit_1_19
+    21300040: soulstone_2_front_edit_1_20
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: soulstone_2_front_edit_1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soulstone_2_front_edit_1_1
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soulstone_2_front_edit_1_2
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soulstone_2_front_edit_1_3
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soulstone_2_front_edit_1_4
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soulstone_2_front_edit_1_5
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soulstone_2_front_edit_1_6
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soulstone_2_front_edit_1_7
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soulstone_2_front_edit_1_8
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soulstone_2_front_edit_1_9
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soulstone_2_front_edit_1_10
+      rect:
+        serializedVersion: 2
+        x: 1290
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soulstone_2_front_edit_1_11
+      rect:
+        serializedVersion: 2
+        x: 1419
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soulstone_2_front_edit_1_12
+      rect:
+        serializedVersion: 2
+        x: 1548
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soulstone_2_front_edit_1_13
+      rect:
+        serializedVersion: 2
+        x: 1677
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soulstone_2_front_edit_1_14
+      rect:
+        serializedVersion: 2
+        x: 1806
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soulstone_2_front_edit_1_15
+      rect:
+        serializedVersion: 2
+        x: 1935
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soulstone_2_front_edit_1_16
+      rect:
+        serializedVersion: 2
+        x: 2064
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soulstone_2_front_edit_1_17
+      rect:
+        serializedVersion: 2
+        x: 2193
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soulstone_2_front_edit_1_18
+      rect:
+        serializedVersion: 2
+        x: 2322
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soulstone_2_front_edit_1_19
+      rect:
+        serializedVersion: 2
+        x: 2451
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: soulstone_2_front_edit_1_20
+      rect:
+        serializedVersion: 2
+        x: 2580
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
