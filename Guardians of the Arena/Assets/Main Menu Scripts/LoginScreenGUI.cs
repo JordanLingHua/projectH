@@ -29,6 +29,7 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 	PopUpMenu pum;
 
 	bool doWindow0 = true;
+	char c = (char)169;
 	
 	private float leafOffset;
 	private float frameOffset;
@@ -53,7 +54,7 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 	
 	//if you're using the spikes you'll need to find sizes that work well with them these are a few...
 
-	private Rect windowRect0 = new Rect (Screen.width / 2 - 350 / 2, 230, 350, 450);
+	private Rect windowRect0 = new Rect (Screen.width / 2 - 350 / 2, 230, 350, 400);
 
 	void AddSpikes(float winX)
 	{
@@ -188,7 +189,8 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 		//GUILayout.Label("", "Divider");//-------------------------------- custom
 
 		GUILayout.BeginHorizontal();
-		GUILayout.Label ("Produced by\nDaniel & Friends", "ItalicText");//---------------------------------- custom
+
+		GUILayout.Label ("Play2Win Productions " + c, "ItalicText");//---------------------------------- custom
 		GUILayout.EndHorizontal();
 
 		GUILayout.EndVertical();
