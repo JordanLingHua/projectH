@@ -42,7 +42,7 @@ public class Unit    : MonoBehaviour {
 	public AudioManager am;
 	public virtual void Start () {
 		barXOffset = 15;
-		barYOffset = 25;
+		barYOffset = 35;
 		armor = 0;
 		unitLevel = 1;
 		level2Symbol = Resources.Load("Level2Symbol") as Texture2D;
@@ -144,24 +144,31 @@ public class Unit    : MonoBehaviour {
 			}else {
 				info += "\nHeals for: " + -1*atk;
 			}
-			info += mvCost > 0? "\nMove Cost: " + mvCost : "";
+			info += mvCost > 0? "\nMove Cost: " + mvCost: "";
 			info += mvRange >0? "\nMove Range: " + mvRange : "";
 			info += atkCost > 0? "\nAttack Cost: " + atkCost : "";
 			info += atkRange > 0? "\nAttack Range: " + atkRange: "";
 
 
-			GameObject.Find ("Level1BonusNameGUIText").GetComponent<GUIText>().text = (unitType == 11)?"" :"Lvl.2 Bonus: " + levelBonusShort[0];
+			GameObject.Find ("Level1BonusNameGUIText").GetComponent<GUIText>().text = (unitType == 11 || unitType == 21)?"" :"Lvl.2 Bonus: " + levelBonusShort[0];
 			GameObject.Find ("Level1BonusDescriptionGUIText").GetComponent<GUIText>().text =  wordWrap(25,levelBonusLong[0]);
-			GameObject.Find ("Level2BonusNameGUIText").GetComponent<GUIText>().text = (unitType == 11)?"" :"Lvl.3 Bonus: " + levelBonusShort[1];
+			GameObject.Find ("Level2BonusNameGUIText").GetComponent<GUIText>().text = (unitType == 11 || unitType == 21)?"" :"Lvl.3 Bonus: " + levelBonusShort[1];
 			GameObject.Find ("Level2BonusDescriptionGUIText").GetComponent<GUIText>().text = wordWrap(25,levelBonusLong[1]);
 
 			GameObject.Find ("SetupScreenUnitInfo").GetComponent<GUIText>().text = info;
-			if (unitName == "Soulstone"){
+			//soulstone
+			if (unitType == 11){
 				GameObject.Find("UnitDescription").transform.position = new Vector3(0.7f,0.88f);
-			}else if (unitName == "Mystic"){
+
+			//mystic
+			}else if (unitType == 2){
 				GameObject.Find("UnitDescription").transform.position = new Vector3(0.7f,0.62f);
 				GameObject.Find("Level2BonusNameGUIText").transform.position = new Vector3(0.82f,0.77f);
 				GameObject.Find("Level2BonusDescriptionGUIText").transform.position = new Vector3(0.82f,0.74f);
+
+			//rock
+			}else if (unitType == 21){
+				GameObject.Find("UnitDescription").transform.position = new Vector3(0.7f,0.88f);
 			}
 			GameObject.Find ("UnitNameInfo").GetComponent<GUIText>().text = unitName;
 			GameObject.Find("UnitDescription").GetComponent<GUIText>().text = wordWrap(40, description);

@@ -57,12 +57,14 @@ public class AudioManager : MonoBehaviour {
 				if(bgMusic != gameMusic){
 					bgMusic.Stop();
 					bgMusic = gameMusic;
+					bgMusic.loop = true;
 					bgMusic.Play();
 				}
 			}else if (level == 5){
 				if(bgMusic != gameMusic){
 					bgMusic.Stop();
 					bgMusic = gameMusic;
+					bgMusic.loop = true;
 					bgMusic.Play();
 				}
 
@@ -70,6 +72,7 @@ public class AudioManager : MonoBehaviour {
 				if(bgMusic != lobbyMusic){
 					bgMusic.Stop();
 					bgMusic = lobbyMusic;
+					bgMusic.loop = true;
 					bgMusic.Play();
 				}
 			}

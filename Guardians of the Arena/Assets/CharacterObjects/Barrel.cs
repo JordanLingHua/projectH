@@ -8,6 +8,8 @@ using System.Collections;
 public class Barrel : Unit {
 	void Start(){
 		base.Start ();
+		barXOffset = 16;
+		barYOffset = 18;
 		unitType = 20;
 		unitName = "Barrel";
 		description = "Destructable environment. Kill it to open paths.";
