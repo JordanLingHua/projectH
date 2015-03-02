@@ -8,7 +8,6 @@ public class DropDownMenu : MonoBehaviour {
 	private GUIContent[] list;
 	private GUIStyle listStyle;
 	public int tempX, tempY;
-	private int clickCount = 0;
 	public GUISkin mySkin;
 	MainMenuGUI mmg;
 	
@@ -67,11 +66,7 @@ public class DropDownMenu : MonoBehaviour {
 		if (mmg.showGUI && !mmg.challengePending)
 		if (Popup.List (new Rect(mmg.windowRect2.x + tempX, mmg.windowRect2.y + tempY, 105, 25), ref showList,ref  listEntry, new GUIContent("Choose Setup!"), list, listStyle)) {
 			pageNumber.selectedPage = listEntry + 1;
-			//UnityEngine.Debug.Log("listEntry: "+ listEntry);
-		}
-		
-		//GUI.Label (new Rect(50, 70, 400, 20), "Current Setup: " + pageNumber.selectedPage);
-		
+		}		
 	}
 
 	void Update()

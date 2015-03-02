@@ -11,7 +11,6 @@ public class GameProcess : MonoBehaviour {
 	public string playerName;
 	public string[] tempPageNameStorage;
 	public bool play;
-	private bool loaded;
 
 	public DateTime dT;
 	public Stopwatch uniClock;
@@ -53,7 +52,7 @@ public class GameProcess : MonoBehaviour {
 		tempPageNameStorage [2] = "";
 		tempPageNameStorage [3] = "";
 		tempPageNameStorage [4] = "";
-		loaded = false;
+
 	}
 
 
@@ -122,8 +121,6 @@ public class GameProcess : MonoBehaviour {
 			// hasLoggedOut\\playerNameToRemove
 			else if (tokens[0].Equals("hasLoggedOut"))
 			{	
-				loaded = false;
-
 				if (GameObject.Find("ListOfPlayers") != null)
 					GameObject.Find("ListOfPlayers").GetComponent<ListOfPlayersScript>().removePlayer(tokens[1]);
 				
