@@ -6,7 +6,7 @@ using System.Collections;
 //and don't pre-exist elsewhere.  
 
 public class TileManager : MonoBehaviour {
-	
+	Texture2D regularCursor;
 	private int xTiles = 9;
 	private int yTiles = 9;
 	public GameObject[,] tiles;
@@ -18,6 +18,7 @@ public class TileManager : MonoBehaviour {
 	public PopUpMenuNecro pum;
 	
 	void Start () {
+		regularCursor =  Resources.Load("Cursor") as Texture2D;
 		pum =  GameObject.Find("PopUpMenu").GetComponent<PopUpMenuNecro>();
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
@@ -295,8 +296,8 @@ public class TileManager : MonoBehaviour {
 	
 	//Resets color of tiles
 	public void clearAllTiles(){
+		Cursor.SetCursor(regularCursor,Vector2.zero,CursorMode.Auto);
 		for (int i = 0; i < xTiles; i ++){
-			
 			for (int k = 0; k < yTiles; k++){
 				//empty tile
 				if (tiles[i,k].GetComponent<TileScript>().objectOccupyingTile == null){

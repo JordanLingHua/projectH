@@ -7,6 +7,7 @@ public class TileScript : MonoBehaviour {
 	//
 	//protected Animator animator;
 
+	public Texture2D friendlyFireCursor,regularCursor;
 	private class Node{
 		public Node parent;
 		public TileScript myNode;
@@ -33,6 +34,8 @@ public class TileScript : MonoBehaviour {
 
 	GameManager gm;
 	void Start () {
+		regularCursor =  Resources.Load("Cursor") as Texture2D;
+		friendlyFireCursor = Resources.Load("FriendlyFireCursor") as Texture2D;
 		am = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();	
 		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
@@ -66,11 +69,19 @@ public class TileScript : MonoBehaviour {
 		renderer.material.shader = Shader.Find ("Toon/Lighted");
 		if (gm.selectedUnit != null && gm.gs == GameManager.gameState.playerAtk && gm.accessibleTiles.Contains (this)) {
 			AoETiles = gm.selectedUnit.showAoEAffectedTiles(this);
+			//show friendly fire cursor if its not a priest, mystic, and a templar that isn't level 3
+			if (((gm.selectedUnit.unitType != 8 && gm.selectedUnit.unitType != 2) || (gm.selectedUnit.unitType == 3 && gm.selectedUnit.unitLevel != 3)) && objectOccupyingTile != null && ((objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerOne && gp.playerNumber == 1) ||(objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerTwo && gp.playerNumber == 2))){
+				Cursor.SetCursor(friendlyFireCursor,Vector2.zero,CursorMode.Auto);
+			}
 		}
+	}
+
+	void OnGUI(){
 	}
 
 	public void OnMouseExit(){
 		renderer.material.shader = Shader.Find ("Toon/Basic");
+		Cursor.SetCursor(regularCursor,Vector2.zero,CursorMode.Auto);
 		if (gm.selectedUnit != null && gm.gs == GameManager.gameState.playerAtk && gm.accessibleTiles.Contains (this)) {
 			clearAoEAffectedTiles();
 		}

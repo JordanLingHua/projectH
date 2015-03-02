@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour {
 	public Dictionary<int,Unit>	units = new Dictionary<int, Unit>();	
 	
 	void Start () {
+		graveyardText = "Your units lost:\nNone\nEnemy Units Lost:\nNone";
 		displayCombatLog = true;
 		combatLogScrollPos = new Vector2 (0.0f, 0.0f);
 		combatLogText = "";
@@ -84,10 +85,15 @@ public class GameManager : MonoBehaviour {
 		text.GetComponent<ErrorPopUpTextScript> ().StartCoroutine (text.GetComponent<ErrorPopUpTextScript> ().showText (error, Color.red));
 	}
 
-	public void showCenterMessage(string message,Color textColor){
+	public void showCenterMessage(string message,Color textColor,bool fade){
 		GUI.depth = -1;
 		GameObject text = (GameObject) Instantiate(GameObject.Find ("CenterPopUpText"),GameObject.Find ("CenterPopUpText").transform.position,Quaternion.identity);
-		text.GetComponent<CenterPopUpTextScript> ().StartCoroutine (text.GetComponent<CenterPopUpTextScript> ().showText (message,textColor));
+		if (fade) {
+			text.GetComponent<CenterPopUpTextScript> ().StartCoroutine (text.GetComponent<CenterPopUpTextScript> ().showText (message, textColor));
+		} else {
+			text.GetComponent<GUIText>().text = message;
+			text.GetComponent<GUIText>().color = textColor;
+		}
 	}
 
 	void Update () {
@@ -308,41 +314,6 @@ public class GameManager : MonoBehaviour {
 		displayUnitInfo (hoverOverUnit);
 		//set display for mana
 		mana.text = turn? "Mana: " + pMana + "/" + maxMana : "Opponent's Mana: " + pMana + "/" + maxMana;
-//		//Button to toggle between attacking and moving a piece
-//		//only change options if changed
-//		int prev = unitActionOption;
-//		unitActionOption = GUI.SelectionGrid(new Rect(Screen.width*0.57f, Screen.height-((float)Screen.height*0.08f),Screen.width*0.27f, (Screen.height-((float)Screen.height*0.9f))), unitActionOption, unitOptionStrings, 2);
-//		if (prev != unitActionOption){
-//			if (unitActionOption == 0){
-//				changeToMoving();
-//			}else{
-//				print ("Unit action option is " + unitActionOption);
-//				changeToAttacking();
-//			}
-//		}
-//		//show button for returning to main menu
-//
-//		if (gameOver){
-//			if (GUI.Button (new Rect(Screen.width*0.85f,Screen.height-((float)Screen.height*0.45f),Screen.width*0.13f,(Screen.height-((float)Screen.height*0.90f))),"Lobby")) {
-//				am.playButtonSFX();
-//				DontDestroyOnLoad(GameObject.Find ("GameProcess"));
-//				Application.LoadLevel(1);
-//			}
-//		}else if (!gameOver){
-//			//End turn button
-//			if (turn){
-//				if (GUI.Button (new Rect(Screen.width*0.85f,Screen.height-((float)Screen.height*0.45f),Screen.width*0.13f,(Screen.height-((float)Screen.height*0.90f))),"(E)nd Turn")){
-//					endTurn ();
-//				}
-//			}else{
-//				GUI.Label(new Rect(Screen.width*0.85f,Screen.height-((float)Screen.height*0.45f),Screen.width*0.13f,(Screen.height-((float)Screen.height*0.90f))),"Opponent's Turn");
-//			}
-////			}else{
-////				GUI.Label(new Rect(Screen.width*0.335f,Screen.height-((float)Screen.height*0.080f),Screen.width*0.15f,35), "Opponent's Turn");
-////				//GUI.Label(new Rect(Screen.width*0.335f,Screen.height-((float)Screen.height*0.105f),Screen.width*0.3f,(Screen.height-((float)Screen.height*0.905f))), "Opponent's Turn");
-////			}
-//		}
-
 	}
 
 	void endTurn(){
@@ -409,7 +380,7 @@ public class GameManager : MonoBehaviour {
 		pMana = maxMana = mana;
 
 		if (turn){
-			showCenterMessage("Your Turn!",GameObject.Find("CenterPopUpText").GetComponent<GUIText>().color);
+			showCenterMessage("Your Turn!",GameObject.Find("CenterPopUpText").GetComponent<GUIText>().color,true);
 		}
 		//toggle between players turns and reset units
 		tm.clearAllTiles();
