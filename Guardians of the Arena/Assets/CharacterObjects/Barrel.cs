@@ -1,9 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-using UnityEngine;
-using System.Collections;
-
 #pragma warning disable 0114
 public class Barrel : Unit {
 	void Start(){
@@ -19,4 +16,3 @@ public class Barrel : Unit {
 	}
 	
 }
-

@@ -29,8 +29,6 @@ public class GameManager : MonoBehaviour {
 	TileManager tm;
 	GameProcess gp;
 	AudioManager am;
-	int unitActionOption;
-	string[] unitOptionStrings = new string[] {"Mo(v)e","(A)ttack"};
 	//Selected unit and available move squares
 	public Unit selectedUnit = null,hoverOverUnit = null;
 	public HashSet<TileScript> accessibleTiles = new HashSet<TileScript>();
@@ -240,6 +238,7 @@ public class GameManager : MonoBehaviour {
 				}else{
 					info += "";
 				}
+
 				info += script.mvCost > 0? "\nMove Cost: " + script.mvCost : "";
 	
 				info += script.atkCost > 0? "\nAttack Cost: " + script.atkCost : "";
@@ -287,7 +286,6 @@ public class GameManager : MonoBehaviour {
 	}
 	
 	public void clearHoverUnitInfo(){
-		
 		suInfo.text = "";
 		unitNameGUI.text = "";
 		unitDescriptionGUI.text = "";
@@ -313,8 +311,19 @@ public class GameManager : MonoBehaviour {
 		GUI.EndGroup();
 		displayUnitInfo (hoverOverUnit);
 		//set display for mana
-		mana.text = turn? "Mana: " + pMana + "/" + maxMana : "Opponent's Mana: " + pMana + "/" + maxMana;
+		if (turn) {
+			if (selectedUnit != null && gs == gameState.playerAtk && !selectedUnit.atkd && pMana >= selectedUnit.atkCost) {
+				mana.text ="Mana: " + pMana +"(-" + selectedUnit.atkCost+")" + "/" + maxMana;
+			}else if (selectedUnit != null && gs == gameState.playerMv && !selectedUnit.mvd && pMana >= selectedUnit.mvCost) {
+				mana.text ="Mana: " + pMana +"(-" + selectedUnit.mvCost+")" + "/" + maxMana;
+			}else{
+				mana.text = "Mana: " + pMana + "/" + maxMana;
+			}
+		}else{
+			mana.text = "Opponent's Mana: " + pMana + "/" + maxMana;
+		}
 	}
+
 
 	void endTurn(){
 		if (turn) {
@@ -330,7 +339,6 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void changeToAttacking(){
-		unitActionOption = 1;
 		am.playButtonSFX();
 		tm.clearAllTiles();
 		accessibleTiles.Clear();		
@@ -341,7 +349,6 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void changeToMoving(){
-		unitActionOption = 0;
 		am.playButtonSFX();
 		tm.clearAllTiles ();
 		accessibleTiles.Clear ();

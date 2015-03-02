@@ -5,7 +5,7 @@ public class AudioManager : MonoBehaviour {
 
 	public AudioSource bgMusic,gameMusic,unitSFX,buttonSFX,errorSFX,lobbyMusic;
 	float prevMasterVolume;
-	//public AudioClip buttonSFX;
+	//public AudioClip buttonSFX; 
 	public float masterVolume,musicVolume,sfxVolume;
 	void Start () {
 		masterVolume = 1f;
@@ -65,7 +65,7 @@ public class AudioManager : MonoBehaviour {
 					bgMusic.Stop();
 					bgMusic = gameMusic;
 					bgMusic.loop = true;
-					bgMusic.Play();
+					bgMusic.Play(); 
 				}
 
 			}else if (level != 0){
@@ -77,7 +77,7 @@ public class AudioManager : MonoBehaviour {
 				}
 			}
 		}catch(UnityException e){
-
+			print (e);
 		}
 	}
 

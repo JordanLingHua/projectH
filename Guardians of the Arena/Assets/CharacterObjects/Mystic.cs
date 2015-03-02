@@ -21,7 +21,7 @@ public class Mystic: Unit {
 		unitName = "Mystic";
 		hp = 30;
 		maxHP = 30;
-		atk = 0;//change later
+		atk = 0;
 		mvRange = 2;
 		mvCost = 1;
 		atkRange = 3;

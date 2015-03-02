@@ -143,17 +143,17 @@ public class TileScript : MonoBehaviour {
 		//this.objectOccupyingTile. <--------This is another way to access the object
 
 		if (this.GetComponentInChildren<Animator> () != null) {
-						///*
-						if (this.GetComponentInChildren<Animator> ().GetInteger ("mode_and_dir") == 8 || this.GetComponentInChildren<Animator> ().GetInteger ("mode_and_dir") == 12)
-								this.GetComponentInChildren<Animator> ().SetInteger ("mode_and_dir", 0);
-						else if (this.GetComponentInChildren<Animator> ().GetInteger ("mode_and_dir") == 9 || this.GetComponentInChildren<Animator> ().GetInteger ("mode_and_dir") == 13)
-								this.GetComponentInChildren<Animator> ().SetInteger ("mode_and_dir", 1);
-						else if (this.GetComponentInChildren<Animator> ().GetInteger ("mode_and_dir") == 10 || this.GetComponentInChildren<Animator> ().GetInteger ("mode_and_dir") == 14)
-								this.GetComponentInChildren<Animator> ().SetInteger ("mode_and_dir", 2);
-						else if (this.GetComponentInChildren<Animator> ().GetInteger ("mode_and_dir") == 11 || this.GetComponentInChildren<Animator> ().GetInteger ("mode_and_dir") == 15)
-								this.GetComponentInChildren<Animator> ().SetInteger ("mode_and_dir", 3);
-						//*/
-				}
+			///*
+			if (this.GetComponentInChildren<Animator> ().GetInteger ("mode_and_dir") == 8 || this.GetComponentInChildren<Animator> ().GetInteger ("mode_and_dir") == 12)
+					this.GetComponentInChildren<Animator> ().SetInteger ("mode_and_dir", 0);
+			else if (this.GetComponentInChildren<Animator> ().GetInteger ("mode_and_dir") == 9 || this.GetComponentInChildren<Animator> ().GetInteger ("mode_and_dir") == 13)
+					this.GetComponentInChildren<Animator> ().SetInteger ("mode_and_dir", 1);
+			else if (this.GetComponentInChildren<Animator> ().GetInteger ("mode_and_dir") == 10 || this.GetComponentInChildren<Animator> ().GetInteger ("mode_and_dir") == 14)
+					this.GetComponentInChildren<Animator> ().SetInteger ("mode_and_dir", 2);
+			else if (this.GetComponentInChildren<Animator> ().GetInteger ("mode_and_dir") == 11 || this.GetComponentInChildren<Animator> ().GetInteger ("mode_and_dir") == 15)
+					this.GetComponentInChildren<Animator> ().SetInteger ("mode_and_dir", 3);
+			//*/
+		}
 
 		/*
 		//if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 8 || this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 12)
@@ -260,28 +260,13 @@ public class TileScript : MonoBehaviour {
 		}
 		
 		Vector3 newPos;
-		//Vector3 misterPos;
-
-		float tilePeekX;
-		float tilePeekZ;
-		Vector3 movingUnitTransPos;
 
 		while (tiles.Count !=0){
-
-			tilePeekX = tiles.Peek().transform.position.x;
-			tilePeekZ = tiles.Peek().transform.position.z;
-			movingUnitTransPos = movingUnit.transform.position;
 
 			newPos = new Vector3(tiles.Peek().transform.position.x,5f,tiles.Peek().transform.position.z);
 			yield return StartCoroutine(movePiece(movingUnit.gameObject,movingUnit.transform.position,newPos,0.59f));//0.56f at 10 fps));//0.28f));//0.28f
 
 			tiles.Pop();
-
-
-			//Set unit back to neutral animation now that it has moved to the final tile
-
-
-
 
 //			//Set unit back to neutral animation now that it has moved to the final tile
 

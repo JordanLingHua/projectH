@@ -37,6 +37,7 @@ public class GameProcess : MonoBehaviour {
 	private string tempBuffer;
 	
 	void Start () {
+
 		popUpWindowText = new ArrayList();
 		popUpWindowRect = new Rect((Screen.width - 200) / 2,127,400,400);
 		popUpIndex = 0;
@@ -214,6 +215,9 @@ public class GameProcess : MonoBehaviour {
 						break;
 					case "3":
 						playVsAITips();
+						break;
+					case "4":
+						friendlyAttackTip();
 						break;
 				}
 
@@ -662,11 +666,31 @@ public class GameProcess : MonoBehaviour {
 
 		GUILayout.FlexibleSpace ();
 		if (popUpIndex == popUpWindowText.Count - 1) {
-			if (GUILayout.Button ("Close Tip", "ShortButton")) {
-				showPopUpTip = false;
-				if (neverShowPopUpWindow) {
-					returnSocket ().SendTCPPacket ("dontDisplayTip\\" + popUpName);
+			if (popUpName != "4"){
+				if (GUILayout.Button ("Close Tip", "ShortButton")) {
+					showPopUpTip = false;
+					if (neverShowPopUpWindow) {
+						returnSocket ().SendTCPPacket ("dontDisplayTip\\" + popUpName);
+					}
 				}
+			}else{
+				if (GUILayout.Button ("Don't Attack", "ShortButton")) {
+					showPopUpTip = false;
+					returnSocket ().SendTCPPacket ("dontAttack");
+					if (neverShowPopUpWindow) {
+						returnSocket ().SendTCPPacket ("dontDisplayTip\\" + popUpName);
+					}
+				}
+
+				if (GUILayout.Button ("Attack Anyway", "ShortButton")) {
+					showPopUpTip = false;
+					returnSocket ().SendTCPPacket ("attack");
+					if (neverShowPopUpWindow) {
+						returnSocket ().SendTCPPacket ("dontDisplayTip\\" + popUpName);
+					}
+				}
+
+
 			}
 		}
 
@@ -700,8 +724,7 @@ public class GameProcess : MonoBehaviour {
 		popUpWindowText.Add("These tips will pop up to help you understand the game, and this window is movable.");
 	}
 
-
-
+	
 	void playVsAITips(){
 		neverShowPopUpWindow = false;
 		showPopUpTip = true;
@@ -712,6 +735,16 @@ public class GameProcess : MonoBehaviour {
 		popUpWindowText.Add("Welcome to the Arena! Clicking on one of your units will select it and hovering over a unit will show information about it! Pressing escape will de-select the unit.");	
 		popUpWindowText.Add("A unit can either move (shown with green tiles) or attack (shown with red tiles). You can toggle between attacking and moving by either clicking on the buttons on the bottom of your screen, or pressing the 'v' or 'a' keys on your keyboard.");
 		popUpWindowText.Add("Each turn is one minute long mana resets on each turn. Mana will increase as the game progresses to a maximum of 8 mana.");
+	}
+
+	void friendlyAttackTip(){
+		neverShowPopUpWindow = false;
+		showPopUpTip = true;
+		popUpName = "4";
+		popUpTitle = "Warning";
+		popUpIndex = 0;
+		popUpWindowText.Clear ();
+		popUpWindowText.Add("Following through with this attack will damage a friendly unit. Are you sure you want to make this attack?");
 	}
 
 
