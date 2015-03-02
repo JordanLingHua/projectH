@@ -342,7 +342,7 @@ namespace Guardians_Of_The_Arena_Server
 
             Unit tree = new Units.Tree(101);
             tree.CurrentTile = tiles[4, 4];
-            tiles[4, 5].CurrentUnit = tree;
+            tiles[4, 4].CurrentUnit = tree;
             unitTable.Add(tree.UniqueID, tree);
             returnString += "\\" + tree.UniqueID + "\\" + tree.CurrentTile.x + "\\" + tree.CurrentTile.y;
 

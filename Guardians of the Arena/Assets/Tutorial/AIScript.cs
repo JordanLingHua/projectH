@@ -26,7 +26,7 @@ public class AIScript : MonoBehaviour {
 		targetUnits = new List<Unit>();	
 		obstacles = new List<Unit>();	
 		playerUnits = new List<Unit>();	
-		actionDelay = 2.0f;
+		actionDelay = 3.0f;
 	}
 
 	public IEnumerator makeGameAction(Unit u)
@@ -126,9 +126,12 @@ public class AIScript : MonoBehaviour {
 		}
 
 		Unit next = checkForValidGameAction ();
-		//print ("next unit up1 : " + next.name);
-		if (next != null)
-			StartCoroutine(makeGameAction (next));
+
+		if (next != null) 
+		{
+			Debug.Log ("Next unit up: " + next.unitName);
+			StartCoroutine (makeGameAction (next));
+		}
 		else 
 		{
 			yield return new WaitForSeconds (actionDelay);
@@ -151,7 +154,27 @@ public class AIScript : MonoBehaviour {
 				//	readyUnits.Add (u); 
 				//}
 
-				if (u.mvCost <= gameManager.pMana && !u.mvd && !u.atkd && u.unitType != 11)
+				//have mystic perform game action only if not already focusing a unit
+				if (u.unitType == 2 && u.atkCost <= gameManager.pMana && u.GetComponent<Mystic>().unitFocused == null && !u.atkd && !u.mvd)
+				{
+					readyUnits.Add (u);
+				}
+
+				//only add priest to do game action if injured ally exists
+				else if (u.mvCost <= gameManager.pMana && u.unitType == 8 && !u.atkd && !u.mvd)
+				{
+					if (getClosestTarget(u) != null)
+					{
+						readyUnits.Add (u);
+					}
+				}				
+
+				else if (u.atkCost <= gameManager.pMana && !u.atkd && !u.paralyzed && u.unitType != 11)
+				{
+					readyUnits.Add (u);
+				}
+
+				else if (u.mvCost <= gameManager.pMana && !u.mvd && !u.atkd && !u.paralyzed && u.unitType != 11)
 				{
 					readyUnits.Add (u);
 				}
@@ -159,7 +182,9 @@ public class AIScript : MonoBehaviour {
 			if (readyUnits.Count == 0)
 				return null;
 			else
+			{
 				return readyUnits[(int)(rand.NextDouble () * readyUnits.Count)];
+			}
 		}
 		else 
 		{
@@ -175,10 +200,9 @@ public class AIScript : MonoBehaviour {
 
 		switch (toMove.unitType) {
 				//Swordsmen attack barrels and enemies
-				case 1:
+				case 7:
 					foreach (Unit u in gameManager.units.Values) {
 						if ( u != null && u.GetComponent<Unit> ().alleg != Unit.allegiance.playerTwo) {
-							//targetUnits.Add(t.objectOccupyingTile.GetComponent<Unit>());
 							targetUnits.Add (u);
 						}
 					}
@@ -186,18 +210,17 @@ public class AIScript : MonoBehaviour {
 				
 				//All other combat units only attack enemies
 				case 3:
-				case 7:
+				case 1:
 				case 10:
 					foreach (Unit u in gameManager.units.Values) {
 						if ( u != null && u.GetComponent<Unit> ().alleg == Unit.allegiance.playerOne) {
-							//targetUnits.Add(t.objectOccupyingTile.GetComponent<Unit>());
 							targetUnits.Add (u);
 						}
 					}
 				break;
 						
 			
-				//healer targets lowest health ally
+				//healer targets lowest health ally, will not move unless allied unit is injured
 				case 8:
 					foreach (Unit u in gameManager.units.Values) {
 						if (u != null && u.GetComponent<Unit> ().alleg == Unit.allegiance.playerTwo && u.GetComponent<Unit>().unitType != 11 && u.hp < u.maxHP)
@@ -205,11 +228,11 @@ public class AIScript : MonoBehaviour {
 					}
 
 					//no injured units, just go to nearby unit
-					if (targetUnits.Count == 0)
-					foreach (Unit u in gameManager.units.Values) {
-				if (u != null && u.GetComponent<Unit> ().alleg == Unit.allegiance.playerTwo && u.GetComponent<Unit>().unitType != 11 && u.GetComponent<Unit>().unitType != 8)
-							targetUnits.Add (u);
-					}
+					//if (targetUnits.Count == 0)
+					//foreach (Unit u in gameManager.units.Values) {
+				//if (u != null && u.GetComponent<Unit> ().alleg == Unit.allegiance.playerTwo && u.GetComponent<Unit>().unitType != 11 && u.GetComponent<Unit>().unitType != 8)
+							//targetUnits.Add (u);
+					//}
 				break;
 
 				case 2:
@@ -275,8 +298,8 @@ public class AIScript : MonoBehaviour {
 
 		switch (attacker.unitType) 
 		{
-			//Units that attack the players units to deal damage
-			case 1:
+			//Swordsman will prioritize enemies over barrels
+			case 7:
 				foreach (TileScript t in attackTiles) {
 					if(t.objectOccupyingTile != null && t.objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerOne)
 				   		return t;
@@ -286,12 +309,13 @@ public class AIScript : MonoBehaviour {
 				}
 			break;
 
+			//All other combat units only attack enemy units
 			case 3:
-			case 7:
+			case 1:
 			case 10:
 				foreach (TileScript t in attackTiles) {
-					if(t.objectOccupyingTile != null)
-						print ("aaa : " + t.objectOccupyingTile.name);
+					//if(t.objectOccupyingTile != null)
+						//print ("aaa : " + t.objectOccupyingTile.name);
 					if(t.objectOccupyingTile != null && (t.objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerOne))				                                   
 						return t;
 				}
@@ -320,9 +344,8 @@ public class AIScript : MonoBehaviour {
 					}
 
 				}
-				return toHeal;
-		
-			break;
+			return toHeal;
+			//break;
 
 			//Mystic can target enemy or ally but wont move or attack while focusing
 			case 2:
@@ -331,13 +354,14 @@ public class AIScript : MonoBehaviour {
 				foreach (TileScript t in attackTiles) 
 				{
 					if(t.objectOccupyingTile != null && t.objectOccupyingTile.GetComponent<Unit>().alleg != Unit.allegiance.neutral 
-					    && t.objectOccupyingTile.GetComponent<Unit>().unitType != 11)
+					   && t.objectOccupyingTile.GetComponent<Unit>().unitType != 11 && t.objectOccupyingTile.GetComponent<Unit>().unitType != 2)
 						{
+						//Mystic prioritizes focusing allies...
 						   if(t.objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerTwo && !t.objectOccupyingTile.GetComponent<Unit>().mvd)
 								return t;
-							else if (t.objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerOne)
-								return t;
-						
+						//Over paralyzing enemies
+						   else if (t.objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerOne)
+								return t;						
 						}
 				}
 				return null;
@@ -345,7 +369,7 @@ public class AIScript : MonoBehaviour {
 
 			else
 				return null;
-			break;
+			//break;
 
 		}
 

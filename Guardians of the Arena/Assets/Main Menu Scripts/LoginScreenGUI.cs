@@ -229,8 +229,7 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 		//hash an encrypted password for the user
 		using (MD5 md5Hash = MD5.Create())
 		{
-			hash = GetMd5Hash(md5Hash, source);				
-			Console.WriteLine("The MD5 hash of " + source + " is: " + hash + ".");				
+			hash = GetMd5Hash(md5Hash, source);								
 			process.returnSocket().SendTCPPacket("userInfo\\" + userName + "\\" + hash);
 		}
 	}
