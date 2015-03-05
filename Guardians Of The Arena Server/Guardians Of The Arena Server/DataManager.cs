@@ -380,7 +380,7 @@ namespace Guardians_Of_The_Arena_Server
             sql = "   INSERT INTO unitSetups  ";
             sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
             sql += "   VALUES  ";
-            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",1 , 8, 0, 0)";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",1 , 4, 0, 0)";
             command = new SQLiteCommand(sql, userDatabase);
             command.ExecuteNonQuery();
 
@@ -388,7 +388,7 @@ namespace Guardians_Of_The_Arena_Server
             sql = "   INSERT INTO unitSetups  ";
             sql += "   (name, setupName, setupID, unitType, x , y, onField)    ";
             sql += "   VALUES  ";
-            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",8 , 8, 0, 0)";
+            sql += "   ('" + name + "', '" + pageName + "'," + pageNumber + ",8 , 5, 0, 0)";
             command = new SQLiteCommand(sql, userDatabase);
             command.ExecuteNonQuery();
 
