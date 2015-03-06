@@ -169,7 +169,7 @@ public class AIScript : MonoBehaviour {
 					}
 				}				
 
-				else if (u.atkCost <= gameManager.pMana && !u.atkd && !u.paralyzed && u.unitType != 11)
+				else if (u.atkCost <= gameManager.pMana && !u.atkd && !u.mvd && !u.paralyzed && u.unitType != 11)
 				{
 					readyUnits.Add (u);
 				}
