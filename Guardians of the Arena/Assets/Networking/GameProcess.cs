@@ -329,7 +329,7 @@ public class GameProcess : MonoBehaviour {
 			// unitID\\toX\\toY
 			else if (tokens[0].Equals("move"))
 			{
-				gameManager.units[Int32.Parse(tokens[1])].showPopUpText("-" + gameManager.units [Int32.Parse (tokens [1])].mvCost +" mana",Color.blue);
+				gameManager.units[Int32.Parse(tokens[1])].showPopUpText("-" + gameManager.units [Int32.Parse (tokens [1])].mvCost +" mana",Color.cyan);
 				movePiece(Int32.Parse(tokens[1]), Int32.Parse(tokens[2]), Int32.Parse(tokens[3]));
 				if (pum.allowAutoMoveAttackToggle && gameManager.units.ContainsKey(Int32.Parse(tokens[1])) && !gameManager.units[Int32.Parse(tokens[1])].atkd){
 					gameManager.changeToAttacking();
@@ -872,7 +872,7 @@ public class GameProcess : MonoBehaviour {
 							//I think I figured out the problem why the units don't play animation.  The units get destroyed before the animation is accessed.  So 
 							//When all the tiles are read, the null ones get stuck, and the other tiles after it do not get to play the hit animation.  So it's better to move this down here.  
 
-							gameManager.units [Int32.Parse (tokens [1])].showPopUpText("-" + gameManager.units [Int32.Parse (tokens [1])].atkCost + " mana",Color.blue);
+							gameManager.units [Int32.Parse (tokens [1])].showPopUpText("-" + gameManager.units [Int32.Parse (tokens [1])].atkCost + " mana",Color.cyan);
 							if (gameManager.units [Int32.Parse (tokens [1])].unitType == 2) {
 								(gameManager.units [Int32.Parse (tokens [1])] as Mystic).revertStatsOfFocused ();
 							}

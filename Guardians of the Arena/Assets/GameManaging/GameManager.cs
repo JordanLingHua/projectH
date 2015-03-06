@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour {
 	Vector2 combatLogScrollPos;
 	private Rect combatLogWindowRect;
 	float combatLogWidth = Screen.width*0.44f;
-	float combatLogHeight = Screen.width*0.30f;
+	float combatLogHeight = Screen.width*0.32f;
 	ArrayList combatLogMessages = new ArrayList();
 	bool displayCombatLog;
 
@@ -50,9 +50,9 @@ public class GameManager : MonoBehaviour {
 		pMana = 2;
 		maxMana = 2;
 		manaBarXPos = 0.562f;
-		manaBarYPos = 0.535f;
+		manaBarYPos = 0.495f;
 		manaBarWidth = 0.05f;
-		manaBarHeight = -0.47f;
+		manaBarHeight = -0.46f;
 		manaGUIBorder = Resources.Load("manaGUIBorder") as Texture2D;
 		manaGUIFill = Resources.Load("manaGUIFill") as Texture2D;
 
@@ -279,7 +279,7 @@ public class GameManager : MonoBehaviour {
 //			}
 			
 			suInfo.text =  info;
-			unitNameGUI.text = script.alleg != Unit.allegiance.neutral ? "Level " +script.unitLevel + " " + script.unitName : script.unitName;
+			unitNameGUI.text = (script.alleg != Unit.allegiance.neutral && script.unitType != 11) ? "Level " +script.unitLevel + " " + script.unitName : script.unitName;
 			unitDescriptionGUI.text = script.wordWrap (50,script.description);
 			if (!script.paralyzed){
 				if (script.unitLevel >= 2){
@@ -295,11 +295,11 @@ public class GameManager : MonoBehaviour {
 				suLevel2BonusShort.text = (script.unitType == 11 || script.alleg == Unit.allegiance.neutral )?"" :"Lvl.3 Bonus: " + script.levelBonusShort[1];
 				suLevel2BonusLong.text = script.wordWrap(28,script.levelBonusLong[1]);
 				if (script.unitType == 11 || script.unitType == 20 || script.unitType == 21){
-					unitDescriptionGUI.transform.position = new Vector3(0.62f,0.76f);
+					unitDescriptionGUI.transform.position = new Vector3(0.62f,0.86f);
 				}else if (script.unitType == 2){
-					suLevel2BonusShort.transform.position = new Vector3(0.77f,0.66f);
-					suLevel2BonusLong.transform.position = new Vector3(0.77f,0.63f);
-					unitDescriptionGUI.transform.position = new Vector3(0.62f,0.50f);
+					suLevel2BonusShort.transform.position = new Vector3(0.77f,0.76f);
+					suLevel2BonusLong.transform.position = new Vector3(0.77f,0.73f);
+					unitDescriptionGUI.transform.position = new Vector3(0.62f,0.60f);
 
 				}
 			}
@@ -319,9 +319,9 @@ public class GameManager : MonoBehaviour {
 		suLevel1BonusLong.text = "";
 		suLevel2BonusShort.text ="";
 		suLevel2BonusLong.text = "";
-		suLevel2BonusShort.transform.position = new Vector3(0.77f,0.72f);
-		suLevel2BonusLong.transform.position = new Vector3(0.77f,0.69f);
-		unitDescriptionGUI.transform.position = new Vector3(0.62f,0.6f);
+		suLevel2BonusShort.transform.position = new Vector3(0.77f,0.82f);
+		suLevel2BonusLong.transform.position = new Vector3(0.77f,0.79f);
+		unitDescriptionGUI.transform.position = new Vector3(0.62f,0.7f);
 	}
 
 
@@ -342,6 +342,7 @@ public class GameManager : MonoBehaviour {
 	void endTurn(){
 		if (turn) {
 			if (!sentEndTurn){
+				showCenterMessage("Opponent's Turn!",GameObject.Find("CenterPopUpText").GetComponent<GUIText>().color,true);
 				gp.returnSocket ().SendTCPPacket ("endTurn");
 				sentEndTurn = true;
 				am.playTurnEndSFX();
