@@ -52,6 +52,7 @@ public class PlayerSetup : MonoBehaviour {
 
 	public void addRock(int x, int y){
 		SetupTileScript placeTile = tiles[x,y].GetComponent<SetupTileScript>();
+		placeTile.GetComponent<SetupTileScript> ().occupied = true;
 		GameObject rock = (GameObject)Instantiate(Rock, 
 		                                          new Vector3(placeTile.transform.position.x, 5, placeTile.transform.position.z), 
 		                                          new Quaternion());
