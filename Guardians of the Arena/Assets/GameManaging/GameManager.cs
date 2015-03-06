@@ -330,12 +330,11 @@ public class GameManager : MonoBehaviour {
 			if (!sentEndTurn){
 				gp.returnSocket ().SendTCPPacket ("endTurn");
 				sentEndTurn = true;
+				am.playTurnEndSFX();
+			}else{
+				am.playButtonSFX ();
 			}
-			am.playButtonSFX ();
-		} else {
-			am.playButtonSFX ();
-			showErrorMessage("It's not your turn!");
-		}
+		} 
 	}
 
 	public void changeToAttacking(){
@@ -388,6 +387,7 @@ public class GameManager : MonoBehaviour {
 
 		if (turn){
 			showCenterMessage("Your Turn!",GameObject.Find("CenterPopUpText").GetComponent<GUIText>().color,true);
+			am.playTurnStartSFX();
 		}
 		//toggle between players turns and reset units
 		tm.clearAllTiles();
