@@ -783,16 +783,9 @@ public class GameProcess : MonoBehaviour {
 
 		if (Int32.Parse (tokens [2]) != 0) {
 						//	
-						for (int i = 0; i < Int32.Parse (tokens[2]); i ++) {
-								if (gameManager.units [Int32.Parse (tokens [1])].unitType == 2) {
-										(gameManager.units [Int32.Parse (tokens [1])] as Mystic).revertStatsOfFocused ();
-								}
-				
-								bool wasInvincible = gameManager.units [Int32.Parse (tokens [3 + i])].invincible;
-								gameManager.units [Int32.Parse (tokens [1])].attackUnit (gameManager.units [Int32.Parse (tokens [3 + i])]);
-								if (!wasInvincible && gameManager.units.ContainsKey (Int32.Parse (tokens [1]))) {
-										gameManager.units [Int32.Parse (tokens [1])].gainXP ();
-								}
+						for (int i = 0; i < Int32.Parse (tokens[2]); i ++) 
+						{
+								
 								
 								//new
 								//Step 1)  Before you do anything, Transition from neutral_states in the post_attack version, to the actual neutral states
@@ -872,6 +865,20 @@ public class GameProcess : MonoBehaviour {
 												}
 										}
 								}
+
+							//I think I figured out the problem why the units don't play animation.  The units get destroyed before the animation is accessed.  So 
+							//When all the tiles are read, the null ones get stuck, and the other tiles after it do not get to play the hit animation.  So it's better to move this down here.  
+
+							
+							if (gameManager.units [Int32.Parse (tokens [1])].unitType == 2) {
+								(gameManager.units [Int32.Parse (tokens [1])] as Mystic).revertStatsOfFocused ();
+							}
+							
+							bool wasInvincible = gameManager.units [Int32.Parse (tokens [3 + i])].invincible;
+							gameManager.units [Int32.Parse (tokens [1])].attackUnit (gameManager.units [Int32.Parse (tokens [3 + i])]);
+							if (!wasInvincible && gameManager.units.ContainsKey (Int32.Parse (tokens [1]))) {
+								gameManager.units [Int32.Parse (tokens [1])].gainXP ();
+							}
 						}
 				}
 		else
