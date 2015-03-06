@@ -68,6 +68,15 @@ public class Guardian :Unit {
 					enemySSKillable();
 				}
 
+				foreach(Unit u in gm.units.Values)
+				{
+					if(u.alleg == this.alleg && u.unitType == 11)
+					{
+						u.GetComponent<Animator>().SetBool ("ready_for_attack", true);
+					}
+				}
+
+
 				//Kill unit and remove from game
 				gm.addUnitToGraveyard(this.unitName,this.alleg);
 				gm.addLogToCombatLog (this.unitName + " was killed!");

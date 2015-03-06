@@ -28,7 +28,6 @@ public class SoulStone: Unit {
 		string unitAffectedPlayer = ((gp.playerNumber ==  1 && unitAttacking.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && unitAttacking.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
 		string player = ((gp.playerNumber ==  1 && this.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && this.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
 		if (!this.invincible) {
-
 			if (amt > 0){
 				//taking damage
 				this.hp -= (amt - this.armor);
@@ -63,4 +62,8 @@ public class SoulStone: Unit {
 	public override void showMvTiles(allegiance ally){
 		
 	}
+
+	//I was thinking of adding a void update() in here to check if the soulStone is invincible or not to change its animation, 
+	//but it might be too costly just to run this condition if it 
+
 }

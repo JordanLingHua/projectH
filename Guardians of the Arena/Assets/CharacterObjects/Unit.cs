@@ -326,6 +326,18 @@ public class Unit    : MonoBehaviour {
 					gm.addLogToCombatLog (this.unitName + " was killed!");
 				}else{
 					//Kill unit and remove from game
+					/*
+					if(this != null && this.GetComponent<Animator>()!= null)
+					{
+						//If the barrel is in the barrel_broken animation state, destroy the barrel
+						if (this.unitName == "Guardian")
+						{
+							//Animate barrel to exposed mode
+							gp.soulStoneExposed = true;
+						}
+					}
+					*/
+
 					gm.addUnitToGraveyard(this.unitName,this.alleg);
 					gm.addLogToCombatLog (this.unitName + " was killed!");
 					gm.units.Remove (this.unitID);
