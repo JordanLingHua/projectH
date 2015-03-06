@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour {
 	TileManager tm;
 	GameProcess gp;
 	AudioManager am;
+	PopUpMenuNecro pum;
 	//Selected unit and available move squares
 	public Unit selectedUnit = null,hoverOverUnit = null;
 	public HashSet<TileScript> accessibleTiles = new HashSet<TileScript>();
@@ -37,20 +38,36 @@ public class GameManager : MonoBehaviour {
 	readonly float TIMER_LENGTH = 60f;
 	float timer;
 	public Dictionary<int,Unit>	units = new Dictionary<int, Unit>();	
-	
+
+	//mana bar display variables
+	float percentMana;
+	float manaBarXPos ,manaBarYPos ,manaBarWidth, manaBarHeight;
+	public Texture2D manaGUIBorder,manaGUIFill;
+
+
 	void Start () {
+		//mana bar display
+		pMana = 2;
+		maxMana = 2;
+		manaBarXPos = 0.562f;
+		manaBarYPos = 0.535f;
+		manaBarWidth = 0.05f;
+		manaBarHeight = -0.47f;
+		manaGUIBorder = Resources.Load("manaGUIBorder") as Texture2D;
+		manaGUIFill = Resources.Load("manaGUIFill") as Texture2D;
+
+		//combat log info
 		graveyardText = "Your units lost:\nNone\nEnemy Units Lost:\nNone";
 		displayCombatLog = true;
 		combatLogScrollPos = new Vector2 (0.0f, 0.0f);
 		combatLogText = "";
 		combatLogWindowRect = new Rect (Screen.width-combatLogWidth,Screen.height-combatLogHeight+20, combatLogWidth, combatLogHeight);
-		pMana = 2;
-		maxMana = 2;
+
 		timer = TIMER_LENGTH;
 		am = GameObject.Find ("AudioManager").GetComponent<AudioManager> ();
 		gp = GameObject.Find ("GameProcess").GetComponent<GameProcess>();
 		suInfo = GameObject.Find("SelectedUnitInfoGUIText").GetComponent<GUIText>();
-
+		pum = GameObject.Find("PopUpMenu").GetComponent<PopUpMenuNecro>();
 
 		if (Application.loadedLevelName.Equals ("BoardScene") || Application.loadedLevelName.Equals ("AIScene")) {
 			unitNameGUI = GameObject.Find ("SelectedUnitNameGUIText").GetComponent<GUIText> ();
@@ -216,6 +233,10 @@ public class GameManager : MonoBehaviour {
 				displayCombatLog = true;
 			}
 		}
+		if (GUILayout.Button ("Options", "ShortButton")) {
+			pum.doWindow1 = !pum.doWindow1;
+			am.playButtonSFX ();
+		}
 		GUILayout.FlexibleSpace();
 		GUILayout.EndHorizontal ();
 
@@ -305,23 +326,16 @@ public class GameManager : MonoBehaviour {
 
 
 	void OnGUI(){
+		//for Mana Bar
+		percentMana = (float)pMana / maxMana;
+		GUI.DrawTexture (new Rect(Screen.width * manaBarXPos,Screen.height *manaBarYPos,Screen.width * manaBarWidth,Screen.height* manaBarHeight*percentMana * ((float)maxMana/8)),manaGUIFill);
+		GUI.DrawTexture (new Rect(Screen.width * manaBarXPos,Screen.height *manaBarYPos,Screen.width * manaBarWidth,Screen.height* manaBarHeight),manaGUIBorder);
+
 		GUI.skin = mySkin;
 		combatLogWindowRect = GUI.Window (2, combatLogWindowRect, combatLogWindow, "");
 		GUI.BeginGroup (new Rect (0,0,100,100));
 		GUI.EndGroup();
 		displayUnitInfo (hoverOverUnit);
-		//set display for mana
-		if (turn) {
-			if (selectedUnit != null && gs == gameState.playerAtk && !selectedUnit.atkd && pMana >= selectedUnit.atkCost) {
-				mana.text ="Mana: " + pMana +"(-" + selectedUnit.atkCost+")" + "/" + maxMana;
-			}else if (selectedUnit != null && gs == gameState.playerMv && !selectedUnit.mvd && pMana >= selectedUnit.mvCost) {
-				mana.text ="Mana: " + pMana +"(-" + selectedUnit.mvCost+")" + "/" + maxMana;
-			}else{
-				mana.text = "Mana: " + pMana + "/" + maxMana;
-			}
-		}else{
-			mana.text = "Opponent's Mana: " + pMana + "/" + maxMana;
-		}
 	}
 
 

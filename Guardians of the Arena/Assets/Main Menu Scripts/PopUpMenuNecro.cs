@@ -20,7 +20,7 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 	GameProcess gp;
 	int displayWidth = 460;
 	int displayHeight = 620;
-	bool doWindow1 = false;
+	public bool doWindow1 = false;
 
 	private float leafOffset;
 	private float frameOffset;
@@ -292,9 +292,11 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 
 		GUI.BeginGroup (new Rect(Screen.width - (Screen.width*0.065f),0,(Screen.width*0.09f),30));
 		GUILayout.BeginHorizontal();
-		if (GUILayout.Button ("Options", "ShortButton")) {
-			doWindow1 = !doWindow1;
-			am.playButtonSFX();
+		if (!Application.loadedLevelName.Equals ("BoardScene") && !Application.loadedLevelName.Equals ("AIScene")) {
+			if (GUILayout.Button ("Options", "ShortButton")) {
+					doWindow1 = !doWindow1;
+					am.playButtonSFX ();
+			}
 		}
 		GUILayout.EndHorizontal();
 		GUI.EndGroup ();
