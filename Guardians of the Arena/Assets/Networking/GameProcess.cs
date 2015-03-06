@@ -28,7 +28,7 @@ public class GameProcess : MonoBehaviour {
 	string popUpTitle;
 	int popUpIndex;
 	string popUpName;
-	//public bool soulStoneExposed;
+
 	
 	//PRIVATE MEMBERS
 	private Sockets socks;
@@ -795,14 +795,11 @@ public class GameProcess : MonoBehaviour {
 								}
 				
 				
-								if (gameManager.units.ContainsKey (Int32.Parse (tokens [1])) && gameManager.units.ContainsKey (Int32.Parse (tokens [3 + i])) && gameManager.units [Int32.Parse (tokens [3 + i])].GetComponent<Animator> () != null) 
-								{
+								if (gameManager.units.ContainsKey (Int32.Parse (tokens [1])) && gameManager.units.ContainsKey (Int32.Parse (tokens [3 + i])) && gameManager.units [Int32.Parse (tokens [3 + i])].GetComponent<Animator> () != null) {
 					
 										if (gameManager.units.ContainsKey (Int32.Parse (tokens [1])) && gameManager.units [Int32.Parse (tokens [1])].unitName == "Barrel") {
 												gameManager.units [Int32.Parse (tokens [3 + i])].GetComponent<Animator> ().SetBool ("breakTheBarrel", true);
-										} 
-										else 
-										{
+										} else {
 												if (gameManager.units [Int32.Parse (tokens [1])].alleg == Unit.allegiance.playerTwo && playerNumber == 1) {
 														if (gameManager.units [Int32.Parse (tokens [3 + i])].transform.position.z < gameManager.units [Int32.Parse (tokens [1])].transform.position.z)
 																gameManager.units [Int32.Parse (tokens [3 + i])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 12);
@@ -814,8 +811,8 @@ public class GameProcess : MonoBehaviour {
 																gameManager.units [Int32.Parse (tokens [3 + i])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 15);
 							
 												}
-												//If the opponent is controlling player 2
-												else if (gameManager.units [Int32.Parse (tokens [1])].alleg == Unit.allegiance.playerTwo && playerNumber == 2) {
+						//If the opponent is controlling player 2
+						else if (gameManager.units [Int32.Parse (tokens [1])].alleg == Unit.allegiance.playerTwo && playerNumber == 2) {
 														if (gameManager.units [Int32.Parse (tokens [3 + i])].transform.position.z > gameManager.units [Int32.Parse (tokens [1])].transform.position.z)
 																gameManager.units [Int32.Parse (tokens [3 + i])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 12);
 														else if (gameManager.units [Int32.Parse (tokens [3 + i])].transform.position.z < gameManager.units [Int32.Parse (tokens [1])].transform.position.z)
@@ -825,8 +822,8 @@ public class GameProcess : MonoBehaviour {
 														else if (gameManager.units [Int32.Parse (tokens [3 + i])].transform.position.x > gameManager.units [Int32.Parse (tokens [1])].transform.position.x)
 																gameManager.units [Int32.Parse (tokens [3 + i])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 15);
 												}
-												//If you are player 1
-												else if (gameManager.units [Int32.Parse (tokens [1])].alleg == Unit.allegiance.playerOne && playerNumber == 1) {
+						//If you are player 1
+						else if (gameManager.units [Int32.Parse (tokens [1])].alleg == Unit.allegiance.playerOne && playerNumber == 1) {
 														if (gameManager.units [Int32.Parse (tokens [3 + i])].transform.position.z < gameManager.units [Int32.Parse (tokens [1])].transform.position.z)
 																gameManager.units [Int32.Parse (tokens [3 + i])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 12);
 														else if (gameManager.units [Int32.Parse (tokens [3 + i])].transform.position.z > gameManager.units [Int32.Parse (tokens [1])].transform.position.z)
@@ -837,8 +834,8 @@ public class GameProcess : MonoBehaviour {
 																gameManager.units [Int32.Parse (tokens [3 + i])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 15);
 							
 												}
-												//If the opponent is player 1
-												else {
+						//If the opponent is player 1
+						else {
 														if (gameManager.units [Int32.Parse (tokens [3 + i])].transform.position.z > gameManager.units [Int32.Parse (tokens [1])].transform.position.z)
 																gameManager.units [Int32.Parse (tokens [3 + i])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 12);
 														else if (gameManager.units [Int32.Parse (tokens [3 + i])].transform.position.z < gameManager.units [Int32.Parse (tokens [1])].transform.position.z)
@@ -848,22 +845,6 @@ public class GameProcess : MonoBehaviour {
 														else if (gameManager.units [Int32.Parse (tokens [3 + i])].transform.position.x > gameManager.units [Int32.Parse (tokens [1])].transform.position.x)
 																gameManager.units [Int32.Parse (tokens [3 + i])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 15);
 												}
-												
-												//It's better to trigger than check for this condition every time in a loop
-												//For the above however, the if elseif elseif else block is fine because the above triggers only once whenever the unit is hit. 
-												
-												//This however is a simple checking condition everytime hit is called, and we don't need this condition checked everytime.  Just when the guardian dies
-												/*
-												if(soulStoneExposed == true)
-												{
-													if (gameManager.units [Int32.Parse (tokens [3 + i])].unitName == "Soulstone")
-													{
-														gameManager.units [Int32.Parse (tokens [3 + i])].GetComponent<Animator> ().SetBool ("ready_for_attack", true);
-													}
-												}
-												*/
-
-
 										}
 								}
 						}
