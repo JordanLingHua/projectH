@@ -142,7 +142,7 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 				GameObject.Find ("TileManager").GetComponent<TileManager>().displayHPBars(2);
 			}
 		}
-		if (GUILayout.Button ("Off", "ShortButton")|| Application.loadedLevelName.Equals ("AIScene"))
+		if (GUILayout.Button ("Off", "ShortButton"))
 		{
 			am.playButtonSFX();
 			if( Application.loadedLevelName.Equals ("BoardScene")|| Application.loadedLevelName.Equals ("AIScene")){
