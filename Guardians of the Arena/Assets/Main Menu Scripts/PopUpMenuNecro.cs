@@ -121,7 +121,7 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 		if (GUILayout.Button ("All", "ShortButton"))
 		{
 			am.playButtonSFX();
-			if( Application.loadedLevelName.Equals ("BoardScene")){
+			if( Application.loadedLevelName.Equals ("BoardScene")|| Application.loadedLevelName.Equals ("AIScene")){
 				hpSelGridInt = 0;
 				GameObject.Find ("TileManager").GetComponent<TileManager>().displayHPBars(0);
 			}
@@ -129,7 +129,7 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 		if (GUILayout.Button ("Allied", "ShortButton"))
 		{
 			am.playButtonSFX();
-			if( Application.loadedLevelName.Equals ("BoardScene")){
+			if( Application.loadedLevelName.Equals ("BoardScene")|| Application.loadedLevelName.Equals ("AIScene")){
 				hpSelGridInt = 1;
 				GameObject.Find ("TileManager").GetComponent<TileManager>().displayHPBars(1);
 			}
@@ -137,15 +137,15 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 		if (GUILayout.Button ("Enemy", "ShortButton"))
 		{
 			am.playButtonSFX();
-			if( Application.loadedLevelName.Equals ("BoardScene")){
+			if( Application.loadedLevelName.Equals ("BoardScene")|| Application.loadedLevelName.Equals ("AIScene")){
 				hpSelGridInt = 2;
 				GameObject.Find ("TileManager").GetComponent<TileManager>().displayHPBars(2);
 			}
 		}
-		if (GUILayout.Button ("Off", "ShortButton"))
+		if (GUILayout.Button ("Off", "ShortButton")|| Application.loadedLevelName.Equals ("AIScene"))
 		{
 			am.playButtonSFX();
-			if( Application.loadedLevelName.Equals ("BoardScene")){
+			if( Application.loadedLevelName.Equals ("BoardScene")|| Application.loadedLevelName.Equals ("AIScene")){
 				hpSelGridInt = 3;
 				GameObject.Find ("TileManager").GetComponent<TileManager>().displayHPBars(3);
 			}
@@ -160,7 +160,7 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 		if (GUILayout.Button ("All", "ShortButton"))
 		{
 			am.playButtonSFX();
-			if( Application.loadedLevelName.Equals ("BoardScene")){
+			if( Application.loadedLevelName.Equals ("BoardScene")|| Application.loadedLevelName.Equals ("AIScene")){
 				xpSelGridInt = 0;
 				GameObject.Find ("TileManager").GetComponent<TileManager>().displayXPBars(0);
 			}
@@ -168,7 +168,7 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 		if (GUILayout.Button ("Allied", "ShortButton"))
 		{
 			am.playButtonSFX();
-			if( Application.loadedLevelName.Equals ("BoardScene")){
+			if( Application.loadedLevelName.Equals ("BoardScene") || Application.loadedLevelName.Equals ("AIScene") ){
 				xpSelGridInt = 1;
 				GameObject.Find ("TileManager").GetComponent<TileManager>().displayXPBars(1);
 			}
@@ -176,7 +176,7 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 		if (GUILayout.Button ("Enemy", "ShortButton"))
 		{
 			am.playButtonSFX();
-			if( Application.loadedLevelName.Equals ("BoardScene")){
+			if( Application.loadedLevelName.Equals ("BoardScene")|| Application.loadedLevelName.Equals ("AIScene")){
 				xpSelGridInt = 2;
 				GameObject.Find ("TileManager").GetComponent<TileManager>().displayXPBars(2);
 			}
@@ -184,7 +184,7 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 		if (GUILayout.Button ("Off", "ShortButton"))
 		{
 			am.playButtonSFX();
-			if( Application.loadedLevelName.Equals ("BoardScene")){
+			if( Application.loadedLevelName.Equals ("BoardScene")|| Application.loadedLevelName.Equals ("AIScene")){
 				xpSelGridInt = 3;
 				GameObject.Find ("TileManager").GetComponent<TileManager>().displayXPBars(3);
 			}
@@ -311,7 +311,7 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 	
 	// Use this for initialization
 	void Start () {
-		allowAutoMoveAttackToggle = true;
+		allowAutoMoveAttackToggle = false;
 		am = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 		windowRect1 = new Rect (Screen.width / 2 - 350 / 2, 0, displayWidth, displayHeight);

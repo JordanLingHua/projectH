@@ -65,6 +65,7 @@ public class AudioManager : MonoBehaviour {
 				if(bgMusic != gameMusic){
 					bgMusic.Stop();
 					bgMusic = gameMusic;
+					bgMusic.volume = musicVolume * masterVolume;
 					bgMusic.loop = true;
 					bgMusic.Play();
 				}
@@ -72,6 +73,7 @@ public class AudioManager : MonoBehaviour {
 				if(bgMusic != gameMusic){
 					bgMusic.Stop();
 					bgMusic = gameMusic;
+					bgMusic.volume = musicVolume * masterVolume;
 					bgMusic.loop = true;
 					bgMusic.Play(); 
 				}
@@ -80,6 +82,7 @@ public class AudioManager : MonoBehaviour {
 				if(bgMusic != lobbyMusic){
 					bgMusic.Stop();
 					bgMusic = lobbyMusic;
+					bgMusic.volume = musicVolume * masterVolume;
 					bgMusic.loop = true;
 					bgMusic.Play();
 				}

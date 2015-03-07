@@ -67,8 +67,8 @@ public class Unit    : MonoBehaviour {
 			Camera cam = Camera.main;
 			GUI.depth = -1;
 			Vector3 textPos = cam.WorldToScreenPoint (gameObject.transform.position);
-			textPos.x = (textPos.x - 10) / Screen.width;
-			textPos.y = (textPos.y + 20 + (10 * popUpTextNum)) / Screen.height;
+			textPos.x = (textPos.x) / Screen.width;
+			textPos.y = (textPos.y + 35 + (10 * popUpTextNum)) / Screen.height;
 			textPos.z = 0;
 			GameObject text = (GameObject)Instantiate (popUpText, textPos, Quaternion.identity);
 			popUpTextNum++;
@@ -110,6 +110,7 @@ public class Unit    : MonoBehaviour {
 	public void playerSSKillable(){
 		foreach (int key in gm.units.Keys){
 			if (gm.units[key].unitType == 11 && gm.units[key].alleg == allegiance.playerOne){
+				gm.units[key].showPopUpText("Vulnerable to Death!",Color.red);
 				gm.units[key].invincible = false;
 				break;
 			}
@@ -119,6 +120,7 @@ public class Unit    : MonoBehaviour {
 	public void enemySSKillable(){
 		foreach (int key in gm.units.Keys){
 			if (gm.units[key].unitType == 11 && gm.units[key].alleg == allegiance.playerTwo){
+				gm.units[key].showPopUpText("Vulnerable to Death!",Color.red);
 				gm.units[key].invincible = false;
 				break;
 			}

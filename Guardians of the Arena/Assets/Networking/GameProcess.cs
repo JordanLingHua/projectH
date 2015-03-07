@@ -872,7 +872,7 @@ public class GameProcess : MonoBehaviour {
 							//I think I figured out the problem why the units don't play animation.  The units get destroyed before the animation is accessed.  So 
 							//When all the tiles are read, the null ones get stuck, and the other tiles after it do not get to play the hit animation.  So it's better to move this down here.  
 
-							gameManager.units [Int32.Parse (tokens [1])].showPopUpText("-" + gameManager.units [Int32.Parse (tokens [1])].atkCost + " mana",Color.cyan);
+							
 							if (gameManager.units [Int32.Parse (tokens [1])].unitType == 2) {
 								(gameManager.units [Int32.Parse (tokens [1])] as Mystic).revertStatsOfFocused ();
 							}
@@ -898,7 +898,7 @@ public class GameProcess : MonoBehaviour {
 
 	public IEnumerator attackProcess(string[] tokens, float time)
 	{
-
+		gameManager.units [Int32.Parse (tokens [1])].showPopUpText("-" + gameManager.units [Int32.Parse (tokens [1])].atkCost + " mana",Color.cyan);
 		gameManager.pMana -= gameManager.units[Int32.Parse (tokens[1])].atkCost;
 		
 

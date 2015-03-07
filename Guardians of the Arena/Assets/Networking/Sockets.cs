@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Threading;
 
 public class Sockets {
-	private string SERVER_LOCATION = "192.168.1.10";
+	private string SERVER_LOCATION = "68.4.222.253";
 	//private string SERVER_LOCATION = "169.234.54.48";
     const int SERVER_PORT = 4188;
 	

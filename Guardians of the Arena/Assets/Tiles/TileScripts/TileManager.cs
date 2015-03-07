@@ -121,7 +121,7 @@ public class TileManager : MonoBehaviour {
 			//All units
 		case 0:
 			foreach (int key in gm.units.Keys) {
-				if (gm.units [key].alleg != Unit.allegiance.neutral){
+				if (gm.units [key].alleg != Unit.allegiance.neutral && gm.units [key].unitType != 11){
 					gm.units [key].displayXPBar = true;
 				}
 			}
@@ -129,7 +129,7 @@ public class TileManager : MonoBehaviour {
 			//Friendly units
 		case 1:
 			foreach (int key in gm.units.Keys) {
-				if ((gp.playerNumber == 1 && gm.units [key].alleg == Unit.allegiance.playerOne) ||(gp.playerNumber == 2 && gm.units [key].alleg == Unit.allegiance.playerTwo )) {
+				if ( gm.units [key].unitType != 11 && ((gp.playerNumber == 1 && gm.units [key].alleg == Unit.allegiance.playerOne) ||(gp.playerNumber == 2 && gm.units [key].alleg == Unit.allegiance.playerTwo ))) {
 					gm.units [key].displayXPBar = true;
 				} else {
 					gm.units [key].displayXPBar = false;
@@ -139,7 +139,7 @@ public class TileManager : MonoBehaviour {
 			//enemy units
 		case 2:
 			foreach (int key in gm.units.Keys) {
-				if ((gp.playerNumber == 2 && gm.units [key].alleg == Unit.allegiance.playerOne) ||(gp.playerNumber == 1 && gm.units [key].alleg == Unit.allegiance.playerTwo )) {
+				if ( gm.units [key].unitType != 11 && ((gp.playerNumber == 2 && gm.units [key].alleg == Unit.allegiance.playerOne) ||(gp.playerNumber == 1 && gm.units [key].alleg == Unit.allegiance.playerTwo ))) {
 					gm.units [key].displayXPBar = true;
 				} else {
 					gm.units [key].displayXPBar = false;

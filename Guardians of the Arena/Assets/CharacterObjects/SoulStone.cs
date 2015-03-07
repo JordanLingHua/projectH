@@ -5,6 +5,7 @@ public class SoulStone: Unit {
 
 	void Start () {
 		base.Start ();
+		displayXPBar = false;
 		unitType = 11;
 		unitName = "Soulstone";
 		description = "The Soulstone allows the player to control units, if it is destroyed the player loses. It is invincible until the Guardian is killed";
