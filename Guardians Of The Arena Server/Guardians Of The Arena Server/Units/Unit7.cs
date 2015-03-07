@@ -24,6 +24,9 @@ namespace Guardians_Of_The_Arena_Server.Units
 
         public override void Attack(Unit unitAttacking)
         {
+            if (attackCountPerTurn == 1 && alreadyAttacked == false)
+                attackCountPerTurn = 0;
+
             attackCountPerTurn++;
 
             if (level >= 2)

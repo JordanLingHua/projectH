@@ -321,15 +321,22 @@ namespace Guardians_Of_The_Arena_Server
                         }
                         else if (message[0].Equals("surrender"))
                         {
-                            if (currentPlayer.playerAllegiance == Unit.Allegiance.PLAYER_1)
+                            if (isAI_Game)
                             {
                                 player1.playerClient.sw.WriteLine("defeat");
-                                if (!isAI_Game) { player2.playerClient.sw.WriteLine("victory"); }
                             }
                             else
                             {
-                                player1.playerClient.sw.WriteLine("victory");
-                                if (!isAI_Game) { player2.playerClient.sw.WriteLine("defeat"); }
+                                if (currentPlayer.playerAllegiance == Unit.Allegiance.PLAYER_1)
+                                {
+                                    player1.playerClient.sw.WriteLine("defeat");
+                                    player2.playerClient.sw.WriteLine("victory");
+                                }
+                                else
+                                {
+                                    player1.playerClient.sw.WriteLine("victory");
+                                    player2.playerClient.sw.WriteLine("defeat");
+                                }
                             }
 
                             gameOver = true;
