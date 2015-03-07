@@ -262,11 +262,11 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 //		}
 //		GUILayout.EndHorizontal();
 		//not in development
-		GUILayout.BeginHorizontal();
-		if (GUILayout.Button ("Tutorial", "ShortButton")) {
-			Application.LoadLevel("Tutorial");
-		}
-		GUILayout.EndHorizontal();
+//		GUILayout.BeginHorizontal();
+//		if (GUILayout.Button ("Tutorial", "ShortButton")) {
+//			Application.LoadLevel("Tutorial");
+//		}
+//		GUILayout.EndHorizontal();
 		GUI.EndGroup ();
 
 		if (doWindow0)

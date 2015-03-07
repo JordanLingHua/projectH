@@ -233,12 +233,15 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 		allowAutoMoveAttackToggle = GUILayout.Toggle(allowAutoMoveAttackToggle,"Automatically Switch to Attack Phase After Moving");
 		allowEnemyUnitSelection = GUILayout.Toggle (allowEnemyUnitSelection,"Allow Enemy Unit Selection");
 
-		GUILayout.Label("", "Divider");//-------------------------------- custom
 
-		GUILayout.BeginHorizontal();
-		GUILayout.FlexibleSpace();
+
+
 		if (Application.loadedLevelName.Equals("BoardScene") || Application.loadedLevelName.Equals("AIScene")){
+			GUILayout.Label("", "Divider");//-------------------------------- custom
 			//Surrender Button
+			GUILayout.BeginHorizontal();
+			GUILayout.FlexibleSpace();
+
 			if (!GameObject.Find("GameManager").GetComponent<GameManager>().gameOver){
 				if (GUILayout.Button ("Surrender", "ShortButton"))
 				{
@@ -253,10 +256,10 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 					Application.LoadLevel(1);
 				}
 			}
-
+			GUILayout.FlexibleSpace();
+			GUILayout.EndHorizontal();
 		}
-		GUILayout.FlexibleSpace();
-		GUILayout.EndHorizontal();
+
 		GUILayout.Label("", "Divider");//-------------------------------- custom
 
 
