@@ -40,14 +40,11 @@ public class Unit    : MonoBehaviour {
 	public GameProcess gp;
 	public PopUpMenuNecro pum;
 	public AudioManager am;
-	Vector3 unitDescOriginalPos,lvl1BonusNameOriginalPos,lvl1DescriptionOriginalPos,lvl2BonusNameOriginalPos,lvl2DescriptionOriginalPos;
+	Vector3 lvl1BonusNameOriginalPos,lvl1DescriptionOriginalPos,lvl2BonusNameOriginalPos,lvl2DescriptionOriginalPos;
 
 	public float portraitX, portraitY, portraitW, portraitH;
 	public virtual void Start () {
-		portraitX = 0.7f;
-		portraitY = 0.17f;
-		portraitW = 0.11f;
-		portraitH = 0.2f;
+
 		showPortrait = false;
 		barXOffset = 15;
 		barYOffset = 35;
@@ -67,8 +64,15 @@ public class Unit    : MonoBehaviour {
 		pum = GameObject.Find ("PopUpMenu").GetComponent<PopUpMenuNecro> ();
 		if (Application.loadedLevelName.Equals ("BoardScene") || Application.loadedLevelName.Equals ("AIScene")) {
 			gm = GameObject.Find ("GameManager").GetComponent<GameManager> ();
-		} else {			
-			unitDescOriginalPos = GameObject.Find("UnitDescription").transform.position;
+			portraitX = 0.67f;
+			portraitY = 0.14f;
+			portraitW = 0.11f;
+			portraitH = 0.2f;
+		} else {
+			portraitX = 0.7f;
+			portraitY = 0.17f;
+			portraitW = 0.11f;
+			portraitH = 0.2f;
 			lvl1BonusNameOriginalPos = GameObject.Find("Level1BonusNameGUIText").transform.position;
 			lvl1DescriptionOriginalPos = GameObject.Find("Level1BonusDescriptionGUIText").transform.position;
 			lvl2BonusNameOriginalPos = GameObject.Find("Level2BonusNameGUIText").transform.position;
@@ -178,21 +182,12 @@ public class Unit    : MonoBehaviour {
 			GameObject.Find ("Level2BonusDescriptionGUIText").GetComponent<GUIText>().text = wordWrap(90,levelBonusLong[1]);//25
 
 			GameObject.Find ("SetupScreenUnitInfo").GetComponent<GUIText>().text = info;
-			//soulstone
-			if (unitType == 11){
-				GameObject.Find("UnitDescription").transform.position = new Vector3(0.7f,0.63f);
-
-			//mystic
-			}else if (unitType == 2){
-				GameObject.Find("UnitDescription").transform.position = new Vector3(0.7f,0.63f);
+			if (unitType == 2){
 				GameObject.Find("Level1BonusNameGUIText").transform.position = new Vector3(0.7f,0.58f);
 				GameObject.Find("Level1BonusDescriptionGUIText").transform.position = new Vector3(0.7f,0.535f);
 				GameObject.Find("Level2BonusNameGUIText").transform.position = new Vector3(0.7f,0.48f);
 				GameObject.Find("Level2BonusDescriptionGUIText").transform.position = new Vector3(0.7f,0.435f);
 
-			//rock
-			}else if (unitType == 21){
-				GameObject.Find("UnitDescription").transform.position = new Vector3(0.7f,0.63f);
 			}
 			GameObject.Find ("UnitNameInfo").GetComponent<GUIText>().text = unitName;
 			GameObject.Find("UnitDescription").GetComponent<GUIText>().text = wordWrap(40, description);
@@ -251,7 +246,6 @@ public class Unit    : MonoBehaviour {
 			GameObject.Find ("Level2BonusDescriptionGUIText").GetComponent<GUIText>().text = "";
 			GameObject.Find ("UnitNameInfo").GetComponent<GUIText>().text = "";
 			GameObject.Find("UnitDescription").GetComponent<GUIText>().text = "";
-			GameObject.Find("UnitDescription").transform.position = unitDescOriginalPos;
 			GameObject.Find("Level1BonusNameGUIText").transform.position = lvl1BonusNameOriginalPos;
 			GameObject.Find("Level1BonusDescriptionGUIText").transform.position = lvl1DescriptionOriginalPos;
 			GameObject.Find("Level2BonusNameGUIText").transform.position = lvl2BonusNameOriginalPos;

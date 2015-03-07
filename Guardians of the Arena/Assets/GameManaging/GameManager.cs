@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour {
 	Vector2 combatLogScrollPos;
 	private Rect combatLogWindowRect;
 	float combatLogWidth = Screen.width*0.44f;
-	float combatLogHeight = Screen.width*0.32f;
+	float combatLogHeight = Screen.height * 0.48f;	
 	ArrayList combatLogMessages = new ArrayList();
 	bool displayCombatLog;
 
@@ -44,15 +44,14 @@ public class GameManager : MonoBehaviour {
 	float manaBarXPos ,manaBarYPos ,manaBarWidth, manaBarHeight;
 	public Texture2D manaGUIBorder,manaGUIFill;
 
-
 	void Start () {
 		//mana bar display
 		pMana = 2;
 		maxMana = 2;
 		manaBarXPos = 0.562f;
-		manaBarYPos = 0.495f;
+		manaBarYPos = 0.59f;
 		manaBarWidth = 0.05f;
-		manaBarHeight = -0.46f;
+		manaBarHeight = -0.55f;
 		manaGUIBorder = Resources.Load("manaGUIBorder") as Texture2D;
 		manaGUIFill = Resources.Load("manaGUIFill") as Texture2D;
 
@@ -280,7 +279,7 @@ public class GameManager : MonoBehaviour {
 			
 			suInfo.text =  info;
 			unitNameGUI.text = (script.alleg != Unit.allegiance.neutral && script.unitType != 11) ? "Level " +script.unitLevel + " " + script.unitName : script.unitName;
-			unitDescriptionGUI.text = script.wordWrap (50,script.description);
+			unitDescriptionGUI.text = script.wordWrap (50,script.description);//50
 			if (!script.paralyzed){
 				if (script.unitLevel >= 2){
 					suLevel1BonusShort.color = Color.white;
@@ -291,17 +290,9 @@ public class GameManager : MonoBehaviour {
 					suLevel2BonusLong.color = Color.white;
 				}
 				suLevel1BonusShort.text = (script.unitType == 11 || script.alleg == Unit.allegiance.neutral )?"" :"Lvl.2 Bonus: " + script.levelBonusShort[0];
-				suLevel1BonusLong.text = script.wordWrap(28,script.levelBonusLong[0]);
+				suLevel1BonusLong.text = script.wordWrap(90,script.levelBonusLong[0]);//28
 				suLevel2BonusShort.text = (script.unitType == 11 || script.alleg == Unit.allegiance.neutral )?"" :"Lvl.3 Bonus: " + script.levelBonusShort[1];
-				suLevel2BonusLong.text = script.wordWrap(28,script.levelBonusLong[1]);
-				if (script.unitType == 11 || script.unitType == 20 || script.unitType == 21){
-					unitDescriptionGUI.transform.position = new Vector3(0.62f,0.86f);
-				}else if (script.unitType == 2){
-					suLevel2BonusShort.transform.position = new Vector3(0.77f,0.76f);
-					suLevel2BonusLong.transform.position = new Vector3(0.77f,0.73f);
-					unitDescriptionGUI.transform.position = new Vector3(0.62f,0.60f);
-
-				}
+				suLevel2BonusLong.text = script.wordWrap(90,script.levelBonusLong[1]);//28
 			}
 		}
 	}
@@ -319,9 +310,6 @@ public class GameManager : MonoBehaviour {
 		suLevel1BonusLong.text = "";
 		suLevel2BonusShort.text ="";
 		suLevel2BonusLong.text = "";
-		suLevel2BonusShort.transform.position = new Vector3(0.77f,0.82f);
-		suLevel2BonusLong.transform.position = new Vector3(0.77f,0.79f);
-		unitDescriptionGUI.transform.position = new Vector3(0.62f,0.7f);
 	}
 
 
