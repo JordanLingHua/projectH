@@ -125,18 +125,17 @@ public class AIScript : MonoBehaviour {
 			}
 		}
 
-		Unit next = checkForValidGameAction ();
+		if (!gameManager.gameOver) {
+			Unit next = checkForValidGameAction ();
 
-		if (next != null) 
-		{
-			Debug.Log ("Next unit up: " + next.unitName);
-			StartCoroutine (makeGameAction (next));
-		}
-		else 
-		{
-			yield return new WaitForSeconds (actionDelay);
-			firstMove = true;
-			gp.returnSocket ().SendTCPPacket ("endTurn");		
+			if (next != null) {
+					Debug.Log ("Next unit up: " + next.unitName);
+					StartCoroutine (makeGameAction (next));
+			} else {
+					yield return new WaitForSeconds (actionDelay);
+					firstMove = true;
+					gp.returnSocket ().SendTCPPacket ("endTurn");		
+			}
 		}
 	}
 
@@ -155,26 +154,38 @@ public class AIScript : MonoBehaviour {
 				//}
 
 				//have mystic perform game action only if not already focusing a unit
-				if (u.unitType == 2 && u.atkCost <= gameManager.pMana && u.GetComponent<Mystic>().unitFocused == null && !u.atkd && !u.mvd)
+				if (u.unitType == 2)
 				{
+					if (u.atkCost <= gameManager.pMana && u.GetComponent<Mystic>().unitFocused == null && !u.atkd && !u.mvd)
+				{
+					//Debug.Log ("Adding Mystic");
 					readyUnits.Add (u);
+				}
 				}
 
 				//only add priest to do game action if injured ally exists
-				else if (u.mvCost <= gameManager.pMana && u.unitType == 8 && !u.atkd && !u.mvd)
+				else if (u.unitType == 8)
 				{
-					if (getClosestTarget(u) != null)
-					{
-						readyUnits.Add (u);
-					}
-				}				
+					 if (u.mvCost <= gameManager.pMana  && !u.atkd && !u.mvd)
+					 {
+						if (getClosestTarget(u) != null)
+						{
+							readyUnits.Add (u);
+						}
+					 }	
+				}
 
-				else if (u.atkCost <= gameManager.pMana && !u.atkd && !u.mvd && !u.paralyzed && u.unitType != 11)
+				else if (u.unitType == 11)
+				{
+					//do nothing
+				}
+
+				else if (u.atkCost <= gameManager.pMana && !u.atkd && !u.mvd && !u.paralyzed)
 				{
 					readyUnits.Add (u);
 				}
 
-				else if (u.mvCost <= gameManager.pMana && !u.mvd && !u.atkd && !u.paralyzed && u.unitType != 11)
+				else if (u.mvCost <= gameManager.pMana && !u.mvd && !u.atkd && !u.paralyzed)
 				{
 					readyUnits.Add (u);
 				}
@@ -202,8 +213,15 @@ public class AIScript : MonoBehaviour {
 				//Swordsmen attack barrels and enemies
 				case 7:
 					foreach (Unit u in gameManager.units.Values) {
-						if ( u != null && u.GetComponent<Unit> ().alleg != Unit.allegiance.playerTwo) {
-							targetUnits.Add (u);
+						if ( u != null && u.GetComponent<Unit> ().alleg != Unit.allegiance.playerTwo)
+						{
+							if (u.unitType == 11)
+							{
+								if(!u.GetComponent<SoulStone>().invincible)
+									targetUnits.Add (u);
+							}
+							else
+								targetUnits.Add (u);
 						}
 					}
 				break;
@@ -214,9 +232,15 @@ public class AIScript : MonoBehaviour {
 				case 10:
 					foreach (Unit u in gameManager.units.Values) {
 						if ( u != null && u.GetComponent<Unit> ().alleg == Unit.allegiance.playerOne) {
-							targetUnits.Add (u);
-						}
-					}
+							if (u.unitType == 11)
+							{
+								if(!u.GetComponent<SoulStone>().invincible)
+									targetUnits.Add (u);
+							}
+							else
+								targetUnits.Add (u);
+								}
+							}
 				break;
 						
 			
@@ -302,7 +326,15 @@ public class AIScript : MonoBehaviour {
 			case 7:
 				foreach (TileScript t in attackTiles) {
 					if(t.objectOccupyingTile != null && t.objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerOne)
-				   		return t;
+					{
+						if (t.objectOccupyingTile.GetComponent<Unit>().unitType == 11)
+						{
+							if(!t.objectOccupyingTile.GetComponent<SoulStone>().invincible)
+								return t;
+						}
+						else
+							return t;
+					}				   	
 
 				    else if(t.objectOccupyingTile != null && (t.objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.neutral && (t.objectOccupyingTile.GetComponent<Unit>().unitID < 150 && t.objectOccupyingTile.GetComponent<Unit>().unitID > 100)))
 						return t;
@@ -316,9 +348,19 @@ public class AIScript : MonoBehaviour {
 				foreach (TileScript t in attackTiles) {
 					//if(t.objectOccupyingTile != null)
 						//print ("aaa : " + t.objectOccupyingTile.name);
-					if(t.objectOccupyingTile != null && (t.objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerOne))				                                   
-						return t;
-				}
+					if(t.objectOccupyingTile != null && (t.objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerOne))
+					{
+						if (t.objectOccupyingTile.GetComponent<Unit>().unitType == 11)
+						{
+							if(!t.objectOccupyingTile.GetComponent<SoulStone>().invincible)
+								return t;
+					    }
+							else
+								return t;
+						
+					}
+
+			}
 
 			break;
 
