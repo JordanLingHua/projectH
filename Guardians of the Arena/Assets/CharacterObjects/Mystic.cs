@@ -11,6 +11,7 @@ public class Mystic: Unit {
 
 	void Start () {
 		base.Start ();
+		unitPortrait = Resources.Load("MysticPortrait") as Texture2D;
 		unitFocused = null;
 		levelBonusShort [0] = "Greater Focus";
 		levelBonusShort [1] = "Mighty Focus";

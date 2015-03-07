@@ -7,6 +7,7 @@ public class KnifeThrower : Unit {
 
 	void Start () {
 		base.Start ();
+		unitPortrait = Resources.Load("ArcherPortrait") as Texture2D;
 		levelBonusShort [0] = "Farsight";
 		levelBonusShort [1] = "Piercing Light";
 		levelBonusLong [0] = "Gain +1 attack range";

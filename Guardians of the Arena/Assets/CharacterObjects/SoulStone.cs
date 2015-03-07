@@ -5,6 +5,7 @@ public class SoulStone: Unit {
 
 	void Start () {
 		base.Start ();
+		unitPortrait = Resources.Load("SoulstonePortrait") as Texture2D;
 		displayXPBar = false;
 		unitType = 11;
 		unitName = "Soulstone";

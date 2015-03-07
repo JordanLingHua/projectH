@@ -7,6 +7,7 @@ public class Templar : Unit{
 	
 	void Start(){
 		base.Start ();
+		unitPortrait = Resources.Load("TemplarPortrait") as Texture2D;
 		levelBonusShort [0] = "Mighty Swing";
 		levelBonusShort [1] = "Healing Blade";
 		levelBonusLong [0] = "Attacking full health units deals 5 additional damage";

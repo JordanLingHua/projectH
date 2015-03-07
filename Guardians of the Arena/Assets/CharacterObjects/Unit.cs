@@ -4,14 +4,14 @@ using System;
 using System.Collections.Generic;
 
 public class Unit    : MonoBehaviour {
-	
+	public Texture2D unitPortrait;
 	//These get set depending on th	e function call used on this class
 	public enum allegiance{playerOne,neutral,playerTwo};
 	public allegiance alleg;
 	//All these are public, so we can modify them all for now.  
 	public int unitID, xpos, ypos;//, unitType;
 	public int hp,maxHP,atk,mvRange,atkRange,mvCost,atkCost, xp, unitLevel,popUpTextNum,armor;
-	public bool atkd, mvd,paralyzed;
+	public bool atkd, mvd,paralyzed,showPortrait;
 	public string unitName = string.Empty;
 	public string info = string.Empty;
 	public string description = string.Empty;
@@ -40,11 +40,20 @@ public class Unit    : MonoBehaviour {
 	public GameProcess gp;
 	public PopUpMenuNecro pum;
 	public AudioManager am;
+	Vector3 unitDescOriginalPos,lvl1BonusNameOriginalPos,lvl1DescriptionOriginalPos,lvl2BonusNameOriginalPos,lvl2DescriptionOriginalPos;
+
+	public float portraitX, portraitY, portraitW, portraitH;
 	public virtual void Start () {
+		portraitX = 0.7f;
+		portraitY = 0.17f;
+		portraitW = 0.11f;
+		portraitH = 0.2f;
+		showPortrait = false;
 		barXOffset = 15;
 		barYOffset = 35;
 		armor = 0;
 		unitLevel = 1;
+		unitPortrait = Resources.Load("GuardianPortrait") as Texture2D;
 		level2Symbol = Resources.Load("Level2Symbol") as Texture2D;
 		level3Symbol = Resources.Load("Level3Symbol") as Texture2D;
 		popUpText = GameObject.Find ("popUpText");
@@ -56,8 +65,15 @@ public class Unit    : MonoBehaviour {
 		am = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 		pum = GameObject.Find ("PopUpMenu").GetComponent<PopUpMenuNecro> ();
-		if (Application.loadedLevelName.Equals("BoardScene") || Application.loadedLevelName.Equals("AIScene")){
-			gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+		if (Application.loadedLevelName.Equals ("BoardScene") || Application.loadedLevelName.Equals ("AIScene")) {
+			gm = GameObject.Find ("GameManager").GetComponent<GameManager> ();
+		} else {			
+			unitDescOriginalPos = GameObject.Find("UnitDescription").transform.position;
+			lvl1BonusNameOriginalPos = GameObject.Find("Level1BonusNameGUIText").transform.position;
+			lvl1DescriptionOriginalPos = GameObject.Find("Level1BonusDescriptionGUIText").transform.position;
+			lvl2BonusNameOriginalPos = GameObject.Find("Level2BonusNameGUIText").transform.position;
+			lvl2DescriptionOriginalPos = GameObject.Find("Level2BonusDescriptionGUIText").transform.position;
+
 		}
 		info = string.Empty;
 	}	
@@ -105,6 +121,9 @@ public class Unit    : MonoBehaviour {
 			GUI.DrawTexture (new Rect(unitScreenPos.x-15, Screen.height - unitScreenPos.y-(barYOffset-3),  25, 3),hpBarBG);
 			GUI.DrawTexture(new Rect(unitScreenPos.x-15, Screen.height - unitScreenPos.y-(barYOffset-3), ((float)xp/XP_TO_LEVEL[unitLevel-1])* 25, 3),xpBar);
 		}
+		if (showPortrait) {
+			GUI.DrawTexture (new Rect (Screen.width * portraitX, Screen.height * portraitY, Screen.width * portraitW, Screen.height * portraitH), unitPortrait);
+		}
 	}
 
 	public void playerSSKillable(){
@@ -128,8 +147,8 @@ public class Unit    : MonoBehaviour {
 	}
 
 	void OnMouseOver(){
+		showPortrait = true;
 		//show unit info when hovering over it
-
 		if (Application.loadedLevelName.Equals("BoardScene") || Application.loadedLevelName.Equals("AIScene")){
 			transform.parent.GetComponent<TileScript> ().OnMouseOver ();
 			gm.hoverOverUnit = this; 
@@ -138,6 +157,7 @@ public class Unit    : MonoBehaviour {
 			}
 		}else{
 			//used for setup screen info
+
 			string info ="\nHP: " + hp + "/" + maxHP;
 			if (atk > 0){
 				info +="\nDamage: " + atk; 
@@ -153,24 +173,26 @@ public class Unit    : MonoBehaviour {
 
 
 			GameObject.Find ("Level1BonusNameGUIText").GetComponent<GUIText>().text = (unitType == 11 || unitType == 21)?"" :"Lvl.2 Bonus: " + levelBonusShort[0];
-			GameObject.Find ("Level1BonusDescriptionGUIText").GetComponent<GUIText>().text =  wordWrap(25,levelBonusLong[0]);
+			GameObject.Find ("Level1BonusDescriptionGUIText").GetComponent<GUIText>().text =  wordWrap(90,levelBonusLong[0]);
 			GameObject.Find ("Level2BonusNameGUIText").GetComponent<GUIText>().text = (unitType == 11 || unitType == 21)?"" :"Lvl.3 Bonus: " + levelBonusShort[1];
-			GameObject.Find ("Level2BonusDescriptionGUIText").GetComponent<GUIText>().text = wordWrap(25,levelBonusLong[1]);
+			GameObject.Find ("Level2BonusDescriptionGUIText").GetComponent<GUIText>().text = wordWrap(90,levelBonusLong[1]);//25
 
 			GameObject.Find ("SetupScreenUnitInfo").GetComponent<GUIText>().text = info;
 			//soulstone
 			if (unitType == 11){
-				GameObject.Find("UnitDescription").transform.position = new Vector3(0.7f,0.88f);
+				GameObject.Find("UnitDescription").transform.position = new Vector3(0.7f,0.63f);
 
 			//mystic
 			}else if (unitType == 2){
-				GameObject.Find("UnitDescription").transform.position = new Vector3(0.7f,0.62f);
-				GameObject.Find("Level2BonusNameGUIText").transform.position = new Vector3(0.82f,0.77f);
-				GameObject.Find("Level2BonusDescriptionGUIText").transform.position = new Vector3(0.82f,0.74f);
+				GameObject.Find("UnitDescription").transform.position = new Vector3(0.7f,0.63f);
+				GameObject.Find("Level1BonusNameGUIText").transform.position = new Vector3(0.7f,0.58f);
+				GameObject.Find("Level1BonusDescriptionGUIText").transform.position = new Vector3(0.7f,0.535f);
+				GameObject.Find("Level2BonusNameGUIText").transform.position = new Vector3(0.7f,0.48f);
+				GameObject.Find("Level2BonusDescriptionGUIText").transform.position = new Vector3(0.7f,0.435f);
 
 			//rock
 			}else if (unitType == 21){
-				GameObject.Find("UnitDescription").transform.position = new Vector3(0.7f,0.88f);
+				GameObject.Find("UnitDescription").transform.position = new Vector3(0.7f,0.63f);
 			}
 			GameObject.Find ("UnitNameInfo").GetComponent<GUIText>().text = unitName;
 			GameObject.Find("UnitDescription").GetComponent<GUIText>().text = wordWrap(40, description);
@@ -211,6 +233,7 @@ public class Unit    : MonoBehaviour {
 
 
 	void OnMouseExit(){
+		showPortrait = false;
 		//clear unit info when not hovering over it
 		if (Application.loadedLevelName.Equals("BoardScene") || Application.loadedLevelName.Equals("AIScene")){
 			transform.parent.GetComponent<TileScript> ().OnMouseExit ();
@@ -228,9 +251,11 @@ public class Unit    : MonoBehaviour {
 			GameObject.Find ("Level2BonusDescriptionGUIText").GetComponent<GUIText>().text = "";
 			GameObject.Find ("UnitNameInfo").GetComponent<GUIText>().text = "";
 			GameObject.Find("UnitDescription").GetComponent<GUIText>().text = "";
-			GameObject.Find("UnitDescription").transform.position = new Vector3(0.7f,0.71f);
-			GameObject.Find("Level2BonusNameGUIText").transform.position = new Vector3(0.82f,0.83f);
-			GameObject.Find("Level2BonusDescriptionGUIText").transform.position = new Vector3(0.82f,0.8f);
+			GameObject.Find("UnitDescription").transform.position = unitDescOriginalPos;
+			GameObject.Find("Level1BonusNameGUIText").transform.position = lvl1BonusNameOriginalPos;
+			GameObject.Find("Level1BonusDescriptionGUIText").transform.position = lvl1DescriptionOriginalPos;
+			GameObject.Find("Level2BonusNameGUIText").transform.position = lvl2BonusNameOriginalPos;
+			GameObject.Find("Level2BonusDescriptionGUIText").transform.position = lvl2DescriptionOriginalPos;
 		}
 	}
 

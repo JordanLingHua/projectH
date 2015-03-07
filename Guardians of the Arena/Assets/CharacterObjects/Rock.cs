@@ -6,6 +6,7 @@ public class Rock : Unit {
 
 	void Start(){
 		base.Start ();
+		unitPortrait = Resources.Load("RockPortrait") as Texture2D;
 		alleg = allegiance.neutral;
 		displayHPBar = false;
 		unitName = "Rock";

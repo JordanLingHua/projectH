@@ -3,10 +3,11 @@ using System.Collections;
 
 #pragma warning disable 0114
 public class Guardian :Unit {
-
+	
 
 	void Start(){
 		base.Start ();
+		unitPortrait = Resources.Load("GuardianPortrait") as Texture2D;
 		levelBonusShort [0] = "Hardened Skin";
 		levelBonusShort [1] = "Thorns";
 		levelBonusLong [0] = "Cannot take more than 10 damage when attacked";

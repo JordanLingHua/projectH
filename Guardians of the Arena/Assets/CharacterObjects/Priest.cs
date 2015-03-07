@@ -7,6 +7,7 @@ public class Priest : Unit {
 
 	void Start () {
 		base.Start ();
+		unitPortrait = Resources.Load("PriestPortrait") as Texture2D;
 		levelBonusShort [0] = "Mighty Heal";
 		levelBonusShort [1] = "Rain of Light";
 		levelBonusLong [0] = "Heal now heals the target to full health";

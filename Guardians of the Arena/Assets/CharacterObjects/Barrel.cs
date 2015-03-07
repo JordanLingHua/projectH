@@ -5,6 +5,7 @@ using System.Collections;
 public class Barrel : Unit {
 	void Start(){
 		base.Start ();
+		unitPortrait = Resources.Load("BarrelPortrait") as Texture2D;
 		barXOffset = 16;
 		barYOffset = 18;
 		unitType = 20;

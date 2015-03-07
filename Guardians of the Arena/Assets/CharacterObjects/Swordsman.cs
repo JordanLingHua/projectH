@@ -8,6 +8,7 @@ public class Swordsman : Unit {
 
 	 void Start(){
 		base.Start ();
+		unitPortrait = Resources.Load("SwordsmanPortrait") as Texture2D;
 		levelBonusShort [0] = "Lifesteal";
 		levelBonusShort [1] = "Swift Strike";
 		levelBonusLong [0] = "Heals for 5 health on attack";
