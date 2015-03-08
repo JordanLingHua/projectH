@@ -57,7 +57,7 @@ namespace Guardians_Of_The_Arena_Server.Units
 
            damage -= armor;
 
-           if (this.level >= 3)
+           if (this.level >= 3 && damage > 0)
            {
                //int baseDamage = this.damage;
                //this.damage = 5;
