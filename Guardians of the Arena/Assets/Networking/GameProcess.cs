@@ -777,25 +777,12 @@ public class GameProcess : MonoBehaviour {
 								//Step 1)  Before you do anything, Transition from neutral_states in the post_attack version, to the actual neutral states
 								//NOTE:  the post_attack neutral states don't get signified by a mode_and_dir.  occured at exit time of attack.  So mode_and_dir is still 
 								//== the attack state it left off at
-								
+								yield return StartCoroutine(resetToNeutral(tokens, 3 + i));
+								yield return new WaitForSeconds (0.1f);
 								//this.objectOccupyingTile. <--------This is another way to access the object
 								
 								//if(gameManager.units[Int32.Parse (tokens[3 + i])] != null)//This is sometimes out of bounds
-								if( 0 >= (3 + i) && (3+i) <= tokens.Length)
-								{
-									if (gameManager.units[Int32.Parse (tokens[3 + i])].GetComponent<Animator> () != null) {
-														///*
-										if (gameManager.units[Int32.Parse (tokens[3 + i])].GetComponent<Animator> ().GetInteger ("mode_and_dir") == 8 || gameManager.units[Int32.Parse (tokens[3 + i])].GetComponent<Animator> ().GetInteger ("mode_and_dir") == 12)
-											gameManager.units[Int32.Parse (tokens[3 + i])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 0);
-										else if (gameManager.units[Int32.Parse (tokens[3 + i])].GetComponent<Animator> ().GetInteger ("mode_and_dir") == 9 || gameManager.units[Int32.Parse (tokens[3 + i])].GetComponent<Animator> ().GetInteger ("mode_and_dir") == 13)
-											gameManager.units[Int32.Parse (tokens[3 + i])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 1);
-										else if (gameManager.units[Int32.Parse (tokens[3 + i])].GetComponent<Animator> ().GetInteger ("mode_and_dir") == 10 || gameManager.units[Int32.Parse (tokens[3 + i])].GetComponent<Animator> ().GetInteger ("mode_and_dir") == 14)
-											gameManager.units[Int32.Parse (tokens[3 + i])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 2);
-										else if (gameManager.units[Int32.Parse (tokens[3 + i])].GetComponent<Animator> ().GetInteger ("mode_and_dir") == 11 || gameManager.units[Int32.Parse (tokens[3 + i])].GetComponent<Animator> ().GetInteger ("mode_and_dir") == 15)
-											gameManager.units[Int32.Parse (tokens[3 + i])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 3);
-										//*/
-									}
-								}
+								
 								//<-----You need the prerequisite step above whenever the unit getting hit gets hit in the same direction again
 				
 				
@@ -892,19 +879,12 @@ public class GameProcess : MonoBehaviour {
 		//== the attack state it left off at
 		
 		//this.objectOccupyingTile. <--------This is another way to access the object
-		
-		if (gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator> () != null) {
-			///*
-			if (gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator> ().GetInteger ("mode_and_dir") == 8 || gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator> ().GetInteger ("mode_and_dir") == 12)
-				gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 0);
-			else if (gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator> ().GetInteger ("mode_and_dir") == 9 || gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator> ().GetInteger ("mode_and_dir") == 13)
-				gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 1);
-			else if (gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator> ().GetInteger ("mode_and_dir") == 10 || gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator> ().GetInteger ("mode_and_dir") == 14)
-				gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 2);
-			else if (gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator> ().GetInteger ("mode_and_dir") == 11 || gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator> ().GetInteger ("mode_and_dir") == 15)
-				gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 3);
-			//*/
-		}
+		//////
+
+		yield return StartCoroutine(resetToNeutral(tokens, 1));
+		yield return new WaitForSeconds (0.1f);
+
+		//////
 		//<-----You need the prerequisite step above whenever the unit attacking attacks in the same direction again
 		
 		//Step 2)  Now you can use the appropriate states for this attack functionality
@@ -964,6 +944,25 @@ public class GameProcess : MonoBehaviour {
 
 		yield return null;
 
+	}
+
+
+	public IEnumerator resetToNeutral(string[] tokens, int tokenIndex)
+	{
+		if (gameManager.units[Int32.Parse (tokens[tokenIndex])].GetComponent<Animator> () != null) {
+			///*
+			if (gameManager.units[Int32.Parse (tokens[tokenIndex])].GetComponent<Animator> ().GetInteger ("mode_and_dir") == 8 || gameManager.units[Int32.Parse (tokens[tokenIndex])].GetComponent<Animator> ().GetInteger ("mode_and_dir") == 12)
+				gameManager.units[Int32.Parse (tokens[tokenIndex])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 0);
+			else if (gameManager.units[Int32.Parse (tokens[tokenIndex])].GetComponent<Animator> ().GetInteger ("mode_and_dir") == 9 || gameManager.units[Int32.Parse (tokens[tokenIndex])].GetComponent<Animator> ().GetInteger ("mode_and_dir") == 13)
+				gameManager.units[Int32.Parse (tokens[tokenIndex])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 1);
+			else if (gameManager.units[Int32.Parse (tokens[tokenIndex])].GetComponent<Animator> ().GetInteger ("mode_and_dir") == 10 || gameManager.units[Int32.Parse (tokens[tokenIndex])].GetComponent<Animator> ().GetInteger ("mode_and_dir") == 14)
+				gameManager.units[Int32.Parse (tokens[tokenIndex])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 2);
+			else if (gameManager.units[Int32.Parse (tokens[tokenIndex])].GetComponent<Animator> ().GetInteger ("mode_and_dir") == 11 || gameManager.units[Int32.Parse (tokens[tokenIndex])].GetComponent<Animator> ().GetInteger ("mode_and_dir") == 15)
+				gameManager.units[Int32.Parse (tokens[tokenIndex])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 3);
+			//*/
+		}
+
+		yield return null;
 	}
 
 		
