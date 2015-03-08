@@ -169,10 +169,24 @@ namespace Guardians_Of_The_Arena_Server
                 {
                     setupNames += "\\" + reader["setupName"];
                 }
-
+                            
                 client.sw.WriteLine("loginSucceed\\" + clientName + setupNames + "\\0");
                 client.sw.WriteLine("hasLoggedIn\\" + clientName);
-                                               
+
+                reader = dm.ExecuteQuery("SELECT hasPlayedAI FROM playerInfo WHERE name = '" + clientName + "' AND hasPlayedAI = 1");
+
+                if (reader.Read())
+                {
+                    client.sw.WriteLine("enableMatchmaking");
+                }
+
+                reader = dm.ExecuteQuery("SELECT showTip FROM tooltips WHERE name = '" + clientName + "' AND tooltipID = 4 AND showtip = 1");
+
+                if (reader.Read())
+                {
+                    client.sw.WriteLine("enableFriendlyFireTip");
+                }
+
 
                 foreach (Client clientToSend in clientArray)
                 {
@@ -242,12 +256,14 @@ namespace Guardians_Of_The_Arena_Server
                                 }
                                 else if (tokens[0].Equals("playAI")){
 
+                                    dm.ExecuteQuery("UPDATE playerInfo SET hasPlayedAI = 1 WHERE name = '" + client.clientName +"'");
+
                                     client.boardSetup = Int32.Parse(tokens[1]);
                                     Game newGame = new Game(client, client, dm, true);
 
                                     client.gameRef = newGame;
                                     client.inGame = true;
-
+                                                                        
                                     newGame.GameThread.Start();
                                 }
                                 else if (tokens[0].Equals("cancelSearch"))
@@ -436,13 +452,6 @@ namespace Guardians_Of_The_Arena_Server
                 thread = new Thread(new ThreadStart(this.Service));
                 commandQueue = new Queue<string>();
             }
-
-
-            //we will collisions based on the position of the walls
-            //if any of those conditions are true then it is impossible for a collision to have occured
-
-
-
 
             //checks if the client has sent any messages
             public void Service()

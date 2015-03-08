@@ -339,6 +339,8 @@ namespace Guardians_Of_The_Arena_Server
                                 }
                             }
 
+                            player1.playerClient.sw.WriteLine("enableMatchmaking");
+                            player2.playerClient.sw.WriteLine("enableMatchmaking");
                             gameOver = true;
                             player1.playerClient.inGame = false;
                             player2.playerClient.inGame = false;

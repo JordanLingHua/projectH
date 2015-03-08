@@ -30,7 +30,7 @@ namespace Guardians_Of_The_Arena_Server
 
             connectToDatabase();
             
-            clearTable();
+            //clearTable();
             //fillPlayerTable();
             //printTable();
             //dropTable();
@@ -69,13 +69,13 @@ namespace Guardians_Of_The_Arena_Server
         void createTables()
         {
 
-            string sql = "create table playerInfo (name varchar(20), password varchar(50))";
+            string sql = "create table playerInfo (name varchar(20), password varchar(50), hasPlayedAI BIT)";
             SQLiteCommand command = new SQLiteCommand(sql, userDatabase);
             command.ExecuteNonQuery();
 
-            sql = "create table highScores (name varchar(20), score int)";
-            command = new SQLiteCommand(sql, userDatabase);
-            command.ExecuteNonQuery();
+            //sql = "create table highScores (name varchar(20), score int)";
+            //command = new SQLiteCommand(sql, userDatabase);
+            //command.ExecuteNonQuery();
 
             sql = "CREATE TABLE unitSetups(name VARCHAR(20), setupName VARCHAR(50), setupID TINYINT, unitType TINYINT, x TINYINT, y TINYINT, onField BIT)";
             command = new SQLiteCommand(sql, userDatabase);
@@ -96,9 +96,9 @@ namespace Guardians_Of_The_Arena_Server
             SQLiteCommand command = new SQLiteCommand(sql, userDatabase);
             SQLiteDataReader reader = command.ExecuteReader();
 
-            sql = "DELETE FROM highScores";
-            command = new SQLiteCommand(sql, userDatabase);
-            reader = command.ExecuteReader();
+            //sql = "DELETE FROM highScores";
+            //command = new SQLiteCommand(sql, userDatabase);
+            //reader = command.ExecuteReader();
 
             sql = "DELETE FROM unitSetups";
             command = new SQLiteCommand(sql, userDatabase);
@@ -151,9 +151,6 @@ namespace Guardians_Of_The_Arena_Server
             return reader["password"].ToString();
         }
 
-
-
-
         public void getTableEntry(string name)
         {
             string sql = "select * from playerInfo where name=" + "'" + name + "'";
@@ -188,7 +185,7 @@ namespace Guardians_Of_The_Arena_Server
             }
             else
             {
-                sql = "insert into playerInfo (name, password) values(@param1, @param2)";
+                sql = "insert into playerInfo (name, password, hasPlayedAI) values(@param1, @param2, 0)";
                 command = new SQLiteCommand(sql, userDatabase);
                 command.Parameters.Add(new SQLiteParameter("@param1", name));
                 command.Parameters.Add(new SQLiteParameter("@param2", password));
@@ -269,6 +266,7 @@ namespace Guardians_Of_The_Arena_Server
             sql =  "INSERT INTO tooltips (name, tooltipID, showTip) VALUES ('" + name +"' , 1, 1);";
             sql += "INSERT INTO tooltips (name, tooltipID, showTip) VALUES ('" + name + "' , 2, 1);";
             sql += "INSERT INTO tooltips (name, tooltipID, showTip) VALUES('" + name + "' , 3, 1);";
+            sql += "INSERT INTO tooltips (name, tooltipID, showTip) VALUES('" + name + "' , 4, 1);";
 
             SQLiteCommand command = new SQLiteCommand(sql, userDatabase);
             command.ExecuteNonQuery();
@@ -958,6 +956,12 @@ namespace Guardians_Of_The_Arena_Server
              command.Parameters.AddWithValue("@name", name);
              command.Parameters.AddWithValue("@ID", tooltipID);
              command.ExecuteNonQuery();
+         }
+
+        public SQLiteDataReader ExecuteQuery(string query)
+         {
+             SQLiteCommand command = new SQLiteCommand(query, userDatabase);
+             return command.ExecuteReader();
          }
 
         public void sendPacket(string action, string name, int score)
