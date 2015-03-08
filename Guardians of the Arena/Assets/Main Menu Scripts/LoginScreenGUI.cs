@@ -53,7 +53,7 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 	
 	//if you're using the spikes you'll need to find sizes that work well with them these are a few...
 
-	private Rect windowRect0 = new Rect (Screen.width / 2 - 350 / 2, 230, 350, 400);
+	private Rect windowRect0 = new Rect (Screen.width / 2 - 350 / 2, 230, 350, 415);
 
 	void AddSpikes(float winX)
 	{

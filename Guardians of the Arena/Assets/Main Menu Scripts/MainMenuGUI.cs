@@ -275,7 +275,7 @@ public class MainMenuGUI : MonoBehaviour {
 					Application.LoadLevel (2);
 				}
 				GUILayout.FlexibleSpace();
-				if (Popup.List (new Rect(windowRect2.x - 218, windowRect2.y + 164, 105, 25), ref showList,ref  listEntry, new GUIContent("Choose Setup!"), list, listStyle)) {
+				if (Popup.List (new Rect(windowRect2.x - 218, windowRect2.y + 158, 105, 25), ref showList,ref  listEntry, new GUIContent("Choose Setup!"), list, listStyle)) {
 					pageNumber.selectedPage = listEntry + 1;
 				}
 				GUILayout.FlexibleSpace();
