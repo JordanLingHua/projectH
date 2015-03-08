@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class SetupTileScript : MonoBehaviour {
-	PlayerSetup ps;
+
 	public int x,y;
 	public GameObject up,down,left,right;
 
@@ -13,8 +13,6 @@ public class SetupTileScript : MonoBehaviour {
 	public TileType tt;
 
 	void Start () {
-		ps = GameObject.Find("PlayerSetup").GetComponent<PlayerSetup>();
-
 		//This start is called after playersetup is called.  So we need to check if occupied is true
 		if(occupied == true)
 		{

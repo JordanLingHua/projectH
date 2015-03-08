@@ -26,7 +26,6 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 	public bool showReEnterPassword;
 
 	AudioManager am;
-	PopUpMenu pum;
 
 	bool doWindow0 = true;
 	char c = (char)169;
@@ -237,18 +236,18 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 	IEnumerator loginDots()
 	{
 		while (true) {
-						if (loginText.Equals ("Logging in ..."))
-								loginText = ("Logging in ");
-						else if (loginText.Equals ("Invalid Login Info. Try Again."))
-						{
-							//do nothing
-						}
-							
-						else
-								loginText += ".";
+			if (loginText.Equals ("Logging in ..."))
+				loginText = ("Logging in ");
+			else if (loginText.Equals ("Invalid Login Info. Try Again."))
+			{
+				//do nothing
+			}
+				
+			else
+				loginText += ".";
 
-						yield return new WaitForSeconds (0.3f);
-				}
+			yield return new WaitForSeconds (0.3f);
+		}
 	}
 	
 	void OnGUI ()
@@ -303,13 +302,11 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 			enterDown = false;
 				}
 	}
-
-	// Use this for initialization
+	
 	void Start () {
 		loginText = string.Empty;
 		enterDown = false;
 		connected = false;
-		pum = GameObject.Find ("PopUpMenu").GetComponent<PopUpMenu> ();
 		am = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 		process = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 		userName = string.Empty;
@@ -361,11 +358,6 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 	public void resetGuiText()
 	{
 		loginText = string.Empty;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
 	}
 }
 

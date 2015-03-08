@@ -3,7 +3,7 @@ using System.Collections;
 
 #pragma warning disable 0114
 public class Rock : Unit {
-
+	 
 	void Start(){
 		base.Start ();
 		unitPortrait = Resources.Load("RockPortrait") as Texture2D;
