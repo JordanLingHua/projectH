@@ -6,8 +6,8 @@ public class Mystic: Unit {
 	
 	public Unit unitFocused;
 	public int levelOnFocus;
-	GameObject partSys;
-	GameObject partSys2;
+	public GameObject partSys;
+	public GameObject partSys2;
 
 	void Start () {
 		base.Start ();

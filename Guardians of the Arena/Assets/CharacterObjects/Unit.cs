@@ -349,6 +349,16 @@ public class Unit    : MonoBehaviour {
 					gm.addLogToCombatLog (this.unitName + " was killed!");
 				}else{
 					//Kill unit and remove from game
+					if (enemyFocusingThis != null)
+						GameObject.Destroy(enemyFocusingThis.partSys);
+					foreach (Unit u in gm.units.Values) 
+					{
+						if (u.alleg == this.alleg && u.GetComponent<Unit>().unitType == 2 && u.GetComponent<Mystic>().unitFocused != null && u.GetComponent<Mystic>().unitFocused == this)
+						{
+							GameObject.Destroy(u.GetComponent<Mystic>().partSys);
+							break;
+						}
+					}
 					gm.addUnitToGraveyard(this.unitName,this.alleg);
 					gm.addLogToCombatLog (this.unitName + " was killed!");
 					gm.units.Remove (this.unitID);
