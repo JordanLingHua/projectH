@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour {
 
 	//mana bar display variables
 	float percentMana;
-	float manaBarXPos ,manaBarYPos ,manaBarWidth, manaBarHeight;
+	public float manaBarXPos ,manaBarYPos ,manaBarWidth, manaBarHeight;
 	public Texture2D manaGUIBorder,manaGUIFill,manaGUIMask;
 
 	void Start () {
@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour {
 		pMana = 2;
 		maxMana = 2;
 		manaBarXPos = 0.562f;
-		manaBarYPos = 0.59f;
+		manaBarYPos = 0.56f;
 		manaBarWidth = 0.05f;
 		manaBarHeight = -0.55f;
 		manaGUIBorder = Resources.Load("manaGUIBorder") as Texture2D;
