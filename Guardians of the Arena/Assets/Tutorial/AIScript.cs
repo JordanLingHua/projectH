@@ -157,10 +157,10 @@ public class AIScript : MonoBehaviour {
 				if (u.unitType == 2)
 				{
 					if (u.atkCost <= gameManager.pMana && u.GetComponent<Mystic>().unitFocused == null && !u.atkd && !u.mvd)
-				{
-					//Debug.Log ("Adding Mystic");
-					readyUnits.Add (u);
-				}
+					{
+						//Debug.Log ("Adding Mystic");
+						readyUnits.Add (u);
+					}
 				}
 
 				//only add priest to do game action if injured ally exists
@@ -259,11 +259,14 @@ public class AIScript : MonoBehaviour {
 					//}
 				break;
 
+				//prioritize focusing allies, but paralyze enemies if no allies exist
 				case 2:
 					if(toMove.GetComponent<Mystic>().unitFocused == null)
 					{
 						foreach (Unit u in gameManager.units.Values) {
 							if (u != null && u.GetComponent<Unit> ().alleg == Unit.allegiance.playerTwo && u.GetComponent<Unit>().unitType != 11 && u.GetComponent<Unit>().unitType != 2)
+								targetUnits.Add (u);
+							else if (u != null && u.GetComponent<Unit> ().alleg == Unit.allegiance.playerOne && u.GetComponent<Unit>().unitType != 11)
 								targetUnits.Add (u);
 						}
 					}
