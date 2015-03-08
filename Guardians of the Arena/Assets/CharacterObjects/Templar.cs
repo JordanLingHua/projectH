@@ -27,6 +27,107 @@ public class Templar : Unit{
 		renderer.material.color = new Color32(255,255,0,1);
 	}
 
+	public override HashSet<TileScript> getFriendlyFireHitTiles(){
+		HashSet<TileScript> ret = new HashSet<TileScript>();
+		TileScript tileS = this.transform.parent.GetComponent<TileScript> ();
+		HashSet<TileScript> tempSet = new HashSet<TileScript>();
+		TileScript temp = tileS;
+		if (unitLevel != 3) {
+			//check up
+			if (temp.up != null) {
+					tempSet.Add (temp.up.GetComponent<TileScript> ());
+					temp = temp.up.GetComponent<TileScript> ();
+					if (temp.up != null) {
+							tempSet.Add (temp.up.GetComponent<TileScript> ());
+							temp = temp.up.GetComponent<TileScript> ();
+							if (temp.right != null) {
+									tempSet.Add (temp.right.GetComponent<TileScript> ());
+							}
+							if (temp.left != null) {
+									tempSet.Add (temp.left.GetComponent<TileScript> ());
+							}
+					}
+			}
+			foreach (TileScript tile in tempSet) {
+					if (tile.objectOccupyingTile != null && ((gp.playerNumber == 1 && tile.objectOccupyingTile.GetComponent<Unit> ().alleg == allegiance.playerOne) || (gp.playerNumber == 2 && tile.GetComponent<TileScript> ().objectOccupyingTile.GetComponent<Unit> ().alleg == allegiance.playerTwo))) {
+							ret.Add (tileS.up.GetComponent<TileScript> ());
+							break;
+					}
+			}
+			temp = tileS;
+			tempSet.Clear ();
+
+			//check down
+			if (temp.down != null) {
+					tempSet.Add (temp.down.GetComponent<TileScript> ());
+					temp = temp.down.GetComponent<TileScript> ();
+					if (temp.down != null) {
+							tempSet.Add (temp.down.GetComponent<TileScript> ());
+							temp = temp.down.GetComponent<TileScript> ();
+							if (temp.right != null) {
+									tempSet.Add (temp.right.GetComponent<TileScript> ());
+							}
+							if (temp.left != null) {
+									tempSet.Add (temp.left.GetComponent<TileScript> ());
+							}
+					}
+			}
+			foreach (TileScript tile in tempSet) {
+					if (tile.objectOccupyingTile != null && ((gp.playerNumber == 1 && tile.objectOccupyingTile.GetComponent<Unit> ().alleg == allegiance.playerOne) || (gp.playerNumber == 2 && tile.GetComponent<TileScript> ().objectOccupyingTile.GetComponent<Unit> ().alleg == allegiance.playerTwo))) {
+							ret.Add (tileS.down.GetComponent<TileScript> ());
+							break;
+					}
+			}
+			temp = tileS;
+			tempSet.Clear ();
+			//check left
+			if (temp.left != null) {
+					tempSet.Add (temp.left.GetComponent<TileScript> ());
+					temp = temp.left.GetComponent<TileScript> ();
+					if (temp.left != null) {
+							tempSet.Add (temp.left.GetComponent<TileScript> ());
+							temp = temp.left.GetComponent<TileScript> ();
+							if (temp.up != null) {
+									tempSet.Add (temp.up.GetComponent<TileScript> ());
+							}
+							if (temp.down != null) {
+									tempSet.Add (temp.down.GetComponent<TileScript> ());
+							}
+					}
+			}
+			foreach (TileScript tile in tempSet) {
+				if (tile.objectOccupyingTile != null && ((gp.playerNumber == 1 && tile.objectOccupyingTile.GetComponent<Unit> ().alleg == allegiance.playerOne) || (gp.playerNumber == 2 && tile.GetComponent<TileScript> ().objectOccupyingTile.GetComponent<Unit> ().alleg == allegiance.playerTwo))) {
+					ret.Add (tileS.left.GetComponent<TileScript> ());
+					break;
+				}
+			}
+			temp = tileS;
+			tempSet.Clear ();
+			//check right
+			if (temp.right != null) {
+				tempSet.Add (temp.right.GetComponent<TileScript> ());
+				temp = temp.right.GetComponent<TileScript> ();
+				if (temp.right != null) {
+					tempSet.Add (temp.right.GetComponent<TileScript> ());
+					temp = temp.right.GetComponent<TileScript> ();
+					if (temp.up != null) {
+							tempSet.Add (temp.up.GetComponent<TileScript> ());
+					}
+					if (temp.down != null) {
+							tempSet.Add (temp.down.GetComponent<TileScript> ());
+					}
+				}
+			}
+			foreach (TileScript tile in tempSet) {
+				if (tile.objectOccupyingTile != null && ((gp.playerNumber == 1 && tile.objectOccupyingTile.GetComponent<Unit> ().alleg == allegiance.playerOne) || (gp.playerNumber == 2 && tile.GetComponent<TileScript> ().objectOccupyingTile.GetComponent<Unit> ().alleg == allegiance.playerTwo))) {
+					ret.Add (tileS.right.GetComponent<TileScript> ());
+					break;
+				}
+			}
+		}
+		return ret;
+	}
+
 	public override void attackUnit(Unit unitAffected){
 		atkd = true;	
 		//level 3 Heal ally units

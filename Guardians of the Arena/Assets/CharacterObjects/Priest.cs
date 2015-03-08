@@ -27,6 +27,12 @@ public class Priest : Unit {
 		renderer.material.color = new Color32(204,255,153,1);
 	}
 
+	public override HashSet<TileScript> getFriendlyFireHitTiles(){
+		HashSet<TileScript> ret = new HashSet<TileScript>();
+		return ret;
+	}
+
+
 	public override void attackUnit(Unit unitAffected){
 		if (unitLevel == 3 && atkd){
 			unitAffected.takeDmg(this,-10);

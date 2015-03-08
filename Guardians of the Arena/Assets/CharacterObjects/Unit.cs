@@ -440,12 +440,12 @@ public class Unit    : MonoBehaviour {
 
 	}	
 
-	public virtual HashSet<TileScript> getNonFriendlyFireHitTiles(){
-		HashSet<TileScript> ret = getAtkAccessibleTiles();
-
-		foreach (TileScript tile in ret){
-			if (tile.objectOccupyingTile != null){
-				
+	public virtual HashSet<TileScript> getFriendlyFireHitTiles(){
+		HashSet<TileScript> temp = getAtkAccessibleTiles();
+		HashSet<TileScript> ret = new HashSet<TileScript>();
+		foreach (TileScript tile in temp){
+			if (tile.objectOccupyingTile != null && ((gp.playerNumber == 1 && tile.objectOccupyingTile.GetComponent<Unit>().alleg == allegiance.playerOne ) || (gp.playerNumber == 2 &&  tile.objectOccupyingTile.GetComponent<Unit>().alleg == allegiance.playerTwo ))){
+				ret.Add(tile);
 			}
 		}
 		return ret;

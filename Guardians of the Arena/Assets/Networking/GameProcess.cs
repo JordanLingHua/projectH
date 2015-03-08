@@ -29,7 +29,7 @@ public class GameProcess : MonoBehaviour {
 	string popUpTitle;
 	int popUpIndex;
 	string popUpName;
-
+	public string packetToSend;
 	
 	//PRIVATE MEMBERS
 	private Sockets socks;
@@ -659,7 +659,6 @@ public class GameProcess : MonoBehaviour {
 			}else{
 				if (GUILayout.Button ("Don't Attack", "ShortButton")) {
 					showPopUpTip = false;
-					returnSocket ().SendTCPPacket ("dontAttack");
 					if (neverShowPopUpWindow) {
 						returnSocket ().SendTCPPacket ("dontDisplayTip\\" + popUpName);
 					}
@@ -667,7 +666,7 @@ public class GameProcess : MonoBehaviour {
 
 				if (GUILayout.Button ("Attack Anyway", "ShortButton")) {
 					showPopUpTip = false;
-					returnSocket ().SendTCPPacket ("attack");
+					returnSocket().SendTCPPacket(packetToSend);
 					if (neverShowPopUpWindow) {
 						returnSocket ().SendTCPPacket ("dontDisplayTip\\" + popUpName);
 					}
@@ -720,7 +719,7 @@ public class GameProcess : MonoBehaviour {
 		popUpWindowText.Add("There is no time limit in vs AI mode, but when you play against other players each turn is one minute long. Mana will increase as the game progresses to a maximum of 8 mana.");
 	}
 
-	void friendlyAttackTip(){
+	public void friendlyAttackTip(){
 		neverShowPopUpWindow = false;
 		showPopUpTip = true;
 		popUpName = "4";

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 #pragma warning disable 0114
 public class Mystic: Unit {
@@ -30,6 +31,11 @@ public class Mystic: Unit {
 		//unitRole = "BuffDebuff";
 		unitRole = 504;//BuffDebuff
 		renderer.material.color = new Color32(255,128,0,1);
+	}
+
+	public override HashSet<TileScript> getFriendlyFireHitTiles(){
+		HashSet<TileScript> ret = new HashSet<TileScript>();
+		return ret;
 	}
 
 	public void revertStatsOfFocused(){
