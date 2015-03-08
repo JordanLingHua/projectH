@@ -32,9 +32,6 @@ public class Unit    : MonoBehaviour {
 	public int unitType;
 	public int unitRole;//compare this int to the ints provided inside gameManager or wherever unitRole is compared
 
-
-
-
 	public Texture2D hpBarBG,hpBarHigh,hpBarMedium,hpBarLow,xpBar,level2Symbol,level3Symbol;
 	public GameManager gm;
 	public GameProcess gp;
@@ -426,12 +423,23 @@ public class Unit    : MonoBehaviour {
 			gm.accessibleTiles = tiles;
 			foreach (TileScript tile in tiles){
 				if (tile.objectOccupyingTile == null){
-				tile.renderer.material.color = Color.green;
+					tile.renderer.material.color = Color.green;
 				}
 			}
 		}
 
 	}	
+
+	public virtual HashSet<TileScript> getNonFriendlyFireHitTiles(){
+		HashSet<TileScript> ret = getAtkAccessibleTiles();
+
+		foreach (TileScript tile in ret){
+			if (tile.objectOccupyingTile != null){
+				
+			}
+		}
+		return ret;
+	}
 
 	public virtual void resetUnitAbilities(){
 		atkd = false;

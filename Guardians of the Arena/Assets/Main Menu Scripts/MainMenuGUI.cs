@@ -154,21 +154,27 @@ public class MainMenuGUI : MonoBehaviour {
 		{
 			if (!challengePending) 
 			{
-				GUILayout.BeginHorizontal();
-				GUILayout.FlexibleSpace();
-				if (GUILayout.Button ("Start Matchmaking", "ShortButton")) 
-				{
-					am.playButtonSFX ();
-					//send search request
-					gp.returnSocket ().SendTCPPacket ("search\\" + pageNumber.selectedPage);
+				if (gp.enableMatchmaking){
+					GUILayout.BeginHorizontal();
+					GUILayout.FlexibleSpace();
+					if (GUILayout.Button ("Start Matchmaking", "ShortButton")) 
+					{
+						am.playButtonSFX ();
+						//send search request
+						gp.returnSocket ().SendTCPPacket ("search\\" + pageNumber.selectedPage);
 
-					infoText = "Searching for Opponent...";
-					showGUI = false;
+						infoText = "Searching for Opponent...";
+						showGUI = false;
+					}
+					GUILayout.FlexibleSpace();
+					GUILayout.EndHorizontal();
+
+				}else{
+
+					GUILayout.Label ("Play vs AI to Enable Matchmaking");
 				}
-				GUILayout.FlexibleSpace();
-				GUILayout.EndHorizontal();
-				GUILayout.Label("", "Divider");//-------------------------------- custom
 
+				GUILayout.Label("", "Divider");//-------------------------------- custom
 				GUILayout.BeginHorizontal();
 				GUILayout.FlexibleSpace();
 				if (GUILayout.Button ("Play vs AI", "ShortButton")) 

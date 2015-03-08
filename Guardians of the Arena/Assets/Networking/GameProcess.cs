@@ -24,6 +24,7 @@ public class GameProcess : MonoBehaviour {
 	//variables for popup windows and tips
 	public Rect popUpWindowRect;
 	bool showPopUpTip,neverShowPopUpWindow;
+	public bool showFriendlyFireTip,enableMatchmaking;
 	ArrayList popUpWindowText;
 	string popUpTitle;
 	int popUpIndex;
@@ -200,9 +201,11 @@ public class GameProcess : MonoBehaviour {
 				print (tokens[1] +" " + tokens[2]);
 				GameObject.Find ("GlobalChat").GetComponent<globalChatScript>().addLineToChat(tokens[1], tokens[2]);
 			}
-			
-			else if (tokens[0].Equals("showTip"))
-			{
+			else if (tokens[0].Equals("enableMatchmaking")){
+				enableMatchmaking = true;
+			}else if (tokens[0].Equals("enableFriendlyFireTip")){
+				showFriendlyFireTip = true;
+			}else if (tokens[0].Equals("showTip")){
 				switch(tokens[1]){
 					case "1":
 						firstLoginTips();
@@ -212,9 +215,6 @@ public class GameProcess : MonoBehaviour {
 						break;
 					case "3":
 						playVsAITips();
-						break;
-					case "4":
-						friendlyAttackTip();
 						break;
 				}
 
@@ -581,23 +581,6 @@ public class GameProcess : MonoBehaviour {
 		//game lobby
 		if (sceneNumber == 1) {
 			returnSocket().SendTCPPacket("requestTooltip\\1");
-//			PageNameScript pns = GameObject.Find("PageInfo").GetComponent<PageNameScript>();
-//			pns.pages = new string[5];
-//			if (!loaded){
-//				loaded = true;
-//			
-//			for (int i = 0; i < 5; i++)
-//			{
-//				pns.pages[i] = tempPageNameStorage[i];
-//			}
-//		}
-//
-//			else{
-//				for (int i = 0; i < 5; i++)
-//				{
-//				pns.pages[i] = GameObject.Find ("PageInfo").GetComponent<PageNameScript>().pages[i];
-//				}
-//			}
 			returnSocket().SendTCPPacket("pageNames");
 				
 		}
@@ -734,7 +717,7 @@ public class GameProcess : MonoBehaviour {
 		popUpWindowText.Clear ();
 		popUpWindowText.Add("Welcome to the Arena! Clicking on one of your units will select it and hovering over a unit will show information about it! Pressing escape will de-select the unit.");	
 		popUpWindowText.Add("A unit can either move (shown with green tiles) or attack (shown with red tiles). You can toggle between attacking and moving by either clicking on the buttons on the bottom of your screen, or pressing the 'v' or 'a' keys on your keyboard.");
-		popUpWindowText.Add("Each turn is one minute long mana resets on each turn. Mana will increase as the game progresses to a maximum of 8 mana.");
+		popUpWindowText.Add("There is no time limit in vs AI mode, but when you play against other players each turn is one minute long. Mana will increase as the game progresses to a maximum of 8 mana.");
 	}
 
 	void friendlyAttackTip(){
