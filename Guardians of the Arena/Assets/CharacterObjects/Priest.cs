@@ -15,8 +15,8 @@ public class Priest : Unit {
 		description = "A great support healing unit that can help her allies from a distance";
 		unitName = "Priest";
 		unitType = 8;
-		hp = 20;
-		maxHP = 20;
+		hp = 25;
+		maxHP = 25;
 		atk = -20;
 		mvRange = 3;
 		mvCost = 1;

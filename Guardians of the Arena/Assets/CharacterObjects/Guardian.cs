@@ -15,8 +15,8 @@ public class Guardian :Unit {
 		description = "A melee unit that protects the Soulstone. If this unit dies the player's Soulstone becomes vulnerable to death.";
 		unitType = 10;
 		unitName = "Guardian";
-		hp = 45;
-		maxHP = 45;
+		hp = 50;
+		maxHP = 50;
 		atk = 23;
 		mvRange = 2;
 		mvCost = 1;

@@ -16,8 +16,8 @@ public class Swordsman : Unit {
 		description = "A melee unit specializing in high mobility";
 		unitType = 7;
 		unitName = "Swordsman";
-		hp = 38;
-		maxHP = 38;	
+		hp = 45;
+		maxHP = 45;	
 		atk = 10;
 		mvRange = 3;
 		mvCost = 1;

@@ -17,10 +17,10 @@ public class KnifeThrower : Unit {
 		unitName = "Archer";
 		hp = 25;
 		maxHP = 25;
-		atk = 18;  
-		mvRange = 4;
+		atk = 16;  
+		mvRange = 3;
 		mvCost = 1;
-		atkRange = 4;
+		atkRange = 3;
 		atkCost = 2;
 		//unitRole = "Ranged";
 		unitRole = 500;//ranged

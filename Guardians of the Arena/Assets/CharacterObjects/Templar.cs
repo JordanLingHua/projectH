@@ -15,9 +15,9 @@ public class Templar : Unit{
 		description = "A melee unit that deals damage to all units in a cone in front of him";
 		unitType = 3;
 		unitName = "Templar";
-		hp = 38;//hp can --//all other stats cannot --//some other stats ++ for growth
-		maxHP = 38;//max hp is constant//use as reference to hp
-		atk = 13;
+		hp = 40;//hp can --//all other stats cannot --//some other stats ++ for growth
+		maxHP = 40;//max hp is constant//use as reference to hp
+		atk = 11;
 		mvRange = 3;
 		mvCost = 1;
 		atkRange = 1;
