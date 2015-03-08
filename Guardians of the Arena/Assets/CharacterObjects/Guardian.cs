@@ -59,7 +59,11 @@ public class Guardian :Unit {
 					hp = maxHP;
 				}
 				gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" healed "+ player + unitName + " for " + (-1*unitAttacking.atk));
-				showPopUpText("+" + (-1*amt),Color.green);
+				if (amt == -500){
+					showPopUpText("Full Heal",Color.green);
+				}else{
+					showPopUpText("+" + (-1*amt),Color.green);
+				}
 			}
 			
 			if (this.hp <= 0) {

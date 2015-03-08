@@ -334,7 +334,12 @@ public class Unit    : MonoBehaviour {
 					hp = maxHP;
 				}
 				gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" healed "+ player + unitName + " for " + (-1*amt));
-				showPopUpText("+" + (-1*amt),Color.green);
+				if (amt == -500){
+					showPopUpText("Full Heal",Color.green);
+				}else{
+					showPopUpText("+" + (-1*amt),Color.green);
+				}
+
 			}
 
 			//If the unit's hp is destroyed, we should switch to 
