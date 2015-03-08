@@ -23,12 +23,12 @@ public class GameProcess : MonoBehaviour {
 
 	//variables for popup windows and tips
 	public Rect popUpWindowRect;
-	bool showPopUpTip,neverShowPopUpWindow;
-	public bool showFriendlyFireTip,enableMatchmaking;
+	bool neverShowPopUpWindow;
+	public bool showPopUpTip,showFriendlyFireTip,enableMatchmaking;
 	ArrayList popUpWindowText;
 	string popUpTitle;
 	int popUpIndex;
-	string popUpName;
+	public string popUpName;
 	public string packetToSend;
 	
 	//PRIVATE MEMBERS
