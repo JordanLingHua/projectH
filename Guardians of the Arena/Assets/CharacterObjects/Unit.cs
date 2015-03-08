@@ -85,7 +85,7 @@ public class Unit    : MonoBehaviour {
 			GUI.depth = -1;
 			Vector3 textPos = cam.WorldToScreenPoint (gameObject.transform.position);
 			textPos.x = (textPos.x) / Screen.width;
-			textPos.y = (textPos.y + 35 + (10 * popUpTextNum)) / Screen.height;
+			textPos.y = (textPos.y + 35 + (15 * popUpTextNum)) / Screen.height;
 			textPos.z = 0;
 			GameObject text = (GameObject)Instantiate (popUpText, textPos, Quaternion.identity);
 			popUpTextNum++;
@@ -293,12 +293,14 @@ public class Unit    : MonoBehaviour {
 		//the unit selected is in range of the selected unit
 
 		if (Application.loadedLevelName.Equals("BoardScene") || Application.loadedLevelName.Equals("AIScene")) {
-			if (gm.gs == GameManager.gameState.playerAtk && gm.accessibleTiles.Contains (this.transform.parent.GetComponent<TileScript> ())) {
-				transform.parent.GetComponent<TileScript>().attackTile ();
-			} else {
-				if ((this.alleg == allegiance.neutral || (this.alleg == allegiance.playerOne && gp.playerNumber == 1 || this.alleg == allegiance.playerTwo && gp.playerNumber == 2 )) || pum.allowEnemyUnitSelection){
-					selectUnit ();
-					am.playButtonSFX();
+			if (gm.allowInput){
+				if (gm.gs == GameManager.gameState.playerAtk && gm.accessibleTiles.Contains (this.transform.parent.GetComponent<TileScript> ())) {
+					transform.parent.GetComponent<TileScript>().attackTile ();
+				} else {
+					if ((this.alleg == allegiance.neutral || (this.alleg == allegiance.playerOne && gp.playerNumber == 1 || this.alleg == allegiance.playerTwo && gp.playerNumber == 2 )) || pum.allowEnemyUnitSelection){
+						selectUnit ();
+						am.playButtonSFX();
+					}
 				}
 			}
 		}

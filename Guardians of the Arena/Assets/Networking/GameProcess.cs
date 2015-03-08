@@ -652,6 +652,7 @@ public class GameProcess : MonoBehaviour {
 			if (popUpName != "4"){
 				if (GUILayout.Button ("Close Tip", "ShortButton")) {
 					showPopUpTip = false;
+					gameManager.allowInput = true;
 					if (neverShowPopUpWindow) {
 						returnSocket ().SendTCPPacket ("dontDisplayTip\\" + popUpName);
 					}
@@ -659,6 +660,7 @@ public class GameProcess : MonoBehaviour {
 			}else{
 				if (GUILayout.Button ("Don't Attack", "ShortButton")) {
 					showPopUpTip = false;
+					gameManager.allowInput = true;
 					if (neverShowPopUpWindow) {
 						returnSocket ().SendTCPPacket ("dontDisplayTip\\" + popUpName);
 					}
@@ -666,6 +668,7 @@ public class GameProcess : MonoBehaviour {
 
 				if (GUILayout.Button ("Attack Anyway", "ShortButton")) {
 					showPopUpTip = false;
+					gameManager.allowInput = true;
 					returnSocket().SendTCPPacket(packetToSend);
 					if (neverShowPopUpWindow) {
 						returnSocket ().SendTCPPacket ("dontDisplayTip\\" + popUpName);
@@ -722,6 +725,7 @@ public class GameProcess : MonoBehaviour {
 	public void friendlyAttackTip(){
 		neverShowPopUpWindow = false;
 		showPopUpTip = true;
+		gameManager.allowInput = false;
 		popUpName = "4";
 		popUpTitle = "Warning";
 		popUpIndex = 0;

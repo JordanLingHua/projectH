@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour {
+	public bool allowInput;
 	public enum gameState {playerMv,playerAtk}
 
 	//combat log window variables
@@ -45,6 +46,8 @@ public class GameManager : MonoBehaviour {
 	public Texture2D manaGUIBorder,manaGUIFill;
 
 	void Start () {
+		allowInput = true;
+
 		//mana bar display
 		pMana = 2;
 		maxMana = 2;
@@ -111,18 +114,21 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.Escape)){
-			clearSelection();
-		}
+		if (allowInput) {
+			
+			if (Input.GetKeyDown (KeyCode.Escape)) {
+				clearSelection ();
+			}
 
-		if (Input.GetKeyDown (KeyCode.V)) {
-			changeToMoving();
-		}
-		if (Input.GetKeyDown (KeyCode.A)){
-			changeToAttacking();
-		}
-		if (Input.GetKeyDown (KeyCode.E)) {
-			endTurn();	
+			if (Input.GetKeyDown (KeyCode.V)) {
+				changeToMoving ();
+			}
+			if (Input.GetKeyDown (KeyCode.A)) {
+				changeToAttacking ();
+			}
+			if (Input.GetKeyDown (KeyCode.E)) {
+				endTurn ();	
+			}
 		}
 
 		if (!gameOver && !Application.loadedLevelName.Equals ("AIScene")){

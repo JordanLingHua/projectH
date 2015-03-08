@@ -337,11 +337,13 @@ public class TileScript : MonoBehaviour {
 
 	
 	void OnMouseDown(){
-		if (gm.selectedUnit != null) {
-			if (gm.gs == GameManager.gameState.playerMv) {
-				moveToTile ();
-			} else if (gm.gs == GameManager.gameState.playerAtk) {
-				attackTile ();
+		if (gm.allowInput) {
+			if (gm.selectedUnit != null) {
+				if (gm.gs == GameManager.gameState.playerMv) {
+						moveToTile ();
+				} else if (gm.gs == GameManager.gameState.playerAtk) {
+						attackTile ();
+				}
 			}
 		}
 	}
@@ -399,19 +401,16 @@ public class TileScript : MonoBehaviour {
 		    gm.pMana >= gm.selectedUnit.GetComponent<Unit> ().atkCost && 
 		    !gm.selectedUnit.GetComponent<Unit>().atkd &&
 		    ((gm.selectedUnit.alleg == Unit.allegiance.playerOne && gp.playerNumber == 1) || (gm.selectedUnit.alleg == Unit.allegiance.playerTwo && gp.playerNumber == 2))) {
+			//extract the info of the tile selected to be attacked, so that the attacking tile can know which attack direction animation to play
+			//targetTileX and targetTileZ are then used inside GameProcess when attack is called
+			gp.targetTileX = this.x;
+			gp.targetTileZ = this.y;
 			if (gp.showFriendlyFireTip && gm.selectedUnit.getFriendlyFireHitTiles().Contains(this)){
-				gp.targetTileX = this.x;
-				gp.targetTileZ = this.y;
 				gp.friendlyAttackTip();
 				gp.packetToSend = "attack\\" + gm.selectedUnit.unitID + "\\" + this.x + "\\" + this.y;
 			}else{
 				gp.returnSocket ().SendTCPPacket ("attack\\" + gm.selectedUnit.unitID + "\\" + this.x + "\\" + this.y);
 				print ("Sent attack packet");
-
-				//extract the info of the tile selected to be attacked, so that the attacking tile can know which attack direction animation to play
-				gp.targetTileX = this.x;
-				gp.targetTileZ = this.y;
-				//targetTileX and targetTileZ are then used inside GameProcess when attack is called
 
 				am.playButtonSFX();
 			}
