@@ -11,7 +11,7 @@ namespace Guardians_Of_The_Arena_Server.Units
 
         public Unit7(int ID)
             : base(ID)
-        {
+        { 
             health = 45;
             maxHealth = 45;
             armor = 0;
