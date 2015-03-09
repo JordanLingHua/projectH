@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour {
-	public bool allowInput;
 	public enum gameState {playerMv,playerAtk}
 
 	//combat log window variables
@@ -42,22 +41,20 @@ public class GameManager : MonoBehaviour {
 
 	//mana bar display variables
 	float percentMana;
-	public float manaBarXPos ,manaBarYPos ,manaBarWidth, manaBarHeight;
-	public Texture2D manaGUIBorder,manaGUIFill,manaGUIMask;
+	float manaBarXPos ,manaBarYPos ,manaBarWidth, manaBarHeight;
+	public Texture2D manaGUIBorder,manaGUIFill;
 
 	void Start () {
-		allowInput = true;
-
 		//mana bar display
 		pMana = 2;
 		maxMana = 2;
 		manaBarXPos = 0.562f;
-		manaBarYPos = 0.56f;
+		manaBarYPos = 0.59f;
 		manaBarWidth = 0.05f;
 		manaBarHeight = -0.55f;
 		manaGUIBorder = Resources.Load("manaGUIBorder") as Texture2D;
 		manaGUIFill = Resources.Load("manaGUIFill") as Texture2D;
-		manaGUIMask = Resources.Load("HPBarBG") as Texture2D;
+
 		//combat log info
 		graveyardText = "Your units lost:\nNone\nEnemy Units Lost:\nNone";
 		displayCombatLog = true;
@@ -114,22 +111,19 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void Update () {
-
-			
-		if (Input.GetKeyDown (KeyCode.Escape)) {
-			clearSelection ();
+		if (Input.GetKeyDown(KeyCode.Escape)){
+			clearSelection();
 		}
 
 		if (Input.GetKeyDown (KeyCode.V)) {
-			changeToMoving ();
+			changeToMoving();
 		}
-		if (Input.GetKeyDown (KeyCode.A)) {
-			changeToAttacking ();
+		if (Input.GetKeyDown (KeyCode.A)){
+			changeToAttacking();
 		}
 		if (Input.GetKeyDown (KeyCode.E)) {
-			endTurn ();	
+			endTurn();	
 		}
-
 
 		if (!gameOver && !Application.loadedLevelName.Equals ("AIScene")){
 			timerText.text = "Time Left: " + (int)timer;
@@ -322,13 +316,8 @@ public class GameManager : MonoBehaviour {
 	void OnGUI(){
 		//for Mana Bar
 		percentMana = (float)pMana / maxMana;
-
 		GUI.DrawTexture (new Rect(Screen.width * manaBarXPos,Screen.height *manaBarYPos,Screen.width * manaBarWidth,Screen.height* manaBarHeight*percentMana * ((float)maxMana/8)),manaGUIFill);
 		GUI.DrawTexture (new Rect(Screen.width * manaBarXPos,Screen.height *manaBarYPos,Screen.width * manaBarWidth,Screen.height* manaBarHeight),manaGUIBorder);
-		float percentMana2 = ((float)8 - maxMana) / 8;
-		if (maxMana != 8){
-			GUI.DrawTexture (new Rect(Screen.width * manaBarXPos,(Screen.height *manaBarYPos) + (Screen.height* manaBarHeight),Screen.width * manaBarWidth,(-Screen.height* manaBarHeight) * percentMana2),manaGUIMask);
-		}
 
 		GUI.skin = mySkin;
 		combatLogWindowRect = GUI.Window (2, combatLogWindowRect, combatLogWindow, "");
@@ -345,9 +334,6 @@ public class GameManager : MonoBehaviour {
 				gp.returnSocket ().SendTCPPacket ("endTurn");
 				sentEndTurn = true;
 				am.playTurnEndSFX();
-				if (gp.showPopUpTip && gp.popUpName == "4"){
-					gp.showPopUpTip = false;
-				}
 			}else{
 				am.playButtonSFX ();
 			}
@@ -355,37 +341,29 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void changeToAttacking(){
-		if (allowInput) {
-			am.playButtonSFX();
-			tm.clearAllTiles();
-			accessibleTiles.Clear();		
-			gs =  gameState.playerAtk;	
-			
-			if (selectedUnit != null){
-				selectedUnit.GetComponent<Unit>().showAtkTiles();
-			}
-		}
+		am.playButtonSFX();
+		tm.clearAllTiles();
+		accessibleTiles.Clear();		
+		gs =  gameState.playerAtk;	
+		
+		if (selectedUnit != null)
+			selectedUnit.GetComponent<Unit>().showAtkTiles();
 	}
 
 	public void changeToMoving(){
-		if (allowInput) {
-			am.playButtonSFX();
-			tm.clearAllTiles ();
-			accessibleTiles.Clear ();
-			gs = gameState.playerMv;
+		am.playButtonSFX();
+		tm.clearAllTiles ();
+		accessibleTiles.Clear ();
+		gs = gameState.playerMv;
 
-			if (selectedUnit != null){ 
-				selectedUnit.GetComponent<Unit>().showMvTiles(selectedUnit.alleg == Unit.allegiance.playerOne? Unit.allegiance.playerOne : Unit.allegiance.playerTwo);
-			}
-		}
+		if (selectedUnit != null) 
+			selectedUnit.GetComponent<Unit>().showMvTiles(selectedUnit.alleg == Unit.allegiance.playerOne? Unit.allegiance.playerOne : Unit.allegiance.playerTwo);
 	}
 
 	public void clearSelection(){
-		if (allowInput) {
-			selectedUnit = null;
-			accessibleTiles.Clear();
-			tm.clearAllTiles();
-		}
+		selectedUnit = null;
+		accessibleTiles.Clear();
+		tm.clearAllTiles();
 	}
 
 	void resetPlayerOneUnits(){

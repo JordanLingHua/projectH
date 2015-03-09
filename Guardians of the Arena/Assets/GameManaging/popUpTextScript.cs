@@ -2,7 +2,12 @@
 using System.Collections;
 
 public class popUpTextScript : MonoBehaviour {
-
+	
+	// Use this for initialization
+	void Start () {
+		
+	}
+	
 	public IEnumerator showText(Unit unitAffected,string affect, Color newColor){
 		GUI.depth = -1;
 		Vector3 pos = this.transform.position;

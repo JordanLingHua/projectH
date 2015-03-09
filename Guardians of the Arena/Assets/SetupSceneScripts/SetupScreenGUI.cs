@@ -4,7 +4,7 @@ using System.Collections;
 public class SetupScreenGUI : MonoBehaviour {		
 
 	public bool showGUI;
-	#pragma warning disable 0108 
+	AudioManager am;
 	public GUIText guiText;
 	GameProcess gp;
 	PageNumberScript pageNumber;
@@ -49,6 +49,7 @@ public class SetupScreenGUI : MonoBehaviour {
 		gp = GameObject.Find("GameProcess").GetComponent<GameProcess>();
 		playerSetup = GameObject.Find("PlayerSetup").GetComponent<PlayerSetup>();
 		windowRect5 = new Rect (Screen.width - 315, Screen.height - 270, displayWidth5, displayHeight5);
+		am = GameObject.Find ("AudioManager").GetComponent<AudioManager> ();
 	}	
 
 	void AddSpikes(float winX)

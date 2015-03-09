@@ -70,10 +70,7 @@ public class TileScript : MonoBehaviour {
 		if (gm.selectedUnit != null && gm.gs == GameManager.gameState.playerAtk && gm.accessibleTiles.Contains (this)) {
 			AoETiles = gm.selectedUnit.showAoEAffectedTiles(this);
 			//show friendly fire cursor if its not a priest, mystic, and a templar that isn't level 3
-//			if (((gm.selectedUnit.unitType != 8 && gm.selectedUnit.unitType != 2) || (gm.selectedUnit.unitType == 3 && gm.selectedUnit.unitLevel != 3)) && objectOccupyingTile != null && ((objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerOne && gp.playerNumber == 1) ||(objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerTwo && gp.playerNumber == 2))){
-//				Cursor.SetCursor(friendlyFireCursor,Vector2.zero,CursorMode.Auto);
-//			}
-			if (gm.selectedUnit.getFriendlyFireHitTiles().Contains(this)){
+			if (((gm.selectedUnit.unitType != 8 && gm.selectedUnit.unitType != 2) || (gm.selectedUnit.unitType == 3 && gm.selectedUnit.unitLevel != 3)) && objectOccupyingTile != null && ((objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerOne && gp.playerNumber == 1) ||(objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerTwo && gp.playerNumber == 2))){
 				Cursor.SetCursor(friendlyFireCursor,Vector2.zero,CursorMode.Auto);
 			}
 		}
@@ -337,13 +334,11 @@ public class TileScript : MonoBehaviour {
 
 	
 	void OnMouseDown(){
-		if (gm.allowInput) {
-			if (gm.selectedUnit != null) {
-				if (gm.gs == GameManager.gameState.playerMv) {
-						moveToTile ();
-				} else if (gm.gs == GameManager.gameState.playerAtk) {
-						attackTile ();
-				}
+		if (gm.selectedUnit != null) {
+			if (gm.gs == GameManager.gameState.playerMv) {
+				moveToTile ();
+			} else if (gm.gs == GameManager.gameState.playerAtk) {
+				attackTile ();
 			}
 		}
 	}
@@ -401,19 +396,15 @@ public class TileScript : MonoBehaviour {
 		    gm.pMana >= gm.selectedUnit.GetComponent<Unit> ().atkCost && 
 		    !gm.selectedUnit.GetComponent<Unit>().atkd &&
 		    ((gm.selectedUnit.alleg == Unit.allegiance.playerOne && gp.playerNumber == 1) || (gm.selectedUnit.alleg == Unit.allegiance.playerTwo && gp.playerNumber == 2))) {
-			//extract the info of the tile selected to be attacked, so that the attacking tile can know which attack direction animation to play
-			//targetTileX and targetTileZ are then used inside GameProcess when attack is called
-			gp.targetTileX = this.x;
-			gp.targetTileZ = this.y;
-			if (gp.showFriendlyFireTip && gm.selectedUnit.getFriendlyFireHitTiles().Contains(this)){
-				gp.friendlyAttackTip();
-				gp.packetToSend = "attack\\" + gm.selectedUnit.unitID + "\\" + this.x + "\\" + this.y;
-			}else{
-				gp.returnSocket ().SendTCPPacket ("attack\\" + gm.selectedUnit.unitID + "\\" + this.x + "\\" + this.y);
-				print ("Sent attack packet");
+			gp.returnSocket ().SendTCPPacket ("attack\\" + gm.selectedUnit.unitID + "\\" + this.x + "\\" + this.y);
+			print ("Sent attack packet");
 
-				am.playButtonSFX();
-			}
+			//extract the info of the tile selected to be attacked, so that the attacking tile can know which attack direction animation to play
+			GameObject.Find ("GameProcess").GetComponent<GameProcess>().targetTileX = this.x;
+			GameObject.Find ("GameProcess").GetComponent<GameProcess>().targetTileZ = this.y;
+			//targetTileX and targetTileZ are then used inside GameProcess when attack is called
+
+			am.playButtonSFX();
 		} else {
 			am.playErrorSFX();
 			if(!gm.turn){

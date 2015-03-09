@@ -4,17 +4,7 @@ using System.Diagnostics;
 using System;
 
 public class MainMenuGUI : MonoBehaviour {
-
-
-	//dropdown
-	private bool showList = false;
-	private int listEntry = 0;
-	private GUIContent[] list;
-	private GUIStyle listStyle;
-	public int tempX;
-	public int tempY;
-
-	//other
+	
 	public bool showGUI;
 	public string infoText;
 	GameProcess gp;
@@ -92,43 +82,6 @@ public class MainMenuGUI : MonoBehaviour {
 		windowRect3 = new Rect (Screen.width / 2 - displayWidth2 / 2 - displayWidth2 - windowSeparation, Screen.height / 2 - 200, displayWidth3, displayHeight3);
 		windowRect4 = new Rect (Screen.width / 2 + displayWidth2 / 2 + windowSeparation, Screen.height / 2 - 200, displayWidth4, displayHeight4);
 		space = 10;
-
-		//dropdown
-		// Make some content for the popup list
-		list = new GUIContent[5];
-		list [0] = new GUIContent ("1");
-		list [1] = new GUIContent ("2");
-		list [2] = new GUIContent ("3");
-		list [3] = new GUIContent ("4");
-		list [4] = new GUIContent ("5");
-		
-		// Make a GUIStyle that has a solid white hover/onHover background to indicate highlighted items
-		listStyle = new GUIStyle();
-		listStyle.normal.textColor = Color.black;
-		
-		Texture2D bg = new Texture2D(2, 2);
-		Color[] colors = new Color[4];
-		//Color color;
-		for (int i = 0; i < colors.Length; i++) 
-		{
-			colors[i] = new Color ((210f / 255f), (159f / 255f), (104f / 255f));
-		}
-		bg.SetPixels(colors);
-		bg.Apply();
-		listStyle.normal.background = bg;
-		
-		
-		Texture2D tex = new Texture2D(2, 2);
-		colors = new Color[4];
-		for (int i = 0; i < colors.Length; i++) 
-		{
-			colors[i] = new Color((232f / 255f),(200f/255f),(152f/255f));
-		}
-		tex.SetPixels(colors);
-		tex.Apply();
-		listStyle.hover.background = tex;
-		listStyle.onHover.background = tex;
-		listStyle.padding.left = listStyle.padding.right = listStyle.padding.top = listStyle.padding.bottom = 4;
 
 	}
 
@@ -275,27 +228,25 @@ public class MainMenuGUI : MonoBehaviour {
 					Application.LoadLevel (2);
 				}
 				GUILayout.FlexibleSpace();
-				if (Popup.List (new Rect(windowRect2.x - 218, windowRect2.y + 158, 105, 25), ref showList,ref  listEntry, new GUIContent("Choose Setup!"), list, listStyle)) {
-					pageNumber.selectedPage = listEntry + 1;
-				}
+				GUILayout.Label ("", "PlainText"); // spacing... placeholder for chose setup
 				GUILayout.FlexibleSpace();
 				GUILayout.EndHorizontal();
 
 
-				//GUILayout.Space(10);
-//				GUILayout.Label("", "Divider");//-------------------------------- custom
-//				
-//				GUILayout.BeginHorizontal();
-//				GUILayout.FlexibleSpace();
-//				if (GUILayout.Button ("Logout", "ShortButton")) 
-//				{
-//					am.playErrorSFX ();
-//					//send a disconnect packet
-//					gp.returnSocket ().SendTCPPacket ("logout\\" + gp.playerName);
-//				}
-//				GUILayout.FlexibleSpace();
-//				GUILayout.EndHorizontal();
-				//GUILayout.Label("", "Divider");//-------------------------------- custom
+				GUILayout.Space(10);
+				GUILayout.Label("", "Divider");//-------------------------------- custom
+				
+				GUILayout.BeginHorizontal();
+				GUILayout.FlexibleSpace();
+				if (GUILayout.Button ("Logout", "ShortButton")) 
+				{
+					am.playErrorSFX ();
+					//send a disconnect packet
+					gp.returnSocket ().SendTCPPacket ("logout\\" + gp.playerName);
+				}
+				GUILayout.FlexibleSpace();
+				GUILayout.EndHorizontal();
+				GUILayout.Label("", "Divider");//-------------------------------- custom
 			}
 		 
 
@@ -411,7 +362,7 @@ public class MainMenuGUI : MonoBehaviour {
 	void OnGUI () {
 
 		GUI.skin = mySkin;
-		GUI.depth = 10;
+		
 		if (doWindow2)
 			windowRect2 = GUI.Window (2, windowRect2, DoMyWindow2, "");
 
@@ -454,7 +405,6 @@ public class MainMenuGUI : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		for (int i = 0; i < 5; i++)
-			list[i] = new GUIContent(pageNameScript.pages[i]);
+		
 	}
 }
