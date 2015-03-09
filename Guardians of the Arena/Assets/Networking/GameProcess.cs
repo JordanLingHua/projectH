@@ -915,7 +915,7 @@ public class GameProcess : MonoBehaviour {
 				gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 9);
 			else if(gameManager.units[Int32.Parse (tokens[1])].GetComponentInParent<TileScript>().x < targetTileX)
 				gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 10);
-			else if(gameManager.units[Int32.Parse (tokens[1])].transform.position.x > targetTileX)
+			else if(gameManager.units[Int32.Parse (tokens[1])].GetComponentInParent<TileScript>().x > targetTileX)
 				gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 11);
 		}
 		//If you are controlling the attacker unit and you are player 1
