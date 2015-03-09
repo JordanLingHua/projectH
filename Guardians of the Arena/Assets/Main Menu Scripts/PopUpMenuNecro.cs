@@ -265,7 +265,7 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 
 		GUILayout.BeginHorizontal();
 
-		if (!Application.loadedLevelName.Equals ("LoginScreen")) {
+		if (!Application.loadedLevelName.Equals ("LoginScreen") && !Application.loadedLevelName.Equals ("AIScene") && !Application.loadedLevelName.Equals ("BoardScene")) {
 			GUILayout.FlexibleSpace ();
 			if (GUILayout.Button ("Logout", "ShortButton")) {
 					am.playErrorSFX ();

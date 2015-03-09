@@ -296,7 +296,7 @@ namespace Guardians_Of_The_Arena_Server
                                             {
                                                 client.sw.WriteLine("loginFail");
                                                 Console.WriteLine(tokens[1] + " entered incorrect password");
-                                                RemoveClient(client);
+                                                //RemoveClient(client);
                                             }
                                         }
 
