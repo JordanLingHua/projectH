@@ -17,8 +17,8 @@ namespace Guardians_Of_The_Arena_Server.Units
         public Unit8(int ID)
             : base(ID)
         {
-            health = 20;
-            maxHealth = 20;
+            health = 25;
+            maxHealth = 25;
             armor = 0;
             damage = -20;
             movementRange = 3;

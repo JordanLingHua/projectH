@@ -12,7 +12,6 @@ namespace Guardians_Of_The_Arena_Server.Units
         private bool focusedOnLevel3;
         private Unit unitFocused;
         private int movementSpeedBuff;
-        private int baseMovementRange;
         private int attackBuff;
         private int armorBuff;
         private int armorDebuff;
@@ -24,7 +23,7 @@ namespace Guardians_Of_The_Arena_Server.Units
             maxHealth = 30;
             armor = 0;
             damage = 0;
-            movementRange = baseMovementRange = 2;
+            movementRange = 2;
             movementCost = 1;
             attackCost = 4;
             attackRange = 3;
