@@ -30,7 +30,7 @@ namespace Guardians_Of_The_Arena_Server
 
             connectToDatabase();
             
-            //clearTable();
+            clearTable();
             //fillPlayerTable();
             //printTable();
             //dropTable();
@@ -112,7 +112,7 @@ namespace Guardians_Of_The_Arena_Server
         public void dropTable()
         {
 
-            string sql = "DROP TABLE unitSetups; DROP TABLE playerInfo; DROP TABLE highScores; DROP TABLE tooltips;";
+            string sql = "DROP TABLE unitSetups; DROP TABLE playerInfo; DROP TABLE tooltips;";
             SQLiteCommand command = new SQLiteCommand(sql, userDatabase);
             SQLiteDataReader reader = command.ExecuteReader();
             
@@ -893,6 +893,7 @@ namespace Guardians_Of_The_Arena_Server
 
         public void updateSetupName(string playerName, int setupID, string setupName)
         {
+            Console.WriteLine(setupName);
             string sql = "UPDATE unitSetups SET setupName = @setupName WHERE name = @name AND setupID = @setupID ";
             SQLiteCommand command = new SQLiteCommand(sql, userDatabase);
             command.Parameters.AddWithValue("@name", playerName);
