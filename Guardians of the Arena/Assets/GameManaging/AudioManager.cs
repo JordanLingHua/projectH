@@ -33,7 +33,7 @@ public class AudioManager : MonoBehaviour {
 		turnEndSFX.clip = Resources.Load ("turnEndSFX") as AudioClip;
 		turnStartSFX.clip = Resources.Load ("turnStartSFX") as AudioClip;
 		victorySFX.clip = Resources.Load ("victorySFX") as AudioClip;
-		defeatSFX.clip = Resources.Load ("errorSFX") as AudioClip;
+		defeatSFX.clip = Resources.Load ("defeatSFX") as AudioClip;
 	}
 
 //	void OnApplicationFocus(bool focusStatus){
