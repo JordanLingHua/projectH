@@ -716,9 +716,11 @@ public class GameProcess : MonoBehaviour {
 		popUpTitle = "Tip";
 		popUpIndex = 0;
 		popUpWindowText.Clear ();
-		popUpWindowText.Add("Welcome to the Arena! Clicking on one of your units will select it and hovering over a unit will show information about it! Pressing escape will de-select the unit.");	
-		popUpWindowText.Add("A unit can either move (shown with green tiles) or attack (shown with red tiles). You can toggle between attacking and moving by either clicking on the buttons on the bottom of your screen, or pressing the 'v' or 'a' keys on your keyboard.");
-		popUpWindowText.Add("There is no time limit in vs AI mode, but when you play against other players each turn is one minute long. Mana will increase as the game progresses to a maximum of 8 mana.");
+		popUpWindowText.Add("Welcome to the Arena! Clicking on one of your units (which are at the bottom of the board) will select it and hovering over a unit will show information about it! Pressing escape will de-select the unit.");	
+		popUpWindowText.Add("A unit can either move (shown with green tiles) or attack (shown with orange tiles). You can toggle between attacking and moving by either clicking on the buttons in the controls window, or pressing the 'v' or 'a' keys on your keyboard.");
+		popUpWindowText.Add("Each unit can attack and move once per turn. You can move and attack with as many pieces as you have the mana for.");
+		popUpWindowText.Add("Mana (indicated by the blue bar next to the board) will increase as the game progresses to a maximum of eight mana. There is no time limit in vs AI mode, but when you play against other players each turn is one minute long.");
+		popUpWindowText.Add("Your goal is to kill the enemy's Soulstone! Good luck!");
 	}
 
 	public void friendlyAttackTip(){
@@ -741,10 +743,10 @@ public class GameProcess : MonoBehaviour {
 		popUpIndex = 0;
 		popUpWindowText.Clear ();
 		popUpWindowText.Add("Welcome to the Setup Screen. Hover over units with your mouse to see more information about them.");
-		popUpWindowText.Add("The movement cost is the amount of mana it takes to move a piece. Likewise the the attack cost is the amount of mana it takes to attack with it.");
-		popUpWindowText.Add("Units gain experience through battle and gain unique abilities when they level up which is shown as the level 2 and level 3 bonuses. All units start at level one every time a new game starts.");
+		popUpWindowText.Add("The movement cost is the amount of mana it takes to move a piece. Likewise the attack cost is the amount of mana it takes to attack with it.");
+		popUpWindowText.Add("Units gain experience through battle and gain unique abilities when they level up which is shown as the level 2 and level 3 bonuses. All units start at level one every time a game starts.");
 		popUpWindowText.Add("Click and drag a unit around to reposition it. Once a game starts, all units on the battlefield (green area) will be brought to battle.");
-		popUpWindowText.Add("The gray area is for units that are not going to be used. You are required to have the Guardian and Soulstone in the green area, and you can have up to 8 units on the board, so choose which units you bring to battle carefully!");
+		popUpWindowText.Add("The gray area is for units that are not going to be used. You are required to have the Guardian and Soulstone in the green area, and you can have up to eight units on the board, so choose which units you bring to battle carefully!");
 		popUpWindowText.Add("Your setup is automatically saved everytime you move a piece so feel free to switch between your other setups or go back to the Game Lobby.");
 	}
 

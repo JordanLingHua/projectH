@@ -269,8 +269,8 @@ public class GameManager : MonoBehaviour {
 	
 				info += script.atkCost > 0? "\nAttack Cost: " + script.atkCost : "";
 			}else{
-				info += "\nFocused! Cannot move or attack!";
-				info += "\nAttack enemy Mystic to\nbreak his channel";
+				info += "\nParalyzed!";
+				info += "\nAttack enemy Mystic\nto break his channel";
 			}
 			
 			if (script.invincible){
@@ -348,6 +348,7 @@ public class GameManager : MonoBehaviour {
 				if (gp.showPopUpTip && gp.popUpName == "4"){
 					gp.showPopUpTip = false;
 				}
+				allowInput = false;
 			}else{
 				am.playButtonSFX ();
 			}
@@ -413,6 +414,7 @@ public class GameManager : MonoBehaviour {
 		if (turn){
 			showCenterMessage("Your Turn!",GameObject.Find("CenterPopUpText").GetComponent<GUIText>().color,true);
 			am.playTurnStartSFX();
+			allowInput = true;
 		}
 		//toggle between players turns and reset units
 		tm.clearAllTiles();

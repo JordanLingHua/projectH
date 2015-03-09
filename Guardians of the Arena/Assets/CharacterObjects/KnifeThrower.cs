@@ -107,6 +107,9 @@ public class KnifeThrower : Unit {
 		for (int i = 0; i < atkRange; i ++){
 			if (temp.up != null){
 				tileSet.Add (temp.up.GetComponent<TileScript>());
+				if (temp.up.GetComponent<TileScript>().objectOccupyingTile != null && unitLevel != 3){
+					break;
+				}
 				temp = temp.up.GetComponent<TileScript>();
 			}
 		}
@@ -114,6 +117,9 @@ public class KnifeThrower : Unit {
 		for (int i = 0; i < atkRange; i ++){
 			if (temp.down != null){
 				tileSet.Add (temp.down.GetComponent<TileScript>());
+				if (temp.down.GetComponent<TileScript>().objectOccupyingTile != null && unitLevel != 3){
+					break;
+				}
 				temp = temp.down.GetComponent<TileScript>();
 			}
 		}
@@ -121,6 +127,9 @@ public class KnifeThrower : Unit {
 		for (int i = 0; i < atkRange; i ++){
 			if (temp.left != null){
 				tileSet.Add (temp.left.GetComponent<TileScript>());
+				if (temp.left.GetComponent<TileScript>().objectOccupyingTile != null && unitLevel != 3){
+					break;
+				}
 				temp = temp.left.GetComponent<TileScript>();
 			}
 		}
@@ -128,6 +137,9 @@ public class KnifeThrower : Unit {
 		for (int i = 0; i < atkRange; i ++){
 			if (temp.right != null){
 				tileSet.Add (temp.right.GetComponent<TileScript>());
+				if (temp.right.GetComponent<TileScript>().objectOccupyingTile != null && unitLevel != 3){
+					break;
+				}
 				temp = temp.right.GetComponent<TileScript>();
 			}
 		}
