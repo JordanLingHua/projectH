@@ -10,10 +10,10 @@ namespace Guardians_Of_The_Arena_Server.Units
         public Unit3(int unitID)
             : base(unitID)
         {
-            health = 38;
-            maxHealth = 38;
+            health = 40;
+            maxHealth = 40;
             armor = 0;
-            damage = 13;
+            damage = 11;
             movementRange = 3;
             movementCost = 1;
             attackCost = 3;

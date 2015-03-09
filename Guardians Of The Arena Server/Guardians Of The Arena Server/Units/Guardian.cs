@@ -12,8 +12,8 @@ namespace Guardians_Of_The_Arena_Server.Units
         public Guardian(int ID, Game gameRef)
             : base(ID)
         {
-            health = 45;
-            maxHealth = 45;
+            health = 50;
+            maxHealth = 50;
             armor = 0;
             damage = 23;
             movementRange = 2;
