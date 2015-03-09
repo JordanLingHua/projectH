@@ -264,6 +264,15 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 
 
 		GUILayout.BeginHorizontal();
+
+		if (!Application.loadedLevelName.Equals ("LoginScreen")) {
+			GUILayout.FlexibleSpace ();
+			if (GUILayout.Button ("Logout", "ShortButton")) {
+					am.playErrorSFX ();
+					//send a disconnect packet
+					gp.returnSocket ().SendTCPPacket ("logout\\" + gp.playerName);
+			}
+		}
 		//Quit Button
 		GUILayout.FlexibleSpace();
 		if (GUILayout.Button ("Quit Game", "ShortButton"))
@@ -271,7 +280,7 @@ DeathBadge (adds the iconFrame, skull, and ribbon elements properly aligned)
 			am.playErrorSFX();
 			Application.Quit();
 		}
-
+		GUILayout.FlexibleSpace();
 		//Close Button
 		if (GUILayout.Button ("Close Menu", "ShortButton"))
 		{

@@ -11,8 +11,8 @@ public class MainMenuGUI : MonoBehaviour {
 	private int listEntry = 0;
 	private GUIContent[] list;
 	private GUIStyle listStyle;
-	public int tempX;
-	public int tempY;
+	public int listOffsetX;
+	public int listOffsetY;
 
 	//other
 	public bool showGUI;
@@ -275,7 +275,7 @@ public class MainMenuGUI : MonoBehaviour {
 					Application.LoadLevel (2);
 				}
 				GUILayout.FlexibleSpace();
-				if (Popup.List (new Rect(windowRect2.x - 218, windowRect2.y + 158, 105, 25), ref showList,ref  listEntry, new GUIContent("Choose Setup!"), list, listStyle)) {
+				if (Popup.List (new Rect(windowRect2.x + getListOffsetX(), windowRect2.y + getListOffsetY(), 105, 25), ref showList,ref  listEntry, new GUIContent("Choose Setup!"), list, listStyle)) {
 					pageNumber.selectedPage = listEntry + 1;
 				}
 				GUILayout.FlexibleSpace();
@@ -448,6 +448,24 @@ public class MainMenuGUI : MonoBehaviour {
 		{
 			gp.returnSocket().SendTCPPacket("globalChat\\" + chat);
 			chat = string.Empty;
+		}
+	}
+
+	int getListOffsetX()
+	{
+		return -218;
+	}
+
+	int getListOffsetY()
+	{
+		if (gp.enableMatchmaking) 
+		{
+			return 152;
+		} 
+
+		else 
+		{
+			return 160;
 		}
 	}
 	
