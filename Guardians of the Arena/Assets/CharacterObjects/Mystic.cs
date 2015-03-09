@@ -9,6 +9,7 @@ public class Mystic: Unit {
 	public int levelOnFocus;
 	public GameObject partSys;
 	public GameObject partSys2;
+	public float origX, origY, origZ, offsetX, offsetY, offsetZ, origX2, origY2, origZ2;
 
 	void Start () {
 		base.Start ();
@@ -165,7 +166,7 @@ public class Mystic: Unit {
 	void addParticles(Unit unitFocused)
 	{
 		int playerNumber = GameObject.Find ("GameProcess").GetComponent<GameProcess> ().playerNumber;
-		if ((playerNumber == 1 && alleg == allegiance.playerOne) || (playerNumber == 2 && alleg == allegiance.playerTwo))
+		if (alleg == allegiance.playerOne)
 		{
 			partSys = (GameObject)Instantiate (Resources.Load ("MysticFocusBlue"));
 			partSys2 = (GameObject)Instantiate (Resources.Load ("MysticFocusBlue"));			
@@ -180,11 +181,18 @@ public class Mystic: Unit {
 		 
 		partSys.transform.parent = this.transform;
 		partSys.transform.position = this.transform.position;
-		partSys.transform.Translate (0.0f, 0.0f, -4.0f);		
+		partSys.transform.Translate (0.0f, 0.0f, -4.0f);
+		origX = partSys.transform.position.x;
+		origY = partSys.transform.position.y;
+		origZ = partSys.transform.position.z;
+
 
 		partSys2.transform.parent = unitFocused.transform;
 		partSys2.transform.position = unitFocused.transform.position;
 		partSys2.transform.Translate (0.0f, 0.0f, -4.0f);
+		origX2 = partSys2.transform.position.x;
+		origY2 = partSys2.transform.position.y;
+		origZ2 = partSys2.transform.position.z;
 
 	//	if (Application.loadedLevelName.Equals ("BoardScene") && !((playerNumber == 1 && alleg == allegiance.playerOne) || (playerNumber == 2 && alleg == allegiance.playerTwo)))
 		if (Application.loadedLevelName.Equals ("BoardScene") && (playerNumber == 2))
@@ -194,11 +202,24 @@ public class Mystic: Unit {
 			partSys2.transform.rotation = unitFocused.transform.rotation;
 
 			partSys.transform.Rotate(300.0f, 0.0f, 0.0f);
+			partSys.transform.position = new Vector3 (origX, origY, origZ + 5.33f);
 //			partSys.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, 0.0f);
+			//partSys.transform.Translate (0.0f, 0.0f, 4.0f);
+			//partSys.transform.Translate(0.0f, -.33f, 0.0f);
 //
 			partSys2.transform.Rotate(300.0f, 0.0f, 0.0f);
+			partSys2.transform.position = new Vector3 (origX2, origY2, origZ2 + 5.33f);
+			//partSys2.transform.position = new Vector3 (origX, origY - 1.69, origZ + 6.48);
+			//partSys.transform.Translate (0.0f, 0.0f, 4.0f);
+			//partSys.transform.Translate(0.0f, -.33f, 0.0f);
 //			partSys2.transform.position = new Vector3(unitFocused.transform.position.x, unitFocused.transform.position.y, 0.0f);
 		}
 
+	}
+
+	void Update()
+	{
+		//if(partSys != null)
+		//partSys.transform.position = new Vector3 (origX + offsetX, origY + offsetY, origZ + offsetZ);
 	}
 }
