@@ -46,7 +46,6 @@ public class GameManager : MonoBehaviour {
 	public Texture2D manaGUIBorder,manaGUIFill,manaGUIMask;
 
 	void Start () {
-		allowInput = true;
 
 		//mana bar display
 		pMana = 2;
@@ -86,8 +85,10 @@ public class GameManager : MonoBehaviour {
 		}
 		mana = GameObject.Find("ManaGUIText").GetComponent<GUIText>();
 		timerText = GameObject.Find("TimerGUIText").GetComponent<GUIText>();
-		if (gp.playerNumber == 1)
+		if (gp.playerNumber == 1) {
 			turn = true;
+			allowInput = true;
+		} 
 	}
 
 	public void showErrorMessage(string error){
