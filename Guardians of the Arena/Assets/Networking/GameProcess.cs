@@ -652,7 +652,6 @@ public class GameProcess : MonoBehaviour {
 			if (popUpName != "4"){
 				if (GUILayout.Button ("Close Tip", "ShortButton")) {
 					showPopUpTip = false;
-					gameManager.allowInput = true;
 					if (neverShowPopUpWindow) {
 						returnSocket ().SendTCPPacket ("dontDisplayTip\\" + popUpName);
 					}
