@@ -400,10 +400,6 @@ public class GameProcess : MonoBehaviour {
 		}else if (!players){
 			gameManager.addLogToCombatLog("Opponent's " + gameManager.units[unitID].unitName + " moved for " + gameManager.units[unitID].mvCost + " mana!");
 		}
-		if (gameManager.units [unitID].unitType == 2) {
-			Mystic x = gameManager.units[unitID] as Mystic;
-			x.revertStatsOfFocused();
-		}
 		gameManager.pMana -= gameManager.units[unitID].mvCost;
 		
 		TileScript from = gameManager.units[unitID].transform.parent.GetComponent<TileScript>();
@@ -418,6 +414,11 @@ public class GameProcess : MonoBehaviour {
 		gameManager.units[unitID].transform.parent = to.gameObject.transform;
 		from.transform.GetComponent<TileScript>().objectOccupyingTile = null;
 		tileManager.clearAllTiles();
+
+		if (gameManager.units [unitID].unitType == 2) {
+			Mystic x = gameManager.units[unitID] as Mystic;
+			x.revertStatsOfFocused();
+		}
 	}
 	
 	void OnLevelWasLoaded(int sceneNumber)
