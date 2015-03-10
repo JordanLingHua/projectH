@@ -713,7 +713,7 @@ public class GameProcess : MonoBehaviour {
 		popUpWindowText.Clear ();
 		popUpWindowText.Add("Welcome to the Arena! Clicking on one of your units (which are at the bottom of the board) will select it and hovering over a unit will show information about it! Pressing escape will de-select the unit.");	
 		popUpWindowText.Add("A unit can either move (shown with green tiles) or attack (shown with orange tiles). You can toggle between attacking and moving by either clicking on the buttons in the controls window, or pressing the 'v' or 'a' keys on your keyboard.");
-		popUpWindowText.Add("Each unit can attack and move once per turn. You can move and attack with as many pieces as you have the mana for.");
+		popUpWindowText.Add("Each unit can attack and move once per turn. You can move and attack with as many pieces as you have the mana for. Units can move through friendly units, but block the paths of enemies so position your units carefully.");
 		popUpWindowText.Add("Mana (indicated by the blue bar next to the board) will increase as the game progresses to a maximum of eight mana. There is no time limit in vs AI mode, but when you play against other players each turn is one minute long.");
 		popUpWindowText.Add("Your goal is to kill the enemy's Soulstone! Good luck!");
 	}
