@@ -505,6 +505,7 @@ public class GameProcess : MonoBehaviour {
 					showPopUpTip = false;
 					gameManager.allowInput = true;
 					if (neverShowPopUpWindow) {
+						showFriendlyFireTip = false;
 						returnSocket ().SendTCPPacket ("dontDisplayTip\\" + popUpName);
 					}
 				}
@@ -514,6 +515,7 @@ public class GameProcess : MonoBehaviour {
 					gameManager.allowInput = true;
 					returnSocket().SendTCPPacket(packetToSend);
 					if (neverShowPopUpWindow) {
+						showFriendlyFireTip = false;
 						returnSocket ().SendTCPPacket ("dontDisplayTip\\" + popUpName);
 					}
 				}
