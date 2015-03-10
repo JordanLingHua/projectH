@@ -296,6 +296,13 @@ namespace Guardians_Of_The_Arena_Server
                                     gameOver = true;
                                     player1.playerClient.inGame = false;
                                     player2.playerClient.inGame = false;
+
+                                     if (isAI_Game)
+                                     {
+                                         player1.playerClient.sw.WriteLine("enableMatchmaking");
+                                         player2.playerClient.sw.WriteLine("enableMatchmaking");
+                                     }
+
                                 }
                                 else if (board.player2_Soulstone.Health <= 0)
                                 {
@@ -304,6 +311,12 @@ namespace Guardians_Of_The_Arena_Server
                                     gameOver = true;
                                     player1.playerClient.inGame = false;
                                     player2.playerClient.inGame = false;
+
+                                    if (isAI_Game)
+                                    {
+                                        player1.playerClient.sw.WriteLine("enableMatchmaking");
+                                        player2.playerClient.sw.WriteLine("enableMatchmaking");
+                                    }
                                 }
 
                                 attackingUnit.accessibleTiles.Clear();

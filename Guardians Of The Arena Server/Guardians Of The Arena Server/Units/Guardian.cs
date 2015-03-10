@@ -57,7 +57,7 @@ namespace Guardians_Of_The_Arena_Server.Units
 
            damage -= armor;
 
-           if (this.level >= 3 && damage > 0)
+           if (this.level >= 3 && damage > 0 && !alreadyAttacked)
            {
                //int baseDamage = this.damage;
                //this.damage = 5;
@@ -65,6 +65,7 @@ namespace Guardians_Of_The_Arena_Server.Units
                //this.damage = baseDamage;             
 
                attackingUnit.ApplyDamage(5, this);
+               alreadyAttacked = true;
            }
 
 
