@@ -33,7 +33,7 @@ namespace Guardians_Of_The_Arena_Server.Units
             {
                 if (unitAttacking.unitAllegiance != this.unitAllegiance)
                 {
-                    this.ApplyDamage(-10, this);
+                    this.ApplyDamage(-5, this);
                 }
             }
 

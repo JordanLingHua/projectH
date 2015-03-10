@@ -49,7 +49,7 @@ public class Swordsman : Unit {
 			atkd = true;		
 		}
 		unitAffected.takeDmg(this,this.atk);
-		if (unitLevel >= 2){
+		if (unitLevel >= 2 && unitAffected.alleg != this.alleg){
 			this.hp += 5;
 			showPopUpText("+5",Color.green);
 			gm.addLogToCombatLog(player + this.unitName + " gained 5 health from lifesteal!");
