@@ -57,14 +57,13 @@ namespace Guardians_Of_The_Arena_Server.Units
 
            damage -= armor;
 
-           if (this.level >= 3 && damage > 0 && !alreadyAttacked)
+           if (this.level >= 3 && damage > 5)
            {
                //int baseDamage = this.damage;
                //this.damage = 5;
                //gameRef.sendAttackedUnits(AttackTile(attackingUnit.CurrentTile), this);
                //this.damage = baseDamage;             
 
-               alreadyAttacked = true;
                attackingUnit.ApplyDamage(5, this);
                
            }

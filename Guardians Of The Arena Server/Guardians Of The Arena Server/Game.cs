@@ -142,6 +142,32 @@ namespace Guardians_Of_The_Arena_Server
                         dm.updateTooltip(currentPlayer.playerClient.clientName, Int32.Parse(message[1]));
                         packetQueue.Dequeue();
                     }
+                    else if (message[0].Equals("surrender"))
+                    {
+                        if (isAI_Game)
+                        {
+                            player1.playerClient.sw.WriteLine("defeat");
+                        }
+                        else
+                        {
+                            if (currentPlayer.playerAllegiance == Unit.Allegiance.PLAYER_1)
+                            {
+                                player1.playerClient.sw.WriteLine("defeat");
+                                player2.playerClient.sw.WriteLine("victory");
+                            }
+                            else
+                            {
+                                player1.playerClient.sw.WriteLine("victory");
+                                player2.playerClient.sw.WriteLine("defeat");
+                            }
+                        }
+
+                        player1.playerClient.sw.WriteLine("enableMatchmaking");
+                        player2.playerClient.sw.WriteLine("enableMatchmaking");
+                        gameOver = true;
+                        player1.playerClient.inGame = false;
+                        player2.playerClient.inGame = false;
+                    }
                     else if (currentPlayer.isMyTurn)
                     {
                         packetQueue.Dequeue();
@@ -331,32 +357,6 @@ namespace Guardians_Of_The_Arena_Server
                                 player1.playerClient.sw.WriteLine("switchTurns\\{0}", maxMana);
                                 if (!isAI_Game) { player2.playerClient.sw.WriteLine("switchTurns\\{0}", maxMana); }
                             }
-                        }
-                        else if (message[0].Equals("surrender"))
-                        {
-                            if (isAI_Game)
-                            {
-                                player1.playerClient.sw.WriteLine("defeat");
-                            }
-                            else
-                            {
-                                if (currentPlayer.playerAllegiance == Unit.Allegiance.PLAYER_1)
-                                {
-                                    player1.playerClient.sw.WriteLine("defeat");
-                                    player2.playerClient.sw.WriteLine("victory");
-                                }
-                                else
-                                {
-                                    player1.playerClient.sw.WriteLine("victory");
-                                    player2.playerClient.sw.WriteLine("defeat");
-                                }
-                            }
-
-                            player1.playerClient.sw.WriteLine("enableMatchmaking");
-                            player2.playerClient.sw.WriteLine("enableMatchmaking");
-                            gameOver = true;
-                            player1.playerClient.inGame = false;
-                            player2.playerClient.inGame = false;
                         }
                     }
                 }
