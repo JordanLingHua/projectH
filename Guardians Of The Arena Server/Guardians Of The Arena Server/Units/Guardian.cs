@@ -66,7 +66,7 @@ namespace Guardians_Of_The_Arena_Server.Units
 
                attackingUnit.ApplyDamage(5, this);
                alreadyAttacked = true;
-           }
+           } 
 
 
            this.health -= damage;
