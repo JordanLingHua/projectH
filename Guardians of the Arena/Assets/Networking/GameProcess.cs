@@ -626,7 +626,7 @@ public class GameProcess : MonoBehaviour {
 				//Step 1)  Before you do anything, Transition from neutral_states in the post_attack version, to the actual neutral states
 				//NOTE:  the post_attack neutral states don't get signified by a mode_and_dir.  occured at exit time of attack.  So mode_and_dir is still 
 				//== the attack state it left off at
-				yield return StartCoroutine(resetToNeutral(tokens, 3 + i));
+				yield return StartCoroutine(resetToNeutral(tokens, 5 + i));
 				yield return new WaitForSeconds (0.1f);
 				//this.objectOccupyingTile. <--------This is another way to access the object
 				
@@ -635,56 +635,56 @@ public class GameProcess : MonoBehaviour {
 				//<-----You need the prerequisite step above whenever the unit getting hit gets hit in the same direction again
 
 
-				if (gameManager.units.ContainsKey (Int32.Parse (tokens [1])) && gameManager.units.ContainsKey (Int32.Parse (tokens [3 + i])) && gameManager.units [Int32.Parse (tokens [3 + i])].GetComponent<Animator> () != null) 
+				if (gameManager.units.ContainsKey (Int32.Parse (tokens [1])) && gameManager.units.ContainsKey (Int32.Parse (tokens [5 + i])) && gameManager.units [Int32.Parse (tokens [5 + i])].GetComponent<Animator> () != null) 
 				{
 	
-					if (gameManager.units [Int32.Parse (tokens [3 + i])].unitName == "Barrel") {
-							gameManager.units [Int32.Parse (tokens [3 + i])].GetComponent<Animator> ().SetBool ("breakTheBarrel", true);
+					if (gameManager.units [Int32.Parse (tokens [5 + i])].unitName == "Barrel") {
+							gameManager.units [Int32.Parse (tokens [5 + i])].GetComponent<Animator> ().SetBool ("breakTheBarrel", true);
 						} else {
-						if (gameManager.units [Int32.Parse (tokens [3 + i])].alleg == Unit.allegiance.playerTwo && playerNumber == 1) {
-							if (gameManager.units [Int32.Parse (tokens [3 + i])].transform.position.z < Int32.Parse (tokens [5]))//gameManager.units [Int32.Parse (tokens [1])].transform.position.z)
-										gameManager.units [Int32.Parse (tokens [3 + i])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 12);
-							else if (gameManager.units [Int32.Parse (tokens [3 + i])].transform.position.z > Int32.Parse (tokens [5]))//gameManager.units [Int32.Parse (tokens [1])].transform.position.z)
-										gameManager.units [Int32.Parse (tokens [3 + i])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 13);
-							else if (gameManager.units [Int32.Parse (tokens [3 + i])].transform.position.x > Int32.Parse (tokens [4]))//gameManager.units [Int32.Parse (tokens [1])].transform.position.x)
-										gameManager.units [Int32.Parse (tokens [3 + i])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 14);
-							else if (gameManager.units [Int32.Parse (tokens [3 + i])].transform.position.x < Int32.Parse (tokens [4]))//gameManager.units [Int32.Parse (tokens [1])].transform.position.x)
-										gameManager.units [Int32.Parse (tokens [3 + i])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 15);
+						if (gameManager.units [Int32.Parse (tokens [5 + i])].alleg == Unit.allegiance.playerTwo && playerNumber == 1) {
+							if (gameManager.units [Int32.Parse (tokens [5 + i])].transform.position.z < Int32.Parse (tokens [4]))//gameManager.units [Int32.Parse (tokens [1])].transform.position.z)
+										gameManager.units [Int32.Parse (tokens [5 + i])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 12);
+							else if (gameManager.units [Int32.Parse (tokens [5 + i])].transform.position.z > Int32.Parse (tokens [4]))//gameManager.units [Int32.Parse (tokens [1])].transform.position.z)
+										gameManager.units [Int32.Parse (tokens [5 + i])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 13);
+							else if (gameManager.units [Int32.Parse (tokens [5 + i])].transform.position.x > Int32.Parse (tokens [3]))//gameManager.units [Int32.Parse (tokens [1])].transform.position.x)
+										gameManager.units [Int32.Parse (tokens [5 + i])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 14);
+							else if (gameManager.units [Int32.Parse (tokens [5 + i])].transform.position.x < Int32.Parse (tokens [3]))//gameManager.units [Int32.Parse (tokens [1])].transform.position.x)
+										gameManager.units [Int32.Parse (tokens [5 + i])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 15);
 		
 							}
 							//If the opponent is controlling player 2
-						else if (gameManager.units [Int32.Parse (tokens [3 + i])].alleg == Unit.allegiance.playerTwo && playerNumber == 2) {
-							if (gameManager.units [Int32.Parse (tokens [3 + i])].transform.position.z > Int32.Parse (tokens [5]))//gameManager.units [Int32.Parse (tokens [1])].transform.position.z)
-										gameManager.units [Int32.Parse (tokens [3 + i])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 12);
-							else if (gameManager.units [Int32.Parse (tokens [3 + i])].transform.position.z < Int32.Parse (tokens [5]))//gameManager.units [Int32.Parse (tokens [1])].transform.position.z)
-										gameManager.units [Int32.Parse (tokens [3 + i])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 13);
-							else if (gameManager.units [Int32.Parse (tokens [3 + i])].transform.position.x < Int32.Parse (tokens [4]))//gameManager.units [Int32.Parse (tokens [1])].transform.position.x)
-										gameManager.units [Int32.Parse (tokens [3 + i])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 14);
-							else if (gameManager.units [Int32.Parse (tokens [3 + i])].transform.position.x > Int32.Parse (tokens [4]))//gameManager.units [Int32.Parse (tokens [1])].transform.position.x)
-										gameManager.units [Int32.Parse (tokens [3 + i])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 15);
+						else if (gameManager.units [Int32.Parse (tokens [5 + i])].alleg == Unit.allegiance.playerTwo && playerNumber == 2) {
+							if (gameManager.units [Int32.Parse (tokens [5 + i])].transform.position.z > Int32.Parse (tokens [4]))//gameManager.units [Int32.Parse (tokens [1])].transform.position.z)
+										gameManager.units [Int32.Parse (tokens [5 + i])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 12);
+							else if (gameManager.units [Int32.Parse (tokens [5 + i])].transform.position.z < Int32.Parse (tokens [4]))//gameManager.units [Int32.Parse (tokens [1])].transform.position.z)
+										gameManager.units [Int32.Parse (tokens [5 + i])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 13);
+							else if (gameManager.units [Int32.Parse (tokens [5 + i])].transform.position.x < Int32.Parse (tokens [3]))//gameManager.units [Int32.Parse (tokens [1])].transform.position.x)
+										gameManager.units [Int32.Parse (tokens [5 + i])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 14);
+							else if (gameManager.units [Int32.Parse (tokens [5 + i])].transform.position.x > Int32.Parse (tokens [3]))//gameManager.units [Int32.Parse (tokens [1])].transform.position.x)
+										gameManager.units [Int32.Parse (tokens [5 + i])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 15);
 							}
 							//If you are player 1
-						else if (gameManager.units [Int32.Parse (tokens [3 + i])].alleg == Unit.allegiance.playerOne && playerNumber == 1) {
-							if (gameManager.units [Int32.Parse (tokens [3 + i])].transform.position.z < Int32.Parse (tokens [5]))//gameManager.units [Int32.Parse (tokens [1])].transform.position.z)
-										gameManager.units [Int32.Parse (tokens [3 + i])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 12);
-							else if (gameManager.units [Int32.Parse (tokens [3 + i])].transform.position.z > Int32.Parse (tokens [5]))//gameManager.units [Int32.Parse (tokens [1])].transform.position.z)
-										gameManager.units [Int32.Parse (tokens [3 + i])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 13);
-							else if (gameManager.units [Int32.Parse (tokens [3 + i])].transform.position.x > Int32.Parse (tokens [4]))//gameManager.units [Int32.Parse (tokens [1])].transform.position.x)
-										gameManager.units [Int32.Parse (tokens [3 + i])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 14);
-							else if (gameManager.units [Int32.Parse (tokens [3 + i])].transform.position.x < Int32.Parse (tokens [4]))//gameManager.units [Int32.Parse (tokens [1])].transform.position.x)
-										gameManager.units [Int32.Parse (tokens [3 + i])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 15);
+						else if (gameManager.units [Int32.Parse (tokens [5 + i])].alleg == Unit.allegiance.playerOne && playerNumber == 1) {
+							if (gameManager.units [Int32.Parse (tokens [5 + i])].transform.position.z > Int32.Parse (tokens [4]))//gameManager.units [Int32.Parse (tokens [1])].transform.position.z)
+										gameManager.units [Int32.Parse (tokens [5 + i])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 12);
+							else if (gameManager.units [Int32.Parse (tokens [5 + i])].transform.position.z < Int32.Parse (tokens [4]))//gameManager.units [Int32.Parse (tokens [1])].transform.position.z)
+										gameManager.units [Int32.Parse (tokens [5 + i])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 13);
+							else if (gameManager.units [Int32.Parse (tokens [5 + i])].transform.position.x > Int32.Parse (tokens [3]))//gameManager.units [Int32.Parse (tokens [1])].transform.position.x)
+										gameManager.units [Int32.Parse (tokens [5 + i])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 14);
+							else if (gameManager.units [Int32.Parse (tokens [5 + i])].transform.position.x < Int32.Parse (tokens [3]))//gameManager.units [Int32.Parse (tokens [1])].transform.position.x)
+										gameManager.units [Int32.Parse (tokens [5 + i])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 15);
 		
 							}
 							//If the opponent is player 1
 							else {
-							if (gameManager.units [Int32.Parse (tokens [3 + i])].transform.position.z > Int32.Parse (tokens [5]))//gameManager.units [Int32.Parse (tokens [1])].transform.position.z)
-										gameManager.units [Int32.Parse (tokens [3 + i])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 12);
-							else if (gameManager.units [Int32.Parse (tokens [3 + i])].transform.position.z < Int32.Parse (tokens [5]))//gameManager.units [Int32.Parse (tokens [1])].transform.position.z)
-										gameManager.units [Int32.Parse (tokens [3 + i])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 13);
-							else if (gameManager.units [Int32.Parse (tokens [3 + i])].transform.position.x < Int32.Parse (tokens [4]))//gameManager.units [Int32.Parse (tokens [1])].transform.position.x)
-										gameManager.units [Int32.Parse (tokens [3 + i])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 14);
-							else if (gameManager.units [Int32.Parse (tokens [3 + i])].transform.position.x > Int32.Parse (tokens [4]))//gameManager.units [Int32.Parse (tokens [1])].transform.position.x)
-										gameManager.units [Int32.Parse (tokens [3 + i])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 15);
+							if (gameManager.units [Int32.Parse (tokens [5 + i])].transform.position.z > Int32.Parse (tokens [4]))//gameManager.units [Int32.Parse (tokens [1])].transform.position.z)
+										gameManager.units [Int32.Parse (tokens [5 + i])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 12);
+							else if (gameManager.units [Int32.Parse (tokens [5 + i])].transform.position.z < Int32.Parse (tokens [4]))//gameManager.units [Int32.Parse (tokens [1])].transform.position.z)
+										gameManager.units [Int32.Parse (tokens [5 + i])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 13);
+							else if (gameManager.units [Int32.Parse (tokens [5 + i])].transform.position.x < Int32.Parse (tokens [3]))//gameManager.units [Int32.Parse (tokens [1])].transform.position.x)
+										gameManager.units [Int32.Parse (tokens [5 + i])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 14);
+							else if (gameManager.units [Int32.Parse (tokens [5 + i])].transform.position.x > Int32.Parse (tokens [3]))//gameManager.units [Int32.Parse (tokens [1])].transform.position.x)
+										gameManager.units [Int32.Parse (tokens [5 + i])].GetComponent<Animator> ().SetInteger ("mode_and_dir", 15);
 							}
 						}
 				}
@@ -696,8 +696,8 @@ public class GameProcess : MonoBehaviour {
 				if (gameManager.units [Int32.Parse (tokens [1])].unitType == 2) {
 					(gameManager.units [Int32.Parse (tokens [1])] as Mystic).revertStatsOfFocused ();
 				}
-				bool wasInvincible = gameManager.units [Int32.Parse (tokens [3 + i])].invincible;
-				gameManager.units [Int32.Parse (tokens [1])].attackUnit (gameManager.units [Int32.Parse (tokens [3 + i])]);
+				bool wasInvincible = gameManager.units [Int32.Parse (tokens [5 + i])].invincible;
+				gameManager.units [Int32.Parse (tokens [1])].attackUnit (gameManager.units [Int32.Parse (tokens [5 + i])]);
 				if (!wasInvincible && gameManager.units.ContainsKey (Int32.Parse (tokens [1]))) {
 					gameManager.units [Int32.Parse (tokens [1])].gainXP ();
 				}
@@ -746,59 +746,59 @@ public class GameProcess : MonoBehaviour {
 
 				
 				
-				if (gameManager.units.ContainsKey (Int32.Parse (tokens [1])) && gameManager.units.ContainsKey (Int32.Parse (tokens [3 + i])) && gameManager.units [Int32.Parse (tokens [3 + i])].GetComponent<Animator> () != null) 
+				if (gameManager.units.ContainsKey (Int32.Parse (tokens [1])) && gameManager.units.ContainsKey (Int32.Parse (tokens [5 + i])) && gameManager.units [Int32.Parse (tokens [5 + i])].GetComponent<Animator> () != null) 
 				{
 					//Step 2)  Now you can use the appropriate states for this attack functionality
 					print ("attacker position x:" + gameManager.units[Int32.Parse (tokens[1])].GetComponentInParent<TileScript>().x);
 					print ("attacker position z:" + gameManager.units[Int32.Parse (tokens[1])].GetComponentInParent<TileScript>().y);
-					print ("attacked position x:" + gameManager.units[Int32.Parse (tokens[3+i])].GetComponentInParent<TileScript>().x);
-					print ("attacked position z:" + gameManager.units[Int32.Parse (tokens[3+i])].GetComponentInParent<TileScript>().y);
+					print ("attacked position x:" + gameManager.units[Int32.Parse (tokens[5+i])].GetComponentInParent<TileScript>().x);
+					print ("attacked position z:" + gameManager.units[Int32.Parse (tokens[5+i])].GetComponentInParent<TileScript>().y);
 					print ("attacker animation state #:" + gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().GetInteger("mode_and_dir"));
 					//Use the values assigned to targetTileX and targetTileZ from TileScript.cs:
 					//Attack animation based on the position of the tile that is going to be attacked
 					//IF you are controlling player 2
 					if (gameManager.units[Int32.Parse (tokens[1])].alleg ==  Unit.allegiance.playerTwo && playerNumber == 1){
-						if(gameManager.units[Int32.Parse (tokens[1])].GetComponentInParent<TileScript>().y < gameManager.units[Int32.Parse (tokens[3+i])].GetComponentInParent<TileScript>().y)
+						if(gameManager.units[Int32.Parse (tokens[1])].GetComponentInParent<TileScript>().y < gameManager.units[Int32.Parse (tokens[5+i])].GetComponentInParent<TileScript>().y)
 							gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 8);
-						else if(gameManager.units[Int32.Parse (tokens[1])].GetComponentInParent<TileScript>().y > gameManager.units[Int32.Parse (tokens[3+i])].GetComponentInParent<TileScript>().y)
+						else if(gameManager.units[Int32.Parse (tokens[1])].GetComponentInParent<TileScript>().y > gameManager.units[Int32.Parse (tokens[5+i])].GetComponentInParent<TileScript>().y)
 							gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 9);
-						else if(gameManager.units[Int32.Parse (tokens[1])].GetComponentInParent<TileScript>().x > gameManager.units[Int32.Parse (tokens[3+i])].GetComponentInParent<TileScript>().x)
+						else if(gameManager.units[Int32.Parse (tokens[1])].GetComponentInParent<TileScript>().x > gameManager.units[Int32.Parse (tokens[5+i])].GetComponentInParent<TileScript>().x)
 							gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 10);
-						else if(gameManager.units[Int32.Parse (tokens[1])].GetComponentInParent<TileScript>().x < gameManager.units[Int32.Parse (tokens[3+i])].GetComponentInParent<TileScript>().x)
+						else if(gameManager.units[Int32.Parse (tokens[1])].GetComponentInParent<TileScript>().x < gameManager.units[Int32.Parse (tokens[5+i])].GetComponentInParent<TileScript>().x)
 							gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 11);
 					}
 					//If the opponent is controlling the attacker unit and the opponent is player 2
 					else if (gameManager.units[Int32.Parse (tokens[1])].alleg ==  Unit.allegiance.playerTwo && playerNumber == 2){
-						if(gameManager.units[Int32.Parse (tokens[1])].GetComponentInParent<TileScript>().y > gameManager.units[Int32.Parse (tokens[3+i])].GetComponentInParent<TileScript>().y)
+						if(gameManager.units[Int32.Parse (tokens[1])].GetComponentInParent<TileScript>().y > gameManager.units[Int32.Parse (tokens[5+i])].GetComponentInParent<TileScript>().y)
 							gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 8);
-						else if(gameManager.units[Int32.Parse (tokens[1])].GetComponentInParent<TileScript>().y < gameManager.units[Int32.Parse (tokens[3+i])].GetComponentInParent<TileScript>().y)
+						else if(gameManager.units[Int32.Parse (tokens[1])].GetComponentInParent<TileScript>().y < gameManager.units[Int32.Parse (tokens[5+i])].GetComponentInParent<TileScript>().y)
 							gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 9);
-						else if(gameManager.units[Int32.Parse (tokens[1])].GetComponentInParent<TileScript>().x < gameManager.units[Int32.Parse (tokens[3+i])].GetComponentInParent<TileScript>().x)
+						else if(gameManager.units[Int32.Parse (tokens[1])].GetComponentInParent<TileScript>().x < gameManager.units[Int32.Parse (tokens[5+i])].GetComponentInParent<TileScript>().x)
 							gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 10);
-						else if(gameManager.units[Int32.Parse (tokens[1])].GetComponentInParent<TileScript>().x > gameManager.units[Int32.Parse (tokens[3+i])].GetComponentInParent<TileScript>().x)
+						else if(gameManager.units[Int32.Parse (tokens[1])].GetComponentInParent<TileScript>().x > gameManager.units[Int32.Parse (tokens[5+i])].GetComponentInParent<TileScript>().x)
 							gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 11);
 					}
 					//If you are controlling the attacker unit and you are player 1
 					else if (gameManager.units[Int32.Parse (tokens[1])].alleg ==  Unit.allegiance.playerOne && playerNumber == 1){
-						if(gameManager.units[Int32.Parse (tokens[1])].GetComponentInParent<TileScript>().y < gameManager.units[Int32.Parse (tokens[3+i])].GetComponentInParent<TileScript>().y)
+						if(gameManager.units[Int32.Parse (tokens[1])].GetComponentInParent<TileScript>().y < gameManager.units[Int32.Parse (tokens[5+i])].GetComponentInParent<TileScript>().y)
 							gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 8);
-						else if(gameManager.units[Int32.Parse (tokens[1])].GetComponentInParent<TileScript>().y > gameManager.units[Int32.Parse (tokens[3+i])].GetComponentInParent<TileScript>().y)
+						else if(gameManager.units[Int32.Parse (tokens[1])].GetComponentInParent<TileScript>().y > gameManager.units[Int32.Parse (tokens[5+i])].GetComponentInParent<TileScript>().y)
 							gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 9);
-						else if(gameManager.units[Int32.Parse (tokens[1])].GetComponentInParent<TileScript>().x > gameManager.units[Int32.Parse (tokens[3+i])].GetComponentInParent<TileScript>().x)
+						else if(gameManager.units[Int32.Parse (tokens[1])].GetComponentInParent<TileScript>().x > gameManager.units[Int32.Parse (tokens[5+i])].GetComponentInParent<TileScript>().x)
 							gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 10);
-						else if(gameManager.units[Int32.Parse (tokens[1])].GetComponentInParent<TileScript>().x < gameManager.units[Int32.Parse (tokens[3+i])].GetComponentInParent<TileScript>().x)
+						else if(gameManager.units[Int32.Parse (tokens[1])].GetComponentInParent<TileScript>().x < gameManager.units[Int32.Parse (tokens[5+i])].GetComponentInParent<TileScript>().x)
 							gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 11);
 						//hmm it seems to always play the attack_front animation
 					}
 					//If the opponent is controlling the attacker unit and the opponent is player 1
 					else if (gameManager.units[Int32.Parse (tokens[1])].alleg ==  Unit.allegiance.playerTwo && playerNumber == 2){
-						if(gameManager.units[Int32.Parse (tokens[1])].GetComponentInParent<TileScript>().y > gameManager.units[Int32.Parse (tokens[3+i])].GetComponentInParent<TileScript>().y)
+						if(gameManager.units[Int32.Parse (tokens[1])].GetComponentInParent<TileScript>().y > gameManager.units[Int32.Parse (tokens[5+i])].GetComponentInParent<TileScript>().y)
 							gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 8);
-						else if(gameManager.units[Int32.Parse (tokens[1])].GetComponentInParent<TileScript>().y < gameManager.units[Int32.Parse (tokens[3+i])].GetComponentInParent<TileScript>().y)
+						else if(gameManager.units[Int32.Parse (tokens[1])].GetComponentInParent<TileScript>().y < gameManager.units[Int32.Parse (tokens[5+i])].GetComponentInParent<TileScript>().y)
 							gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 9);
-						else if(gameManager.units[Int32.Parse (tokens[1])].GetComponentInParent<TileScript>().x < gameManager.units[Int32.Parse (tokens[3+i])].GetComponentInParent<TileScript>().x)
+						else if(gameManager.units[Int32.Parse (tokens[1])].GetComponentInParent<TileScript>().x < gameManager.units[Int32.Parse (tokens[5+i])].GetComponentInParent<TileScript>().x)
 							gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 10);
-						else if(gameManager.units[Int32.Parse (tokens[1])].GetComponentInParent<TileScript>().x > gameManager.units[Int32.Parse (tokens[3+i])].GetComponentInParent<TileScript>().x)
+						else if(gameManager.units[Int32.Parse (tokens[1])].GetComponentInParent<TileScript>().x > gameManager.units[Int32.Parse (tokens[5+i])].GetComponentInParent<TileScript>().x)
 							gameManager.units[Int32.Parse (tokens[1])].GetComponent<Animator>().SetInteger("mode_and_dir", 11);
 					}
 					else{
