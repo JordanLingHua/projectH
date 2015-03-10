@@ -26,7 +26,7 @@ public class AIScript : MonoBehaviour {
 		targetUnits = new List<Unit>();	
 		obstacles = new List<Unit>();	
 		playerUnits = new List<Unit>();	
-		actionDelay = 3.0f;
+		actionDelay = 4.0f;
 	}
 
 	public IEnumerator makeGameAction(Unit u)
@@ -328,14 +328,14 @@ public class AIScript : MonoBehaviour {
 			//Swordsman will prioritize enemies over barrels
 			case 7:
 				foreach (TileScript t in attackTiles) {
-					if(t.objectOccupyingTile != null && t.objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerOne)
+					if(t.objectOccupyingTile != null && t.objectOccupyingTile.GetComponent<Unit>().alleg != Unit.allegiance.playerTwo)
 					{
-						if (t.objectOccupyingTile.GetComponent<Unit>().unitType == 11)
-						{
-							if(!t.objectOccupyingTile.GetComponent<SoulStone>().invincible)
-								return t;
-						}
-						else
+						if (t.objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerOne && t.objectOccupyingTile.GetComponent<Unit>().unitType == 11)
+							{
+								if(!t.objectOccupyingTile.GetComponent<SoulStone>().invincible)
+									return t;
+							}
+						else if (t.objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.neutral && t.objectOccupyingTile.name.Equals("BarrelPrefab(Clone)"))
 							return t;
 					}				   	
 
