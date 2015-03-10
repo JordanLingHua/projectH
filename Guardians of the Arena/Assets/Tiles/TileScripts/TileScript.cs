@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 public class TileScript : MonoBehaviour {
 
-	//
 	//protected Animator animator;
 
 	public Texture2D friendlyFireCursor,regularCursor;
@@ -24,10 +23,7 @@ public class TileScript : MonoBehaviour {
 	public GameObject objectOccupyingTile = null;
 	public int x,y;
 
-	//
 	//public float targetTileX, targetTileZ;
-
-	
 	public GameProcess gp;
 	AudioManager am;
 	public List<GameObject> AoETiles = new List<GameObject> ();
@@ -42,8 +38,7 @@ public class TileScript : MonoBehaviour {
 	}
 
 
-
-	///*
+	
 	//Check certain conditions in the tile throughout the game constantly
 	//Wait until the animation finishes x of unit finishes playing, and check in here to see if it finally reached the state
 	//that allows it to be destroyed
@@ -61,19 +56,13 @@ public class TileScript : MonoBehaviour {
 		}
 
 	}
-	//*/
-
 
 
 	public void OnMouseOver(){
 		renderer.material.shader = Shader.Find ("Toon/Lighted");
 		if (gm.selectedUnit != null && gm.gs == GameManager.gameState.playerAtk && gm.accessibleTiles.Contains (this)) {
 			AoETiles = gm.selectedUnit.showAoEAffectedTiles(this);
-			//show friendly fire cursor if its not a priest, mystic, and a templar that isn't level 3
-//			if (((gm.selectedUnit.unitType != 8 && gm.selectedUnit.unitType != 2) || (gm.selectedUnit.unitType == 3 && gm.selectedUnit.unitLevel != 3)) && objectOccupyingTile != null && ((objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerOne && gp.playerNumber == 1) ||(objectOccupyingTile.GetComponent<Unit>().alleg == Unit.allegiance.playerTwo && gp.playerNumber == 2))){
-//				Cursor.SetCursor(friendlyFireCursor,Vector2.zero,CursorMode.Auto);
-//			}
-			if (gm.selectedUnit.getFriendlyFireHitTiles().Contains(this)){
+			if (gm.selectedUnit.getFriendlyFireHitTiles().Contains(this) && gm.turn){
 				Cursor.SetCursor(friendlyFireCursor,Vector2.zero,CursorMode.Auto);
 			}
 		}
@@ -107,31 +96,6 @@ public class TileScript : MonoBehaviour {
 		}
 		AoETiles.Clear ();
 
-		/*
-		//Change attack animation back to idle since the
-
-		if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 8)
-			this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 0);
-		else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 9)
-			this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 1);
-		else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 10)
-			this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 2);
-		else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 11)
-			this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 3);
-		*/
-
-		/*
-		if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 8)
-			this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 0);
-		else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 9)
-			this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 1);
-		else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 10)
-			this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 2);
-		else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 11)
-			this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 3);
-			*/
-
-
 	}
 
 	//taken from user dcarrier on unity forums
@@ -155,33 +119,14 @@ public class TileScript : MonoBehaviour {
 					this.GetComponentInChildren<Animator> ().SetInteger ("mode_and_dir", 2);
 			else if (this.GetComponentInChildren<Animator> ().GetInteger ("mode_and_dir") == 11 || this.GetComponentInChildren<Animator> ().GetInteger ("mode_and_dir") == 15)
 					this.GetComponentInChildren<Animator> ().SetInteger ("mode_and_dir", 3);
-			//*/
+
 		}
-
-		/*
-		//if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 8 || this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 12)
-		if(objectOccupyingTile.GetComponent<Animator>().GetInteger("mode_and_dir") == 8 || objectOccupyingTile.GetComponent<Animator>().GetInteger("mode_and_dir") == 12)
-			objectOccupyingTile.GetComponent<Animator>().SetInteger("mode_and_dir", 0);
-		//else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 9 || this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 13)
-		else if(objectOccupyingTile.GetComponent<Animator>().GetInteger("mode_and_dir") == 9 || objectOccupyingTile.GetComponent<Animator>().GetInteger("mode_and_dir") == 13)
-			objectOccupyingTile.GetComponent<Animator>().SetInteger("mode_and_dir", 1);
-		//else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 10 || this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 14)
-		else if(objectOccupyingTile.GetComponent<Animator>().GetInteger("mode_and_dir") == 10 || objectOccupyingTile.GetComponent<Animator>().GetInteger("mode_and_dir") == 14)
-			objectOccupyingTile.GetComponent<Animator>().SetInteger("mode_and_dir", 2);
-		//else if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 11 || this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 15)
-		else if(objectOccupyingTile.GetComponent<Animator>().GetInteger("mode_and_dir") == 11 || objectOccupyingTile.GetComponent<Animator>().GetInteger("mode_and_dir") == 15)
-			tobjectOccupyingTile.GetComponent<Animator>().SetInteger("mode_and_dir", 3);
-		//*/
-
-
 		
 		
 		float i = 0.0f;
 		float rate = 1.0f / time;
-		//1.0f
 		bool isOpponentPiece = false;//Temporarily here.  Will make global after non-opponent
 		//logic implemented
-		//1.0f
 		while (i < 1.0f) {
 			i += Time.deltaTime * rate;
 			move.transform.position = Vector3.Lerp(start, end, i);
@@ -361,16 +306,6 @@ public class TileScript : MonoBehaviour {
 
 			gp.returnSocket ().SendTCPPacket ("move\\" + gm.selectedUnit.unitID + "\\" + this.x + "\\" + this.y);
 			print ("Sent move packet");
-						/*
-			if(this.x == 0 && this.y > 0)
-				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 4);
-			else if(this.x == 0 && this.y < 0)
-				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 5);
-			else if(this.x < 0 && this.y == 0)
-				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 6);
-			else if(this.x > 0 && this.y == 0)
-				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 7);
-			*/
 			am.playButtonSFX ();
 		} else {
 			am.playErrorSFX ();

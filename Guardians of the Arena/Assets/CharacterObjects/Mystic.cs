@@ -194,7 +194,6 @@ public class Mystic: Unit {
 		origY2 = partSys2.transform.position.y;
 		origZ2 = partSys2.transform.position.z;
 
-	//	if (Application.loadedLevelName.Equals ("BoardScene") && !((playerNumber == 1 && alleg == allegiance.playerOne) || (playerNumber == 2 && alleg == allegiance.playerTwo)))
 		if (Application.loadedLevelName.Equals ("BoardScene") && (playerNumber == 2))
 		{
 			Debug.Log("switcheroo!");
@@ -203,23 +202,10 @@ public class Mystic: Unit {
 
 			partSys.transform.Rotate(300.0f, 0.0f, 0.0f);
 			partSys.transform.position = new Vector3 (origX, origY, origZ + 5.33f);
-//			partSys.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, 0.0f);
-			//partSys.transform.Translate (0.0f, 0.0f, 4.0f);
-			//partSys.transform.Translate(0.0f, -.33f, 0.0f);
-//
+
 			partSys2.transform.Rotate(300.0f, 0.0f, 0.0f);
 			partSys2.transform.position = new Vector3 (origX2, origY2, origZ2 + 5.33f);
-			//partSys2.transform.position = new Vector3 (origX, origY - 1.69, origZ + 6.48);
-			//partSys.transform.Translate (0.0f, 0.0f, 4.0f);
-			//partSys.transform.Translate(0.0f, -.33f, 0.0f);
-//			partSys2.transform.position = new Vector3(unitFocused.transform.position.x, unitFocused.transform.position.y, 0.0f);
 		}
 
-	}
-
-	void Update()
-	{
-		//if(partSys != null)
-		//partSys.transform.position = new Vector3 (origX + offsetX, origY + offsetY, origZ + offsetZ);
 	}
 }

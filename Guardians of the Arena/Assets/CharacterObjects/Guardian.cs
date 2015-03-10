@@ -39,13 +39,14 @@ public class Guardian :Unit {
 			//taking damage
 			if (amt > 0){
 				//thorns
-				if (unitLevel == 3){
+				if (unitLevel == 3 && amt > 5){
 					unitAttacking.takeDmg (this,5);
 				}
 
 				if (unitLevel >=2 && amt > 10){
 					hp -=10 ;
 					gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" attacked "+ player + unitName + " for " + 10 + " damage!");
+					showPopUpText("-" + 10,Color.red);
 				}else{
 					this.hp -= (amt - this.armor);
 					gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" attacked "+ player + unitName + " for " + amt + " damage!");

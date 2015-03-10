@@ -384,29 +384,6 @@ public class Unit    : MonoBehaviour {
 		//clean up the board colors
 		gm.accessibleTiles.Clear();
 		this.transform.parent.gameObject.transform.parent.GetComponent<TileManager>().clearAllTiles();
-
-		/*
-		AnimatorStateInfo stateInfo = this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0);
-		int x = 0;
-		while(x < stateInfo.normalizedTime*Time.deltaTime)
-			x++;
-			*/
-		/*
-		if(this.GetComponent<Animator>().GetInteger("mode_and_dir")==8){
-			this.GetComponent<Animator>().SetInteger("mode_and_dir", 0);
-		}
-		else if(this.GetComponent<Animator>().GetInteger("mode_and_dir")==9){
-			this.GetComponent<Animator>().SetInteger("mode_and_dir", 1);
-		}	
-		else if(this.GetComponent<Animator>().GetInteger("mode_and_dir")==10){
-			this.GetComponent<Animator>().SetInteger("mode_and_dir", 2);
-		}
-		else if(this.GetComponent<Animator>().GetInteger("mode_and_dir")==11){
-			this.GetComponent<Animator>().SetInteger("mode_and_dir", 3);
-		}
-		*/
-
-
 	}
 
 	public void selectUnit(){
