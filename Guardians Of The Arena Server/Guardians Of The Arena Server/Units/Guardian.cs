@@ -64,8 +64,9 @@ namespace Guardians_Of_The_Arena_Server.Units
                //gameRef.sendAttackedUnits(AttackTile(attackingUnit.CurrentTile), this);
                //this.damage = baseDamage;             
 
-               attackingUnit.ApplyDamage(5, this);
                alreadyAttacked = true;
+               attackingUnit.ApplyDamage(5, this);
+               
            }
 
 
