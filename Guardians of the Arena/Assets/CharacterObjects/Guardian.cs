@@ -44,9 +44,9 @@ public class Guardian :Unit {
 				}
 
 				if (unitLevel >=2 && amt > 10){
-					hp -=10 ;
+					hp -=(10-this.armor) ;
 					gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" attacked "+ player + unitName + " for " + 10 + " damage!");
-					showPopUpText("-" + 10,Color.red);
+					showPopUpText("-" + (10- this.armor),Color.red);
 				}else{
 					this.hp -= (amt - this.armor);
 					gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" attacked "+ player + unitName + " for " + amt + " damage!");

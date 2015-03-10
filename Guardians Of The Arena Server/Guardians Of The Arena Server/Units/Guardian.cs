@@ -51,29 +51,34 @@ namespace Guardians_Of_The_Arena_Server.Units
 
        public override void ApplyDamage(int damage, Unit attackingUnit)
        {
-
-           if (this.level >= 2 && damage > 10)
-               damage = 10;
-
-           damage -= armor;
-
-           if (this.level >= 3 && damage > 5)
+           //taking damage
+           if (damage > 0)
            {
-               //int baseDamage = this.damage;
-               //this.damage = 5;
-               //gameRef.sendAttackedUnits(AttackTile(attackingUnit.CurrentTile), this);
-               //this.damage = baseDamage;             
+               if (this.level >= 3 && damage > 5)
+               {
+                   //int baseDamage = this.damage;
+                   //this.damage = 5;
+                   //gameRef.sendAttackedUnits(AttackTile(attackingUnit.CurrentTile), this);
+                   //this.damage = baseDamage;             
 
-               attackingUnit.ApplyDamage(5, this);
-               
+                   attackingUnit.ApplyDamage(5, this);
+               }
+               if (this.level >= 2 && damage > 10)
+               {
+                   this.health -= (10-armor);
+               }
+               else {
+                   this.health -=  (damage - armor);
+               }
            }
+           //getting healed
+           else {
+               this.health -= damage;
 
-
-           this.health -= damage;
-
-           if (health > maxHealth)
-               health = maxHealth;
-
+               if (health > maxHealth)
+                   health = maxHealth;
+           }
+     
            Console.WriteLine("LOG: Unit {0} deals {1} damage to Unit {2}. Is now at {3} health"
                                 , attackingUnit.UniqueID, damage, this.uniqueID, health);
 

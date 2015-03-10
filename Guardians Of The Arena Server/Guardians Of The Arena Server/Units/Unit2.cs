@@ -99,15 +99,20 @@ namespace Guardians_Of_The_Arena_Server.Units
             if (damage >= 0)
             {
                 unfocus();
+                this.health -= (damage - armor);
+            }
+            else {
+                this.health -= damage;
+                if (health > maxHealth)
+                    health = maxHealth;
             }
 
             Console.WriteLine("LOG: Unit {0} takes {1} damage. Is now at {2} health", this.UniqueID, damage, this.health);
 
-            this.health -= damage;
+
             Console.WriteLine("LOG: Unit " + uniqueID + " takes " + damage + " damage.");
 
-            if (health > maxHealth)
-                health = maxHealth;
+
 
 
             if (health <= 0)
