@@ -249,7 +249,7 @@ namespace Guardians_Of_The_Arena_Server
                                                     ArrayList unitIDs = attackingUnit.AttackTile(tileToAttack);
                                                     attackingUnit.Attacked = true;
 
-                                                    sendAttackedUnits(unitIDs, attackingUnit);
+                                                    sendAttackedUnits(unitIDs, attackingUnit, tileToAttack.x, tileToAttack.y);
 
                                                 }
 
@@ -363,10 +363,10 @@ namespace Guardians_Of_The_Arena_Server
             }
         }
 
-        public void sendAttackedUnits(ArrayList unitIDs, Unit attackingUnit)
+        public void sendAttackedUnits(ArrayList unitIDs, Unit attackingUnit, int tileToAttackX, int tileToAttackY)
         {
 
-            string sendMessage = "attack\\" + attackingUnit.UniqueID + "\\" + unitIDs.Count;
+            string sendMessage = "attack\\" + attackingUnit.UniqueID + "\\" + unitIDs.Count+"\\"+tileToAttackX+"\\"+tileToAttackY;
             foreach (int id in unitIDs)
             {
                 Unit unitHit = board.getUnitByID(id);
