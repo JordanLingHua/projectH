@@ -261,7 +261,11 @@ public class GameManager : MonoBehaviour {
 				if (script.atk > 0 && script.unitType != 11){
 					info +="\nDamage: " + script.atk; 
 				}else if (script.atk < 0){
-					info += "\nHeals for: " + -1*script.atk;
+					if (script.atk == -500){
+						info +="\nFull heals target";
+					}else{
+						info += "\nHeals for: "+ (-1*script.atk);
+					}
 				}else{
 					info += "";
 				}

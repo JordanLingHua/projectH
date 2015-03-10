@@ -139,8 +139,6 @@ public class Templar : Unit{
 		}else{
 			unitAffected.takeDmg(this,this.atk);
 		}
-		gm.accessibleTiles.Clear();
-		this.transform.parent.gameObject.transform.parent.GetComponent<TileManager>().clearAllTiles();
 	}
 
 

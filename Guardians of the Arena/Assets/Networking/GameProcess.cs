@@ -619,7 +619,7 @@ public class GameProcess : MonoBehaviour {
 
 		if (Int32.Parse (tokens [2]) != 0) 
 		{
-			//	
+			Unit temp = gameManager.units [Int32.Parse (tokens [1])];
 			for (int i = 0; i < Int32.Parse (tokens[2]); i ++) 
 			{
 					
@@ -696,11 +696,13 @@ public class GameProcess : MonoBehaviour {
 				//When all the tiles are read, the null ones get stuck, and the other tiles after it do not get to play the hit animation.  So it's better to move this down here.  
 
 				
-				if (gameManager.units [Int32.Parse (tokens [1])].unitType == 2) {
-					(gameManager.units [Int32.Parse (tokens [1])] as Mystic).revertStatsOfFocused ();
-				}
+//				if (gameManager.units [Int32.Parse (tokens [1])].unitType == 2) {
+//					(gameManager.units [Int32.Parse (tokens [1])] as Mystic).revertStatsOfFocused ();
+//				}
+
 				bool wasInvincible = gameManager.units [Int32.Parse (tokens [3 + i])].invincible;
-				gameManager.units [Int32.Parse (tokens [1])].attackUnit (gameManager.units [Int32.Parse (tokens [3 + i])]);
+				//gameManager.units [Int32.Parse (tokens [1])].attackUnit (gameManager.units [Int32.Parse (tokens [3 + i])]);
+				temp.attackUnit(gameManager.units [Int32.Parse (tokens [3 + i])]);
 				if (!wasInvincible && gameManager.units.ContainsKey (Int32.Parse (tokens [1]))) {
 					gameManager.units [Int32.Parse (tokens [1])].gainXP ();
 				}

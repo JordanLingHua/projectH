@@ -365,6 +365,7 @@ public class Unit    : MonoBehaviour {
 					gm.addLogToCombatLog (this.unitName + " was killed!");
 					gm.units.Remove (this.unitID);
 					this.transform.parent.GetComponent<TileScript> ().objectOccupyingTile = null;
+					this.GetComponentInParent<TileScript>().GetComponentInParent<TileManager>().clearAllTiles();
 					Destroy (this.gameObject);
 				}
 

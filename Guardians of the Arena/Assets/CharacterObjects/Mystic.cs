@@ -82,19 +82,23 @@ public class Mystic: Unit {
 		string unitAffectedPlayer = ((gp.playerNumber ==  1 && unitAttacking.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && unitAttacking.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
 		string player = ((gp.playerNumber ==  1 && this.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && this.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
 		if (!this.invincible) {
-			this.hp -= (amt - this.armor);
-			//if healed up dont let it have more than max hp
-			if (hp > maxHP){
-				hp = maxHP;
-			}
-			
+
 			if (amt > 0){
 				//taking damage
+				this.hp -= (amt - this.armor);
 				gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" attacked "+ player + unitName + " for " + (amt - this.armor) + " damage!");
 				showPopUpText("-" + (amt - this.armor),Color.red);
 				revertStatsOfFocused();
+			
 			}else{
 				//getting healed
+				this.hp -= amt;
+				
+				//if healed up dont let it have more than max hp
+				if (hp > maxHP){
+					hp = maxHP;
+				}
+
 				gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" healed "+ player + unitName + " for " + (-1*amt));
 				if (amt == -500){
 					showPopUpText("Full Heal",Color.green);
@@ -120,8 +124,12 @@ public class Mystic: Unit {
 
 	//Unit Focused needs to take dmg after turn ends if level 3 and enemy unit
 	public override void attackUnit(Unit unitAffected){
-		addParticles (unitAffected);
+		
+		if (unitFocused != null) {
+			revertStatsOfFocused();		
+		}
 
+		addParticles (unitAffected);
 		string player = ((gp.playerNumber ==  1 && this.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && this.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
 		string unitAffectedPlayer = ((gp.playerNumber ==  1 && unitAffected.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && unitAffected.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
 		atkd = true;
