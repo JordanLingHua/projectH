@@ -366,7 +366,7 @@ namespace Guardians_Of_The_Arena_Server
         public void sendAttackedUnits(ArrayList unitIDs, Unit attackingUnit, int tileToAttackX, int tileToAttackY)
         {
 
-            string sendMessage = "attack\\" + attackingUnit.UniqueID + "\\" + unitIDs.Count+"\\"+tileToAttackX+"\\"+tileToAttackY;
+            string sendMessage = "attack\\" + attackingUnit.UniqueID + "\\" + unitIDs.Count;
             foreach (int id in unitIDs)
             {
                 Unit unitHit = board.getUnitByID(id);
@@ -377,6 +377,7 @@ namespace Guardians_Of_The_Arena_Server
                     attackingUnit.addXP();
             }
 
+            sendMessage += "\\" + tileToAttackX + "\\" + tileToAttackY;
 
             player1.playerClient.sw.WriteLine(sendMessage);
             if (!isAI_Game)
