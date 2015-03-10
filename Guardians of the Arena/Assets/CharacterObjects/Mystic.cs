@@ -83,7 +83,6 @@ public class Mystic: Unit {
 		string player = ((gp.playerNumber ==  1 && this.alleg == allegiance.playerOne) || (gp.playerNumber ==  2 && this.alleg == allegiance.playerTwo)) ? "Your " : "Opponent's ";
 		if (!this.invincible) {
 			this.hp -= (amt - this.armor);
-			revertStatsOfFocused();
 			//if healed up dont let it have more than max hp
 			if (hp > maxHP){
 				hp = maxHP;
@@ -93,6 +92,7 @@ public class Mystic: Unit {
 				//taking damage
 				gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" attacked "+ player + unitName + " for " + (amt - this.armor) + " damage!");
 				showPopUpText("-" + (amt - this.armor),Color.red);
+				revertStatsOfFocused();
 			}else{
 				//getting healed
 				gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" healed "+ player + unitName + " for " + (-1*amt));
