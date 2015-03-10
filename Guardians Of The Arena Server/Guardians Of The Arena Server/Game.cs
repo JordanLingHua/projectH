@@ -316,7 +316,7 @@ namespace Guardians_Of_The_Arena_Server
                                     {
                                         player1.playerClient.sw.WriteLine("enableMatchmaking");
                                         player2.playerClient.sw.WriteLine("enableMatchmaking");
-                                    }
+                                    } 
                                 }
 
                                 attackingUnit.accessibleTiles.Clear();
