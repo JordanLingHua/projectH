@@ -51,8 +51,19 @@ namespace Guardians_Of_The_Arena_Server.Units
         public override ArrayList AttackTile(GameBoard.Tile tile)
         {
             ArrayList unitsHit = new ArrayList();
-            Unit unitHit = tile.CurrentUnit;
 
+            if (tile.CurrentUnit != null)
+                unitsHit.Add(tile.CurrentUnit.UniqueID);
+
+            return unitsHit;
+        }
+
+        public override void Attack(Unit unitAttacking)
+      //  public override ArrayList AttackTile(GameBoard.Tile tile)
+        {
+            ArrayList unitsHit = new ArrayList();
+            //Unit unitHit = tile.CurrentUnit;
+            Unit unitHit = unitAttacking;
             if (unitHit != null)
             {
                 unfocus();
@@ -89,7 +100,7 @@ namespace Guardians_Of_The_Arena_Server.Units
                 }
                 focused = true;
             }
-            return unitsHit;
+         //   return unitsHit;
         }
 
 
