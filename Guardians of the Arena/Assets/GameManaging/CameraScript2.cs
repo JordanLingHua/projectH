@@ -5,6 +5,9 @@ public class CameraScript2 : MonoBehaviour {
 
 	void OnLevelWasLoaded()
 	{
+		if (Screen.width < 1280){
+			Camera.main.orthographicSize = 60;
+		}
 		if (GameObject.Find ("GameProcess").GetComponent<GameProcess> ().playerNumber == 1){
 			GetComponent<Camera>().enabled = false;
 			GetComponent<AudioListener>().enabled = false;
