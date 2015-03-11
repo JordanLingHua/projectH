@@ -31,7 +31,7 @@ public class SetupScreenGUI : MonoBehaviour {
 	private float WSwaxOffsetY;
 	private float WSribbonOffsetX;
 	private float WSribbonOffsetY;
-	
+
 	private int spikeCount;
 	
 	// This script will only work with the Necromancer skin

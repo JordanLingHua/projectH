@@ -423,6 +423,7 @@ public class GameProcess : MonoBehaviour {
 	
 	void OnLevelWasLoaded(int sceneNumber)
 	{
+
 		//game lobby
 		if (sceneNumber == 1) {
 			returnSocket().SendTCPPacket("requestTooltip\\1");
@@ -431,17 +432,31 @@ public class GameProcess : MonoBehaviour {
 		}
 		//setup screen
 		else if (sceneNumber == 2){
+			if (Screen.width < 1280){
+				Vector3 temp = Camera.main.transform.position;
+				temp.y = 95;
+
+				Camera.main.transform.position = temp;
+				Camera.main.orthographicSize = 50;
+			}
 		returnSocket().SendTCPPacket("requestTooltip\\2");
 		playerSetup = GameObject.Find ("PlayerSetup").GetComponent<PlayerSetup> ();
 		//login screen
 		}else if (sceneNumber == 3){//PvP multiplayer
+			if (Screen.width < 1280){
+				Camera.main.orthographicSize = 60;
+			}
 			loadManagers ();
 		}else if (sceneNumber == 0){
 			socks = new Sockets ();
 		//ai screen
 		}else if (sceneNumber == 5) {
+			if (Screen.width < 1280){
+				Camera.main.orthographicSize = 60;
+			}
 			returnSocket().SendTCPPacket("requestTooltip\\3");
 			loadManagers ();
+
 			//loadAI ();
 		}
 

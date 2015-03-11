@@ -207,7 +207,9 @@ public class GameManager : MonoBehaviour {
 				if (GUILayout.Button ("(E)nd Turn", "ShortButton")){
 					endTurn ();
 				}
-				GUILayout.Label("Your Turn");
+				if (Screen.width > 1280){
+					GUILayout.Label("Your Turn");
+				}
 			}else{
 				GUILayout.Label("Opponent's Turn");
 			}
@@ -346,7 +348,6 @@ public class GameManager : MonoBehaviour {
 	void endTurn(){
 		if (turn) {
 			if (!sentEndTurn){
-				showCenterMessage("Opponent's Turn!",GameObject.Find("CenterPopUpText").GetComponent<GUIText>().color,true);
 				gp.returnSocket ().SendTCPPacket ("endTurn");
 				sentEndTurn = true;
 				am.playTurnEndSFX();
@@ -416,10 +417,12 @@ public class GameManager : MonoBehaviour {
 		turn = !turn;
 		pMana = maxMana = mana;
 
-		if (turn){
-			showCenterMessage("Your Turn!",GameObject.Find("CenterPopUpText").GetComponent<GUIText>().color,true);
-			am.playTurnStartSFX();
+		if (turn) {
+			showCenterMessage ("Your Turn!", GameObject.Find ("CenterPopUpText").GetComponent<GUIText> ().color, true);
+			am.playTurnStartSFX ();
 			allowInput = true;
+		} else {
+			showCenterMessage("Enemy's Turn!",GameObject.Find("CenterPopUpText").GetComponent<GUIText>().color,true);
 		}
 		//toggle between players turns and reset units
 		tm.clearAllTiles();

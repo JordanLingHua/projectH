@@ -72,8 +72,8 @@ public class MainMenuGUI : MonoBehaviour {
 	public Rect windowRect4;
 	int displayWidth4 = 275;
 	int displayHeight4 = 450;
+	
 
-	// Use this for initialization
 	void Start () {
 		pageNumber = GameObject.Find ("PageInfo").GetComponent<PageNumberScript>();
 		pageNameScript = GameObject.Find ("PageInfo").GetComponent<PageNameScript>();
@@ -88,8 +88,18 @@ public class MainMenuGUI : MonoBehaviour {
 		challengePending = false;
 
 		windowSeparation = 25;
+
+		if (Screen.width < 1280) {
+			displayWidth3 = 300;
+			windowSeparation = 10;
+		}
+
 		windowRect2 = new Rect (Screen.width / 2 - displayWidth2 / 2, Screen.height / 2 - 250, displayWidth2, displayHeight2);
-		windowRect3 = new Rect (Screen.width / 2 - displayWidth2 / 2 - displayWidth2 - windowSeparation, Screen.height / 2 - 200, displayWidth3, displayHeight3);
+		if (Screen.width > 1280) {
+			windowRect3 = new Rect (Screen.width / 2 - displayWidth2 / 2 - displayWidth2 - windowSeparation, Screen.height / 2 - 200, displayWidth3, displayHeight3);
+		} else {
+			windowRect3 = new Rect (Screen.width / 2 - displayWidth2 / 2 - displayWidth3 - windowSeparation, Screen.height / 2 - 200, displayWidth3, displayHeight3);
+		}
 		windowRect4 = new Rect (Screen.width / 2 + displayWidth2 / 2 + windowSeparation, Screen.height / 2 - 200, displayWidth4, displayHeight4);
 		space = 10;
 
@@ -453,19 +463,28 @@ public class MainMenuGUI : MonoBehaviour {
 
 	int getListOffsetX()
 	{
+		if (Screen.width < 1280) {
+			return -130;
+		}
 		return -218;
 	}
 
 	int getListOffsetY()
 	{
-		if (gp.enableMatchmaking) 
-		{
-			return 152;
-		} 
+		if (Screen.width < 1280) {
 
-		else 
-		{
-			return 160;
+			if (gp.enableMatchmaking) {
+				return 125;
+			} else {
+				return 133;
+			}
+		} else {
+
+			if (gp.enableMatchmaking) {
+					return 152;
+			} else {
+					return 160;
+			}
 		}
 	}
 	

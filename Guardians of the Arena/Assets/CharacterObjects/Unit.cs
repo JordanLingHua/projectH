@@ -45,6 +45,9 @@ public class Unit    : MonoBehaviour {
 		showPortrait = false;
 		barXOffset = 15;
 		barYOffset = 35;
+		if (Screen.width < 1280) {
+			barYOffset = 25;	
+		}
 		armor = 0;
 		unitLevel = 1;
 		unitPortrait = Resources.Load("GuardianPortrait") as Texture2D;
