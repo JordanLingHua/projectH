@@ -57,8 +57,6 @@ public class GameProcess : MonoBehaviour {
 
 	}
 
-
-
 	void Update () {
 		if (socks.recvBuffer.Count > 0)
 		{
@@ -186,18 +184,16 @@ public class GameProcess : MonoBehaviour {
 				
 			}
 
-//			DontDestroyOnLoad(GameObject.Find ("PopUpMenu"));
-//			Application.LoadLevel(3);
-
-			
 			// globalChat\\userName\\chatContent
 			else if (tokens[0].Equals("globalChat"))
 			{
 				print (tokens[1] +" " + tokens[2]);
 				GameObject.Find ("GlobalChat").GetComponent<globalChatScript>().addLineToChat(tokens[1], tokens[2]);
 			}
+			//show matchmaking button in game lobby
 			else if (tokens[0].Equals("enableMatchmaking")){
 				enableMatchmaking = true;
+			//show tip if friendly unit is going to be attacked
 			}else if (tokens[0].Equals("enableFriendlyFireTip")){
 				showFriendlyFireTip = true;
 			}else if (tokens[0].Equals("showTip")){
@@ -477,21 +473,21 @@ public class GameProcess : MonoBehaviour {
 		}		
 	}
 
+	//window for tips to help the player
 	void popUpWindow(int windowID) 
 	{
-		GUI.depth = -10;
+		//window draggable area - top of window
 		GUI.DragWindow (new Rect (0, 30, 10000, 25));
 		//variable window height based on how long the current tip is
 		popUpWindowRect.height = 200 + (((string)popUpWindowText [popUpIndex]).Length / 40 * 20);
+		//title
 		GUILayout.Label (popUpTitle);
 		GUILayout.BeginVertical ();
-
-		
-		
+		//tip information
 		GUILayout.BeginHorizontal ();
 		GUILayout.Label ((string)popUpWindowText [popUpIndex], "PlainText");
 		GUILayout.EndHorizontal ();
-
+		//tip permanent toggle button
 		GUILayout.BeginHorizontal ();
 		GUILayout.FlexibleSpace ();
 		if (popUpIndex == popUpWindowText.Count - 1) {
@@ -509,6 +505,7 @@ public class GameProcess : MonoBehaviour {
 
 		GUILayout.FlexibleSpace ();
 		if (popUpIndex == popUpWindowText.Count - 1) {
+			//non friendly-fire tip
 			if (popUpName != "4"){
 				if (GUILayout.Button ("Close Tip", "ShortButton")) {
 					showPopUpTip = false;
@@ -516,6 +513,7 @@ public class GameProcess : MonoBehaviour {
 						returnSocket ().SendTCPPacket ("dontDisplayTip\\" + popUpName);
 					}
 				}
+			//friendly fire specific tip buttons
 			}else{
 				if (GUILayout.Button ("Don't Attack", "ShortButton")) {
 					showPopUpTip = false;
@@ -656,7 +654,7 @@ public class GameProcess : MonoBehaviour {
 				if (gameManager.units.ContainsKey (Int32.Parse (tokens [1])) && gameManager.units.ContainsKey (Int32.Parse (tokens [3 + i])) && gameManager.units [Int32.Parse (tokens [3 + i])].GetComponent<Animator> () != null) 
 				{
 	
-					if (gameManager.units [Int32.Parse (tokens [3 + i])].unitName == "Barrel") {
+					if (temp.unitType != 8 && gameManager.units [Int32.Parse (tokens [3 + i])].unitName == "Barrel") {
 							gameManager.units [Int32.Parse (tokens [3 + i])].GetComponent<Animator> ().SetBool ("breakTheBarrel", true);
 						} else {
 						//AI Units are always allegience==player2 and playerNumber=1 
@@ -730,10 +728,6 @@ public class GameProcess : MonoBehaviour {
 			string player = ((playerNumber ==  1 && gameManager.units[Int32.Parse (tokens[1])].alleg == Unit.allegiance.playerOne) || (playerNumber ==  2 && gameManager.units[Int32.Parse (tokens[1])].alleg == Unit.allegiance.playerTwo)) ? "Your " : "Opponent's ";
 			gameManager.addLogToCombatLog(player + gameManager.units[Int32.Parse (tokens[1])].unitName + " attacked nothing for " + gameManager.units[Int32.Parse (tokens[1])].atkCost + " mana!");
 		}
-
-
-
-
 	}
 
 
@@ -762,11 +756,6 @@ public class GameProcess : MonoBehaviour {
 			//	
 			for (int i = 0; i < Int32.Parse (tokens[2]); i ++) 
 			{
-				
-				
-
-				
-				
 				if (gameManager.units.ContainsKey (Int32.Parse (tokens [1])) && gameManager.units.ContainsKey (Int32.Parse (tokens [3 + i])) && gameManager.units [Int32.Parse (tokens [3 + i])].GetComponent<Animator> () != null) 
 				{
 					//Step 2)  Now you can use the appropriate states for this attack functionality
@@ -860,15 +849,4 @@ public class GameProcess : MonoBehaviour {
 
 		yield return null;
 	}
-
-		
-
-
-
-
-
-
-
-
-
 }

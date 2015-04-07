@@ -66,6 +66,7 @@ public class SoulStone: Unit {
 		}
 	}
 
+	//soulstone can not move so it should never show anything
 	public override void showMvTiles(allegiance ally){
 		
 	}

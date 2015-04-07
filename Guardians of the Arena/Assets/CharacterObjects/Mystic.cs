@@ -34,6 +34,8 @@ public class Mystic: Unit {
 		renderer.material.color = new Color32(255,128,0,1);
 	}
 
+
+	//mystic cannot friendly fire, it buffs allies so it should never show a friendly fire tip
 	public override HashSet<TileScript> getFriendlyFireHitTiles(){
 		HashSet<TileScript> ret = new HashSet<TileScript>();
 		return ret;

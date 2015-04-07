@@ -69,6 +69,8 @@ public class TileManager : MonoBehaviour {
 				}
 			}
 		}
+
+		//rocks for the corners of the board
 		addRock(0,0,1000);
 		addRock(8,0,1001);
 		addRock(8,8,1002);
@@ -154,12 +156,13 @@ public class TileManager : MonoBehaviour {
 			break;
 		}
 	}
+
+	//places a rock at the specified x and y position on the board
 	public void addRock(int x, int y,int unitID){
 		TileScript placeTile = tiles[x,y].GetComponent<TileScript>();
 		GameObject rock = (GameObject)Instantiate(Rock, 
 		                                          new Vector3(placeTile.transform.position.x, 5, placeTile.transform.position.z), 
 		                                          new Quaternion());
-		//rock.renderer.material.color = new Color32(139,69,19,255);
 		rock.transform.parent = placeTile.transform;
 		rock.transform.localScale = new Vector3(1.25f,12.5f,1.25f);
 		rock.transform.eulerAngles = new Vector3(4.5f,0,0f);
@@ -172,14 +175,13 @@ public class TileManager : MonoBehaviour {
 		gm.units.Add (unitID, rock.GetComponent<Unit>());
 		
 	}
-
+	//places a tree at the specified x and y position on the board
 	public void addTree(int x, int y,int unitID){
 		TileScript placeTile = tiles[x,y].GetComponent<TileScript>();
 		GameObject tree = (GameObject)Instantiate(Barrel, 
 		                                          new Vector3(placeTile.transform.position.x+0.2f, 8, placeTile.transform.position.z+0.1f), 
 		                                          new Quaternion());
 		tree.transform.parent = placeTile.transform;
-		//tree.GetComponent<Unit> ().makeTree ();
 		placeTile.objectOccupyingTile = tree;
 		placeTile.gameObject.renderer.material.color = Color.gray;
 
@@ -191,62 +193,74 @@ public class TileManager : MonoBehaviour {
 		}
 		
 	}
-	
+
+	//places a unit at the specified x and y position on the board
 	public GameObject addUnit(int x, int y, int type, int pNum, int unitID){
 		TileScript placeTile = tiles[x,y].GetComponent<TileScript>();
 		GameObject unit; 
 
 		switch(type){
+		//archer
 		case 1:
 			unit = (GameObject)Instantiate(UnitOne, 
 			                               new Vector3(placeTile.transform.position.x, 5f, placeTile.transform.position.z), 
 			                               new Quaternion());
 			break;
+		//mystic
 		case 2:
 			unit = (GameObject)Instantiate(UnitTwo, 
 			                               new Vector3(placeTile.transform.position.x, 5f, placeTile.transform.position.z), 
 			                               new Quaternion());
 			break;
+		//templar
 		case 3:
 			unit = (GameObject)Instantiate(UnitThree, 
 			                               new Vector3(placeTile.transform.position.x, 5f, placeTile.transform.position.z), 
 			                               new Quaternion());
 			break;
+		//Not in development
 		case 4:
 			unit = (GameObject)Instantiate(UnitFour, 
 			                               new Vector3(placeTile.transform.position.x, 5f, placeTile.transform.position.z), 
 			                               new Quaternion());
 			break;
+		//Not in development
 		case 5:
 			unit = (GameObject)Instantiate(UnitFive, 
 			                               new Vector3(placeTile.transform.position.x, 5f, placeTile.transform.position.z), 
 			                               new Quaternion());
 			break;
+		//Not in development
 		case 6:
 			unit = (GameObject)Instantiate(UnitSix, 
 			                               new Vector3(placeTile.transform.position.x, 5f, placeTile.transform.position.z), 
 			                               new Quaternion());
 			break;
+		//swordsman
 		case 7:
 			unit = (GameObject)Instantiate(UnitSeven, 
 			                               new Vector3(placeTile.transform.position.x, 5f, placeTile.transform.position.z), 
 			                               new Quaternion());
 			break;
+		//priest
 		case 8:
 			unit = (GameObject)Instantiate(UnitEight, 
 			                               new Vector3(placeTile.transform.position.x, 5f, placeTile.transform.position.z), 
 			                               new Quaternion());
 			break;
+		//Not in development
 		case 9:
 			unit = (GameObject)Instantiate(UnitNine, 
 			                               new Vector3(placeTile.transform.position.x, 5f, placeTile.transform.position.z), 
 			                               new Quaternion());
 			break;
+		//Guardian
 		case 10:
 			unit = (GameObject)Instantiate(UnitTen, 
 			                               new Vector3(placeTile.transform.position.x, 5f, placeTile.transform.position.z), 
 			                               new Quaternion());
 			break;
+		//soulstone
 		case 11:
 			unit = (GameObject)Instantiate(UnitEleven, 
 			                               new Vector3(placeTile.transform.position.x, 5f, placeTile.transform.position.z), 
@@ -267,6 +281,7 @@ public class TileManager : MonoBehaviour {
 		unit.GetComponent<Unit> ().unitID = unitID;
 
 		gm.units.Add(unitID,unit.GetComponent<Unit>());
+		//rotate piece so player two will see it
 		if (gp.playerNumber == 2) {
 			unit.transform.eulerAngles = new Vector3(4.5f,180f,0f);
 		}

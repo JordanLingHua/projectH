@@ -283,13 +283,7 @@ public class GameManager : MonoBehaviour {
 			if (script.invincible){
 				info+="\nINVINCIBLE";
 			}
-//			if (gs == gameState.playerMv && script.mvd){
-//				info += "\nAlready moved";
-//			}
-//			if (gs ==  gameState.playerAtk && script.atkd){
-//				info += "\nAlready attacked";
-//			}
-			
+
 			suInfo.text =  info;
 			unitNameGUI.text = (script.alleg != Unit.allegiance.neutral && script.unitType != 11) ? "Level " +script.unitLevel + " " + script.unitName : script.unitName;
 			unitDescriptionGUI.text = script.wordWrap (50,script.description);//50
@@ -344,7 +338,7 @@ public class GameManager : MonoBehaviour {
 		displayUnitInfo (hoverOverUnit);
 	}
 
-
+	//ends the turn only for the player on this client
 	void endTurn(){
 		if (turn) {
 			if (!sentEndTurn){
@@ -395,6 +389,7 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
+	//resets variables such as if the unit has attacked, or moved for player one
 	void resetPlayerOneUnits(){
 		foreach (int key in units.Keys){
 			if (units[key].alleg == Unit.allegiance.playerOne){
@@ -402,7 +397,8 @@ public class GameManager : MonoBehaviour {
 			}
 		}
 	}
-	
+
+	//resets variables such as if the unit has attacked, or moved for player one
 	void resetPlayerTwoUnits(){
 		foreach (int key in units.Keys){
 			if (units[key].alleg == Unit.allegiance.playerTwo){

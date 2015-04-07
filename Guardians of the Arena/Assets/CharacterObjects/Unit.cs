@@ -99,6 +99,7 @@ public class Unit    : MonoBehaviour {
 	void OnGUI(){
 		Camera cam = Camera.main;
 		Vector3 unitScreenPos = cam.WorldToScreenPoint(gameObject.transform.position);
+//		for unit veterancy at a glance bonus - not in development
 //		if (unitLevel == 2){
 //			GUI.DrawTexture (new Rect(unitScreenPos.x+10, Screen.height - unitScreenPos.y+10,  15, 15),level2Symbol);
 //		}else if (unitLevel == 3){
@@ -266,6 +267,8 @@ public class Unit    : MonoBehaviour {
 
 	}
 	public virtual void gainXP(){
+		//gain experience is normally 5 per attack,
+		//but 20 for testing purposes
 		xp += 20;
 
 		if (xp >= XP_TO_LEVEL [unitLevel - 1]) {
@@ -408,7 +411,8 @@ public class Unit    : MonoBehaviour {
 			showAtkTiles();
 		}
 	}
-	
+
+	//highlight tiles the unit selected can move to in green
 	public virtual void showMvTiles(allegiance ally){
 		if (!paralyzed){
 			HashSet<TileScript> tiles = getMvAccessibleTiles(ally);
@@ -423,6 +427,7 @@ public class Unit    : MonoBehaviour {
 
 	}	
 
+	//return a hashset of tiles that will contain friendly units this unit can hit
 	public virtual HashSet<TileScript> getFriendlyFireHitTiles(){
 		HashSet<TileScript> temp = getAtkAccessibleTiles();
 		HashSet<TileScript> ret = new HashSet<TileScript>();
@@ -439,12 +444,14 @@ public class Unit    : MonoBehaviour {
 		mvd = false;
 	}
 
+	//return a hashset of tiles that a unit can move to
 	public HashSet<TileScript> getMvAccessibleTiles(allegiance ally){
 		HashSet<TileScript> tileSet = new HashSet<TileScript>();
 		getMvAccessibleTiles(tileSet,this.transform.parent.GetComponent<TileScript>(),mvRange,ally);
 		return tileSet;
 	}
-	
+
+	//recurrsive call that allows units to move through allies, but not through enemies
 	void getMvAccessibleTiles(HashSet<TileScript> list, TileScript tile, int num,allegiance ally){
 		TileScript tileS = tile.transform.GetComponent<TileScript> ();
 		if (num != 0) {
@@ -467,13 +474,14 @@ public class Unit    : MonoBehaviour {
 		}
 	}
 
-
+	//return the set of tiles that this unit can attack
 	public virtual HashSet<TileScript> getAtkAccessibleTiles(){
 		HashSet<TileScript> tileSet = new HashSet<TileScript>();
 		getAtkAccessibleTiles(tileSet,this.transform.parent.GetComponent<TileScript>(),atkRange);
 		return tileSet;
 	}
 
+	//recurrsive call that gets all tiles in range, disregarding things such as terrain, allies, and enemies in the way
 	void getAtkAccessibleTiles(HashSet<TileScript> list,TileScript tile, int num){
 		TileScript tileS = tile.transform.GetComponent<TileScript>();
 		if (num != 0){
@@ -496,38 +504,13 @@ public class Unit    : MonoBehaviour {
 		}
 	}
 	
-	
+	//highlight tiles in orange that this unit can attack
 	public virtual void showAtkTiles(){
 		if (!paralyzed){
-
 			HashSet<TileScript> tiles = getAtkAccessibleTiles();
-			//tiles.Remove(this.transform.parent.GetComponent<TileScript>());
 			gm.accessibleTiles = tiles;
 			foreach (TileScript tile in tiles){
 				tile.renderer.material.color = new Color(1f,0.4f,0f, 0f);
-			}
-		}
-	}
-
-	void showAtkAccessibleTiles(TileScript tile, int num){
-		tile.renderer.material.color = new Color(1f,0.4f,0f, 0f);
-		TileScript tileS = tile.transform.GetComponent<TileScript>();
-		if (num != 0){
-			if (tileS.up != null){
-				showAtkAccessibleTiles(tileS.up.GetComponent<TileScript>(),num-1);
-				gm.accessibleTiles.Add(tileS.up.GetComponent<TileScript>());
-			}
-			if (tileS.down != null){
-				showAtkAccessibleTiles(tileS.down.GetComponent<TileScript>(),num-1);
-				gm.accessibleTiles.Add(tileS.down.GetComponent<TileScript>());
-			}
-			if (tileS.left != null){
-				showAtkAccessibleTiles(tileS.left.GetComponent<TileScript>(),num-1);
-				gm.accessibleTiles.Add(tileS.left.GetComponent<TileScript>());
-			}
-			if (tileS.right != null){
-				showAtkAccessibleTiles(tileS.right.GetComponent<TileScript>(),num-1);
-				gm.accessibleTiles.Add(tileS.right.GetComponent<TileScript>());
 			}
 		}
 	}

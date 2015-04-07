@@ -59,6 +59,7 @@ public class TileScript : MonoBehaviour {
 
 
 	public void OnMouseOver(){
+		//highlight tile mouse is over
 		renderer.material.shader = Shader.Find ("Toon/Lighted");
 		if (gm.selectedUnit != null && gm.gs == GameManager.gameState.playerAtk && gm.accessibleTiles.Contains (this)) {
 			AoETiles = gm.selectedUnit.showAoEAffectedTiles(this);
@@ -68,10 +69,8 @@ public class TileScript : MonoBehaviour {
 		}
 	}
 
-	void OnGUI(){
-	}
-
 	public void OnMouseExit(){
+		//unhighlight mouse over tile
 		renderer.material.shader = Shader.Find ("Toon/Basic");
 		Cursor.SetCursor(regularCursor,Vector2.zero,CursorMode.Auto);
 		if (gm.selectedUnit != null && gm.gs == GameManager.gameState.playerAtk && gm.accessibleTiles.Contains (this)) {
