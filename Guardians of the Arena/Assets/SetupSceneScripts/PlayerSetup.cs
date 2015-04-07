@@ -78,57 +78,57 @@ public class PlayerSetup : MonoBehaviour {
 		switch(type){
 		case 1:
 			unit = (GameObject)Instantiate(UnitOne, 
-			                               new Vector3(placeTile.transform.position.x, 5.0f, placeTile.transform.position.z), 
+			                               setAdjustment(placeTile, 1), 
 			                               new Quaternion());
 			break;
 		case 2:
 			unit = (GameObject)Instantiate(UnitTwo, 
-			                               new Vector3(placeTile.transform.position.x, 5.0f, placeTile.transform.position.z), 
+			                               setAdjustment(placeTile, 2), 
 			                               new Quaternion());
 			break;
 		case 3:
 			unit = (GameObject)Instantiate(UnitThree, 
-			                               new Vector3(placeTile.transform.position.x, 5.0f, placeTile.transform.position.z), 
+			                               setAdjustment(placeTile, 3), 
 			                               new Quaternion());
 			break;
 		case 4:
 			unit = (GameObject)Instantiate(UnitFour, 
-			                               new Vector3(placeTile.transform.position.x, 5.0f, placeTile.transform.position.z), 
+			                               setAdjustment(placeTile, 4), 
 			                               new Quaternion());
 			break;
 		case 5:
 			unit = (GameObject)Instantiate(UnitFive, 
-			                               new Vector3(placeTile.transform.position.x, 5.0f, placeTile.transform.position.z), 
+			                               setAdjustment(placeTile, 5), 
 			                               new Quaternion());
 			break;
 		case 6:
 			unit = (GameObject)Instantiate(UnitSix, 
-			                               new Vector3(placeTile.transform.position.x, 5.0f, placeTile.transform.position.z), 
+			                               setAdjustment(placeTile, 6), 
 			                               new Quaternion());
 			break;
 		case 7:
 			unit = (GameObject)Instantiate(UnitSeven, 
-			                               new Vector3(placeTile.transform.position.x, 5.0f, placeTile.transform.position.z), 
+			                               setAdjustment(placeTile, 7), 
 			                               new Quaternion());
 			break;
 		case 8:
 			unit = (GameObject)Instantiate(UnitEight, 
-			                               new Vector3(placeTile.transform.position.x, 5.0f, placeTile.transform.position.z), 
+			                               setAdjustment(placeTile, 8), 
 			                               new Quaternion());
 			break;
 		case 9:
 			unit = (GameObject)Instantiate(UnitNine, 
-			                               new Vector3(placeTile.transform.position.x, 5.0f, placeTile.transform.position.z), 
+			                               setAdjustment(placeTile, 9), 
 			                               new Quaternion());
 			break;
 		case 10:
 			unit = (GameObject)Instantiate(UnitTen, 
-			                               new Vector3(placeTile.transform.position.x, 5.0f, placeTile.transform.position.z), 
+			                               setAdjustment(placeTile, 10), 
 			                               new Quaternion());
 			break;
 		case 11:
 			unit = (GameObject)Instantiate(UnitEleven, 
-			                               new Vector3(placeTile.transform.position.x, 5.0f, placeTile.transform.position.z), 
+			                               setAdjustment(placeTile, 11), 
 			                               new Quaternion());
 			break;
 			
@@ -143,6 +143,61 @@ public class PlayerSetup : MonoBehaviour {
 		return unit;
 	}
 
+	public Vector3 setAdjustment(SetupTileScript placeTile, int unitType)
+	{
+		switch (unitType) 
+		{
+			case 1:
+				return new Vector3 (placeTile.transform.position.x, 5.0f, placeTile.transform.position.z);
+
+
+		case 2:
+			return new Vector3(placeTile.transform.position.x, 7.2f, placeTile.transform.position.z + 1.0f);
+		
+
+		case 3:
+			return new Vector3(placeTile.transform.position.x, 6.0f, placeTile.transform.position.z);
+
+
+		case 4:
+			return new Vector3(placeTile.transform.position.x, 5.0f, placeTile.transform.position.z);
+		
+
+		case 5:
+			return new Vector3(placeTile.transform.position.x, 5.0f, placeTile.transform.position.z);
+		
+
+		case 6:
+			return new Vector3(placeTile.transform.position.x, 5.0f, placeTile.transform.position.z);
+		
+
+		case 7:
+			return new Vector3(placeTile.transform.position.x, 6.0f, placeTile.transform.position.z);
+		
+
+		case 8:
+			return new Vector3(placeTile.transform.position.x, 5.0f, placeTile.transform.position.z);
+
+
+		case 9:
+			return new Vector3(placeTile.transform.position.x, 5.0f, placeTile.transform.position.z);
+
+
+		case 10:
+			return new Vector3(placeTile.transform.position.x, 7.75f, placeTile.transform.position.z + 1.0f);
+		
+
+		case 11:
+			return new Vector3(placeTile.transform.position.x + 0.25f, 6.0f, placeTile.transform.position.z);
+		
+
+		default:
+			return new Vector3(0,0,1);
+	
+		
+		}
+
+	}
 	void Start () {
 		gp = GameObject.Find ("GameProcess").GetComponent<GameProcess> ();
 		boardCapacity = 8;

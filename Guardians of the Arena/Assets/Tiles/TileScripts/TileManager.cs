@@ -215,7 +215,7 @@ public class TileManager : MonoBehaviour {
 		//templar
 		case 3:
 			unit = (GameObject)Instantiate(UnitThree, 
-			                               new Vector3(placeTile.transform.position.x, 5f, placeTile.transform.position.z), 
+			                               new Vector3(placeTile.transform.position.x, 5.5f, placeTile.transform.position.z), 
 			                               new Quaternion());
 			break;
 		//Not in development

@@ -55,7 +55,7 @@ public class AIScript : MonoBehaviour {
 		}
 
 		Unit toMove;
-		if (firstMove) 
+		if (firstMove && AIUnits.Count != 1) 
 		{			
 			firstMove = false;
 	

@@ -204,7 +204,7 @@ public class MainMenuGUI : MonoBehaviour {
 		GUILayout.BeginVertical ();
 		GUILayout.Space (space);
 
-		GUILayout.Label ("Welcome Guardian!");
+		GUILayout.Label ("Welcome " + gp.playerName + "!");
 		GUILayout.Label("", "Divider");//-------------------------------- custom
 
 		if (showGUI) 

@@ -173,7 +173,7 @@ public class move : MonoBehaviour {
 			this.gameObject.transform.parent = nearestTile.transform;
 
 			//move the unit to it's new tile and set that tile to occupied
-			transform.position = new Vector3(nearestTile.transform.position.x, 5.0f, nearestTile.transform.position.z);
+			transform.position = playerSetup.setAdjustment(nearestTile.GetComponent<SetupTileScript>(), unitType);
 			nearestTile.GetComponent<SetupTileScript>().occupied = true;
 		}
 
@@ -205,7 +205,8 @@ public class move : MonoBehaviour {
 		
 		return nearestObj;
 	}
-	
+
+
 	void Update()
 	{
 		
@@ -224,7 +225,7 @@ public class move : MonoBehaviour {
 				oldTile.renderer.material.shader = Shader.Find ("Toon/Basic");
 
 			currentTile = findNearestTile();
-			this.gameObject.transform.position = new Vector3(currentTile.transform.position.x, currentTile.transform.position.y + 5f, currentTile.transform.position.z);
+			this.gameObject.transform.position = playerSetup.setAdjustment(currentTile.GetComponent<SetupTileScript>(), this.GetComponentInParent<Unit>().unitType);
 			currentTile.renderer.material.shader = Shader.Find ("Toon/Lighted");
 
 
