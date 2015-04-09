@@ -54,7 +54,6 @@ public class TileScript : MonoBehaviour {
 				Destroy (this.GetComponentInChildren<Unit>().gameObject);
 			}
 		}
-
 	}
 
 
@@ -215,7 +214,7 @@ public class TileScript : MonoBehaviour {
 
 			tiles.Pop();
 
-//			//Set unit back to neutral animation now that it has moved to the final tile
+			//Set unit back to neutral animation now that it has moved to the final tile
 
 			if(this.GetComponentInChildren<Animator>().GetInteger("mode_and_dir") == 4)
 				this.GetComponentInChildren<Animator>().SetInteger("mode_and_dir", 0);

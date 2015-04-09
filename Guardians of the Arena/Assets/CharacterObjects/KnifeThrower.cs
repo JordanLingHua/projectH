@@ -27,6 +27,7 @@ public class KnifeThrower : Unit {
 		renderer.material.color = new Color32(255,153,204,1);
 	}
 
+	//returns a set of tiles which have friendly units on it
 	public override HashSet<TileScript> getFriendlyFireHitTiles(){
 		HashSet<TileScript> tileSet = new HashSet<TileScript>();
 		TileScript tileS = this.transform.parent.GetComponent<TileScript> ();
@@ -99,6 +100,8 @@ public class KnifeThrower : Unit {
 		atkRange ++;
 	}
 
+	//attacks directly up, down, left, and right
+	//if not level three it only has tiles up to the first target it will hit
 	public override HashSet<TileScript> getAtkAccessibleTiles ()
 	{
 		HashSet<TileScript> tileSet = new HashSet<TileScript>();

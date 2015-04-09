@@ -61,6 +61,7 @@ public class Guardian :Unit {
 				}
 				gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" healed "+ player + unitName + " for " + (-1*unitAttacking.atk));
 				if (amt == -500){
+					//priest level 2 bonus heal
 					showPopUpText("Full Heal",Color.green);
 				}else{
 					showPopUpText("+" + (-1*amt),Color.green);

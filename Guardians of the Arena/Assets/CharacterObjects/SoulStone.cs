@@ -23,6 +23,7 @@ public class SoulStone: Unit {
 		renderer.material.color = new Color32(255,255,255,1);
 	}
 
+	//how a unit gets healed or takes damage
 	public override void takeDmg(Unit unitAttacking, int amt){
 
 		//yield return new WaitForSeconds (1.0f);
@@ -45,6 +46,7 @@ public class SoulStone: Unit {
 				}
 				gm.addLogToCombatLog(unitAffectedPlayer + unitAttacking.unitName +" healed "+ player + unitName + " for " + (-1*amt));
 				if (amt == -500){
+					//priest level 2 bonus heal
 					showPopUpText("Full Heal",Color.green);
 				}else{
 					showPopUpText("+" + (-1*amt),Color.green);

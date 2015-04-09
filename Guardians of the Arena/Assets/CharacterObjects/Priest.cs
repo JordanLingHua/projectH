@@ -27,6 +27,8 @@ public class Priest : Unit {
 		renderer.material.color = new Color32(204,255,153,1);
 	}
 
+	//should return nothing because it cannot deal friendly fire damage
+	//it can only heal
 	public override HashSet<TileScript> getFriendlyFireHitTiles(){
 		HashSet<TileScript> ret = new HashSet<TileScript>();
 		return ret;
@@ -35,6 +37,7 @@ public class Priest : Unit {
 
 	public override void attackUnit(Unit unitAffected){
 		if (unitLevel == 3 && atkd){
+			//for AoE heal upon reaching level three
 			unitAffected.takeDmg(this,-10);
 		}else{
 			unitAffected.takeDmg(this,this.atk);
@@ -51,7 +54,8 @@ public class Priest : Unit {
 		atk = -500;
 	}
 
-
+	//show tiles affected by AoE for level three healing bonus
+	//currently set to one tile up, down, left, and right of targeted tile
 	public override List<GameObject> showAoEAffectedTiles(TileScript tile){
 		List <GameObject> ret = new List<GameObject> ();
 		if (unitLevel == 3) {
