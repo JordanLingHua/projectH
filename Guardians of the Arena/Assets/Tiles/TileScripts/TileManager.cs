@@ -239,7 +239,7 @@ public class TileManager : MonoBehaviour {
 		//swordsman
 		case 7:
 			unit = (GameObject)Instantiate(UnitSeven, 
-			                               new Vector3(placeTile.transform.position.x, 5f, placeTile.transform.position.z), 
+			                               new Vector3(placeTile.transform.position.x, 6.1f, placeTile.transform.position.z), 
 			                               new Quaternion());
 			break;
 		//priest
@@ -257,7 +257,7 @@ public class TileManager : MonoBehaviour {
 		//Guardian
 		case 10:
 			unit = (GameObject)Instantiate(UnitTen, 
-			                               new Vector3(placeTile.transform.position.x, 5f, placeTile.transform.position.z), 
+			                               new Vector3(placeTile.transform.position.x, 7.21f, placeTile.transform.position.z), 
 			                               new Quaternion());
 			break;
 		//soulstone
