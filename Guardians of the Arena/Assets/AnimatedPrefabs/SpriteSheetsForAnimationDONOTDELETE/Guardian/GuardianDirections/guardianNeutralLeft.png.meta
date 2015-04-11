@@ -59,77 +59,77 @@ TextureImporter:
         width: 157
         height: 125
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianNeutralLeft_1
       rect:
         serializedVersion: 2
-        x: 157
+        x: 158
         y: 0
         width: 157
         height: 125
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianNeutralLeft_2
       rect:
         serializedVersion: 2
-        x: 314
+        x: 316
         y: 0
         width: 157
         height: 125
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianNeutralLeft_3
       rect:
         serializedVersion: 2
-        x: 471
+        x: 474
         y: 0
         width: 157
         height: 125
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianNeutralLeft_4
       rect:
         serializedVersion: 2
-        x: 628
+        x: 632
         y: 0
         width: 157
         height: 125
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianNeutralLeft_5
       rect:
         serializedVersion: 2
-        x: 785
+        x: 790
         y: 0
         width: 157
         height: 125
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianNeutralLeft_6
       rect:
         serializedVersion: 2
-        x: 942
+        x: 948
         y: 0
         width: 157
         height: 125
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianNeutralLeft_7
       rect:
         serializedVersion: 2
-        x: 1099
+        x: 1105
         y: 0
-        width: 157
+        width: 154
         height: 125
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: .50999999, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

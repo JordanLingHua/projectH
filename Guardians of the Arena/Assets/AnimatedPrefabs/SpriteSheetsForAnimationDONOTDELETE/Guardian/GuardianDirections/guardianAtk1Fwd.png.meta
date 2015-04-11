@@ -68,157 +68,157 @@ TextureImporter:
         width: 178
         height: 163
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAtk1Fwd_1
       rect:
         serializedVersion: 2
-        x: 178
+        x: 179
         y: 0
         width: 178
         height: 163
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAtk1Fwd_2
       rect:
         serializedVersion: 2
-        x: 356
+        x: 358
         y: 0
         width: 178
         height: 163
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAtk1Fwd_3
       rect:
         serializedVersion: 2
-        x: 534
+        x: 537
         y: 0
         width: 178
         height: 163
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAtk1Fwd_4
       rect:
         serializedVersion: 2
-        x: 712
+        x: 716
         y: 0
         width: 178
         height: 163
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAtk1Fwd_5
       rect:
         serializedVersion: 2
-        x: 890
+        x: 895
         y: 0
         width: 178
         height: 163
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAtk1Fwd_6
       rect:
         serializedVersion: 2
-        x: 1068
+        x: 1074
         y: 0
         width: 178
         height: 163
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAtk1Fwd_7
       rect:
         serializedVersion: 2
-        x: 1246
+        x: 1253
         y: 0
         width: 178
         height: 163
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAtk1Fwd_8
       rect:
         serializedVersion: 2
-        x: 1424
+        x: 1432
         y: 0
         width: 178
         height: 163
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAtk1Fwd_9
       rect:
         serializedVersion: 2
-        x: 1602
+        x: 1611
         y: 0
         width: 178
         height: 163
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAtk1Fwd_10
       rect:
         serializedVersion: 2
-        x: 1780
+        x: 1790
         y: 0
         width: 178
         height: 163
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAtk1Fwd_11
       rect:
         serializedVersion: 2
-        x: 1958
+        x: 1969
         y: 0
         width: 178
         height: 163
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAtk1Fwd_12
       rect:
         serializedVersion: 2
-        x: 2136
+        x: 2148
         y: 0
         width: 178
         height: 163
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAtk1Fwd_13
       rect:
         serializedVersion: 2
-        x: 2314
+        x: 2327
         y: 0
         width: 178
         height: 163
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAtk1Fwd_14
       rect:
         serializedVersion: 2
-        x: 2492
+        x: 2506
         y: 0
         width: 178
         height: 163
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianAtk1Fwd_15
       rect:
         serializedVersion: 2
-        x: 2670
-        y: 0
-        width: 178
-        height: 163
+        x: 2687
+        y: 2
+        width: 169
+        height: 161
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

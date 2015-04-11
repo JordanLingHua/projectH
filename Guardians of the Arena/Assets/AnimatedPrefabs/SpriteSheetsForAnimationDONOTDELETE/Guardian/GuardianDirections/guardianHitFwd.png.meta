@@ -57,57 +57,57 @@ TextureImporter:
         width: 156
         height: 130
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianHitFwd_1
       rect:
         serializedVersion: 2
-        x: 156
+        x: 157
         y: 0
         width: 156
         height: 130
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianHitFwd_2
       rect:
         serializedVersion: 2
-        x: 312
+        x: 314
         y: 0
         width: 156
         height: 130
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianHitFwd_3
       rect:
         serializedVersion: 2
-        x: 468
+        x: 471
         y: 0
         width: 156
         height: 130
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianHitFwd_4
       rect:
         serializedVersion: 2
-        x: 624
+        x: 628
         y: 0
         width: 156
         height: 130
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianHitFwd_5
       rect:
         serializedVersion: 2
-        x: 780
+        x: 786
         y: 0
-        width: 156
+        width: 152
         height: 130
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: .50999999, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

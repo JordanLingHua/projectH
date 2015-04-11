@@ -57,57 +57,57 @@ TextureImporter:
         width: 155
         height: 121
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianHitRight_1
       rect:
         serializedVersion: 2
-        x: 155
+        x: 157
         y: 0
         width: 155
         height: 121
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianHitRight_2
       rect:
         serializedVersion: 2
-        x: 310
+        x: 314
         y: 0
         width: 155
         height: 121
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianHitRight_3
       rect:
         serializedVersion: 2
-        x: 465
+        x: 471
         y: 0
         width: 155
         height: 121
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianHitRight_4
       rect:
         serializedVersion: 2
-        x: 620
+        x: 628
         y: 0
         width: 155
         height: 121
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guardianHitRight_5
       rect:
         serializedVersion: 2
-        x: 775
+        x: 787
         y: 0
-        width: 155
+        width: 149
         height: 121
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: .50999999, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
