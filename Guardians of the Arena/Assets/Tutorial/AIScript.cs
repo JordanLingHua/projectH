@@ -26,7 +26,7 @@ public class AIScript : MonoBehaviour {
 		targetUnits = new List<Unit>();	
 		obstacles = new List<Unit>();	
 		playerUnits = new List<Unit>();	
-		actionDelay = 4.0f;
+		actionDelay = 3.0f;
 	}
 
 	public IEnumerator makeGameAction(Unit u)
@@ -204,50 +204,51 @@ public class AIScript : MonoBehaviour {
 	}
 
 	Unit getClosestTarget(Unit toMove){
-		Unit closestTarget = null;
-		float tempDistance;
-		float minDistance = 50;
-		TileScript toMoveTileScript = toMove.GetComponentInParent<TileScript> ();
+				Unit closestTarget = null;
+				float tempDistance;
+				float minDistance = 50;
+				TileScript toMoveTileScript = toMove.GetComponentInParent<TileScript> ();
 
-		switch (toMove.unitType) {
+				switch (toMove.unitType) {
 				//Swordsmen attack barrels and enemies
 				case 7:
-					foreach (Unit u in gameManager.units.Values) {
-						if ( u != null && u.GetComponent<Unit> ().alleg != Unit.allegiance.playerTwo)
-						{
-							if (u.unitType == 11)
-							{
-								if(!u.GetComponent<SoulStone>().invincible)
-									targetUnits.Add (u);
-							}
-							else
-								targetUnits.Add (u);
+						foreach (Unit u in playerUnits) {
+								if (u != null) {
+										if (u.unitType == 11) {
+												if (!u.GetComponent<SoulStone> ().invincible)
+														return u;
+										}
+								}						
 						}
-					}
-				break;
+						foreach (Unit u in obstacles) {
+								if ( u != null && u.name.Equals ("BarrelPrefab(Clone)"))
+										targetUnits.Add (u);
+						}
+		
+						break;
 				
 				//All other combat units only attack enemies
 				case 3:
 				case 1:
 				case 10:
-					foreach (Unit u in gameManager.units.Values) {
-						if ( u != null && u.GetComponent<Unit> ().alleg == Unit.allegiance.playerOne) {
-							if (u.unitType == 11)
-							{
-								if(!u.GetComponent<SoulStone>().invincible)
-									targetUnits.Add (u);
-							}
-							else
-								targetUnits.Add (u);
+						foreach (Unit u in playerUnits) {
+							if (u != null)// && u.GetComponent<Unit> ().alleg == Unit.allegiance.playerOne) {
+								if (u.unitType == 11) 
+								{
+									if (!u.GetComponent<SoulStone> ().invincible)
+											return u;
+									 else
+										targetUnits.Add (u);
 								}
-							}
+						}
+						
 				break;
 						
 			
 				//healer targets lowest health ally, will not move unless allied unit is injured
 				case 8:
-					foreach (Unit u in gameManager.units.Values) {
-						if (u != null && u.GetComponent<Unit> ().alleg == Unit.allegiance.playerTwo && u.GetComponent<Unit>().unitType != 11 && u.hp < u.maxHP)
+					foreach (Unit u in AIUnits) {
+						if (u != null && u.GetComponent<Unit>().unitType != 11 && u.hp < u.maxHP)
 							targetUnits.Add (u);
 					}
 
@@ -282,6 +283,7 @@ public class AIScript : MonoBehaviour {
 				}
 				
 				foreach (Unit p in targetUnits) {
+			if (p != null){
 						TileScript pTileScript = p.GetComponentInParent<TileScript> ();
 
 						tempDistance = Math.Abs (pTileScript.x - toMoveTileScript.x) + Math.Abs (pTileScript.y - toMoveTileScript.y);
@@ -290,6 +292,7 @@ public class AIScript : MonoBehaviour {
 								closestTarget = p;
 								minDistance = tempDistance;
 						}
+			}
 				}
 				
 		

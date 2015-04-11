@@ -203,67 +203,67 @@ public class TileManager : MonoBehaviour {
 		//archer
 		case 1:
 			unit = (GameObject)Instantiate(UnitOne, 
-			                               new Vector3(placeTile.transform.position.x, 5f, placeTile.transform.position.z), 
+			                               setAdjustment(placeTile, 1),
 			                               new Quaternion());
 			break;
 		//mystic
 		case 2:
 			unit = (GameObject)Instantiate(UnitTwo, 
-			                               new Vector3(placeTile.transform.position.x, 5f, placeTile.transform.position.z), 
+			                               setAdjustment(placeTile, 2),
 			                               new Quaternion());
 			break;
 		//templar
 		case 3:
 			unit = (GameObject)Instantiate(UnitThree, 
-			                               new Vector3(placeTile.transform.position.x, 5.5f, placeTile.transform.position.z), 
+			                               setAdjustment(placeTile, 3), 
 			                               new Quaternion());
 			break;
 		//Not in development
 		case 4:
 			unit = (GameObject)Instantiate(UnitFour, 
-			                               new Vector3(placeTile.transform.position.x, 5f, placeTile.transform.position.z), 
+			                               setAdjustment(placeTile, 4), 
 			                               new Quaternion());
 			break;
 		//Not in development
 		case 5:
 			unit = (GameObject)Instantiate(UnitFive, 
-			                               new Vector3(placeTile.transform.position.x, 5f, placeTile.transform.position.z), 
+			                               setAdjustment(placeTile, 5), 
 			                               new Quaternion());
 			break;
 		//Not in development
 		case 6:
 			unit = (GameObject)Instantiate(UnitSix, 
-			                               new Vector3(placeTile.transform.position.x, 5f, placeTile.transform.position.z), 
+			                               setAdjustment(placeTile, 6),
 			                               new Quaternion());
 			break;
 		//swordsman
 		case 7:
 			unit = (GameObject)Instantiate(UnitSeven, 
-			                               new Vector3(placeTile.transform.position.x, 6.1f, placeTile.transform.position.z), 
+			                               setAdjustment(placeTile, 7), 
 			                               new Quaternion());
 			break;
 		//priest
 		case 8:
 			unit = (GameObject)Instantiate(UnitEight, 
-			                               new Vector3(placeTile.transform.position.x, 5f, placeTile.transform.position.z), 
+			                               setAdjustment(placeTile, 8),
 			                               new Quaternion());
 			break;
 		//Not in development
 		case 9:
 			unit = (GameObject)Instantiate(UnitNine, 
-			                               new Vector3(placeTile.transform.position.x, 5f, placeTile.transform.position.z), 
+			                               setAdjustment(placeTile, 9),
 			                               new Quaternion());
 			break;
 		//Guardian
 		case 10:
 			unit = (GameObject)Instantiate(UnitTen, 
-			                               new Vector3(placeTile.transform.position.x, 7.21f, placeTile.transform.position.z), 
+			                               setAdjustment(placeTile, 10), 
 			                               new Quaternion());
 			break;
 		//soulstone
 		case 11:
 			unit = (GameObject)Instantiate(UnitEleven, 
-			                               new Vector3(placeTile.transform.position.x, 5f, placeTile.transform.position.z), 
+			                               setAdjustment(placeTile, 11), 
 			                               new Quaternion());
 			break;
 
@@ -307,6 +307,62 @@ public class TileManager : MonoBehaviour {
 
 
 		return unit;
+	}
+
+	public static Vector3 setAdjustment(TileScript placeTile, int unitType)
+	{
+		switch (unitType) 
+		{
+		case 1:
+			return new Vector3(placeTile.transform.position.x, 5f, placeTile.transform.position.z);
+			
+			
+		case 2:
+			return new Vector3(placeTile.transform.position.x, 7.2f, placeTile.transform.position.z + 0.5f);
+			
+			
+		case 3:
+			return new Vector3(placeTile.transform.position.x, 5.5f, placeTile.transform.position.z);
+			
+			
+		case 4:
+			return new Vector3(placeTile.transform.position.x, 5f, placeTile.transform.position.z);
+			
+			
+		case 5:
+			return new Vector3(placeTile.transform.position.x, 5.0f, placeTile.transform.position.z);
+			
+			
+		case 6:
+			return new Vector3(placeTile.transform.position.x, 5f, placeTile.transform.position.z);
+			
+			
+		case 7:
+			return new Vector3(placeTile.transform.position.x, 6.1f, placeTile.transform.position.z);
+			
+			
+		case 8:
+			return new Vector3(placeTile.transform.position.x, 5f, placeTile.transform.position.z);
+			
+			
+		case 9:
+			return new Vector3(placeTile.transform.position.x, 5.0f, placeTile.transform.position.z);
+			
+			
+		case 10:
+			return new Vector3(placeTile.transform.position.x, 7.21f, placeTile.transform.position.z + 0.1f);
+			
+			
+		case 11:
+			return new Vector3(placeTile.transform.position.x, 5.0f, placeTile.transform.position.z);
+			
+			
+		default:
+			return new Vector3(0,0,1);
+			
+			
+		}
+		
 	}
 	
 	//Resets color of tiles

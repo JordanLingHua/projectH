@@ -205,12 +205,12 @@ public class TileScript : MonoBehaviour {
 			current = current.parent;
 		}
 		
-		Vector3 newPos;
+		//Vector3 newPos;
 
 		while (tiles.Count !=0){
 
-			newPos = new Vector3(tiles.Peek().transform.position.x,5f,tiles.Peek().transform.position.z);
-			yield return StartCoroutine(movePiece(movingUnit.gameObject,movingUnit.transform.position,newPos,0.59f));//0.56f at 10 fps));//0.28f));//0.28f
+			//newPos = new Vector3(tiles.Peek().transform.position.x,5f,tiles.Peek().transform.position.z);
+			yield return StartCoroutine(movePiece(movingUnit.gameObject,movingUnit.transform.position, TileManager.setAdjustment(tiles.Peek().GetComponent<TileScript>(), movingUnit.unitType),0.59f));//0.56f at 10 fps));//0.28f));//0.28f
 
 			tiles.Pop();
 
