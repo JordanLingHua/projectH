@@ -19,6 +19,7 @@ namespace Guardians_Of_The_Arena_Server
         protected int uniqueID;
         protected int damage;
         protected int armor;
+        protected bool isSoulStone = false;
         protected bool alreadyMoved = false;
         protected bool alreadyAttacked = false;
         protected bool paralyzed = false;
@@ -26,6 +27,13 @@ namespace Guardians_Of_The_Arena_Server
         protected int level = 1;
 
         #region Properties Region
+
+        public bool IsSoulStone
+        {
+            get { return isSoulStone; }
+            set { isSoulStone = value; }
+        }
+
         public Allegiance unitAllegiance
         {
             get { return allegiance; }

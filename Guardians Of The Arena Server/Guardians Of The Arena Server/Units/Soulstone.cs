@@ -28,6 +28,7 @@ namespace Guardians_Of_The_Arena_Server.Units
             attackCost = 0;
 
             invulnerable = true;
+            isSoulStone = true;
         }
 
         public override void setAccessibleTiles(GameBoard.Tile currentTile, int distance)

@@ -386,7 +386,7 @@ namespace Guardians_Of_The_Arena_Server
                 attackingUnit.Attack(unitHit);
                 sendMessage += ("\\" + id);
 
-                if (id < 500)
+                if (id < 500 && !board.getUnitByID(id).IsSoulStone)
                     attackingUnit.addXP();
             }
 
